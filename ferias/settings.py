@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     "informacion.apps.InformacionConfig",
     "crowdsourcing.apps.CrowdsourcingConfig",
     "api.apps.ApiConfig",
+    "sitio.apps.SitioConfig",
+    "usuarios.apps.UsuariosConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
