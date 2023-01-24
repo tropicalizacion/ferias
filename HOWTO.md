@@ -64,4 +64,5 @@ Con base en la funcionalidad descrita, es posible crear un primer esbozo de las 
 - ***api***
     - `/api`: página de bienvenida e información sobre el API el proyecto
 - ***usuarios***
-    - `/perfil`: página de información de la persona usuaria
+    - `/usuarios`: página de información de usuarios
+    - `/usuarios/perfil`: página de información de la persona usuaria
