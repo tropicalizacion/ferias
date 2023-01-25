@@ -16,7 +16,7 @@ Agregar: en `editor/settings.py`:
 from decouple import config
 ```
 
-Se agrega el archivo .env al directorio ruta
+Se agrega el archivo `.env` al directorio ruta
 
 (en caso de ser necesario) al descargar el archivo `.env` y pasarlo al directorio ruta puede salir como `.env.env` se
 debe cambiar esto a solo `.env`
@@ -27,9 +27,21 @@ debe cambiar esto a solo `.env`
 
 Luego, se deben instalar los siguientes paquetes:
 
-`pip install django` y `pip install bootstrap-py`
+```bash
+`pip install django`
+```
 
-Por último, Para ejecutar el proyecto se utiliza el comando `python manage.py runserver`. Para acceder al sitio en desarrollo se realiza mediante localhost en el puerto seleccionado
+```bash
+`pip install bootstrap-py`
+```
+
+Por último, Para ejecutar el proyecto se utiliza el comando:
+
+```bash
+`python manage.py runserver`
+```
+
+Para acceder al sitio en desarrollo se realiza mediante localhost en el puerto seleccionado
 
 ## Aplicaciones del sitio
 
