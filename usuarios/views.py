@@ -26,6 +26,7 @@ def registro(request):
             else:
                 user: User.objects.create_user(username=username, password=password, email=correo, primer_nombre=primer_nombre, primer_apellido=primer_apellido)
                 user.set_password(password)
+                user.is_staff = False
                 user.save()
                 print("success")
                 return redirect('login_usuario')
