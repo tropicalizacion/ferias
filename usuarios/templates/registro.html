@@ -8,40 +8,63 @@
   </head>
   <body>
     <!-- As a heading -->
-    <nav class="navbar bg-dark navbar-dark">
-        <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1">DeFeria</span>
-        </div>
+    <!-- As a heading -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand">DeFeria</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href={% url 'index' %}>Inicio<span class="sr-only"></span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Ferias</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
     </nav>
-    <h1 class="text-center text-success">Registro de usuario</h1>
-    <div action="{% url "registro" %}" class="container-fluid">
+
+    <h1 class="text-center text-dark mt-4 mb-4">Registro de usuario</h1>
+    <div action="{% url "registro" %}" class="container-fluid px-5">
         <form method="POST" class="row g-3">
             {% csrf_token %}
             <div class="col-md-6">
               <label for="inputNombre" class="form-label">Nombre</label>
-              <input name="primer_nombre" type="text" class="form-control" id="inputNombre">
+              <input name="primer_nombre" type="text" class="form-control" id="inputNombre" placeholder="Ingrese su nombre completo">
             </div>
             <div class="col-md-6">
               <label for="inputApellido" class="form-label">Apellidos</label>
-              <input name="primer_apellido" type="text" class="form-control" id="inputApellido">
+              <input name="primer_apellido" type="text" class="form-control" id="inputApellido" placeholder="Ingrese sus apellidos">
             </div>
             <div class="col-12">
               <label for="inputUsuario" class="form-label">Nombre de usuario</label>
-              <input name="username" type="text" class="form-control" id="inputUsuario">
+              <input name="username" type="text" class="form-control" id="inputUsuario" placeholder="@ejemplo">
+              <small id="privacidadUsuario" class="form-text text-muted">El resto de usuario lo verán con este identificador</small>
             </div>
             <div class="col-12">
               <label for="inputCorreo" class="form-label">Correo electrónico</label>
-              <input name="correo" type="email" class="form-control" id="inputCorreo">
+              <input name="correo" type="email" class="form-control" id="inputCorreo" placeholder="Ingrese su correo electrónico">
+              <small id="privacidadCorreo" class="form-text text-muted">No se compartirá su correo con nadie</small>
             </div>
             <div class="col-md-6">
               <label for="inputPassword" class="form-label">Contraseña</label>
               <input name="password" type="password" class="form-control" id="inputPassword">
+              <small id="privacidadPassword" class="form-text text-muted">- Incluir diferentes tipos de caracteres (letras y números)</small>
+              <br>
+              <small id="privacidadPassword" class="form-text text-muted">- Incluir símbolos y caracteres especiales</small>
+              <br>
+              <small id="privacidadPassword" class="form-text text-muted">- 6 caracteres mínimo</small>
             </div>
             <div class="col-md-6">
                 <label for="inputPassword2" class="form-label">Confirmar Contraseña</label>
                 <input name="password2" type="password" class="form-control" id="inputPassword2">
               </div>
-            <div class="col-12 text-center">
+            <div class="col-12 text-center mt-5">
               <button type="submit" class="btn btn-success btn-lg">Registrar cuenta</button>
             </div>
           </form>

@@ -8,22 +8,39 @@
   </head>
   <body>
     <!-- As a heading -->
-    <nav class="navbar bg-dark navbar-dark">
-        <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1">DeFeria</span>
-        </div>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand">DeFeria</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Inicio<span class="sr-only"></span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Ferias</a>
+              </li>
+              {% if request.user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link" href="#">Perfil</a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+          {% if request.user.is_authenticated %}
+          <form class="form-inline">
+            <a href={% url 'logout_usuario' %} type="button" class="btn btn-m btn-outline-danger">Cerrar Sesión </a>
+          </form>
+          {% else %}
+          <a href={% url 'registro' %} type="button" class="btn btn-m btn-outline-primary m-2">Crear cuenta</a>
+          <a href={% url 'login_usuario' %} type="button" class="btn btn-m btn-outline-success">Iniciar Sesión</a>
+          {% endif %}
+        </nav>
+      </div>
     </nav>
-    <h1 class="text-center text-success">Bienvenido a DeFeria</h1>
-    <div class="container-fluid">
-        {% if request.user.is_authenticated %}
-        <p class="h3 text-success">Inicio de sesión correcto</p>
-        <p class="text-success h3">Usuario: {{ request.user.username }}</p>
-        <a href={% url 'logout_usuario' %} type="button" class="btn btn-success btn-lg">Cerrar Sesión </a>
-        {% else %}
-            <a href={% url 'registro' %} type="button" class="btn btn-success btn-lg">Crear cuenta </a>
-            <a href={% url 'login_usuario' %} type="button" class="btn btn-success btn-lg">Iniciar Sesión </a>
-        {% endif %}
-    </div>
+    <h1 class="text-center text-success m-4" >Bienvenido a DeFeria</h1>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>
 </html>
