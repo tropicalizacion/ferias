@@ -24,7 +24,7 @@ def registro(request):
                 messages.info(request, 'Una cuenta asociada a este correo ya existe')
                 return redirect(registro)
             else:
-                user: User.objects.create_user(username=username, password=password, email=correo, primer_nombre=primer_nombre, primer_apellido=primer_apellido)
+                user = User.objects.create_user(username=username, password=password, email=correo)
                 user.set_password(password)
                 user.is_staff = False
                 user.save()
