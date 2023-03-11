@@ -2,6 +2,7 @@ from django.urls import path
 from . import views
 from .views import registro,login_usuario,logout_usuario
 
+#URLs de las páginas de usuarios
 urlpatterns = [
     path('', views.usuarios, name='usuarios'),
     path('perfil/', views.perfil, name='perfil'),
