@@ -34,6 +34,8 @@ Tareas:
 
 donde las **palabras en negrita** son los criterios de búsqueda. 
 
+- La búsqueda debe resolver resultados aproximados y/o recomendados, es decir, que cumplan con la mayoría de características
+
 - Que una frase al pie de página y de la campaña sea 
 
 > Dulce abrigo y sustento nos da
