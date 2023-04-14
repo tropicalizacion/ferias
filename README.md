@@ -15,7 +15,7 @@
 
 Tareas:
 
-[] Nuevo modelo de la base de datos 
+- [ ] Nuevo modelo de la base de datos 
 
 ### Principios para la clasificación en la base de datos
 
@@ -23,3 +23,19 @@ Tareas:
 - Nombres científicos de los productos: APG IV
 - Centros de origen de los productos: Vavilov
 - Campos de los productos: etiquetas inventadas pero en el formato de OpenStreetMaps
+
+## Cosas
+
+- Que al construir una búsqueda con distintos criterios, se vaya formando una frase, tipo:
+
+> Quiero una feria **cerca de mí** que esté **abierta el viernes**, que sea **mediana** y con **parqueo para bicicletas**
+
+| **Buscar** |
+
+donde las **palabras en negrita** son los criterios de búsqueda. 
+
+- Que una frase al pie de página y de la campaña sea 
+
+> Dulce abrigo y sustento nos da
+
+:cry:
