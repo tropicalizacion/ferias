@@ -33,7 +33,7 @@ Modelos según Django
   - `image`: (ImageField) imagen del producto.
   - `icon`: (FileField) icono para representar el producto en algunos lugares del sitio web.
   - `center_origin`: (IntegerField) centro de origen histórico del producto según la clasificación de Vavilov:
-    - 1: (I) Asia Oriental
+    - 1: (I) Asia oriental
     - 2: (II) Subcontinente indio
     - 3: (IIa) Archipiélago indo-malayo
     - 4: (III) Sureste y centro de Asia
@@ -44,7 +44,7 @@ Modelos según Django
     - 9: (VIII) Región andina tropical
     - 10: (VIIIa) Región chilena
     - 11: (VIIIb) Región brasileña-paraguaya
-  - Estacionalidad: para cada mes a continuación existe la siguiente clasificación:
+  - Nota: para cada mes a continuación existe la siguiente clasificación de estacionalidad:
     - 0: imposible o muy difícil de encontrar el producto
     - 1: producto escaso
     - 2: producto abundante
@@ -62,3 +62,23 @@ Modelos según Django
   - `nov`: (IntegerField) estacionalidad en noviembre.
   - `dec`: (IntegerField) estacionalidad en diciembre.
   - `nutritional_description`: (TextField) comentario sobre su valor nutricional.
+
+- `class Preparation`
+  - `product_id`: (ForeignKey) llave foránea con la tabla de productos.
+  - `method`: (IntegerField) selección de una lista de métodos de preparación de alimentos:
+    - 1: hervir
+  - `recommendation`: (IntegerField) nivel de recomendación (?):
+    - 1: preparación más saludable
+    - 2: no sé qué
+  - `description`: (TextField) descripción del método con este producto.
+
+- `class Storage`
+  - `product_id`: (ForeignKey) llave foránea con la tabla de productos.
+  - `method`: (IntegerField) selección de una lista de métodos de almacenamiento de alimentos:
+    - 1: a temperatura ambiente
+    - 2: refrigerar
+    - 3: congelar
+  - `recommendation`: (IntegerField) nivel de recomendación (?):
+    - 1: preparación más saludable
+    - 2: no sé qué
+  - `description`: (TextField) descripción del método con este producto.
