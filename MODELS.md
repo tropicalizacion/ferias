@@ -6,6 +6,44 @@ Modelos según Django
 
 - `class Marketplace`:
   - `marketplace_id`: (CharField) identificador único. Ejemplo: `curridabat`, `sansebastian`. Nota: este también será el URL de cada feria, por ejemplo: https://feria.cr/curridabat.
+  - `name`: (CharField) nombre común de la feria. No debe incluir "La Feria de..." y debe estar escrita con la ortografía correcta. Ejemplo: Tres Ríos.
+  - `name_alternate`: (CharField)
+  - `opening_hours`: (CharField) descripción de los horarios de apertura (según [referencia](https://wiki.openstreetmap.org/wiki/Key:opening_hours) de OpenStreetMaps). Ejemplo: "Mo-Fr 08:00-12:00,13:00-17:00. Nota: hay que evaluar la mejor forma de adaptar esto a partir de la tabla `Calendar` más adelante.
+  - `latitude`: (DecimalField) latitud en el sistema SRID 4326 (WGS84). Ejemplo: 9.937076687250993.
+  - `longitude`: (DecimalField) longitud en el sistema SRID 4326 (WGS84). Ejemplo: -84.04392677627472.
+  - `area`: (PolygonField) polígono que demarca el área o región donde está la feria. Utilizar GeoDjango.
+  - `size`: (CharField) nuestra propia clasificación del tamaño relativo de una feria, con los valores posibles:
+    - S: pequeña
+    - M: mediana
+    - L: grande
+    - XL: extra grande
+  - `province`: (IntegerField) división provincial de Costa Rica:
+    - 1: San José
+    - ...
+    - 7: Limón
+  - `canton`: (IntegerField) división cantonal de Costa Rica ([referencia](https://ccp.ucr.ac.cr/bvp/mapoteca/CostaRica/generales/atlas_cantonal_1984/) desactualizada):
+    - 101: San José
+    - 102: Escazú
+    - ...
+    - 705: Matina
+    - 706: Guácimo
+  - `district`: (IntegerField) división distrital de Costa Rica:
+    - 10101: Carmen
+    - ...
+    - 70605: Duacarí
+  - `address`: (TextField) dirección "a la tica". Ejemplo: "En el gimnasio de la escuela de Guachipelín".
+  - `telephone`: (PhoneNumberField) número de teléfono (según recomendación [E.164](https://en.wikipedia.org/wiki/E.164) de UIT). Ejemplo: +50687654321.
+  - `admin_committee`: (CharField) comité regional del CNP a la que pertenece la feria.
+  - `admin_center`: (CharField) centro agrícola que administra la feria.
+  - `email`: (EmailField) correo electrónico de contacto.
+  - `products`: (ManyToMany) productos regulares en la oferta de la feria, vinculado con la tabla `Products`.
+  - Nota: a partir de aquí hay "amenidades" de la feria, según las etiquetas de OpenStreetMaps más relevantes para una feria. Puede crecer con el tiempo.
+  - `fairgrounds`: (CharField) si la feria tiene un campo ferial o lugar dedicado, y no es en la calle.
+  - `indoor`: (CharField) si la feria es bajo techo o no.
+  - `parking`: (CharField) qué tipo de parqueo hay cercano.
+  - `bicycle_parking`: (CharField) si la feria tiene un parque dedicado específicamente a bicicletas.
+  - `drinking_water`
+  - `payment_accepted`
 
 - `class Calendar`
   - `marketplace_id`: (ForeignKey:Feria.marketplace_id): llave foránea con las ferias.
@@ -28,8 +66,8 @@ Modelos según Django
   - `scientific_name`: (CharField) nomenclatura binomial según el Código Internacional de Nomenclatura. Ejemplo: Allium sativum.
   - `scientific_name_variety`: (CharField) variedad de una especie. Ejemplo: Allium ampeloprasum var. **porrum** (incluir solamente la variedad en este campo).
   - `common_name`: (CharField) nombre común en Costa Rica. Ejemplo: limón.
-  - `common_name_variety`: (CharField) nombre común en Costa Rica de la variedad. Ejemplo: mecino.
-  - `common_name_alternative`: (CharField) otros nombres comunes en Costa Rica de la variedad. Ejemplo: ácido.
+  - `common_name_variety`: (CharField) nombre común de la variedad en Costa Rica. Ejemplo: mecino.
+  - `common_name_alternate`: (CharField) otros nombres comunes de la variedad en Costa Rica. Ejemplo: ácido.
   - `image`: (ImageField) imagen del producto.
   - `icon`: (FileField) icono para representar el producto en algunos lugares del sitio web.
   - `center_origin`: (IntegerField) centro de origen histórico del producto según la clasificación de Vavilov:
