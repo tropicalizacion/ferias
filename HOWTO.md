@@ -73,15 +73,15 @@ Con base en la funcionalidad descrita, es posible crear un primer esbozo de las 
     - `/acerca`, `/contacto`, etc.: información sobre el sitio web
 - ***datos***
     - `/ferias`: página de meta información sobre los datos que contiene la página
-    - `/ferias/<código-de-ferias>`: información básica de la feria
-    - `/ferias/buscar?param=valor`: resultados de la búsqueda de datos
+    - `/ferias/<código-de-feria>`: información básica de la feria
+    - `/ferias/<código-de-feria>/edicion`: edición de la información
 - ***productos***
     - `/productos`: página de meta información sobre los datos que contiene la página
     - `/productos/<código-de-producto>`: editor de datos del producto elegido
 - ***informacion***
     - `/informacion`: página de bienvenida a la sección de información
     - `/blog`, `/articulo`, etc.: otros sitios
-- ***crowdsourcnig***
+- ***crowdsourcing***
     - `/colaboracion`: página de bienvenida de la sección de colaboración colectiva
     - `/colaboracion/`:
 - ***api***
@@ -89,3 +89,50 @@ Con base en la funcionalidad descrita, es posible crear un primer esbozo de las 
 - ***usuarios***
     - `/usuarios`: página de información de usuarios
     - `/usuarios/perfil`: página de información de la persona usuaria
+
+### Mapa del sitio
+
+```mermaid
+stateDiagram-v2
+    por : Portada
+    fer : Ferias
+    feX : Cada feria
+    fed : Editar info
+    pro : Productos
+    prX : Cada producto
+    inf : Información
+    blo : Blog
+    cro : Crowdsourcing
+    api : API
+    ace : Acerca de
+    reg : Registro
+    ing : Ingreso
+    ini : Inicio
+    per : Perfil
+    edi : Ediciones
+    state log <<choice>>
+    state usu <<choice>>
+    state men <<fork>>
+
+    [*] --> por
+    por --> fer
+    fer --> feX
+    feX --> fed
+    por --> pro
+    pro --> prX
+    por --> inf
+    inf --> blo
+    inf --> cro
+    inf --> api
+    por --> ace
+    por --> log
+    log --> ini : Logueado
+    log --> usu : No logueado
+    usu --> ing : Registrado
+    usu --> reg : No registrado
+    ing --> ini
+    reg --> ing
+    ini --> men
+    men --> per
+    men --> edi
+```
