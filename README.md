@@ -28,11 +28,13 @@ Tareas:
 
 - Que al construir una búsqueda con distintos criterios, se vaya formando una frase, tipo:
 
-> Quiero una feria **cerca de mí** que esté **abierta el viernes**, que sea **mediana** y con **parqueo para bicicletas**
+> Quiero una feria **cerca de mí** que esté **abierta el viernes en la tarde**, que sea **mediana** y con **parqueo para bicicletas**
 
 | **Buscar** |
 
-donde las **palabras en negrita** son los criterios de búsqueda. 
+donde las **palabras en negrita** son los criterios de búsqueda. ¿Por qué esta frase? No deja dudas sobre lo que está buscando. (Algún día puede ser un dictado del usuario + NLP).
+
+Los criterios de búsqueda se pueden clasificar en cuatro: por **ubicación** ("cerca de mí", "cerca de X"), por **horario** ("abierto lunes en la mañana", "abierto viernes en la tarde"), por **características** ("que sea mediana", "que esté bajo techo"), y por **amenidades** ("con parqueo", "con comidas").
 
 - La búsqueda debe resolver resultados aproximados y/o recomendados, es decir, que cumplan con la mayoría de características
 
