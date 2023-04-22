@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.gis.db import models
+from productos.models import Product
 
 # Create your models here.
 
@@ -30,15 +30,14 @@ class Marketplace(models.Model):
     opening_hours = models.CharField(max_length=1023)
     latitude = models.FloatField()
     longitude = models.FloatField()
-    area = models.PolygonField(blank=True, null=True)
+    area = models.IntegerField(blank=True, null=True) # models.PolygonField(blank=True, null=True)
     size = models.CharField(max_length=1)
     province = models.IntegerField(choices=PROVINCE_CHOICES, blank=False, null=False)
     canton = models.IntegerField(blank=False, null=False)
     district = models.IntegerField(blank=False, null=False)
     address = models.TextField(blank=True, null=True)
     phone = models.IntegerField(blank=True, null=True)
-    operator_committee = models.ManyToManyField(
-        'Committee', blank=True, null=True)
+    operator_committee = models.ManyToManyField('Committee')
     operator_center = models.CharField(max_length=255)
     email = models.EmailField(max_length=63)
     website = models.URLField(max_length=63)
@@ -60,7 +59,7 @@ class Marketplace(models.Model):
     pet_friendly = models.BooleanField()
     # Other
     payment = models.ManyToManyField('Payment')
-    products = models.ManyToManyField('Product')
+    products = models.ManyToManyField(Product)
 
     def __str__(self):
         return self.name
