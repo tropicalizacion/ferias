@@ -62,8 +62,8 @@ class Product(models.Model):
     nov = models.IntegerField(choices=SEASON_CHOICES, blank=True, null=True)
     dec = models.IntegerField(choices=SEASON_CHOICES, blank=True, null=True)
     nutrition_comment = models.TextField(blank=True, null=True)
-    preparation = models.ManyToManyField('Preparation', blank=True, null=True)
-    storage = models.ManyToManyField('Storage', blank=True, null=True)
+    preparation = models.ManyToManyField('Preparation')
+    storage = models.ManyToManyField('Storage')
 
     def __str__(self):
         return self.name
