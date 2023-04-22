@@ -38,13 +38,13 @@ class Product(models.Model):
 
     product_id = models.AutoField(primary_key=True)
     product_url = models.CharField(max_length=63, blank=False, null=False)
-    category = models.PositiveIntegerField(blank=False, null=False)
+    category = models.PositiveIntegerField(choices=CATEGORY_CHOICES, blank=False, null=False)
     scientific_name = models.CharField(max_length=63, blank=False, null=False)
     scientific_name_variety = models.CharField(
-        max_length=63, blank=False, null=False)
+        max_length=63, blank=True, null=True)
     common_name = models.CharField(max_length=63, blank=False, null=False)
     common_name_variety = models.CharField(
-        max_length=63, blank=False, null=False)
+        max_length=63, blank=True, null=True)
     common_name_variety_alternate = models.CharField(max_length=63, blank=True, null=True)
     image = models.ImageField(upload_to='images', blank=True, null=True)
     icon = models.ImageField(upload_to='icons', blank=True, null=True)
@@ -73,8 +73,8 @@ class Preparation(models.Model):
     """Model definition for Preparation."""
 
     preparation_id = models.AutoField(primary_key=True)
-    preparation_name = models.CharField(max_length=63, blank=False, null=False)
-    preparation_description = models.TextField(blank=False, null=False)
+    preparation_method_name = models.CharField(max_length=63, blank=False, null=False)
+    preparation_method_description = models.TextField(blank=False, null=False)
 
     def __str__(self):
         return self.name
@@ -84,8 +84,8 @@ class Storage(models.Model):
     """Model definition for Storage."""
 
     storage_id = models.AutoField(primary_key=True)
-    storage_name = models.CharField(max_length=63, blank=False, null=False)
-    storage_description = models.TextField(blank=False, null=False)
+    storage_method_name = models.CharField(max_length=63, blank=False, null=False)
+    storage_method_description = models.TextField(blank=False, null=False)
 
     def __str__(self):
         return self.name

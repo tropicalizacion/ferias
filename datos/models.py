@@ -28,16 +28,30 @@ class Marketplace(models.Model):
     name_alternate = models.CharField(max_length=200)
     description = models.TextField(blank=True, null=True)
     opening_hours = models.CharField(max_length=1023)
-    latitude = models.FloatField()
-    longitude = models.FloatField()
-    area = models.IntegerField(blank=True, null=True) # models.PolygonField(blank=True, null=True)
+    latitude = models.DecimalField(
+        max_digits=22,
+        decimal_places=16,
+        help_text='Latitud WGS 84 de la feria.')
+    longitude = models.DecimalField(
+        max_digits=22,
+        decimal_places=16,
+        help_text='Latitud WGS 84 de la feria.')
+    # TODO: area = models.PolygonField(blank=True, null=True)
+    area = models.IntegerField(blank=True, null=True)
     size = models.CharField(max_length=1)
-    province = models.IntegerField(choices=PROVINCE_CHOICES, blank=False, null=False)
-    canton = models.IntegerField(blank=False, null=False)
-    district = models.IntegerField(blank=False, null=False)
+    province = models.IntegerField(
+        choices=PROVINCE_CHOICES, blank=False, null=False)
+    canton = models.IntegerField(
+        blank=False, null=False,
+        help_text='Tres dígitos de código del cantón. Ver https://correos.go.cr/codigo-postal/.')
+    district = models.IntegerField(
+        blank=False, null=False,
+        help_text='Cinco dígitos de código del distrito. Ver https://correos.go.cr/codigo-postal/.')
     address = models.TextField(blank=True, null=True)
     phone = models.IntegerField(blank=True, null=True)
-    operator_committee = models.ManyToManyField('Committee')
+    operator_committee = models.ForeignKey('Committee',
+                                           on_delete=models.SET_NULL, 
+                                           blank=True, null=True)
     operator_center = models.CharField(max_length=255)
     email = models.EmailField(max_length=63)
     website = models.URLField(max_length=63)
@@ -67,7 +81,6 @@ class Marketplace(models.Model):
 
 class Payment(models.Model):
     """Model definition for Payment."""
-    payment_id = models.CharField(max_length=50, primary_key=True)
     name = models.CharField(max_length=200)
 
     def __str__(self):
@@ -76,7 +89,6 @@ class Payment(models.Model):
 
 class Committee(models.Model):
     """Model definition for Committee."""
-    committee_id = models.CharField(max_length=50, primary_key=True)
     name = models.CharField(max_length=200)
 
     def __str__(self):
