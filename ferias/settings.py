@@ -33,13 +33,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    "datos.apps.DatosConfig",
-    "productos.apps.ProductosConfig",
-    "informacion.apps.InformacionConfig",
+    "marketplaces.apps.MarketplacesConfig",
+    "products.apps.ProductsConfig",
+    "content.apps.ContentConfig",
     "crowdsourcing.apps.CrowdsourcingConfig",
     "api.apps.ApiConfig",
-    "sitio.apps.SitioConfig",
-    "usuarios.apps.UsuariosConfig",
+    "website.apps.WebsiteConfig",
+    "users.apps.UsersConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
