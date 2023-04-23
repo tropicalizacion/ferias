@@ -4,18 +4,14 @@
 
 ## Apps de Django
 
-- `api`: API
-- `crowdsourcing`: Crowdsourcing
-- `datos`: Base de datos de las ferias
 - `ferias`: Proyecto principal (donde está `settings.py`)
-- `informacion`: Blogs y otras páginas de información general
-- `productos`: Base de datos de los productos
-- `sitio`: Página de inicio y otras páginas misceláneas (contacto, acerca de, etc.)
-- `usuarios`: Manejo de usuarios
-
-Tareas:
-
-- [ ] Nuevo modelo de la base de datos 
+- `marketplaces`: Base de datos de las ferias
+- `products`: Base de datos de los productos
+- `content`: Blogs y otras páginas de información general
+- `website`: Página de inicio y otras páginas misceláneas (contacto, acerca de, etc.)
+- `crowdsourcing`: Crowdsourcing
+- `api`: API
+- `users`: Manejo de usuarios
 
 ### Principios para la clasificación en la base de datos
 
