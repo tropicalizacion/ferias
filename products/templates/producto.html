@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block main %}
+
+<h1>{{ product.common_name }}</h1>
+
+<p><emph>{{ product.scientific_name }}</emph></p>
+
+<p>{{ product.nutrition_comment }}</p>
+
+{% endblock %}
