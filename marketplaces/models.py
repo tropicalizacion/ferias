@@ -12,6 +12,13 @@ class Marketplace(models.Model):
     the GeometryField class, which is a subclass of the Field class. This means
     that it can be used in the same way as any other field in Django.
     """
+    SIZE_CHOICES = [
+        ('S', 'Pequeña'),
+        ('M', 'Mediana'),
+        ('L', 'Grande'),
+        ('XL', 'Muy grande'),
+    ]
+
     PROVINCE_CHOICES = [
         (1, 'San José'),
         (2, 'Alajuela'),
@@ -22,10 +29,10 @@ class Marketplace(models.Model):
         (7, 'Limón'),
     ]
 
-    marketplace_id = models.CharField(max_length=50, primary_key=True)
+    marketplace_url = models.CharField(max_length=50, primary_key=True)
     # General information
     name = models.CharField(max_length=200)
-    name_alternate = models.CharField(max_length=200)
+    name_alternate = models.CharField(max_length=200, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
     opening_hours = models.CharField(max_length=1023)
     latitude = models.DecimalField(
@@ -38,7 +45,7 @@ class Marketplace(models.Model):
         help_text='Latitud WGS 84 de la feria.')
     # TODO: area = models.PolygonField(blank=True, null=True)
     area = models.IntegerField(blank=True, null=True)
-    size = models.CharField(max_length=1)
+    size = models.CharField(choices=SIZE_CHOICES, max_length=2)
     province = models.IntegerField(
         choices=PROVINCE_CHOICES, blank=False, null=False)
     canton = models.IntegerField(
@@ -50,12 +57,12 @@ class Marketplace(models.Model):
     address = models.TextField(blank=True, null=True)
     phone = models.IntegerField(blank=True, null=True)
     operator_committee = models.ForeignKey('Committee',
-                                           on_delete=models.SET_NULL, 
+                                           on_delete=models.SET_NULL,
                                            blank=True, null=True)
-    operator_center = models.CharField(max_length=255)
-    email = models.EmailField(max_length=63)
-    website = models.URLField(max_length=63)
-    opening_date = models.DateField()
+    operator_center = models.CharField(max_length=255, blank=True, null=True)
+    email = models.EmailField(max_length=63, blank=True, null=True)
+    website = models.URLField(max_length=63, blank=True, null=True)
+    opening_date = models.DateField(blank=True, null=True)
     # Infrastructure
     fairground = models.BooleanField()
     indoor = models.BooleanField()
@@ -72,8 +79,8 @@ class Marketplace(models.Model):
     pet_food = models.BooleanField()
     pet_friendly = models.BooleanField()
     # Other
-    payment = models.ManyToManyField('Payment')
-    products = models.ManyToManyField(Product)
+    payment = models.ManyToManyField('Payment', blank=True)
+    products = models.ManyToManyField(Product, blank=True)
 
     def __str__(self):
         return self.name
@@ -81,7 +88,8 @@ class Marketplace(models.Model):
 
 class Payment(models.Model):
     """Model definition for Payment."""
-    name = models.CharField(max_length=200)
+
+    name = models.CharField(max_length=63)
 
     def __str__(self):
         return self.name
@@ -89,7 +97,8 @@ class Payment(models.Model):
 
 class Committee(models.Model):
     """Model definition for Committee."""
-    name = models.CharField(max_length=200)
+
+    name = models.CharField(max_length=255)
 
     def __str__(self):
         return self.name
