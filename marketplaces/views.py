@@ -9,10 +9,10 @@ def ferias(request):
     return render(request, 'ferias.html')
 
 
-def feria(request, marketplace_id):
+def feria(request, marketplace_url):
     """View function for every feria page of site."""
 
-    marketplace = get_object_or_404(Marketplace, pk=marketplace_id)
+    marketplace = get_object_or_404(Marketplace, pk=marketplace_url)
     context = {
         'marketplace': marketplace,
     }

@@ -6,11 +6,6 @@ from products.models import Product
 
 class Marketplace(models.Model):
     """Model definition for Marketplace (la feria).
-
-    The "area" field is a PolygonField, which is a special type of field that
-    can be used to store a polygon geometry. The PolygonField is a subclass of
-    the GeometryField class, which is a subclass of the Field class. This means
-    that it can be used in the same way as any other field in Django.
     """
     SIZE_CHOICES = [
         ('S', 'Pequeña'),
@@ -36,11 +31,11 @@ class Marketplace(models.Model):
     description = models.TextField(blank=True, null=True)
     opening_hours = models.CharField(max_length=1023)
     latitude = models.DecimalField(
-        max_digits=22,
+        max_digits=20,
         decimal_places=16,
         help_text='Latitud WGS 84 de la feria.')
     longitude = models.DecimalField(
-        max_digits=22,
+        max_digits=20,
         decimal_places=16,
         help_text='Latitud WGS 84 de la feria.')
     # TODO: area = models.PolygonField(blank=True, null=True)
@@ -59,7 +54,7 @@ class Marketplace(models.Model):
     operator_committee = models.ForeignKey('Committee',
                                            on_delete=models.SET_NULL,
                                            blank=True, null=True)
-    operator_center = models.CharField(max_length=255, blank=True, null=True)
+    operator = models.CharField(max_length=255, blank=True, null=True)
     email = models.EmailField(max_length=63, blank=True, null=True)
     website = models.URLField(max_length=63, blank=True, null=True)
     opening_date = models.DateField(blank=True, null=True)
