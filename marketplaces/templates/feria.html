@@ -4,8 +4,39 @@
 
 {% block main %}
 
+{% load l10n %}
+
 <h1>Feria de {{ marketplace.name }}</h1>
 
-<p>{{ marketplace.description }} </p>
+<div class="card">
+    <div class="card-body">
+        {{ marketplace.description }}
+    </div>
+</div>
+
+<h2>Ubicación</h2>
+
+<div id="map" style="width: 600px; height: 400px;"></div>
+
+<h2>Cosas que tiene</h2>
+
+{% include 'features.html' %}
+
+<!-- Leaflet Map -->
+<script>
+
+    const map = L.map('map').setView([{{ marketplace.latitude|unlocalize }}, {{ marketplace.longitude|unlocalize }}], 15);
+
+    const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
+    const popup = L.popup()
+        .setLatLng([{{ marketplace.latitude|unlocalize }}, {{ marketplace.longitude|unlocalize }}])
+        .setContent("Feria de {{ marketplace.name }}")
+        .openOn(map);
+
+</script>
 
 {% endblock %}
