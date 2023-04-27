@@ -34,3 +34,7 @@ def storage(request, storage_url):
     storage = get_object_or_404(Storage, storage_url=storage_url)
     context = {"storage": storage}
     return render(request, "storage.html", context)
+
+
+def visit(request):
+    return render(request, "visit.html")

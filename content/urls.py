@@ -8,4 +8,5 @@ urlpatterns = [
     path('preparacion/<str:preparation_url>/', views.preparation),
     path('almacenamiento/', views.storages, name='almacenamiento'),
     path('almacenamiento/<str:storage_url>/', views.storage),
+    path('visitar/', views.visit, name='visitar'),
 ]
