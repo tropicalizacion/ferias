@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block main %}
+
+<h1>¡Consejos para aprovechar la feria al máximo!</h1>
+
+<p>No todas las personas tenemos 20 años de ir a la feria, ¿cierto? Algunos consejos son útiles para convertirlo en parte de una rutina saludable.</p>
+
+<h3>Consejos para visitar la feria</h3>
+
+<p>Hay todo tipo de ferias.</p>
+
+<h3>Consejos de preparación y almacenamiento de los productos</h3>
+
+<p class="lead">Ya fui a la feria y compré muchas cosas porque es más fresco, más variado y más barato... ¿y ahora qué hago con todo esto?</p>
+
+<p>Excelente pregunta. Por eso aquí tenemos buenos consejos para aprovechar los productos frescos que tenemos en casa.</p>
+
+<ul>
+  <li><a href="{% url 'almacenamiento' %}">Consejos de almacenamiento</a></li>
+  <li><a href="{% url 'preparacion' %}"">Consejos de preparación</a></li>
+</ul>
+
+
+
+{% endblock %}

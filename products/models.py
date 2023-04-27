@@ -76,19 +76,19 @@ class Preparation(models.Model):
     """Model definition for Preparation."""
 
     preparation_url = models.CharField(max_length=31, primary_key=True)
-    preparation_method_name = models.CharField(max_length=63)
-    preparation_method_description = models.TextField()
+    method_name = models.CharField(max_length=63)
+    method_description = models.TextField()
 
     def __str__(self):
-        return self.preparation_method_name
+        return self.method_name
 
 
 class Storage(models.Model):
     """Model definition for Storage."""
 
     storage_url = models.CharField(max_length=31, primary_key=True)
-    storage_method_name = models.CharField(max_length=63)
-    storage_method_description = models.TextField()
+    method_name = models.CharField(max_length=63)
+    method_description = models.TextField()
 
     def __str__(self):
-        return self.storage_method_name
+        return self.method_name
