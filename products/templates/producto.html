@@ -4,10 +4,12 @@
 
 {% block main %}
 
-<h1>{{ product.common_name }}</h1>
+<h1 class="display-3">{{ product.common_name }}</h1>
 
-<p><emph>{{ product.scientific_name }}</emph></p>
+<p><em>{{ product.scientific_name }}</em></p>
 
 <p>{{ product.nutrition_comment }}</p>
+
+<img src="{{ product.image.url }}" width="300px">
 
 {% endblock %}
