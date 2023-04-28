@@ -2,7 +2,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=django
 
 ### MacOS ###
-
+.vscode
 .DS_Store
 
 ### Django ###
