@@ -4,17 +4,15 @@ from .models import Product
 # Create your views here.
 
 
-def productos(request):
+def products(request):
     """View function for all products page of site."""
-    return render(request, 'productos.html')
+    return render(request, "productos.html")
 
 
 def product(request, product_url):
     """View function for product page of site."""
-    
+
     product = get_object_or_404(Product, product_url=product_url)
-    context = {
-        'product': product
-    }
-    
-    return render(request, 'producto.html', context)
+    context = {"product": product}
+
+    return render(request, "producto.html", context)
