@@ -6,14 +6,14 @@ from django.db import models
 class Product(models.Model):
     """Model definition for Product."""
     CATEGORY_CHOICES = [
-        (1, 'Legumbres'),
-        (2, 'Tubérculos'),
-        (3, 'Raíces'),
-        (4, 'Cereales'),
-        (5, 'Frutas'),
-        (6, 'Especies'),
-        (7, 'Hortalizas'),
-        (8, 'No convencionales'),
+        (1, 'legumbre'),
+        (2, 'tubérculo'),
+        (3, 'raíz'),
+        (4, 'cereal'),
+        (5, 'fruta'),
+        (6, 'especie'),
+        (7, 'hortaliza'),
+        (8, 'no convencional'),
     ]
     SEASON_CHOICES = [
         (0, 'Sin disponibilidad'),
@@ -48,6 +48,7 @@ class Product(models.Model):
         max_length=63, blank=True, null=True)
     common_name_variety_alternate = models.CharField(
         max_length=63, blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
     image = models.ImageField(upload_to='images', blank=True, null=True)
     icon = models.ImageField(upload_to='icons', blank=True, null=True)
     center_origin = models.IntegerField(
@@ -78,6 +79,7 @@ class Preparation(models.Model):
     preparation_url = models.CharField(max_length=31, primary_key=True)
     method_name = models.CharField(max_length=63)
     method_description = models.TextField()
+    icon = models.ImageField(upload_to='icons', blank=True, null=True)
 
     def __str__(self):
         return self.method_name
@@ -89,6 +91,7 @@ class Storage(models.Model):
     storage_url = models.CharField(max_length=31, primary_key=True)
     method_name = models.CharField(max_length=63)
     method_description = models.TextField()
+    icon = models.ImageField(upload_to='icons', blank=True, null=True)
 
     def __str__(self):
         return self.method_name
