@@ -5,42 +5,39 @@
 {% block main %}
 
 <hr>
-<h4 style="font-weight: 800;">la feria / productos</h4>
+<h4><span style="font-weight: 800;">la feria</span> | productos</h4>
 <hr>
 
 <!-- Información general -->
 <h1 class="display-2" style="font-family: 'Permanent Marker';">{{ product.common_name }}</h1>
 
-<!-- Nombre científico -->
+<!-- Nombre científico 
 <p class="lead"><em>
     {{ product.scientific_name }}
     {% if product.scientific_name_variety %}
         var. {{ product.scientific_name_variety }}
     {% endif %}
-</em></p>
+</em></p>-->
+<!-- Descripción -->
+<p class="lead">Una opción interesante para la cocina en combinación con sopas y picadillos.</p>
 
 <!-- Categoría -->
-<span class="badge text-bg-success">{{ product.get_category_display }}</span>
+<p>
+    <span class="badge text-bg-success">{{ product.get_category_display }}</span>
+</p>
 
-<!-- Imagen / imágenes -->
+<!-- Imagen / imágenes
 <div class="text-center">
     <img src="{{ product.image.url }}" width="300px">
 </div>
 
-<!-- Descripción -->
-{% if product.description %}
-<p class="lead">
-<div class="card">
-    <div class="card-header">
-        Descripción
-    </div>
-    <div class="card-body">
-        {{ product.description }}
-    </div>
-</div>    
-</p>
-{% endif %}
+<hr>
+ -->
 
+ {% include 'variety.html' %}
+
+ <br>
+ <br>
 <!-- Reseña nutricional -->
 <h2>Reseña nutricional</h2>
 <hr>
