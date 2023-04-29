@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block main %}
+
+<hr>
+<h4><span style="font-weight: 800;">la feria</span> | productos</h4>
+<hr>
+
+<!-- Información general -->
+<h1 class="display-2" style="font-family: 'Permanent Marker';">{{ product.common_name|capfirst }}</h1>
+
+<!-- Descripción -->
+<p class="lead">{{ product.description }}</p>
+
+<!-- Categoría -->
+<p>
+    <span class="badge text-bg-success">{{ product.get_category_display }}</span>
+</p>
+
+<!-- Variedades -->
+{% include 'variety.html' %}
+
+<br>
+<br>
+
+<!-- Reseña nutricional -->
+<h2>Reseña nutricional</h2>
+<hr>
+
+<p>{{ product.nutrition_notes }}</p>
+
+<!-- Métodos de almacenamiento -->
+<h2>Almacenamiento</h2>
+<hr>
+
+{% include 'storage.html' %}
+
+<!-- Métodos de preparación -->
+
+<h2>Preparación</h2>
+<hr>
+
+{% include 'preparation.html' %}
+
+<!-- Centros de origen -->
+
+<h2>Origen</h2>
+<hr>
+
+{% include 'center_origin.html' %}
+
+<!-- Estacionalidad -->
+
+<h2>Estacionalidad</h2>
+<hr>
+
+{% include 'seasonality.html' %}
+
+{% endblock %}

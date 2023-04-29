@@ -1,0 +1,204 @@
+[
+    {
+        "model": "products.product",
+        "pk": "acelga",
+        "fields": {
+            "category": 7,
+            "common_name": "acelga",
+            "common_name_alternate": null,
+            "description": "Es la planta de los picadillos (en realidad, no sé).",
+            "icon": "",
+            "center_origin": 4,
+            "nutrition_notes": "La acelga es buena para la vista y para las defensas.",
+            "preparation_notes": "Es mejor si está \"al dente\".",
+            "storage_notes": "No dura mucho más de cuatro días.",
+            "preparation": [
+                "cocido",
+                "crudo"
+            ],
+            "storage": [
+                "refrigeracion",
+                "temperatura-ambiente"
+            ]
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "aguacate",
+        "fields": {
+            "category": 7,
+            "common_name": "aguacate",
+            "common_name_alternate": "palta",
+            "description": "¿Fruta o verdura? No importa, porque es delicioso.",
+            "icon": "",
+            "center_origin": 8,
+            "nutrition_notes": "De las grasas buenas, no de las malas.",
+            "preparation_notes": "Mejor crudo pero también en batido, claro que sí.",
+            "storage_notes": "Es famoso porque pasa de verde a malo en un cerrar de ojos. En refrigeración dura más.",
+            "preparation": [
+                "crudo"
+            ],
+            "storage": [
+                "temperatura-ambiente"
+            ]
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "ajo",
+        "fields": {
+            "category": 7,
+            "common_name": "ajo",
+            "common_name_alternate": null,
+            "description": "Uno de los ingredientes de la triada de \"olores\" de nuestra cocina, junto con la cebolla y el chile dulce.",
+            "icon": "",
+            "center_origin": 4,
+            "nutrition_notes": "Bueno para la salud, malo para los vampiros.",
+            "preparation_notes": "Sofrito da los mejores olores. Utilizar como saborizante.",
+            "storage_notes": "Puede ser almacenado por largos períodos.",
+            "preparation": [
+                "cocido"
+            ],
+            "storage": [
+                "refrigeracion",
+                "temperatura-ambiente"
+            ]
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 1,
+        "fields": {
+            "product_url": "aguacate",
+            "scientific_name": "Persea americana",
+            "scientific_name_variety": "Hass",
+            "common_name_variety": "Hass",
+            "common_name_variety_alternate": null,
+            "description": "El del guacamole, aunque cualquier sirve para guacamole, ciertamente.",
+            "image": "images/aguacate_hass.jpeg",
+            "jan": 3,
+            "feb": 3,
+            "mar": 2,
+            "apr": 1,
+            "may": 1,
+            "jun": 1,
+            "jul": 1,
+            "aug": 2,
+            "sep": 2,
+            "oct": 3,
+            "nov": 3,
+            "dec": 3
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 2,
+        "fields": {
+            "product_url": "aguacate",
+            "scientific_name": "Persea americana",
+            "scientific_name_variety": "drymifolia",
+            "common_name_variety": "criollo",
+            "common_name_variety_alternate": null,
+            "description": "El que comíamos de niños (bueno, a mí no me gustaba).",
+            "image": "images/aguacate_criollo.jpeg",
+            "jan": 1,
+            "feb": 3,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 2,
+            "sep": 1,
+            "oct": 1,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 3,
+        "fields": {
+            "product_url": "acelga",
+            "scientific_name": "Beta vulgaris",
+            "scientific_name_variety": "cicla",
+            "common_name_variety": "común",
+            "common_name_variety_alternate": null,
+            "description": "Es familia de la lechuga, con solo verla. Pero no tiene los mismos usos.",
+            "image": "images/acelga.jpg",
+            "jan": 3,
+            "feb": 3,
+            "mar": 3,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 1,
+            "sep": 1,
+            "oct": 2,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 4,
+        "fields": {
+            "product_url": "ajo",
+            "scientific_name": "Allium sativum",
+            "scientific_name_variety": null,
+            "common_name_variety": "común",
+            "common_name_variety_alternate": null,
+            "description": "El que viene de China.",
+            "image": "images/ajo.jpg",
+            "jan": 3,
+            "feb": 3,
+            "mar": 2,
+            "apr": 1,
+            "may": 1,
+            "jun": 2,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 3,
+            "nov": 3,
+            "dec": 3
+        }
+    },
+    {
+        "model": "products.preparation",
+        "pk": "cocido",
+        "fields": {
+            "method_name": "cocido",
+            "method_description": "Cocinar en agua hasta llevar a la textura deseada.",
+            "icon": ""
+        }
+    },
+    {
+        "model": "products.preparation",
+        "pk": "crudo",
+        "fields": {
+            "method_name": "crudo",
+            "method_description": "Para comer así nomás.",
+            "icon": ""
+        }
+    },
+    {
+        "model": "products.storage",
+        "pk": "refrigeracion",
+        "fields": {
+            "method_name": "refrigeración",
+            "method_description": "Almacenar a una temperatura menor a 15 grados pero mayor a 0 grados.",
+            "icon": ""
+        }
+    },
+    {
+        "model": "products.storage",
+        "pk": "temperatura-ambiente",
+        "fields": {
+            "method_name": "temperatura ambiente",
+            "method_description": "Nada más de poner por ahí.",
+            "icon": ""
+        }
+    }
+]
