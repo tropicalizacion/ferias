@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block main %}
+
+<!-- Información general -->
+<h1 class="display-2">{{ product.common_name }}</h1>
+
+<!-- Nombre científico -->
+<p class="lead"><em>
+    {{ product.scientific_name }}
+    {% if product.scientific_name_variety %}
+        var. {{ product.scientific_name_variety }}
+    {% endif %}
+</em></p>
+
+<!-- Categoría -->
+<span class="badge text-bg-success">{{ product.get_category_display }}</span>
+
+<!-- Imagen / imágenes -->
+<div class="text-center">
+    <img src="{{ product.image.url }}" width="300px">
+</div>
+
+<!-- Descripción -->
+{% if product.description %}
+<p class="lead">
+<div class="card">
+    <div class="card-header">
+        Descripción
+    </div>
+    <div class="card-body">
+        {{ product.description }}
+    </div>
+</div>    
+</p>
+{% endif %}
+
+<!-- Reseña nutricional -->
+<h2>Reseña nutricional</h2>
+
+<p>{{ product.nutrition_comment }}</p>
+
+<!-- Métodos de almacenamiento -->
+<h2>Almacenamiento</h2>
+
+{% include 'storage.html' %}
+
+<!-- Métodos de preparación -->
+<h2>Preparación</h2>
+
+{% include 'preparation.html' %}
+
+<!-- Centros de origen -->
+<h2>Origen</h2>
+
+{% include 'center_origin.html' %}
+
+<!-- Estacionalidad -->
+<h2>Estacionalidad</h2>
+
+{% include 'seasonality.html' %}
+
+{% endblock %}
