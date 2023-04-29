@@ -66,7 +66,7 @@ class Variety(models.Model):
     product_url = models.ForeignKey("Product", on_delete=models.SET_NULL, null=True)
     scientific_name = models.CharField(max_length=63, blank=False, null=False)
     scientific_name_variety = models.CharField(max_length=63, blank=True, null=True)
-    common_name_variety = models.CharField(max_length=63, blank=True, null=True)
+    common_name_variety = models.CharField(max_length=63, blank=True, null=True, default="")
     common_name_variety_alternate = models.CharField(
         max_length=127, blank=True, null=True
     )
