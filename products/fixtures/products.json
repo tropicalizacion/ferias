@@ -1,0 +1,121 @@
+[
+    {
+        "model": "products.product",
+        "pk": 1,
+        "fields": {
+            "product_url": "acelga",
+            "category": 7,
+            "scientific_name": "Beta vulgaris",
+            "scientific_name_variety": "cicla",
+            "common_name": "acelga",
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": "En un picadillo queda bomba, claro que sí.",
+            "image": "images/acelga.jpg",
+            "icon": "",
+            "center_origin": 2,
+            "jan": 3,
+            "feb": 3,
+            "mar": 3,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 1,
+            "sep": 1,
+            "oct": 2,
+            "nov": 2,
+            "dec": 2,
+            "nutrition_comment": "Muy bueno, sí, claro claro.",
+            "preparation": [
+                "a-la-parrilla"
+            ],
+            "storage": [
+                "ambiente"
+            ]
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 2,
+        "fields": {
+            "product_url": "aguacate",
+            "category": 7,
+            "scientific_name": "Persea americana",
+            "scientific_name_variety": null,
+            "common_name": "aguacate",
+            "common_name_variety": "criollo",
+            "common_name_variety_alternate": null,
+            "description": "El rey de la comida mexicana.",
+            "image": "images/aguacate_criollo.jpeg",
+            "icon": "",
+            "center_origin": 8,
+            "jan": 1,
+            "feb": 3,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 1,
+            "sep": 1,
+            "oct": 1,
+            "nov": 1,
+            "dec": 1,
+            "nutrition_comment": "Es de las grasas buenas, no de las malas, pero nada es bueno en exceso, ojo ahí.",
+            "preparation": [
+                "al-horno",
+                "crudo"
+            ],
+            "storage": [
+                "ambiente",
+                "refrigeración"
+            ]
+        }
+    },
+    {
+        "model": "products.preparation",
+        "pk": "a-la-parrilla",
+        "fields": {
+            "method_name": "a la parrilla",
+            "method_description": "Colocar en una parrilla y darle fuego.",
+            "icon": ""
+        }
+    },
+    {
+        "model": "products.preparation",
+        "pk": "al-horno",
+        "fields": {
+            "method_name": "al horno",
+            "method_description": "Colocar en un horno y darle fuego.",
+            "icon": ""
+        }
+    },
+    {
+        "model": "products.preparation",
+        "pk": "crudo",
+        "fields": {
+            "method_name": "crudo",
+            "method_description": "Dele así.",
+            "icon": ""
+        }
+    },
+    {
+        "model": "products.storage",
+        "pk": "ambiente",
+        "fields": {
+            "method_name": "temperatura ambiente",
+            "method_description": "Dejar ahí.",
+            "icon": ""
+        }
+    },
+    {
+        "model": "products.storage",
+        "pk": "refrigeracion",
+        "fields": {
+            "method_name": "refrigeración",
+            "method_description": "Refrigerar.",
+            "icon": ""
+        }
+    }
+]
