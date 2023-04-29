@@ -11,38 +11,25 @@
 <!-- Información general -->
 <h1 class="display-2" style="font-family: 'Permanent Marker';">{{ product.common_name }}</h1>
 
-<!-- Nombre científico 
-<p class="lead"><em>
-    {{ product.scientific_name }}
-    {% if product.scientific_name_variety %}
-        var. {{ product.scientific_name_variety }}
-    {% endif %}
-</em></p>-->
 <!-- Descripción -->
-<p class="lead">Una opción interesante para la cocina en combinación con sopas y picadillos.</p>
+<p class="lead">{{ product.description }}</p>
 
 <!-- Categoría -->
 <p>
     <span class="badge text-bg-success">{{ product.get_category_display }}</span>
 </p>
 
-<!-- Imagen / imágenes
-<div class="text-center">
-    <img src="{{ product.image.url }}" width="300px">
-</div>
+<!-- Variedades -->
+{% include 'variety.html' %}
 
-<hr>
- -->
+<br>
+<br>
 
- {% include 'variety.html' %}
-
- <br>
- <br>
 <!-- Reseña nutricional -->
 <h2>Reseña nutricional</h2>
 <hr>
 
-<p>{{ product.nutrition_comment }}</p>
+<p>{{ product.nutrition_notes }}</p>
 
 <!-- Métodos de almacenamiento -->
 <h2>Almacenamiento</h2>
@@ -51,18 +38,21 @@
 {% include 'storage.html' %}
 
 <!-- Métodos de preparación -->
+
 <h2>Preparación</h2>
 <hr>
 
 {% include 'preparation.html' %}
 
 <!-- Centros de origen -->
-<h2 style="font-family: 'Anek Devanagari';">Origen</h2>
+
+<h2>Origen</h2>
 <hr>
 
 {% include 'center_origin.html' %}
 
 <!-- Estacionalidad -->
+
 <h2>Estacionalidad</h2>
 <hr>
 
