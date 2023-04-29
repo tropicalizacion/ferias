@@ -17,7 +17,7 @@
             datasets: [
                 {% for variety in varieties %}
                 {
-                    label: '{{ variety.common_name_variety }}',
+                    label: '{{ product.common_name }} {{ variety.common_name_variety }}',
                     data: [
                         {{ variety.jan }}, 
                         {{ variety.feb }},

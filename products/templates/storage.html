@@ -1,6 +1,7 @@
-{% for storage in product.storage.all %}
+<p>{{ product.storage_notes }}</p>
 <dl>
+    {% for storage in product.storage.all %}
     <dt>{{ storage.method_name|capfirst }}</dt>
     <dd>{{ storage.method_description }}</dd>
+    {% endfor %}
 </dl>
-{% endfor %}
