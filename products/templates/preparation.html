@@ -1,0 +1,6 @@
+{% for preparation in product.preparation.all %}
+<dl>
+    <dt>{{ preparation.method_name|capfirst }}</dt>
+    <dd>{{ preparation.method_description }}</dd>
+</dl>
+{% endfor %}

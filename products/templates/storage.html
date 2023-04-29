@@ -1,0 +1,6 @@
+{% for storage in product.storage.all %}
+<dl>
+    <dt>{{ storage.method_name|capfirst }}</dt>
+    <dd>{{ storage.method_description }}</dd>
+</dl>
+{% endfor %}

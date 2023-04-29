@@ -1,0 +1,43 @@
+<p>En Costa Rica, esta es la estacionalidad para este producto.</p>
+
+<div>
+    <canvas id="myChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Setiembre','Octubre', 'Noviembre', 'Diciembre'],
+            datasets: [{
+                label: '# of Votes',
+                data: [
+                    {{ product.jan }}, 
+                    {{ product.feb }},
+                    {{ product.mar }},
+                    {{ product.apr }},
+                    {{ product.may }},
+                    {{ product.jun }},
+                    {{ product.jul }},
+                    {{ product.aug }},
+                    {{ product.sep }},
+                    {{ product.oct }},
+                    {{ product.nov }},
+                    {{ product.dec }} 
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
