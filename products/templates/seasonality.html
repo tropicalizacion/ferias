@@ -1,0 +1,58 @@
+<p>En Costa Rica, esta es la estacionalidad para este producto.</p>
+
+<div>
+    <canvas id="myChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const ctx = document.getElementById('myChart');
+    var yLabels = {0: 'Ninguna', 1: 'Menor', 2: 'Mayor', 3: 'Alta'}
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Setiembre','Octubre', 'Noviembre', 'Diciembre'],
+            datasets: [
+                {% for variety in varieties %}
+                {
+                    label: '{{ product.common_name }} {{ variety.common_name_variety }}',
+                    data: [
+                        {{ variety.jan }}, 
+                        {{ variety.feb }},
+                        {{ variety.mar }},
+                        {{ variety.apr }},
+                        {{ variety.may }},
+                        {{ variety.jun }},
+                        {{ variety.jul }},
+                        {{ variety.aug }},
+                        {{ variety.sep }},
+                        {{ variety.oct }},
+                        {{ variety.nov }},
+                        {{ variety.dec }} 
+                    ],
+                    tension: 0.3,
+                    fill: true,
+                },
+                {% endfor %}
+            ]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Disponibilidad'
+                    },
+                    ticks: {
+                        callback: function(value, index, values) {
+                            return yLabels[value];
+                        }
+                    }
+                }
+            }
+        }
+    });
+</script>

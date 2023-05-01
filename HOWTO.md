@@ -16,10 +16,7 @@ Agregar: en `editor/settings.py`:
 from decouple import config
 ```
 
-Se agrega el archivo `.env` al directorio ruta
-
-(en caso de ser necesario) al descargar el archivo `.env` y pasarlo al directorio ruta puede salir como `.env.env` se
-debe cambiar esto a solo `.env`
+Se agrega el archivo `.env` al directorio raíz. Nota: (en caso de ser necesario) al descargar el archivo `.env` y pasarlo al directorio raíz puede salir como `.env.env` se debe cambiar esto a solo `.env`.
 
 (Seguir instrucciones de la documentación).
 

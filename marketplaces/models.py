@@ -5,15 +5,13 @@ from products.models import Product
 
 
 class Marketplace(models.Model):
-    """Model definition for Marketplace (la feria).
-    """
+    """Model definition for Marketplace (la feria)."""
     SIZE_CHOICES = [
         ('S', 'Pequeña'),
         ('M', 'Mediana'),
         ('L', 'Grande'),
         ('XL', 'Muy grande'),
     ]
-
     PROVINCE_CHOICES = [
         (1, 'San José'),
         (2, 'Alajuela'),

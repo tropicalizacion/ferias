@@ -1,0 +1,16 @@
+<div class="d-flex justify-content-center">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for variety in varieties %}
+        <div class="col">
+            <div class="card h-100 shadow-lg">
+                <img src="{{ variety.image.url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.common_name|capfirst }} {{ variety.common_name_variety }}</h5>
+                    <p><small class="text-body-secondary"><em>{{ variety.scientific_name }} {% if variety.scientific_name_variety %}var. {{ variety.scientific_name_variety }}{% endif %}</em></small></p>
+                    <p class="card-text">{{ variety.description }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
