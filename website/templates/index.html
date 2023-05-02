@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DeFerias Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   </head>
   <body>
@@ -47,8 +48,37 @@
         </nav>
       </div>
     </nav>
+
+    <!-- Header -->
+    <div class="mt-4 p-3 container rounded bg-dark text-center">
+      <h1 class="display-2 text-white bg-dark" style="font-weight: 800;">DeFeria</h1>
+      <p class="lead text-white bg-dark" >Somos una plataforma para todas aquellas personas que quieran saber más sobre las ferias del agricultor</p>
+    </div>
+
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-sm rounded bg-primary text-white p-4 text-center">
+          <i class="bi bi-egg-fill"></i>
+          <h2>Productos frescos</h2> 
+          <p>Conoce más acerca de los productos y en cuales ferias del agricultor puedes conseguirlos.</p>
+          <img src="media\images\productos1.jpg" class="img-fluid rounded" alt="Responsive image" style="width: 380px; height: 260px; object-fit: cover;">
+        </div>
+        <div class="col-sm rounded bg-success text-white p-3 text-center">
+          <i class="bi bi-shop-window"></i>
+          <h2>Ferias cada semana</h2>
+          <p>En DeFerias pordrás encontrar toda la información sobre la feria del agricultor más cercana a tu casa</p>
+          <img src="media\images\feria1.jpg" class="img-fluid rounded" alt="Responsive image" style="width: 380px; height: 260px; object-fit: cover;">
+        </div>
+        <div class="col-sm rounded bg-warning text-white p-3 text-center">
+          <i class="bi bi-phone-vibrate"></i>
+          <h2>Sé parte de la comunidad</h2>
+          <p>Ayuda a mantener la información sobre ferias del agricultor y sus productos actualizada</p>
+          <img src="media\images\comunidad1.jpg" class="img-fluid rounded" alt="Responsive image" style="width: 380px; height: 260px; object-fit: cover;">
+        </div>
+      </div>
+    </div>
+
     <!-- Contenido de la plataforma, información de ferias -->
-    <h1 class="text-center m-4" >Bienvenido a DeFeria</h1>
     <h2 class="text-center m-5" > Ubicación Actual - {{ data.city }} </h2>
     <h3 class="text-center m-2"> Más detalles </h3>
 
@@ -71,7 +101,7 @@
     </div>
 
   </body>
-  <footer class="text-center text-white fixed-bottom" style="background-color: #28242c;">
+  <footer class="text-center text-white static" style="background-color: #28242c;">
     <div class="container p-2"></div>
     <div class="text-center p-3" style="background-color: #28242c;">
       © 2023
