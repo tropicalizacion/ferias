@@ -50,50 +50,70 @@
     </nav>
 
     <!-- Header -->
-    <div class="mt-5 p-2 container rounded bg-dark text-center">
-      <h1 class="display-2 text-white bg-dark mb-3" style="font-weight: 700;">¡Consejos para aprovechar la feria al máximo!</h1>
-      <p class="lead text-white bg-dark" >No todas las personas tenemos 20 años de ir a la feria, ¿cierto? Algunos consejos son útiles para convertirlo en parte de una rutina saludable.</p>
-    </div>
-    
-    <div class="container mt-5">
-      <div class="row">
-        <div class="col-sm rounded bg-warning text-white p-1 me-1 ms-1 text-center">
-          <i class="bi bi-shop-window"></i>
-          <h2>Consejos para visitar la feria</h2> 
-          <p>Hay todo tipo de ferias y hay que saber cómo <a href="{% url 'visitar' %}">visitar</a>.</p>
+    <div class="text-center">
+      <div class="mt-5 p-2 container rounded bg-dark">
+        <h1 class="display-2 text-white bg-dark mb-3" style="font-weight: 700;">¡Consejos para aprovechar la feria al máximo!</h1>
+      </div>
+
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-sm p-1 me-1 ms-1">
+            <h3 class="mt-5 p-1 ms-5" style="font-size: 30px;">
+              No todas las personas tenemos 20 años de ir a la feria, ¿cierto?
+              <small class="text-muted">Algunos consejos son útiles para convertirlo en parte de una rutina saludable</small>
+            </h3>
+          </div>
+          <div class="col-sm p-3 me-3 ms-3 text-center">
+            <img src="/media/images/IlustracionConsejos2.jpg" class="img-fluid rounded" alt="Responsive image" style="width: 380px; height: 260px; object-fit: cover;">
+          </div>
         </div>
-        <div class="col-sm rounded bg-success text-white p-3 me-3 ms-3 text-center">
-          <h3 style="font-weight: 700;">Preparación y almacenamiento de los productos</h3>
-          <p class="lead">Ya fui a la feria y compré muchas cosas porque es más fresco, más variado y más barato... ¿y ahora qué hago con todo esto?</p>
+      </div>
+
+      <div class="mt-5 p-5">
+        <h2 style="font-weight: 800; font-size: 50px;">Consejos para visitar la feria</h2> 
+        <p style="font-weight: 600; font-size: 20px;">Hay todo tipo de ferias y hay que saber cómo visitarlas</p>
+        <a class="btn btn-primary mt-3 p-3" href="{% url 'visitar' %}" role="button"><strong>Conoce los consejos</strong></a>
+        <div>
+          <img src="/media/images/IlustracionConsejos1.jpg" class="img-fluid rounded mt-5" alt="Responsive image" style="width: 380px; height: 260px; object-fit: cover;">
+        </div>
+      </div>
+
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-sm p-3 me-3 ms-3 text-center">
+            <img src="/media/images/IlustracionConsejos3.jpg" class="img-fluid rounded" alt="Responsive image" style="width: 380px; height: 260px; object-fit: cover;">
+          </div>
+          <div class="col-sm p-3 me-3 ms-3 text-center mt-4 p-4">
+            <h3 style="font-weight: 700; font-size: 35px;">Preparación y almacenamiento de los productos</h3>
+            <p class="lead" style="font-size: 22px; font-weight: 350;">Compré en la feria porque sus productos son más frescos, variados y baratos... ¿y ahora qué hago con todo esto?</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-5 p-4 w-75 me-auto ms-auto">
+        <h2 style="font-weight: 800; font-size: 50px;">Consejos para aprovechar los productos frescos que acabamos de comprar</h2> 
+      </div>
+
+      <div class="container mt-1 p-4">
+        <div class="row">
+          <div class="col-sm p-1 me-1 ms-1 text-center">
+            <img src="/media/images/IlustracionConsejos5.jpg" class="img-fluid rounded" alt="Responsive image" style="width: 380px; height: 400px; object-fit: cover;">
+            <div class="mt-3">
+              <a class="btn btn-primary mt-3 p-3" href="{% url 'almacenamiento' %}" role="button"><strong>Almacenamiento</strong></a>
+            </div>
+          </div>
+          <div class="col-sm p-1 me-1 ms-1 text-center">
+            <img src="/media/images/IlustracionConsejos4.jpg" class="img-fluid rounded" alt="Responsive image" style="width: 380px; height: 400px; object-fit: cover;">
+            <div class="mt-3">
+              <a class="btn btn-primary mt-3 p-3" href="{% url 'preparacion' %}" role="button"><strong>Preparación</strong></a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
-    <div class="container mt-5">
-      <div class="row">
-        <div class="col-sm rounded bg-secondary text-white p-4 me-5 ms-5 text-center">
-          <i class="bi bi-question-square-fill"></i>
-          <h2>Excelente pregunta. Por eso aquí tenemos buenos consejos para aprovechar los productos frescos que ahora tenemos en casa.</h2> 
-        </div>
-    </div>
-
-    <div class="container mt-2 p-4">
-      <div class="row">
-        <div class="col-sm p-1 me-1 ms-1 text-center">
-          <i class="bi bi-emoji-smile"></i>
-          <h2>Consejos de</h2>
-          <a class="btn btn-primary" href="{% url 'almacenamiento' %}" role="button">Almacenamiento</a>
-        </div>
-        <div class="col-sm p-1 me-1 ms-1 text-center">
-          <i class="bi bi-egg-fried"></i>
-          <h2>Consejos de</h2>
-          <a class="btn btn-primary" href="{% url 'preparacion' %}" role="button">Preparación</a>
-        </div>
-      </div>
-    </div>
-
   </body>
-  <footer class="text-center text-white static" style="background-color: #28242c;">
+
+  <footer class="text-center text-white static mt-5" style="background-color: #28242c;">
     <div class="container p-2"></div>
     <div class="text-center p-3" style="background-color: #28242c;">
       © 2023
