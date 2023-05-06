@@ -9,4 +9,8 @@ class AcercaConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
     name = "acerca"
     
+class ContactoConfig(AppConfig):
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "contacto"
+    
     
