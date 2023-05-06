@@ -11,3 +11,6 @@ def index(request):
     location_data_one = res.text
     location_data = json.loads(location_data_one)
     return render(request, 'index.html', {'data': location_data})
+
+def acerca(request):
+    return render(request, 'acerca.html')
