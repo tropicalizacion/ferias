@@ -93,6 +93,12 @@ o lo que corresponda.
 - Hacer todas las migraciones con `$ python manage.py makemigrations marketplaces` y así para cada app (products, website, etc.)
 - Migrar con `$ python manage.py migrate` para crear las tablas.
 - Hacer `$ python manage.py loaddata auth` para cargar los datos de usuarios de prueba del fixture (peligroso).
+- Para ver mapas de OpenStreetMap en el panel de administración, hay que editar `marketplaces/admin.py` con:
+```python
+from django.contrib.gis import admin
+(...)
+admin.site.register(Marketplace, admin.GISModelAdmin)
+```
 
 Con esto debería funcionar la aplicación pero ahora con PostgreSQL y PostGIS activado para usar GeoDjango, que permite guardar ubicaciones y regiones en el mapa y hacer búsquedas geoespaciales.
 
