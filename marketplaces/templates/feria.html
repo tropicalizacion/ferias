@@ -39,16 +39,15 @@
             {{ marketplace.district }}
         </h6>
         <p class="card-text">{{ marketplace.address }}</p>
-        <a href="https://ul.waze.com/ul?ll={{ marketplace.location.y|unlocalize }}%2C{{ marketplace.location.x|unlocalize }}&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
+        <a target="_blank" href="https://ul.waze.com/ul?ll={{ marketplace.location.y|unlocalize }}%2C{{ marketplace.location.x|unlocalize }}&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
             class="btn btn-waze">Waze</a>
-        <a href="https://www.google.com/maps/dir/?api=1&destination={{ marketplace.location.y|unlocalize }},{{ marketplace.location.x|unlocalize }}"
+        <a target="_blank" href="https://www.google.com/maps/dir/?api=1&destination={{ marketplace.location.y|unlocalize }},{{ marketplace.location.x|unlocalize }}"
             class="btn btn-primary">Google Maps</a>
     </div>
 </div>
 
 <h3>Otras ferias cercanas</h3>
 
-<p>Las ferias más cercanas son:</a></p>
 <ul>
     {% for marketplace in closest_marketplaces %}
     <li><a href="/ferias/{{ marketplace.marketplace_url }}">{{ marketplace.name }}</a></li>
@@ -63,7 +62,7 @@
 <!-- Leaflet Map -->
 <script>
 
-const map = L.map('map').setView([{{ marketplace.latitude|unlocalize }}, {{ marketplace.longitude|unlocalize }}], 15);
+const map = L.map('map').setView([{{ marketplace.location.y|unlocalize }}, {{ marketplace.location.x|unlocalize }}], 15);
 
 const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
@@ -71,10 +70,9 @@ const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 const popup = L.popup()
-    .setLatLng([{{ marketplace.latitude|unlocalize }}, {{ marketplace.longitude|unlocalize }}])
+    .setLatLng([{{ marketplace.location.y|unlocalize }}, {{ marketplace.location.x|unlocalize }}])
     .setContent("Feria de {{ marketplace.name }}")
     .openOn(map);
-
 
 </script>
 

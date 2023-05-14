@@ -7,7 +7,9 @@ from django.contrib.gis.db.models.functions import Distance
 
 def ferias(request):
     """View function for all ferias page of site."""
-    return render(request, "ferias.html")
+    marketplaces = Marketplace.objects.all()
+    context = {"marketplaces": marketplaces}
+    return render(request, "ferias.html", context)
 
 
 def feria(request, marketplace_url):
