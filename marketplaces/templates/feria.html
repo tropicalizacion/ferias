@@ -18,6 +18,15 @@
 
 <div id="map" style="width: 600px; height: 400px;"></div>
 
+<h3>Otras ferias cercanas</h3>
+
+<p>Las ferias más cercanas son:</a></p>
+<ul>
+    {% for marketplace in closest_marketplaces %}
+        <li><a href="/ferias/{{ marketplace.marketplace_url }}">{{ marketplace.name }}</a></li>
+    {% endfor %}
+</ul>
+
 <h2>Cosas que tiene</h2>
 
 {% include 'features.html' %}
