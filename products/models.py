@@ -7,43 +7,41 @@ class Product(models.Model):
     """Model definition for Product."""
 
     CATEGORY_CHOICES = [
-        (1, "legumbre"),
-        (2, "tubérculo"),
-        (3, "raíz"),
-        (4, "cereal"),
-        (5, "fruta"),
-        (6, "especie"),
-        (7, "hortaliza"),
-        (8, "no convencional"),
+        ("verdura", "Verdura (hortaliza)"),
+        ("legumbre", "Legumbre (leguminosa)"),
+        ("tubérculo", "Tubérculo (raíz)"),
+        ("grano", "Grano (cereal)"),
+        ("fruta", "Fruta"),
+        ("fruto seco", "Fruto seco (nuez)"),
+        ("condimento", "Condimento (especia)"),
+        ("no convencional", "No convencional"),
     ]
     CENTER_ORIGIN_CHOICES = [
-        (1, "(I) Asia Oriental"),
-        (2, "(II) Subcontinente indio"),
-        (3, "(IIa) Archipiélago indo-malayo"),
-        (4, "(III) Asia Central"),
-        (5, "(IV) Asia Menor y Creciente Fértil"),
-        (6, "(V) Mediterráneo"),
-        (7, "(VI) Abisinia (actual Etiopía)"),
-        (8, "(VII) Mesoamérica"),
-        (9, "(VIII) Región andina tropical"),
-        (10, "(VIIIa) Región chilena"),
-        (11, "(VIIIb) Región brasileña-paraguaya"),
-        (12, "Sin clasificación"),
+        ("I", "Asia Oriental"),
+        ("II", "Subcontinente indio"),
+        ("IIa", "Archipiélago indo-malayo"),
+        ("III", "Asia Central"),
+        ("IV", "Asia Menor y Creciente Fértil"),
+        ("V", "Mediterráneo"),
+        ("VI", "Abisinia (actual Etiopía)"),
+        ("VII", "Mesoamérica"),
+        ("VIII", "Región andina tropical"),
+        ("VIIIa", "Región chilena"),
+        ("VIIIb", "Región brasileña-paraguaya"),
+        ("N/A", "Sin clasificación"),
     ]
     # "From Vavilov to the Present: A Review" C. Earle Smith, Jr., Economic Botany, Vol. 23, No. 1 (Jan. - Mar., 1969), pp. 2-19 (18 pages)
 
     product_url = models.CharField(
         primary_key=True, max_length=63, blank=False, null=False
     )
-    category = models.PositiveIntegerField(
-        choices=CATEGORY_CHOICES, blank=False, null=False
-    )
+    category = models.CharField(choices=CATEGORY_CHOICES, max_length=15)
     common_name = models.CharField(max_length=63, blank=False, null=False)
     common_name_alternate = models.CharField(max_length=127, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
     icon = models.ImageField(upload_to="icons", blank=True, null=True)
-    center_origin = models.IntegerField(
-        choices=CENTER_ORIGIN_CHOICES, blank=True, null=True
+    center_origin = models.CharField(
+        choices=CENTER_ORIGIN_CHOICES, max_length=5, blank=True, null=True
     )
     food_basket = models.BooleanField(default=False)
     nutrition_notes = models.TextField(blank=True, null=True)
