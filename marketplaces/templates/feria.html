@@ -6,17 +6,54 @@
 
 {% load l10n %}
 
-<h1>Feria de {{ marketplace.name }}</h1>
+<style>
+    .btn-waze {
+        background-color: #05c8f7;
+        color: #FFFFFF;
+    }
+</style>
 
+<h1 class="display-3">Feria de {{ marketplace.name }}</h1>
+
+{% if marketplace.description %}
 <div class="card">
     <div class="card-body">
         {{ marketplace.description }}
     </div>
 </div>
+{% endif %}
 
-<h2>Ubicación</h2>
+<h3>Horario</h3>
 
-<div id="map" style="width: 600px; height: 400px;"></div>
+{{ marketplace.opening_hours }}
+
+<h3>Cómo llegar</h3>
+
+<div class="card" style="width: 350px;">
+    <div id="map" style="width: 348px; height: 300px;"></div>
+    <div class="card-body">
+        <h5 class="card-title">Dirección</h5>
+        <h6 class="card-subtitle mb-2 text-body-secondary">
+            {{ marketplace.province }} |
+            {{ marketplace.canton }} |
+            {{ marketplace.district }}
+        </h6>
+        <p class="card-text">{{ marketplace.address }}</p>
+        <a target="_blank" href="https://ul.waze.com/ul?ll={{ marketplace.location.y|unlocalize }}%2C{{ marketplace.location.x|unlocalize }}&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
+            class="btn btn-waze">Waze</a>
+        <a target="_blank" href="https://www.google.com/maps/dir/?api=1&destination={{ marketplace.location.y|unlocalize }},{{ marketplace.location.x|unlocalize }}"
+            class="btn btn-primary">Google Maps</a>
+    </div>
+</div>
+
+<h3>Otras ferias cercanas</h3>
+
+<ul>
+    {% for marketplace in closest_marketplaces %}
+    <li><a href="/ferias/{{ marketplace.marketplace_url }}">{{ marketplace.name }}</a></li>
+    {% endfor %}
+</ul>
+
 
 <h2>Cosas que tiene</h2>
 
@@ -25,17 +62,17 @@
 <!-- Leaflet Map -->
 <script>
 
-    const map = L.map('map').setView([{{ marketplace.latitude|unlocalize }}, {{ marketplace.longitude|unlocalize }}], 15);
+const map = L.map('map').setView([{{ marketplace.location.y|unlocalize }}, {{ marketplace.location.x|unlocalize }}], 15);
 
-    const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    }).addTo(map);
+const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
 
-    const popup = L.popup()
-        .setLatLng([{{ marketplace.latitude|unlocalize }}, {{ marketplace.longitude|unlocalize }}])
-        .setContent("Feria de {{ marketplace.name }}")
-        .openOn(map);
+const popup = L.popup()
+    .setLatLng([{{ marketplace.location.y|unlocalize }}, {{ marketplace.location.x|unlocalize }}])
+    .setContent("Feria de {{ marketplace.name }}")
+    .openOn(map);
 
 </script>
 

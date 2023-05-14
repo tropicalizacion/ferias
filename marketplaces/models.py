@@ -1,4 +1,4 @@
-from django.db import models
+from django.contrib.gis.db import models
 from products.models import Product
 
 # Create your models here.
@@ -46,8 +46,8 @@ class Marketplace(models.Model):
         decimal_places=16,
         help_text="Latitud WGS 84 del centro de la feria.",
     )
-    # TODO: location = models.PointField(blank=True, null=True)
-    # TODO: area = models.PolygonField(blank=True, null=True)
+    location = models.PointField(blank=True, null=True)
+    area = models.PolygonField(blank=True, null=True)
     size = models.CharField(choices=SIZE_CHOICES, max_length=2, blank=True, null=True)
     province = models.CharField(max_length=31)
     canton = models.CharField(max_length=31)
@@ -65,20 +65,20 @@ class Marketplace(models.Model):
     parking = models.CharField(
         choices=PARKING_CHOICES, max_length=31, blank=True, null=True
     )
-    bicycle_parking = models.BooleanField()
-    fairground = models.BooleanField()
-    indoor = models.BooleanField()
-    toilets = models.BooleanField()
-    handwashing = models.BooleanField()
-    drinking_water = models.BooleanField()
+    bicycle_parking = models.BooleanField(blank=True, null=True)
+    fairground = models.BooleanField(blank=True, null=True)
+    indoor = models.BooleanField(blank=True, null=True)
+    toilets = models.BooleanField(blank=True, null=True)
+    handwashing = models.BooleanField(blank=True, null=True)
+    drinking_water = models.BooleanField(blank=True, null=True)
     # Services
-    food = models.BooleanField()
-    drinks = models.BooleanField()
-    handicrafts = models.BooleanField()
-    butcher = models.BooleanField()
-    seafood = models.BooleanField()
-    garden_centre = models.BooleanField()
-    florist = models.BooleanField()
+    food = models.BooleanField(blank=True, null=True)
+    drinks = models.BooleanField(blank=True, null=True)
+    handicrafts = models.BooleanField(blank=True, null=True)
+    butcher = models.BooleanField(blank=True, null=True)
+    seafood = models.BooleanField(blank=True, null=True)
+    garden_centre = models.BooleanField(blank=True, null=True)
+    florist = models.BooleanField(blank=True, null=True)
     # Other
     payment = models.ManyToManyField("Payment", blank=True)
     other_services = models.CharField(max_length=255, blank=True, null=True)
@@ -97,8 +97,8 @@ class Photo(models.Model):
     description = models.CharField(
         max_length=255, blank=True, null=True, help_text="Descripción de la foto (alt)."
     )
-    profile = models.BooleanField(default=False)
-    cover = models.BooleanField(default=False)
+    profile = models.BooleanField(default=False, blank=True, null=True)
+    cover = models.BooleanField(default=False, blank=True, null=True)
 
     def __str__(self):
         return self.url
