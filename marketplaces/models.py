@@ -1,4 +1,4 @@
-from django.db import models
+from django.contrib.gis.db import models
 from products.models import Product
 
 # Create your models here.
@@ -46,8 +46,8 @@ class Marketplace(models.Model):
         decimal_places=16,
         help_text="Latitud WGS 84 del centro de la feria.",
     )
-    # TODO: location = models.PointField(blank=True, null=True)
-    # TODO: area = models.PolygonField(blank=True, null=True)
+    location = models.PointField(blank=True, null=True)
+    area = models.PolygonField(blank=True, null=True)
     size = models.CharField(choices=SIZE_CHOICES, max_length=2, blank=True, null=True)
     province = models.CharField(max_length=31)
     canton = models.CharField(max_length=31)
