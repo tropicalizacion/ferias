@@ -30,8 +30,11 @@ class Product(models.Model):
         (11, "(VIIIb) Región brasileña-paraguaya"),
         (12, "Sin clasificación"),
     ]
+    # "From Vavilov to the Present: A Review" C. Earle Smith, Jr., Economic Botany, Vol. 23, No. 1 (Jan. - Mar., 1969), pp. 2-19 (18 pages)
 
-    product_url = models.CharField(primary_key=True, max_length=63, blank=False, null=False)
+    product_url = models.CharField(
+        primary_key=True, max_length=63, blank=False, null=False
+    )
     category = models.PositiveIntegerField(
         choices=CATEGORY_CHOICES, blank=False, null=False
     )
@@ -42,6 +45,7 @@ class Product(models.Model):
     center_origin = models.IntegerField(
         choices=CENTER_ORIGIN_CHOICES, blank=True, null=True
     )
+    food_basket = models.BooleanField(default=False)
     nutrition_notes = models.TextField(blank=True, null=True)
     preparation = models.ManyToManyField("Preparation", blank=True)
     preparation_notes = models.TextField(blank=True, null=True)
@@ -66,12 +70,14 @@ class Variety(models.Model):
     product_url = models.ForeignKey("Product", on_delete=models.SET_NULL, null=True)
     scientific_name = models.CharField(max_length=63, blank=False, null=False)
     scientific_name_variety = models.CharField(max_length=63, blank=True, null=True)
-    common_name_variety = models.CharField(max_length=63, blank=True, null=True, default="")
+    common_name_variety = models.CharField(
+        max_length=63, blank=True, null=True, default=""
+    )
     common_name_variety_alternate = models.CharField(
         max_length=127, blank=True, null=True
     )
     description = models.TextField(blank=True, null=True)
-    image = models.ImageField(upload_to="images", blank=True, null=True)
+    image = models.ImageField(upload_to="products", blank=True, null=True)
     jan = models.IntegerField(choices=SEASON_CHOICES, blank=True, null=True)
     feb = models.IntegerField(choices=SEASON_CHOICES, blank=True, null=True)
     mar = models.IntegerField(choices=SEASON_CHOICES, blank=True, null=True)
@@ -86,7 +92,7 @@ class Variety(models.Model):
     dec = models.IntegerField(choices=SEASON_CHOICES, blank=True, null=True)
 
     def __str__(self):
-        return f'({self.product_url}) {self.common_name_variety}'
+        return f"({self.product_url}) {self.common_name_variety}"
 
 
 class Preparation(models.Model):
