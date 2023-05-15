@@ -36,16 +36,6 @@ class Marketplace(models.Model):
     name_alternate = models.CharField(max_length=127, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
     opening_hours = models.CharField(max_length=1023, blank=True, null=True)
-    latitude = models.DecimalField(
-        max_digits=19,
-        decimal_places=16,
-        help_text="Latitud WGS 84 del centro de la feria.",
-    )
-    longitude = models.DecimalField(
-        max_digits=19,
-        decimal_places=16,
-        help_text="Latitud WGS 84 del centro de la feria.",
-    )
     location = models.PointField(blank=True, null=True)
     area = models.PolygonField(blank=True, null=True)
     size = models.CharField(choices=SIZE_CHOICES, max_length=2, blank=True, null=True)
@@ -76,6 +66,7 @@ class Marketplace(models.Model):
     drinks = models.BooleanField(blank=True, null=True)
     handicrafts = models.BooleanField(blank=True, null=True)
     butcher = models.BooleanField(blank=True, null=True)
+    dairy = models.BooleanField(blank=True, null=True)
     seafood = models.BooleanField(blank=True, null=True)
     garden_centre = models.BooleanField(blank=True, null=True)
     florist = models.BooleanField(blank=True, null=True)
