@@ -2,6 +2,8 @@
 
 {% load static %}
 
+{% block page_title %} Feria de {{ marketplace.name }} {% endblock %}
+
 {% block main %}
 
 {% load l10n %}
@@ -13,7 +15,12 @@
     }
 </style>
 
-<h1 class="display-3">Feria de {{ marketplace.name }}</h1>
+<br>
+<hr>
+
+<h1 class="display-1" style="font-family: 'Gochi Hand';">Feria de {{ marketplace.name }}</h1>
+
+<lottie-player src="https://assets9.lottiefiles.com/packages/lf20_yCLmiJlU07.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
 
 {% if marketplace.description %}
 <div class="card">
@@ -46,6 +53,7 @@
     </div>
 </div>
 
+<br>
 <h3>Otras ferias cercanas</h3>
 
 <ul>
@@ -54,7 +62,7 @@
     {% endfor %}
 </ul>
 
-
+<br>
 <h2>Cosas que tiene</h2>
 
 {% include 'features.html' %}

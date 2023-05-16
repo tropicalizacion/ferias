@@ -5,11 +5,11 @@
 {% block main %}
 
 <hr>
-<h4><span style="font-weight: 800;">la feria</span> | productos</h4>
+<h4>de<span style="font-weight: 900;">feria</span>.cr | ferias</h4>
 <hr>
 
 <!-- Información general -->
-<h1 class="display-2" style="font-family: 'Permanent Marker';">{{ product.common_name|capfirst }}</h1>
+<h1 class="display-1" style="font-family: 'Gochi Hand';">{{ product.common_name|capfirst }}</h1>
 
 <!-- Descripción -->
 <p class="lead">{{ product.description }}</p>
@@ -26,8 +26,8 @@
 <br>
 
 <!-- Reseña nutricional -->
-<h2>Reseña nutricional</h2>
-<hr>
+<h2 style="font-family: 'Gochi Hand';">Reseña nutricional</h2>
+
 
 <p>{{ product.nutrition_notes }}</p>
 
