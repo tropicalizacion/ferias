@@ -7,14 +7,13 @@ class Product(models.Model):
     """Model definition for Product."""
 
     CATEGORY_CHOICES = [
-        ("verdura", "Verdura (hortaliza)"),
-        ("legumbre", "Legumbre (leguminosa)"),
-        ("tubérculo", "Tubérculo (raíz)"),
-        ("grano", "Grano (cereal)"),
+        ("hortaliza", "Hortaliza (verdura)"),
         ("fruta", "Fruta"),
-        ("fruto seco", "Fruto seco (nuez)"),
+        ("cereal", "Cereal (grano)"),
+        ("legumbre", "Legumbre (leguminosa)"),
+        ("tubérculo", "Tubérculo o raíz"),
         ("condimento", "Condimento (especia)"),
-        ("no convencional", "No convencional"),
+        ("otro", "Otra categoría"),
     ]
     CENTER_ORIGIN_CHOICES = [
         ("I", "Asia Oriental"),
