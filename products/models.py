@@ -1,4 +1,4 @@
-from django.db import models
+from django.contrib.gis.db import models
 
 # Create your models here.
 
@@ -15,21 +15,6 @@ class Product(models.Model):
         ("condimento", "Condimento (especia)"),
         ("otro", "Otra categoría"),
     ]
-    CENTER_ORIGIN_CHOICES = [
-        ("I", "Asia Oriental"),
-        ("II", "Subcontinente indio"),
-        ("IIa", "Archipiélago indo-malayo"),
-        ("III", "Asia Central"),
-        ("IV", "Asia Menor y Creciente Fértil"),
-        ("V", "Mediterráneo"),
-        ("VI", "Abisinia (actual Etiopía)"),
-        ("VII", "Mesoamérica"),
-        ("VIII", "Región andina tropical"),
-        ("VIIIa", "Región chilena"),
-        ("VIIIb", "Región brasileña-paraguaya"),
-        ("N/A", "Sin clasificación"),
-    ]
-    # "From Vavilov to the Present: A Review" C. Earle Smith, Jr., Economic Botany, Vol. 23, No. 1 (Jan. - Mar., 1969), pp. 2-19 (18 pages)
 
     product_url = models.CharField(
         primary_key=True, max_length=63, blank=False, null=False
@@ -39,9 +24,7 @@ class Product(models.Model):
     common_name_alternate = models.CharField(max_length=127, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
     icon = models.ImageField(upload_to="icons", blank=True, null=True)
-    center_origin = models.CharField(
-        choices=CENTER_ORIGIN_CHOICES, max_length=5, blank=True, null=True
-    )
+    center_origin = models.ManyToManyField("Origin", blank=True)
     food_basket = models.BooleanField(default=False)
     nutrition_notes = models.TextField(blank=True, null=True)
     preparation = models.ManyToManyField("Preparation", blank=True)
@@ -67,9 +50,7 @@ class Variety(models.Model):
     product_url = models.ForeignKey("Product", on_delete=models.SET_NULL, null=True)
     scientific_name = models.CharField(max_length=63, blank=False, null=False)
     scientific_name_variety = models.CharField(max_length=63, blank=True, null=True)
-    common_name_variety = models.CharField(
-        max_length=63, blank=True, null=True, default=""
-    )
+    common_name_variety = models.CharField(max_length=63, blank=True, null=True)
     common_name_variety_alternate = models.CharField(
         max_length=127, blank=True, null=True
     )
@@ -90,6 +71,22 @@ class Variety(models.Model):
 
     def __str__(self):
         return f"({self.product_url}) {self.common_name_variety}"
+
+
+class Origin(models.Model):
+    """Model definition for Center of Origin."""
+
+    code = models.CharField(
+        primary_key=True,
+        max_length=6,
+        help_text="Definición según 'From Vavilov to the Present: A Review' C. Earle Smith, Jr., Economic Botany, Vol. 23, No. 1 (Jan. - Mar., 1969), que va desde I hasta VIII.",
+    )
+    name = models.CharField(max_length=63)
+    description = models.TextField(blank=True, null=True)
+    region = models.PolygonField(blank=True, null=True)
+
+    def __str__(self):
+        return f'{self.code} - {self.name}'
 
 
 class Preparation(models.Model):
