@@ -25,6 +25,7 @@ class Product(models.Model):
     description = models.TextField(blank=True, null=True)
     icon = models.ImageField(upload_to="icons", blank=True, null=True)
     center_origin = models.ManyToManyField("Origin", blank=True)
+    center_origin_notes = models.TextField(blank=True, null=True)
     food_basket = models.BooleanField(default=False)
     nutrition_notes = models.TextField(blank=True, null=True)
     preparation = models.ManyToManyField("Preparation", blank=True)
