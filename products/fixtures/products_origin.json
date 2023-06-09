@@ -1,0 +1,101 @@
+[
+    {
+        "model": "products.origin",
+        "pk": "I",
+        "fields": {
+            "name": "Asia Oriental",
+            "description": "",
+            "region": null
+        }
+    },
+    {
+        "model": "products.origin",
+        "pk": "II",
+        "fields": {
+            "name": "Subcontinente indio",
+            "description": "",
+            "region": null
+        }
+    },
+    {
+        "model": "products.origin",
+        "pk": "III",
+        "fields": {
+            "name": "Asia Central",
+            "description": "",
+            "region": null
+        }
+    },
+    {
+        "model": "products.origin",
+        "pk": "IIa",
+        "fields": {
+            "name": "Archipiélago indo-malayo",
+            "description": "",
+            "region": null
+        }
+    },
+    {
+        "model": "products.origin",
+        "pk": "IV",
+        "fields": {
+            "name": "Asia Menor y Creciente Fértil",
+            "description": "",
+            "region": null
+        }
+    },
+    {
+        "model": "products.origin",
+        "pk": "V",
+        "fields": {
+            "name": "Mediterráneo",
+            "description": "",
+            "region": null
+        }
+    },
+    {
+        "model": "products.origin",
+        "pk": "VI",
+        "fields": {
+            "name": "Abisinia (actual Etiopía)",
+            "description": "",
+            "region": null
+        }
+    },
+    {
+        "model": "products.origin",
+        "pk": "VII",
+        "fields": {
+            "name": "Mesoamérica",
+            "description": "",
+            "region": null
+        }
+    },
+    {
+        "model": "products.origin",
+        "pk": "VIII",
+        "fields": {
+            "name": "Región andina tropical",
+            "description": "",
+            "region": null
+        }
+    },
+    {
+        "model": "products.origin",
+        "pk": "VIIIa",
+        "fields": {
+            "name": "Región chilena",
+            "description": "",
+            "region": null
+        }
+    },
+    {
+        "model": "products.origin",
+        "pk": "VIIIb",
+        "fields": {
+            "name": "Región brasileña-paraguaya",
+            "description": "",
+            "region": null
+        }
+    }
+]

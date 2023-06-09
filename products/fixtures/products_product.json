@@ -1,0 +1,2314 @@
+[
+    {
+        "model": "products.product",
+        "pk": "acelga",
+        "fields": {
+            "category": "verdura",
+            "common_name": "acelga",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VI"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "aguacate",
+        "fields": {
+            "category": "fruta",
+            "common_name": "aguacate",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "II"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "ajo",
+        "fields": {
+            "category": "verdura",
+            "common_name": "ajo",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "III"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "albahaca",
+        "fields": {
+            "category": "verdura",
+            "common_name": "albahaca",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "V"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "alfalfa",
+        "fields": {
+            "category": "legumbre",
+            "common_name": "alfalfa",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "IV"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "anona",
+        "fields": {
+            "category": "fruta",
+            "common_name": "anona",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VII",
+                "VIII",
+                "VIIIb"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "apazote",
+        "fields": {
+            "category": "condimento",
+            "common_name": "apazote",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VII"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "apio",
+        "fields": {
+            "category": "verdura",
+            "common_name": "apio",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "V"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "arandano",
+        "fields": {
+            "category": "fruta",
+            "common_name": "arándano",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "V",
+                "III"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "arracache",
+        "fields": {
+            "category": "tubérculo",
+            "common_name": "arracache",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "I"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "arugula",
+        "fields": {
+            "category": "verdura",
+            "common_name": "arúgula",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VI"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "guisante",
+        "fields": {
+            "category": "legumbre",
+            "common_name": "guisante",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "IV"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "ayote",
+        "fields": {
+            "category": "verdura",
+            "common_name": "ayote",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VII",
+                "VIII"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "banano",
+        "fields": {
+            "category": "fruta",
+            "common_name": "banano",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "II",
+                "IV"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "berenjena",
+        "fields": {
+            "category": "fruta",
+            "common_name": "berenjena",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "II"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "berro",
+        "fields": {
+            "category": "verdura",
+            "common_name": "berro",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VI"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "bokchoy",
+        "fields": {
+            "category": "verdura",
+            "common_name": "bok choy",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "III"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "brocoli",
+        "fields": {
+            "category": "verdura",
+            "common_name": "brócoli",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "IV"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "camote",
+        "fields": {
+            "category": "tubérculo",
+            "common_name": "camote",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VII"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "carambola",
+        "fields": {
+            "category": "fruta",
+            "common_name": "carambola",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "V"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "cas",
+        "fields": {
+            "category": "fruta",
+            "common_name": "cas",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VII"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "cebolla",
+        "fields": {
+            "category": "verdura",
+            "common_name": "cebolla",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "III"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "cebollino",
+        "fields": {
+            "category": "verdura",
+            "common_name": "cebollino",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "IV"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "chan",
+        "fields": {
+            "category": "otro",
+            "common_name": "chan",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VII"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "chayote",
+        "fields": {
+            "category": "verdura",
+            "common_name": "chayote",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VII"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "chiledulce",
+        "fields": {
+            "category": "verdura",
+            "common_name": "chile dulce",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VII"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "chilepicante",
+        "fields": {
+            "category": "verdura",
+            "common_name": "chile picante",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VII"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "chilote",
+        "fields": {
+            "category": "verdura",
+            "common_name": "chilote",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VIIIa"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "ciruela",
+        "fields": {
+            "category": "fruta",
+            "common_name": "ciruela",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VII"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "coco",
+        "fields": {
+            "category": "fruta",
+            "common_name": "coco",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VII"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "coldebruselas",
+        "fields": {
+            "category": "verdura",
+            "common_name": "col de Bruselas",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "V"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "coladecaballo",
+        "fields": {
+            "category": "otro",
+            "common_name": "cola de caballo",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "V"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "coliflor",
+        "fields": {
+            "category": "verdura",
+            "common_name": "coliflor",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "IV"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "cubaces",
+        "fields": {
+            "category": "legumbre",
+            "common_name": "cubaces",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VII"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "culantro",
+        "fields": {
+            "category": "verdura",
+            "common_name": "culantro",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "V"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "culantrocoyote",
+        "fields": {
+            "category": "verdura",
+            "common_name": "culantro coyote",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VIII"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "curcuma",
+        "fields": {
+            "category": "tubérculo",
+            "common_name": "cúrcuma",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "IIa"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "eneldo",
+        "fields": {
+            "category": "verdura",
+            "common_name": "eneldo",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "V"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "esparrago",
+        "fields": {
+            "category": "verdura",
+            "common_name": "espárrago",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "V"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "espinaca",
+        "fields": {
+            "category": "verdura",
+            "common_name": "espinaca",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "III"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "estragon",
+        "fields": {
+            "category": "otro",
+            "common_name": "estragón",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "V"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "fresa",
+        "fields": {
+            "category": "fruta",
+            "common_name": "fresa",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "V"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "frijol",
+        "fields": {
+            "category": "legumbre",
+            "common_name": "frijol",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VII"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "garbanzo",
+        "fields": {
+            "category": "legumbre",
+            "common_name": "garbanzo",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "III",
+                "II"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "granadilla",
+        "fields": {
+            "category": "fruta",
+            "common_name": "granadilla",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VIII"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "guanabana",
+        "fields": {
+            "category": "fruta",
+            "common_name": "guanábana",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VII",
+                "VIII",
+                "VIIIb"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "guayaba",
+        "fields": {
+            "category": "fruta",
+            "common_name": "guayaba",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VII"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "hierbabuena",
+        "fields": {
+            "category": "condimento",
+            "common_name": "hierbabuena",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "V",
+                "IV",
+                "VI"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "hinojo",
+        "fields": {
+            "category": "verdura",
+            "common_name": "hinojo",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "V"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "hongo",
+        "fields": {
+            "category": "otro",
+            "common_name": "hongo",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "V"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "jengibre",
+        "fields": {
+            "category": "tubérculo",
+            "common_name": "jengibre",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "II"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "jocote",
+        "fields": {
+            "category": "fruta",
+            "common_name": "jocote",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VII"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "kale",
+        "fields": {
+            "category": "verdura",
+            "common_name": "kale",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "V"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "kiwi",
+        "fields": {
+            "category": "fruta",
+            "common_name": "kiwi",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "II",
+                "I"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "lechuga",
+        "fields": {
+            "category": "verdura",
+            "common_name": "lechuga",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "V"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "lenteja",
+        "fields": {
+            "category": "legumbre",
+            "common_name": "lenteja",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "IV",
+                "III"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "limon",
+        "fields": {
+            "category": "fruta",
+            "common_name": "limón",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "II"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "linaza",
+        "fields": {
+            "category": "otro",
+            "common_name": "linaza",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "V"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "maiz",
+        "fields": {
+            "category": "fruta",
+            "common_name": "maíz",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VII"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "malanga",
+        "fields": {
+            "category": "tubérculo",
+            "common_name": "malanga",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "II"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "mandarina",
+        "fields": {
+            "category": "fruta",
+            "common_name": "mandarina",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "I"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "mango",
+        "fields": {
+            "category": "fruta",
+            "common_name": "mango",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "II"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "manzana",
+        "fields": {
+            "category": "fruta",
+            "common_name": "manzana",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "III"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "manzanadeagua",
+        "fields": {
+            "category": "fruta",
+            "common_name": "manzana de agua",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "IV",
+                "III"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "manzanilla",
+        "fields": {
+            "category": "otro",
+            "common_name": "manzanilla",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "IV",
+                "II"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "maracuya",
+        "fields": {
+            "category": "fruta",
+            "common_name": "maracuyá",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VIIIb"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "melocoton",
+        "fields": {
+            "category": "fruta",
+            "common_name": "melocotón",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "I"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "melon",
+        "fields": {
+            "category": "fruta",
+            "common_name": "melón",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VI",
+                "III"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "menta",
+        "fields": {
+            "category": "otro",
+            "common_name": "menta",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "V"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "mora",
+        "fields": {
+            "category": "fruta",
+            "common_name": "mora",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "V",
+                "III"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "mostazachina",
+        "fields": {
+            "category": "verdura",
+            "common_name": "mostaza china",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "IV",
+                "III"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "mozote",
+        "fields": {
+            "category": "otro",
+            "common_name": "mozote",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VII",
+                "II"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "name",
+        "fields": {
+            "category": "tubérculo",
+            "common_name": "ñame",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "II"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "nampi",
+        "fields": {
+            "category": "tubérculo",
+            "common_name": "ñampí",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VII",
+                "VIIIb"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "naranja",
+        "fields": {
+            "category": "fruta",
+            "common_name": "naranja",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "I"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "oregano",
+        "fields": {
+            "category": "condimento",
+            "common_name": "orégano",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "V"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "palmito",
+        "fields": {
+            "category": "verdura",
+            "common_name": "palmito",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VIII"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "papa",
+        "fields": {
+            "category": "verdura",
+            "common_name": "papa",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VIII"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "papaya",
+        "fields": {
+            "category": "fruta",
+            "common_name": "papaya",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VII"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "pejibaye",
+        "fields": {
+            "category": "fruta",
+            "common_name": "pejibaye",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VIII"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "pepino",
+        "fields": {
+            "category": "verdura",
+            "common_name": "pepino",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VIII"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "pera",
+        "fields": {
+            "category": "fruta",
+            "common_name": "pera",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "IV",
+                "III"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "perejil",
+        "fields": {
+            "category": "condimento",
+            "common_name": "perejil",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "V"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "pina",
+        "fields": {
+            "category": "fruta",
+            "common_name": "piña",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VIIIb"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "pitahaya",
+        "fields": {
+            "category": "fruta",
+            "common_name": "pitahaya",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VII"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "platano",
+        "fields": {
+            "category": "fruta",
+            "common_name": "plátano",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "IIa"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "puerro",
+        "fields": {
+            "category": "verdura",
+            "common_name": "puerro",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "IV"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "rabano",
+        "fields": {
+            "category": "verdura",
+            "common_name": "rábano",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "I"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "remolacha",
+        "fields": {
+            "category": "verdura",
+            "common_name": "remolacha",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "V"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "repollo",
+        "fields": {
+            "category": "verdura",
+            "common_name": "repollo",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "V"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "romero",
+        "fields": {
+            "category": "otro",
+            "common_name": "romero",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "V"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "ruda",
+        "fields": {
+            "category": "otro",
+            "common_name": "ruda",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "V"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "sabila",
+        "fields": {
+            "category": "otro",
+            "common_name": "sábila",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VI"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "salvia",
+        "fields": {
+            "category": "otro",
+            "common_name": "salvia",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "V"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "sandia",
+        "fields": {
+            "category": "fruta",
+            "common_name": "sandía",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VI"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "tacaco",
+        "fields": {
+            "category": "verdura",
+            "common_name": "tacaco",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VII"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "tamarindo",
+        "fields": {
+            "category": "fruta",
+            "common_name": "tamarindo",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "II"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "tiquisque",
+        "fields": {
+            "category": "tubérculo",
+            "common_name": "tiquisque",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VII",
+                "VIIIb"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "tomate",
+        "fields": {
+            "category": "verdura",
+            "common_name": "tomate",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VII"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "tomillo",
+        "fields": {
+            "category": "otro",
+            "common_name": "tomillo",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "V"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "toronja",
+        "fields": {
+            "category": "fruta",
+            "common_name": "toronja",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VII",
+                "VIII"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "uchuva",
+        "fields": {
+            "category": "fruta",
+            "common_name": "uchuva",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VIII"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "uva",
+        "fields": {
+            "category": "fruta",
+            "common_name": "uva",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "V"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "vainica",
+        "fields": {
+            "category": "legumbre",
+            "common_name": "vainica",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VII"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "yuca",
+        "fields": {
+            "category": "tubérculo",
+            "common_name": "yuca",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VIIIb"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "zacatelimon",
+        "fields": {
+            "category": "otro",
+            "common_name": "zacate limón",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "II"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "zanahoria",
+        "fields": {
+            "category": "verdura",
+            "common_name": "zanahoria",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "III"
+            ],
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "zapallo",
+        "fields": {
+            "category": "verdura",
+            "common_name": "zapallo",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VIII",
+                "VIIIb"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "zucchini",
+        "fields": {
+            "category": "verdura",
+            "common_name": "zucchini",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": null,
+            "center_origin": [
+                "VII"
+            ],
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation": [],
+            "preparation_notes": null,
+            "storage": [],
+            "storage_notes": null
+        }
+    }
+]
