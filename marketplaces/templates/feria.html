@@ -11,7 +11,16 @@
 <br>
 <hr>
 
-<h1>Feria de {{ marketplace.name }}</h1>
+<p>
+<div class="card" style="width: 200px;">
+    <img src="https://placehold.co/600x300/png" alt="Foto de portada" style="width: 200px;">
+    <div class="card-body">
+        <p class="card-text">Fotos: perfil / portada</p>
+    </div>
+</div>    
+</p>
+
+<h1 class="display-2">Feria de {{ marketplace.name }}</h1>
 
 <h3>Nombre alternativo</h3>
 
@@ -27,10 +36,16 @@
 
 <p>{{ marketplace.opening_hours }}</p>
 
+<h3>Fotos</h3>
+
+<p>
+    {% include 'photos.html' %}
+</p>
+
 <h3>Ubicación</h3>
 
 <p>
-    <div id="map" style="width: 348px; height: 300px;"></div>
+<div id="map" style="width: 300px; height: 300px;"></div>
 </p>
 
 <h3>Dirección</h3>
@@ -42,13 +57,15 @@
 </p>
 
 <p>
-{{ marketplace.address }}
+    {{ marketplace.address }}
 </p>
 
 <p>
-    <a target="_blank" href="https://ul.waze.com/ul?ll={{ marketplace.location.y|unlocalize }}%2C{{ marketplace.location.x|unlocalize }}&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
+    <a target="_blank"
+        href="https://ul.waze.com/ul?ll={{ marketplace.location.y|unlocalize }}%2C{{ marketplace.location.x|unlocalize }}&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
         class="btn btn-primary">Waze</a>
-    <a target="_blank" href="https://www.google.com/maps/dir/?api=1&destination={{ marketplace.location.y|unlocalize }},{{ marketplace.location.x|unlocalize }}"
+    <a target="_blank"
+        href="https://www.google.com/maps/dir/?api=1&destination={{ marketplace.location.y|unlocalize }},{{ marketplace.location.x|unlocalize }}"
         class="btn btn-primary">Google Maps</a>
 </p>
 
@@ -74,7 +91,8 @@
 
 <h3>Productos</h3>
 
-<p>Lista de productos disponibles en esta feria (todavía no hay datos al respecto, quizá es mejor no ponerlo todavía).</p>
+<p>Lista de productos disponibles en esta feria (todavía no hay datos al respecto, quizá es mejor no ponerlo todavía).
+</p>
 
 <h3>Contacto</h3>
 
@@ -101,17 +119,17 @@
 <!-- Leaflet Map -->
 <script>
 
-const map = L.map('map').setView([{{ marketplace.location.y|unlocalize }}, {{ marketplace.location.x|unlocalize }}], 15);
+    const map = L.map('map').setView([{{ marketplace.location.y|unlocalize }}, {{ marketplace.location.x|unlocalize }}], 15);
 
-const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
+    const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
 
-const popup = L.popup()
-    .setLatLng([{{ marketplace.location.y|unlocalize }}, {{ marketplace.location.x|unlocalize }}])
+    const popup = L.popup()
+        .setLatLng([{{ marketplace.location.y|unlocalize }}, {{ marketplace.location.x|unlocalize }}])
     .setContent("Feria de {{ marketplace.name }}")
-    .openOn(map);
+        .openOn(map);
 
 </script>
 
