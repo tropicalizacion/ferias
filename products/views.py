@@ -6,7 +6,9 @@ from .models import Product, Variety
 
 def products(request):
     """View function for all products page of site."""
-    return render(request, "products.html")
+    products = Product.objects.all().order_by("common_name")
+    context = {"products": products}
+    return render(request, "products.html", context)
 
 
 def product(request, product_url):

@@ -6,22 +6,14 @@
 
 <h1>Ferias</h1>
 
-<p>En un lugar de La Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un caballeros de los adarga antigua, rocín flaco, lanza en astillero y galgo corredor.</p>
+<h2>Lista de ferias</h2>
+
+<ul>
+{% for marketplace in marketplaces %}
+    <li>{{ marketplace.name }}</li>
+{% endfor %}
+</ul>
 
 <h2>Mapa con todas las ferias</h2>
-
-<div id="map" style="width: 350px; height: 350px;"></div>
-
-<!-- Leaflet Map -->
-<script>
-
-    const map = L.map('map').setView([9.62155, -84.07185], 7);
-    
-    const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    }).addTo(map);
-
-</script>
 
 {% endblock %}
