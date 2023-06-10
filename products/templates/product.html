@@ -2,22 +2,36 @@
 
 {% load static %}
 
+{% block page_title %} {{ product.common_name|capfirst }} {% endblock %}
+
 {% block main %}
 
+<br>
 <hr>
-<h4>de<span style="font-weight: 900;">feria</span>.cr | ferias</h4>
-<hr>
+
+<p>
+    <div class="card" style="width: 200px;">
+        <img src="https://placehold.co/600x300/png" alt="Foto de portada" style="width: 200px;">
+        <div class="card-body">
+            <p class="card-text">Ícono</p>
+        </div>
+    </div>    
+</p>
 
 <!-- Información general -->
-<h1 class="display-1" style="font-family: 'Gochi Hand';">{{ product.common_name|capfirst }}</h1>
+<h1 class="display-2">{{ product.common_name|capfirst }}</h1>
 
-<!-- Descripción -->
-<p class="lead">{{ product.description }}</p>
+<p>Nombre alternativo: {{ product.common_name_alternate }}</p>
 
 <!-- Categoría -->
+<h3>Categoría</h3>
 <p>
     <span class="badge text-bg-success">{{ product.get_category_display }}</span>
 </p>
+
+<!-- Descripción -->
+<h3>Descripción</h3>
+<p class="lead">{{ product.description }}</p>
 
 <!-- Variedades -->
 {% include 'variety.html' %}
@@ -25,37 +39,40 @@
 <br>
 <br>
 
+<!-- Canasta básica recomendada -->
+<h3>Canasta básica recomendada</h3>
+
+<p>
+    {% if marketplace.food_basket == True %}
+        <span class="badge text-bg-success">Sí</span>
+    {% else %}
+        <span class="badge text-bg-danger">No</span>
+    {% endif %}
+
+</p>
+
 <!-- Reseña nutricional -->
-<h2 style="font-family: 'Gochi Hand';">Reseña nutricional</h2>
-
-
+<h3>Reseña nutricional</h3>
 <p>{{ product.nutrition_notes }}</p>
 
-<!-- Métodos de almacenamiento -->
-<h2>Almacenamiento</h2>
-<hr>
-
-{% include 'storage.html' %}
-
 <!-- Métodos de preparación -->
-
-<h2>Preparación</h2>
-<hr>
-
+<h3>Preparación</h3>
 {% include 'preparation.html' %}
 
+<!-- Métodos de almacenamiento -->
+<h3>Almacenamiento</h3>
+{% include 'storage.html' %}
+
 <!-- Centros de origen -->
-
-<h2>Origen</h2>
-<hr>
-
+<h3>Centro de origen</h3>
 {% include 'center_origin.html' %}
 
 <!-- Estacionalidad -->
 
-<h2>Estacionalidad</h2>
-<hr>
-
+<h3>Estacionalidad</h3>
 {% include 'seasonality.html' %}
+
+<br>
+<br>
 
 {% endblock %}

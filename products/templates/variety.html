@@ -7,7 +7,8 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ product.common_name|capfirst }} {{ variety.common_name_variety }}</h5>
                     <p><small class="text-body-secondary"><em>{{ variety.scientific_name }} {% if variety.scientific_name_variety %}var. {{ variety.scientific_name_variety }}{% endif %}</em></small></p>
-                    <p class="card-text">{{ variety.description }}</p>
+                    <p>Otros nombres: {{ variety.common_name_variety_alternate }}</p>
+                    <p class="card-text">Descripción: {{ variety.description }}</p>
                 </div>
             </div>
         </div>
