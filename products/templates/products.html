@@ -6,6 +6,12 @@
 
 <h1>Productos</h1>
 
-<p>En un lugar de La Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un caballeros de los adarga antigua, rocín flaco, lanza en astillero y galgo corredor.</p>
+<h2>Lista de productos</h2>
+
+<ul>
+{% for product in products %}
+    <li>{{ product.common_name }}</li>
+{% endfor %}
+</ul>
 
 {% endblock %}
