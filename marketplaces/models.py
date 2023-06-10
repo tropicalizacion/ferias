@@ -25,9 +25,9 @@ class Marketplace(models.Model):
         ("Pacífico Central", "Comité Regional Pacífico Central"),
     ]
     PARKING_CHOICES = [
-        ("lane", "En la calle"),
-        ("street_side", "Al lado de la calle en espacio dedicado"),
-        ("surface", "En un espacio amplio de parqueo"),
+        ("lane", "en la calle"),
+        ("street_side", "al lado de la calle en espacio dedicado"),
+        ("surface", "un un espacio amplio de parqueo"),
     ]
 
     marketplace_url = models.CharField(max_length=50, primary_key=True)
@@ -36,17 +36,17 @@ class Marketplace(models.Model):
     name_alternate = models.CharField(max_length=127, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
     opening_hours = models.CharField(max_length=1023, blank=True, null=True)
+    opening_date = models.DateField(blank=True, null=True)
     location = models.PointField(blank=True, null=True)
     area = models.PolygonField(blank=True, null=True)
-    size = models.CharField(choices=SIZE_CHOICES, max_length=2, blank=True, null=True)
     province = models.CharField(max_length=31)
     canton = models.CharField(max_length=31)
     district = models.CharField(max_length=31)
     address = models.TextField(blank=True, null=True)
+    size = models.CharField(choices=SIZE_CHOICES, max_length=2, blank=True, null=True)
     phone = models.IntegerField(blank=True, null=True)
     email = models.EmailField(max_length=127, blank=True, null=True)
     website = models.URLField(max_length=127, blank=True, null=True)
-    opening_date = models.DateField(blank=True, null=True)
     operator = models.CharField(max_length=255, blank=True, null=True)
     branch = models.CharField(
         choices=BRANCH_CHOICES, max_length=63, blank=True, null=True

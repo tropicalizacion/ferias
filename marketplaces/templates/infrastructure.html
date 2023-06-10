@@ -1,0 +1,20 @@
+<ul>
+    {% for description, value in infrastructure.items %}
+    <li>
+        {% if value == True %}
+        Sí tiene {{ description }}
+        {% elif value == False %}
+        No tiene {{ description }}
+        {% else %}
+        No sabemos si tiene {{ description }}
+        {% endif %}
+    </li>
+    {% endfor %}
+    <li>
+        {% if marketplace.parking %}
+        El estacionamiento es {{ marketplace.get_parking_display }}
+        {% else %}
+        No sabemos qué tipo de estacionamiento tiene
+        {% endif %}
+    </li>
+</ul>

@@ -23,9 +23,29 @@ def feria(request, marketplace_url):
         .exclude(pk=marketplace_url)
         .order_by("distance")[0:3]
     )
+    infrastructure = {
+        "campo ferial": marketplace.fairground,
+        "espacio bajo techo": marketplace.indoor,
+        "servicios sanitarios": marketplace.toilets,
+        "lavamanos": marketplace.handwashing,
+        "agua potable": marketplace.drinking_water,
+        "estacionamiento de bicicletas": marketplace.bicycle_parking,
+    }
+    services = {
+        "comidas": marketplace.food,
+        "bebidas": marketplace.drinks,
+        "artesanías": marketplace.handicrafts,
+        "carnicería": marketplace.butcher,
+        "productos lácteos": marketplace.dairy,
+        "pescadería": marketplace.seafood,
+        "plantas ornamentales": marketplace.garden_centre,
+        "floristería": marketplace.florist,
+    }
     context = {
         "marketplace": marketplace,
         "closest_marketplaces": closest_marketplaces,
+        "infrastructure": infrastructure,
+        "services": services,
     }
 
     return render(request, "feria.html", context)
