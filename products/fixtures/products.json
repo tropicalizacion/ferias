@@ -3,129 +3,2326 @@
         "model": "products.product",
         "pk": "acelga",
         "fields": {
-            "category": 7,
+            "category": "verdura",
             "common_name": "acelga",
             "common_name_alternate": null,
-            "description": "Es la planta de los picadillos (en realidad, no sé).",
+            "description": null,
             "icon": "",
-            "center_origin": 4,
-            "nutrition_notes": "La acelga es buena para la vista y para las defensas.",
-            "preparation_notes": "Es mejor si está \"al dente\".",
-            "storage_notes": "No dura mucho más de cuatro días.",
-            "preparation": [
-                "cocido",
-                "crudo"
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VI"
             ],
-            "storage": [
-                "refrigeracion",
-                "temperatura-ambiente"
-            ]
+            "preparation": [],
+            "storage": []
         }
     },
     {
         "model": "products.product",
         "pk": "aguacate",
         "fields": {
-            "category": 7,
+            "category": "fruta",
             "common_name": "aguacate",
-            "common_name_alternate": "palta",
-            "description": "¿Fruta o verdura? No importa, porque es delicioso.",
+            "common_name_alternate": null,
+            "description": null,
             "icon": "",
-            "center_origin": 8,
-            "nutrition_notes": "De las grasas buenas, no de las malas.",
-            "preparation_notes": "Mejor crudo pero también en batido, claro que sí.",
-            "storage_notes": "Es famoso porque pasa de verde a malo en un cerrar de ojos. En refrigeración dura más.",
-            "preparation": [
-                "crudo"
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "II"
             ],
-            "storage": [
-                "temperatura-ambiente"
-            ]
+            "preparation": [],
+            "storage": []
         }
     },
     {
         "model": "products.product",
         "pk": "ajo",
         "fields": {
-            "category": 7,
+            "category": "verdura",
             "common_name": "ajo",
             "common_name_alternate": null,
-            "description": "Uno de los ingredientes de la triada de \"olores\" de nuestra cocina, junto con la cebolla y el chile dulce.",
+            "description": null,
             "icon": "",
-            "center_origin": 4,
-            "nutrition_notes": "Bueno para la salud, malo para los vampiros.",
-            "preparation_notes": "Sofrito da los mejores olores. Utilizar como saborizante.",
-            "storage_notes": "Puede ser almacenado por largos períodos.",
-            "preparation": [
-                "cocido"
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "III"
             ],
-            "storage": [
-                "refrigeracion",
-                "temperatura-ambiente"
-            ]
+            "preparation": [],
+            "storage": []
         }
     },
     {
-        "model": "products.variety",
-        "pk": 1,
+        "model": "products.product",
+        "pk": "albahaca",
         "fields": {
-            "product_url": "aguacate",
-            "scientific_name": "Persea americana",
-            "scientific_name_variety": "Hass",
-            "common_name_variety": "Hass",
-            "common_name_variety_alternate": null,
-            "description": "El del guacamole, aunque cualquier sirve para guacamole, ciertamente.",
-            "image": "images/aguacate_hass.jpeg",
-            "jan": 3,
-            "feb": 3,
-            "mar": 2,
-            "apr": 1,
-            "may": 1,
-            "jun": 1,
-            "jul": 1,
-            "aug": 2,
-            "sep": 2,
-            "oct": 3,
-            "nov": 3,
-            "dec": 3
+            "category": "verdura",
+            "common_name": "albahaca",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "V"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "alfalfa",
+        "fields": {
+            "category": "legumbre",
+            "common_name": "alfalfa",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "IV"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "anona",
+        "fields": {
+            "category": "fruta",
+            "common_name": "anona",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VII",
+                "VIIIb",
+                "VIII"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "apazote",
+        "fields": {
+            "category": "condimento",
+            "common_name": "apazote",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VII"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "apio",
+        "fields": {
+            "category": "verdura",
+            "common_name": "apio",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "V"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "arandano",
+        "fields": {
+            "category": "fruta",
+            "common_name": "arándano",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "III",
+                "V"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "arracache",
+        "fields": {
+            "category": "tubérculo",
+            "common_name": "arracache",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "I"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "arugula",
+        "fields": {
+            "category": "verdura",
+            "common_name": "arúgula",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VI"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "ayote",
+        "fields": {
+            "category": "verdura",
+            "common_name": "ayote",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VII",
+                "VIII"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "banano",
+        "fields": {
+            "category": "fruta",
+            "common_name": "banano",
+            "common_name_alternate": null,
+            "description": "",
+            "icon": "",
+            "center_origin_notes": "",
+            "food_basket": true,
+            "nutrition_notes": "",
+            "preparation_notes": "",
+            "storage_notes": "",
+            "center_origin": [
+                "IIa"
+            ],
+            "preparation": [
+                "frito"
+            ],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "berenjena",
+        "fields": {
+            "category": "fruta",
+            "common_name": "berenjena",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "II"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "berro",
+        "fields": {
+            "category": "verdura",
+            "common_name": "berro",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VI"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "bokchoy",
+        "fields": {
+            "category": "verdura",
+            "common_name": "bok choy",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "III"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "brocoli",
+        "fields": {
+            "category": "verdura",
+            "common_name": "brócoli",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "IV"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "camote",
+        "fields": {
+            "category": "tubérculo",
+            "common_name": "camote",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VII"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "carambola",
+        "fields": {
+            "category": "fruta",
+            "common_name": "carambola",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "V"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "cas",
+        "fields": {
+            "category": "fruta",
+            "common_name": "cas",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VII"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "cebolla",
+        "fields": {
+            "category": "verdura",
+            "common_name": "cebolla",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "III"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "cebollino",
+        "fields": {
+            "category": "verdura",
+            "common_name": "cebollino",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "IV"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "chan",
+        "fields": {
+            "category": "otro",
+            "common_name": "chan",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VII"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "chayote",
+        "fields": {
+            "category": "verdura",
+            "common_name": "chayote",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VII"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "chiledulce",
+        "fields": {
+            "category": "verdura",
+            "common_name": "chile dulce",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VII"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "chilepicante",
+        "fields": {
+            "category": "verdura",
+            "common_name": "chile picante",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VII"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "chilote",
+        "fields": {
+            "category": "verdura",
+            "common_name": "chilote",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VIIIa"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "ciruela",
+        "fields": {
+            "category": "fruta",
+            "common_name": "ciruela",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VII"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "coco",
+        "fields": {
+            "category": "fruta",
+            "common_name": "coco",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VII"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "coladecaballo",
+        "fields": {
+            "category": "otro",
+            "common_name": "cola de caballo",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "V"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "coldebruselas",
+        "fields": {
+            "category": "verdura",
+            "common_name": "col de Bruselas",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "V"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "coliflor",
+        "fields": {
+            "category": "verdura",
+            "common_name": "coliflor",
+            "common_name_alternate": null,
+            "description": "Es buena envuelta en huevo.",
+            "icon": "",
+            "center_origin_notes": "",
+            "food_basket": false,
+            "nutrition_notes": "",
+            "preparation_notes": "",
+            "storage_notes": "",
+            "center_origin": [
+                "IV"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "cubaces",
+        "fields": {
+            "category": "legumbre",
+            "common_name": "cubaces",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VII"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "culantro",
+        "fields": {
+            "category": "verdura",
+            "common_name": "culantro",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "V"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "culantrocoyote",
+        "fields": {
+            "category": "verdura",
+            "common_name": "culantro coyote",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VIII"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "curcuma",
+        "fields": {
+            "category": "tubérculo",
+            "common_name": "cúrcuma",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "IIa"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "eneldo",
+        "fields": {
+            "category": "verdura",
+            "common_name": "eneldo",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "V"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "esparrago",
+        "fields": {
+            "category": "verdura",
+            "common_name": "espárrago",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "V"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "espinaca",
+        "fields": {
+            "category": "verdura",
+            "common_name": "espinaca",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "III"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "estragon",
+        "fields": {
+            "category": "otro",
+            "common_name": "estragón",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "V"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "fresa",
+        "fields": {
+            "category": "fruta",
+            "common_name": "fresa",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "V"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "frijol",
+        "fields": {
+            "category": "legumbre",
+            "common_name": "frijol",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VII"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "garbanzo",
+        "fields": {
+            "category": "legumbre",
+            "common_name": "garbanzo",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "III",
+                "II"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "granadilla",
+        "fields": {
+            "category": "fruta",
+            "common_name": "granadilla",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VIII"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "guanabana",
+        "fields": {
+            "category": "fruta",
+            "common_name": "guanábana",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VII",
+                "VIIIb",
+                "VIII"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "guayaba",
+        "fields": {
+            "category": "fruta",
+            "common_name": "guayaba",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VII"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "guisante",
+        "fields": {
+            "category": "legumbre",
+            "common_name": "guisante",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "IV"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "hierbabuena",
+        "fields": {
+            "category": "condimento",
+            "common_name": "hierbabuena",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VI",
+                "IV",
+                "V"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "hinojo",
+        "fields": {
+            "category": "verdura",
+            "common_name": "hinojo",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "V"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "hongo",
+        "fields": {
+            "category": "otro",
+            "common_name": "hongo",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "V"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "jengibre",
+        "fields": {
+            "category": "tubérculo",
+            "common_name": "jengibre",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "II"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "jocote",
+        "fields": {
+            "category": "fruta",
+            "common_name": "jocote",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VII"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "kale",
+        "fields": {
+            "category": "verdura",
+            "common_name": "kale",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "V"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "kiwi",
+        "fields": {
+            "category": "fruta",
+            "common_name": "kiwi",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "I",
+                "II"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "lechuga",
+        "fields": {
+            "category": "verdura",
+            "common_name": "lechuga",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "V"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "lenteja",
+        "fields": {
+            "category": "legumbre",
+            "common_name": "lenteja",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "III",
+                "IV"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "limon",
+        "fields": {
+            "category": "fruta",
+            "common_name": "limón",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "II"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "linaza",
+        "fields": {
+            "category": "otro",
+            "common_name": "linaza",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "V"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "maiz",
+        "fields": {
+            "category": "fruta",
+            "common_name": "maíz",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VII"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "malanga",
+        "fields": {
+            "category": "tubérculo",
+            "common_name": "malanga",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "II"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "mandarina",
+        "fields": {
+            "category": "fruta",
+            "common_name": "mandarina",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "I"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "mango",
+        "fields": {
+            "category": "fruta",
+            "common_name": "mango",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "II"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "manzana",
+        "fields": {
+            "category": "fruta",
+            "common_name": "manzana",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "III"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "manzanadeagua",
+        "fields": {
+            "category": "fruta",
+            "common_name": "manzana de agua",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "III",
+                "IV"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "manzanilla",
+        "fields": {
+            "category": "otro",
+            "common_name": "manzanilla",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "II",
+                "IV"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "maracuya",
+        "fields": {
+            "category": "fruta",
+            "common_name": "maracuyá",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VIIIb"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "melocoton",
+        "fields": {
+            "category": "fruta",
+            "common_name": "melocotón",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "I"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "melon",
+        "fields": {
+            "category": "fruta",
+            "common_name": "melón",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "III",
+                "VI"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "menta",
+        "fields": {
+            "category": "otro",
+            "common_name": "menta",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "V"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "mora",
+        "fields": {
+            "category": "fruta",
+            "common_name": "mora",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "III",
+                "V"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "mostazachina",
+        "fields": {
+            "category": "verdura",
+            "common_name": "mostaza china",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "III",
+                "IV"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "mozote",
+        "fields": {
+            "category": "otro",
+            "common_name": "mozote",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "II",
+                "VII"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "name",
+        "fields": {
+            "category": "tubérculo",
+            "common_name": "ñame",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "II"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "nampi",
+        "fields": {
+            "category": "tubérculo",
+            "common_name": "ñampí",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VII",
+                "VIIIb"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "naranja",
+        "fields": {
+            "category": "fruta",
+            "common_name": "naranja",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "I"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "oregano",
+        "fields": {
+            "category": "condimento",
+            "common_name": "orégano",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "V"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "palmito",
+        "fields": {
+            "category": "verdura",
+            "common_name": "palmito",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VIII"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "papa",
+        "fields": {
+            "category": "verdura",
+            "common_name": "papa",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VIII"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "papaya",
+        "fields": {
+            "category": "fruta",
+            "common_name": "papaya",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VII"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "pejibaye",
+        "fields": {
+            "category": "fruta",
+            "common_name": "pejibaye",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VIII"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "pepino",
+        "fields": {
+            "category": "verdura",
+            "common_name": "pepino",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VIII"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "pera",
+        "fields": {
+            "category": "fruta",
+            "common_name": "pera",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "III",
+                "IV"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "perejil",
+        "fields": {
+            "category": "condimento",
+            "common_name": "perejil",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "V"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "pina",
+        "fields": {
+            "category": "fruta",
+            "common_name": "piña",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VIIIb"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "pitahaya",
+        "fields": {
+            "category": "fruta",
+            "common_name": "pitahaya",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VII"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "platano",
+        "fields": {
+            "category": "fruta",
+            "common_name": "plátano",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "IIa"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "puerro",
+        "fields": {
+            "category": "verdura",
+            "common_name": "puerro",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "IV"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "rabano",
+        "fields": {
+            "category": "verdura",
+            "common_name": "rábano",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "I"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "remolacha",
+        "fields": {
+            "category": "verdura",
+            "common_name": "remolacha",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "V"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "repollo",
+        "fields": {
+            "category": "verdura",
+            "common_name": "repollo",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "V"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "romero",
+        "fields": {
+            "category": "otro",
+            "common_name": "romero",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "V"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "ruda",
+        "fields": {
+            "category": "otro",
+            "common_name": "ruda",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "V"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "sabila",
+        "fields": {
+            "category": "otro",
+            "common_name": "sábila",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VI"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "salvia",
+        "fields": {
+            "category": "otro",
+            "common_name": "salvia",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "V"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "sandia",
+        "fields": {
+            "category": "fruta",
+            "common_name": "sandía",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VI"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "tacaco",
+        "fields": {
+            "category": "verdura",
+            "common_name": "tacaco",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VII"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "tamarindo",
+        "fields": {
+            "category": "fruta",
+            "common_name": "tamarindo",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "II"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "tiquisque",
+        "fields": {
+            "category": "tubérculo",
+            "common_name": "tiquisque",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VII",
+                "VIIIb"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "tomate",
+        "fields": {
+            "category": "verdura",
+            "common_name": "tomate",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VII"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "tomillo",
+        "fields": {
+            "category": "otro",
+            "common_name": "tomillo",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "V"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "toronja",
+        "fields": {
+            "category": "fruta",
+            "common_name": "toronja",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VII",
+                "VIII"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "uchuva",
+        "fields": {
+            "category": "fruta",
+            "common_name": "uchuva",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VIII"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "uva",
+        "fields": {
+            "category": "fruta",
+            "common_name": "uva",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "V"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "vainica",
+        "fields": {
+            "category": "legumbre",
+            "common_name": "vainica",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VII"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "yuca",
+        "fields": {
+            "category": "tubérculo",
+            "common_name": "yuca",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VIIIb"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "zacatelimon",
+        "fields": {
+            "category": "otro",
+            "common_name": "zacate limón",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "II"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "zanahoria",
+        "fields": {
+            "category": "verdura",
+            "common_name": "zanahoria",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": true,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "III"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "zapallo",
+        "fields": {
+            "category": "verdura",
+            "common_name": "zapallo",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VIII",
+                "VIIIb"
+            ],
+            "preparation": [],
+            "storage": []
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": "zucchini",
+        "fields": {
+            "category": "verdura",
+            "common_name": "zucchini",
+            "common_name_alternate": null,
+            "description": null,
+            "icon": "",
+            "center_origin_notes": null,
+            "food_basket": false,
+            "nutrition_notes": null,
+            "preparation_notes": null,
+            "storage_notes": null,
+            "center_origin": [
+                "VII"
+            ],
+            "preparation": [],
+            "storage": []
         }
     },
     {
         "model": "products.variety",
         "pk": 2,
         "fields": {
-            "product_url": "aguacate",
-            "scientific_name": "Persea americana",
-            "scientific_name_variety": "drymifolia",
-            "common_name_variety": "criollo",
-            "common_name_variety_alternate": null,
-            "description": "El que comíamos de niños (bueno, a mí no me gustaba).",
-            "image": "images/aguacate_criollo.jpeg",
-            "jan": 1,
-            "feb": 3,
-            "mar": 2,
-            "apr": 2,
-            "may": 2,
-            "jun": 2,
-            "jul": 2,
-            "aug": 2,
-            "sep": 1,
-            "oct": 1,
-            "nov": 1,
-            "dec": 1
-        }
-    },
-    {
-        "model": "products.variety",
-        "pk": 3,
-        "fields": {
             "product_url": "acelga",
             "scientific_name": "Beta vulgaris",
             "scientific_name_variety": "cicla",
-            "common_name_variety": "común",
+            "common_name_variety": null,
             "common_name_variety_alternate": null,
-            "description": "Es familia de la lechuga, con solo verla. Pero no tiene los mismos usos.",
-            "image": "images/acelga.jpg",
+            "description": null,
+            "image": "products/acelga.png",
             "jan": 3,
             "feb": 3,
             "mar": 3,
@@ -142,15 +2339,65 @@
     },
     {
         "model": "products.variety",
+        "pk": 3,
+        "fields": {
+            "product_url": "aguacate",
+            "scientific_name": "Persea americana",
+            "scientific_name_variety": "Hass",
+            "common_name_variety": "Hass",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/aguacate_Hass.png",
+            "jan": 3,
+            "feb": 3,
+            "mar": 2,
+            "apr": 1,
+            "may": 1,
+            "jun": 1,
+            "jul": 1,
+            "aug": 2,
+            "sep": 2,
+            "oct": 3,
+            "nov": 3,
+            "dec": 3
+        }
+    },
+    {
+        "model": "products.variety",
         "pk": 4,
+        "fields": {
+            "product_url": "aguacate",
+            "scientific_name": "Persea americana",
+            "scientific_name_variety": "drymifolia",
+            "common_name_variety": "criollo",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/aguacate_criollo.png",
+            "jan": 1,
+            "feb": 3,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 1,
+            "sep": 1,
+            "oct": 1,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 5,
         "fields": {
             "product_url": "ajo",
             "scientific_name": "Allium sativum",
             "scientific_name_variety": null,
-            "common_name_variety": "común",
+            "common_name_variety": null,
             "common_name_variety_alternate": null,
-            "description": "El que viene de China.",
-            "image": "images/ajo.jpg",
+            "description": null,
+            "image": "products/ajo.png",
             "jan": 3,
             "feb": 3,
             "mar": 2,
@@ -166,38 +2413,4210 @@
         }
     },
     {
-        "model": "products.preparation",
-        "pk": "cocido",
+        "model": "products.variety",
+        "pk": 6,
         "fields": {
-            "method_name": "cocido",
-            "method_description": "Cocinar en agua hasta llevar a la textura deseada.",
-            "icon": ""
+            "product_url": "albahaca",
+            "scientific_name": "Ocimum basilicum",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/albahaca.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 7,
+        "fields": {
+            "product_url": "alfalfa",
+            "scientific_name": "Medicago sativa",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/alfalfa.png",
+            "jan": 3,
+            "feb": 3,
+            "mar": 2,
+            "apr": 1,
+            "may": 1,
+            "jun": 1,
+            "jul": 1,
+            "aug": 3,
+            "sep": 3,
+            "oct": 2,
+            "nov": 1,
+            "dec": 3
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 8,
+        "fields": {
+            "product_url": "anona",
+            "scientific_name": "Annona squamosa",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/anona.png",
+            "jan": 1,
+            "feb": 3,
+            "mar": 3,
+            "apr": 3,
+            "may": 3,
+            "jun": 2,
+            "jul": 2,
+            "aug": 1,
+            "sep": 1,
+            "oct": 1,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 9,
+        "fields": {
+            "product_url": "apazote",
+            "scientific_name": "Dysphania ambrosioides",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": "epazote o paico",
+            "description": null,
+            "image": "products/apazote.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 10,
+        "fields": {
+            "product_url": "apio",
+            "scientific_name": "Apium graveolens",
+            "scientific_name_variety": null,
+            "common_name_variety": "verde",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/apio_verde.png",
+            "jan": 3,
+            "feb": 2,
+            "mar": 3,
+            "apr": 3,
+            "may": 3,
+            "jun": 2,
+            "jul": 1,
+            "aug": 1,
+            "sep": 2,
+            "oct": 2,
+            "nov": 3,
+            "dec": 3
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 11,
+        "fields": {
+            "product_url": "arandano",
+            "scientific_name": "Vaccinium corymbosum",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/arandano.png",
+            "jan": 1,
+            "feb": 3,
+            "mar": 3,
+            "apr": 3,
+            "may": 3,
+            "jun": 2,
+            "jul": 2,
+            "aug": 1,
+            "sep": 1,
+            "oct": 1,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 12,
+        "fields": {
+            "product_url": "arracache",
+            "scientific_name": "Arracacia xanthorrhiza",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/arracache.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 13,
+        "fields": {
+            "product_url": "arugula",
+            "scientific_name": "Eruca vesicaria",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": "rúgula o rúcula",
+            "description": null,
+            "image": "products/arugula.png",
+            "jan": 1,
+            "feb": 1,
+            "mar": 1,
+            "apr": 1,
+            "may": 1,
+            "jun": 1,
+            "jul": 1,
+            "aug": 1,
+            "sep": 1,
+            "oct": 1,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 14,
+        "fields": {
+            "product_url": "guisante",
+            "scientific_name": "Pisum sativum",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": "petit pois o arveja",
+            "description": null,
+            "image": "products/guisante.png",
+            "jan": 1,
+            "feb": 1,
+            "mar": 1,
+            "apr": 1,
+            "may": 1,
+            "jun": 1,
+            "jul": 1,
+            "aug": 1,
+            "sep": 1,
+            "oct": 1,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 15,
+        "fields": {
+            "product_url": "ayote",
+            "scientific_name": "Cucurbita argyrosperma",
+            "scientific_name_variety": null,
+            "common_name_variety": "tierno",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/ayote_tierno.png",
+            "jan": 1,
+            "feb": 1,
+            "mar": 1,
+            "apr": 3,
+            "may": 3,
+            "jun": 3,
+            "jul": 2,
+            "aug": 3,
+            "sep": 3,
+            "oct": 3,
+            "nov": 3,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 16,
+        "fields": {
+            "product_url": "ayote",
+            "scientific_name": "Cucurbita argyrosperma",
+            "scientific_name_variety": null,
+            "common_name_variety": "sazón mantequilla",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/ayote_sazon_mantequilla.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 1,
+            "sep": 3,
+            "oct": 3,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 17,
+        "fields": {
+            "product_url": "ayote",
+            "scientific_name": "Cucurbita argyrosperma",
+            "scientific_name_variety": null,
+            "common_name_variety": "sazón seco",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/ayote_sazon_seco.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 1,
+            "sep": 3,
+            "oct": 3,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 18,
+        "fields": {
+            "product_url": "ayote",
+            "scientific_name": "Cucurbita argyrosperma",
+            "scientific_name_variety": null,
+            "common_name_variety": "pipián tierno",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/ayote_pipian_tierno.png",
+            "jan": 2,
+            "feb": 1,
+            "mar": 1,
+            "apr": 1,
+            "may": 1,
+            "jun": 1,
+            "jul": 1,
+            "aug": 3,
+            "sep": 3,
+            "oct": 3,
+            "nov": 3,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 19,
+        "fields": {
+            "product_url": "banano",
+            "scientific_name": "Musa paradisiaca",
+            "scientific_name_variety": null,
+            "common_name_variety": "dátil",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/banano_datil.png",
+            "jan": 3,
+            "feb": 3,
+            "mar": 2,
+            "apr": 3,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 1,
+            "sep": 1,
+            "oct": 1,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 20,
+        "fields": {
+            "product_url": "banano",
+            "scientific_name": "Musa paradisiaca",
+            "scientific_name_variety": null,
+            "common_name_variety": "guineo cuadrado",
+            "common_name_variety_alternate": "guineo chino",
+            "description": null,
+            "image": "products/banano_guineo_cuadrado.png",
+            "jan": 3,
+            "feb": 3,
+            "mar": 3,
+            "apr": 3,
+            "may": 3,
+            "jun": 3,
+            "jul": 2,
+            "aug": 1,
+            "sep": 1,
+            "oct": 1,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 21,
+        "fields": {
+            "product_url": "banano",
+            "scientific_name": "Musa paradisiaca",
+            "scientific_name_variety": null,
+            "common_name_variety": "guineo negro",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/banano_guineo_negro.png",
+            "jan": 3,
+            "feb": 3,
+            "mar": 3,
+            "apr": 3,
+            "may": 3,
+            "jun": 3,
+            "jul": 2,
+            "aug": 1,
+            "sep": 1,
+            "oct": 1,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 22,
+        "fields": {
+            "product_url": "banano",
+            "scientific_name": "Musa paradisiaca",
+            "scientific_name_variety": null,
+            "common_name_variety": "criollo",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/banano_criollo.png",
+            "jan": 3,
+            "feb": 3,
+            "mar": 3,
+            "apr": 3,
+            "may": 3,
+            "jun": 3,
+            "jul": 2,
+            "aug": 1,
+            "sep": 1,
+            "oct": 1,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 23,
+        "fields": {
+            "product_url": "banano",
+            "scientific_name": "Musa paradisiaca",
+            "scientific_name_variety": null,
+            "common_name_variety": "maduro",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/banano_maduro.png",
+            "jan": 3,
+            "feb": 3,
+            "mar": 2,
+            "apr": 3,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 1,
+            "sep": 1,
+            "oct": 1,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 24,
+        "fields": {
+            "product_url": "banano",
+            "scientific_name": "Musa paradisiaca",
+            "scientific_name_variety": null,
+            "common_name_variety": "pintón",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/banano_pinton.png",
+            "jan": 3,
+            "feb": 3,
+            "mar": 2,
+            "apr": 3,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 1,
+            "sep": 1,
+            "oct": 1,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 25,
+        "fields": {
+            "product_url": "banano",
+            "scientific_name": "Musa paradisiaca",
+            "scientific_name_variety": null,
+            "common_name_variety": "verde",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/banano_verde.png",
+            "jan": 3,
+            "feb": 3,
+            "mar": 2,
+            "apr": 3,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 1,
+            "sep": 1,
+            "oct": 1,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 26,
+        "fields": {
+            "product_url": "berenjena",
+            "scientific_name": "Solanum melongena",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/berenjena.png",
+            "jan": 1,
+            "feb": 1,
+            "mar": 1,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 3,
+            "aug": 3,
+            "sep": 3,
+            "oct": 3,
+            "nov": 3,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 27,
+        "fields": {
+            "product_url": "berro",
+            "scientific_name": "Ipomoea aquatica",
+            "scientific_name_variety": null,
+            "common_name_variety": "chino",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/berro_chino.png",
+            "jan": 2,
+            "feb": 1,
+            "mar": 1,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 3,
+            "aug": 3,
+            "sep": 3,
+            "oct": 3,
+            "nov": 3,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 28,
+        "fields": {
+            "product_url": "berro",
+            "scientific_name": "Nasturtium officinale",
+            "scientific_name_variety": null,
+            "common_name_variety": "nacional",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/berro_nacional.png",
+            "jan": 1,
+            "feb": 1,
+            "mar": 1,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 3,
+            "aug": 3,
+            "sep": 3,
+            "oct": 3,
+            "nov": 3,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 29,
+        "fields": {
+            "product_url": "bokchoy",
+            "scientific_name": "Brassica rapa",
+            "scientific_name_variety": "chinensis",
+            "common_name_variety": null,
+            "common_name_variety_alternate": "pak choi",
+            "description": null,
+            "image": "products/bokchoy.png",
+            "jan": 1,
+            "feb": 1,
+            "mar": 1,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 3,
+            "aug": 3,
+            "sep": 3,
+            "oct": 3,
+            "nov": 3,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 30,
+        "fields": {
+            "product_url": "brocoli",
+            "scientific_name": "Brassica oleracea",
+            "scientific_name_variety": "italica",
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/brocoli.png",
+            "jan": 1,
+            "feb": 1,
+            "mar": 2,
+            "apr": 3,
+            "may": 3,
+            "jun": 2,
+            "jul": 1,
+            "aug": 3,
+            "sep": 3,
+            "oct": 1,
+            "nov": 2,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 31,
+        "fields": {
+            "product_url": "camote",
+            "scientific_name": "Ipomoea batatas",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/camote.png",
+            "jan": 1,
+            "feb": 2,
+            "mar": 2,
+            "apr": 3,
+            "may": 3,
+            "jun": 3,
+            "jul": 3,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 32,
+        "fields": {
+            "product_url": "carambola",
+            "scientific_name": "Averrhoa carambola",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/carambola.png",
+            "jan": 3,
+            "feb": 3,
+            "mar": 1,
+            "apr": 1,
+            "may": 1,
+            "jun": 2,
+            "jul": 3,
+            "aug": 3,
+            "sep": 3,
+            "oct": 2,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 33,
+        "fields": {
+            "product_url": "cas",
+            "scientific_name": "Psidium friedrichsthalianum",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/cas.png",
+            "jan": 2,
+            "feb": 1,
+            "mar": 1,
+            "apr": 1,
+            "may": 1,
+            "jun": 2,
+            "jul": 3,
+            "aug": 3,
+            "sep": 3,
+            "oct": 3,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 34,
+        "fields": {
+            "product_url": "cebolla",
+            "scientific_name": "Allium cepa",
+            "scientific_name_variety": null,
+            "common_name_variety": "blanca",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/cebolla_blanca.png",
+            "jan": 1,
+            "feb": 1,
+            "mar": 3,
+            "apr": 3,
+            "may": 3,
+            "jun": 1,
+            "jul": 1,
+            "aug": 1,
+            "sep": 3,
+            "oct": 3,
+            "nov": 3,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 35,
+        "fields": {
+            "product_url": "cebolla",
+            "scientific_name": "Allium cepa",
+            "scientific_name_variety": null,
+            "common_name_variety": "morada",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/cebolla_morada.png",
+            "jan": 1,
+            "feb": 1,
+            "mar": 2,
+            "apr": 3,
+            "may": 3,
+            "jun": 3,
+            "jul": 2,
+            "aug": 1,
+            "sep": 1,
+            "oct": 3,
+            "nov": 3,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 36,
+        "fields": {
+            "product_url": "cebollino",
+            "scientific_name": "Allium fistulosum",
+            "scientific_name_variety": null,
+            "common_name_variety": "fino",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/cebollino_fino.png",
+            "jan": 1,
+            "feb": 2,
+            "mar": 2,
+            "apr": 3,
+            "may": 3,
+            "jun": 3,
+            "jul": 3,
+            "aug": 3,
+            "sep": 3,
+            "oct": 2,
+            "nov": 2,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 37,
+        "fields": {
+            "product_url": "cebollino",
+            "scientific_name": "Allium schoenoprasum",
+            "scientific_name_variety": null,
+            "common_name_variety": "grande",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/cebollino_grande.png",
+            "jan": 1,
+            "feb": 2,
+            "mar": 2,
+            "apr": 3,
+            "may": 3,
+            "jun": 3,
+            "jul": 3,
+            "aug": 3,
+            "sep": 3,
+            "oct": 2,
+            "nov": 2,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 38,
+        "fields": {
+            "product_url": "chan",
+            "scientific_name": "Hyptis suaveolens",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/chan.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 39,
+        "fields": {
+            "product_url": "chayote",
+            "scientific_name": "Sechium edule",
+            "scientific_name_variety": null,
+            "common_name_variety": "cocoro",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/chayote_cocoro.png",
+            "jan": 3,
+            "feb": 1,
+            "mar": 1,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 1,
+            "sep": 1,
+            "oct": 2,
+            "nov": 3,
+            "dec": 3
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 40,
+        "fields": {
+            "product_url": "chayote",
+            "scientific_name": "Sechium edule",
+            "scientific_name_variety": null,
+            "common_name_variety": "tierno",
+            "common_name_variety_alternate": "chayote quelite",
+            "description": null,
+            "image": "products/chayote_tierno.png",
+            "jan": 3,
+            "feb": 1,
+            "mar": 1,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 3,
+            "nov": 3,
+            "dec": 3
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 41,
+        "fields": {
+            "product_url": "chayote",
+            "scientific_name": "Sechium edule ",
+            "scientific_name_variety": null,
+            "common_name_variety": "tierno",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/chayote_tierno.png",
+            "jan": 3,
+            "feb": 1,
+            "mar": 1,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 1,
+            "sep": 1,
+            "oct": 2,
+            "nov": 3,
+            "dec": 3
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 42,
+        "fields": {
+            "product_url": "chayote",
+            "scientific_name": "Sechium edule ",
+            "scientific_name_variety": null,
+            "common_name_variety": "sazón",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/chayote_sazon.png",
+            "jan": 3,
+            "feb": 1,
+            "mar": 1,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 1,
+            "sep": 1,
+            "oct": 2,
+            "nov": 3,
+            "dec": 3
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 43,
+        "fields": {
+            "product_url": "chiledulce",
+            "scientific_name": "Capsicum annuum",
+            "scientific_name_variety": null,
+            "common_name_variety": "color mundial",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/chiledulce_color_mundial.png",
+            "jan": 1,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 3,
+            "jun": 3,
+            "jul": 2,
+            "aug": 2,
+            "sep": 3,
+            "oct": 2,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 44,
+        "fields": {
+            "product_url": "chiledulce",
+            "scientific_name": "Capsicum annuum",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/chiledulce.png",
+            "jan": 1,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 3,
+            "jun": 3,
+            "jul": 2,
+            "aug": 2,
+            "sep": 3,
+            "oct": 2,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 45,
+        "fields": {
+            "product_url": "chilepicante",
+            "scientific_name": "Capsicum annuum",
+            "scientific_name_variety": null,
+            "common_name_variety": "jalapeño",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/chilepicante_jalapeno.png",
+            "jan": 1,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 3,
+            "jun": 3,
+            "jul": 2,
+            "aug": 2,
+            "sep": 3,
+            "oct": 2,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 46,
+        "fields": {
+            "product_url": "chilepicante",
+            "scientific_name": "Capsicum baccatum",
+            "scientific_name_variety": null,
+            "common_name_variety": "ají peruano",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/chilepicante_aji_peruano.png",
+            "jan": 1,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 3,
+            "jun": 3,
+            "jul": 2,
+            "aug": 2,
+            "sep": 3,
+            "oct": 2,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 47,
+        "fields": {
+            "product_url": "chilepicante",
+            "scientific_name": "Capsicum chinense",
+            "scientific_name_variety": null,
+            "common_name_variety": "panameño",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/chilepicante_panameno.png",
+            "jan": 1,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 3,
+            "jun": 3,
+            "jul": 2,
+            "aug": 2,
+            "sep": 3,
+            "oct": 2,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 48,
+        "fields": {
+            "product_url": "chilepicante",
+            "scientific_name": "Capsicum frutescens",
+            "scientific_name_variety": null,
+            "common_name_variety": "cayena",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/chilepicante_cayena.png",
+            "jan": 1,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 3,
+            "jun": 3,
+            "jul": 2,
+            "aug": 2,
+            "sep": 3,
+            "oct": 2,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 49,
+        "fields": {
+            "product_url": "chilepicante",
+            "scientific_name": "Capsicum pubescens",
+            "scientific_name_variety": null,
+            "common_name_variety": "rocoto",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/chilepicante_rocoto.png",
+            "jan": 1,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 3,
+            "jun": 3,
+            "jul": 2,
+            "aug": 2,
+            "sep": 3,
+            "oct": 2,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 50,
+        "fields": {
+            "product_url": "chilepicante",
+            "scientific_name": "Naga jolokia",
+            "scientific_name_variety": null,
+            "common_name_variety": "fantasma",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/chilepicante_fantasma.png",
+            "jan": 1,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 3,
+            "jun": 3,
+            "jul": 2,
+            "aug": 2,
+            "sep": 3,
+            "oct": 2,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 51,
+        "fields": {
+            "product_url": "chilote",
+            "scientific_name": "Stigma maydis",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/chilote.png",
+            "jan": 1,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 3,
+            "jun": 3,
+            "jul": 2,
+            "aug": 2,
+            "sep": 3,
+            "oct": 2,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 52,
+        "fields": {
+            "product_url": "ciruela",
+            "scientific_name": "Prunus domestica",
+            "scientific_name_variety": "americana",
+            "common_name_variety": "americana",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/ciruela_americana.png",
+            "jan": 2,
+            "feb": 3,
+            "mar": 2,
+            "apr": 2,
+            "may": 3,
+            "jun": 3,
+            "jul": 3,
+            "aug": 3,
+            "sep": 3,
+            "oct": 3,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 53,
+        "fields": {
+            "product_url": "ciruela",
+            "scientific_name": "Prunus domestica",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/ciruela.png",
+            "jan": 2,
+            "feb": 3,
+            "mar": 2,
+            "apr": 2,
+            "may": 3,
+            "jun": 3,
+            "jul": 3,
+            "aug": 3,
+            "sep": 3,
+            "oct": 3,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 54,
+        "fields": {
+            "product_url": "coco",
+            "scientific_name": "Cocos nucifera",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": "pipa",
+            "description": null,
+            "image": "products/coco.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 55,
+        "fields": {
+            "product_url": "coldebruselas",
+            "scientific_name": "Brassica oleracea",
+            "scientific_name_variety": "gemmifera",
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/coldebruselas.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 1,
+            "jul": 1,
+            "aug": 2,
+            "sep": 2,
+            "oct": 3,
+            "nov": 3,
+            "dec": 3
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 56,
+        "fields": {
+            "product_url": "coladecaballo",
+            "scientific_name": "Equisetum arvense",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/coladecaballo.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 57,
+        "fields": {
+            "product_url": "coliflor",
+            "scientific_name": "Brassica oleracea",
+            "scientific_name_variety": "botrytis",
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/coliflor.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 1,
+            "jul": 1,
+            "aug": 2,
+            "sep": 2,
+            "oct": 3,
+            "nov": 3,
+            "dec": 3
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 58,
+        "fields": {
+            "product_url": "cubaces",
+            "scientific_name": "Phaseolus coccineus",
+            "scientific_name_variety": null,
+            "common_name_variety": "secos",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/cubaces_secos.png",
+            "jan": 1,
+            "feb": 3,
+            "mar": 2,
+            "apr": 1,
+            "may": 1,
+            "jun": 3,
+            "jul": 3,
+            "aug": 2,
+            "sep": 2,
+            "oct": 3,
+            "nov": 3,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 59,
+        "fields": {
+            "product_url": "cubaces",
+            "scientific_name": "Phaseolus coccineus",
+            "scientific_name_variety": null,
+            "common_name_variety": "tiernos",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/cubaces_tiernos.png",
+            "jan": 1,
+            "feb": 3,
+            "mar": 2,
+            "apr": 1,
+            "may": 1,
+            "jun": 3,
+            "jul": 3,
+            "aug": 2,
+            "sep": 2,
+            "oct": 3,
+            "nov": 3,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 60,
+        "fields": {
+            "product_url": "culantro",
+            "scientific_name": "Coriandrum sativum",
+            "scientific_name_variety": null,
+            "common_name_variety": "castilla",
+            "common_name_variety_alternate": "cilantro",
+            "description": null,
+            "image": "products/culantro_castilla.png",
+            "jan": 3,
+            "feb": 3,
+            "mar": 2,
+            "apr": 3,
+            "may": 1,
+            "jun": 1,
+            "jul": 3,
+            "aug": 3,
+            "sep": 2,
+            "oct": 1,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 61,
+        "fields": {
+            "product_url": "culantrocoyote",
+            "scientific_name": "Eryngium foetidum",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/culantrocoyote.png",
+            "jan": 3,
+            "feb": 3,
+            "mar": 3,
+            "apr": 3,
+            "may": 3,
+            "jun": 3,
+            "jul": 3,
+            "aug": 1,
+            "sep": 1,
+            "oct": 1,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 62,
+        "fields": {
+            "product_url": "curcuma",
+            "scientific_name": "Curcuma longa",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/curcuma.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 63,
+        "fields": {
+            "product_url": "eneldo",
+            "scientific_name": "Anethum graveolens",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": "abesón",
+            "description": null,
+            "image": "products/eneldo.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 64,
+        "fields": {
+            "product_url": "esparrago",
+            "scientific_name": "Asparagus officinalis",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/esparrago.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 3,
+            "apr": 3,
+            "may": 3,
+            "jun": 3,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 3,
+            "nov": 3,
+            "dec": 3
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 65,
+        "fields": {
+            "product_url": "espinaca",
+            "scientific_name": "Spinacia oleracea",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/espinaca.png",
+            "jan": 1,
+            "feb": 1,
+            "mar": 2,
+            "apr": 3,
+            "may": 3,
+            "jun": 3,
+            "jul": 2,
+            "aug": 3,
+            "sep": 3,
+            "oct": 1,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 66,
+        "fields": {
+            "product_url": "estragon",
+            "scientific_name": "Artemisia dracunculus",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/estragon.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 3,
+            "apr": 3,
+            "may": 3,
+            "jun": 3,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 3,
+            "nov": 3,
+            "dec": 3
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 67,
+        "fields": {
+            "product_url": "fresa",
+            "scientific_name": "Fragaria × ananassa",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/fresa.png",
+            "jan": 1,
+            "feb": 2,
+            "mar": 3,
+            "apr": 3,
+            "may": 3,
+            "jun": 3,
+            "jul": 2,
+            "aug": 3,
+            "sep": 2,
+            "oct": 1,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 68,
+        "fields": {
+            "product_url": "frijol",
+            "scientific_name": "Phaseolus vulgaris",
+            "scientific_name_variety": null,
+            "common_name_variety": "blanco",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/frijol_blanco.png",
+            "jan": 1,
+            "feb": 3,
+            "mar": 2,
+            "apr": 1,
+            "may": 1,
+            "jun": 3,
+            "jul": 3,
+            "aug": 2,
+            "sep": 2,
+            "oct": 3,
+            "nov": 3,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 69,
+        "fields": {
+            "product_url": "frijol",
+            "scientific_name": "Phaseolus vulgaris",
+            "scientific_name_variety": null,
+            "common_name_variety": "calima",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/frijol_calima.png",
+            "jan": 1,
+            "feb": 3,
+            "mar": 2,
+            "apr": 1,
+            "may": 1,
+            "jun": 3,
+            "jul": 3,
+            "aug": 2,
+            "sep": 2,
+            "oct": 3,
+            "nov": 3,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 70,
+        "fields": {
+            "product_url": "frijol",
+            "scientific_name": "Phaseolus vulgaris",
+            "scientific_name_variety": null,
+            "common_name_variety": "negro",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/frijol_negro.png",
+            "jan": 1,
+            "feb": 3,
+            "mar": 2,
+            "apr": 1,
+            "may": 1,
+            "jun": 3,
+            "jul": 3,
+            "aug": 2,
+            "sep": 2,
+            "oct": 3,
+            "nov": 3,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 71,
+        "fields": {
+            "product_url": "frijol",
+            "scientific_name": "Phaseolus vulgaris",
+            "scientific_name_variety": null,
+            "common_name_variety": "rojo",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/frijol_rojo.png",
+            "jan": 1,
+            "feb": 3,
+            "mar": 2,
+            "apr": 1,
+            "may": 1,
+            "jun": 3,
+            "jul": 3,
+            "aug": 2,
+            "sep": 2,
+            "oct": 3,
+            "nov": 3,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 72,
+        "fields": {
+            "product_url": "garbanzo",
+            "scientific_name": "Cicer arietinum",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/garbanzo.png",
+            "jan": 1,
+            "feb": 3,
+            "mar": 2,
+            "apr": 1,
+            "may": 1,
+            "jun": 3,
+            "jul": 3,
+            "aug": 2,
+            "sep": 2,
+            "oct": 3,
+            "nov": 3,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 73,
+        "fields": {
+            "product_url": "granadilla",
+            "scientific_name": "Passiflora ligularis",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/granadilla.png",
+            "jan": 3,
+            "feb": 3,
+            "mar": 3,
+            "apr": 3,
+            "may": 3,
+            "jun": 2,
+            "jul": 1,
+            "aug": 1,
+            "sep": 1,
+            "oct": 2,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 74,
+        "fields": {
+            "product_url": "guanabana",
+            "scientific_name": "Annona muricata",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/guanabana.png",
+            "jan": 3,
+            "feb": 3,
+            "mar": 3,
+            "apr": 2,
+            "may": 3,
+            "jun": 3,
+            "jul": 2,
+            "aug": 1,
+            "sep": 1,
+            "oct": 1,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 75,
+        "fields": {
+            "product_url": "guayaba",
+            "scientific_name": "Psidium guajava",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/guayaba.png",
+            "jan": 3,
+            "feb": 3,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 3,
+            "sep": 3,
+            "oct": 3,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 76,
+        "fields": {
+            "product_url": "hierbabuena",
+            "scientific_name": "Mentha spicata",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": "yerbabuena o menta de jardín",
+            "description": null,
+            "image": "products/hierbabuena.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 77,
+        "fields": {
+            "product_url": "hinojo",
+            "scientific_name": "Foeniculum vulgare",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/hinojo.png",
+            "jan": 0,
+            "feb": 0,
+            "mar": 0,
+            "apr": 1,
+            "may": 2,
+            "jun": 3,
+            "jul": 3,
+            "aug": 3,
+            "sep": 3,
+            "oct": 3,
+            "nov": 3,
+            "dec": 3
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 78,
+        "fields": {
+            "product_url": "hongo",
+            "scientific_name": "Agaricus bisporus",
+            "scientific_name_variety": null,
+            "common_name_variety": "crimini",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/hongo_crimini.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 79,
+        "fields": {
+            "product_url": "hongo",
+            "scientific_name": "Agaricus bisporus",
+            "scientific_name_variety": null,
+            "common_name_variety": "portobello",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/hongo_portobello.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 80,
+        "fields": {
+            "product_url": "hongo",
+            "scientific_name": "Boletus edulis",
+            "scientific_name_variety": null,
+            "common_name_variety": "blanco champiñon",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/hongo_blanco_champinon.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 81,
+        "fields": {
+            "product_url": "hongo",
+            "scientific_name": "Pleurotus ostreatus",
+            "scientific_name_variety": null,
+            "common_name_variety": "ostra",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/hongo_ostra.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 82,
+        "fields": {
+            "product_url": "jengibre",
+            "scientific_name": "Zingiber officinale",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/jengibre.png",
+            "jan": 3,
+            "feb": 3,
+            "mar": 3,
+            "apr": 2,
+            "may": 2,
+            "jun": 1,
+            "jul": 1,
+            "aug": 1,
+            "sep": 2,
+            "oct": 3,
+            "nov": 3,
+            "dec": 3
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 83,
+        "fields": {
+            "product_url": "jocote",
+            "scientific_name": "Spondias purpurea",
+            "scientific_name_variety": null,
+            "common_name_variety": "tronador",
+            "common_name_variety_alternate": "jocote tronador",
+            "description": null,
+            "image": "products/jocote_tronador.png",
+            "jan": 0,
+            "feb": 0,
+            "mar": 0,
+            "apr": 0,
+            "may": 0,
+            "jun": 2,
+            "jul": 3,
+            "aug": 3,
+            "sep": 2,
+            "oct": 0,
+            "nov": 0,
+            "dec": 0
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 84,
+        "fields": {
+            "product_url": "kale",
+            "scientific_name": "Brassica oleracea",
+            "scientific_name_variety": "sabellica",
+            "common_name_variety": "verde",
+            "common_name_variety_alternate": "col rizada o  brócoli chino",
+            "description": null,
+            "image": "products/kale_verde.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 3,
+            "may": 3,
+            "jun": 3,
+            "jul": 3,
+            "aug": 3,
+            "sep": 2,
+            "oct": 1,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 85,
+        "fields": {
+            "product_url": "kiwi",
+            "scientific_name": "Actinidia deliciosa",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/kiwi.png",
+            "jan": 3,
+            "feb": 3,
+            "mar": 3,
+            "apr": 3,
+            "may": 3,
+            "jun": 3,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 3,
+            "nov": 3,
+            "dec": 3
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 86,
+        "fields": {
+            "product_url": "lechuga",
+            "scientific_name": "Cichorium endivia",
+            "scientific_name_variety": null,
+            "common_name_variety": "escarola",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/lechuga_escarola.png",
+            "jan": 2,
+            "feb": 3,
+            "mar": 3,
+            "apr": 3,
+            "may": 3,
+            "jun": 2,
+            "jul": 2,
+            "aug": 1,
+            "sep": 1,
+            "oct": 3,
+            "nov": 3,
+            "dec": 3
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 87,
+        "fields": {
+            "product_url": "lechuga",
+            "scientific_name": "Lactuca sativa",
+            "scientific_name_variety": "acephala",
+            "common_name_variety": "lollo rosa",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/lechuga_lollo_rosa.png",
+            "jan": 2,
+            "feb": 3,
+            "mar": 3,
+            "apr": 3,
+            "may": 3,
+            "jun": 2,
+            "jul": 2,
+            "aug": 1,
+            "sep": 1,
+            "oct": 3,
+            "nov": 3,
+            "dec": 3
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 88,
+        "fields": {
+            "product_url": "lechuga",
+            "scientific_name": "Lactuca sativa",
+            "scientific_name_variety": "longifolia",
+            "common_name_variety": "romana",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/lechuga_romana.png",
+            "jan": 2,
+            "feb": 3,
+            "mar": 3,
+            "apr": 3,
+            "may": 3,
+            "jun": 2,
+            "jul": 2,
+            "aug": 1,
+            "sep": 1,
+            "oct": 3,
+            "nov": 3,
+            "dec": 3
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 89,
+        "fields": {
+            "product_url": "lechuga",
+            "scientific_name": "Lactuca sativa",
+            "scientific_name_variety": null,
+            "common_name_variety": "verónica",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/lechuga_veronica.png",
+            "jan": 2,
+            "feb": 3,
+            "mar": 3,
+            "apr": 3,
+            "may": 3,
+            "jun": 2,
+            "jul": 2,
+            "aug": 1,
+            "sep": 1,
+            "oct": 3,
+            "nov": 3,
+            "dec": 3
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 90,
+        "fields": {
+            "product_url": "lechuga",
+            "scientific_name": "Lactuca sativa ",
+            "scientific_name_variety": null,
+            "common_name_variety": "americana arrepollada",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/lechuga_americana_arrepollada.png",
+            "jan": 2,
+            "feb": 3,
+            "mar": 3,
+            "apr": 3,
+            "may": 3,
+            "jun": 2,
+            "jul": 2,
+            "aug": 1,
+            "sep": 1,
+            "oct": 3,
+            "nov": 3,
+            "dec": 3
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 91,
+        "fields": {
+            "product_url": "lechuga",
+            "scientific_name": "Lactuca sativa ",
+            "scientific_name_variety": null,
+            "common_name_variety": "BG crepa",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/lechuga_BG_crepa.png",
+            "jan": 2,
+            "feb": 3,
+            "mar": 3,
+            "apr": 3,
+            "may": 3,
+            "jun": 2,
+            "jul": 2,
+            "aug": 1,
+            "sep": 1,
+            "oct": 3,
+            "nov": 3,
+            "dec": 3
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 92,
+        "fields": {
+            "product_url": "lechuga",
+            "scientific_name": "Lactuca sativa ",
+            "scientific_name_variety": null,
+            "common_name_variety": "blanca criolla",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/lechuga_blanca_criolla.png",
+            "jan": 2,
+            "feb": 3,
+            "mar": 3,
+            "apr": 3,
+            "may": 3,
+            "jun": 2,
+            "jul": 2,
+            "aug": 1,
+            "sep": 1,
+            "oct": 3,
+            "nov": 3,
+            "dec": 3
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 93,
+        "fields": {
+            "product_url": "lenteja",
+            "scientific_name": "Lens culinaris",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/lenteja.png",
+            "jan": 1,
+            "feb": 3,
+            "mar": 2,
+            "apr": 1,
+            "may": 1,
+            "jun": 3,
+            "jul": 3,
+            "aug": 2,
+            "sep": 2,
+            "oct": 3,
+            "nov": 3,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 94,
+        "fields": {
+            "product_url": "limon",
+            "scientific_name": "Citrus × aurantifolia",
+            "scientific_name_variety": null,
+            "common_name_variety": "criollo",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/limon_criollo.png",
+            "jan": 3,
+            "feb": 2,
+            "mar": 1,
+            "apr": 1,
+            "may": 1,
+            "jun": 1,
+            "jul": 2,
+            "aug": 3,
+            "sep": 3,
+            "oct": 3,
+            "nov": 3,
+            "dec": 3
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 95,
+        "fields": {
+            "product_url": "limon",
+            "scientific_name": "Citrus × limonia",
+            "scientific_name_variety": null,
+            "common_name_variety": "mandarino",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/limon_mandarino.png",
+            "jan": 3,
+            "feb": 2,
+            "mar": 1,
+            "apr": 1,
+            "may": 1,
+            "jun": 1,
+            "jul": 2,
+            "aug": 3,
+            "sep": 3,
+            "oct": 3,
+            "nov": 3,
+            "dec": 3
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 96,
+        "fields": {
+            "product_url": "limon",
+            "scientific_name": "Citrus aurantifolia",
+            "scientific_name_variety": null,
+            "common_name_variety": "mecino",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/limon_mecino.png",
+            "jan": 1,
+            "feb": 1,
+            "mar": 1,
+            "apr": 1,
+            "may": 2,
+            "jun": 3,
+            "jul": 3,
+            "aug": 3,
+            "sep": 3,
+            "oct": 3,
+            "nov": 3,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 97,
+        "fields": {
+            "product_url": "limon",
+            "scientific_name": "Citrus limetta",
+            "scientific_name_variety": null,
+            "common_name_variety": "dulce",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/limon_dulce.png",
+            "jan": 1,
+            "feb": 1,
+            "mar": 1,
+            "apr": 1,
+            "may": 1,
+            "jun": 1,
+            "jul": 1,
+            "aug": 3,
+            "sep": 3,
+            "oct": 3,
+            "nov": 3,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 98,
+        "fields": {
+            "product_url": "linaza",
+            "scientific_name": "Linum usitatissimum",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/linaza.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 99,
+        "fields": {
+            "product_url": "maiz",
+            "scientific_name": "Zea mays",
+            "scientific_name_variety": null,
+            "common_name_variety": "elote dulce amarillo",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/maiz_elote_dulce_amarillo.png",
+            "jan": 1,
+            "feb": 2,
+            "mar": 1,
+            "apr": 2,
+            "may": 3,
+            "jun": 3,
+            "jul": 3,
+            "aug": 3,
+            "sep": 3,
+            "oct": 3,
+            "nov": 3,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 100,
+        "fields": {
+            "product_url": "maiz",
+            "scientific_name": "Zea mays",
+            "scientific_name_variety": null,
+            "common_name_variety": "elote tierno",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/maiz_elote_tierno.png",
+            "jan": 1,
+            "feb": 2,
+            "mar": 1,
+            "apr": 2,
+            "may": 3,
+            "jun": 3,
+            "jul": 3,
+            "aug": 3,
+            "sep": 3,
+            "oct": 3,
+            "nov": 3,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 101,
+        "fields": {
+            "product_url": "maiz",
+            "scientific_name": "Zea mays",
+            "scientific_name_variety": null,
+            "common_name_variety": "cascado",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/maiz_cascado.png",
+            "jan": 1,
+            "feb": 2,
+            "mar": 1,
+            "apr": 2,
+            "may": 3,
+            "jun": 3,
+            "jul": 3,
+            "aug": 3,
+            "sep": 3,
+            "oct": 3,
+            "nov": 3,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 102,
+        "fields": {
+            "product_url": "malanga",
+            "scientific_name": "Colocasia esculenta",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": "big taro",
+            "description": null,
+            "image": "products/malanga.png",
+            "jan": 1,
+            "feb": 2,
+            "mar": 2,
+            "apr": 3,
+            "may": 3,
+            "jun": 3,
+            "jul": 3,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 103,
+        "fields": {
+            "product_url": "mandarina",
+            "scientific_name": "Citrus reticulata",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/mandarina.png",
+            "jan": 3,
+            "feb": 3,
+            "mar": 3,
+            "apr": 2,
+            "may": 0,
+            "jun": 0,
+            "jul": 0,
+            "aug": 0,
+            "sep": 1,
+            "oct": 1,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 104,
+        "fields": {
+            "product_url": "mandarina",
+            "scientific_name": "Citrus reticulata",
+            "scientific_name_variety": null,
+            "common_name_variety": "nacional",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/mandarina_nacional.png",
+            "jan": 3,
+            "feb": 3,
+            "mar": 3,
+            "apr": 2,
+            "may": 0,
+            "jun": 0,
+            "jul": 0,
+            "aug": 0,
+            "sep": 1,
+            "oct": 1,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 105,
+        "fields": {
+            "product_url": "mango",
+            "scientific_name": "Mangifera indica",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/mango.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 3,
+            "apr": 3,
+            "may": 3,
+            "jun": 3,
+            "jul": 3,
+            "aug": 3,
+            "sep": 1,
+            "oct": 1,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 106,
+        "fields": {
+            "product_url": "manzana",
+            "scientific_name": "Malus domestica",
+            "scientific_name_variety": "gala",
+            "common_name_variety": "gala",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/manzana_gala.png",
+            "jan": 3,
+            "feb": 2,
+            "mar": 1,
+            "apr": 2,
+            "may": 3,
+            "jun": 3,
+            "jul": 3,
+            "aug": 3,
+            "sep": 2,
+            "oct": 2,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 107,
+        "fields": {
+            "product_url": "manzana",
+            "scientific_name": "Malus domestica",
+            "scientific_name_variety": "× M. sylvestris",
+            "common_name_variety": "granny",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/manzana_granny.png",
+            "jan": 3,
+            "feb": 2,
+            "mar": 1,
+            "apr": 2,
+            "may": 3,
+            "jun": 3,
+            "jul": 3,
+            "aug": 3,
+            "sep": 2,
+            "oct": 2,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 108,
+        "fields": {
+            "product_url": "manzana",
+            "scientific_name": "Malus domestica ",
+            "scientific_name_variety": null,
+            "common_name_variety": "washinton",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/manzana_washinton.png",
+            "jan": 3,
+            "feb": 2,
+            "mar": 1,
+            "apr": 2,
+            "may": 3,
+            "jun": 3,
+            "jul": 3,
+            "aug": 3,
+            "sep": 2,
+            "oct": 2,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 109,
+        "fields": {
+            "product_url": "manzanadeagua",
+            "scientific_name": "Syzygium malaccense",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/manzanadeagua.png",
+            "jan": 3,
+            "feb": 2,
+            "mar": 1,
+            "apr": 2,
+            "may": 3,
+            "jun": 3,
+            "jul": 3,
+            "aug": 3,
+            "sep": 2,
+            "oct": 2,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 110,
+        "fields": {
+            "product_url": "manzanilla",
+            "scientific_name": "Chamaemelum nobile",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/manzanilla.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 111,
+        "fields": {
+            "product_url": "maracuya",
+            "scientific_name": "Passiflora edulis",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/maracuya.png",
+            "jan": 3,
+            "feb": 1,
+            "mar": 1,
+            "apr": 3,
+            "may": 3,
+            "jun": 2,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 3,
+            "dec": 3
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 112,
+        "fields": {
+            "product_url": "melocoton",
+            "scientific_name": "Prunus persica",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/melocoton.png",
+            "jan": 1,
+            "feb": 1,
+            "mar": 1,
+            "apr": 1,
+            "may": 1,
+            "jun": 2,
+            "jul": 3,
+            "aug": 3,
+            "sep": 3,
+            "oct": 2,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 113,
+        "fields": {
+            "product_url": "melon",
+            "scientific_name": "Cucumis melo",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/melon.png",
+            "jan": 3,
+            "feb": 3,
+            "mar": 3,
+            "apr": 3,
+            "may": 3,
+            "jun": 2,
+            "jul": 1,
+            "aug": 1,
+            "sep": 1,
+            "oct": 1,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 114,
+        "fields": {
+            "product_url": "menta",
+            "scientific_name": "Mentha × piperita",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/menta.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 115,
+        "fields": {
+            "product_url": "mora",
+            "scientific_name": "Rubus ulmifolius",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/mora.png",
+            "jan": 3,
+            "feb": 3,
+            "mar": 3,
+            "apr": 2,
+            "may": 1,
+            "jun": 1,
+            "jul": 1,
+            "aug": 1,
+            "sep": 1,
+            "oct": 1,
+            "nov": 1,
+            "dec": 3
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 116,
+        "fields": {
+            "product_url": "mostazachina",
+            "scientific_name": "Brassica juncea",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/mostazachina.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 117,
+        "fields": {
+            "product_url": "mozote",
+            "scientific_name": "Bidens pilosa",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/mozote.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 118,
+        "fields": {
+            "product_url": "name",
+            "scientific_name": "Dioscorea alata",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/name.png",
+            "jan": 3,
+            "feb": 3,
+            "mar": 3,
+            "apr": 2,
+            "may": 1,
+            "jun": 1,
+            "jul": 1,
+            "aug": 1,
+            "sep": 2,
+            "oct": 3,
+            "nov": 3,
+            "dec": 3
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 119,
+        "fields": {
+            "product_url": "nampi",
+            "scientific_name": "Dioscorea trifida",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/nampi.png",
+            "jan": 3,
+            "feb": 3,
+            "mar": 3,
+            "apr": 2,
+            "may": 1,
+            "jun": 1,
+            "jul": 1,
+            "aug": 1,
+            "sep": 2,
+            "oct": 3,
+            "nov": 3,
+            "dec": 3
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 120,
+        "fields": {
+            "product_url": "naranja",
+            "scientific_name": "Citrus × aurantium",
+            "scientific_name_variety": null,
+            "common_name_variety": "agria",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/naranja_agria.png",
+            "jan": 3,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 3,
+            "jul": 3,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 121,
+        "fields": {
+            "product_url": "naranja",
+            "scientific_name": "Citrus × sinensis",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/naranja.png",
+            "jan": 3,
+            "feb": 3,
+            "mar": 3,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 2,
+            "dec": 3
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 122,
+        "fields": {
+            "product_url": "naranja",
+            "scientific_name": "Citrus × sinensis",
+            "scientific_name_variety": "washinton navel",
+            "common_name_variety": "washinton",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/naranja_washinton.png",
+            "jan": 3,
+            "feb": 3,
+            "mar": 3,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 2,
+            "dec": 3
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 123,
+        "fields": {
+            "product_url": "oregano",
+            "scientific_name": "Origanum vulgare",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/oregano.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 124,
+        "fields": {
+            "product_url": "palmito",
+            "scientific_name": "Chamaerops humilis",
+            "scientific_name_variety": null,
+            "common_name_variety": "tierno",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/palmito_tierno.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 3,
+            "apr": 3,
+            "may": 3,
+            "jun": 2,
+            "jul": 1,
+            "aug": 1,
+            "sep": 1,
+            "oct": 1,
+            "nov": 2,
+            "dec": 3
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 125,
+        "fields": {
+            "product_url": "papa",
+            "scientific_name": "Solanum tuberosum",
+            "scientific_name_variety": null,
+            "common_name_variety": "amarilla",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/papa_amarilla.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 1,
+            "aug": 3,
+            "sep": 3,
+            "oct": 3,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 126,
+        "fields": {
+            "product_url": "papa",
+            "scientific_name": "Solanum tuberosum",
+            "scientific_name_variety": "kennebec",
+            "common_name_variety": "blanca",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/papa_blanca.png",
+            "jan": 1,
+            "feb": 1,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 1,
+            "aug": 3,
+            "sep": 3,
+            "oct": 3,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 127,
+        "fields": {
+            "product_url": "papa",
+            "scientific_name": "Solanum tuberosum",
+            "scientific_name_variety": null,
+            "common_name_variety": "burra",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/papa_burra.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 1,
+            "aug": 3,
+            "sep": 3,
+            "oct": 3,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 128,
+        "fields": {
+            "product_url": "papa",
+            "scientific_name": "Solanum tuberosum",
+            "scientific_name_variety": null,
+            "common_name_variety": "mini",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/papa_mini.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 1,
+            "aug": 3,
+            "sep": 3,
+            "oct": 3,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 129,
+        "fields": {
+            "product_url": "papaya",
+            "scientific_name": "Carica papaya",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/papaya.png",
+            "jan": 1,
+            "feb": 3,
+            "mar": 3,
+            "apr": 3,
+            "may": 3,
+            "jun": 2,
+            "jul": 3,
+            "aug": 1,
+            "sep": 1,
+            "oct": 2,
+            "nov": 2,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 130,
+        "fields": {
+            "product_url": "pejibaye",
+            "scientific_name": "Bactris gasipaes",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/pejibaye.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 3,
+            "apr": 3,
+            "may": 3,
+            "jun": 2,
+            "jul": 1,
+            "aug": 1,
+            "sep": 1,
+            "oct": 1,
+            "nov": 2,
+            "dec": 3
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 131,
+        "fields": {
+            "product_url": "pepino",
+            "scientific_name": "Cucumis sativus",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/pepino.png",
+            "jan": 1,
+            "feb": 1,
+            "mar": 1,
+            "apr": 3,
+            "may": 3,
+            "jun": 3,
+            "jul": 3,
+            "aug": 3,
+            "sep": 3,
+            "oct": 2,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 132,
+        "fields": {
+            "product_url": "pera",
+            "scientific_name": "Pyrus communis",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/pera.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 3,
+            "sep": 3,
+            "oct": 3,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 133,
+        "fields": {
+            "product_url": "perejil",
+            "scientific_name": "Petroselinum crispum",
+            "scientific_name_variety": "neapolitanum",
+            "common_name_variety": "italiano",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/perejil_italiano.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 134,
+        "fields": {
+            "product_url": "perejil",
+            "scientific_name": "Petroselinum crispum",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/perejil.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 135,
+        "fields": {
+            "product_url": "pina",
+            "scientific_name": "Ananas comosus",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/pina.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 3,
+            "may": 3,
+            "jun": 3,
+            "jul": 1,
+            "aug": 1,
+            "sep": 1,
+            "oct": 2,
+            "nov": 2,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 136,
+        "fields": {
+            "product_url": "pitahaya",
+            "scientific_name": "Selenicereus undatus",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/pitahaya.png",
+            "jan": 0,
+            "feb": 0,
+            "mar": 0,
+            "apr": 0,
+            "may": 2,
+            "jun": 3,
+            "jul": 3,
+            "aug": 3,
+            "sep": 3,
+            "oct": 2,
+            "nov": 1,
+            "dec": 0
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 137,
+        "fields": {
+            "product_url": "platano",
+            "scientific_name": "Musa balbisiana",
+            "scientific_name_variety": null,
+            "common_name_variety": "maduro",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/platano_maduro.png",
+            "jan": 1,
+            "feb": 1,
+            "mar": 2,
+            "apr": 3,
+            "may": 3,
+            "jun": 3,
+            "jul": 3,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 138,
+        "fields": {
+            "product_url": "platano",
+            "scientific_name": "Musa balbisiana",
+            "scientific_name_variety": null,
+            "common_name_variety": "verde",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/platano_verde.png",
+            "jan": 1,
+            "feb": 1,
+            "mar": 2,
+            "apr": 3,
+            "may": 3,
+            "jun": 3,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 139,
+        "fields": {
+            "product_url": "puerro",
+            "scientific_name": "Allium ampeloprasum",
+            "scientific_name_variety": "porrum",
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/puerro.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 3,
+            "jun": 3,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 3,
+            "nov": 3,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 140,
+        "fields": {
+            "product_url": "rabano",
+            "scientific_name": "Raphanus sativus",
+            "scientific_name_variety": null,
+            "common_name_variety": "rabanito",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/rabano_rabanito.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 3,
+            "apr": 3,
+            "may": 3,
+            "jun": 3,
+            "jul": 2,
+            "aug": 2,
+            "sep": 3,
+            "oct": 3,
+            "nov": 3,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 141,
+        "fields": {
+            "product_url": "rabano",
+            "scientific_name": "Raphanus sativus",
+            "scientific_name_variety": null,
+            "common_name_variety": "blanco",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/rabano_blanco.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 3,
+            "apr": 3,
+            "may": 3,
+            "jun": 3,
+            "jul": 2,
+            "aug": 2,
+            "sep": 3,
+            "oct": 3,
+            "nov": 3,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 142,
+        "fields": {
+            "product_url": "remolacha",
+            "scientific_name": "Beta vulgari",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/remolacha.png",
+            "jan": 1,
+            "feb": 1,
+            "mar": 2,
+            "apr": 3,
+            "may": 3,
+            "jun": 3,
+            "jul": 3,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 143,
+        "fields": {
+            "product_url": "repollo",
+            "scientific_name": "Brassica oleracea",
+            "scientific_name_variety": "capita f. rubra",
+            "common_name_variety": "morado",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/repollo_morado.png",
+            "jan": 1,
+            "feb": 1,
+            "mar": 1,
+            "apr": 2,
+            "may": 3,
+            "jun": 3,
+            "jul": 3,
+            "aug": 2,
+            "sep": 2,
+            "oct": 3,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 144,
+        "fields": {
+            "product_url": "repollo",
+            "scientific_name": "Brassica oleracea",
+            "scientific_name_variety": "capita",
+            "common_name_variety": "verde",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/repollo_verde.png",
+            "jan": 1,
+            "feb": 1,
+            "mar": 1,
+            "apr": 2,
+            "may": 3,
+            "jun": 3,
+            "jul": 3,
+            "aug": 2,
+            "sep": 2,
+            "oct": 3,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 145,
+        "fields": {
+            "product_url": "romero",
+            "scientific_name": "Salvia rosmarinus",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/romero.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 146,
+        "fields": {
+            "product_url": "ruda",
+            "scientific_name": "Ruda graveolens",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/ruda.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 147,
+        "fields": {
+            "product_url": "sabila",
+            "scientific_name": "Aloe vera",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/sabila.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 148,
+        "fields": {
+            "product_url": "salvia",
+            "scientific_name": "Salvia officinalis",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/salvia.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 149,
+        "fields": {
+            "product_url": "sandia",
+            "scientific_name": "Citrullus lanatus",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/sandia.png",
+            "jan": 2,
+            "feb": 3,
+            "mar": 3,
+            "apr": 3,
+            "may": 3,
+            "jun": 2,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 150,
+        "fields": {
+            "product_url": "tacaco",
+            "scientific_name": "Sechium tacaco",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/tacaco.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 1,
+            "may": 1,
+            "jun": 1,
+            "jul": 1,
+            "aug": 3,
+            "sep": 3,
+            "oct": 3,
+            "nov": 3,
+            "dec": 3
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 151,
+        "fields": {
+            "product_url": "tamarindo",
+            "scientific_name": "Tamarindus indica",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/tamarindo.png",
+            "jan": 2,
+            "feb": 3,
+            "mar": 3,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 1,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 152,
+        "fields": {
+            "product_url": "tiquisque",
+            "scientific_name": "Xanthosoma sagittifolium",
+            "scientific_name_variety": "Schott",
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/tiquisque.png",
+            "jan": 2,
+            "feb": 3,
+            "mar": 3,
+            "apr": 3,
+            "may": 3,
+            "jun": 3,
+            "jul": 2,
+            "aug": 1,
+            "sep": 1,
+            "oct": 1,
+            "nov": 1,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 153,
+        "fields": {
+            "product_url": "tomate",
+            "scientific_name": "Lycopersicon esculentum",
+            "scientific_name_variety": null,
+            "common_name_variety": "pera",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/tomate_pera.png",
+            "jan": 1,
+            "feb": 2,
+            "mar": 3,
+            "apr": 3,
+            "may": 3,
+            "jun": 3,
+            "jul": 1,
+            "aug": 1,
+            "sep": 3,
+            "oct": 3,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 154,
+        "fields": {
+            "product_url": "tomate",
+            "scientific_name": "Physalis ixocarpa",
+            "scientific_name_variety": null,
+            "common_name_variety": "verde mexicano",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/tomate_verde_mexicano.png",
+            "jan": 1,
+            "feb": 2,
+            "mar": 3,
+            "apr": 3,
+            "may": 3,
+            "jun": 3,
+            "jul": 1,
+            "aug": 1,
+            "sep": 3,
+            "oct": 3,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 155,
+        "fields": {
+            "product_url": "tomate",
+            "scientific_name": "Solanum lycopersicum",
+            "scientific_name_variety": "cerasiforme",
+            "common_name_variety": "cherry",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/tomate_cherry.png",
+            "jan": 1,
+            "feb": 2,
+            "mar": 3,
+            "apr": 3,
+            "may": 3,
+            "jun": 3,
+            "jul": 1,
+            "aug": 1,
+            "sep": 3,
+            "oct": 3,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 156,
+        "fields": {
+            "product_url": "tomate",
+            "scientific_name": "Solanum lycopersicum",
+            "scientific_name_variety": null,
+            "common_name_variety": "mesa",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/tomate_mesa.png",
+            "jan": 1,
+            "feb": 2,
+            "mar": 3,
+            "apr": 3,
+            "may": 3,
+            "jun": 3,
+            "jul": 1,
+            "aug": 1,
+            "sep": 3,
+            "oct": 3,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 157,
+        "fields": {
+            "product_url": "tomillo",
+            "scientific_name": "Thymus vulgaris",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/tomillo.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 158,
+        "fields": {
+            "product_url": "toronja",
+            "scientific_name": "Citrus × paradisi",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": "grape fruit toronja",
+            "description": null,
+            "image": "products/toronja.png",
+            "jan": 1,
+            "feb": 2,
+            "mar": 3,
+            "apr": 3,
+            "may": 3,
+            "jun": 3,
+            "jul": 2,
+            "aug": 1,
+            "sep": 1,
+            "oct": 1,
+            "nov": 1,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 159,
+        "fields": {
+            "product_url": "uchuva",
+            "scientific_name": "Physalis peruviana",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/uchuva.png",
+            "jan": 1,
+            "feb": 3,
+            "mar": 3,
+            "apr": 3,
+            "may": 2,
+            "jun": 1,
+            "jul": 1,
+            "aug": 3,
+            "sep": 3,
+            "oct": 3,
+            "nov": 3,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 160,
+        "fields": {
+            "product_url": "uva",
+            "scientific_name": "Vitis vinifera ",
+            "scientific_name_variety": null,
+            "common_name_variety": "roja",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/uva_roja.png",
+            "jan": 1,
+            "feb": 3,
+            "mar": 3,
+            "apr": 3,
+            "may": 2,
+            "jun": 1,
+            "jul": 1,
+            "aug": 3,
+            "sep": 3,
+            "oct": 3,
+            "nov": 3,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 161,
+        "fields": {
+            "product_url": "uva",
+            "scientific_name": "Vitis vinifera ",
+            "scientific_name_variety": null,
+            "common_name_variety": "verde",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/uva_verde.png",
+            "jan": 1,
+            "feb": 3,
+            "mar": 3,
+            "apr": 3,
+            "may": 2,
+            "jun": 1,
+            "jul": 1,
+            "aug": 3,
+            "sep": 3,
+            "oct": 3,
+            "nov": 3,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 162,
+        "fields": {
+            "product_url": "vainica",
+            "scientific_name": "Phaseolus vulgaris",
+            "scientific_name_variety": "in situ",
+            "common_name_variety": "tierna",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/vainica_tierna.png",
+            "jan": 1,
+            "feb": 1,
+            "mar": 2,
+            "apr": 3,
+            "may": 2,
+            "jun": 2,
+            "jul": 3,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 163,
+        "fields": {
+            "product_url": "yuca",
+            "scientific_name": "Manihot esculenta",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/yuca.png",
+            "jan": 1,
+            "feb": 3,
+            "mar": 3,
+            "apr": 3,
+            "may": 2,
+            "jun": 2,
+            "jul": 1,
+            "aug": 1,
+            "sep": 2,
+            "oct": 3,
+            "nov": 3,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 164,
+        "fields": {
+            "product_url": "zacatelimon",
+            "scientific_name": "Cymbopogon citratus",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/zacatelimon.png",
+            "jan": 2,
+            "feb": 2,
+            "mar": 2,
+            "apr": 2,
+            "may": 2,
+            "jun": 2,
+            "jul": 2,
+            "aug": 2,
+            "sep": 2,
+            "oct": 2,
+            "nov": 2,
+            "dec": 2
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 165,
+        "fields": {
+            "product_url": "zanahoria",
+            "scientific_name": "Daucus carota",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/zanahoria.png",
+            "jan": 2,
+            "feb": 3,
+            "mar": 2,
+            "apr": 2,
+            "may": 3,
+            "jun": 2,
+            "jul": 1,
+            "aug": 1,
+            "sep": 2,
+            "oct": 3,
+            "nov": 3,
+            "dec": 3
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 166,
+        "fields": {
+            "product_url": "zapallo",
+            "scientific_name": "Cucurbita moschata",
+            "scientific_name_variety": null,
+            "common_name_variety": "esmeralda",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/zapallo_esmeralda.png",
+            "jan": 1,
+            "feb": 1,
+            "mar": 1,
+            "apr": 3,
+            "may": 3,
+            "jun": 2,
+            "jul": 3,
+            "aug": 3,
+            "sep": 3,
+            "oct": 3,
+            "nov": 2,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 167,
+        "fields": {
+            "product_url": "zapallo",
+            "scientific_name": "Cucurbita moschata",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/zapallo.png",
+            "jan": 1,
+            "feb": 1,
+            "mar": 1,
+            "apr": 3,
+            "may": 3,
+            "jun": 2,
+            "jul": 3,
+            "aug": 3,
+            "sep": 3,
+            "oct": 3,
+            "nov": 2,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 168,
+        "fields": {
+            "product_url": "zucchini",
+            "scientific_name": "Cucurbita pepo",
+            "scientific_name_variety": "sunburst",
+            "common_name_variety": "escalopín colores",
+            "common_name_variety_alternate": null,
+            "description": null,
+            "image": "products/zucchini_escalopin_colores.png",
+            "jan": null,
+            "feb": null,
+            "mar": null,
+            "apr": null,
+            "may": null,
+            "jun": null,
+            "jul": null,
+            "aug": null,
+            "sep": null,
+            "oct": null,
+            "nov": null,
+            "dec": null
+        }
+    },
+    {
+        "model": "products.variety",
+        "pk": 169,
+        "fields": {
+            "product_url": "zucchini",
+            "scientific_name": "Cucurbita pepo",
+            "scientific_name_variety": null,
+            "common_name_variety": null,
+            "common_name_variety_alternate": "calabacín",
+            "description": null,
+            "image": "products/zucchini.png",
+            "jan": 1,
+            "feb": 1,
+            "mar": 1,
+            "apr": 3,
+            "may": 3,
+            "jun": 2,
+            "jul": 3,
+            "aug": 3,
+            "sep": 3,
+            "oct": 3,
+            "nov": 2,
+            "dec": 1
+        }
+    },
+    {
+        "model": "products.origin",
+        "pk": "I",
+        "fields": {
+            "name": "Asia Oriental",
+            "description": "",
+            "region": null
+        }
+    },
+    {
+        "model": "products.origin",
+        "pk": "II",
+        "fields": {
+            "name": "Subcontinente indio",
+            "description": "",
+            "region": null
+        }
+    },
+    {
+        "model": "products.origin",
+        "pk": "III",
+        "fields": {
+            "name": "Asia Central",
+            "description": "",
+            "region": null
+        }
+    },
+    {
+        "model": "products.origin",
+        "pk": "IIa",
+        "fields": {
+            "name": "Archipiélago indo-malayo",
+            "description": "",
+            "region": null
+        }
+    },
+    {
+        "model": "products.origin",
+        "pk": "IV",
+        "fields": {
+            "name": "Asia Menor y Creciente Fértil",
+            "description": "",
+            "region": null
+        }
+    },
+    {
+        "model": "products.origin",
+        "pk": "V",
+        "fields": {
+            "name": "Mediterráneo",
+            "description": "",
+            "region": null
+        }
+    },
+    {
+        "model": "products.origin",
+        "pk": "VI",
+        "fields": {
+            "name": "Abisinia (actual Etiopía)",
+            "description": "",
+            "region": null
+        }
+    },
+    {
+        "model": "products.origin",
+        "pk": "VII",
+        "fields": {
+            "name": "Mesoamérica",
+            "description": "",
+            "region": null
+        }
+    },
+    {
+        "model": "products.origin",
+        "pk": "VIII",
+        "fields": {
+            "name": "Región andina tropical",
+            "description": "",
+            "region": null
+        }
+    },
+    {
+        "model": "products.origin",
+        "pk": "VIIIa",
+        "fields": {
+            "name": "Región chilena",
+            "description": "",
+            "region": null
+        }
+    },
+    {
+        "model": "products.origin",
+        "pk": "VIIIb",
+        "fields": {
+            "name": "Región brasileña-paraguaya",
+            "description": "",
+            "region": null
         }
     },
     {
         "model": "products.preparation",
-        "pk": "crudo",
+        "pk": "frito",
         "fields": {
-            "method_name": "crudo",
-            "method_description": "Para comer así nomás.",
-            "icon": ""
-        }
-    },
-    {
-        "model": "products.storage",
-        "pk": "refrigeracion",
-        "fields": {
-            "method_name": "refrigeración",
-            "method_description": "Almacenar a una temperatura menor a 15 grados pero mayor a 0 grados.",
-            "icon": ""
-        }
-    },
-    {
-        "model": "products.storage",
-        "pk": "temperatura-ambiente",
-        "fields": {
-            "method_name": "temperatura ambiente",
-            "method_description": "Nada más de poner por ahí.",
+            "method_name": "frito",
+            "method_description": "Echar al sartén y que no se queme.",
             "icon": ""
         }
     }
