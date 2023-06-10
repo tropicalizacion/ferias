@@ -8,52 +8,54 @@
 
 {% load l10n %}
 
-<style>
-    .btn-waze {
-        background-color: #05c8f7;
-        color: #FFFFFF;
-    }
-</style>
-
 <br>
 <hr>
 
-<h1 class="display-1" style="font-family: 'Gochi Hand';">Feria de {{ marketplace.name }}</h1>
+<h1>Feria de {{ marketplace.name }}</h1>
 
-<lottie-player src="https://assets9.lottiefiles.com/packages/lf20_yCLmiJlU07.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+<h3>Nombre alternativo</h3>
 
-{% if marketplace.description %}
-<div class="card">
-    <div class="card-body">
-        {{ marketplace.description }}
-    </div>
-</div>
-{% endif %}
+<p>{{ marketplace.name_alternate }}</p>
 
-<h3>Horario de la feria</h3>
+<h3>Descripción</h3>
 
-{{ marketplace.opening_hours }}
+<p>{{ marketplace.description }}</p>
 
-<h3>Cómo llegar</h3>
+<p>Fecha de fundación: {{ marketplace.opening_date }}</p>
 
-<div class="card" style="width: 350px;">
+<h3>Horario</h3>
+
+<p>{{ marketplace.opening_hours }}</p>
+
+<h3>Ubicación</h3>
+
+<p>
     <div id="map" style="width: 348px; height: 300px;"></div>
-    <div class="card-body">
-        <h5 class="card-title">Dirección</h5>
-        <h6 class="card-subtitle mb-2 text-body-secondary">
-            {{ marketplace.province }} |
-            {{ marketplace.canton }} |
-            {{ marketplace.district }}
-        </h6>
-        <p class="card-text">{{ marketplace.address }}</p>
-        <a target="_blank" href="https://ul.waze.com/ul?ll={{ marketplace.location.y|unlocalize }}%2C{{ marketplace.location.x|unlocalize }}&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
-            class="btn btn-waze">Waze</a>
-        <a target="_blank" href="https://www.google.com/maps/dir/?api=1&destination={{ marketplace.location.y|unlocalize }},{{ marketplace.location.x|unlocalize }}"
-            class="btn btn-primary">Google Maps</a>
-    </div>
-</div>
+</p>
 
-<br>
+<h3>Dirección</h3>
+
+<p>
+    {{ marketplace.province }} |
+    {{ marketplace.canton }} |
+    {{ marketplace.district }}
+</p>
+
+<p>
+{{ marketplace.address }}
+</p>
+
+<p>
+    <a target="_blank" href="https://ul.waze.com/ul?ll={{ marketplace.location.y|unlocalize }}%2C{{ marketplace.location.x|unlocalize }}&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
+        class="btn btn-primary">Waze</a>
+    <a target="_blank" href="https://www.google.com/maps/dir/?api=1&destination={{ marketplace.location.y|unlocalize }},{{ marketplace.location.x|unlocalize }}"
+        class="btn btn-primary">Google Maps</a>
+</p>
+
+<h3>Tamaño</h3>
+
+<p>{{ marketplace.size }}</p>
+
 <h3>Otras ferias cercanas</h3>
 
 <ul>
@@ -62,10 +64,39 @@
     {% endfor %}
 </ul>
 
-<br>
-<h2>Cosas que tiene</h2>
+<h3>Infraestructura</h3>
 
-{% include 'features.html' %}
+{% include 'infrastructure.html' %}
+
+<h3>Servicios</h3>
+
+{% include 'services.html' %}
+
+<h3>Productos</h3>
+
+<p>Lista de productos disponibles en esta feria (todavía no hay datos al respecto, quizá es mejor no ponerlo todavía).</p>
+
+<h3>Contacto</h3>
+
+<dl>
+    <dt>Teléfono</dt>
+    <dd>{{ marketplace.phone }}</dd>
+    <dt>Correo electrónico</dt>
+    <dd><a href="mailto:{{ marketplace.email }}">{{ marketplace.email }}</a></dd>
+    <dt>Sitio web</dt>
+    <dd><a href="{{ marketplace.website }}" target="_blank">{{ marketplace.website }}</a></dd>
+</dl>
+
+<h3>Administración</h3>
+
+<dl>
+    <dt>Operador</dt>
+    <dd>{{ marketplace.operator }}</dd>
+    <dt>División regional</dt>
+    <dd>{{ marketplace.branch }}</dd>
+</dl>
+
+
 
 <!-- Leaflet Map -->
 <script>
