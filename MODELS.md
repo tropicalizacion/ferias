@@ -5,52 +5,60 @@ Modelos según Django
 ## Ferias
 
 - `class Marketplace`:
-  - `marketplace_id`: (CharField) identificador único. Ejemplo: `curridabat`, `sansebastian`. Nota: este también será el URL de cada feria, por ejemplo: https://feria.cr/curridabat.
+  - `marketplace_url`: (CharField) identificador único. Ejemplo: `curridabat`, `sansebastian`. Nota: este también será el URL de cada feria, por ejemplo: https://feria.cr/curridabat.
   - `name`: (CharField) nombre común de la feria. No debe incluir "La Feria de..." y debe estar escrita con la ortografía correcta. Ejemplo: Tres Ríos.
-  - `name_alternate`: (CharField)
+  - `name_alternate`: (TextField) descripción de la feria.
+  - `description`: (CharField)
   - `opening_hours`: (CharField) descripción de los horarios de apertura (según [referencia](https://wiki.openstreetmap.org/wiki/Key:opening_hours) de OpenStreetMaps). Ejemplo: "Mo-Fr 08:00-12:00,13:00-17:00. Nota: hay que evaluar la mejor forma de adaptar esto a partir de la tabla `Calendar` más adelante.
-  - `latitude`: (DecimalField) latitud en el sistema SRID 4326 (WGS84). Ejemplo: 9.937076687250993.
-  - `longitude`: (DecimalField) longitud en el sistema SRID 4326 (WGS84). Ejemplo: -84.04392677627472.
-  - `area`: (PolygonField) polígono que demarca el área o región donde está la feria. Utilizar GeoDjango.
+  - `location`: (PointField) ubicación SRID 4326 (WGS84) de la feria (GeoDjango).
+  - `area`: (PolygonField) polígono que demarca el área o región donde está la feria (GeoDjango).
   - `size`: (CharField) nuestra propia clasificación del tamaño relativo de una feria, con los valores posibles:
     - S: pequeña
     - M: mediana
     - L: grande
     - XL: extra grande
-  - `province`: (IntegerField) división provincial de Costa Rica:
-    - 1: San José
-    - ...
-    - 7: Limón
-  - `canton`: (IntegerField) división cantonal de Costa Rica ([referencia](https://ccp.ucr.ac.cr/bvp/mapoteca/CostaRica/generales/atlas_cantonal_1984/) desactualizada):
-    - 101: San José
-    - 102: Escazú
-    - ...
-    - 705: Matina
-    - 706: Guácimo
-  - `district`: (IntegerField) división distrital de Costa Rica:
-    - 10101: Carmen
-    - ...
-    - 70605: Duacarí
+  - `province`: (CharField) división provincial de Costa Rica.
+  - `canton`: (CharField) división cantonal de Costa Rica.
+  - `district`: (CharField) división distrital de Costa Rica.
   - `address`: (TextField) dirección "a la tica". Ejemplo: "En el gimnasio de la escuela de Guachipelín".
-  - `telephone`: (PhoneNumberField) número de teléfono (según recomendación [E.164](https://en.wikipedia.org/wiki/E.164) de UIT). Ejemplo: +50687654321.
+  - `phone`: (PhoneNumberField) número de teléfono (según recomendación [E.164](https://en.wikipedia.org/wiki/E.164) de UIT). Ejemplo: +50687654321.
   - `admin_committee`: (CharField) comité regional del CNP a la que pertenece la feria.
   - `admin_center`: (CharField) centro agrícola que administra la feria.
   - `email`: (EmailField) correo electrónico de contacto.
+  - `website`: (URLField) dirección web de la feria (web, Facebook, etc.)
   - `products`: (ManyToMany) productos regulares en la oferta de la feria, vinculado con la tabla `Products`.
-  - Nota: a partir de aquí hay "amenidades" de la feria, según las etiquetas de OpenStreetMaps más relevantes para una feria. Puede crecer con el tiempo.
-  - `fairgrounds`: (CharField) si la feria tiene un campo ferial o lugar dedicado, y no es en la calle.
-  - `indoor`: (CharField) si la feria es bajo techo o no.
-  - `parking`: (CharField) qué tipo de parqueo hay cercano.
-  - `bicycle_parking`: (CharField) si la feria tiene un parque dedicado específicamente a bicicletas.
-  - `drinking_water`
-  - `payment_accepted`
+  - Infraestructura:
+    - `parking`: (CharField)
+    - `bicycle_parking`: (BooleanField)
+    - `fairground`: (BooleanField)
+    - `indoor`: (BooleanField)
+    - `toilets`: (BooleanField)
+    - `handwashing`: (BooleanField)
+    - `drinking_water`: (BooleanField)
+  - Servicios
+    - `food`: (BooleanField)
+    - `drinks`: (BooleanField)
+    - `handicrafts`: (BooleanField)
+    - `butcher`: (BooleanField)
+    - `dairy`: (BooleanField)
+    - `seafood`: (BooleanField)
+    - `garden_centre`: (BooleanField)
+    - `florist`: (BooleanField)
+  - Otros
+    - `payment`: (ManyToManyField)
+    - `other_services`: (CharField)
+  - Productos
+    - `products`: (ManyToManyField)
 
-- `class Calendar`
-  - `marketplace_id`: (ForeignKey:Feria.marketplace_id): llave foránea con las ferias.
-  - `begins_day`: (IntegerField) día de la semana, 0: lunes, ..., 6: domingo.
-  - `begins_time`: (TimeField) hora del día en que comienza.
-  - `ends_day`: (IntegerField) día de la semana, 0: lunes, ..., 6: domingo.
-  - `ends_time`: (TimeField) hora del día en que termina.
+- `class Photo`
+  - `marketplace`: (ForeignKey(Marketplace))
+  - `image`: (ImageField)
+  - `description`: (CharField)
+  - `profile`: (BooleanField)
+  - `cover`: (BooleanField)
+
+- `class Payment`
+  - `name`: (CharField)
 
 ## Productos
 
