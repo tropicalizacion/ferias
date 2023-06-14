@@ -2,7 +2,13 @@
 
 {% load static %}
 
+{% block page_title %} Lista de productos {% endblock %}
+
 {% block main %}
+
+<br>
+<a href="/ferias/">Lista de ferias</a> | <a href="/productos/">Lista de productos</a>
+<hr>
 
 <h1>Productos</h1>
 
@@ -10,7 +16,7 @@
 
 <ul>
 {% for product in products %}
-    <li>{{ product.common_name }}</li>
+    <li><a href="/productos/{{ product.product_url }}">{{ product.common_name }}</a></li>
 {% endfor %}
 </ul>
 

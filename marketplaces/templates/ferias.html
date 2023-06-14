@@ -2,7 +2,13 @@
 
 {% load static %}
 
+{% block page_title %} Lista de ferias {% endblock %}
+
 {% block main %}
+
+<br>
+<a href="/ferias/">Lista de ferias</a> | <a href="/productos/">Lista de productos</a>
+<hr>
 
 <h1>Ferias</h1>
 
@@ -10,10 +16,12 @@
 
 <ul>
 {% for marketplace in marketplaces %}
-    <li>{{ marketplace.name }}</li>
+    <li><a href="/ferias/{{ marketplace.marketplace_url }}">{{ marketplace.name }}</a></li>
 {% endfor %}
 </ul>
 
 <h2>Mapa con todas las ferias</h2>
+
+<p>Aquí un día estará un mapa con todas las ferias del país. Un día.</p>
 
 {% endblock %}
