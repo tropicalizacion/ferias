@@ -9,7 +9,9 @@
 {% load l10n %}
 
 <br>
-Volver a <a href="/ferias/">lista de ferias</a>
+<a href="{% url 'index' %}">Inicio</a> |
+<a href="{% url 'ferias' %}">Lista de ferias</a> | 
+<a href="{% url 'productos' %}">Lista de productos</a>  
 <hr>
 
 <p>
@@ -21,7 +23,7 @@ Volver a <a href="/ferias/">lista de ferias</a>
 </div>    
 </p>
 
-<h1 class="display-2">Feria de {{ marketplace.name }}</h1>
+<h1 class="display-2" style="font-weight: 900;">Feria de {{ marketplace.name }}</h1>
 
 <h3>Nombre alternativo</h3>
 

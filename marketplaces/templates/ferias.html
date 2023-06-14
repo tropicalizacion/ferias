@@ -7,7 +7,9 @@
 {% block main %}
 
 <br>
-<a href="/ferias/">Lista de ferias</a> | <a href="/productos/">Lista de productos</a>
+<a href="{% url 'index' %}">Inicio</a> |
+<a href="{% url 'ferias' %}">Lista de ferias</a> | 
+<a href="{% url 'productos' %}">Lista de productos</a>  
 <hr>
 
 <h1>Ferias</h1>
