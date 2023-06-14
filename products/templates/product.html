@@ -7,9 +7,10 @@
 {% block main %}
 
 <br>
-Volver a <a href="/productos/">lista de productos</a>
+<a href="{% url 'index' %}">Inicio</a> |
+<a href="{% url 'ferias' %}">Lista de ferias</a> | 
+<a href="{% url 'productos' %}">Lista de productos</a>  
 <hr>
-
 
 <p>
     <div class="card" style="width: 200px;">
@@ -21,7 +22,7 @@ Volver a <a href="/productos/">lista de productos</a>
 </p>
 
 <!-- Información general -->
-<h1 class="display-2">{{ product.common_name|capfirst }}</h1>
+<h1 class="display-2"  style="font-weight: 900;">{{ product.common_name|capfirst }}</h1>
 
 <p>Nombre alternativo: {{ product.common_name_alternate }}</p>
 
