@@ -1,46 +1,43 @@
 # Configuración del sitio
 
-## Clave secreta de Django
+Este documento tiene la principal funcionalidad de proporcionar una guía para la ejecución del proyecto. Con esto se pretende mejorar su mantenibilidad y desarrollo de futuras funcionalidades.
+
+## Paso 1. Clone el repositorio en su computadora
+
+Puede hacerlo con HTTPS o SSH. Luego de clonar el repositorio, ábralo desde su ambiente de desarrollo seleccionado.
+
+## Paso 2. Clave secreta de Django
 
 La clave secreta de Django y otras configuraciones están en un archivo `.env` y es manipulado por el paquete `python-decouple` ([documentación](https://pypi.org/project/python-decouple/)).
+Para obtener el archivo `.env` por favor ponerse en contacto con el profesor o desarrollador encargado.
 
-Para iniciar:
+Al obtener el archivo `.env`, colóquelo en el directorio root del proyecto.
+
+## Paso 3. Instalación `pip`
+
+Para, iniciar se debe instalar `pip`. Este es el instalador de paquetes que se utiliza python y será necesario para todas las librerías y paquetes que se utilizan en este proyecto. Para su instalación, inicie una terminal dentro del proyecto y ejecute los siguientes comandos: `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py` y luego `python get-pip.py`. ([documentación](https://www.geeksforgeeks.org/how-to-install-pip-on-windows/))
+
+## Paso 4. Instalación de paquetes y librerías
+
+Instale los siguientes paquetes con `pip`:
+
+```bash
+pip install django
+```
 
 ```bash
 pip install python-decouple
 ```
 
-Agregar: en `editor/settings.py`:
-
-```python
-from decouple import config
-```
-
-Se agrega el archivo `.env` al directorio raíz. Nota: (en caso de ser necesario) al descargar el archivo `.env` y pasarlo al directorio raíz puede salir como `.env.env` se debe cambiar esto a solo `.env`.
-
-(Seguir instrucciones de la documentación).
-
-> El equipo de desarrolladores compartirá el documento `.env`.
-
-Luego, se deben instalar los siguientes paquetes:
-
 ```bash
-`pip install django`
+pip install bootstrap-py
 ```
 
 ```bash
-`pip install bootstrap-py`
+pip install Pillow
 ```
 
-Por último, Para ejecutar el proyecto se utiliza el comando:
-
-```bash
-`python manage.py runserver`
-```
-
-Para acceder al sitio en desarrollo se realiza mediante localhost en el puerto seleccionado
-
-## Migrar a GeoDjango
+## Paso 5. Migrar a GeoDjango
 
 [GeoDjango](https://docs.djangoproject.com/en/4.2/ref/contrib/gis/) será utilizado con PostgreSQL y PostGIS.
 
@@ -100,7 +97,30 @@ from django.contrib.gis import admin
 admin.site.register(Marketplace, admin.GISModelAdmin)
 ```
 
+En caso de tener problemas con la instalación de este paso en windows o en ubuntu, consultar la siguiente [documentación](https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-22-04)
+
 Con esto debería funcionar la aplicación pero ahora con PostgreSQL y PostGIS activado para usar GeoDjango, que permite guardar ubicaciones y regiones en el mapa y hacer búsquedas geoespaciales.
+
+## Paso 6. Ejecución del proyecto
+
+Por último, Para ejecutar el proyecto se utiliza el comando:
+
+```bash
+python manage.py runserver
+```
+
+Para acceder al sitio en desarrollo se realiza mediante localhost en el puerto seleccionado
+
+## Procedimiento para la actualización del repositorio en el servidor:
+
+Si luego de un cambio en el repositorio se desea subir estos al sitio web, se debe realizar lo siguiente:
+
+- Acceder remotamente el servidor con SSH ```bash ssh tcu@[IP DeFerias] ``` o vía el Access Console de Digital Ocean (en este caso hay que cambiar al usuario “tcu” con su tcu)
+- En la terminal, moverse a ```bash cd ~/ferias ```
+- Hacer ```bash git pull ``` en la rama que corresponde
+- Reiniciar Nginx y Gunicorn con: ```bash sudo systemctl restart nginx ``` y ```bash sudo systemctl restart gunicorn ```
+- Si hay que hacer migraciones de la base de datos entonces hay que entrar al ambiente virtual con ```bash source feriasenv/bin/activate ``` que es donde existe Python, Django y todos los paquetes asociados
+- Antes de subir los cambios revisar que todo funcione de manera correcta y tener cuidado con las migraciones
 
 ## Aplicaciones del sitio
 
