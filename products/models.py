@@ -7,19 +7,18 @@ class Product(models.Model):
     """Model definition for Product."""
 
     CATEGORY_CHOICES = [
-        ("hortaliza", "Hortaliza (verdura)"),
-        ("fruta", "Fruta"),
-        ("cereal", "Cereal (grano)"),
-        ("legumbre", "Legumbre (leguminosa)"),
-        ("tubérculo", "Tubérculo o raíz"),
-        ("condimento", "Condimento (especia)"),
-        ("otro", "Otra categoría"),
+        (1, "cereales"),
+        (2, "legumbres"),
+        (3, "frutas"),
+        (4, "hortalizas"),
+        (5, "condimentos")
     ]
 
+    product_id = models.AutoField(primary_key=True)
     product_url = models.CharField(
         primary_key=True, max_length=63, blank=False, null=False
     )
-    category = models.CharField(choices=CATEGORY_CHOICES, max_length=15)
+    category = models.IntegerField(choices=CATEGORY_CHOICES)
     common_name = models.CharField(max_length=63, blank=False, null=False)
     common_name_alternate = models.CharField(max_length=127, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
