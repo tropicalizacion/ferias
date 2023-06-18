@@ -88,10 +88,21 @@ class Preparation(models.Model):
 class Storage(models.Model):
     """Model definition for Storage."""
 
-    storage_url = models.CharField(max_length=31, primary_key=True)
-    method_name = models.CharField(max_length=63)
-    method_description = models.TextField()
-    icon = models.ImageField(upload_to="icons", blank=True, null=True)
+    METHOD_CHOICES = [
+        (1, "a temperatura ambiente"),
+        (2, "refrigerar"),
+        (3, "congelar")
+    ]
+
+    RECOMMENDATION_CHOICES = [
+        (1, "preparación más saludable"),
+        (2, "no sé qué")
+    ]
+
+    product_id = models.ForeignKey(Product, on_delete=models.CASCADE)
+    method = models.IntegerField(choices=METHOD_CHOICES)
+    recommendation = models.IntegerField(choices=RECOMMENDATION_CHOICES)
+    description = models.TextField(max_length=127, blank=True, null=True)
 
     def __str__(self):
-        return self.method_name
+        return self.method
