@@ -15,11 +15,12 @@ class Product(models.Model):
     ]
 
     product_id = models.AutoField(primary_key=True)
-    product_url = models.CharField(
-        primary_key=True, max_length=63, blank=False, null=False
-    )
+    product_url = models.CharField(max_length=63, blank=False, null=False)
     category = models.IntegerField(choices=CATEGORY_CHOICES)
+    scientific_name = models.CharField(max_length=63, blank=False, null=False)
+    scientific_name_variety = models.CharField(max_length=127, blank=True, null=True)
     common_name = models.CharField(max_length=63, blank=False, null=False)
+    common_name_variety = models.CharField(max_length=127, blank=True, null=True)
     common_name_alternate = models.CharField(max_length=127, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
     icon = models.ImageField(upload_to="icons", blank=True, null=True)
