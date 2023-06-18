@@ -67,18 +67,18 @@ class Product(models.Model):
 class Preparation(models.Model):
     """Model definition for Preparation."""
 
-    METHOD_CHOICES = [
+    PREPARATION_METHOD_CHOICES = [
         (1, "hervir")
     ]
 
-    RECOMMENDATION_CHOICES = [
+    PREPARATION_RECOMMENDATION_CHOICES = [
         (1, "preparación más saludable"),
         (2, "no sé qué")
     ]
 
     product_id = models.ForeignKey(Product, on_delete=models.CASCADE)
-    method = models.IntegerField(choices=METHOD_CHOICES)
-    recommendation = models.IntegerField(choices=RECOMMENDATION_CHOICES)
+    method = models.IntegerField(choices=PREPARATION_METHOD_CHOICES)
+    recommendation = models.IntegerField(choices=PREPARATION_RECOMMENDATION_CHOICES)
     description = models.TextField(max_length=127, blank=True, null=True)
 
     def __str__(self):
@@ -88,20 +88,20 @@ class Preparation(models.Model):
 class Storage(models.Model):
     """Model definition for Storage."""
 
-    METHOD_CHOICES = [
+    STORAGE_METHOD_CHOICES = [
         (1, "a temperatura ambiente"),
         (2, "refrigerar"),
         (3, "congelar")
     ]
 
-    RECOMMENDATION_CHOICES = [
+    STORAGE_RECOMMENDATION_CHOICES = [
         (1, "preparación más saludable"),
         (2, "no sé qué")
     ]
 
     product_id = models.ForeignKey(Product, on_delete=models.CASCADE)
-    method = models.IntegerField(choices=METHOD_CHOICES)
-    recommendation = models.IntegerField(choices=RECOMMENDATION_CHOICES)
+    method = models.IntegerField(choices=STORAGE_METHOD_CHOICES)
+    recommendation = models.IntegerField(choices=STORAGE_RECOMMENDATION_CHOICES)
     description = models.TextField(max_length=127, blank=True, null=True)
 
     def __str__(self):
