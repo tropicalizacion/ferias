@@ -28,6 +28,13 @@ class Product(models.Model):
         (11, "(VIIIb) Región brasileña-paraguaya"),
     ]
 
+    SEASON_CHOICES = [
+        (0, "imposible o muy difícil de encontrar el producto"),
+        (1, "producto escaso"),
+        (2, "producto abundante"),
+        (3, "plena temporada de cosecha"),
+    ]
+
     product_id = models.AutoField(primary_key=True)
     product_url = models.CharField(max_length=63, blank=False, null=False)
     category = models.IntegerField(choices=CATEGORY_CHOICES)
@@ -39,12 +46,18 @@ class Product(models.Model):
     image = models.ImageField(upload_to="images", blank=True, null=True)
     icon = models.FileField(upload_to="icons", blank=True, null=True)
     center_origin = models.IntegerField(choices=CENTER_ORIGIN_CHOICES)
-    food_basket = models.BooleanField(default=False)
-    nutrition_notes = models.TextField(blank=True, null=True)
-    preparation = models.ManyToManyField("Preparation", blank=True)
-    preparation_notes = models.TextField(blank=True, null=True)
-    storage = models.ManyToManyField("Storage", blank=True)
-    storage_notes = models.TextField(blank=True, null=True)
+    jan = models.IntegerField(choices=SEASON_CHOICES, blank=True, null=True)
+    feb = models.IntegerField(choices=SEASON_CHOICES, blank=True, null=True)
+    mar = models.IntegerField(choices=SEASON_CHOICES, blank=True, null=True)
+    apr = models.IntegerField(choices=SEASON_CHOICES, blank=True, null=True)
+    may = models.IntegerField(choices=SEASON_CHOICES, blank=True, null=True)
+    jun = models.IntegerField(choices=SEASON_CHOICES, blank=True, null=True)
+    jul = models.IntegerField(choices=SEASON_CHOICES, blank=True, null=True)
+    aug = models.IntegerField(choices=SEASON_CHOICES, blank=True, null=True)
+    sep = models.IntegerField(choices=SEASON_CHOICES, blank=True, null=True)
+    oct = models.IntegerField(choices=SEASON_CHOICES, blank=True, null=True)
+    nov = models.IntegerField(choices=SEASON_CHOICES, blank=True, null=True)
+    dec = models.IntegerField(choices=SEASON_CHOICES, blank=True, null=True)
 
     def __str__(self):
         return self.common_name
