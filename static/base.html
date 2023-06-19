@@ -13,7 +13,7 @@
   <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700;900;1000&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;900&display=swap" rel="stylesheet">
   <!-- Leaflet CSS and JS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
@@ -26,7 +26,7 @@
   <!-- Título de pestaña -->
   <style>
     html * {
-      font-family: 'Nunito Sans', sans-serif;
+      font-family: 'Rubik', sans-serif;
     }
   </style>
   <!-- Google tag (gtag.js) -->
@@ -42,10 +42,41 @@
 
 <body>
 
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary">
+    <div class="container-lg">
+      <a class="navbar-brand" href="{% url 'index' %}"><i class="fa-solid fa-store"></i> de<span style="font-weight: 900;">feria</span>.cr</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" aria-current="page" href="{% url 'index' %}">Inicio</a>
+          <a class="nav-link" href="{% url 'ferias' %}">Ferias</a>
+          <a class="nav-link" href="{% url 'productos' %}">Productos</a>
+        </div>
+      </div>
+    </div>
+  </nav>  
+
   <div class="container-lg">
     {% block main %}
 
     {% endblock %}
+  
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <div class="col-md-4 d-flex align-items-center">
+        <a href="{% url 'index' %}" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+          de<span style="font-weight: 900;">feria</span>.cr
+        </a>
+      </div>
+  
+      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+        <li class="ms-3"><a class="text-body-secondary" target="_blank" href="https://www.instagram.com/deferia.cr/"><i class="fa-brands fa-instagram"></i></a></li>
+        <li class="ms-3"><a class="text-body-secondary" target="_blank" href="https://www.tiktok.com/@deferia.cr"><i class="fa-brands fa-tiktok"></i></a></li>
+        <li class="ms-3"><a class="text-body-secondary" target="_blank" href="https://www.facebook.com/deferia.costarica"><i class="fa-brands fa-facebook"></i></a></li>
+      </ul>
+    </footer>
   </div>
 
   <!-- Bootstrap JS -->
