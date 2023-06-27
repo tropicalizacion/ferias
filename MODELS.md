@@ -1,3 +1,32 @@
+# Mapa del sitio
+
+- Inicio
+  - Ferias
+    - Página de inicio de ferias específicamente con datos sobre las ferias en general
+    - ...*cada feria*...
+  - Productos
+    - Página de inicio de productos específicamente con datos sobre los productos en general
+    - ...*cada producto*...
+    - Centros de origen
+  - Consejos
+    - Métodos de almacenamiento (#nutrición)
+    - Métodos de preparación (#nutrición)
+    - Consejos para la feria (cómo ir, etc.)
+  - Blog (consejos, contenidos, información, cápsulas informativas, artículos) (mejorar SEO)
+    - Los Cinco Preceptos (#ciencias-económicas y #nutrición)
+    - Los precios de la feria (#ciencias-económicas)
+    - ¿Por qué la gente prefiere ir a la feria? (#ciencias-económicas)
+    - Frases vinculadas con vegetales y frutas ("no entiendo ni papa") (Angie de Filología)
+    - Historia de las ferias (#comunicación-colectiva)
+    - Anecdotario (*crowdsourced*) (#web-ferias, #comunicación-colectiva, #ciencias-económicas)
+    - Travesía de una fresa, un día en la vida de un mango (#comunicación-colectiva, Marlon de Agronomía)
+    - Sobre la gente que vende frutas y verduras (#comunicación-colectiva, #nutrición, Marlon)
+    - Sobre la gente que **no** vende frutas y verduras (artesanías, productos procesados...) (#ciencias-económicas)
+  - Anuncios (pizarra informativa)
+  - Acerca de
+    - Sobre el proyecto (quiénes somos)
+    - Contacto
+
 # Modelos de la base de datos
 
 Modelos según Django
