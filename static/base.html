@@ -46,7 +46,9 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary">
     <div class="container-lg">
-      <a class="navbar-brand" href="{% url 'index' %}"><i class="fa-solid fa-store"></i> de<span style="font-weight: 900;">feria</span>.cr</a>
+      <a class="navbar-brand" href="{% url 'index' %}">
+        <img src="{% static 'images/logos/logo_rojo.png' %}" width="60px" alt="Logo de feria">  
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -68,7 +70,7 @@
     <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
       <div class="col-md-4 d-flex align-items-center">
         <a href="{% url 'index' %}" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-          de<span style="font-weight: 900;">feria</span>.cr
+          <img src="{% static 'images/logos/logo_verde.png' %}" width="60px" alt="Logo de feria">
         </a>
       </div>
   
