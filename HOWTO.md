@@ -90,9 +90,37 @@ GDAL_LIBRARY_PATH=/opt/homebrew/opt/gdal/lib/libgdal.dylib
 GEOS_LIBRARY_PATH=/opt/homebrew/opt/geos/lib/libgeos_c.dylib
 ```
 o lo que corresponda.
+
+## Realizar migraciones 
 - Hacer todas las migraciones con `$ python manage.py makemigrations marketplaces` y así para cada app (products, website, etc.)
 - Migrar con `$ python manage.py migrate` para crear las tablas.
+
+Si esto no genera errores, entonces se cargaron las tablas más actualizadas, en caso contrario puede generar errores de TYPE geometry. Indicando que las tablas cargadas no son las más actuales y no coinciden con variables de geometry.
+
+Para volver a cargar las tablas y que sean las más actuales, es recomendable  eliminar las migraciones y el __pycache
+
+sudo rm -r marketplaces/migrations/ marketplaces/__pycache__/  products/migrations/ products/__pycache__
+
+Volver a generar las migraciones:
+$ python manage.py makemigrations marketplaces` (products, website, etc.)
+$ python manage.py migrate` para crear las tablas.
+
+Se puede revisar la tabla:
+
+$ psql ferias 
+
+$ select * from marketplaces_marketplace;
+
+$ \dt     (listar las tablas)
+
+
+Si ocurriera un error de autenticacion con peer se debe cambiar lo que diga peer a trust en el archivo /etc/postgres/version<>/main/pg_hba.conf
+
+$ sudo nano pg_hba.conf
+
 - Hacer `$ python manage.py loaddata auth` para cargar los datos de usuarios de prueba del fixture (peligroso).
+  -De esta forma debería funcionar correctamente.
+
 - Para ver mapas de OpenStreetMap en el panel de administración, hay que editar `marketplaces/admin.py` con:
 ```python
 from django.contrib.gis import admin
