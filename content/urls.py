@@ -9,4 +9,5 @@ urlpatterns = [
     path('almacenamiento/', views.storages, name='almacenamiento'),
     path('almacenamiento/<str:storage_url>/', views.storage),
     path('visitar/', views.visit, name='visitar'),
+    path('paradas/', views.stops, name='paradas'),
 ]

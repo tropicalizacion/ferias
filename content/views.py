@@ -38,3 +38,7 @@ def storage(request, storage_url):
 
 def visit(request):
     return render(request, "visit.html")
+
+
+def stops(request):
+    return render(request, "stops.html")
