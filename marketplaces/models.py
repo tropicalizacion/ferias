@@ -42,6 +42,7 @@ class Marketplace(models.Model):
     province = models.CharField(max_length=31)
     canton = models.CharField(max_length=31)
     district = models.CharField(max_length=31)
+    postal_code = models.IntegerField(blank=True, null=True)
     address = models.TextField(blank=True, null=True)
     size = models.CharField(choices=SIZE_CHOICES, max_length=2, blank=True, null=True)
     phone = models.IntegerField(blank=True, null=True)
