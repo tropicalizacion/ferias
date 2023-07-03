@@ -102,6 +102,33 @@ admin.site.register(Marketplace, admin.GISModelAdmin)
 
 Con esto debería funcionar la aplicación pero ahora con PostgreSQL y PostGIS activado para usar GeoDjango, que permite guardar ubicaciones y regiones en el mapa y hacer búsquedas geoespaciales.
 
+## Cómo actualizar el servidor
+
+- Hacer cambios en una rama dedicada para tal fin
+- Probar los cambios y fusionar (o hacer PR) con `main`
+- Luego hacer una fusión con `server` que es la rama en el servidor
+- Entrar al servidor con SSH al usuario `tcu`
+- Si no hay cambios en la base de datos:
+  - `cd ferias/`
+  - `git status`
+  - `git pull`
+  - `sudo systemctl restart nginx`
+  - `sudo systemctl restart gunicorn`
+- Si sí hay cambios en la base de datos (en algún `models.py`)
+  - `cd ferias/`
+  - `git status`
+  - `git pull`
+  - Entrar al ambiente virtual: `source feriasenv/bin/activate`
+  - Por prevención, se puede hacer una descarga de las tablas que van a ser modificadas, con `python manage.py dumpdata <app>.<model>` para guardar en el fixture `<app>.json` o `<app>_<model>.json`.
+  - Hacer las migraciones de cada app: `python manage.py makemigrations <app>`
+  - Migrar: `python manage.py migrate`
+  - (Aquí pueden pasar un montón de cosas tenebrosas con la base de datos)
+  - Salir del ambiente virtual: `deactivate`
+  - `sudo systemctl restart nginx`
+  - `sudo systemctl restart gunicorn`
+
+Con suerte, vamos al navegador y probamos si funcionó.
+
 ## Aplicaciones del sitio
 
 Django utiliza "apps" para manejar el sitio. Por experiencia, sabemos que son divisiones útiles para la organización del sitio, aunque realmente desde una sola app se podrían realizar todas las funciones. Por orden, sin embargo, es mejor hacer una separación funcional. En ese sentido, y con base en la funcionalidad esperada del sitio, se han creado los siguientes apps:
