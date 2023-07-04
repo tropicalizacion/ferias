@@ -8,16 +8,124 @@
 
 <h1 class="display-3">Ferias</h1>
 
+<h2>Las ferias en números</h2>
+
+<p>
+<div class="card text-center">
+    <div class="card-body">
+        <h1 class="card-title">{{ total_marketplaces }}</h1>
+        <p class="card-text">Total de ferias registradas</p>
+    </div>
+</div>
+</p>
+
+<h4>Ferias por provincia</h4>
+
+<ul>
+    <li>Ferias en San José: {{ n_sanjose }}</li>
+    <li>Ferias en Alajuela: {{ n_alajuela }}</li>
+    <li>Ferias en Cartago: {{ n_cartago }}</li>
+    <li>Ferias en Heredia: {{ n_heredia }}</li>
+    <li>Ferias en Guanacaste: {{ n_guanacaste }}</li>
+    <li>Ferias en liuntarenas: {{ n_liuntarenas }}</li>
+    <li>Ferias en Limón: {{ n_limon }}</li>
+</ul>
+
+<h4>Ferias por día de la semana</h4>
+
+<ul>
+    <li>Abiertas los lunes: {{ n_monday }}</li>
+    <li>Abiertas los martes: {{ n_tuesday }}</li>
+    <li>Abiertas los miércoles: {{ n_wednesday }}</li>
+    <li>Abiertas los jueves: {{ n_thursday }}</li>
+    <li>Abiertas los viernes: {{ n_friday }}</li>
+    <li>Abiertas los sábados: {{ n_saturday }}</li>
+    <li>Abiertas los domingos: {{ n_sunday }}</li>
+</ul>
+
 <h2>Lista de ferias</h2>
 
 <ul>
-{% for marketplace in marketplaces %}
+    {% for marketplace in marketplaces %}
     <li><a href="/ferias/{{ marketplace.marketplace_url }}">{{ marketplace.name }}</a></li>
-{% endfor %}
+    {% endfor %}
 </ul>
 
 <h2>Mapa con todas las ferias</h2>
 
 <p>Aquí un día estará un mapa con todas las ferias del país. Un día.</p>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<h2>Gráfico de ferias por provincia</h2>
+
+<canvas id="nProvinces"></canvas>
+
+<h2>Gráfico de ferias por días de la semana</h2>
+
+<canvas id="nDays"></canvas>
+
+<script>
+    // Data
+    var data = {
+        labels: ['San José', 'Alajuela', 'Cartago', 'Heredia', 'Guanacaste', 'Puntarenas', 'Limón'],
+        datasets: [{
+            label: 'Númeo de ferias',
+            data: {{ n_provinces }},
+        backgroundColor: ['#EBB615', '#008D4A', '#3879B5', '#D1C5BA', '#E64128', '#CD7535', '#F29196'],
+        borderWidth: 0 // Remove border
+      }]
+    };
+
+    // Configuration
+    var config = {
+        type: 'bar',
+        data: data,
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    };
+
+    // Create the chart
+    const nProvinces = new Chart(document.getElementById('nProvinces'), config);
+</script>
+
+<script>
+    // Data
+    var data = {
+        labels: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
+        datasets: [{
+            label: 'Númeo de ferias',
+            data: {{ n_days }},
+        backgroundColor: ['#EBB615', '#008D4A', '#3879B5', '#D1C5BA', '#E64128', '#CD7535', '#F29196'],
+        borderWidth: 0 // Remove border
+    }]
+  };
+
+    // Configuration
+    var config = {
+        type: 'bar',
+        data: data,
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    };
+
+    // Create the chart
+    const nDays = new Chart(document.getElementById('nDays'), config);
+</script>
+
+
 
 {% endblock %}

@@ -7,8 +7,48 @@ from django.contrib.gis.db.models.functions import Distance
 
 def ferias(request):
     """View function for all ferias page of site."""
+    
     marketplaces = Marketplace.objects.all().order_by("name")
-    context = {"marketplaces": marketplaces}
+    total_marketplaces = marketplaces.count()
+
+    n_sanjose = marketplaces.filter(province="San José").count()
+    n_alajuela = marketplaces.filter(province="Alajuela").count()
+    n_cartago = marketplaces.filter(province="Cartago").count()
+    n_heredia = marketplaces.filter(province="Heredia").count()
+    n_guanacaste = marketplaces.filter(province="Guanacaste").count()
+    n_puntarenas = marketplaces.filter(province="Puntarenas").count()
+    n_limon = marketplaces.filter(province="Limón").count()
+    n_provinces = [n_sanjose, n_alajuela, n_cartago, n_heredia, n_guanacaste, n_puntarenas, n_limon]
+
+    n_monday = marketplaces.filter(opening_hours__contains="Mo").count()
+    n_tuesday = marketplaces.filter(opening_hours__contains="Tu").count()
+    n_wednesday = marketplaces.filter(opening_hours__contains="We").count()
+    n_thursday = marketplaces.filter(opening_hours__contains="Th").count()
+    n_friday = marketplaces.filter(opening_hours__contains="Fr").count()
+    n_saturday = marketplaces.filter(opening_hours__contains="Sa").count()
+    n_sunday = marketplaces.filter(opening_hours__contains="Su").count()
+    n_days = [n_monday, n_tuesday, n_wednesday, n_thursday, n_friday, n_saturday, n_sunday]
+
+    context = {
+        "marketplaces": marketplaces,
+        "total_marketplaces": total_marketplaces,
+        "n_sanjose": n_sanjose,
+        "n_alajuela": n_alajuela,
+        "n_cartago": n_cartago,
+        "n_heredia": n_heredia,
+        "n_guanacaste": n_guanacaste,
+        "n_puntarenas": n_puntarenas,
+        "n_limon": n_limon,
+        "n_provinces": n_provinces,
+        "n_monday": n_monday,
+        "n_tuesday": n_tuesday,
+        "n_wednesday": n_wednesday,
+        "n_thursday": n_thursday,
+        "n_friday": n_friday,
+        "n_saturday": n_saturday,
+        "n_sunday": n_sunday,
+        "n_days": n_days,
+    }
     return render(request, "ferias.html", context)
 
 
