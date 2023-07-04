@@ -63,38 +63,42 @@ Modelos según Django
 ## Productos
 
 - `class Product`
-  - `product_id`: (AutoField) llave primaria, autogenerada.
-  - `category`: (IntegerField) clasificación por categoría de planta comestible, donde:
-    - 1: cereales
-    - 2: legumbres
-    - 3: frutas
-    - 4: hortalizas
-    - 5: condimentos  
-  - `product_url`: (CharField) caracteres creados a partir del nombre común para usar en la URL. Ejemplo: https://feria.cr/productos/cebolla
+  - `product_url`: (CharField) llave primaria, caracteres creados a partir del nombre común para usar en la URL. Ejemplo: https://feria.cr/productos/cebolla.
+  - `common_name`: (CharField) nombre común en Costa Rica. Ejemplo: limón.
+  - `common_name_alternate`: (CharField) otros nombres comunes de la variedad en Costa Rica. Ejemplo: ácido.
+  - `category`: (CharField) clasificación por categoría de planta comestible, donde:
+    - hortaliza: Hortaliza (verdura)
+    - fruta: Fruta
+    - cereal: Cereal (grano)
+    - legumbre: Legumbre (leguminosa)
+    - tubérculo: Tubérculo o raíz
+    - condimento: Condimento (especia)
+    - otro: Otra categoría
+  - `description`: (TextField) descripción del producto.
+  - `icon`: (ImageField) icono para representar el producto en algunos lugares del sitio web.
+  - `food_basket`: (BooleanField) indica si el producto es parte de la canasta básica.
+  - `nutrition_notes`: (TextField) información nutricional.
+  - `preparation`: (ManyToManyField) formas de preparar el producto.
+  - `preparation_notes`: (TextField) comentarios sobre las formas de preparación.
+  - `storage`: (ManyToManyField) formas de almacenar el producto.
+  - `storage_notes`: (TextField) comentarios sobre las formas de almacenamiento.
+  - `center_origin`: (ManyToManyField) centro de origen histórico del producto.
+  - `center_origin_notes`: (TextField) comentarios sobre el centro de origen.
+
+- `class Variety`
+  - `variey_id`: (AutoField) llave primaria, autogenerada.
+  - `product_url`: (ForeingKey) llave foránea con la tabla de productos.
   - `scientific_name`: (CharField) nomenclatura binomial según el Código Internacional de Nomenclatura. Ejemplo: Allium sativum.
   - `scientific_name_variety`: (CharField) variedad de una especie. Ejemplo: Allium ampeloprasum var. **porrum** (incluir solamente la variedad en este campo).
-  - `common_name`: (CharField) nombre común en Costa Rica. Ejemplo: limón.
   - `common_name_variety`: (CharField) nombre común de la variedad en Costa Rica. Ejemplo: mecino.
-  - `common_name_alternate`: (CharField) otros nombres comunes de la variedad en Costa Rica. Ejemplo: ácido.
-  - `image`: (ImageField) imagen del producto.
-  - `icon`: (FileField) icono para representar el producto en algunos lugares del sitio web.
-  - `center_origin`: (IntegerField) centro de origen histórico del producto según la clasificación de Vavilov:
-    - 1: (I) Asia oriental
-    - 2: (II) Subcontinente indio
-    - 3: (IIa) Archipiélago indo-malayo
-    - 4: (III) Sureste y centro de Asia
-    - 5: (IV) Asia Menor y Creciente Fértil
-    - 6: (V) Mediterráneo
-    - 7: (VI) Abisinia (actual Etiopía)
-    - 8: (VII) Mesoamérica
-    - 9: (VIII) Región andina tropical
-    - 10: (VIIIa) Región chilena
-    - 11: (VIIIb) Región brasileña-paraguaya
+  - `common_name_variety_alternate`: (CharField) nombre común alternativo de la variedad en Costa Rica.
+  - `description`: (TextField) descripción de la variedad.
+  - `image`: (ImageField) imagen de la variedad.
   - Nota: para cada mes a continuación existe la siguiente clasificación de estacionalidad:
-    - 0: imposible o muy difícil de encontrar el producto
-    - 1: producto escaso
-    - 2: producto abundante
-    - 3: plena temporada de cosecha
+    - 0: Sin disponibilidad
+    - 1: Poca disponibilidad
+    - 2: Buena disponibilidad
+    - 3: Temporada alta
   - `jan`: (IntegerField) estacionalidad en enero.
   - `feb`: (IntegerField) estacionalidad en febrero.
   - `mar`: (IntegerField) estacionalidad en marzo.
@@ -107,24 +111,21 @@ Modelos según Django
   - `oct`: (IntegerField) estacionalidad en octubre.
   - `nov`: (IntegerField) estacionalidad en noviembre.
   - `dec`: (IntegerField) estacionalidad en diciembre.
-  - `nutritional_description`: (TextField) comentario sobre su valor nutricional.
+
+- `class Origin`
+  - `code`: (CharField) llave primaria, código del centro de origen según Vavilov.
+  - `name`: (CharField) nombre del centro de origen según Vavilov.
+  - `description`: (TextField) descripción del centro de origen.
+  - `region`: (PolygonField) información geoespacial del centro de origen según Vavilov.
 
 - `class Preparation`
-  - `product_id`: (ForeignKey) llave foránea con la tabla de productos.
-  - `method`: (IntegerField) selección de una lista de métodos de preparación de alimentos:
-    - 1: hervir
-  - `recommendation`: (IntegerField) nivel de recomendación (?):
-    - 1: preparación más saludable
-    - 2: no sé qué
-  - `description`: (TextField) descripción del método con este producto.
+  - `preparation_url`: (CharField) llave primaria, caracteres creados a partir de la preparación para usar en la URL.
+  - `method_name`: (CharField) Nombre de la forma de preparación.
+  - `method_description`: (TextField) descripción del método de preparación.
+- `icon`: (ImageField) icono para representar la forma de preparación en algunos lugares del sitio web.
 
 - `class Storage`
-  - `product_id`: (ForeignKey) llave foránea con la tabla de productos.
-  - `method`: (IntegerField) selección de una lista de métodos de almacenamiento de alimentos:
-    - 1: a temperatura ambiente
-    - 2: refrigerar
-    - 3: congelar
-  - `recommendation`: (IntegerField) nivel de recomendación (?):
-    - 1: preparación más saludable
-    - 2: no sé qué
-  - `description`: (TextField) descripción del método con este producto.
+  - `storage_url`: (CharField) llave primaria, caracteres creados a partir de la almacenamiento para usar en la URL.
+  - `method_name`: (CharField) Nombre de la forma de almacenamiento.
+  - `method_description`: (TextField) descripción del método de almacenamiento.
+- `icon`: (ImageField) icono para representar la forma de almacenamiento en algunos lugares del sitio web.
