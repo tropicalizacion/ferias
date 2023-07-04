@@ -129,6 +129,24 @@ Con esto debería funcionar la aplicación pero ahora con PostgreSQL y PostGIS a
 
 Con suerte, vamos al navegador y probamos si funcionó.
 
+## Problemas cargando archivos estáticos por error 403 Forbidden
+
+Para servir archivos estáticos en el servidor es necesario hacer lo [usual](https://docs.djangoproject.com/en/4.2/howto/static-files/):
+
+```bash
+(feriasenv) tcu@ubuntu-ferias:~/ferias python manage.py collectstatic
+```
+
+Sin embargo, puede haber problemas al cargar imágenes o CSS, JS, etc. con un error 403 Forbidden. Esto sucede [típicamente](https://www.digitalocean.com/community/questions/i-m-getting-a-403-forbidden-error-when-trying-to-access-static-files) por permisos o propiedad de los archivos. La solución a la última configuración fue:
+
+```bash
+sudo gpasswd -a tcu www-data
+```
+
+Es posible probar la asignación con `getent group www-data`, que devolverá algo como `www-data:x:33:tcu`. ¿Qué es [www-data](https://askubuntu.com/questions/873839/what-is-the-www-data-user)?
+
+Luego de esto viene el reinicio usual de Nginx y Gunicorn (que no sé si será estrictamente necesario).
+
 ## Aplicaciones del sitio
 
 Django utiliza "apps" para manejar el sitio. Por experiencia, sabemos que son divisiones útiles para la organización del sitio, aunque realmente desde una sola app se podrían realizar todas las funciones. Por orden, sin embargo, es mejor hacer una separación funcional. En ese sentido, y con base en la funcionalidad esperada del sitio, se han creado los siguientes apps:
