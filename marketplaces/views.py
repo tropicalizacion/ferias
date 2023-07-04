@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Marketplace
 from django.contrib.gis.db.models.functions import Distance
+import math
 
 # Create your views here.
 
@@ -29,6 +30,11 @@ def ferias(request):
     n_sunday = marketplaces.filter(opening_hours__contains="Su").count()
     n_days = [n_monday, n_tuesday, n_wednesday, n_thursday, n_friday, n_saturday, n_sunday]
 
+    # Find the number of marketplaces where fairground is true
+    n_fairground = marketplaces.filter(fairground=True).count() / total_marketplaces * 100
+    n_indoor = marketplaces.filter(indoor=True).count() / total_marketplaces * 100
+    n_food = marketplaces.filter(food=True).count() / total_marketplaces * 100
+
     context = {
         "marketplaces": marketplaces,
         "total_marketplaces": total_marketplaces,
@@ -48,6 +54,9 @@ def ferias(request):
         "n_saturday": n_saturday,
         "n_sunday": n_sunday,
         "n_days": n_days,
+        "n_fairground": math.ceil(n_fairground),
+        "n_indoor": math.ceil(n_indoor),
+        "n_food": math.ceil(n_food),
     }
     return render(request, "ferias.html", context)
 
