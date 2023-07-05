@@ -1,0 +1,5 @@
+/* Tipografía */
+@font-face {
+    font-family: 'Stroke';
+    src: url('stroke.otf') format('opentype');
+  }
