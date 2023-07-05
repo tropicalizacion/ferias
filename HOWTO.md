@@ -1,5 +1,7 @@
 # Configuración del sitio
 
+Estos son algunos consejos e instrucciones para usar el proyecto localmente o en el servidor.
+
 ## Clave secreta de Django
 
 La clave secreta de Django y otras configuraciones están en un archivo `.env` y es manipulado por el paquete `python-decouple` ([documentación](https://pypi.org/project/python-decouple/)).
@@ -38,16 +40,16 @@ Por último, Para ejecutar el proyecto se utiliza el comando:
 `python manage.py runserver`
 ```
 
-Para acceder al sitio en desarrollo se realiza mediante localhost en el puerto seleccionado
+Para acceder al sitio en desarrollo se realiza mediante `localhost` en el puerto seleccionado, típicamente `http://127.0.0.1:8000/`.
 
 ## Migrar a GeoDjango
 
-[GeoDjango](https://docs.djangoproject.com/en/4.2/ref/contrib/gis/) será utilizado con PostgreSQL y PostGIS.
+[GeoDjango](https://docs.djangoproject.com/en/4.2/ref/contrib/gis/) es la extensión de Django para trabajar con datos geoespaciales. Será utilizado con PostgreSQL y PostGIS.
 
 - Instalar PostgreSQL.
 - Instalar PostGIS.
 - Crear base de datos `ferias` con `$ createdb ferias`.
-- Ingresar con `$ psql ferias`.
+- Ingresar a la base de datos con `$ psql ferias`.
 - [Habilitar PostGIS](https://docs.djangoproject.com/en/4.2/ref/contrib/gis/install/postgis/) para la base de datos `ferias` con `# CREATE EXTENSION postgis;`.
 - Modificar `settings.py` con (asumiendo que la DB no tiene password):
 ```python
@@ -71,7 +73,7 @@ INSTALLED_APPS = [
 DB_NAME=ferias
 DB_USER=postgres
 ```
-- (Opcional) En algunos sistemas operativos, es necesario adjuntar a `settings.py`:
+- (Opcional) En algunos sistemas operativos (Windows y macOS sí, Linux no), es necesario adjuntar a `settings.py` las ubicaciones de GDAL y GEOS:
 ```python
 DATABASES = {
     "default": {
@@ -89,7 +91,7 @@ y en `.env`:
 GDAL_LIBRARY_PATH=/opt/homebrew/opt/gdal/lib/libgdal.dylib
 GEOS_LIBRARY_PATH=/opt/homebrew/opt/geos/lib/libgeos_c.dylib
 ```
-o lo que corresponda.
+o lo que corresponda según el sistema operativo.
 - Hacer todas las migraciones con `$ python manage.py makemigrations marketplaces` y así para cada app (products, website, etc.)
 - Migrar con `$ python manage.py migrate` para crear las tablas.
 - Hacer `$ python manage.py loaddata auth` para cargar los datos de usuarios de prueba del fixture (peligroso).
@@ -108,18 +110,20 @@ Con esto debería funcionar la aplicación pero ahora con PostgreSQL y PostGIS a
 - Probar los cambios y fusionar (o hacer PR) con `main`
 - Luego hacer una fusión con `server` que es la rama en el servidor
 - Entrar al servidor con SSH al usuario `tcu`
-- Si no hay cambios en la base de datos:
+- Si **no** hay cambios en los esquemas de la base de datos:
   - `cd ferias/`
   - `git status`
+  - `git stash` (opcional, para "poner al lado" cualquier modificación hecha en el servidor, que idealmente no deberían existir, excepto para "remiendos" temporales)
   - `git pull`
   - `sudo systemctl restart nginx`
   - `sudo systemctl restart gunicorn`
-- Si sí hay cambios en la base de datos (en algún `models.py`)
+- Si **sí** hay cambios en los esquemas de la base de datos (en algún `models.py`)
   - `cd ferias/`
   - `git status`
+  - `git stash`
   - `git pull`
   - Entrar al ambiente virtual: `source feriasenv/bin/activate`
-  - Por prevención, se puede hacer una descarga de las tablas que van a ser modificadas, con `python manage.py dumpdata <app>.<model>` para guardar en el fixture `<app>.json` o `<app>_<model>.json`.
+  - Por _prevención_, se puede hacer una descarga de las tablas que van a ser modificadas, con `python manage.py dumpdata <app>.<model>` para guardar en el fixture `<app>.json` o `<app>_<model>.json`. Esto es importante porque las migraciones pueden salir mal.
   - Hacer las migraciones de cada app: `python manage.py makemigrations <app>`
   - Migrar: `python manage.py migrate`
   - (Aquí pueden pasar un montón de cosas tenebrosas con la base de datos)
@@ -127,7 +131,7 @@ Con esto debería funcionar la aplicación pero ahora con PostgreSQL y PostGIS a
   - `sudo systemctl restart nginx`
   - `sudo systemctl restart gunicorn`
 
-Con suerte, vamos al navegador y probamos si funcionó.
+Con suerte, vamos al navegador y probamos si funciona.
 
 ## Problemas cargando archivos estáticos por error 403 Forbidden
 
@@ -137,11 +141,13 @@ Para servir archivos estáticos en el servidor es necesario hacer lo [usual](htt
 (feriasenv) tcu@ubuntu-ferias:~/ferias python manage.py collectstatic
 ```
 
-Sin embargo, puede haber problemas al cargar imágenes o CSS, JS, etc. con un error 403 Forbidden. Esto sucede [típicamente](https://www.digitalocean.com/community/questions/i-m-getting-a-403-forbidden-error-when-trying-to-access-static-files) por permisos o propiedad de los archivos. La solución a la última configuración fue:
+Sin embargo, puede haber problemas al cargar imágenes o CSS, JS, etc. con un error 403 Forbidden. Esto sucede [típicamente](https://www.digitalocean.com/community/questions/i-m-getting-a-403-forbidden-error-when-trying-to-access-static-files) por permisos o la propiedad de los archivos. La solución a la última configuración fue:
 
 ```bash
 sudo gpasswd -a tcu www-data
 ```
+
+que le da permisos al usuario `tcu` dentro de `www-data`.
 
 Es posible probar la asignación con `getent group www-data`, que devolverá algo como `www-data:x:33:tcu`. ¿Qué es [www-data](https://askubuntu.com/questions/873839/what-is-the-www-data-user)?
 
