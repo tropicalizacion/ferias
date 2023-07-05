@@ -246,3 +246,32 @@ stateDiagram-v2
     men --> per
     men --> edi
 ```
+
+# Anexos
+
+## Cómo instalar PostgreSQL en macOS
+
+Nota: en Ubuntu viene instalado por defecto.
+
+Con Homebrew:
+
+```bash
+brew update
+```
+para tener la última versión de Homebrew. Luego:
+```bash
+brew install postgresql
+```
+para instalar PostgreSQL. Para activarlo, es necesario hacer:
+```bash
+brew services start postgresql
+```
+Nota: es posible que sea `brew services start postgresql@14`. Y finalmente es posible comprobar su funcionamiento con:
+```bash
+brew services list
+```
+Ahora hay que instalar PostGIS, con:
+```bash
+brew install postgis
+```
+Luego es posible seguir el procedimiento de migración a GeoDjango indicado arriba.
