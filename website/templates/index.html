@@ -13,27 +13,43 @@
 
 <div class="alert alert-info" role="alert">
     <h4 class="alert-heading">Sitio en desarrollo</h4>
-    <p>Esta es una demostración para pruebas de la página que estamos creando. Pronto tendremos más información aquí y en redes sociales.</p>
+    <p>Esta es una demostración para pruebas de la página que estamos creando. Pronto tendremos más información aquí y
+        en redes sociales.</p>
     <hr>
     <p class="mb-0">Lanzamiento oficial esperado: 31 de julio de 2023.</p>
 </div>
 
-<h1 class="display-1">¿Dónde está la feria?</h1>
+<div class="card">
+    <div class="card-body">
+        <h2 class="card-title">¿Dónde está la feria?</h2>
+        <form action="POST">
+            {% csrf_token %}
+            <p>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="fairground">
+                <label class="form-check-label" for="fairground">Campo ferial</label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="indoor">
+                <label class="form-check-label" for="indoor">Bajo techo</label>
+            </div>
+            </p>
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </form>
+    </div>
+</div>
 
-<form action="POST">
-    {% csrf_token %}
-    {{ marketplace_form.as_p }}
-    <button type="submit" class="btn btn-primary">Buscar</button>
-</form>
+
+
 
 {% if results %}
 <p>
-    <h2>Resultados</h2>
-    <ul>
-        {% for marketplace in results %}
-        <li><a href="/ferias/{{ marketplace.marketplace_url }}">{{ marketplace.name }}</a></li>
-        {% endfor %}
-    </ul>
+<h2>Resultados</h2>
+<ul>
+    {% for marketplace in results %}
+    <li><a href="/ferias/{{ marketplace.marketplace_url }}">{{ marketplace.name }}</a></li>
+    {% endfor %}
+</ul>
 </p>
 {% endif %}
 
