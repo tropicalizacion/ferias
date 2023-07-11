@@ -52,10 +52,14 @@
                     </label>
                 </div>
             </p>
+            <p>
+                Quiero una feria <span id="status"></span>
+            </p>
             <button type="submit" class="btn btn-primary">Buscar</button>
         </form>
     </div>
 </div>
+
 
 
 
@@ -76,5 +80,39 @@
 
 <br><br><br><br>
 <p class="small">2023 &copy; Tropicalización de la tecnología</p>
+
+
+
+
+
+
+<!-- Actualización del texto -->
+<script>
+$(document).ready(function() {
+    $('input[name="fairground"], input[name="indoor"]').change(function() {
+      var fairgroundValue = $('input[name="fairground"]:checked').val();
+      var indoorValue = $('input[name="indoor"]:checked').val();
+      
+      var statusText = "";
+      if (fairgroundValue === "True") {
+        statusText += " con campo ferial,";
+      } else if (fairgroundValue === "False") {
+        statusText += " sin campo ferial,";
+      }
+      
+      if (indoorValue === "True") {
+        statusText += " bajo techo,";
+      } else if (indoorValue === "False") {
+        statusText += " al aire libre,";
+      }
+      
+      $("#status").text(statusText);
+    });
+  });    
+</script>
+
+  
+
+
 
 {% endblock %}
