@@ -24,10 +24,10 @@ urlpatterns = [
     path('ferias/', include('marketplaces.urls'), name='ferias'),
     path('productos/', include('products.urls'), name='productos'),
     path('consejos/', include('content.urls'), name='consejos'),
+    path('blog/', include('blog.urls'), name='blog'),
     path('colaboracion/', include('crowdsourcing.urls'), name='crowdsourcing'),
     path('api/', include('api.urls'), name='api'),
     path('usuarios/', include('users.urls'), name='usuarios'),
-    path('blog/', include('blog.urls'), name='blog'),
 ]
 
 if settings.DEBUG:
