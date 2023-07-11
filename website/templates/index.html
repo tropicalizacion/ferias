@@ -22,17 +22,35 @@
 <div class="card">
     <div class="card-body">
         <h2 class="card-title">¿Dónde está la feria?</h2>
-        <form action="POST">
+        <form method="POST">
             {% csrf_token %}
             <p>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="fairground">
-                <label class="form-check-label" for="fairground">Campo ferial</label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="fairground" id="fairground_true" value="True">
+                <label class="form-check-label" for="fairground_true">
+                    Con campo ferial
+                </label>
             </div>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="indoor">
-                <label class="form-check-label" for="indoor">Bajo techo</label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="fairground" id="fairground_false" value="False">
+                <label class="form-check-label" for="fairground_false">
+                    Sin campo ferial
+                </label>
             </div>
+            </p>
+            <p>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="indoor" id="indoor_true" value="True">
+                    <label class="form-check-label" for="indoor_true">
+                        Bajo techo
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="indoor" id="indoor_false" value="False">
+                    <label class="form-check-label" for="indoor_false">
+                        Al aire libre
+                    </label>
+                </div>
             </p>
             <button type="submit" class="btn btn-primary">Buscar</button>
         </form>
@@ -44,7 +62,8 @@
 
 {% if results %}
 <p>
-<h2>Resultados</h2>
+<h2>Resultados: {{ results|length }}</h2>
+<p>{{ query.children }}</p>
 <ul>
     {% for marketplace in results %}
     <li><a href="/ferias/{{ marketplace.marketplace_url }}">{{ marketplace.name }}</a></li>
@@ -53,6 +72,9 @@
 </p>
 {% endif %}
 
+
+
+<br><br><br><br>
 <p class="small">2023 &copy; Tropicalización de la tecnología</p>
 
 {% endblock %}

@@ -2,28 +2,34 @@ from django.shortcuts import render
 from ferias.forms import MarketplaceForm
 from marketplaces.models import Marketplace
 from django.http import HttpResponseRedirect
+from django.db.models import Q
 
 # Create your views here.
 
+
 def index(request):
-    if request.method == 'POST':
-        form = MarketplaceForm(request.POST)
-        if form.is_valid():
-            # Look for the marketplace in the database
-            # Get the answer from the form in the field "fairground"
-            fairground = form.cleaned_data['fairground']
-            results = Marketplace.objects.filter(fairground=fairground)
-            return render(request, 'index.html', {'results': results})
+    if request.method == "POST":
+        query = Q()
+        
+        fairground = request.POST.get("fairground")
+        if fairground is not None:
+            query &= Q(fairground=fairground)
+        indoor = request.POST.get("indoor")
+        if indoor is not None:
+            query &= Q(indoor=indoor)
+        results = Marketplace.objects.filter(query).order_by('name')
+        context = {
+            'results': results,
+            'query': query,
+        }
+        return render(request, "index.html", context)
     else:
-        form = MarketplaceForm()
-    
-    context = {
-        "marketplace_form": form
-    }
-    return render(request, 'index.html', context)
+        return render(request, "index.html")
+
 
 def acerca(request):
-    return render(request, 'acerca.html')
+    return render(request, "acerca.html")
+
 
 def contacto(request):
-    return render(request, 'contacto.html')
+    return render(request, "contacto.html")
