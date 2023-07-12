@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block page_title %} Anuncio {% endblock %}
+
+{% block main %}
+
+<h1>{{ announcement.title }}</h1>
+
+<p>{{ announcement.content }}</p>
+
+{% endblock %}

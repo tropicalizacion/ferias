@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block page_title %} Anuncios {% endblock %}
+
+{% block main %}
+
+<h1>Anuncios</h1>
+
+<p>En un lugar de La Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un caballeros de los adarga antigua, rocín flaco, lanza en astillero y galgo corredor.</p>
+
+{% if announcements %}
+<dl>
+    {% for announcement in announcements %}
+    <dt>{{ announcement.title }}</dt>
+    <dd>{{ announcement.content }}</dd>
+    {% endfor %}
+</dl>
+{% else %}
+<p>No hay anuncios</p>
+{% endif %}
+
+{% endblock %}
