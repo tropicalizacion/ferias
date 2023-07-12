@@ -13,7 +13,7 @@
 {% if announcements %}
 <dl>
     {% for announcement in announcements %}
-    <dt>{{ announcement.title }}</dt>
+    <dt><a href="/anuncios/{{ announcement.slug }}">{{ announcement.title }}</a></dt>
     <dd>{{ announcement.content }}</dd>
     {% endfor %}
 </dl>

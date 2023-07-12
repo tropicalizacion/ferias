@@ -67,7 +67,32 @@ def anuncios(request):
 
 
 def crear(request):
-    return render(request, "crear.html")
+    
+    marketplaces = Marketplace.objects.all().order_by("name")
+    context = {
+        "marketplaces": marketplaces,
+    }
+
+    if request.method == "POST":
+        
+        title = request.POST.get("title")
+        marketplace = marketplaces.get(marketplace_url=request.POST.get("marketplace"))
+        publish = request.POST.get("publish")
+        slug = publish + "-" + title.replace(" ", "-").lower()
+
+        announcement = Announcement(
+            title=title,
+            marketplace=marketplace,
+            content=request.POST.get("content"),
+            publish=publish,
+            until=request.POST.get("until"),
+            publisher=request.POST.get("publisher"),
+            author=request.user,
+            slug=slug,
+        )
+        announcement.save()
+    
+    return render(request, "crear.html", context)
 
 
 def anuncio(request, slug):
@@ -80,7 +105,9 @@ def anuncio(request, slug):
 
 def editar(request, slug):
     announcement = Announcement.objects.get(slug=slug)
+    marketplaces = Marketplace.objects.all().order_by("name")
     context = {
         "announcement": announcement,
+        "marketplaces": marketplaces,
     }
     return render(request, "editar.html", context)

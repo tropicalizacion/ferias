@@ -2,10 +2,46 @@
 
 {% load static %}
 
+{% block page_title %} Editar anuncio {% endblock %}
+
 {% block main %}
 
-<h1>Editar anuncio: {{ announcement.title }}</h1>
+<h3>Editar anuncio:</h3>
 
-<p>Formulario de edición</p>
+<h1>{{ announcement.title }}</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="title" class="form-label">Título del anuncio</label>
+        <input name="title" type="text" class="form-control" id="title" value="{{ announcement.title }}">
+    </div>
+    <div class="mb-3">
+        <label for="marketplace" class="form-label">Seleccionar feria a la que aplica el anuncio</label>
+        <select name="marketplace" class="form-select" id="marketplace">
+            <option value="{{ announcement..marketplace.marketplace_url }}" selected>{{ announcement.marketplace.name }}</option>
+            {% for marketplace in marketplaces %}
+            <option value="{{ marketplace.marketplace_url }}">{{ marketplace.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="content" class="form-label">Contenido</label>
+        <textarea name="content" class="form-control" name="content" id="content" rows="10">{{ announcement.content }}</textarea>
+    </div>
+    <div class="mb-3">
+        <label for="publish" class="form-label">Inicio de la publicación</label>
+        <input name="publish" type="date" class="form-control" id="publish" value="{{ announcement.publish|date:'Y-m-d' }}">
+    </div>
+    <div class="mb-3">
+        <label for="until" class="form-label">Final de la publicación</label>
+        <input name="until" type="date" class="form-control" id="until" value="{{ announcement.until|date:'Y-m-d' }}">
+    </div>
+    <div class="mb-3">
+        <label for="publisher" class="form-label">Nombre de persona o entidad que publica</label>
+        <input name="publisher" type="text" class="form-control" id="publisher" value="{{ announcement.publisher }}">
+    </div>
+    <button type="submit" class="btn btn-primary">Actualizar</button>
+</form>
 
 {% endblock %}
