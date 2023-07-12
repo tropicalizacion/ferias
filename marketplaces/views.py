@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Marketplace
+from website.models import Announcement
 from django.contrib.gis.db.models.functions import Distance
 import math
 
@@ -90,11 +91,13 @@ def feria(request, marketplace_url):
         "plantas ornamentales": marketplace.garden_centre,
         "floristería": marketplace.florist,
     }
+    announcements = Announcement.objects.filter(marketplace=marketplace_url).order_by("-created")
     context = {
         "marketplace": marketplace,
         "closest_marketplaces": closest_marketplaces,
         "infrastructure": infrastructure,
         "services": services,
+        "announcements": announcements,
     }
 
     return render(request, "feria.html", context)
