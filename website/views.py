@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from ferias.forms import MarketplaceForm
 from marketplaces.models import Marketplace
+from .models import Announcement
 from django.db.models import Q
 from django.contrib.gis.db.models.functions import Distance
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -54,3 +56,31 @@ def acerca(request):
 
 def contacto(request):
     return render(request, "contacto.html")
+
+
+def anuncios(request):
+    announcements = Announcement.objects.all().order_by("-created")
+    context = {
+        "announcements": announcements,
+    }
+    return render(request, "anuncios.html", context)
+
+
+def crear(request):
+    return render(request, "crear.html")
+
+
+def anuncio(request, slug):
+    announcement = Announcement.objects.get(slug=slug)
+    context = {
+        "announcement": announcement,
+    }
+    return render(request, "anuncio.html", context)
+
+
+def editar(request, slug):
+    announcement = Announcement.objects.get(slug=slug)
+    context = {
+        "announcement": announcement,
+    }
+    return render(request, "editar.html", context)
