@@ -1,6 +1,9 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Marketplace
 from django.contrib.gis.db.models.functions import Distance
+from dateutil.parser import parse
+from dateutil.rrule import rrulestr
+import osm_opening_hours_humanized as ooh
 import math
 
 # Create your views here.
@@ -72,6 +75,17 @@ def feria(request, marketplace_url):
         .exclude(pk=marketplace_url)
         .order_by("distance")[0:3]
     )
+    #horarios
+    opening_hours = marketplace.opening_hours
+    horarios_separados = opening_hours.split(";")
+    horarios_humanizados = []
+# Crea una instancia del analizador de opening_hours
+    for horario in horarios_separados:
+     parser = ooh.OHParser(horario.strip(), locale="es")
+# Obtiene la descripción humanizada del horario
+     horario_texto = "".join(parser.description())
+     horario_texto = horario_texto.replace("On ", "")
+     horarios_humanizados.append(horario_texto)
     infrastructure = {
         "campo ferial": marketplace.fairground,
         "espacio bajo techo": marketplace.indoor,
@@ -95,6 +109,7 @@ def feria(request, marketplace_url):
         "closest_marketplaces": closest_marketplaces,
         "infrastructure": infrastructure,
         "services": services,
+	"horarios_humanizados": horarios_humanizados,
     }
 
     return render(request, "feria.html", context)

@@ -30,8 +30,10 @@
 <p>Fecha de fundación: {{ marketplace.opening_date }}</p>
 
 <h3>Horario</h3>
+{% for horario in horarios_humanizados %}
 
-<p>{{ marketplace.opening_hours }}</p>
+   <p>{{ horario }}</p>
+{% endfor %}
 
 <h3>Fotos</h3>
 
