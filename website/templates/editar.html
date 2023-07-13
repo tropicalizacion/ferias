@@ -19,7 +19,7 @@
     <div class="mb-3">
         <label for="marketplace" class="form-label">Seleccionar feria a la que aplica el anuncio</label>
         <select name="marketplace" class="form-select" id="marketplace">
-            <option value="{{ announcement..marketplace.marketplace_url }}" selected>{{ announcement.marketplace.name }}</option>
+            <option value="{{ announcement.marketplace.marketplace_url }}" selected>{{ announcement.marketplace.name }}</option>
             {% for marketplace in marketplaces %}
             <option value="{{ marketplace.marketplace_url }}">{{ marketplace.name }}</option>
             {% endfor %}

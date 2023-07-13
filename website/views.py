@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from ferias.forms import MarketplaceForm
 from marketplaces.models import Marketplace
 from .models import Announcement
@@ -104,10 +104,24 @@ def anuncio(request, slug):
 
 
 def editar(request, slug):
-    announcement = Announcement.objects.get(slug=slug)
-    marketplaces = Marketplace.objects.all().order_by("name")
-    context = {
-        "announcement": announcement,
-        "marketplaces": marketplaces,
-    }
-    return render(request, "editar.html", context)
+    if request.method == "POST":
+        announcement = Announcement.objects.get(slug=slug)
+        announcement.title = request.POST.get("title")
+        announcement.marketplace = Marketplace.objects.get(
+            marketplace_url=request.POST.get("marketplace")
+        )
+        announcement.content = request.POST.get("content")
+        announcement.publish = request.POST.get("publish")
+        announcement.until = request.POST.get("until")
+        announcement.publisher = request.POST.get("publisher")
+        announcement.save()
+        url = "/anuncios/" + announcement.slug + "/"
+        return redirect(url)
+    else:
+        announcement = Announcement.objects.get(slug=slug)
+        marketplaces = Marketplace.objects.all().order_by("name")
+        context = {
+            "announcement": announcement,
+            "marketplaces": marketplaces,
+        }
+        return render(request, "editar.html", context)
