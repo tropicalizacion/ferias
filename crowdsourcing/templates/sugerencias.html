@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Sugerencias{% endblock %}
+
+{% block main %}
+
+<h1>Colaboración colectiva</h1>
+
+<p>Gracias por colaborar para mantener actualizada la información de nuestro proyecto.</p>
+
+<p>Por favor seleccionar la feria:</p>
+
+<ul>
+    {% for marketplace in marketplaces %}
+        <li><a href="/sugerencias/{{ marketplace.marketplace_url }}">{{ marketplace.name }}</a></li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

@@ -2,3 +2,4 @@ django=4.1.5
 python-decouple
 bootstrap-py
 psycopg2
+osm_opening_hours_humanized
