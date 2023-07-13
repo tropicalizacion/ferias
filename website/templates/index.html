@@ -7,20 +7,199 @@
 {% block main %}
 
 <!-- Información general -->
-<h1 class="display-1">de <span style="font-weight: 900;">feria</span></h1>
+<h1 class="display-1">¡Vamos de feria!</h1>
 
 <p>Página de información de las ferias del agricultor en Costa Rica.</p>
 
 <div class="alert alert-info" role="alert">
     <h4 class="alert-heading">Sitio en desarrollo</h4>
-    <p>Esta es una demostración para pruebas de la página que estamos creando. Pronto tendremos más información aquí y en redes sociales.</p>
+    <p>Esta es una demostración para pruebas de la página que estamos creando. Pronto tendremos más información aquí y
+        en redes sociales.</p>
     <hr>
     <p class="mb-0">Lanzamiento oficial esperado: 31 de julio de 2023.</p>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <h2 class="card-title">¿Dónde está la feria?</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="card mb-3">
+                <div class="card-header">
+                    Por ubicación
+                </div>
+                <div class="card-body">
+                    <div class="input-group">
+                        <div class="input-group-text">
+                            <input class="form-check-input mt-0" type="radio" name="location" id="my-location" value="my_location">
+                        </div>
+                        <span class="input-group-text">Cerca de mí</span>
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <div class="input-group-text">
+                            <input class="form-check-input mt-0" type="radio" name="location" id="some-location" value="some_location">
+                        </div>
+                        <span class="input-group-text">Cerca de:</span>
+                        <input type="text" class="form-control" name="place" placeholder="Ingrese el nombre de un lugar">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <div class="input-group-text">
+                            <input class="form-check-input mt-0" type="radio" name="location" id="any-location" value="any_location" checked>
+                        </div>
+                        <span class="input-group-text">En cualquier lugar</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header">
+                    Por día de la semana
+                </div>
+                <div class="card-body">
+                    <input type="radio" class="btn-check" id="monday" name="day" value="Mo">
+                    <label class="btn btn-outline-primary" for="monday">Lunes</label>
+                    <input type="radio" class="btn-check" id="tuesday" name="day" value="Tu">
+                    <label class="btn btn-outline-primary" for="tuesday">Martes</label>
+                    <input type="radio" class="btn-check" id="wednesday" name="day" value="We">
+                    <label class="btn btn-outline-primary" for="wednesday">Miércoles</label>
+                    <input type="radio" class="btn-check" id="thursday" name="day" value="Th">
+                    <label class="btn btn-outline-primary" for="thursday">Jueves</label>
+                    <input type="radio" class="btn-check" id="friday" name="day" value="Fr">
+                    <label class="btn btn-outline-primary" for="friday">Viernes</label>
+                    <input type="radio" class="btn-check" id="saturday" name="day" value="Sa">
+                    <label class="btn btn-outline-primary" for="saturday">Sábado</label>
+                    <input type="radio" class="btn-check" id="sunday" name="day" value="Su">
+                    <label class="btn btn-outline-primary" for="sunday">Domingo</label>
+                    <input type="radio" class="btn-check" id="any" name="day" value="NA" checked>
+                    <label class="btn btn-outline-secondary" for="any">Cualquiera</label>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header">
+                    Amenidades
+                </div>
+                <div class="card-body">
+                    <p>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="fairground" id="fairground_true"
+                            value="True">
+                        <label class="form-check-label" for="fairground_true">
+                            Con campo ferial
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="fairground" id="fairground_false"
+                            value="False">
+                        <label class="form-check-label" for="fairground_false">
+                            Sin campo ferial
+                        </label>
+                    </div>
+                    </p>
+                    <p>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="indoor" id="indoor_true" value="True">
+                        <label class="form-check-label" for="indoor_true">
+                            Bajo techo
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="indoor" id="indoor_false" value="False">
+                        <label class="form-check-label" for="indoor_false">
+                            Al aire libre
+                        </label>
+                    </div>
+                    </p>
+                </div>
+            </div>
+            <p class="lead">
+                Quiero una feria <span id="status"></span>
+            </p>
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </form>
+    </div>
 </div>
 
 
 
 
+
+{% if marketplaces %}
+<p>
+<h2>Resultados: {{ marketplaces|length }}</h2>
+<ul>
+    {% for marketplace in marketplaces %}
+    <li><a href="/ferias/{{ marketplace.marketplace_url }}">{{ marketplace.name }}</a></li>
+    {% endfor %}
+</ul>
+</p>
+{% endif %}
+
+
+
+<br><br><br><br>
 <p class="small">2023 &copy; Tropicalización de la tecnología</p>
+
+
+
+
+
+
+<!-- Actualización del texto -->
+<script>
+    $(document).ready(function () {
+        $('input[name="fairground"], input[name="indoor"], input[name="location"], input[name="day"]').change(function () {
+            var fairgroundValue = $('input[name="fairground"]:checked').val();
+            var indoorValue = $('input[name="indoor"]:checked').val();
+            var locationValue = $('input[name="location"]:checked').val();
+            var dayValue = $('input[name="day"]:checked').val();
+
+            var statusText = "";
+            if (locationValue === "my_location") {
+                statusText += " que esté cerca de mí";
+            } else if (locationValue === "some_location") {
+                statusText += " que esté cerca de cierto lugar";
+            } else if (locationValue === "any_location") {
+                statusText += " que esté en cualquier lugar";
+            }
+
+            if (dayValue === "Mo") {
+                statusText += ", que abra los lunes";
+            } else if (dayValue === "Tu") {
+                statusText += ", que abra los martes";
+            } else if (dayValue === "We") {
+                statusText += ", que abra los miércoles";
+            } else if (dayValue === "Th") {
+                statusText += ", que abra los jueves";
+            } else if (dayValue === "Fr") {
+                statusText += ", que abra los viernes";
+            } else if (dayValue === "Sa") {
+                statusText += ", que abra los sábados";
+            } else if (dayValue === "Su") {
+                statusText += ", que abra los domingos";
+            } else if (dayValue === "NA") {
+                statusText += ", que abra cualquier día";
+            }
+
+            if (fairgroundValue === "True") {
+                statusText += ", con campo ferial";
+            } else if (fairgroundValue === "False") {
+                statusText += ", sin campo ferial";
+            }
+
+            if (indoorValue === "True") {
+                statusText += ", bajo techo";
+            } else if (indoorValue === "False") {
+                statusText += ", al aire libre";
+            }
+
+            $("#status").text(statusText);
+        });
+    });    
+</script>
+
+
+
+
 
 {% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block page_title %} Crear anuncio {% endblock %}
+
+{% block main %}
+
+<h1>Nuevo anuncio</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="title" class="form-label">Título del anuncio</label>
+        <input name="title" type="text" class="form-control" id="title">
+    </div>
+    <div class="mb-3">
+        <label for="marketplace" class="form-label">Seleccionar feria a la que aplica el anuncio</label>
+        <select name="marketplace" class="form-select" id="marketplace">
+            {% for marketplace in marketplaces %}
+            <option value="{{ marketplace.marketplace_url }}">{{ marketplace.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="content" class="form-label">Contenido</label>
+        <textarea name="content" class="form-control" name="content" id="content" rows="10"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="publish" class="form-label">Inicio de la publicación</label>
+        <input name="publish" type="date" class="form-control" id="publish">
+    </div>
+    <div class="mb-3">
+        <label for="until" class="form-label">Final de la publicación</label>
+        <input name="until" type="date" class="form-control" id="until">
+    </div>
+    <div class="mb-3">
+        <label for="publisher" class="form-label">Nombre de persona o entidad que publica</label>
+        <input name="publisher" type="text" class="form-control" id="publisher">
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+{% endblock %}

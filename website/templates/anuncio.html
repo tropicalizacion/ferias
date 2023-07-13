@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block page_title %} Anuncio {% endblock %}
+
+{% block main %}
+
+<h1>{{ announcement.title }}</h1>
+
+<p>{{ announcement.content }}</p>
+
+<p>Fecha de inicio de la publicación: {{ announcement.publish }}</p>
+<p>Fecha de finalización de la publicación: {{ announcement.until }}</p>
+<p>Publicado por: {{ announcement.publisher }}</p>
+
+<a href="/anuncios/{{ announcement.slug }}/editar" class="btn btn-primary">Editar</a>
+
+{% endblock %}

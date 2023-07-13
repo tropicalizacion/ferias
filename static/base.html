@@ -14,7 +14,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap" rel="stylesheet">
-  <link href="https://fonts.cdnfonts.com/css/peter-quincy" rel="stylesheet">
+  <!--<link rel="stylesheet" href="{% static 'css/font.css' %}">-->
+  <link href="https://fonts.cdnfonts.com/css/blured-stroke" rel="stylesheet">
   <!-- Leaflet CSS and JS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
@@ -24,10 +25,15 @@
   <script src="https://kit.fontawesome.com/1ae7c4e024.js" crossorigin="anonymous"></script>
   <!-- LottieFiles -->
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
   <!-- Título de pestaña -->
   <style>
     html * {
       font-family: 'Nunito Sans', sans-serif;
+    }
+    h1 {
+      font-family: 'Blured Stroke', sans-serif;
     }
   </style>
   <!-- Google tag (gtag.js) -->
@@ -57,6 +63,8 @@
           <a class="nav-link" aria-current="page" href="{% url 'index' %}">Inicio</a>
           <a class="nav-link" href="{% url 'ferias' %}">Ferias</a>
           <a class="nav-link" href="{% url 'productos' %}">Productos</a>
+          <a class="nav-link" href="{% url 'consejos' %}">Consejos</a>
+          <a class="nav-link" href="{% url 'blog' %}">Blog</a>
         </div>
       </div>
     </div>

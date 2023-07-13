@@ -27,7 +27,6 @@ urlpatterns = [
     path('sugerencias/', include('crowdsourcing.urls'), name='crowdsourcing'),
     path('api/', include('api.urls'), name='api'),
     path('usuarios/', include('users.urls'), name='usuarios'),
-    path('blog/', include('blog.urls'), name='blog'),
 ]
 
 if settings.DEBUG:
