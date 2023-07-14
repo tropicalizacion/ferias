@@ -21,12 +21,18 @@
 
 <div class="card">
     <div class="card-body">
-        <h2 class="card-title">¿Dónde está la feria?</h2>
+        <h2 class="card-title mb-3">¿Dónde está la feria?</h2>
+        <button type="button" onclick="getLocation()" class="btn btn-primary mb-2">Obtener Ubicación</button>
+        <p>Ubicación actual: <span id="location2"></span></p>
         <form method="POST">
             {% csrf_token %}
             <div class="card mb-3">
                 <div class="card-header">
                     Por ubicación
+                    <p id="latitud" hidden></p>
+                    <p id="longitud" hidden></p>
+                    <input type="text" name="latitudeValue" id="lat" value=id hidden>
+                    <input type="text" name="longitudeValue" id="lon" value=id hidden>
                 </div>
                 <div class="card-body">
                     <div class="input-group">
@@ -35,6 +41,7 @@
                         </div>
                         <span class="input-group-text">Cerca de mí</span>
                     </div>
+                    
                     <br>
                     <div class="input-group">
                         <div class="input-group-text">
@@ -186,6 +193,61 @@
             $("#status").text(statusText);
         });
     });    
+</script>
+
+<script>
+    var x = document.getElementById("latitud");
+    var y = document.getElementById("longitud");
+    
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.watchPosition(showPosition);
+        navigator.geolocation.getCurrentPosition(showPosition);
+        navigator.geolocation.watchPosition(passLon);
+        navigator.geolocation.watchPosition(passLat);
+      } else { 
+        alert("El buscador no es compatible con esa funcionalidad");
+      }
+    }
+
+    function getLat(position){
+        return position.coords.latitude;
+    }
+
+    function getLon(position){
+        return position.coords.longitude;
+    }
+        
+    function showPosition(position) {
+        x.innerHTML="Latitude: " + position.coords.latitude;
+        y.innerHTML="Longitude: " + position.coords.longitude;
+        
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+
+        var nominatimAPI = "https://nominatim.openstreetmap.org/reverse?format=json&lat=" + latitude + "&lon=" + longitude;
+
+        fetch(nominatimAPI)
+            .then(response => response.json())
+            .then(data => {
+            var location = data.display_name;
+            document.getElementById("location2").textContent = location;
+            })
+            .catch(error => {
+            console.log("Error:", error);
+        });
+    }
+
+    function passLon(position) {
+        var valueLon = position.coords.longitude;
+        document.getElementById("lon").value = valueLon;
+    }
+
+    function passLat(position) {
+        var valueLat = position.coords.latitude;
+        document.getElementById("lat").value = valueLat;
+    }
+
 </script>
 
 
