@@ -27,25 +27,26 @@ def index(request):
         if location == "any_location":
             marketplaces = Marketplace.objects.all().order_by("name")
         elif location == "my_location":
-            print(location)
             locationLon = float(request.POST.get("longitudeValue"))
             print(locationLon)
-            locationLat = float(request.POST.get("latitudeValue"))
-            print(type(locationLat))
             print(type(locationLon))
+            locationLat = float(request.POST.get("latitudeValue"))
             print(locationLat)
-            print(locationLon)
+            print(type(locationLat))
             coordinates = Point(locationLon, locationLat, srid=4326)
             print(coordinates)
             marketplaces = (
                 Marketplace.objects.annotate(distance=Distance("location", coordinates)).order_by("distance")
             )
         elif location == "some_location":
-            #TODO: Get location from input with Nominatim
-            #location = Nominatim(user_agent="GetLoc")
-            #getLocation = location.geocode("Input usuario")
-            #coordinates = (getLocation.latitude, getLocation.longitude)
-            coordinates = (9.933364850202214, -84.07706364618377)        
+            locationLonSearch = float(request.POST.get("longitudeValueBusqueda"))
+            print(locationLonSearch)
+            print(type(locationLonSearch))
+            locationLatSearch = float(request.POST.get("latitudeValueBusqueda"))
+            print(locationLatSearch)
+            print(type(locationLatSearch))
+            coordinates = Point(locationLonSearch, locationLatSearch, srid=4326)
+            print(coordinates)
             marketplaces = (
                 Marketplace.objects.annotate(distance=Distance("location", coordinates)).order_by("distance")
             )

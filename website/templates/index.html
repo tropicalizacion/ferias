@@ -5,6 +5,19 @@
 {% block page_title %} Vamos {% endblock %}
 
 {% block main %}
+<style>
+    /* Add clickable style to suggestions */
+    #suggestedPlaces li {
+      cursor: pointer;
+      margin: 5px;
+      padding: 7px;
+    }
+
+    #suggestedPlaces li:hover {
+      background-color: #c7c6c6;
+    }
+  </style>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBF0RieHwUW2A8qaYyUnPzDudeUNxiP7mE&libraries=places"></script>
 
 <!-- Información general -->
 <h1 class="display-1">¡Vamos de feria!</h1>
@@ -23,7 +36,7 @@
     <div class="card-body">
         <h2 class="card-title mb-3">¿Dónde está la feria?</h2>
         <button type="button" onclick="getLocation()" class="btn btn-primary mb-2">Obtener Ubicación</button>
-        <p>Ubicación actual: <span id="location2"></span></p>
+        <!-- <p>Ubicación actual: <span id="location2"></span></p> -->
         <form method="POST">
             {% csrf_token %}
             <div class="card mb-3">
@@ -31,8 +44,8 @@
                     Por ubicación
                     <p id="latitud" hidden></p>
                     <p id="longitud" hidden></p>
-                    <input type="text" name="latitudeValue" id="lat" value=id hidden>
-                    <input type="text" name="longitudeValue" id="lon" value=id hidden>
+                    <input type="text" name="latitudeValue" id="lat" value=id readonly hidden>
+                    <input type="text" name="longitudeValue" id="lon" value=id readonly hidden>
                 </div>
                 <div class="card-body">
                     <div class="input-group">
@@ -48,8 +61,11 @@
                             <input class="form-check-input mt-0" type="radio" name="location" id="some-location" value="some_location">
                         </div>
                         <span class="input-group-text">Cerca de:</span>
-                        <input type="text" class="form-control" name="place" placeholder="Ingrese el nombre de un lugar">
+                        <input type="text" class="form-control" id="locationInput" placeholder="Ingrese el nombre de un lugar" oninput="getAutocompleteSuggestions()">
+                        <input type="text" id="latitude" name="latitudeValueBusqueda" readonly hidden>
+                        <input type="text" id="longitude" name="longitudeValueBusqueda" readonly hidden>
                     </div>
+                    <ul id="suggestedPlaces"></ul>
                     <br>
                     <div class="input-group">
                         <div class="input-group-text">
@@ -246,6 +262,60 @@
     function passLat(position) {
         var valueLat = position.coords.latitude;
         document.getElementById("lat").value = valueLat;
+    }
+
+    function getAutocompleteSuggestions() {
+      const input = document.getElementById("locationInput").value;
+
+      // Crea una nueva instancia PlacesService para el autocompletado
+      const service = new google.maps.places.AutocompleteService();
+
+      // Variedades de lugares dentro de geocode
+      const options = { types: ["geocode"] };
+
+      // Predicciones de lugares con el input dado del usuario
+      service.getPlacePredictions({ input, options }, displaySuggestions);
+    }
+
+    function displaySuggestions(predictions, status) {
+      if (status !== google.maps.places.PlacesServiceStatus.OK) {
+        console.error("Error en mostrar sugerencias de lugares: ", status);
+        return;
+      }
+
+      const suggestedPlacesList = document.getElementById("suggestedPlaces");
+      suggestedPlacesList.innerHTML = "";
+
+      predictions.forEach(prediction => {
+        const placeName = prediction.description;
+        const listItem = document.createElement("li");
+        listItem.textContent = placeName;
+        
+        // Click para pasar la sugerencia al input
+        listItem.addEventListener("click", function () {
+          document.getElementById("locationInput").value = placeName;
+          suggestedPlacesList.innerHTML = ""; // Limpiar las sugerencias
+          geocodeSelectedPlace(placeName);
+        });
+
+        suggestedPlacesList.appendChild(listItem);
+      });
+    }
+
+    function geocodeSelectedPlace(placeName) {
+      const geocoder = new google.maps.Geocoder();
+
+      geocoder.geocode({ address: placeName }, function (results, status) {
+        if (status === "OK") {
+          const latitude = results[0].geometry.location.lat();
+          const longitude = results[0].geometry.location.lng();
+
+          document.getElementById("latitude").value = latitude;
+          document.getElementById("longitude").value = longitude;
+        } else {
+          console.error("Error al conectarse con el API de Google: " + status);
+        }
+      });
     }
 
 </script>
