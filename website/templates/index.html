@@ -5,8 +5,11 @@
 {% block page_title %} Vamos {% endblock %}
 
 {% block main %}
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+
 <style>
-    /* Add clickable style to suggestions */
     #suggestedPlaces li {
       cursor: pointer;
       margin: 5px;
@@ -16,8 +19,29 @@
     #suggestedPlaces li:hover {
       background-color: #c7c6c6;
     }
-  </style>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBF0RieHwUW2A8qaYyUnPzDudeUNxiP7mE&libraries=places"></script>
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    .card-link {
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card-link:hover {
+      text-decoration: none;
+      color: inherit;
+      /* Movimiento para hacer notable al tener el mouse encima */
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+</style>
 
 <!-- Información general -->
 <h1 class="display-1">¡Vamos de feria!</h1>
@@ -35,13 +59,15 @@
 <div class="card">
     <div class="card-body">
         <h2 class="card-title mb-3">¿Dónde está la feria?</h2>
-        <button type="button" onclick="getLocation()" class="btn btn-primary mb-2">Obtener Ubicación</button>
+        <!-- Button to get location -->
+        <!-- <button type="button" onclick="getLocation()" class="btn btn-primary mb-4">Obtener Ubicación</button> -->
         <!-- <p>Ubicación actual: <span id="location2"></span></p> -->
         <form method="POST">
             {% csrf_token %}
             <div class="card mb-3">
                 <div class="card-header">
                     Por ubicación
+                    <!-- Hidden input to pass longitude and latitude to views.py -->
                     <p id="latitud" hidden></p>
                     <p id="longitud" hidden></p>
                     <input type="text" name="latitudeValue" id="lat" value=id readonly hidden>
@@ -50,7 +76,7 @@
                 <div class="card-body">
                     <div class="input-group">
                         <div class="input-group-text">
-                            <input class="form-check-input mt-0" type="radio" name="location" id="my-location" value="my_location">
+                            <input class="form-check-input mt-0" type="radio" name="location" id="my-location" onclick="getLocation()" value="my_location">
                         </div>
                         <span class="input-group-text">Cerca de mí</span>
                     </div>
@@ -61,10 +87,13 @@
                             <input class="form-check-input mt-0" type="radio" name="location" id="some-location" value="some_location">
                         </div>
                         <span class="input-group-text">Cerca de:</span>
+                        <!-- Input to type specific location and get suggestions -->
                         <input type="text" class="form-control" id="locationInput" placeholder="Ingrese el nombre de un lugar" oninput="getAutocompleteSuggestions()">
+                        <!-- Hidden input to pass longitude and latitude to views.py -->
                         <input type="text" id="latitude" name="latitudeValueBusqueda" readonly hidden>
                         <input type="text" id="longitude" name="longitudeValueBusqueda" readonly hidden>
                     </div>
+                    <!-- Suggested places while typing place -->
                     <ul id="suggestedPlaces"></ul>
                     <br>
                     <div class="input-group">
@@ -143,6 +172,29 @@
     </div>
 </div>
 
+<!-- Display results -->
+{% if marketplaces %}
+<div class="text-center container">
+    <div class="mt-4 p-3">
+        <h2 style="font-weight: 800; font-size: 45px;">Resultados</h2> 
+        <p style="font-weight: 600; font-size: 45px;">{{ marketplaces|length }}</p>
+        <ul>
+            {% for marketplace in marketplaces %}
+            <div class="card bg-light mb-3" style="max-width: 60rem; cursor: pointer;">
+                <a href="/ferias/{{ marketplace.marketplace_url }}" class="card-link">
+                    <div class="card-header">Feria del agricultor</div>
+                        <div class="card-body">
+                        <h5 class="card-title">{{ marketplace.name }}</h5>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endif %}
+
+<!--
 {% if marketplaces %}
 <p>
 <h2>Resultados: {{ marketplaces|length }}</h2>
@@ -153,6 +205,7 @@
 </ul>
 </p>
 {% endif %}
+-->
 
 <br>
 <p class="small">2023 &copy; Tropicalización de la tecnología</p>
@@ -211,10 +264,15 @@
     });    
 </script>
 
+<!-- Google Maps API and Keys -->
+<script src="https://maps.googleapis.com/maps/api/js?key=&libraries=places"></script>
+
 <script>
+    // Map element in html
     var x = document.getElementById("latitud");
     var y = document.getElementById("longitud");
     
+    // Get coordinates of my actual position and pass it to the html elements
     function getLocation() {
       if (navigator.geolocation) {
         navigator.geolocation.watchPosition(showPosition);
@@ -225,14 +283,6 @@
         alert("El buscador no es compatible con esa funcionalidad");
       }
     }
-
-    function getLat(position){
-        return position.coords.latitude;
-    }
-
-    function getLon(position){
-        return position.coords.longitude;
-    }
         
     function showPosition(position) {
         x.innerHTML="Latitude: " + position.coords.latitude;
@@ -241,6 +291,7 @@
         var latitude = position.coords.latitude;
         var longitude = position.coords.longitude;
 
+        // nominatim API URL, inserts users long and lat to the url to obtain the complete name of the users position
         var nominatimAPI = "https://nominatim.openstreetmap.org/reverse?format=json&lat=" + latitude + "&lon=" + longitude;
 
         fetch(nominatimAPI)

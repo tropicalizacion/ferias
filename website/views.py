@@ -12,6 +12,7 @@ from django.contrib.gis.geos import Point
 
 def index(request):
 
+    #Obtener la coordenadas de un usuario mediante el IP de su dispositivo
     r = requests.get('https://get.geojs.io/')
     ip_request = requests.get('https://get.geojs.io/v1/ip.json')
     ipAdd = ip_request.json()['ip']
@@ -24,27 +25,35 @@ def index(request):
         location = request.POST.get("location")
         print(location)
 
-        if location == "any_location":
+        if location == "any_location": #All marketplaces
             marketplaces = Marketplace.objects.all().order_by("name")
-        elif location == "my_location":
+        elif location == "my_location": # Search marketplace by user location
+            #Get longitude
             locationLon = float(request.POST.get("longitudeValue"))
             print(locationLon)
             print(type(locationLon))
+            #Get latitude
             locationLat = float(request.POST.get("latitudeValue"))
             print(locationLat)
             print(type(locationLat))
+            #Get coordinates
             coordinates = Point(locationLon, locationLat, srid=4326)
             print(coordinates)
+
             marketplaces = (
                 Marketplace.objects.annotate(distance=Distance("location", coordinates)).order_by("distance")
             )
-        elif location == "some_location":
+
+        elif location == "some_location": #Search marketplace by a specific location
+            #Get longitude
             locationLonSearch = float(request.POST.get("longitudeValueBusqueda"))
             print(locationLonSearch)
             print(type(locationLonSearch))
+            #Get latitude
             locationLatSearch = float(request.POST.get("latitudeValueBusqueda"))
             print(locationLatSearch)
             print(type(locationLatSearch))
+            #Get coordinates
             coordinates = Point(locationLonSearch, locationLatSearch, srid=4326)
             print(coordinates)
             marketplaces = (
