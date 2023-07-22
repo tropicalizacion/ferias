@@ -7,6 +7,10 @@ from django.contrib.gis.db.models.functions import Distance
 # Create your views here.
 
 
+def cover(request):
+    return render(request, "cover.html")
+
+
 def index(request):
     if request.method == "POST":
         # Search by location

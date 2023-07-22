@@ -1,0 +1,225 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vamos | de feria</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Nuevas fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mansalva&family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/1ae7c4e024.js" crossorigin="anonymous"></script>
+
+    <!-- Nuevas clases CSS -->
+    <style>
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+        }
+
+        .navbar-deferia {
+            background-color: #E64128;
+        }
+
+        .nav-link-deferia {
+            color: #FFFFFF;
+            font-weight: bold;
+        }
+
+        .background-amarillo {
+            background-color: #EBB615;
+        }
+
+        .background-verde {
+            background-color: #008D4A;
+        }
+
+        .background-azul {
+            background-color: #3879B5;
+        }
+
+        .background-rosado {
+            background-color: #F29196;
+        }
+
+        .background-banana {
+            background-image: url("{% static 'images/T12.png' %}");
+            background-size: cover;
+            background-size: 120%;
+            background-position: center;
+        }
+
+        .background-corn {
+            background-image: url("{% static 'images/T2.png' %}");
+            background-size: cover;
+            background-size: 120%;
+            background-position: center;
+        }
+
+        .title-deferia {
+            font-family: 'Permanent Marker', cursive;
+        }
+
+        .floating-watermelon {
+            position: absolute;
+            top: 9%;
+            left: 15%;
+            transform: rotate(45deg);
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+        }
+
+        .floating-banana {
+            position: absolute;
+            top: 9%;
+            right: 15%;
+            transform: rotate(45deg);
+            transform: translate(50%, 50%);
+            z-index: 9999;
+        }
+
+        .floating-strawberry {
+            position: absolute;
+            top: 130%;
+            right: 15%;
+            transform: rotate(45deg);
+            transform: translate(50%, 50%);
+            z-index: 9999;
+        }
+
+        .floating-tomato {
+            position: absolute;
+            top: 60%;
+            left: 12%;
+            transform: rotate(45deg);
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container" style="max-width: 768px;">
+
+        <!-- Imágenes flotantes -->
+        <img src="{% static 'images/sandia.png' %}" width="75px" class="floating-watermelon">
+        <img src="{% static 'images/banano.png' %}" width="75px" class="floating-banana">
+        <img src="{% static 'images/fresa.png' %}" width="75px" class="floating-strawberry">
+        <img src="{% static 'images/tomate.png' %}" width="75px" class="floating-tomato">
+
+        <!-- Vamos de feria -->
+        <div class="text-center">
+            <div class="mt-2">
+                <h1 class="display-3 title-deferia" style="color: #3879B5;">
+                    ¡Vamos!
+                </h1>
+            </div>
+            <div class="d-flex justify-content-center">
+                <div style="max-width: 300px;">
+                    <img src="{% static 'logos/logo_rojo.png' %}" class="img-fluid" alt="">
+                    <blockquote class="lead mt-4 fst-italic">
+                        Sitio web y campaña de redes sociales con información de las ferias del agricultor de Costa Rica
+                    </blockquote>
+                    <div class="row mt-4">
+                        <div class="col"><a class="text-body-secondary" target="_blank" href="https://www.instagram.com/deferia.cr/"><i class="fa-brands fa-instagram"></i></a></div>
+                        <div class="col"><a class="text-body-secondary" target="_blank" href="https://www.tiktok.com/@deferia.cr"><i class="fa-brands fa-tiktok"></i></a></div>
+                        <div class="col"><a class="text-body-secondary" target="_blank" href="https://www.facebook.com/deferia.costarica"><i class="fa-brands fa-facebook"></i></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card background-banana my-4 rounded-5 border-0 shadow">
+                <div class="card-body text-white">
+                    <h3 class="title-deferia">Lanzamiento</h3>
+                    <h1 style="font-weight: 900;">3 de agosto de 2023</h1>
+                </div>
+            </div>
+        </div>
+
+        <!-- Texto -->
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+                <div class="card h-100 border-0 background-verde shadow">
+                    <img src="{% static 'photos/muchacho.png' %}" class="card-img-top" alt="...">
+                    <div class="card-body text-white">
+                        <h3 class="card-title title-deferia">Más de 80 ferias</h3>
+                        <p class="card-text lead">Aquí va a encontrar ubicación, horarios, facilidades, amenidades y más información de cada feria.</p>
+                    </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 border-0 background-amarillo shadow">
+                    <img src="{% static 'photos/cebollas.png' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h3 class="card-title title-deferia">Más de 100 productos</h3>
+                        <p class="card-text lead">¡Somos privilegiados de tener una gran variedad de productos frescos para una rica y sana alimentación!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 border-0 background-azul shadow">
+                    <img src="{% static 'photos/frutas.png' %}" class="card-img-top" alt="...">
+                    <div class="card-body text-white">
+                        <h3 class="card-title title-deferia">Consejos</h3>
+                        <p class="card-text lead">Para principiantes y expertos tenemos buenos consejos para sacar el máximo provecho de la feria.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 border-0 background-rosado shadow">
+                    <img src="{% static 'photos/gente.png' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h3 class="card-title title-deferia">Información</h3>
+                        <p class="card-text lead">¿Por qué la feria es la mejor opción para la salud y la economía del hogar y la comunidad?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lanzamiento -->
+        <div class="text-center">
+            <div class="card background-corn my-4 rounded-5 border-0 shadow">
+                <div class="card-body text-white">
+                    <h3 class="title-deferia">Lanzamiento</h3>
+                    <h1 style="font-weight: 900;">3 de agosto de 2023</h1>
+                </div>
+            </div>
+        </div>
+
+        <!-- Logos -->
+        <div class="my-4">
+            <div class="text-center mt-4 mb-2">
+                <img src="{% static 'logos/logo_azul.png' %}" width="70px" alt="">
+            </div>
+            <p class="text-center">Un proyecto del trabajo comunal universitario <br> TC&#8209;691 <em>Tropicalización de la tecnología</em>, <br> de la Escuela de Ingeniería Eléctrica <br> de la Universidad de Costa Rica.</p>
+            <div class="row text-center">
+                <div class="col">
+                    <img src="{% static 'logos/ucr_logo.png' %}" height="30px" alt="">
+                </div>
+                <div class="col">
+                    <img src="{% static 'logos/tcu_logo.png' %}" height="30px" alt="">
+                </div>
+                <div class="col">
+                    <img src="{% static 'logos/eie_logo.png' %}" height="30px" alt="">
+                </div>
+            </div>
+            <p class="small my-3 text-center"><a href="mailto:tropicalizacion@ucr.ac.cr">tropicalizacion@ucr.ac.cr</a></p>
+            <p class="small my-3 text-center">&copy; 2023</p>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
