@@ -11,7 +11,7 @@
     <!-- Nuevas fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mansalva&family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap" rel="stylesheet">
     <!-- FontAwesome -->
     <script src="https://kit.fontawesome.com/1ae7c4e024.js" crossorigin="anonymous"></script>
 
@@ -61,42 +61,37 @@
         }
 
         .title-deferia {
-            font-family: 'Permanent Marker', cursive;
+            font-family: 'Caveat', cursive;
+            font-weight: 700;
         }
 
         .floating-watermelon {
             position: absolute;
-            top: 9%;
-            left: 15%;
-            transform: rotate(45deg);
-            transform: translate(-50%, -50%);
+            top: -15%;
+            right: 5%;
             z-index: 9999;
         }
 
         .floating-banana {
             position: absolute;
-            top: 9%;
-            right: 15%;
-            transform: rotate(45deg);
-            transform: translate(50%, 50%);
+            top: -15%;
+            right: 5%;
             z-index: 9999;
         }
 
         .floating-strawberry {
             position: absolute;
-            top: 130%;
-            right: 15%;
-            transform: rotate(45deg);
-            transform: translate(50%, 50%);
+            top: 15%;
+            right: 5%;
+            transform: translate(10%, 10%);
             z-index: 9999;
         }
 
         .floating-tomato {
             position: absolute;
-            top: 60%;
-            left: 12%;
-            transform: rotate(45deg);
-            transform: translate(-50%, -50%);
+            top: 20%;
+            right: 5%;
+            transform: translate(10%, 10%);
             z-index: 9999;
         }
 
@@ -107,12 +102,6 @@
 <body>
 
     <div class="container" style="max-width: 768px;">
-
-        <!-- Imágenes flotantes -->
-        <img src="{% static 'images/sandia.png' %}" width="75px" class="floating-watermelon">
-        <img src="{% static 'images/banano.png' %}" width="75px" class="floating-banana">
-        <img src="{% static 'images/fresa.png' %}" width="75px" class="floating-strawberry">
-        <img src="{% static 'images/tomate.png' %}" width="75px" class="floating-tomato">
 
         <!-- Vamos de feria -->
         <div class="text-center">
@@ -136,9 +125,10 @@
             </div>
             <div class="card background-banana my-4 rounded-5 border-0 shadow">
                 <div class="card-body text-white">
-                    <h3 class="title-deferia">Lanzamiento</h3>
+                    <h2 class="title-deferia">Lanzamiento</h2>
                     <h1 style="font-weight: 900;">3 de agosto de 2023</h1>
                 </div>
+                <img src="{% static 'images/sandia.png' %}" width="75px" class="floating-watermelon">
             </div>
         </div>
 
@@ -150,6 +140,7 @@
                     <div class="card-body text-white">
                         <h3 class="card-title title-deferia">Más de 80 ferias</h3>
                         <p class="card-text lead">Aquí va a encontrar ubicación, horarios, facilidades, amenidades y más información de cada feria.</p>
+                        <img src="{% static 'images/tomate.png' %}" width="75px" class="floating-tomato">
                     </p>
                     </div>
                 </div>
@@ -178,6 +169,7 @@
                     <div class="card-body">
                         <h3 class="card-title title-deferia">Información</h3>
                         <p class="card-text lead">¿Por qué la feria es la mejor opción para la salud y la economía del hogar y la comunidad?</p>
+                        <img src="{% static 'images/fresa.png' %}" width="75px" class="floating-strawberry">
                     </div>
                 </div>
             </div>
@@ -187,9 +179,10 @@
         <div class="text-center">
             <div class="card background-corn my-4 rounded-5 border-0 shadow">
                 <div class="card-body text-white">
-                    <h3 class="title-deferia">Lanzamiento</h3>
+                    <h2 class="title-deferia">Lanzamiento</h2>
                     <h1 style="font-weight: 900;">3 de agosto de 2023</h1>
                 </div>
+                <img src="{% static 'images/banano.png' %}" width="75px" class="floating-banana">
             </div>
         </div>
 
