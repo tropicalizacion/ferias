@@ -37,6 +37,33 @@
         </select>
      </div>
     <div class="mb-3">
+        <label for="hour_opens" class="form-label">Hora de apertura</label>
+        <select class="form-select" id = "hour_opens" name = "hour_opens" aria-label="Seleccione una opción">
+            <option selected>Seleccione una opción</option>
+            {% for hour in hour_choices %}
+            <option value="{{ hour.0 }}">{{ hour.1 }}</option>
+            {% endfor %}
+        </select>
+     </div>
+     <div class="mb-3">
+        <label for="day_closes" class="form-label">Día de cierre</label>
+        <select class="form-select" id = "day_closes" name = "day_closes" aria-label="Seleccione una opción">
+            <option selected>Seleccione una opción</option>
+            {% for day in day_choices %}
+            <option value="{{ day.0 }}">{{ day.1 }}</option>
+            {% endfor %}
+        </select>
+     </div>
+       <div class="mb-3">
+        <label for="hour_closes" class="form-label">Hora de cierre</label>
+        <select class="form-select" id = "hour_closes" name = "hour_closes" aria-label="Seleccione una opción">
+            <option selected>Seleccione una opción</option>
+            {% for hour in hour_choices %}
+            <option value="{{ hour.0 }}">{{ hour.1 }}</option>
+            {% endfor %}
+        </select>
+     </div>
+    <div class="mb-3">
         <label for="address" class="form-label">Dirección</label>
         <textarea name="address" class="form-control" name="content" id="address" rows="10"></textarea>
         <div id="address-actual" class="form-text">Dirección  actual: {{ marketplace.address }}</div>

@@ -32,9 +32,9 @@ def sugerencia(request, marketplace_url):
         openingHours_edit = OpeningHoursEdit(
             marketplace=marketplace,
             day_opens = request.POST.get("day_opens"),
-          #  hour_opens = request.POST.get("hour_opens"),
-           # day_closes = request.POST.get("day_closes"),
-            #hour_closes = request.POST.get("hour_closes"),
+            hour_opens = request.POST.get("hour_opens"),
+            day_closes = request.POST.get("day_closes"),
+            hour_closes = request.POST.get("hour_closes"),
 	)
         openingHours_edit.save()
         return render(request, "sugerencia.html",{"marketplace": marketplace})
@@ -43,10 +43,12 @@ def sugerencia(request, marketplace_url):
         size_choices = marketplace.SIZE_CHOICES
         openingHours_edit = OpeningHoursEdit()
         day_choices = openingHours_edit.DAY_CHOICES
+        hour_choices = openingHours_edit.HOUR_CHOICES
         context = {
           "marketplace": marketplace,
           "size_choices": size_choices,
           "day_choices": day_choices,
+          "hour_choices": hour_choices,
         }
         return render(request, "sugerencia.html", context)
 
