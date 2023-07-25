@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from marketplaces.models import Marketplace
-from .models import MarketplaceEdit, PhotoEdit
+from .models import MarketplaceEdit, PhotoEdit, OpeningHoursEdit
 
 # Create your views here.
 
@@ -21,34 +21,33 @@ def sugerencia(request, marketplace_url):
             description=request.POST.get("description"),
             # opening_hours=request.POST["opening_hours"],
             # opening_date=request.POST["opening_date"],
-            # location=request.POST["location"],
-            # area=request.POST["area"],
-            # province=request.POST["province"],
-            # canton=request.POST["canton"],
-            # district=request.POST["district"],
-            # postal_code=request.POST["postal_code"],
-            # address=request.POST["address"],
-            # size=request.POST["size"],
-            # phone=request.POST["phone"],
-            # email=request.POST["email"],
-            # website=request.POST["website"],
-            # operator=request.POST["operator"],
-            # branch=request.POST["branch"],
-            # parking=request.POST["parking"],
-            # bicycle_parking=request.POST["bicycle_parking"],
-            # fairground=request.POST["fairground"],
-            # indoor=request.POST["indoor"],
+            location=request.POST.get("location"),
+            address=request.POST.get("address"),
+            size=request.POST.get("size"),
+            phone=request.POST.get("phone"),
+            email=request.POST.get("email"),
+            website=request.POST.get("website"),
         )
         marketplace_edit.save()
-        # for photo in request.FILES.getlist("photos"):
-        #     photo_edit = PhotoEdit.objects.create(
-        #         marketplace_edit=marketplace_edit, photo=photo
-        #     )
-        #     photo_edit.save()
-        return render(request, "sugerencia.html", {"marketplace": marketplace})
+        openingHours_edit = OpeningHoursEdit(
+            marketplace=marketplace,
+            day_opens = request.POST.get("day_opens"),
+          #  hour_opens = request.POST.get("hour_opens"),
+           # day_closes = request.POST.get("day_closes"),
+            #hour_closes = request.POST.get("hour_closes"),
+	)
+        openingHours_edit.save()
+        return render(request, "sugerencia.html",{"marketplace": marketplace})
     else:
         marketplace = Marketplace.objects.get(marketplace_url=marketplace_url)
-        context = {"marketplace": marketplace}
+        size_choices = marketplace.SIZE_CHOICES
+        openingHours_edit = OpeningHoursEdit()
+        day_choices = openingHours_edit.DAY_CHOICES
+        context = {
+          "marketplace": marketplace,
+          "size_choices": size_choices,
+          "day_choices": day_choices,
+        }
         return render(request, "sugerencia.html", context)
 
 

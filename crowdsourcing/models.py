@@ -99,3 +99,23 @@ class PhotoEdit(models.Model):
 
     def __str__(self):
         return f'{self.url}: {self.description}'
+
+class OpeningHoursEdit(models.Model):
+    DAY_CHOICES = [
+        ("Mo", "Lunes"),
+        ("Tu", "Martes"),
+        ("We", "Miércoles"),
+        ("Th", "Jueves"),
+        ("Fr", "Viernes"),
+        ("Sa", "Sábado"),
+        ("Su", "Domingo"),
+    ]
+    
+    marketplace = models.ForeignKey(Marketplace, on_delete=models.CASCADE)
+    day_opens = models.CharField(choices=DAY_CHOICES, max_length=10)
+    hour_opens = models.TimeField()
+    day_closes = models.CharField(choices=DAY_CHOICES, max_length=10)
+    hour_closes = models.TimeField()
+
+    def __str__(self):
+        return f'{self.marketplace}: {self.day_opens} {self.hour_opens} - {self.day_closes} {self.hour_closes}'

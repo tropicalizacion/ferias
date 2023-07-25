@@ -2,8 +2,6 @@ from django.shortcuts import render, get_object_or_404
 from .models import Marketplace
 from website.models import Announcement
 from django.contrib.gis.db.models.functions import Distance
-from dateutil.parser import parse
-from dateutil.rrule import rrulestr
 import osm_opening_hours_humanized as ooh
 import math
 
@@ -111,7 +109,7 @@ def feria(request, marketplace_url):
         "closest_marketplaces": closest_marketplaces,
         "infrastructure": infrastructure,
         "services": services,
-	    "horarios_humanizados": horarios_humanizados,
+	"horarios_humanizados": horarios_humanizados,
         "announcements": announcements,
     }
 

@@ -27,6 +27,39 @@
         <textarea name="description" class="form-control" name="content" id="description" rows="10"></textarea>
         <div id="description-actual" class="form-text">Descripción actual: {{ marketplace.description }}</div>
     </div>
+     <div class="mb-3">
+        <label for="day_opens" class="form-label">Día de apertura</label>
+        <select class="form-select" id = "day_opens" name = "day_opens" aria-label="Seleccione una opción">
+            <option selected>Seleccione una opción</option>
+            {% for day in day_choices %}
+            <option value="{{ day.0 }}">{{ day.1 }}</option>
+            {% endfor %}
+        </select>
+     </div>
+    <div class="mb-3">
+        <label for="address" class="form-label">Dirección</label>
+        <textarea name="address" class="form-control" name="content" id="address" rows="10"></textarea>
+        <div id="address-actual" class="form-text">Dirección  actual: {{ marketplace.address }}</div>
+    </div>
+    <div class="mb-3">
+	<label for="address" class="form-label">Tamaño de la feria</label>
+        <select class="form-select" aria-label="Seleccione una opción">
+            <option selected>Seleccione una opción</option>
+            {% for size in size_choices %}
+            <option value="{{ size.0 }}">{{ size.1 }}</option>
+            {% endfor %}
+        </select>
+    </div>
+     <div class="mb-3">
+        <label for="phone" class="form-label">Teléfono la feria</label>
+        <input name="phone" type="text" class="form-control" id="phone" aria-describedby="phone-actual">
+        <div id="phone-actual" class="form-text">Teléfono actual: {{ marketplace.phone }}</div>
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email de la feria</label>
+        <input name="email" type="text" class="form-control" id="email" aria-describedby="email-actual">
+        <div id="email-actual" class="form-text">Email actual: {{ marketplace.email }}</div>
+    </div>
     <button type="submit" class="btn btn-primary">Enviar sugerencias</button>
 </form>
 
