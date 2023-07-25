@@ -69,8 +69,8 @@
         <div id="address-actual" class="form-text">Dirección  actual: {{ marketplace.address }}</div>
     </div>
     <div class="mb-3">
-	<label for="address" class="form-label">Tamaño de la feria</label>
-        <select class="form-select" aria-label="Seleccione una opción">
+	<label for="size" class="form-label">Tamaño de la feria</label>
+        <select class="form-select" id = "size" name = "size" aria-label="Seleccione una opción">
             <option selected>Seleccione una opción</option>
             {% for size in size_choices %}
             <option value="{{ size.0 }}">{{ size.1 }}</option>

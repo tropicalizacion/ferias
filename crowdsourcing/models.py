@@ -126,10 +126,10 @@ class OpeningHoursEdit(models.Model):
 	("17:00", "17:00"),
     ]
     marketplace = models.ForeignKey(Marketplace, on_delete=models.CASCADE)
-    day_opens = models.CharField(choices=DAY_CHOICES, max_length=10)
-    hour_opens = models.TimeField(choices=HOUR_CHOICES, max_length=10)
-    day_closes = models.CharField(choices=DAY_CHOICES, max_length=10)
-    hour_closes = models.TimeField(choices=HOUR_CHOICES, max_length=10)
+    day_opens = models.CharField(choices=DAY_CHOICES, max_length=10, blank=True, null=True)
+    hour_opens = models.TimeField(choices=HOUR_CHOICES, max_length=10, blank=True, null=True)
+    day_closes = models.CharField(choices=DAY_CHOICES, max_length=10, blank=True, null=True)
+    hour_closes = models.TimeField(choices=HOUR_CHOICES, max_length=10, blank=True, null=True)
 
     def __str__(self):
         return f'{self.marketplace}: {self.day_opens} {self.hour_opens} - {self.day_closes} {self.hour_closes}'
