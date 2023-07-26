@@ -3,59 +3,41 @@ from ferias.forms import MarketplaceForm
 from marketplaces.models import Marketplace
 from django.db.models import Q
 from django.contrib.gis.db.models.functions import Distance
-#from geopy.geocoders import Nominatim
 import requests
 from django.contrib.gis.geos import Point
-
-# Create your views here.
 
 
 def index(request):
 
-    #Obtener la coordenadas de un usuario mediante el IP de su dispositivo
-    r = requests.get('https://get.geojs.io/')
-    ip_request = requests.get('https://get.geojs.io/v1/ip.json')
-    ipAdd = ip_request.json()['ip']
-    url = 'https://get.geojs.io/v1/ip/geo/'+ipAdd+'.json'
-    geo_request = requests.get(url)
-    geo_data = geo_request.json()
+    # Search by amenities
+    amenities = {"parking": 'parqueo', "bicycle_parking": 'parqueo para bicicletas', "fairground": 'campo ferial', "indoor": 'bajo techo', "toilets": 'servicios sanitarios', "handwashing": 'lavado de manos', "drinking_water": 'agua potable', "food": 'comidas', 'drinks': 'bebidas', "handicrafts": 'artesanías', "butcher": 'carnicería', "dairy": 'productos lácteos', "seafood": 'pescadería y mariscos', "garden_centre": 'plantas', "florist": 'floristería'}
 
     if request.method == "POST":
         # Search by location
         location = request.POST.get("location")
-        print(location)
 
-        if location == "any_location": #All marketplaces
+            #All marketplaces
+        if location == "any_location":
             marketplaces = Marketplace.objects.all().order_by("name")
-        elif location == "my_location": # Search marketplace by user location
-            #Get longitude
-            locationLon = float(request.POST.get("longitudeValue"))
-            print(locationLon)
-            print(type(locationLon))
-            #Get latitude
-            locationLat = float(request.POST.get("latitudeValue"))
-            print(locationLat)
-            print(type(locationLat))
-            #Get coordinates
-            coordinates = Point(locationLon, locationLat, srid=4326)
-            print(coordinates)
+
+            # Search marketplace by user location
+        elif location == "my_location":
+
+            longitude = float(request.POST.get("longitudeValue"))
+            latitude = float(request.POST.get("latitudeValue"))
+            coordinates = Point(longitude, latitude, srid=4326)
 
             marketplaces = (
                 Marketplace.objects.annotate(distance=Distance("location", coordinates)).order_by("distance")
             )
 
-        elif location == "some_location": #Search marketplace by a specific location
-            #Get longitude
-            locationLonSearch = float(request.POST.get("longitudeValueBusqueda"))
-            print(locationLonSearch)
-            print(type(locationLonSearch))
-            #Get latitude
-            locationLatSearch = float(request.POST.get("latitudeValueBusqueda"))
-            print(locationLatSearch)
-            print(type(locationLatSearch))
-            #Get coordinates
-            coordinates = Point(locationLonSearch, locationLatSearch, srid=4326)
-            print(coordinates)
+            #Search marketplace by a specific location
+        elif location == "some_location":
+
+            longitude = float(request.POST.get("longitudeValueBusqueda"))
+            latitude = float(request.POST.get("latitudeValueBusqueda"))
+            coordinates = Point(longitude, latitude, srid=4326)
+
             marketplaces = (
                 Marketplace.objects.annotate(distance=Distance("location", coordinates)).order_by("distance")
             )
@@ -63,26 +45,28 @@ def index(request):
             print("No hay ferias disponibles")
             
         # Search by schedule
-        '''
         day = request.POST.get("day")
-        print(day)
-        marketplaces = marketplaces.filter(opening_hours__contains=day)
-        '''
-        # Search by amenities
+        if day != "NA":
+            marketplaces = marketplaces.filter(opening_hours__contains=day)
+    
         query = Q() 
-        fairground = request.POST.get("fairground")
-        if fairground is not None:
-            query &= Q(fairground=fairground)
-        indoor = request.POST.get("indoor")
-        if indoor is not None:
-            query &= Q(indoor=indoor)
-        marketplaces = marketplaces.filter(query)
+        for key, value in amenities.items():
+            key = request.POST.get(key)
+            if key is not None:
+                key = str(key)
+                query &= Q(key=True)
+            marketplaces = marketplaces.filter(query)
+
         context = {
             "marketplaces": marketplaces,
+            "amenities" : amenities
         }
         return render(request, "index.html", context)
     else:
-        return render(request, "index.html")
+        context = {
+            "amenities" : amenities
+        }
+        return render(request, "index.html",context)
 
 
 def acerca(request):
