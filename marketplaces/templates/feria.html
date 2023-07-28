@@ -30,14 +30,29 @@
 <p>Fecha de fundación: {{ marketplace.opening_date }}</p>
 
 <h3>Horario</h3>
+{% for horario in horarios_humanizados %}
 
-<p>{{ marketplace.opening_hours }}</p>
+   <p>{{ horario }}</p>
+{% endfor %}
 
 <h3>Fotos</h3>
 
 <p>
     {% include 'photos.html' %}
 </p>
+
+<h3>Anuncios</h3>
+
+{% if announcements %}
+<dl>
+    {% for announcement in announcements %}
+    <dt>{{ announcement.title }}</dt>
+    <dd>{{ announcement.content }}</dd>
+    {% endfor %}
+</dl>
+{% else %}
+<p>No hay anuncios</p>
+{% endif %}
 
 <h3>Ubicación</h3>
 

@@ -1,8 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from ferias.forms import MarketplaceForm
 from marketplaces.models import Marketplace
+from .models import Announcement
 from django.db.models import Q
 from django.contrib.gis.db.models.functions import Distance
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -54,3 +56,72 @@ def acerca(request):
 
 def contacto(request):
     return render(request, "contacto.html")
+
+
+def anuncios(request):
+    announcements = Announcement.objects.all().order_by("-created")
+    context = {
+        "announcements": announcements,
+    }
+    return render(request, "anuncios.html", context)
+
+
+def crear(request):
+    
+    marketplaces = Marketplace.objects.all().order_by("name")
+    context = {
+        "marketplaces": marketplaces,
+    }
+
+    if request.method == "POST":
+        
+        title = request.POST.get("title")
+        marketplace = marketplaces.get(marketplace_url=request.POST.get("marketplace"))
+        publish = request.POST.get("publish")
+        slug = publish + "-" + title.replace(" ", "-").lower()
+
+        announcement = Announcement(
+            title=title,
+            marketplace=marketplace,
+            content=request.POST.get("content"),
+            publish=publish,
+            until=request.POST.get("until"),
+            publisher=request.POST.get("publisher"),
+            author=request.user,
+            slug=slug,
+        )
+        announcement.save()
+    
+    return render(request, "crear.html", context)
+
+
+def anuncio(request, slug):
+    announcement = Announcement.objects.get(slug=slug)
+    context = {
+        "announcement": announcement,
+    }
+    return render(request, "anuncio.html", context)
+
+
+def editar(request, slug):
+    if request.method == "POST":
+        announcement = Announcement.objects.get(slug=slug)
+        announcement.title = request.POST.get("title")
+        announcement.marketplace = Marketplace.objects.get(
+            marketplace_url=request.POST.get("marketplace")
+        )
+        announcement.content = request.POST.get("content")
+        announcement.publish = request.POST.get("publish")
+        announcement.until = request.POST.get("until")
+        announcement.publisher = request.POST.get("publisher")
+        announcement.save()
+        url = "/anuncios/" + announcement.slug + "/"
+        return redirect(url)
+    else:
+        announcement = Announcement.objects.get(slug=slug)
+        marketplaces = Marketplace.objects.all().order_by("name")
+        context = {
+            "announcement": announcement,
+            "marketplaces": marketplaces,
+        }
+        return render(request, "editar.html", context)
