@@ -3,3 +3,4 @@ python-decouple
 bootstrap-py
 psycopg2
 osm_opening_hours_humanized
+geopy
