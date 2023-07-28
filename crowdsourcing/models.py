@@ -79,6 +79,7 @@ class MarketplaceEdit(models.Model):
     # Products
     products = models.ManyToManyField(Product, blank=True)
     # Crowdsourcing
+    comments = models.TextField(blank=True, null=True)
     submitted_by = models.CharField(max_length=127)
     submitted_on = models.DateTimeField(auto_now_add=True)
     reviewed = models.BooleanField(default=False)
