@@ -27,24 +27,30 @@ Se agrega el archivo `.env` al directorio raíz. Nota: (en caso de ser necesario
 Luego, se deben instalar los siguientes paquetes:
 
 ```bash
-`pip install django`
+pip install django
 ```
 
+En el archivo `requirements.txt` está el resto de paquetes de Python necesarios para la ejecución. Para esto, hacer:
+
 ```bash
-`pip install bootstrap-py`
+pip install -r requirements.txt
 ```
 
 Por último, Para ejecutar el proyecto se utiliza el comando:
 
 ```bash
-`python manage.py runserver`
+python manage.py runserver
 ```
 
 Para acceder al sitio en desarrollo se realiza mediante `localhost` en el puerto seleccionado, típicamente `http://127.0.0.1:8000/`.
 
-## Migrar a GeoDjango
+## Crear base de datos y migrar a GeoDjango
+
+El proyecto utiliza [PostgreSQL](https://www.postgresql.org/). Una vez instalado puede ser controlado en terminal con `psql`, por ejemplo: `psql ferias` para entrar al CLI de la base de datos y hacer _queries_ o modificar las tablas directamente. Nota: mucho cuidado con esto porque puede interferir con las migraciones de Django y causar problemas. 
 
 [GeoDjango](https://docs.djangoproject.com/en/4.2/ref/contrib/gis/) es la extensión de Django para trabajar con datos geoespaciales. Será utilizado con PostgreSQL y PostGIS.
+
+Los pasos de creación de la base de datos son:
 
 - Instalar PostgreSQL.
 - Instalar PostGIS.
@@ -61,7 +67,7 @@ DATABASES = {
     },
 }
 ```
-y con:
+y además:
 ```python
 INSTALLED_APPS = [
     (...)
@@ -73,8 +79,10 @@ INSTALLED_APPS = [
 DB_NAME=ferias
 DB_USER=postgres
 ```
-- (Opcional) En algunos sistemas operativos (Windows y macOS sí, Linux no), es necesario adjuntar a `settings.py` las ubicaciones de GDAL y GEOS:
+- (Opcional) En algunos sistemas operativos (Windows y macOS Apple Silicon sí, Linux y macOS Intel no), es necesario adjuntar a `settings.py` las ubicaciones de GDAL y GEOS (esto se hace automáticamente):
 ```python
+import platform
+(...)
 DATABASES = {
     "default": {
         "ENGINE": "django.contrib.gis.db.backends.postgis",
@@ -83,8 +91,9 @@ DATABASES = {
     },
 }
 
-GDAL_LIBRARY_PATH = config('GDAL_LIBRARY_PATH')
-GEOS_LIBRARY_PATH = config('GEOS_LIBRARY_PATH')
+if not (platform.platform() == "Linux" or platform.machine() == "x86_64"):
+    GDAL_LIBRARY_PATH = config('GDAL_LIBRARY_PATH')
+    GEOS_LIBRARY_PATH = config('GEOS_LIBRARY_PATH')
 ```
 y en `.env`:
 ```
@@ -92,7 +101,7 @@ GDAL_LIBRARY_PATH=/opt/homebrew/opt/gdal/lib/libgdal.dylib
 GEOS_LIBRARY_PATH=/opt/homebrew/opt/geos/lib/libgeos_c.dylib
 ```
 o lo que corresponda según el sistema operativo.
-- Hacer todas las migraciones con `$ python manage.py makemigrations marketplaces` y así para cada app (products, website, etc.)
+- Hacer todas las migraciones con `$ python manage.py makemigrations marketplaces` y así para cada app (products, crowdsourcing, website, etc.)
 - Migrar con `$ python manage.py migrate` para crear las tablas.
 - Hacer `$ python manage.py loaddata auth` para cargar los datos de usuarios de prueba del fixture (peligroso).
 - Para ver mapas de OpenStreetMap en el panel de administración, hay que editar `marketplaces/admin.py` con:
@@ -102,7 +111,16 @@ from django.contrib.gis import admin
 admin.site.register(Marketplace, admin.GISModelAdmin)
 ```
 
-Con esto debería funcionar la aplicación pero ahora con PostgreSQL y PostGIS activado para usar GeoDjango, que permite guardar ubicaciones y regiones en el mapa y hacer búsquedas geoespaciales.
+Con esto debería funcionar la aplicación con PostgreSQL y PostGIS activado para usar GeoDjango, que permite guardar ubicaciones y regiones en el mapa y hacer búsquedas geoespaciales.
+
+### Destruir la base de datos
+
+En caso de pruebas y de ser necesario:
+
+- `$ psql postgres`
+- `# DROP DATABASE ferias;`
+- :grimacing:
+- Borrar todos los archivos de migraciones de todas las apps antes de intentar hacer las migraciones de nuevo
 
 ## Cómo actualizar el servidor
 
