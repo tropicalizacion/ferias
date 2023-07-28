@@ -59,17 +59,11 @@
 <div class="card">
     <div class="card-body">
         <h2 class="card-title mb-3">¿Dónde está la feria?</h2>
-        <!-- Button to get location -->
-        <!-- <button type="button" onclick="getLocation()" class="btn btn-primary mb-4">Obtener Ubicación</button> -->
-        <!-- <p>Ubicación actual: <span id="location2"></span></p> -->
         <form method="POST">
             {% csrf_token %}
             <div class="card mb-3">
                 <div class="card-header">
                     Por ubicación
-                    <!-- Hidden input to pass longitude and latitude to views.py -->
-                    <p id="latitud" hidden></p>
-                    <p id="longitud" hidden></p>
                     <input type="text" name="latitudeValue" id="lat" value=id readonly hidden>
                     <input type="text" name="longitudeValue" id="lon" value=id readonly hidden>
                 </div>
@@ -87,13 +81,10 @@
                             <input class="form-check-input mt-0" type="radio" name="location" id="some-location" value="some_location">
                         </div>
                         <span class="input-group-text">Cerca de:</span>
-                        <!-- Input to type specific location and get suggestions -->
                         <input type="text" class="form-control" id="locationInput" placeholder="Ingrese el nombre de un lugar" oninput="getAutocompleteSuggestions()">
-                        <!-- Hidden input to pass longitude and latitude to views.py -->
                         <input type="text" id="latitude" name="latitudeValueBusqueda" readonly hidden>
                         <input type="text" id="longitude" name="longitudeValueBusqueda" readonly hidden>
                     </div>
-                    <!-- Suggested places while typing place -->
                     <ul id="suggestedPlaces"></ul>
                     <br>
                     <div class="input-group">
@@ -129,57 +120,46 @@
             </div>
             <div class="card mb-3">
                 <div class="card-header">
-                    Amenidades
+                    Amenidades (opcional)
                 </div>
                 <div class="card-body">
+                    {% for key, value in amenities.items %}
                     <p>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="fairground" id="fairground_true"
-                            value="True">
-                        <label class="form-check-label" for="fairground_true">
-                            Con campo ferial
+                        <input class="form-check-input" type="radio" name="{{ key }}" id="{{ key }}_true" value="True">
+                        <label class="form-check-label" for="{{ key }}_true">
+                            Con {{ value }}
                         </label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="fairground" id="fairground_false"
-                            value="False">
-                        <label class="form-check-label" for="fairground_false">
-                            Sin campo ferial
+                        <input class="form-check-input" type="radio" name="{{ key }}" id="{{ key }}_false" value="False">
+                        <label class="form-check-label" for="{{ key }}_false">
+                            Sin {{ value }}
                         </label>
                     </div>
                     </p>
-                    <p>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="indoor" id="indoor_true" value="True">
-                        <label class="form-check-label" for="indoor_true">
-                            Bajo techo
-                        </label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="indoor" id="indoor_false" value="False">
-                        <label class="form-check-label" for="indoor_false">
-                            Al aire libre
-                        </label>
-                    </div>
-                    </p>
+                    {% endfor %}
                 </div>
             </div>
-            <p class="lead">
-                Quiero una feria <span id="status"></span>
-            </p>
             <button type="submit" class="btn btn-primary">Buscar</button>
         </form>
+    </div>
+</div>
+
+<div class="text-center container">
+    <div class="mt-4 p-3">
+        <h2 style="font-weight: 600; font-size: 30px;" class="lead"><span id="status"></span></h2>
     </div>
 </div>
 
 <!-- Display results -->
 {% if marketplaces %}
 <div class="text-center container">
-    <div class="mt-4 p-3">
+    <div class="mt-2 p-3">
         <h2 style="font-weight: 800; font-size: 45px;">Resultados</h2> 
         <p style="font-weight: 600; font-size: 45px;">{{ marketplaces|length }}</p>
         <ul>
-            {% for marketplace in marketplaces %}
+            {% for marketplace in marketplaces|slice:":5" %}
             <div class="card bg-light mb-3" style="max-width: 60rem; cursor: pointer;">
                 <a href="/ferias/{{ marketplace.marketplace_url }}" class="card-link">
                     <div class="card-header">Feria del agricultor</div>
@@ -193,19 +173,6 @@
     </div>
 </div>
 {% endif %}
-
-<!--
-{% if marketplaces %}
-<p>
-<h2>Resultados: {{ marketplaces|length }}</h2>
-<ul>
-    {% for marketplace in marketplaces %}
-    <li><a href="/ferias/{{ marketplace.marketplace_url }}">{{ marketplace.name }}</a></li>
-    {% endfor %}
-</ul>
-</p>
-{% endif %}
--->
 
 <br>
 <p class="small">2023 &copy; Tropicalización de la tecnología</p>
@@ -222,11 +189,12 @@
 
             var statusText = "";
             if (locationValue === "my_location") {
-                statusText += " que esté cerca de mí";
+                statusText += "Quiero una feria que esté cerca de mí";
             } else if (locationValue === "some_location") {
-                statusText += " que esté cerca de cierto lugar";
+                const placeNameText = document.getElementById("locationInput").value;
+                statusText += "Quiero una feria que esté cerca de " + placeNameText;
             } else if (locationValue === "any_location") {
-                statusText += " que esté en cualquier lugar";
+                statusText += "Quiero una feria que esté en cualquier lugar";
             }
 
             if (dayValue === "Mo") {
@@ -262,17 +230,10 @@
             $("#status").text(statusText);
         });
     });    
-</script>
 
-<!-- Google Maps API and Keys -->
-<script src="https://maps.googleapis.com/maps/api/js?key=&libraries=places"></script>
-
-<script>
-    // Map element in html
     var x = document.getElementById("latitud");
     var y = document.getElementById("longitud");
     
-    // Get coordinates of my actual position and pass it to the html elements
     function getLocation() {
       if (navigator.geolocation) {
         navigator.geolocation.watchPosition(showPosition);
@@ -287,22 +248,6 @@
     function showPosition(position) {
         x.innerHTML="Latitude: " + position.coords.latitude;
         y.innerHTML="Longitude: " + position.coords.longitude;
-        
-        var latitude = position.coords.latitude;
-        var longitude = position.coords.longitude;
-
-        // nominatim API URL, inserts users long and lat to the url to obtain the complete name of the users position
-        var nominatimAPI = "https://nominatim.openstreetmap.org/reverse?format=json&lat=" + latitude + "&lon=" + longitude;
-
-        fetch(nominatimAPI)
-            .then(response => response.json())
-            .then(data => {
-            var location = data.display_name;
-            document.getElementById("location2").textContent = location;
-            })
-            .catch(error => {
-            console.log("Error:", error);
-        });
     }
 
     function passLon(position) {
@@ -317,14 +262,8 @@
 
     function getAutocompleteSuggestions() {
       const input = document.getElementById("locationInput").value;
-
-      // Crea una nueva instancia PlacesService para el autocompletado
       const service = new google.maps.places.AutocompleteService();
-
-      // Variedades de lugares dentro de geocode
       const options = { types: ["geocode"] };
-
-      // Predicciones de lugares con el input dado del usuario
       service.getPlacePredictions({ input, options }, displaySuggestions);
     }
 
@@ -341,11 +280,9 @@
         const placeName = prediction.description;
         const listItem = document.createElement("li");
         listItem.textContent = placeName;
-        
-        // Click para pasar la sugerencia al input
         listItem.addEventListener("click", function () {
           document.getElementById("locationInput").value = placeName;
-          suggestedPlacesList.innerHTML = ""; // Limpiar las sugerencias
+          suggestedPlacesList.innerHTML = "";
           geocodeSelectedPlace(placeName);
         });
 
@@ -354,8 +291,8 @@
     }
 
     function geocodeSelectedPlace(placeName) {
-      const geocoder = new google.maps.Geocoder();
 
+      const geocoder = new google.maps.Geocoder();
       geocoder.geocode({ address: placeName }, function (results, status) {
         if (status === "OK") {
           const latitude = results[0].geometry.location.lat();
@@ -371,5 +308,7 @@
 
 </script>
 
+<!-- Google Maps API and Keys -->
+<script src="https://maps.googleapis.com/maps/api/js?key=&libraries=places"></script>
 
 {% endblock %}
