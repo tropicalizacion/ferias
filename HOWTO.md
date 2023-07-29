@@ -56,7 +56,9 @@ Los pasos de creación de la base de datos son:
 - Instalar PostGIS.
 - Crear base de datos `ferias` con `$ createdb ferias`.
 - Ingresar a la base de datos con `$ psql ferias`.
-- [Habilitar PostGIS](https://docs.djangoproject.com/en/4.2/ref/contrib/gis/install/postgis/) para la base de datos `ferias` con `# CREATE EXTENSION postgis;`.
+- [Habilitar PostGIS](https://docs.djangoproject.com/en/4.2/ref/contrib/gis/install/postgis/) para la base de datos `ferias` en `psql` con `# CREATE EXTENSION postgis;`.
+- Habilitar la búsqueda por [_trigram similarity_](https://docs.djangoproject.com/en/4.2/ref/contrib/postgres/lookups/#trigram-similarity) en `psql ferias` con `CREATE EXTENSION IF NOT EXISTS pg_trgm;`
+- Habilitar la búsqueda [_sin acentos_](https://www.postgresql.org/docs/current/unaccent.html) en `psql ferias` con `CREATE EXTENSION IF NOT EXISTS unaccent;`
 - Modificar `settings.py` con (asumiendo que la DB no tiene password):
 ```python
 DATABASES = {
@@ -71,6 +73,7 @@ y además:
 ```python
 INSTALLED_APPS = [
     (...)
+    "django.contrib.postgres",
     "django.contrib.gis",
 ]
 ```
