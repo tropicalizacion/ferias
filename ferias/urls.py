@@ -25,7 +25,7 @@ urlpatterns = [
     path('productos/', include('products.urls'), name='productos'),
     path('consejos/', include('content.urls'), name='consejos'),
     path('blog/', include('blog.urls'), name='blog'),
-    path('colaboracion/', include('crowdsourcing.urls'), name='crowdsourcing'),
+    path('sugerencias/', include('crowdsourcing.urls'), name='crowdsourcing'),
     path('api/', include('api.urls'), name='api'),
     path('usuarios/', include('users.urls'), name='usuarios'),
 ]

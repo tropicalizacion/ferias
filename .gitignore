@@ -13,7 +13,14 @@ __pycache__/
 local_settings.py
 db.sqlite3-journal
 db.sqlite3
-*/migrations/
+marketplaces/migrations/
+products/migrations/
+users/migrations/
+crowdsourcing/migrations/
+website/migrations/
+blog/migrations/
+content/migrations/
+api/migrations/
 
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
 # in your Git repository. Update and uncomment the following line accordingly.

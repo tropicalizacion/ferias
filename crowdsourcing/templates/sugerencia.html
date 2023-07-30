@@ -1,0 +1,575 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Sugerencias para feria de {{ marketplace.name }}{% endblock %}
+
+{% block main %}
+
+<!-- Buscador -->
+<div class="container px-4 py-5" id="search">
+    <!-- Portada -->
+    <div class="text-center">
+        <h2>Sugerencias de información para la feria de</h2>
+        <h1 class="display-5 title-deferia rojo">{{ marketplace.name }}</h1>
+        <p class="lead col-md-6 mx-auto">La información de nuestro proyecto se mantiene actualizada gracias a la colaboración de personas como usted. ¡Por favor ayúdenos en este formulario con todos los datos que usted conoce sobre esta feria!</p>
+    </div>
+    
+    <!-- Formulario -->
+    <form method="POST">
+        <div class="row row-cols-1 row-cols-lg-3 g-4 py-4">
+            <!-- Nombre de la feria -->
+            <div class="col d-flex align-items-start">
+                <span class="bi rojo flex-shrink-0 me-3">
+                    <i class="fa-solid fa-2x fa-sign-hanging"></i>
+                </span>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Nombre de la feria</h3>
+                    <p>Nombre principal de la feria, que aparece en la página de nuestro sitio.</p>
+                    <p>
+                        <input type="text" class="underline-input" id="name" name="name" placeholder="Nombre de la feria" style="width: 100%;">
+                        <small class="text-muted">
+                            Actual: {{ marketplace.name }}
+                        </small>
+                    </p>
+                </div>
+            </div>
+            <!-- Nombres alternativos -->
+            <div class="col d-flex align-items-start">
+                <span class="bi amarillo flex-shrink-0 me-3">
+                    <i class="fa-solid fa-2x fa-quote-left"></i>
+                </span>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Nombres alternativos</h3>
+                    <p>¿Hay algún otro nombre por el cual sea conocida la feria?</p>
+                    <p>
+                        <input type="text" class="underline-input" id="name_alternate" name="name_alternate" placeholder="Nombres alternativos" style="width: 100%;">
+                        <small class="text-muted">
+                            Actual: {% if marketplace.name_alternate %}{{ marketplace.name_alternate }}{% else %}(sin registro actual){% endif %}
+                        </small>
+                    </p>
+                </div>
+            </div>
+            <!-- Operador -->
+            <div class="col d-flex align-items-start">
+                <span class="bi cafe flex-shrink-0 me-3">
+                    <i class="fa-solid fa-2x fa-address-card"></i>
+                </span>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Operador</h3>
+                    <p>Nombre de la entidad encargada de la operación de la feria.</p>
+                    <p>
+                        <input type="text" class="underline-input" id="operator" name="operator" placeholder="Operador" style="width: 100%;">
+                        <small class="text-muted">
+                            Actual: {% if marketplace.operator %}{{ marketplace.operator }}{% else %}(sin registro actual){% endif %}
+                        </small>
+                    </p>
+                </div>
+            </div>
+            <!-- Teléfono de contacto -->
+            <div class="col d-flex align-items-start">
+                <span class="bi azul flex-shrink-0 me-3">
+                    <i class="fa-solid fa-2x fa-phone"></i>
+                </span>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Teléfono de contacto</h3>
+                    <p>Teléfono de la oficina o personas que administran la feria.</p>
+                    <p id="phones">
+                        <input type="text" class="underline-input" id="phone_1" name="phone_1" placeholder="Teléfono 1" style="width: 100%;">
+                    </p>
+                    <p>
+                        <a type="button" onclick="addPhoneInput()"><i class="fa-solid fa-circle-plus"></i> Agregar
+                            teléfono</a>
+                    </p>
+                </div>
+            </div>
+            <!-- Correo de contacto -->
+            <div class="col d-flex align-items-start">
+                <span class="bi rosado flex-shrink-0 me-3">
+                    <i class="fa-solid fa-2x fa-at"></i>
+                </span>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Correo de contacto</h3>
+                    <p>Correo electrónico de la oficina o personas que administran la feria.</p>
+                    <p id="emails">
+                        <input type="email" class="underline-input" id="email_1" name="email_1" placeholder="Correo electrónico 1" style="width: 100%;">
+                    </p>
+                    <p>
+                        <a type="button" onclick="addEmailInput()"><i class="fa-solid fa-circle-plus"></i> Agregar correo electrónico</a>
+                    </p>
+                </div>
+            </div>
+            <!-- Sitio web o redes sociales -->
+            <div class="col d-flex align-items-start">
+                <span class="bi verde flex-shrink-0 me-3">
+                    <i class="fa-solid fa-2x fa-globe"></i>
+                </span>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Sitio web o redes sociales</h3>
+                    <p>Links de sitios web o redes sociales (Facebook, Instagram, etc.) de la feria.</p>
+                    <p id="links">
+                        <input type="text" class="underline-input" id="link_1" name="link_1" placeholder="Link 1" style="width: 100%;">
+                    </p>
+                    <p>
+                        <a type="button" onclick="addLinkInput()"><i class="fa-solid fa-circle-plus"></i> Agregar link de sitio o redes sociales</a>
+                    </p>
+                </div>
+            </div>
+            <!-- Descripción -->
+            <div class="col d-flex align-items-start">
+                <span class="bi rojo flex-shrink-0 me-3">
+                    <i class="fa-solid fa-2x fa-comments"></i>
+                </span>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Descripción</h3>
+                    <p>¿Hay alguna característica de la feria que quiere compartir con nosotros? Por ejemplo: una reseña histórica, anécdotas o similar.</p>
+                    <p>
+                        <textarea class="underline-input" rows="5" id="description" name="description" placeholder="Descripción" style="width: 100%;"></textarea>
+                    </p>
+                </div>
+            </div>
+            <!-- Dirección -->
+            <div class="col d-flex align-items-start">
+                <span class="bi amarillo flex-shrink-0 me-3">
+                    <i class="fa-solid fa-2x fa-map-location-dot"></i>
+                </span>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Dirección</h3>
+                    <p>¿Cuál es la dirección o indicaciones utilizadas para llegar a la feria? ¿Ha cambiado esta dirección recientemente?</p>
+                    <p>
+                        <textarea class="underline-input" rows="5" id="address" name="address" placeholder="Dirección" style="width: 100%;"></textarea>
+                    </p>
+                </div>
+            </div>
+            <!-- Por tamaño -->
+            <div class="col d-flex align-items-start">
+                <span class="bi cafe flex-shrink-0 me-3">
+                    <i class="fa-solid fa-2x fa-shapes"></i>
+                </span>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Tamaño</h3>
+                    <p>¿Tiene usted un número aproximado de los tramos de ventas en la feria? Esta es nuestra clasificación:</p>
+                    <p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="size_s" name="size" value="size_s">
+                        <label class="form-check-label" for="size_s">S, menos de 50 tramos</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="size_m" name="size" value="size_m">
+                        <label class="form-check-label" for="size_m">M, entre 50 y 100 tramos</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="size_l" name="size" value="size_l">
+                        <label class="form-check-label" for="size_l">L, entre 100 y 200 tramos</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="size_xl" name="size" value="size_xl">
+                        <label class="form-check-label" for="size_xl">XL, más de 200 tramos</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="size_unknown" name="size" value="unknown" checked>
+                        <label class="form-check-label" for="size_unknown">Desconocido</label>
+                    </div>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-lg-2 g-4 pb-4">
+            <!-- Horario de operación -->
+            <div class="col d-flex align-items-start">
+                <span class="bi azul flex-shrink-0 me-3">
+                    <i class="fa-solid fa-2x fa-clock"></i>
+                </span>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Horario de operación</h3>
+                    <p>¿Cuáles son los días de operación de la feria? Si hay más de un día, favor agregar más jornadas de operación.</p>
+                    <p class="text-muted">
+                        <small>
+                            Actual: {% if schedule %}{{ schedule.0 }}{% else %}(sin registro actual){% endif %}
+                        </small>
+                    </p>
+                    <div id="opening-days"></div>
+                    <a type="button" onclick="addTextInput()"><i class="fa-solid fa-circle-plus"></i> Agregar jornada de operación</a>
+                </div>
+            </div>
+            <!-- Fecha de inauguración -->
+            <div class="col d-flex align-items-start">
+                <span class="bi rosado flex-shrink-0 me-3">
+                    <i class="fa-solid fa-2x fa-star"></i>
+                </span>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Fecha de inauguración</h3>
+                    <p>¿Conoce la fecha aproximada de inauguración de esta feria?</p>
+                    <p>
+                        <input type="date" class="underline-input" id="opening_date" name="opening_date" style="width: 100%;">
+                        <small class="text-muted">
+                            Actual: {% if marketplace.opening_date %}{{ marketplace.opening_date }}{% else %}(sin registro actual){% endif %}
+                        </small>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-1 g-4 pb-4">
+            <!-- Infraestructura -->
+            <div class="col d-flex align-items-start">
+                <span class="bi verde flex-shrink-0 me-3">
+                    <i class="fa-solid fa-2x fa-people-roof"></i>
+                </span>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Infraestructura</h3>
+                    <p>Estos son algunos aspectos de la infraestructura que hemos colocado para describir cada feria.</p>
+                    <div class="row row-cols-1 row-cols-lg-4 g-4 pb-4">
+                        <div class="col">
+                            <h6>Campo ferial</h6>
+                            <small>
+                                <p class="text-muted">
+                                    Un espacio dedicado para la feria, que no es en la vía pública.
+                                </p>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="fairground" id="fairground_true" value="fairground_true">
+                                    <label class="form-check-label" for="fairground_true">Sí</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="fairground" id="fairground_false" value="fairground_false">
+                                    <label class="form-check-label" for="fairground_false">No</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="fairground" id="fairground_unknown" value="fairground_unknown" checked>
+                                    <label class="form-check-label" for="fairground_unknown">No sé</label>
+                                </div>
+                            </small>
+                        </div>
+                        <div class="col">
+                            <h6>Bajo techo</h6>
+                            <small>
+                                <p class="text-muted">
+                                    Espacio protegido con una estructura ya sea permanente o temporal que protege a los participantes de la lluvia y el sol.
+                                </p>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="indoor" id="indoor_true" value="indoor_true">
+                                    <label class="form-check-label" for="indoor_true">Sí</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="indoor" id="indoor_false" value="indoor_false">
+                                    <label class="form-check-label" for="indoor_false">No</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="indoor" id="indoor_unknown" value="indoor_unknown" checked>
+                                    <label class="form-check-label" for="indoor_unknown">No sé</label>
+                                </div>
+                            </small>
+                        </div>
+                        <div class="col">
+                            <h6>Servicios sanitarios</h6>
+                            <small>
+                                <p class="text-muted">
+                                    Batería de servicios sanitarios habilitados para el público visitante, con las condiciones apropiadas de aseo.
+                                </p>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="toilets" id="toilets_true" value="toilets_true">
+                                    <label class="form-check-label" for="toilets_true">Sí</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="toilets" id="toilets_false" value="toilets_false">
+                                    <label class="form-check-label" for="toilets_false">No</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="toilets" id="toilets_unknown" value="toilets_unknown" checked>
+                                    <label class="form-check-label" for="toilets_unknown">No sé</label>
+                                </div>
+                            </small>
+                        </div>
+                        <div class="col">
+                            <h6>Lavabo para manos</h6>
+                            <small>
+                                <p class="text-muted">
+                                    Lavabo o pila para el lavado de manos de las personas visitantes, con disponibilidad de agua y jabón.
+                                </p>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="handwashing"
+                                        id="handwashing_true" value="handwashing_true">
+                                    <label class="form-check-label" for="handwashing_true">Sí</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="handwashing" id="handwashing_false" value="handwashing_false">
+                                    <label class="form-check-label" for="handwashing_false">No</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="handwashing" id="handwashing_unknown" value="handwashing_unknown" checked>
+                                    <label class="form-check-label" for="handwashing_unknown">No sé</label>
+                                </div>
+                            </small>
+                        </div>
+                        <div class="col">
+                            <h6>Agua potable</h6>
+                            <small>
+                                <p class="text-muted">
+                                    Fuente de agua potable disponible para consumo de las personas visitantes.
+                                </p>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="drinking_water" id="drinking_water_true" value="drinking_water_true">
+                                    <label class="form-check-label" for="drinking_water_true">Sí</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="drinking_water" id="drinking_water_false" value="drinking_water_false">
+                                    <label class="form-check-label" for="drinking_water_false">No</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="drinking_water" id="drinking_water_unknown" value="drinking_water_unknown" checked>
+                                    <label class="form-check-label" for="drinking_water_unknown">No sé</label>
+                                </div>
+                            </small>
+                        </div>
+                        <div class="col">
+                            <h6>Estacionamiento</h6>
+                            <small>
+                                <p class="text-muted">
+                                    Espacio dedicado de estacionamiento para automóviles y motocicletas.
+                                </p>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="parking" id="parking_true" value="parking_true">
+                                    <label class="form-check-label" for="parking_true">Sí</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="parking" id="parking_false" value="parking_false">
+                                    <label class="form-check-label" for="parking_false">No</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="parking" id="parking_unknown" value="parking_unknown" checked>
+                                    <label class="form-check-label" for="parking_unknown">No sé</label>
+                                </div>
+                            </small>
+                        </div>
+                        <div class="col">
+                            <h6>Estacionamiento para bicicletas</h6>
+                            <small>
+                                <p class="text-muted">
+                                    Espacio de estacionamiento para bicicletas con estructura para poder amarrarlas.
+                                </p>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="bicycle_parking" id="bicycle_parking_true" value="bicycle_parking_true">
+                                    <label class="form-check-label" for="bicycle_parking_true">Sí</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="bicycle_parking" id="bicycle_parking_false" value="bicycle_parking_false">
+                                    <label class="form-check-label" for="bicycle_parking_false">No</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="bicycle_parking" id="bicycle_parking_unknown" value="bicycle_parking_unknown" checked>
+                                    <label class="form-check-label" for="bicycle_parking_unknown">No sé</label>
+                                </div>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-1 g-4 pb-4">
+            <!-- Amenidades -->
+            <div class="col d-flex align-items-start">
+                <span class="bi rojo flex-shrink-0 me-3">
+                    <i class="fa-solid fa-2x fa-glass-water"></i>
+                </span>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Amenidades</h3>
+                    <p>La feria es un espacio comercial con más opciones que los productos frescos, ¿qué más hay en esta feria?</p>
+                    <div class="row row-cols-1 row-cols-lg-4 g-4 pb-4"">
+                        <div class=" col">
+                        <h6>Comidas</h6>
+                        <small>
+                            <p class="text-muted">
+                                Venta de comidas preparadas, como desayunos, almuerzos, etc., para comer en el sitio o para llevar.
+                            </p>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="food" id="food_true" value="food_true">
+                                <label class="form-check-label" for="food_true">Sí</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="food" id="food_false" value="food_false">
+                                <label class="form-check-label" for="food_false">No</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="food" id="food_unknown" value="food_unknown" checked>
+                                <label class="form-check-label" for="food_unknown">No sé</label>
+                            </div>
+                        </small>
+                    </div>
+                    <div class="col">
+                        <h6>Bebidas y jugos</h6>
+                        <small>
+                            <p class="text-muted">
+                                Venta de bebidas y jugos de frutas y vegetales, como jugo de naranja, jugo de caña, fresco de chan o mozote, y similares.
+                            </p>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="drinks" id="drinks_true" value="drinks_true">
+                                <label class="form-check-label" for="drinks_true">Sí</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="drinks" id="drinks_false" value="drinks_false">
+                                <label class="form-check-label" for="drinks_false">No</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="drinks" id="drinks_unknown" value="drinks_unknown" checked>
+                                <label class="form-check-label" for="drinks_unknown">No sé</label>
+                            </div>
+                        </small>
+                    </div>
+                    <div class="col">
+                        <h6>Artesanías</h6>
+                        <small>
+                            <p class="text-muted">
+                                Venta de artesanías y otros productos de la agroindustria, como condimentos, café, bebidas envasadas, etc.
+                            </p>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="handicrafts" id="handicrafts_true" value="handicrafts_true">
+                                <label class="form-check-label" for="handicrafts_true">Sí</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="handicrafts" id="handicrafts_false" value="handicrafts_false">
+                                <label class="form-check-label" for="handicrafts_false">No</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="handicrafts" id="handicrafts_unknown" value="handicrafts_unknown" checked>
+                                <label class="form-check-label" for="handicrafts_unknown">No sé</label>
+                            </div>
+                        </small>
+                    </div>
+                    <div class="col">
+                        <h6>Carnicería</h6>
+                        <small>
+                            <p class="text-muted">
+                                Venta de productos cárnicos del sector avícola o ganadero.
+                            </p>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="butcher" id="butcher_true" value="butcher_true">
+                                <label class="form-check-label" for="butcher_true">Sí</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="butcher" id="butcher_false" value="butcher_false">
+                                <label class="form-check-label" for="butcher_false">No</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="butcher" id="butcher_unknown" value="butcher_unknown" checked>
+                                <label class="form-check-label" for="butcher_unknown">No sé</label>
+                            </div>
+                        </small>
+                    </div>
+                    <div class="col">
+                        <h6>Productos lácteos</h6>
+                        <small>
+                            <p class="text-muted">
+                                Venta de productos lácteos, como queso, natilla, leche agria y similares.
+                            </p>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="dairy" id="dairy_true" value="dairy_true">
+                                <label class="form-check-label" for="dairy_true">Sí</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="dairy" id="dairy_false" value="dairy_false">
+                                <label class="form-check-label" for="dairy_false">No</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="dairy" id="dairy_unknown" value="dairy_unknown" checked>
+                                <label class="form-check-label" for="dairy_unknown">No sé</label>
+                            </div>
+                        </small>
+                    </div>
+                    <div class="col">
+                        <h6>Pescadería y/o marisquería</h6>
+                        <small>
+                            <p class="text-muted">
+                                Venta de alimentos del mar, como pescado y mariscos.
+                            </p>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="seafood" id="seafood_true" value="seafood_true">
+                                <label class="form-check-label" for="seafood_true">Sí</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="seafood" id="seafood_false" value="seafood_false">
+                                <label class="form-check-label" for="seafood_false">No</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="seafood" id="seafood_unknown" value="seafood_unknown" checked>
+                                <label class="form-check-label" for="seafood_unknown">No sé</label>
+                            </div>
+                        </small>
+                    </div>
+                    <div class="col">
+                        <h6>Plantas</h6>
+                        <small>
+                            <p class="text-muted">
+                                Venta de plantas para uso ornamental.
+                            </p>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="garden_centre" id="garden_centre_true" value="garden_centre_true">
+                                <label class="form-check-label" for="garden_centre_true">Sí</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="garden_centre" id="garden_centre_false" value="garden_centre_false">
+                                <label class="form-check-label" for="garden_centre_false">No</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="garden_centre" id="garden_centre_unknown" value="garden_centre_unknown" checked>
+                                <label class="form-check-label" for="garden_centre_unknown">No sé</label>
+                            </div>
+                        </small>
+                    </div>
+                    <div class="col">
+                        <h6>Floristería</h6>
+                        <small>
+                            <p class="text-muted">
+                                Venta de flores y productos relacionados.
+                            </p>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="florist" id="florist_true" value="florist_true">
+                                <label class="form-check-label" for="florist_true">Sí</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="florist" id="florist_false" value="florist_false">
+                                <label class="form-check-label" for="florist_false">No</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="florist" id="florist_unknown" value="florist_unknown" checked>
+                                <label class="form-check-label" for="florist_unknown">No sé</label>
+                            </div>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-1 g-4 pb-4">
+            <!-- Comentarios -->
+            <div class="col d-flex align-items-start">
+                <span class="bi amarillo flex-shrink-0 me-3">
+                    <i class="fa-solid fa-2x fa-comment"></i>
+                </span>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Comentarios</h3>
+                    <p>¿Tiene otras sugerencias o comentarios para nuestro sitio y la feria de {{ marketplace.name }}? ¿Hay otras amenidades o infraestructura que ofrece la feria? Agradecemos nos lo indique aquí.</p>
+                    <p>
+                        <textarea class="underline-input" rows="5" id="comments" name="comments" placeholder="Comentarios" style="width: 100%;"></textarea>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Nombre de la persona y botón de envío de sugerencias -->
+        <div class=" card my-3 mx-auto text-center" style="max-width: 576px;">
+            <div class="card-body">
+                <p class="lead">
+                    Su nombre:
+                    <input type="text" class="underline-input" id="name">
+                </p>
+                <p>
+                    <button type="button" class="btn btn-danger btn-lg px-4 gap-3">
+                        Enviar sugerencias
+                    </button>
+                </p>
+            </div>
+        </div>
+    </form>
+    <h1 class="text-center">¡Gracias!</h1>
+</div>
+
+<script src="{% static 'js/crowdsourcing.js' %}"></script>
+
+{% endblock %}
