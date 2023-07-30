@@ -61,8 +61,6 @@ def sugerencia(request, marketplace_url):
         marketplace = Marketplace.objects.get(marketplace_url=marketplace_url)
         size_choices = marketplace.SIZE_CHOICES
         opening_hours_edit = OpeningHoursEdit()
-        day_choices = opening_hours_edit.DAY_CHOICES
-        hour_choices = opening_hours_edit.HOUR_CHOICES
 
         schedule = None
         if marketplace.opening_hours:
@@ -73,8 +71,6 @@ def sugerencia(request, marketplace_url):
         context = {
             "marketplace": marketplace,
             "size_choices": size_choices,
-            "day_choices": day_choices,
-            "hour_choices": hour_choices,
             "schedule": schedule,
         }
         return render(request, "sugerencia.html", context)
