@@ -1,75 +1,130 @@
 from django.shortcuts import render, redirect
-from ferias.forms import MarketplaceForm
 from marketplaces.models import Marketplace
 from .models import Announcement
 from django.db.models import Q
 from django.contrib.gis.db.models.functions import Distance
 from django.contrib.auth.decorators import login_required
-#from geopy.geocoders import Nominatim
-import requests
 from django.contrib.gis.geos import Point
 
 
 def index(request):
 
-    # Search by amenities
-    amenities = {"parking": 'parqueo', "bicycle_parking": 'parqueo para bicicletas', "fairground": 'campo ferial', "indoor": 'bajo techo', "toilets": 'servicios sanitarios', "handwashing": 'lavado de manos', "drinking_water": 'agua potable', "food": 'comidas', 'drinks': 'bebidas', "handicrafts": 'artesanías', "butcher": 'carnicería', "dairy": 'productos lácteos', "seafood": 'pescadería y mariscos', "garden_centre": 'plantas', "florist": 'floristería'}
-
     if request.method == "POST":
-        # Search by location
-        location = request.POST.get("location")
 
-            #All marketplaces
+        # Search by location
+
+        location = request.POST.get("location")
         if location == "any_location":
             marketplaces = Marketplace.objects.all().order_by("name")
-
-            # Search marketplace by user location
         elif location == "my_location":
-
-            longitude = float(request.POST.get("longitudeValue"))
-            latitude = float(request.POST.get("latitudeValue"))
+            longitude = float(request.POST.get("my_longitude"))
+            latitude = float(request.POST.get("my_latitude"))
             coordinates = Point(longitude, latitude, srid=4326)
-
-            marketplaces = (
-                Marketplace.objects.annotate(distance=Distance("location", coordinates)).order_by("distance")
-            )
-
-            #Search marketplace by a specific location
+            marketplaces = Marketplace.objects.annotate(
+                distance=Distance("location", coordinates)
+            ).order_by("distance")
         elif location == "some_location":
-
-            longitude = float(request.POST.get("longitudeValueBusqueda"))
-            latitude = float(request.POST.get("latitudeValueBusqueda"))
+            longitude = float(request.POST.get("some_longitude"))
+            latitude = float(request.POST.get("some_latitude"))
             coordinates = Point(longitude, latitude, srid=4326)
+            marketplaces = Marketplace.objects.annotate(
+                distance=Distance("location", coordinates)
+            ).order_by("distance")
 
-            marketplaces = (
-                Marketplace.objects.annotate(distance=Distance("location", coordinates)).order_by("distance")
-            )
-        else:
-            print("No hay ferias disponibles")
-            
-        # Search by schedule
+        # Search by day of the week
+
         day = request.POST.get("day")
-        if day != "NA":
+        if day != "any_day":
             marketplaces = marketplaces.filter(opening_hours__contains=day)
-    
-        query = Q() 
-        for key, value in amenities.items():
-            key = request.POST.get(key)
-            if key is not None:
-                key = str(key)
-                query &= Q(key=True)
-            marketplaces = marketplaces.filter(query)
+
+        # Filter results for exact match
+
+        marketplaces_match = marketplaces
+
+        # Filter by size
+
+        size = request.POST.get("size")
+        if size != "any_size":
+            query_size = Q()
+            if "size_s" in request.POST:
+                query_size |= Q(size="S")
+            if "size_m" in request.POST:
+                query_size |= Q(size="M")
+            if "size_l" in request.POST:
+                query_size |= Q(size="L")
+            if "size_xl" in request.POST:
+                query_size |= Q(size="XL")
+            marketplaces_match = marketplaces_match.filter(query_size)
+
+        # Filter by infrastructure
+
+        query_infrastructure = Q()
+        if "fairground" in request.POST:
+            query_infrastructure &= Q(fairground=True)
+        if "indoor" in request.POST:
+            query_infrastructure &= Q(indoor=True)
+        if "parking" in request.POST:
+            query_infrastructure &= Q(parking="surface")
+        marketplaces_match = marketplaces_match.filter(query_infrastructure)
+
+        # Filter by amenities
+
+        query_amenities = Q()
+        if "food" in request.POST:
+            query_amenities &= Q(food=True)
+        if "drinks" in request.POST:
+            query_amenities &= Q(drinks=True)
+        if "handicrafts" in request.POST:
+            query_amenities &= Q(handicrafts=True)
+        if "butcher" in request.POST:
+            query_amenities &= Q(butcher=True)
+        if "dairy" in request.POST:
+            query_amenities &= Q(dairy=True)
+        if "seafood" in request.POST:
+            query_amenities &= Q(seafood=True)
+        if "garden_centre" in request.POST:
+            query_amenities &= Q(garden_centre=True)
+        if "florist" in request.POST:
+            query_amenities &= Q(florist=True)
+        marketplaces_match = marketplaces_match.filter(query_amenities)
+
+        # Filter by keyword
+
+        marketplaces_keyword = None
+        if "keyword" in request.POST:
+            keyword = request.POST.get("keyword")
+            print(f'Keyword: {keyword}')
+            try:
+                marketplaces_keyword = marketplaces
+                marketplaces_keyword = marketplaces_keyword.filter(
+                    Q(name__unaccent__trigram_similar=keyword) | 
+                    Q(description__unaccent__trigram_similar=keyword)
+                )
+            except:
+                pass
+        
+        # Get other marketplaces
+
+        marketplaces_others = marketplaces.difference(marketplaces_match)
+
+        # Query text
+
+        query_text = request.POST.get("query_text")
 
         context = {
-            "marketplaces": marketplaces,
-            "amenities" : amenities
+            "query_text": query_text,
+            "show_results": True,
+            "marketplaces_match": marketplaces_match,
+            "marketplaces_others": marketplaces_others,
+            "marketplaces_keyword": marketplaces_keyword,
+            "keyword": keyword,
         }
+
         return render(request, "index.html", context)
+
     else:
-        context = {
-            "amenities" : amenities
-        }
-        return render(request, "index.html",context)
+
+        return render(request, "index.html")
 
 
 def acerca(request):
@@ -89,14 +144,12 @@ def anuncios(request):
 
 
 def crear(request):
-    
     marketplaces = Marketplace.objects.all().order_by("name")
     context = {
         "marketplaces": marketplaces,
     }
 
     if request.method == "POST":
-        
         title = request.POST.get("title")
         marketplace = marketplaces.get(marketplace_url=request.POST.get("marketplace"))
         publish = request.POST.get("publish")
@@ -113,7 +166,7 @@ def crear(request):
             slug=slug,
         )
         announcement.save()
-    
+
     return render(request, "crear.html", context)
 
 

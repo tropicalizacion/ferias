@@ -4,311 +4,118 @@
 
 {% block page_title %} Vamos {% endblock %}
 
+{% block bg-navbar %} background-verde {% endblock %}
+
 {% block main %}
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-
-<style>
-    #suggestedPlaces li {
-      cursor: pointer;
-      margin: 5px;
-      padding: 7px;
-    }
-
-    #suggestedPlaces li:hover {
-      background-color: #c7c6c6;
-    }
-
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-    }
-
-    .card-link {
-      text-decoration: none;
-      color: inherit;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .card-link:hover {
-      text-decoration: none;
-      color: inherit;
-      /* Movimiento para hacer notable al tener el mouse encima */
-      transform: scale(1.05);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-</style>
-
-<!-- Información general -->
-<h1 class="display-1">¡Vamos de feria!</h1>
-
-<p>Página de información de las ferias del agricultor en Costa Rica.</p>
-
-<div class="alert alert-info" role="alert">
-    <h4 class="alert-heading">Sitio en desarrollo</h4>
-    <p>Esta es una demostración para pruebas de la página que estamos creando. Pronto tendremos más información aquí y
-        en redes sociales.</p>
-    <hr>
-    <p class="mb-0">Lanzamiento oficial esperado: 31 de julio de 2023.</p>
-</div>
-
-<div class="card">
-    <div class="card-body">
-        <h2 class="card-title mb-3">¿Dónde está la feria?</h2>
-        <form method="POST">
-            {% csrf_token %}
-            <div class="card mb-3">
-                <div class="card-header">
-                    Por ubicación
-                    <input type="text" name="latitudeValue" id="lat" value=id readonly hidden>
-                    <input type="text" name="longitudeValue" id="lon" value=id readonly hidden>
-                </div>
-                <div class="card-body">
-                    <div class="input-group">
-                        <div class="input-group-text">
-                            <input class="form-check-input mt-0" type="radio" name="location" id="my-location" onclick="getLocation()" value="my_location">
-                        </div>
-                        <span class="input-group-text">Cerca de mí</span>
-                    </div>
-                    
-                    <br>
-                    <div class="input-group">
-                        <div class="input-group-text">
-                            <input class="form-check-input mt-0" type="radio" name="location" id="some-location" value="some_location">
-                        </div>
-                        <span class="input-group-text">Cerca de:</span>
-                        <input type="text" class="form-control" id="locationInput" placeholder="Ingrese el nombre de un lugar" oninput="getAutocompleteSuggestions()">
-                        <input type="text" id="latitude" name="latitudeValueBusqueda" readonly hidden>
-                        <input type="text" id="longitude" name="longitudeValueBusqueda" readonly hidden>
-                    </div>
-                    <ul id="suggestedPlaces"></ul>
-                    <br>
-                    <div class="input-group">
-                        <div class="input-group-text">
-                            <input class="form-check-input mt-0" type="radio" name="location" id="any-location" value="any_location" checked>
-                        </div>
-                        <span class="input-group-text">En cualquier lugar</span>
-                    </div>
-                </div>
-            </div>
-            <div class="card mb-3">
-                <div class="card-header">
-                    Por día de la semana
-                </div>
-                <div class="card-body">
-                    <input type="radio" class="btn-check" id="monday" name="day" value="Mo">
-                    <label class="btn btn-outline-primary" for="monday">Lunes</label>
-                    <input type="radio" class="btn-check" id="tuesday" name="day" value="Tu">
-                    <label class="btn btn-outline-primary" for="tuesday">Martes</label>
-                    <input type="radio" class="btn-check" id="wednesday" name="day" value="We">
-                    <label class="btn btn-outline-primary" for="wednesday">Miércoles</label>
-                    <input type="radio" class="btn-check" id="thursday" name="day" value="Th">
-                    <label class="btn btn-outline-primary" for="thursday">Jueves</label>
-                    <input type="radio" class="btn-check" id="friday" name="day" value="Fr">
-                    <label class="btn btn-outline-primary" for="friday">Viernes</label>
-                    <input type="radio" class="btn-check" id="saturday" name="day" value="Sa">
-                    <label class="btn btn-outline-primary" for="saturday">Sábado</label>
-                    <input type="radio" class="btn-check" id="sunday" name="day" value="Su">
-                    <label class="btn btn-outline-primary" for="sunday">Domingo</label>
-                    <input type="radio" class="btn-check" id="any" name="day" value="NA" checked>
-                    <label class="btn btn-outline-secondary" for="any">Cualquiera</label>
-                </div>
-            </div>
-            <div class="card mb-3">
-                <div class="card-header">
-                    Amenidades (opcional)
-                </div>
-                <div class="card-body">
-                    {% for key, value in amenities.items %}
-                    <p>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="{{ key }}" id="{{ key }}_true" value="True">
-                        <label class="form-check-label" for="{{ key }}_true">
-                            Con {{ value }}
-                        </label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="{{ key }}" id="{{ key }}_false" value="False">
-                        <label class="form-check-label" for="{{ key }}_false">
-                            Sin {{ value }}
-                        </label>
-                    </div>
-                    </p>
-                    {% endfor %}
-                </div>
-            </div>
-            <button type="submit" class="btn btn-primary">Buscar</button>
-        </form>
+<!-- Hero -->
+<div class="px-4 pt-3 pb-5 text-center background-verde">
+    <h1 class="display-4 text-white title-deferia">¡Vamos de feria!</h1>
+    <img class="d-block mx-auto mb-3" src="{% static 'images/stickers/banano.png' %}" alt="" width="100">
+    <div class="col-lg-5 mx-auto">
+        <p class="lead mb-4 text-white" style="font-weight: 100;">Quickly design and customize responsive mobile-first sites with Bootstrap, the world's most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <a type="button" class="btn btn-warning btn-lg px-4 gap-3" style="font-weight: 900px" href="#search">Buscar mi feria</a>
+        </div>
     </div>
 </div>
 
-<div class="text-center container">
-    <div class="mt-4 p-3">
-        <h2 style="font-weight: 600; font-size: 30px;" class="lead"><span id="status"></span></h2>
-    </div>
-</div>
-
-<!-- Display results -->
-{% if marketplaces %}
-<div class="text-center container">
-    <div class="mt-2 p-3">
-        <h2 style="font-weight: 800; font-size: 45px;">Resultados</h2> 
-        <p style="font-weight: 600; font-size: 45px;">{{ marketplaces|length }}</p>
-        <ul>
-            {% for marketplace in marketplaces|slice:":5" %}
-            <div class="card bg-light mb-3" style="max-width: 60rem; cursor: pointer;">
-                <a href="/ferias/{{ marketplace.marketplace_url }}" class="card-link">
-                    <div class="card-header">Feria del agricultor</div>
-                        <div class="card-body">
-                        <h5 class="card-title">{{ marketplace.name }}</h5>
-                    </div>
+<!-- Por qué (beneficios) -->
+<div class="card background-amarillo m-4 rounded-5 border-0 shadow">
+    <div class="container px-1 py-1" id="featured-3">
+        <div class="row g-4 py-4 row-cols-1 row-cols-md-3">
+            <div class="feature col">
+                <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+                    <img src="{% static 'images/stickers/fresa.png' %}" alt="" height="50px">
+                </div>
+                <h2 class="title-deferia">Es más saludable</h2>
+                <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+                <a href="#" class="icon-link">
+                    Leer más >
                 </a>
             </div>
-            {% endfor %}
-        </ul>
+            <div class="feature col">
+                <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+                    <img src="{% static 'images/stickers/tomate.png' %}" alt="" height="50px">
+                </div>
+                <h2 class="title-deferia">Es más barato</h2>
+                <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+                <a href="#" class="icon-link">
+                    Leer más >
+                </a>
+            </div>
+            <div class="feature col">
+                <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+                    <img src="{% static 'images/stickers/sandia.png' %}" alt="" height="50px">
+                </div>
+                <h2 class="title-deferia">Es más nuestro</h2>
+                <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+                <a href="#" class="icon-link">
+                    Leer más >
+                </a>
+            </div>
+        </div>
     </div>
 </div>
-{% endif %}
 
-<br>
-<p class="small">2023 &copy; Tropicalización de la tecnología</p>
+<!-- Buscador de ferias -->
+{% include 'search.html' %}
+
+<!-- Información de productos -->
+
+<div class="container pt-5">
+    <div class="row g-4 pt-4 pb-5 row-cols-1 row-cols-lg-2 d-flex align-items-center">
+        <div class="col-md-8 mx-auto">
+            <h1 class="title-deferia">
+                La variedad, la frescura y los precios de la feria... solo en la feria
+            </h1>
+            <img src="{% static 'images/stickers/sandia.png' %}" width="75px" class="floating-watermelon">
+        </div>
+        <div class="col-md-8 mx-auto">
+            <div class="card mb-3 rounded-4 background-rosado border-0 text-white">
+                <div class="card-body">
+                    <h4 class="card-title title-deferia">Hola</h4>
+                    <p class="card-text lead">Quiero una feria cerca de mí</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Contenidos del sitio: ferias y productos -->
+
+<div class="container pt-5 pb-5 px-5">
+    <div class="row g-4 pt-4 pb-5 row-cols-1 row-cols-lg-2">
+        <div class="col-md-6 mx-auto">
+            <div class="card mb-3 rounded-4 background-azul border-0 text-white">
+                <div class="card-body">
+                    <h4 class="card-title title-deferia">Hola</h4>
+                    <p class="card-text lead">Quiero una feria cerca de mí, que abra los sábados, con campo ferial, bajo techo, con floristería…</p>
+                </div>
+                <img src="{% static 'images/stickers/sandia.png' %}" width="75px" class="floating-watermelon">
+            </div>
+            <h3 class="card-title title-deferia">Más de 80 ferias <i class="fa-solid fa-square-up-right"></i></h3>
+            <p class="card-text lead">Quiero una feria cerca de mí, que abra los sábados, con campo ferial, bajo techo, con floristería…</p>
+        </div>
+        <div class="col-md-6 mx-auto">
+            <div class="card mb-3 rounded-4 background-verde border-0 text-white">
+                <div class="card-body">
+                    <h4 class="card-title title-deferia">Hola</h4>
+                    <p class="card-text lead">Quiero una feria cerca de mí, que abra los sábados, con campo ferial, bajo techo, con floristería…</p>
+                </div>
+                <img src="{% static 'images/stickers/cebolla.png' %}" width="65px" class="floating-onion">
+            </div>
+            <h3 class="card-title title-deferia">Más de 100 productos <i class="fa-solid fa-square-up-right"></i></h3>
+            <p class="card-text lead">Quiero una feria cerca de mí, que abra los sábados, con campo ferial, bajo techo, con floristería…</p>
+        </div>
+    </div>
+</div>
 
 
-<!-- Actualización del texto -->
-<script>
-    $(document).ready(function () {
-        $('input[name="fairground"], input[name="indoor"], input[name="location"], input[name="day"]').change(function () {
-            var fairgroundValue = $('input[name="fairground"]:checked').val();
-            var indoorValue = $('input[name="indoor"]:checked').val();
-            var locationValue = $('input[name="location"]:checked').val();
-            var dayValue = $('input[name="day"]:checked').val();
-
-            var statusText = "";
-            if (locationValue === "my_location") {
-                statusText += "Quiero una feria que esté cerca de mí";
-            } else if (locationValue === "some_location") {
-                const placeNameText = document.getElementById("locationInput").value;
-                statusText += "Quiero una feria que esté cerca de " + placeNameText;
-            } else if (locationValue === "any_location") {
-                statusText += "Quiero una feria que esté en cualquier lugar";
-            }
-
-            if (dayValue === "Mo") {
-                statusText += ", que abra los lunes";
-            } else if (dayValue === "Tu") {
-                statusText += ", que abra los martes";
-            } else if (dayValue === "We") {
-                statusText += ", que abra los miércoles";
-            } else if (dayValue === "Th") {
-                statusText += ", que abra los jueves";
-            } else if (dayValue === "Fr") {
-                statusText += ", que abra los viernes";
-            } else if (dayValue === "Sa") {
-                statusText += ", que abra los sábados";
-            } else if (dayValue === "Su") {
-                statusText += ", que abra los domingos";
-            } else if (dayValue === "NA") {
-                statusText += ", que abra cualquier día";
-            }
-
-            if (fairgroundValue === "True") {
-                statusText += ", con campo ferial";
-            } else if (fairgroundValue === "False") {
-                statusText += ", sin campo ferial";
-            }
-
-            if (indoorValue === "True") {
-                statusText += ", bajo techo";
-            } else if (indoorValue === "False") {
-                statusText += ", al aire libre";
-            }
-
-            $("#status").text(statusText);
-        });
-    });    
-
-    var x = document.getElementById("latitud");
-    var y = document.getElementById("longitud");
-    
-    function getLocation() {
-      if (navigator.geolocation) {
-        navigator.geolocation.watchPosition(showPosition);
-        navigator.geolocation.getCurrentPosition(showPosition);
-        navigator.geolocation.watchPosition(passLon);
-        navigator.geolocation.watchPosition(passLat);
-      } else { 
-        alert("El buscador no es compatible con esa funcionalidad");
-      }
-    }
-        
-    function showPosition(position) {
-        x.innerHTML="Latitude: " + position.coords.latitude;
-        y.innerHTML="Longitude: " + position.coords.longitude;
-    }
-
-    function passLon(position) {
-        var valueLon = position.coords.longitude;
-        document.getElementById("lon").value = valueLon;
-    }
-
-    function passLat(position) {
-        var valueLat = position.coords.latitude;
-        document.getElementById("lat").value = valueLat;
-    }
-
-    function getAutocompleteSuggestions() {
-      const input = document.getElementById("locationInput").value;
-      const service = new google.maps.places.AutocompleteService();
-      const options = { types: ["geocode"] };
-      service.getPlacePredictions({ input, options }, displaySuggestions);
-    }
-
-    function displaySuggestions(predictions, status) {
-      if (status !== google.maps.places.PlacesServiceStatus.OK) {
-        console.error("Error en mostrar sugerencias de lugares: ", status);
-        return;
-      }
-
-      const suggestedPlacesList = document.getElementById("suggestedPlaces");
-      suggestedPlacesList.innerHTML = "";
-
-      predictions.forEach(prediction => {
-        const placeName = prediction.description;
-        const listItem = document.createElement("li");
-        listItem.textContent = placeName;
-        listItem.addEventListener("click", function () {
-          document.getElementById("locationInput").value = placeName;
-          suggestedPlacesList.innerHTML = "";
-          geocodeSelectedPlace(placeName);
-        });
-
-        suggestedPlacesList.appendChild(listItem);
-      });
-    }
-
-    function geocodeSelectedPlace(placeName) {
-
-      const geocoder = new google.maps.Geocoder();
-      geocoder.geocode({ address: placeName }, function (results, status) {
-        if (status === "OK") {
-          const latitude = results[0].geometry.location.lat();
-          const longitude = results[0].geometry.location.lng();
-
-          document.getElementById("latitude").value = latitude;
-          document.getElementById("longitude").value = longitude;
-        } else {
-          console.error("Error al conectarse con el API de Google: " + status);
-        }
-      });
-    }
-
-</script>
+<!-- JavaScript search.js -->
+<script src="{% static 'js/search.js' %}"></script>
 
 <!-- Google Maps API and Keys -->
-<script src="https://maps.googleapis.com/maps/api/js?key=&libraries=places"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2WP2FoMe4DRz20FsGGi51opPlfjcm4KM&libraries=places"></script>
 
 {% endblock %}
