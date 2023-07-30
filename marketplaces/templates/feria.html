@@ -141,7 +141,7 @@
 
     const popup = L.popup()
         .setLatLng([{{ marketplace.location.y|unlocalize }}, {{ marketplace.location.x|unlocalize }}])
-    .setContent("Feria de {{ marketplace.name }}")
+        .setContent("Feria de {{ marketplace.name }}")
         .openOn(map);
 
 </script>
