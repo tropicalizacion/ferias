@@ -1,5 +1,6 @@
 body {
     font-family: 'Nunito Sans', sans-serif;
+    background-color: #FAF6EA;
 }
 
 .nav-link-deferia {
@@ -84,6 +85,27 @@ body {
 
 .navbar-nav .nav-link:hover {
     color: #EBB615;
+}
+
+.floating-watermelon {
+    position: absolute;
+    top: -15%;
+    right: 10%;
+    z-index: 9999;
+}
+
+.floating-strawberry {
+    position: absolute;
+    bottom: -15%;
+    left: 5%;
+    z-index: 9999;
+}
+
+.floating-onion {
+    position: absolute;
+    bottom: -5%;
+    right: -5%;
+    z-index: 9999;
 }
 
 h4, h5, h6 {

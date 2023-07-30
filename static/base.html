@@ -1,19 +1,21 @@
 {% load static %}
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block page_title %}{% endblock %} | de feria</title>
+  
   <!-- Bootstrap core CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <!-- De Feria CSS -->
+  <link rel="stylesheet" href="{% static 'css/deferia.css' %}">
   <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Titan+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Caprasimo&family=Caveat:wght@400;500;600;700&family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Suez+One&family=Titan+One&display=swap" rel="stylesheet">
   <!-- Leaflet CSS and JS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
@@ -21,24 +23,13 @@
     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
   <!-- FontAwesome -->
   <script src="https://kit.fontawesome.com/1ae7c4e024.js" crossorigin="anonymous"></script>
-  <!-- De Feria CSS -->
-  <link rel="stylesheet" href="{% static 'css/deferia.css' %}">
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-  <!-- Título de pestaña -->
-  <style>
-    html * {
-      font-family: 'Nunito Sans', sans-serif;
-    }
-    h1 {
-      font-family: 'Titan One', sans-serif;
-    }
-  </style>
-  <!-- Google tag (gtag.js) -->
+  <!-- Google Analytics tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-96HQFNE7QN"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-96HQFNE7QN');
@@ -48,38 +39,38 @@
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary">
+  <nav class="navbar navbar-expand-lg sticky-top {% block bg-navbar %}{% endblock %}">
     <div class="container-lg">
       <a class="navbar-brand" href="{% url 'index' %}">
-        <img src="{% static 'images/logos/logo_rojo.png' %}" width="60px" alt="Logo de feria">  
+        <img src="{% static 'images/logos/logo_blanco.png' %}" width="70px" alt="Logo de feria">
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link" aria-current="page" href="{% url 'index' %}">Inicio</a>
-          <a class="nav-link" href="{% url 'ferias' %}">Ferias</a>
-          <a class="nav-link" href="{% url 'productos' %}">Productos</a>
-          <a class="nav-link" href="{% url 'consejos' %}">Consejos</a>
-          <a class="nav-link" href="{% url 'blog' %}">Blog</a>
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link nav-link-deferia" href="{% url 'ferias' %}">Ferias</a>
+          <a class="nav-link nav-link-deferia" href="{% url 'productos' %}">Productos</a>
+          <a class="nav-link nav-link-deferia" href="{% url 'consejos' %}">Consejos</a>
+          <a class="nav-link nav-link-deferia" href="{% url 'blog' %}">Blog</a>
         </div>
       </div>
     </div>
-  </nav>  
+  </nav>
+
+  {% block main %}
+
+  {% endblock %}
 
   <div class="container-lg">
-    {% block main %}
-
-    {% endblock %}
-  
     <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
       <div class="col-md-4 d-flex align-items-center">
         <a href="{% url 'index' %}" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
           <img src="{% static 'images/logos/logo_verde.png' %}" width="60px" alt="Logo de feria">
         </a>
       </div>
-  
+
       <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
         <li class="ms-3"><a class="text-body-secondary" target="_blank" href="https://www.instagram.com/deferia.cr/"><i class="fa-brands fa-instagram"></i></a></li>
         <li class="ms-3"><a class="text-body-secondary" target="_blank" href="https://www.tiktok.com/@deferia.cr"><i class="fa-brands fa-tiktok"></i></a></li>
@@ -89,9 +80,7 @@
   </div>
 
   <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
 </body>
 
