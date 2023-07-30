@@ -4,6 +4,7 @@ from website.models import Announcement
 from django.contrib.gis.db.models.functions import Distance
 import osm_opening_hours_humanized as ooh
 import math
+import json
 
 # Create your views here.
 
@@ -32,33 +33,40 @@ def ferias(request):
     n_sunday = marketplaces.filter(opening_hours__contains="Su").count()
     n_days = [n_monday, n_tuesday, n_wednesday, n_thursday, n_friday, n_saturday, n_sunday]
 
-    # Find the number of marketplaces where fairground is true
     n_fairground = marketplaces.filter(fairground=True).count() / total_marketplaces * 100
     n_indoor = marketplaces.filter(indoor=True).count() / total_marketplaces * 100
+    n_parking = marketplaces.filter(parking="surface").count() / total_marketplaces * 100
+    n_infrastructure = [n_fairground, n_indoor, n_parking]
+
     n_food = marketplaces.filter(food=True).count() / total_marketplaces * 100
+    n_drinks = marketplaces.filter(drinks=True).count() / total_marketplaces * 100
+    n_handicrafts = marketplaces.filter(handicrafts=True).count() / total_marketplaces * 100
+    n_butcher = marketplaces.filter(butcher=True).count() / total_marketplaces * 100
+    n_dairy = marketplaces.filter(dairy=True).count() / total_marketplaces * 100
+    n_seafood = marketplaces.filter(seafood=True).count() / total_marketplaces * 100
+    n_garden_centre = marketplaces.filter(garden_centre=True).count() / total_marketplaces * 100
+    n_florist = marketplaces.filter(florist=True).count() / total_marketplaces * 100
+    n_amenities = [n_food, n_drinks, n_handicrafts, n_butcher, n_dairy, n_seafood, n_garden_centre, n_florist]
+    n_amenities = [math.ceil(i) for i in n_amenities]
+
+    marketplaces_map = []
+    for marketplace in marketplaces:
+        marketplace_dict = {}
+        marketplace_dict["name"] = marketplace.name
+        marketplace_dict["latitude"] = marketplace.location.y
+        marketplace_dict["longitude"] = marketplace.location.x
+        marketplaces_map.append(marketplace_dict)
+    
+    marketplaces_map = json.dumps(marketplaces_map)
 
     context = {
         "marketplaces": marketplaces,
+        "marketplaces_map": marketplaces_map,
         "total_marketplaces": total_marketplaces,
-        "n_sanjose": n_sanjose,
-        "n_alajuela": n_alajuela,
-        "n_cartago": n_cartago,
-        "n_heredia": n_heredia,
-        "n_guanacaste": n_guanacaste,
-        "n_puntarenas": n_puntarenas,
-        "n_limon": n_limon,
         "n_provinces": n_provinces,
-        "n_monday": n_monday,
-        "n_tuesday": n_tuesday,
-        "n_wednesday": n_wednesday,
-        "n_thursday": n_thursday,
-        "n_friday": n_friday,
-        "n_saturday": n_saturday,
-        "n_sunday": n_sunday,
         "n_days": n_days,
-        "n_fairground": math.ceil(n_fairground),
-        "n_indoor": math.ceil(n_indoor),
-        "n_food": math.ceil(n_food),
+        "n_infrastructure": n_infrastructure,
+        "n_amenities": n_amenities,
     }
     return render(request, "ferias.html", context)
 

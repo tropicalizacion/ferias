@@ -4,53 +4,77 @@
 
 {% block page_title %} Lista de ferias {% endblock %}
 
+{% block bg-navbar %} background-azul {% endblock %}
+
 {% block main %}
 
-<h1 class="display-1">Ferias</h1>
-
-<h2>Las ferias en números</h2>
-
-<p>
-<div class="card text-center">
-    <div class="card-body">
-        <h2 class="card-title">{{ total_marketplaces }}</h2>
-        <p class="card-text">Total de ferias registradas</p>
+<!-- Hero -->
+<div class="px-4 pt-3 pb-5 text-center background-azul">
+    <h1 class="display-4 text-white title-deferia">¡Vamos de feria!</h1>
+    <img class="d-block mx-auto mb-3" src="{% static 'images/stickers/banano.png' %}" alt="" width="100">
+    <div class="col-lg-5 mx-auto text-white">
+        <p class="lead mb-4" style="font-weight: 100;">Quickly design and customize responsive mobile-first sites with Bootstrap, the world's most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+        <h1 class="display-1 title-deferia">{{ total_marketplaces }}</h1>
+        <p>Total de ferias registradas en deferia.cr</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <a type="button" class="btn btn-warning btn-lg px-4 gap-3" style="font-weight: 900px" href="#search">Buscar mi feria</a>
+        </div>
     </div>
 </div>
-</p>
 
-<h4>Ferias por provincia</h4>
+<!-- Ubicación de las ferias -->
 
-<ul>
-    <li>Ferias en San José: {{ n_sanjose }}</li>
-    <li>Ferias en Alajuela: {{ n_alajuela }}</li>
-    <li>Ferias en Cartago: {{ n_cartago }}</li>
-    <li>Ferias en Heredia: {{ n_heredia }}</li>
-    <li>Ferias en Guanacaste: {{ n_guanacaste }}</li>
-    <li>Ferias en Puntarenas: {{ n_puntarenas }}</li>
-    <li>Ferias en Limón: {{ n_limon }}</li>
-</ul>
+<div class="container px-4 pt-4">
+    <div class="row">
+        <div class="col text-center">
+            <h1 class="display-5 title-deferia rojo">¿Dónde están las ferias?</h1>
+            <p class="lead">Las ferias están en las siete provincias, sin embargo, hay una mayoría ubicadas en la Gran Área Metropolitana.</p>
+        </div>
+    </div>
+</div>
+<div class="container px-4 bt-3 pb-5" id="numbers">
+    <div class="row row-cols-1 row-cols-md-2 g-4 py-4">
+        <div class="col">
+            <h3><i class="fa-solid fa-chart-simple verde"></i></i><br> Ferias por provincia</h3>
+            <canvas id="n-provinces"></canvas>
+        </div>
+        <div class="col">
+            <h3><i class="fa-solid fa-map-location-dot rojo"></i><br> Mapa de las ferias</h3>
+            <div id="map" style="max-width: 576px; height: 250px;"></div>
+        </div>
+    </div>
+</div>
 
-<h4>Ferias por día de la semana</h4>
+<!-- Las ferias en números -->
 
-<ul>
-    <li>Abiertas los lunes: {{ n_monday }}</li>
-    <li>Abiertas los martes: {{ n_tuesday }}</li>
-    <li>Abiertas los miércoles: {{ n_wednesday }}</li>
-    <li>Abiertas los jueves: {{ n_thursday }}</li>
-    <li>Abiertas los viernes: {{ n_friday }}</li>
-    <li>Abiertas los sábados: {{ n_saturday }}</li>
-    <li>Abiertas los domingos: {{ n_sunday }}</li>
-</ul>
+<div class="container px-4 pt-4">
+    <div class="row">
+        <div class="col text-center">
+            <h1 class="display-5 title-deferia verde">Las ferias en números</h1>
+            <p class="lead">Aquí le ayudamos a buscar su feria entre las más de 80 que hay en el país.</p>
+        </div>
+    </div>
+</div>
+<div class="container px-4 bt-3 pb-5" id="numbers">
+    <div class="row row-cols-1 row-cols-md-3 g-4 py-4">
+        <div class="col">
+            <h3><i class="fa-regular fa-calendar-days amarillo"></i><br> Ferias por día de la semana</h3>
+            <canvas id="n-days"></canvas>
+        </div>
+        <div class="col">
+            <h3><i class="fa-solid fa-glass-water rojo"></i><br> Amenidades ofrecidas</h3>
+            <canvas id="n-amenities"></canvas>
+        </div>
+        <div class="col">
+            <h3><i class="fa-solid fa-store verde"></i><br> Infraestructura</h3>
+            <canvas id="n-infrastructure"></canvas>
+        </div>
+    </div>
+</div>
 
-<h4>Porcentaje con ciertos servicios</h4>
+<!-- Buscar mi feria -->
 
-<ul>
-    <li>Porcentaje con campo ferial: {{ n_fairground }}</li>
-    <li>Porcentaje bajo techo: {{ n_indoor }}</li>
-    <li>Porcentaje con venta de comidas: {{ n_food }}</li>    
-</ul>
-
+{% include 'search.html' %}
 
 <h2>Lista de ferias</h2>
 
@@ -60,81 +84,15 @@
     {% endfor %}
 </ul>
 
-<h2>Mapa con todas las ferias</h2>
-
-<p>Aquí un día estará un mapa con todas las ferias del país. Un día.</p>
-
+<!-- JavaScript -->
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<h2>Gráfico de ferias por provincia</h2>
-
-<canvas id="nProvinces"></canvas>
-
-<h2>Gráfico de ferias por días de la semana</h2>
-
-<canvas id="nDays"></canvas>
-
-<script>
-    // Data
-    var data = {
-        labels: ['San José', 'Alajuela', 'Cartago', 'Heredia', 'Guanacaste', 'Puntarenas', 'Limón'],
-        datasets: [{
-            label: 'Númeo de ferias',
-            data: {{ n_provinces }},
-        backgroundColor: ['#EBB615', '#008D4A', '#3879B5', '#D1C5BA', '#E64128', '#CD7535', '#F29196'],
-        borderWidth: 0 // Remove border
-      }]
-    };
-
-    // Configuration
-    var config = {
-        type: 'bar',
-        data: data,
-        options: {
-            responsive: true,
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    };
-
-    // Create the chart
-    const nProvinces = new Chart(document.getElementById('nProvinces'), config);
-</script>
-
-<script>
-    // Data
-    var data = {
-        labels: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
-        datasets: [{
-            label: 'Númeo de ferias',
-            data: {{ n_days }},
-        backgroundColor: ['#EBB615', '#008D4A', '#3879B5', '#D1C5BA', '#E64128', '#CD7535', '#F29196'],
-        borderWidth: 0 // Remove border
-    }]
-  };
-
-    // Configuration
-    var config = {
-        type: 'bar',
-        data: data,
-        options: {
-            responsive: true,
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    };
-
-    // Create the chart
-    const nDays = new Chart(document.getElementById('nDays'), config);
-</script>
+<script src="{% static 'js/search.js' %}"></script>
 
 
+<script src="{% static 'js/map_marketplaces.js' %}" data-marketplaces-map="{{ marketplaces_map }}"></script>
+
+<script src="{% static 'js/marketplaces.js' %}" data-n-days="{{ n_days }}" data-n-provinces="{{ n_provinces }}" data-n-infrastructure="{{ n_infrastructure }}" data-n-amenities="{{ n_amenities }}"></script>
 
 {% endblock %}
