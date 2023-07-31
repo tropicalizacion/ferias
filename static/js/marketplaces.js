@@ -12,7 +12,7 @@ var nProvinces = nProvinces.split(',').map(Number);
 var data = {
     labels: ['San José', 'Alajuela', 'Cartago', 'Heredia', 'Guanacaste', 'Puntarenas', 'Limón'],
     datasets: [{
-        label: 'Númeo de ferias',
+        label: 'Número de ferias',
         data: nProvinces,
         backgroundColor: ['#EBB615', '#008D4A', '#3879B5', '#D1C5BA', '#E64128', '#CD7535', '#F29196'],
         borderWidth: 0
@@ -63,7 +63,7 @@ var nDays = nDays.split(',').map(Number);
 var data = {
     labels: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
     datasets: [{
-        label: 'Númeo de ferias',
+        label: 'Número de ferias',
         data: nDays,
         backgroundColor: ['#EBB615', '#008D4A', '#3879B5', '#D1C5BA', '#E64128', '#CD7535', '#F29196'],
         borderWidth: 0
