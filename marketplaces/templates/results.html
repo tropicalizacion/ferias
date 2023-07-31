@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block page_title %} Búsqueda {% endblock %}
+
+{% block bg-navbar %} background-azul {% endblock %}
+
+{% block main %}
+
+<!-- Hero -->
+<div class="px-4 pt-3 pb-5 text-center background-azul">
+    <h1 class="display-4 text-white title-deferia">¡Vamos a buscar la feria!</h1>
+    <img class="d-block mx-auto mb-3" src="{% static 'images/stickers/banano.png' %}" alt="" width="100">
+    <div class="col-lg-5 mx-auto text-white">
+        <p class="lead mb-4" style="font-weight: 100;">Quickly design and customize responsive mobile-first sites with Bootstrap, the world's most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+        <h1 class="display-1 title-deferia">{{ total_marketplaces }}</h1>
+        <p>Total de ferias registradas en deferia.cr</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <a type="button" class="btn btn-warning btn-lg px-4 gap-3" style="font-weight: 900px" href="#search">Buscar mi feria</a>
+        </div>
+    </div>
+</div>
+
+<!-- Buscar mi feria -->
+
+{% include 'search.html' %}
+
+<!-- JavaScript -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="{% static 'js/map_marketplaces.js' %}" data-marketplaces-map="{{ marketplaces_map }}"></script>
+
+<script src="{% static 'js/marketplaces.js' %}" data-n-days="{{ n_days }}" data-n-provinces="{{ n_provinces }}" data-n-infrastructure="{{ n_infrastructure }}" data-n-amenities="{{ n_amenities }}"></script>
+
+<script src="{% static 'js/search.js' %}"></script>
+
+<!-- Google Maps API and Keys -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2WP2FoMe4DRz20FsGGi51opPlfjcm4KM&libraries=places"></script>
+
+{% endblock %}

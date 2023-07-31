@@ -1,5 +1,60 @@
 {% load static %}
 
+<!-- Mostrar resultados -->
+{% if show_results %}
+<div class="container">
+    <div class="mt-2 p-3">
+        <div class="text-center">
+            <p><i class="fa-solid fa-3x fa-magnifying-glass"></i></p>
+            <p class="lead">Resultados para la búsqueda de una feria {{ query_text }}</p> 
+        </div>
+        <!-- Resultados por palabra clave -->
+        {% if marketplaces_keyword %}
+        <h5>Resultados por palabra clave ({{ marketplaces_keyword|length }})</h5>
+        <p>Otras ferias que cumplen el mismo criterio de búsqueda de ubicación y día de la semana y además tienen algo similar a la palabra clave "{{ keyword }}" en el nombre o la descripción.</p>
+        <ul>
+            {% for marketplace in marketplaces_keyword %}
+            <li>
+                <a href="/ferias/{{ marketplace.marketplace_url }}">
+                    {{ marketplace.name }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <!-- Resultados exactos -->
+        {% if marketplaces_match|length == 0 %}
+        <p class="lead"><i class="fa-solid fa-triangle-exclamation"></i> No hay resultados exactos de la búsqueda. Por favor intente de nuevo con otros criterios.</p>
+        {% else %}
+        <h5>Resultados ({{ marketplaces_match|length }})</h5>
+        <ul>
+            {% for marketplace in marketplaces_match %}
+            <li>
+                <a href="/ferias/{{ marketplace.marketplace_url }}">
+                    {{ marketplace.name }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <!-- Resultados similares -->
+        {% if marketplaces_others|length > 0 %}
+        <h5>Resultados similares ({{ marketplaces_others|length }})</h5>
+        <p>Otras ferias que cumplen el mismo criterio de búsqueda de ubicación y día de la semana pero no cumplen con los otros criterios de tamaño, infraestructura o amenidades.</p>
+        <ul>
+            {% for marketplace in marketplaces_others %}
+            <li>
+                <a href="/ferias/{{ marketplace.marketplace_url }}">
+                    {{ marketplace.name }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+</div>
+{% endif %}
+
 <!-- Buscador -->
 <div class="container px-4 pt-4">
     <div class="row">
@@ -237,58 +292,3 @@
         </div>
     </form>
 </div>
-
-<!-- Mostrar resultados -->
-{% if show_results %}
-<div class="container">
-    <div class="mt-2 p-3">
-        <div class="text-center">
-            <p><i class="fa-solid fa-3x fa-magnifying-glass"></i></p>
-            <p class="lead">Resultados para la búsqueda de una feria {{ query_text }}</p> 
-        </div>
-        <!-- Resultados exactos -->
-        {% if marketplaces_match|length == 0 %}
-        <p class="lead"><i class="fa-solid fa-triangle-exclamation"></i> No hay resultados exactos de la búsqueda. Por favor intente de nuevo con otros criterios.</p>
-        {% else %}
-        <h5>Resultados exactos: {{ marketplaces_match|length }}</h5>
-        <ul>
-            {% for marketplace in marketplaces_match %}
-            <li>
-                <a href="/ferias/{{ marketplace.marketplace_url }}">
-                    {{ marketplace.name }}
-                </a>
-            </li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        <!-- Resultados similares -->
-        {% if marketplaces_others|length > 0 %}
-        <h5>Resultados similares: {{ marketplaces_others|length }}</h5>
-        <p>Otras ferias que cumplen el mismo criterio de búsqueda de ubicación y día de la semana pero no cumplen con los otros criterios de tamaño, infraestructura o amenidades.</p>
-        <ul>
-            {% for marketplace in marketplaces_others %}
-            <li>
-                <a href="/ferias/{{ marketplace.marketplace_url }}">
-                    {{ marketplace.name }}
-                </a>
-            </li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        <!-- Resultados por palabra clave -->
-        {% if marketplaces_keyword %}
-        <h5>Resultados por palabra clave: {{ marketplaces_keyword|length }}</h5>
-        <p>Otras ferias que cumplen el mismo criterio de búsqueda de ubicación y día de la semana y además tienen algo similar a la palabra clave "{{ keyword }}" en el nombre o la descripción.</p>
-        <ul>
-            {% for marketplace in marketplaces_keyword %}
-            <li>
-                <a href="/ferias/{{ marketplace.marketplace_url }}">
-                    {{ marketplace.name }}
-                </a>
-            </li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-    </div>
-</div>
-{% endif %}
