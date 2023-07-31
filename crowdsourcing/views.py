@@ -82,7 +82,7 @@ def sugerencias_feria(request, marketplace_url):
             "size_choices": size_choices,
             "schedule": schedule,
         }
-        return render(request, "sugerencias_ferias.html", context)
+        return render(request, "sugerencias_feria.html", context)
 
 
 def sugerencias_producto(request, product_url):
