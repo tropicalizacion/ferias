@@ -88,11 +88,13 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<script src="{% static 'js/search.js' %}"></script>
-
-
 <script src="{% static 'js/map_marketplaces.js' %}" data-marketplaces-map="{{ marketplaces_map }}"></script>
 
 <script src="{% static 'js/marketplaces.js' %}" data-n-days="{{ n_days }}" data-n-provinces="{{ n_provinces }}" data-n-infrastructure="{{ n_infrastructure }}" data-n-amenities="{{ n_amenities }}"></script>
+
+<script src="{% static 'js/search.js' %}"></script>
+
+<!-- Google Maps API and Keys -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2WP2FoMe4DRz20FsGGi51opPlfjcm4KM&libraries=places"></script>
 
 {% endblock %}

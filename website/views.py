@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 from marketplaces.models import Marketplace
 from .models import Announcement
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.contrib.gis.db.models.functions import Distance
-from django.contrib.auth.decorators import login_required
 from django.contrib.gis.geos import Point
 
 
@@ -116,8 +116,8 @@ def index(request):
         query_text = request.POST.get("query_text")
 
         context = {
-            "query_text": query_text,
             "show_results": True,
+            "query_text": query_text,
             "marketplaces_match": marketplaces_match,
             "marketplaces_others": marketplaces_others,
             "marketplaces_keyword": marketplaces_keyword,

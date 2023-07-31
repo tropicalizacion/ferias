@@ -59,16 +59,34 @@
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Por día de la semana</h3>
                     <p>Las ferias abren uno o varios días a la semana, ¿qué día está buscando?</p>
                     <p>
-                        <select class="underline-input" aria-label="Día de la semana" id="day" name="day">
-                            <option value="any_day" selected>Cualquier día</option>
-                            <option value="Mo">Lunes</option>
-                            <option value="Tu">Martes</option>
-                            <option value="We">Miércoles</option>
-                            <option value="Th">Jueves</option>
-                            <option value="Fr">Viernes</option>
-                            <option value="Sa">Sábado</option>
-                            <option value="Su">Domingo</option>
-                        </select>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="day" value="any_day" id="any-day" checked>
+                            <label class="form-check-label" for="any-day">
+                                Cualquier día
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="day" value="today" id="today">
+                            <label class="form-check-label" for="today">
+                                Hoy
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="day" value="some_day" id="some-day">
+                            <label class="form-check-label" for="some-day">
+                                Los
+                            </label>
+                            <select class="underline-input" aria-label="Día de la semana" id="choose-day" name="choose_day" disabled>
+                                <option value="any_day" selected>días</option>
+                                <option value="Mo">lunes</option>
+                                <option value="Tu">martes</option>
+                                <option value="We">miércoles</option>
+                                <option value="Th">jueves</option>
+                                <option value="Fr">viernes</option>
+                                <option value="Sa">sábados</option>
+                                <option value="Su">domingos</option>
+                            </select>
+                        </div>
                     </p>
                 </div>
             </div>
@@ -112,7 +130,6 @@
                             </div>
                         </small>
                     </div>
-
                     </p>
                 </div>
             </div>

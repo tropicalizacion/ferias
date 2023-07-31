@@ -81,18 +81,15 @@ $(document).ready(function () {
 
     makeQueryString();
 
-    $('input[name="location"], select[name="day"], input[name="size"], input[name="size_s"], input[name="size_m"], input[name="size_l"], input[name="size_xl"], input[name="fairground"], input[name="indoor"], input[name="parking"], input[name="food"], input[name="drinks"], input[name="handicrafts"], input[name="butcher"], input[name="dairy"], input[name="seafood"], input[name="garden_centre"], input[name="florist"]').change(function () {
+    $('input[name="location"], input[name="day"], select[name="choose_day"], input[name="size"], input[name="fairground"], input[name="indoor"], input[name="parking"], input[name="food"], input[name="drinks"], input[name="handicrafts"], input[name="butcher"], input[name="dairy"], input[name="seafood"], input[name="garden_centre"], input[name="florist"]').change(function () {
         makeQueryString();
     });
 
     function makeQueryString() {
         var locationValue = $('input[name="location"]:checked').val();
-        var dayValue = $("#day").val();
+        var dayValue = $('input[name="day"]:checked').val();
+        var chooseDayValue = $('select[name="choose_day"]:enabled option:selected').val();
         var sizeValue = $('input[name="size"]:checked').val();
-        var sizeSValue = $('#size-s').prop('checked') ? $('#size-s').val() : '';
-        var sizeMValue = $('#size-m').prop('checked') ? $('#size-m').val() : '';
-        var sizeLValue = $('#size-l').prop('checked') ? $('#size-l').val() : '';
-        var sizeXLValue = $('#size-xl').prop('checked') ? $('#size-xl').val() : '';
         var fairgroundValue = $('input[name="fairground"]:checked').val();
         var indoorValue = $('input[name="indoor"]:checked').val();
         var parkingValue = $('input[name="parking"]:checked').val();
@@ -118,22 +115,33 @@ $(document).ready(function () {
         }
 
         // Day of the week
-        if (dayValue === "Mo") {
-            statusText += ", abierta los lunes";
-        } else if (dayValue === "Tu") {
-            statusText += ", abierta los martes";
-        } else if (dayValue === "We") {
-            statusText += ", abierta los miércoles";
-        } else if (dayValue === "Th") {
-            statusText += ", abierta los jueves";
-        } else if (dayValue === "Fr") {
-            statusText += ", abierta los viernes";
-        } else if (dayValue === "Sa") {
-            statusText += ", abierta los sábados";
-        } else if (dayValue === "Su") {
-            statusText += ", abierta los domingos";
-        } else if (dayValue === "any_day") {
+        if (dayValue === "any_day") {
             statusText += ", abierta cualquier día";
+        } else if (dayValue === "today") {
+            statusText += ", abierta hoy";
+        } else if (dayValue === "some_day") {
+            statusText += ", abierta los días";
+            if (chooseDayValue === "Mo") {
+                statusText += " lunes";
+            }
+            if (chooseDayValue === "Tu") {
+                statusText += " martes";
+            }
+            if (chooseDayValue === "We") {
+                statusText += " miércoles";
+            }
+            if (chooseDayValue === "Th") {
+                statusText += " jueves";
+            }
+            if (chooseDayValue === "Fr") {
+                statusText += " viernes";
+            }
+            if (chooseDayValue === "Sa") {
+                statusText += " sábados";
+            }
+            if (chooseDayValue === "Su") {
+                statusText += " domingos";
+            }
         }
 
         // Size
@@ -235,5 +243,29 @@ someSize.addEventListener("change", function () {
         sizeM.disabled = false;
         sizeL.disabled = false;
         sizeXL.disabled = false;
+    }
+});
+
+// Disable the select input "choose-day" if the user selects the "any-day" or "today" options, enable it otherwise
+var anyDay = document.getElementById("any-day");
+var today = document.getElementById("today");
+var someDay = document.getElementById("some-day");
+var chooseDay = document.getElementById("choose-day");
+
+anyDay.addEventListener("change", function () {
+    if (anyDay.checked) {
+        chooseDay.disabled = true;
+    }
+});
+
+today.addEventListener("change", function () {
+    if (today.checked) {
+        chooseDay.disabled = true;
+    }
+});
+
+someDay.addEventListener("change", function () {
+    if (someDay.checked) {
+        chooseDay.disabled = false;
     }
 });

@@ -3,6 +3,9 @@ from .models import Marketplace
 from website.models import Announcement
 from django.contrib.gis.db.models.functions import Distance
 import osm_opening_hours_humanized as ooh
+from django.db.models import Q
+from django.contrib.gis.db.models.functions import Distance
+from django.contrib.gis.geos import Point
 import math
 import json
 
@@ -37,6 +40,7 @@ def ferias(request):
     n_indoor = marketplaces.filter(indoor=True).count() / total_marketplaces * 100
     n_parking = marketplaces.filter(parking="surface").count() / total_marketplaces * 100
     n_infrastructure = [n_fairground, n_indoor, n_parking]
+    n_infrastructure = [math.ceil(i) for i in n_infrastructure]
 
     n_food = marketplaces.filter(food=True).count() / total_marketplaces * 100
     n_drinks = marketplaces.filter(drinks=True).count() / total_marketplaces * 100
@@ -59,16 +63,38 @@ def ferias(request):
     
     marketplaces_map = json.dumps(marketplaces_map)
 
-    context = {
-        "marketplaces": marketplaces,
-        "marketplaces_map": marketplaces_map,
-        "total_marketplaces": total_marketplaces,
-        "n_provinces": n_provinces,
-        "n_days": n_days,
-        "n_infrastructure": n_infrastructure,
-        "n_amenities": n_amenities,
-    }
-    return render(request, "ferias.html", context)
+    if request.method == "POST":
+
+        marketplaces_match, marketplaces_others, marketplaces_keyword, query_text = search(request.POST)
+
+        context = {
+            "show_results": True,
+            "marketplaces": marketplaces,
+            "marketplaces": marketplaces,
+            "marketplaces_map": marketplaces_map,
+            "total_marketplaces": total_marketplaces,
+            "n_provinces": n_provinces,
+            "n_days": n_days,
+            "n_infrastructure": n_infrastructure,
+            "n_amenities": n_amenities,
+            "marketplaces_match": marketplaces_match,
+            "marketplaces_others": marketplaces_others,
+            "marketplaces_keyword": marketplaces_keyword,
+            "query_text": query_text,
+        }
+        return render(request, "ferias.html", context)
+
+    else:
+        context = {
+            "marketplaces": marketplaces,
+            "marketplaces_map": marketplaces_map,
+            "total_marketplaces": total_marketplaces,
+            "n_provinces": n_provinces,
+            "n_days": n_days,
+            "n_infrastructure": n_infrastructure,
+            "n_amenities": n_amenities,
+        }
+        return render(request, "ferias.html", context)
 
 
 def feria(request, marketplace_url):
@@ -122,3 +148,113 @@ def feria(request, marketplace_url):
     }
 
     return render(request, "feria.html", context)
+
+
+def search(submission):
+    # Search by location
+
+    location = submission.get("location")
+    if location == "any_location":
+        marketplaces = Marketplace.objects.all().order_by("name")
+    elif location == "my_location":
+        longitude = float(submission.get("my_longitude"))
+        latitude = float(submission.get("my_latitude"))
+        coordinates = Point(longitude, latitude, srid=4326)
+        marketplaces = Marketplace.objects.annotate(
+            distance=Distance("location", coordinates)
+        ).order_by("distance")
+    elif location == "some_location":
+        longitude = float(submission.get("some_longitude"))
+        latitude = float(submission.get("some_latitude"))
+        coordinates = Point(longitude, latitude, srid=4326)
+        marketplaces = Marketplace.objects.annotate(
+            distance=Distance("location", coordinates)
+        ).order_by("distance")
+
+    # Search by day of the week
+
+    day = submission.get("day")
+    if day != "any_day":
+        if day == "today":
+            import datetime
+            today = datetime.datetime.today().weekday()
+            day = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"][today]
+            marketplaces = marketplaces.filter(opening_hours__contains=day)
+        elif day == "some_day":
+            chosen_day = submission.get("choose_day")
+            marketplaces = marketplaces.filter(opening_hours__contains=chosen_day)
+
+    # Filter results for exact match
+
+    marketplaces_match = marketplaces
+
+    # Filter by size
+
+    size = submission.get("size")
+    if size != "any_size":
+        query_size = Q()
+        if "size_s" in submission:
+            query_size |= Q(size="S")
+        if "size_m" in submission:
+            query_size |= Q(size="M")
+        if "size_l" in submission:
+            query_size |= Q(size="L")
+        if "size_xl" in submission:
+            query_size |= Q(size="XL")
+        marketplaces_match = marketplaces_match.filter(query_size)
+
+    # Filter by infrastructure
+
+    query_infrastructure = Q()
+    if "fairground" in submission:
+        query_infrastructure &= Q(fairground=True)
+    if "indoor" in submission:
+        query_infrastructure &= Q(indoor=True)
+    if "parking" in submission:
+        query_infrastructure &= Q(parking="surface")
+    marketplaces_match = marketplaces_match.filter(query_infrastructure)
+
+    # Filter by amenities
+
+    query_amenities = Q()
+    if "food" in submission:
+        query_amenities &= Q(food=True)
+    if "drinks" in submission:
+        query_amenities &= Q(drinks=True)
+    if "handicrafts" in submission:
+        query_amenities &= Q(handicrafts=True)
+    if "butcher" in submission:
+        query_amenities &= Q(butcher=True)
+    if "dairy" in submission:
+        query_amenities &= Q(dairy=True)
+    if "seafood" in submission:
+        query_amenities &= Q(seafood=True)
+    if "garden_centre" in submission:
+        query_amenities &= Q(garden_centre=True)
+    if "florist" in submission:
+        query_amenities &= Q(florist=True)
+    marketplaces_match = marketplaces_match.filter(query_amenities)
+
+    # Filter by keyword
+
+    marketplaces_keyword = None
+    if "keyword" in submission:
+        keyword = submission.get("keyword")
+        try:
+            marketplaces_keyword = marketplaces
+            marketplaces_keyword = marketplaces_keyword.filter(
+                Q(name__unaccent__trigram_similar=keyword) | 
+                Q(description__unaccent__trigram_similar=keyword)
+            )
+        except:
+            pass
+    
+    # Get other marketplaces
+
+    marketplaces_others = marketplaces.difference(marketplaces_match)
+
+    # Query text
+
+    query_text = submission.get("query_text")
+
+    return marketplaces_match, marketplaces_others, marketplaces_keyword, query_text
