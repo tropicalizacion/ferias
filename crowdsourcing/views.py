@@ -2,6 +2,7 @@ from django.shortcuts import render
 from marketplaces.models import Marketplace
 from .models import MarketplaceEdit, PhotoEdit, OpeningHoursEdit
 import osm_opening_hours_humanized as hoh
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -12,7 +13,15 @@ def sugerencias(request):
     return render(request, "sugerencias.html", context)
 
 
-def sugerencia(request, marketplace_url):
+def sugerencias_ferias(request):
+    return render(request, "sugerencias_ferias.html")
+
+
+def sugerencias_productos(request):
+    return render(request, "sugerencias_productos.html")
+
+
+def sugerencias_feria(request, marketplace_url):
     if request.method == "POST":
         marketplace = Marketplace.objects.get(marketplace_url=marketplace_url)
         print(request.POST)
@@ -76,9 +85,21 @@ def sugerencia(request, marketplace_url):
         return render(request, "sugerencia.html", context)
 
 
-def revisiones(request):
-    return render(request, "revisiones.html")
+def sugerencias_producto(request, product_url):
+    return render(request, "sugerencias_producto.html")
 
 
-def revision(request, marketplace_url):
-    return render(request, "revision.html")
+def revisiones_ferias(request):
+    return render(request, "revisiones_ferias.html")
+
+
+def revisiones_productos(request):
+    return render(request, "revisiones_productos.html")
+
+
+def revisiones_feria(request, marketplace_url):
+    return render(request, "revisiones_feria.html")
+
+
+def revisiones_producto(request, product_url):
+    return render(request, "revisiones_producto.html")
