@@ -1,7 +1,7 @@
 from django.contrib.gis.db import models
 from products.models import Product
-from django.contrib.auth.models import User
 from marketplaces.models import Marketplace, Payment
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -117,7 +117,7 @@ class MarketplaceEdit(models.Model):
     )
 
     def __str__(self):
-        return f"{self.name} por {self.submitted_by} ({self.submitted_on})"
+        return f"{self.marketplace} ({self.submitted_on})"
 
 
 class PhotoEdit(models.Model):
@@ -166,8 +166,8 @@ class ContactEdit(models.Model):
     marketplace = models.ForeignKey(Marketplace, on_delete=models.CASCADE)
     marketplace_edit_id = models.ForeignKey("MarketplaceEdit", on_delete=models.CASCADE)
     website = models.URLField(max_length=127, blank=True, null=True)
-    phone = models.IntegerField(blank=True, null=True)
+    phone = models.TextField(max_length=31, blank=True, null=True)
     email = models.EmailField(max_length=127, blank=True, null=True)
 
     def __str__(self):
-        return f"{self.marketplace}: {self.marketplace_edit_id}"
+        return f"{self.marketplace} ({self.marketplace_edit_id.submitted_on})"

@@ -9,16 +9,17 @@
 {% block main %}
 
 <!-- Buscador -->
-<div class="container px-4 py-5" id="search">
+<div class="container px-4 py-5" id="colaborate">
     <!-- Portada -->
     <div class="text-center">
-        <h2>Sugerencias de información para la feria de</h2>
+        <h2>Sugerencia para la feria de</h2>
         <h1 class="display-5 title-deferia rojo">{{ marketplace.name }}</h1>
         <p class="lead col-md-6 mx-auto">La información de nuestro proyecto se mantiene actualizada gracias a la colaboración de personas como usted. ¡Por favor ayúdenos en este formulario con todos los datos que usted conoce sobre esta feria!</p>
     </div>
     
     <!-- Formulario -->
-    <form method="POST">
+    <form method="POST" id="form">
+        {% csrf_token %}
         <div class="row row-cols-1 row-cols-lg-3 g-4 py-4">
             <!-- Nombre de la feria -->
             <div class="col d-flex align-items-start">
@@ -29,7 +30,7 @@
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Nombre de la feria</h3>
                     <p>Nombre principal de la feria, que aparece en la página de nuestro sitio.</p>
                     <p>
-                        <input type="text" class="underline-input" id="name" name="name" placeholder="Nombre de la feria" style="width: 100%;">
+                        <input type="text" class="underline-input" id="name" name="name" placeholder="Nombre de la feria">
                         <small class="text-muted">
                             Actual: {{ marketplace.name }}
                         </small>
@@ -45,7 +46,7 @@
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Nombres alternativos</h3>
                     <p>¿Hay algún otro nombre por el cual sea conocida la feria?</p>
                     <p>
-                        <input type="text" class="underline-input" id="name_alternate" name="name_alternate" placeholder="Nombres alternativos" style="width: 100%;">
+                        <input type="text" class="underline-input" id="name_alternate" name="name_alternate" placeholder="Nombres alternativos">
                         <small class="text-muted">
                             Actual: {% if marketplace.name_alternate %}{{ marketplace.name_alternate }}{% else %}(sin registro actual){% endif %}
                         </small>
@@ -61,7 +62,7 @@
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Operador</h3>
                     <p>Nombre de la entidad encargada de la operación de la feria.</p>
                     <p>
-                        <input type="text" class="underline-input" id="operator" name="operator" placeholder="Operador" style="width: 100%;">
+                        <input type="text" class="underline-input" id="operator" name="operator" placeholder="Operador">
                         <small class="text-muted">
                             Actual: {% if marketplace.operator %}{{ marketplace.operator }}{% else %}(sin registro actual){% endif %}
                         </small>
@@ -76,12 +77,16 @@
                 <div>
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Teléfono de contacto</h3>
                     <p>Teléfono de la oficina o personas que administran la feria.</p>
-                    <p id="phones">
-                        <input type="text" class="underline-input" id="phone_1" name="phone_1" placeholder="Teléfono 1" style="width: 100%;">
-                    </p>
+                    <p id="phones"></p>
                     <p>
-                        <a type="button" onclick="addPhoneInput()"><i class="fa-solid fa-circle-plus"></i> Agregar
-                            teléfono</a>
+                        <div class="d-flex">
+                            <div>
+                                <a type="button" onclick="addPhoneInput()"><i class="fa-solid fa-circle-plus"></i> Agregar teléfono</a>
+                            </div>
+                            <div class="ms-auto">
+                                <a type="button" onclick="deletePhoneInput()"><i class="fa-solid fa-delete-left"></i></a>
+                            </div>
+                        </div>
                     </p>
                 </div>
             </div>
@@ -93,11 +98,16 @@
                 <div>
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Correo de contacto</h3>
                     <p>Correo electrónico de la oficina o personas que administran la feria.</p>
-                    <p id="emails">
-                        <input type="email" class="underline-input" id="email_1" name="email_1" placeholder="Correo electrónico 1" style="width: 100%;">
-                    </p>
+                    <p id="emails"></p>
                     <p>
-                        <a type="button" onclick="addEmailInput()"><i class="fa-solid fa-circle-plus"></i> Agregar correo electrónico</a>
+                        <div class="d-flex">
+                            <div>
+                                <a type="button" onclick="addEmailInput()"><i class="fa-solid fa-circle-plus"></i> Agregar correo electrónico</a>
+                            </div>
+                            <div class="ms-auto">
+                                <a type="button" onclick="deleteEmailInput()"><i class="fa-solid fa-delete-left"></i></a>
+                            </div>
+                        </div>
                     </p>
                 </div>
             </div>
@@ -109,11 +119,16 @@
                 <div>
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Sitio web o redes sociales</h3>
                     <p>Links de sitios web o redes sociales (Facebook, Instagram, etc.) de la feria.</p>
-                    <p id="links">
-                        <input type="text" class="underline-input" id="link_1" name="link_1" placeholder="Link 1" style="width: 100%;">
-                    </p>
+                    <p id="links"></p>
                     <p>
-                        <a type="button" onclick="addLinkInput()"><i class="fa-solid fa-circle-plus"></i> Agregar link de sitio o redes sociales</a>
+                        <div class="d-flex">
+                            <div>
+                                <a type="button" onclick="addLinkInput()"><i class="fa-solid fa-circle-plus"></i> Agregar link</a>
+                            </div>
+                            <div class="ms-auto">
+                                <a type="button" onclick="deleteLinkInput()"><i class="fa-solid fa-delete-left"></i></a>
+                            </div>
+                        </div>
                     </p>
                 </div>
             </div>
@@ -126,7 +141,7 @@
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Descripción</h3>
                     <p>¿Hay alguna característica de la feria que quiere compartir con nosotros? Por ejemplo: una reseña histórica, anécdotas o similar.</p>
                     <p>
-                        <textarea class="underline-input" rows="5" id="description" name="description" placeholder="Descripción" style="width: 100%;"></textarea>
+                        <textarea class="underline-input" rows="5" id="description" name="description" placeholder="Descripción"></textarea>
                     </p>
                 </div>
             </div>
@@ -139,7 +154,7 @@
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Dirección</h3>
                     <p>¿Cuál es la dirección o indicaciones utilizadas para llegar a la feria? ¿Ha cambiado esta dirección recientemente?</p>
                     <p>
-                        <textarea class="underline-input" rows="5" id="address" name="address" placeholder="Dirección" style="width: 100%;"></textarea>
+                        <textarea class="underline-input" rows="5" id="address" name="address" placeholder="Dirección"></textarea>
                     </p>
                 </div>
             </div>
@@ -150,26 +165,26 @@
                 </span>
                 <div>
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Tamaño</h3>
-                    <p>¿Tiene usted un número aproximado de los tramos de ventas en la feria? Esta es nuestra clasificación:</p>
+                    <p>¿Conoce usted un número aproximado de los tramos de ventas en la feria? Esta es nuestra clasificación:</p>
                     <p>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" id="size_s" name="size" value="size_s">
+                        <input class="form-check-input" type="radio" id="size_s" name="size" value="S">
                         <label class="form-check-label" for="size_s">S, menos de 50 tramos</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" id="size_m" name="size" value="size_m">
+                        <input class="form-check-input" type="radio" id="size_m" name="size" value="M">
                         <label class="form-check-label" for="size_m">M, entre 50 y 100 tramos</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" id="size_l" name="size" value="size_l">
+                        <input class="form-check-input" type="radio" id="size_l" name="size" value="L">
                         <label class="form-check-label" for="size_l">L, entre 100 y 200 tramos</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" id="size_xl" name="size" value="size_xl">
+                        <input class="form-check-input" type="radio" id="size_xl" name="size" value="XL">
                         <label class="form-check-label" for="size_xl">XL, más de 200 tramos</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" id="size_unknown" name="size" value="unknown" checked>
+                        <input class="form-check-input" type="radio" id="size_unknown" name="size" value="size_unknown" checked>
                         <label class="form-check-label" for="size_unknown">Desconocido</label>
                     </div>
                     </p>
@@ -190,8 +205,18 @@
                             Actual: {% if schedule %}{{ schedule.0 }}{% else %}(sin registro actual){% endif %}
                         </small>
                     </p>
-                    <div id="opening-days"></div>
-                    <a type="button" onclick="addTextInput()"><i class="fa-solid fa-circle-plus"></i> Agregar jornada de operación</a>
+                    <p id="opening-days"></p>
+                    <p>
+                        <div class="d-flex">
+                            <div>
+                                <a type="button" onclick="addOpeningDaysInput()"><i class="fa-solid fa-circle-plus"></i> Agregar jornada de operación</a>
+                            </div>
+                            <div class="ms-auto">
+                                <a type="button" onclick="deleteOpeningDaysInput()"><i class="fa-solid fa-delete-left"></i></a>
+                            </div>
+                        </div>
+                    </p>
+                    
                 </div>
             </div>
             <!-- Fecha de inauguración -->
@@ -203,7 +228,7 @@
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Fecha de inauguración</h3>
                     <p>¿Conoce la fecha aproximada de inauguración de esta feria?</p>
                     <p>
-                        <input type="date" class="underline-input" id="opening_date" name="opening_date" style="width: 100%;">
+                        <input type="date" class="underline-input" id="opening_date" name="opening_date">
                         <small class="text-muted">
                             Actual: {% if marketplace.opening_date %}{{ marketplace.opening_date }}{% else %}(sin registro actual){% endif %}
                         </small>
@@ -228,15 +253,15 @@
                                     Un espacio dedicado para la feria, que no es en la vía pública.
                                 </p>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="fairground" id="fairground_true" value="fairground_true">
+                                    <input class="form-check-input" type="radio" name="fairground" id="fairground_true" value="T">
                                     <label class="form-check-label" for="fairground_true">Sí</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="fairground" id="fairground_false" value="fairground_false">
+                                    <input class="form-check-input" type="radio" name="fairground" id="fairground_false" value="F">
                                     <label class="form-check-label" for="fairground_false">No</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="fairground" id="fairground_unknown" value="fairground_unknown" checked>
+                                    <input class="form-check-input" type="radio" name="fairground" id="fairground_unknown" value="U" checked>
                                     <label class="form-check-label" for="fairground_unknown">No sé</label>
                                 </div>
                             </small>
@@ -248,15 +273,15 @@
                                     Espacio protegido con una estructura ya sea permanente o temporal que protege a los participantes de la lluvia y el sol.
                                 </p>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="indoor" id="indoor_true" value="indoor_true">
+                                    <input class="form-check-input" type="radio" name="indoor" id="indoor_true" value="T">
                                     <label class="form-check-label" for="indoor_true">Sí</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="indoor" id="indoor_false" value="indoor_false">
+                                    <input class="form-check-input" type="radio" name="indoor" id="indoor_false" value="F">
                                     <label class="form-check-label" for="indoor_false">No</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="indoor" id="indoor_unknown" value="indoor_unknown" checked>
+                                    <input class="form-check-input" type="radio" name="indoor" id="indoor_unknown" value="U" checked>
                                     <label class="form-check-label" for="indoor_unknown">No sé</label>
                                 </div>
                             </small>
@@ -265,18 +290,18 @@
                             <h6>Servicios sanitarios</h6>
                             <small>
                                 <p class="text-muted">
-                                    Batería de servicios sanitarios habilitados para el público visitante, con las condiciones apropiadas de aseo.
+                                    Batería de servicios sanitarios habilitados para el público visitante, con las condiciones apropiadas de aseo e implementos.
                                 </p>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="toilets" id="toilets_true" value="toilets_true">
+                                    <input class="form-check-input" type="radio" name="toilets" id="toilets_true" value="T">
                                     <label class="form-check-label" for="toilets_true">Sí</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="toilets" id="toilets_false" value="toilets_false">
+                                    <input class="form-check-input" type="radio" name="toilets" id="toilets_false" value="F">
                                     <label class="form-check-label" for="toilets_false">No</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="toilets" id="toilets_unknown" value="toilets_unknown" checked>
+                                    <input class="form-check-input" type="radio" name="toilets" id="toilets_unknown" value="U" checked>
                                     <label class="form-check-label" for="toilets_unknown">No sé</label>
                                 </div>
                             </small>
@@ -289,15 +314,15 @@
                                 </p>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="handwashing"
-                                        id="handwashing_true" value="handwashing_true">
+                                        id="handwashing_true" value="T">
                                     <label class="form-check-label" for="handwashing_true">Sí</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="handwashing" id="handwashing_false" value="handwashing_false">
+                                    <input class="form-check-input" type="radio" name="handwashing" id="handwashing_false" value="F">
                                     <label class="form-check-label" for="handwashing_false">No</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="handwashing" id="handwashing_unknown" value="handwashing_unknown" checked>
+                                    <input class="form-check-input" type="radio" name="handwashing" id="handwashing_unknown" value="U" checked>
                                     <label class="form-check-label" for="handwashing_unknown">No sé</label>
                                 </div>
                             </small>
@@ -309,15 +334,15 @@
                                     Fuente de agua potable disponible para consumo de las personas visitantes.
                                 </p>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="drinking_water" id="drinking_water_true" value="drinking_water_true">
+                                    <input class="form-check-input" type="radio" name="drinking_water" id="drinking_water_true" value="T">
                                     <label class="form-check-label" for="drinking_water_true">Sí</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="drinking_water" id="drinking_water_false" value="drinking_water_false">
+                                    <input class="form-check-input" type="radio" name="drinking_water" id="drinking_water_false" value="F">
                                     <label class="form-check-label" for="drinking_water_false">No</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="drinking_water" id="drinking_water_unknown" value="drinking_water_unknown" checked>
+                                    <input class="form-check-input" type="radio" name="drinking_water" id="drinking_water_unknown" value="U" checked>
                                     <label class="form-check-label" for="drinking_water_unknown">No sé</label>
                                 </div>
                             </small>
@@ -329,15 +354,15 @@
                                     Espacio dedicado de estacionamiento para automóviles y motocicletas.
                                 </p>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="parking" id="parking_true" value="parking_true">
+                                    <input class="form-check-input" type="radio" name="parking" id="parking_true" value="T">
                                     <label class="form-check-label" for="parking_true">Sí</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="parking" id="parking_false" value="parking_false">
+                                    <input class="form-check-input" type="radio" name="parking" id="parking_false" value="F">
                                     <label class="form-check-label" for="parking_false">No</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="parking" id="parking_unknown" value="parking_unknown" checked>
+                                    <input class="form-check-input" type="radio" name="parking" id="parking_unknown" value="U" checked>
                                     <label class="form-check-label" for="parking_unknown">No sé</label>
                                 </div>
                             </small>
@@ -349,15 +374,15 @@
                                     Espacio de estacionamiento para bicicletas con estructura para poder amarrarlas.
                                 </p>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="bicycle_parking" id="bicycle_parking_true" value="bicycle_parking_true">
+                                    <input class="form-check-input" type="radio" name="bicycle_parking" id="bicycle_parking_true" value="T">
                                     <label class="form-check-label" for="bicycle_parking_true">Sí</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="bicycle_parking" id="bicycle_parking_false" value="bicycle_parking_false">
+                                    <input class="form-check-input" type="radio" name="bicycle_parking" id="bicycle_parking_false" value="F">
                                     <label class="form-check-label" for="bicycle_parking_false">No</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="bicycle_parking" id="bicycle_parking_unknown" value="bicycle_parking_unknown" checked>
+                                    <input class="form-check-input" type="radio" name="bicycle_parking" id="bicycle_parking_unknown" value="U" checked>
                                     <label class="form-check-label" for="bicycle_parking_unknown">No sé</label>
                                 </div>
                             </small>
@@ -383,15 +408,15 @@
                                 Venta de comidas preparadas, como desayunos, almuerzos, etc., para comer en el sitio o para llevar.
                             </p>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="food" id="food_true" value="food_true">
+                                <input class="form-check-input" type="radio" name="food" id="food_true" value="T">
                                 <label class="form-check-label" for="food_true">Sí</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="food" id="food_false" value="food_false">
+                                <input class="form-check-input" type="radio" name="food" id="food_false" value="F">
                                 <label class="form-check-label" for="food_false">No</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="food" id="food_unknown" value="food_unknown" checked>
+                                <input class="form-check-input" type="radio" name="food" id="food_unknown" value="U" checked>
                                 <label class="form-check-label" for="food_unknown">No sé</label>
                             </div>
                         </small>
@@ -403,15 +428,15 @@
                                 Venta de bebidas y jugos de frutas y vegetales, como jugo de naranja, jugo de caña, fresco de chan o mozote, y similares.
                             </p>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="drinks" id="drinks_true" value="drinks_true">
+                                <input class="form-check-input" type="radio" name="drinks" id="drinks_true" value="T">
                                 <label class="form-check-label" for="drinks_true">Sí</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="drinks" id="drinks_false" value="drinks_false">
+                                <input class="form-check-input" type="radio" name="drinks" id="drinks_false" value="F">
                                 <label class="form-check-label" for="drinks_false">No</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="drinks" id="drinks_unknown" value="drinks_unknown" checked>
+                                <input class="form-check-input" type="radio" name="drinks" id="drinks_unknown" value="U" checked>
                                 <label class="form-check-label" for="drinks_unknown">No sé</label>
                             </div>
                         </small>
@@ -423,15 +448,15 @@
                                 Venta de artesanías y otros productos de la agroindustria, como condimentos, café, bebidas envasadas, etc.
                             </p>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="handicrafts" id="handicrafts_true" value="handicrafts_true">
+                                <input class="form-check-input" type="radio" name="handicrafts" id="handicrafts_true" value="T">
                                 <label class="form-check-label" for="handicrafts_true">Sí</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="handicrafts" id="handicrafts_false" value="handicrafts_false">
+                                <input class="form-check-input" type="radio" name="handicrafts" id="handicrafts_false" value="F">
                                 <label class="form-check-label" for="handicrafts_false">No</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="handicrafts" id="handicrafts_unknown" value="handicrafts_unknown" checked>
+                                <input class="form-check-input" type="radio" name="handicrafts" id="handicrafts_unknown" value="U" checked>
                                 <label class="form-check-label" for="handicrafts_unknown">No sé</label>
                             </div>
                         </small>
@@ -443,15 +468,15 @@
                                 Venta de productos cárnicos del sector avícola o ganadero.
                             </p>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="butcher" id="butcher_true" value="butcher_true">
+                                <input class="form-check-input" type="radio" name="butcher" id="butcher_true" value="T">
                                 <label class="form-check-label" for="butcher_true">Sí</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="butcher" id="butcher_false" value="butcher_false">
+                                <input class="form-check-input" type="radio" name="butcher" id="butcher_false" value="F">
                                 <label class="form-check-label" for="butcher_false">No</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="butcher" id="butcher_unknown" value="butcher_unknown" checked>
+                                <input class="form-check-input" type="radio" name="butcher" id="butcher_unknown" value="U" checked>
                                 <label class="form-check-label" for="butcher_unknown">No sé</label>
                             </div>
                         </small>
@@ -463,15 +488,15 @@
                                 Venta de productos lácteos, como queso, natilla, leche agria y similares.
                             </p>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="dairy" id="dairy_true" value="dairy_true">
+                                <input class="form-check-input" type="radio" name="dairy" id="dairy_true" value="T">
                                 <label class="form-check-label" for="dairy_true">Sí</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="dairy" id="dairy_false" value="dairy_false">
+                                <input class="form-check-input" type="radio" name="dairy" id="dairy_false" value="F">
                                 <label class="form-check-label" for="dairy_false">No</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="dairy" id="dairy_unknown" value="dairy_unknown" checked>
+                                <input class="form-check-input" type="radio" name="dairy" id="dairy_unknown" value="U" checked>
                                 <label class="form-check-label" for="dairy_unknown">No sé</label>
                             </div>
                         </small>
@@ -483,15 +508,15 @@
                                 Venta de alimentos del mar, como pescado y mariscos.
                             </p>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="seafood" id="seafood_true" value="seafood_true">
+                                <input class="form-check-input" type="radio" name="seafood" id="seafood_true" value="T">
                                 <label class="form-check-label" for="seafood_true">Sí</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="seafood" id="seafood_false" value="seafood_false">
+                                <input class="form-check-input" type="radio" name="seafood" id="seafood_false" value="F">
                                 <label class="form-check-label" for="seafood_false">No</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="seafood" id="seafood_unknown" value="seafood_unknown" checked>
+                                <input class="form-check-input" type="radio" name="seafood" id="seafood_unknown" value="U" checked>
                                 <label class="form-check-label" for="seafood_unknown">No sé</label>
                             </div>
                         </small>
@@ -503,15 +528,15 @@
                                 Venta de plantas para uso ornamental.
                             </p>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="garden_centre" id="garden_centre_true" value="garden_centre_true">
+                                <input class="form-check-input" type="radio" name="garden_centre" id="garden_centre_true" value="T">
                                 <label class="form-check-label" for="garden_centre_true">Sí</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="garden_centre" id="garden_centre_false" value="garden_centre_false">
+                                <input class="form-check-input" type="radio" name="garden_centre" id="garden_centre_false" value="F">
                                 <label class="form-check-label" for="garden_centre_false">No</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="garden_centre" id="garden_centre_unknown" value="garden_centre_unknown" checked>
+                                <input class="form-check-input" type="radio" name="garden_centre" id="garden_centre_unknown" value="U" checked>
                                 <label class="form-check-label" for="garden_centre_unknown">No sé</label>
                             </div>
                         </small>
@@ -523,15 +548,15 @@
                                 Venta de flores y productos relacionados.
                             </p>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="florist" id="florist_true" value="florist_true">
+                                <input class="form-check-input" type="radio" name="florist" id="florist_true" value="T">
                                 <label class="form-check-label" for="florist_true">Sí</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="florist" id="florist_false" value="florist_false">
+                                <input class="form-check-input" type="radio" name="florist" id="florist_false" value="F">
                                 <label class="form-check-label" for="florist_false">No</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="florist" id="florist_unknown" value="florist_unknown" checked>
+                                <input class="form-check-input" type="radio" name="florist" id="florist_unknown" value="U" checked>
                                 <label class="form-check-label" for="florist_unknown">No sé</label>
                             </div>
                         </small>
@@ -549,27 +574,27 @@
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Comentarios</h3>
                     <p>¿Tiene otras sugerencias o comentarios para nuestro sitio y la feria de {{ marketplace.name }}? ¿Hay otras amenidades o infraestructura que ofrece la feria? Agradecemos nos lo indique aquí.</p>
                     <p>
-                        <textarea class="underline-input" rows="5" id="comments" name="comments" placeholder="Comentarios" style="width: 100%;"></textarea>
+                        <textarea class="underline-input" rows="5" id="comments" name="comments" placeholder="Comentarios"></textarea>
                     </p>
                 </div>
             </div>
         </div>
         <!-- Nombre de la persona y botón de envío de sugerencias -->
-        <div class=" card my-3 mx-auto text-center" style="max-width: 576px;">
-            <div class="card-body">
+        <div class="card mt-2 my-3 mx-auto border-0 rounded-5 background-cafe" style="max-width: 500px;">
+            <div class="card-body text-white">
                 <p class="lead">
-                    Su nombre:
-                    <input type="text" class="underline-input" id="name">
+                    Su nombre (opcional):
+                    <input type="text" class="underline-input" id="submitted_by" name="submitted_by" style="color: white; font-weight: bold;">
                 </p>
-                <p>
-                    <button type="button" class="btn btn-danger btn-lg px-4 gap-3">
-                        Enviar sugerencias
-                    </button>
-                </p>
+                <div class="d-flex justify-content-center">
+                    <button onclick="confirmSubmission(event)" class="btn btn-warning btn-lg px-4 gap-3">Enviar sugerencias</button>
+                </div>
             </div>
+            <img src="{% static 'images/stickers/sandia.png' %}" width="80px" class="floating-strawberry">
         </div>
+        
     </form>
-    <h1 class="text-center">¡Gracias!</h1>
+    <h1 class="text-center title-deferia verde">¡Gracias!</h1>
 </div>
 
 <script src="{% static 'js/crowdsourcing.js' %}"></script>
