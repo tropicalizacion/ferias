@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block page_title %} ¡Gracias por colaborar! {% endblock %}
+
+{% block bg-navbar %} background-cafe {% endblock %}
+
+{% block main %}
+
+<div class="container">
+    <!-- Portada -->
+    <div class="text-center">
+        <h1 class="display-5 title-deferia rojo">¡Gracias por colaborar!</h1>
+        <p class="lead col-md-6 mx-auto">Pronto actualizaremos los datos de {{ marketplace.name }} con la información provista.</p>
+    </div>
+    
+    <p>Si quiere colaborar con más información, puede volver a <a href="{% url 'sugerencias' %}">enviar sugerencias</a>.</p>
+</div>
+
+{% endblock %}
