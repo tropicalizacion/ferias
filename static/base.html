@@ -68,13 +68,23 @@
           <img src="{% static 'images/logos/logo_verde.png' %}" width="60px" alt="Logo de feria">
         </a>
       </div>
+      
+      <div class="col-md-4">
+        <p>
+          ¡<a href="{% url 'sugerencias' %}">Colabore con datos</a>! <br>
+          <a href="{% url 'ingresar' %}">Ingresar</a> <br>
+          <!-- Si el usuario está logueado, mostrar el nombre y la opción de salir -->
+          {% if user.is_authenticated %}
+          {{ user.first_name }}, <a href="{% url 'salir' %}">salir</a> <br>
+          {% endif %}
+        </p>
+      </div>
 
       <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
         <li class="ms-3"><a class="text-body-secondary" target="_blank" href="https://www.instagram.com/deferia.cr/"><i class="fa-brands fa-instagram"></i></a></li>
         <li class="ms-3"><a class="text-body-secondary" target="_blank" href="https://www.tiktok.com/@deferia.cr"><i class="fa-brands fa-tiktok"></i></a></li>
         <li class="ms-3"><a class="text-body-secondary" target="_blank" href="https://www.facebook.com/deferia.costarica"><i class="fa-brands fa-facebook"></i></a></li>
       </ul>
-      <p>¡<a href="{% url 'sugerencias' %}">Colabore con datos</a>!</p>
     </footer>
   </div>
 

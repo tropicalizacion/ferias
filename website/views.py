@@ -6,6 +6,7 @@ from django.db.models import Q
 from django.contrib.gis.db.models.functions import Distance
 from django.contrib.gis.geos import Point
 from marketplaces.views import search_marketplaces
+from django.contrib.auth import login, authenticate, logout
 
 
 def cover(request):
@@ -30,6 +31,35 @@ def index(request):
 
 def acerca(request):
     return render(request, "acerca.html")
+
+
+def ingresar(request):
+
+    if request.method == "POST":
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+        user = authenticate(
+            request,
+            username=username,
+            password=password,
+        )
+        if user is not None:
+            login(request, user)
+            return redirect("/")
+        else:
+            return render(request, "login.html", {"error": True})
+    else:
+        if request.user.is_authenticated:
+            context = {"logged_in": True}
+        else:
+            context = {"logged_in": False}
+        return render(request, "login.html", context)
+
+
+def salir(request):
+    logout(request)
+    url = "/ingresar/?logout=true"
+    return redirect(url)
 
 
 def contacto(request):
