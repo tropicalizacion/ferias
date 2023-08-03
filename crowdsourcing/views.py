@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from marketplaces.models import Marketplace, MarketplaceHistory
 from .models import MarketplaceEdit, OpeningHoursEdit, PhoneEdit, EmailEdit, WebsiteEdit
 import osm_opening_hours_humanized as hoh
@@ -203,7 +203,7 @@ def revisiones_feria(request, marketplace_url):
 
     if request.method == "POST":
         
-        # Save all data on the marketplace object in a new entry of MarketplaceHistory
+        # Save outdated version of marketplace in history
         marketplace_history = MarketplaceHistory()
         marketplace_history.marketplace_history_id = f"{marketplace.marketplace_url}_{datetime.now()}"
         marketplace_history.marketplace = marketplace
@@ -251,6 +251,7 @@ def revisiones_feria(request, marketplace_url):
         marketplace_history.products.set(marketplace.products.all())
         marketplace_history.save()
 
+        # Update marketplace with new information
         name = request.POST.get("name")
         if (name != "") and (name != marketplace.name):
             marketplace.name = name
@@ -276,7 +277,7 @@ def revisiones_feria(request, marketplace_url):
         if (address != "") and (address != marketplace.address):
             marketplace.address = address
         size = request.POST.get("size")
-        if (size != "size_unknown") and (size != marketplace.size):
+        if (size != marketplace.size):
             marketplace.size = size
         opening_hours = request.POST.get("opening_hours")
         if (opening_hours != "") and (opening_hours != marketplace.opening_hours):
@@ -329,42 +330,56 @@ def revisiones_feria(request, marketplace_url):
         florist = ast.literal_eval(request.POST.get("florist"))
         if (florist != marketplace.florist):
             marketplace.florist = florist
-        
-        print(f"Para guardar:\n{marketplace}")
 
-        return render(request, "revisiones_feria.html")
+        marketplace.save()
+
+        # Update the marketplace edit objects as reviewed
+        marketplace_edits_unreviewed.update(is_reviewed=True, reviewed_by=request.user)
+
+        # Update phones, emails and websites as reviewed if checkbox is on
+        if request.POST.get("check-phone"):
+            phone_edits_unreviewed.update(is_reviewed=True, reviewed_by=request.user)
+        if request.POST.get("check-email"):
+            email_edits_unreviewed.update(is_reviewed=True, reviewed_by=request.user)
+        if request.POST.get("check-website"):
+            website_edits_unreviewed.update(is_reviewed=True, reviewed_by=request.user)
+
+        # Redirect to the marketplace page
+        return redirect(f"/ferias/{marketplace_url}/")
 
     else:
         
-        phone_edits_reviewed = PhoneEdit.objects.filter(marketplace=marketplace, is_reviewed=True)
-        email_edits_reviewed = EmailEdit.objects.filter(marketplace=marketplace, is_reviewed=True)
-        website_edits_reviewed = WebsiteEdit.objects.filter(marketplace=marketplace, is_reviewed=True)
-        opening_hours_edits_reviewed = OpeningHoursEdit.objects.filter(marketplace=marketplace, is_reviewed=True)
+        if request.user.is_staff:
+            phone_edits_reviewed = PhoneEdit.objects.filter(marketplace=marketplace, is_reviewed=True)
+            email_edits_reviewed = EmailEdit.objects.filter(marketplace=marketplace, is_reviewed=True)
+            website_edits_reviewed = WebsiteEdit.objects.filter(marketplace=marketplace, is_reviewed=True)
+            opening_hours_edits_reviewed = OpeningHoursEdit.objects.filter(marketplace=marketplace, is_reviewed=True)
 
-        features = ['fairground', 'indoor', 'toilets', 'handwashing', 'drinking_water', 'parking', 'bicycle_parking', 'food', 'drinks', 'handicrafts', 'butcher', 'dairy', 'seafood', 'garden_centre', 'florist']
-        features_dict = {}
-        for feature in features:
-            features_dict[f"{feature}_yes"] = marketplace_edits.filter(**{feature: True}).count()
-            features_dict[f"{feature}_no"] = marketplace_edits.filter(**{feature: False}).count()
-            features_dict[f"{feature}_votes"] = features_dict[f"{feature}_yes"] + features_dict[f"{feature}_no"]
+            features = ['fairground', 'indoor', 'toilets', 'handwashing', 'drinking_water', 'parking', 'bicycle_parking', 'food', 'drinks', 'handicrafts', 'butcher', 'dairy', 'seafood', 'garden_centre', 'florist']
+            features_dict = {}
+            for feature in features:
+                features_dict[f"{feature}_yes"] = marketplace_edits.filter(**{feature: True}).count()
+                features_dict[f"{feature}_no"] = marketplace_edits.filter(**{feature: False}).count()
+                features_dict[f"{feature}_votes"] = features_dict[f"{feature}_yes"] + features_dict[f"{feature}_no"]
 
-        context = {
-            "marketplace": marketplace,
-            "marketplace_edits_unreviewed": marketplace_edits_unreviewed,
-            "marketplace_edits_reviewed": marketplace_edits_reviewed,
-            "phone_edits_unreviewed": phone_edits_unreviewed,
-            "phone_edits_reviewed": phone_edits_reviewed,
-            "email_edits_unreviewed": email_edits_unreviewed,
-            "email_edits_reviewed": email_edits_reviewed,
-            "website_edits_unreviewed": website_edits_unreviewed,
-            "website_edits_reviewed": website_edits_reviewed,
-            "opening_hours_edits_unreviewed": opening_hours_edits_unreviewed,
-            "opening_hours_edits_reviewed": opening_hours_edits_reviewed,
-            "features_dict": features_dict,
-        }
-        
-        return render(request, "revisiones_feria.html", context)
-
+            context = {
+                "marketplace": marketplace,
+                "marketplace_edits_unreviewed": marketplace_edits_unreviewed,
+                "marketplace_edits_reviewed": marketplace_edits_reviewed,
+                "phone_edits_unreviewed": phone_edits_unreviewed,
+                "phone_edits_reviewed": phone_edits_reviewed,
+                "email_edits_unreviewed": email_edits_unreviewed,
+                "email_edits_reviewed": email_edits_reviewed,
+                "website_edits_unreviewed": website_edits_unreviewed,
+                "website_edits_reviewed": website_edits_reviewed,
+                "opening_hours_edits_unreviewed": opening_hours_edits_unreviewed,
+                "opening_hours_edits_reviewed": opening_hours_edits_reviewed,
+                "features_dict": features_dict,
+            }
+            
+            return render(request, "revisiones_feria.html", context)
+        else:
+            return redirect("/")
 
 def revisiones_producto(request, product_url):
     return render(request, "revisiones_producto.html")
