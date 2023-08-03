@@ -139,6 +139,7 @@ class PhoneEdit(models.Model):
     phone = models.TextField(max_length=31, blank=True, null=True)
     type = models.CharField(max_length=31, blank=True, null=True)
     is_reviewed = models.BooleanField(default=False)
+    reviewed_by = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
 
     def __str__(self):
         return f"{self.marketplace} ({self.marketplace_edit_id.submitted_on})"
@@ -152,6 +153,7 @@ class EmailEdit(models.Model):
     email = models.EmailField(max_length=127, blank=True, null=True)
     type = models.CharField(max_length=31, blank=True, null=True)
     is_reviewed = models.BooleanField(default=False)
+    reviewed_by = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
 
     def __str__(self):
         return f"{self.marketplace} ({self.marketplace_edit_id.submitted_on})"
@@ -165,6 +167,7 @@ class WebsiteEdit(models.Model):
     website = models.URLField(max_length=127, blank=True, null=True)
     type = models.CharField(max_length=31, blank=True, null=True)
     is_reviewed = models.BooleanField(default=False)
+    reviewed_by = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
 
     def __str__(self):
         return f"{self.marketplace} ({self.marketplace_edit_id.submitted_on})"
