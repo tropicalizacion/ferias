@@ -2,12 +2,974 @@
 
 {% load static %}
 
-{% block page_title %} Revisión de sugerencias del producto X {% endblock %}
+{% block page_title %} Revisión de sugerencias para la feria {{ marketplace.name }} {% endblock %}
 
 {% block bg-navbar %} background-cafe {% endblock %}
 
 {% block main %}
 
-<h1>Revisión de sugerencias de la feria X</h1>
+<div class="container px-4 py-5" id="colaborate">
+    
+    <!-- Portada -->
+    <div class="text-center">
+        <h2>Revisión de sugerencias para la feria de</h2>
+        <h1 class="display-5 title-deferia rojo">{{ marketplace.name }}</h1>
+        <p class="lead col-md-6 mx-auto">En el formulario a continuación es posible revisar las sugerencias actuales y pasadas hechas por la comunidad en relación con la feria para algunos datos específicos, y cambiar la información respectiva, si es pertinente, en la tabla de ferias que es mostrada al público. Cada envío genera el almacenamiento de un registro de respaldo.</p>
+    </div>
+    
+    <!-- Formulario -->
+    <form method="POST" id="form">
+        {% csrf_token %}
+        <div class="row row-cols-1 g-4 py-4">
+            <!-- Comentarios -->
+            <div class="col d-flex align-items-start">
+                <span class="bi amarillo flex-shrink-0 me-3">
+                    <i class="fa-solid fa-2x fa-comment"></i>
+                </span>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Comentarios</h3>
+                    <p>¿Tiene otras sugerencias o comentarios para nuestro sitio y la feria de {{ marketplace.name }}? ¿Hay otras amenidades o infraestructura que ofrece la feria? Agradecemos nos lo indique aquí.</p>
+                    <p>
+                        <textarea class="underline-input" rows="5" id="comments" name="comments" placeholder="Comentarios"></textarea>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-lg-3 g-4 pb-4">
+            <!-- Nombre de la feria -->
+            <div class="col d-flex align-items-start">
+                <span class="bi rojo flex-shrink-0 me-3">
+                    <i class="fa-solid fa-2x fa-sign-hanging"></i>
+                </span>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Nombre de la feria</h3>
+                    <p>Nombre principal de la feria, que aparece en la página de nuestro sitio.</p>
+                    <h6>Actual</h6>
+                    <p class="text-muted">
+                        {% if marketplace.name %}{{ marketplace.name }}{% else %}<em>Sin registro actual</em>{% endif %}
+                    </p>
+                    <h6>Editar</h6>
+                    <p>
+                        <input type="text" class="underline-input" id="name" name="name" placeholder="Nombre de la feria" value="{{ marketplace.name }}">
+                    </p>
+                    <h6>Sugerencias</h6>
+                    <div style="height: 300px; overflow-y: auto;">
+                        <p>Sin revisar</p>
+                        {% if marketplace_edits_unreviewed %}
+                        <ul>
+                            {% for suggestion in marketplace_edits_unreviewed %}
+                            {% if suggestion.name != "" %}
+                            <li>{{ suggestion.name }}</li>
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <p class="fst-italic">No hay sugerencias sin revisar</p>
+                        {% endif %}
+                        <p>Revisadas</p>
+                        {% if marketplace_edits_reviewed %}
+                        <ul>
+                            {% for suggestion in marketplace_edits_reviewed %}
+                            {% if suggestion.name != "" %}
+                            <li>{{ suggestion.name }}</li>
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <p class="fst-italic">No hay sugerencias revisadas</p>
+                        {% endif %}                        
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="check-name" name="check-name" value="checked" required>
+                        <label class="form-check-label" for="check-name">
+                            Revisado
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Nombres alternativos -->
+            <div class="col d-flex align-items-start">
+                <span class="bi amarillo flex-shrink-0 me-3">
+                    <i class="fa-solid fa-2x fa-quote-left"></i>
+                </span>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Nombres alternativos</h3>
+                    <p>¿Hay algún otro nombre por el cual sea conocida la feria?</p>
+                    <h6>Actual</h6>
+                    <p class="text-muted">
+                        {% if marketplace.name_alternate %}{{ marketplace.name_alternate }}{% else %}<em>Sin registro actual</em>{% endif %}
+                    </p>
+                    <h6>Editar</h6>
+                    <p>
+                        <input type="text" class="underline-input" id="name_alternate" name="name_alternate" placeholder="Nombres alternativos">
+                    </p>
+                    <h6>Sugerencias</h6>
+                    <div style="height: 300px; overflow-y: auto;" class="mb-2">
+                        <p>Sin revisar</p>
+                        {% if marketplace_edits_unreviewed %}
+                        <ul>
+                            {% for suggestion in marketplace_edits_unreviewed %}
+                            {% if suggestion.name_alternate %}
+                            <li>{{ suggestion.name_alternate }}</li>
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <p class="fst-italic">No hay sugerencias sin revisar</p>
+                        {% endif %}
+                        <p>Revisadas</p>
+                        {% if marketplace_edits_reviewed %}
+                        <ul>
+                            {% for suggestion in marketplace_edits_reviewed %}
+                            {% if suggestion.name_alternate %}
+                            <li>{{ suggestion.name_alternate }}</li>
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <p class="fst-italic">No hay sugerencias revisadas</p>
+                        {% endif %}                        
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="check-name_alternate" name="check-name_alternate" value="checked" required>
+                        <label class="form-check-label" for="check-name_alternate">
+                            Revisado
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Operador -->
+            <div class="col d-flex align-items-start">
+                <span class="bi cafe flex-shrink-0 me-3">
+                    <i class="fa-solid fa-2x fa-address-card"></i>
+                </span>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Operador</h3>
+                    <p>Nombre de la entidad encargada de la operación de la feria.</p>
+                    <h6>Actual</h6>
+                    <p class="text-muted">
+                        {% if marketplace.operator %}{{ marketplace.operator }}{% else %}<em>Sin registro actual</em>{% endif %}
+                    </p>
+                    <h6>Editar</h6>
+                    <p>
+                        <input type="text" class="underline-input" id="operator" name="operator" placeholder="Operador">
+                    </p>
+                    <h6>Sugerencias</h6>
+                    <div style="height: 300px; overflow-y: auto;">
+                        <p>Sin revisar</p>
+                        {% if marketplace_edits_unreviewed %}
+                        <ul>
+                            {% for suggestion in marketplace_edits_unreviewed %}
+                            {% if suggestion.operator %}
+                            <li>{{ suggestion.operator }}</li>
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <p class="fst-italic">No hay sugerencias sin revisar</p>
+                        {% endif %}
+                        <p>Revisadas</p>
+                        {% if marketplace_edits_reviewed %}
+                        <ul>
+                            {% for suggestion in marketplace_edits_reviewed %}
+                            {% if suggestion.operator %}
+                            <li>{{ suggestion.operator }}</li>
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <p class="fst-italic">No hay sugerencias revisadas</p>
+                        {% endif %}                        
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="check-operator" name="check-operator" value="checked" required>
+                        <label class="form-check-label" for="check-operator">
+                            Revisado
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Teléfono de contacto -->
+            <div class="col d-flex align-items-start">
+                <span class="bi azul flex-shrink-0 me-3">
+                    <i class="fa-solid fa-2x fa-phone"></i>
+                </span>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Teléfono de contacto</h3>
+                    <p>Teléfono de la oficina o personas que administran la feria.</p>
+                    <h6>Actual</h6>
+                    <p class="text-muted">
+                        {% if marketplace.phone %}{{ marketplace.phone }}{% else %}<em>Sin registro actual</em>{% endif %}
+                    </p>
+                    <h6>Editar</h6>
+                    <p>
+                        <input type="text" class="underline-input" id="phone" name="phone" placeholder="Teléfono">
+                        <small class="text-muted">Para colocar un nuevo número de teléfono es necesario hacer una llamada y confirmar con la persona que contesta.</small>
+                    </p>
+                    <h6>Sugerencias</h6>
+                    <div style="height: 300px; overflow-y: auto;" class="mb-2">
+                        <p>Sin revisar</p>
+                        {% if phone_edits_unreviewed %}
+                        <ul>
+                            {% for i in phone_edits_unreviewed %}
+                            <li>{{ i.phone }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <p class="fst-italic">No hay sugerencias sin revisar</p>
+                        {% endif %}
+                        <p>Revisadas</p>
+                        {% if phone_edits_reviewed %}
+                        <ul>
+                            {% for i in phone_edits_reviewed %}
+                            <li>{{ i.phone }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <p class="fst-italic">No hay sugerencias revisadas</p>
+                        {% endif %}                 
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="check-phone" name="check-phone" value="checked" required>
+                        <label class="form-check-label" for="check-phone">
+                            Revisado
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Correo de contacto -->
+            <div class="col d-flex align-items-start">
+                <span class="bi rosado flex-shrink-0 me-3">
+                    <i class="fa-solid fa-2x fa-at"></i>
+                </span>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Correo de contacto</h3>
+                    <p>Correo electrónico de la oficina o personas que administran la feria.</p>
+                    <h6>Actual</h6>
+                    <p class="text-muted">
+                        {% if marketplace.email %}{{ marketplace.email }}{% else %}<em>Sin registro actual</em>{% endif %}
+                    </p>
+                    <h6>Editar</h6>
+                    <p>
+                        <input type="email" class="underline-input" id="email" name="email" placeholder="Correo electrónico">
+                        <small class="text-muted">Para colocar un nuevo correo electrónico es necesario enviar un correo y esperar la respuesta de confirmación.</small>
+                    </p>
+                    <h6>Sugerencias</h6>
+                    <div style="height: 300px; overflow-y: auto;" class="mb-2">
+                        <p>Sin revisar</p>
+                        {% if email_edits_unreviewed %}
+                        <ul>
+                            {% for i in email_edits_unreviewed %}
+                            <li>{{ i.email }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <p class="fst-italic">No hay sugerencias sin revisar</p>
+                        {% endif %}
+                        <p>Revisadas</p>
+                        {% if email_edits_reviewed %}
+                        <ul>
+                            {% for i in email_edits_reviewed %}
+                            <li>{{ i.email }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <p class="fst-italic">No hay sugerencias revisadas</p>
+                        {% endif %}                 
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="check-email" name="check-email" value="checked" required>
+                        <label class="form-check-label" for="check-email">
+                            Revisado
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Sitio web o redes sociales -->
+            <div class="col d-flex align-items-start">
+                <span class="bi verde flex-shrink-0 me-3">
+                    <i class="fa-solid fa-2x fa-globe"></i>
+                </span>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Sitio web o redes sociales</h3>
+                    <p>Links de sitios web o redes sociales (Facebook, Instagram, etc.) de la feria.</p>
+                    <h6>Actual</h6>
+                    <p class="text-muted">
+                        {% if marketplace.website %}{{ marketplace.website }}{% else %}<em>Sin registro actual</em>{% endif %}
+                    </p>
+                    <h6>Editar</h6>
+                    <p>
+                        <input type="url" class="underline-input" id="website" name="website" placeholder="Sitio web">
+                        <small class="text-muted">Para colocar una nueva dirección es necesario visitar el link y confirmar que corresponde con la feria respectiva y que parece oficial y está activo.</small>
+                    </p>
+                    <h6>Sugerencias</h6>
+                    <div style="height: 300px; overflow-y: auto;" class="mb-2">
+                        <p>Sin revisar</p>
+                        {% if website_edits_unreviewed %}
+                        <ul>
+                            {% for i in website_edits_unreviewed %}
+                            <li>{{ i.website }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <p class="fst-italic">No hay sugerencias sin revisar</p>
+                        {% endif %}
+                        <p>Revisadas</p>
+                        {% if website_edits_reviewed %}
+                        <ul>
+                            {% for i in website_edits_reviewed %}
+                            <li>{{ i.website }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <p class="fst-italic">No hay sugerencias revisadas</p>
+                        {% endif %}                 
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="check-website" name="check-website" value="checked" required>
+                        <label class="form-check-label" for="check-website">
+                            Revisado
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Descripción -->
+            <div class="col d-flex align-items-start">
+                <span class="bi rojo flex-shrink-0 me-3">
+                    <i class="fa-solid fa-2x fa-comments"></i>
+                </span>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Descripción</h3>
+                    <p>¿Hay alguna característica de la feria que quiere compartir con nosotros? Por ejemplo: una reseña histórica, anécdotas o similar.</p>
+                    <h6>Actual</h6>
+                    <p class="text-muted">
+                        {% if marketplace.description %}{{ marketplace.description }}{% else %}<em>Sin registro actual</em>{% endif %}
+                    </p>
+                    <h6>Editar</h6>
+                    <p>
+                        <textarea class="underline-input" rows="5" id="description" name="description" placeholder="Descripción">{% if marketplace.description %}{{ marketplace.description }}{% endif %}</textarea>
+                    </p>
+                    <h6>Sugerencias</h6>
+                    <div style="height: 300px; overflow-y: auto;" class="mb-2">
+                        <p>Sin revisar</p>
+                        {% if marketplace_edits_unreviewed %}
+                        <ul>
+                            {% for suggestion in marketplace_edits_unreviewed %}
+                            {% if suggestion.description %}
+                            <li>{{ suggestion.description }}</li>
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <p class="fst-italic">No hay sugerencias sin revisar</p>
+                        {% endif %}
+                        <p>Revisadas</p>
+                        {% if marketplace_edits_reviewed %}
+                        <ul>
+                            {% for suggestion in marketplace_edits_reviewed %}
+                            {% if suggestion.description %}
+                            <li>{{ suggestion.description }}</li>
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <p class="fst-italic">No hay sugerencias revisadas</p>
+                        {% endif %}                        
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="check-description" name="check-description" value="checked" required>
+                        <label class="form-check-label" for="check-description">
+                            Revisado
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Dirección -->
+            <div class="col d-flex align-items-start">
+                <span class="bi amarillo flex-shrink-0 me-3">
+                    <i class="fa-solid fa-2x fa-map-location-dot"></i>
+                </span>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Dirección</h3>
+                    <p>¿Cuál es la dirección o indicaciones utilizadas para llegar a la feria? ¿Ha cambiado esta dirección recientemente?</p>
+                    <h6>Actual</h6>
+                    <p class="text-muted">
+                        {% if marketplace.address %}{{ marketplace.address|capfirst }}{% else %}<em>Sin registro actual</em>{% endif %}
+                    </p>
+                    <h6>Editar</h6>
+                    <p>
+                        <textarea class="underline-input" rows="5" id="address" name="address" placeholder="Dirección">{% if marketplace.address %}{{ marketplace.address }}{% endif %}</textarea>
+                        <small class="text-muted">(Primera letra en minúscula)</small>
+                    </p>
+                    <h6>Sugerencias</h6>
+                    <div style="height: 300px; overflow-y: auto;" class="mb-2">
+                        <p>Sin revisar</p>
+                        {% if marketplace_edits_unreviewed %}
+                        <ul>
+                            {% for suggestion in marketplace_edits_unreviewed %}
+                            {% if suggestion.address %}
+                            <li>{{ suggestion.address }}</li>
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <p class="fst-italic">No hay sugerencias sin revisar</p>
+                        {% endif %}
+                        <p>Revisadas</p>
+                        {% if marketplace_edits_reviewed %}
+                        <ul>
+                            {% for suggestion in marketplace_edits_reviewed %}
+                            {% if suggestion.address %}
+                            <li>{{ suggestion.address }}</li>
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <p class="fst-italic">No hay sugerencias revisadas</p>
+                        {% endif %}                        
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="check-address" name="check-address" value="checked" required>
+                        <label class="form-check-label" for="check-address">
+                            Revisado
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Por tamaño -->
+            <div class="col d-flex align-items-start">
+                <span class="bi cafe flex-shrink-0 me-3">
+                    <i class="fa-solid fa-2x fa-shapes"></i>
+                </span>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Tamaño</h3>
+                    <p>¿Conoce usted un número aproximado de los tramos de ventas en la feria? Esta es nuestra clasificación:</p>
+                    <h6>Actual</h6>
+                    <p class="text-muted">
+                        {% if marketplace.size %}{{ marketplace.size }}{% else %}<em>Sin registro actual</em>{% endif %}
+                    </p>
+                    <h6>Editar</h6>
+                    <p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="size_s" name="size" value="S">
+                        <label class="form-check-label" for="size_s">S, menos de 50 tramos</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="size_m" name="size" value="M">
+                        <label class="form-check-label" for="size_m">M, entre 50 y 100 tramos</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="size_l" name="size" value="L">
+                        <label class="form-check-label" for="size_l">L, entre 100 y 200 tramos</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="size_xl" name="size" value="XL">
+                        <label class="form-check-label" for="size_xl">XL, más de 200 tramos</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="size_unknown" name="size" value="size_unknown" checked>
+                        <label class="form-check-label" for="size_unknown">Desconocido</label>
+                    </div>
+                    </p>
+                    <h6>Sugerencias</h6>
+                    <div style="height: 300px; overflow-y: auto;" class="mb-2">
+                        <p>Sin revisar</p>
+                        {% if marketplace_edits_unreviewed %}
+                        <ul>
+                            {% for suggestion in marketplace_edits_unreviewed %}
+                            {% if suggestion.size %}
+                            <li>{{ suggestion.size }}</li>
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <p class="fst-italic">No hay sugerencias sin revisar</p>
+                        {% endif %}
+                        <p>Revisadas</p>
+                        {% if marketplace_edits_reviewed %}
+                        <ul>
+                            {% for suggestion in marketplace_edits_reviewed %}
+                            {% if suggestion.size %}
+                            <li>{{ suggestion.size }}</li>
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <p class="fst-italic">No hay sugerencias revisadas</p>
+                        {% endif %}                        
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="check-size" name="check-size" value="checked" required>
+                        <label class="form-check-label" for="check-size">
+                            Revisado
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-lg-2 g-4 pb-4">
+            <!-- Horario de operación -->
+            <div class="col d-flex align-items-start">
+                <span class="bi azul flex-shrink-0 me-3">
+                    <i class="fa-solid fa-2x fa-clock"></i>
+                </span>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Horario de operación</h3>
+                    <p>¿Cuáles son los días y horas de operación de la feria?</p>
+                    <h6>Actual</h6>
+                    <p class="text-muted">
+                        {% if marketplace.opening_hours %}{{ marketplace.opening_hours }}{% else %}<em>Sin registro actual</em>{% endif %}
+                    </p>
+                    <h6>Editar</h6>
+                    <p>
+                        <input type="text" class="underline-input" id="opening_hours" name="opening_hours" placeholder="Horario de operación">
+                        <small class="text-muted">Debe ser editado en fiel concordancia con <a href="https://wiki.openstreetmap.org/wiki/Key:opening_hours">opening_hours</a> de OpenStreetMap.</small>
+                    </p>
+                    <h6>Sugerencias</h6>
+                    <div style="height: 300px; overflow-y: auto;" class="mb-2">
+                        <p>Sin revisar</p>
+                        {% if opening_hours_edits_unreviewed %}
+                        <ul>
+                            {% for i in opening_hours_edits_unreviewed %}
+                            <li>{{ i.day_opens }} {{ i.hour_opens }}-{{ i.hour_closes }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <p class="fst-italic">No hay sugerencias sin revisar</p>
+                        {% endif %}
+                        <p>Revisadas</p>
+                        {% if opening_hours_edits_reviewed %}
+                        <ul>
+                            {% for i in opening_hours_edits_reviewed %}
+                            <li>{{ i.day_opens }} {{ i.hour_opens }}-{{ i.hour_closes }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <p class="fst-italic">No hay sugerencias revisadas</p>
+                        {% endif %}                 
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="check-opening_hours" name="check-opening_hours" value="checked" required>
+                        <label class="form-check-label" for="check-opening_hours">
+                            Revisado
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Fecha de inauguración -->
+            <div class="col d-flex align-items-start">
+                <span class="bi rosado flex-shrink-0 me-3">
+                    <i class="fa-solid fa-2x fa-star"></i>
+                </span>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Fecha de inauguración</h3>
+                    <p>¿Cuál es la fecha aproximada de inauguración de esta feria?</p>
+                    <h6>Actual</h6>
+                    <p class="text-muted">
+                        {% if marketplace.opening_date %}{{ marketplace.opening_date }}{% else %}<em>Sin registro actual</em>{% endif %}
+                    </p>
+                    <h6>Editar</h6>
+                    <p>
+                        <input type="date" class="underline-input" id="opening_date" name="opening_date">
+                        <small class="text-muted">Posiblemente solo sea utilizado el año o el año y el mes, así que la fecha exacta no es tan importante.</small>
+                    </p>
+                    <h6>Sugerencias</h6>
+                    <div style="height: 300px; overflow-y: auto;" class="mb-2">
+                        <p>Sin revisar</p>
+                        {% if marketplace_edits_unreviewed %}
+                        <ul>
+                            {% for suggestion in marketplace_edits_unreviewed %}
+                            {% if suggestion.opening_date %}
+                            <li>{{ suggestion.opening_date }}</li>
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <p class="fst-italic">No hay sugerencias sin revisar</p>
+                        {% endif %}
+                        <p>Revisadas</p>
+                        {% if marketplace_edits_reviewed %}
+                        <ul>
+                            {% for suggestion in marketplace_edits_reviewed %}
+                            {% if suggestion.opening_date %}
+                            <li>{{ suggestion.opening_date }}</li>
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <p class="fst-italic">No hay sugerencias revisadas</p>
+                        {% endif %}                        
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="check-opening_date" name="check-opening_date" value="checked" required>
+                        <label class="form-check-label" for="check-opening_date">
+                            Revisado
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-1 g-4 pb-4">
+            <!-- Infraestructura -->
+            <div class="col d-flex align-items-start">
+                <span class="bi verde flex-shrink-0 me-3">
+                    <i class="fa-solid fa-2x fa-people-roof"></i>
+                </span>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Infraestructura</h3>
+                    <p>Estos son algunos aspectos de la infraestructura que hemos colocado para describir cada feria.</p>
+                    <p class="small text-muted">El valor actual está seleccionado.</p>
+                    <div class="row row-cols-1 row-cols-lg-4 g-4 pb-4">
+                        <div class="col">
+                            <h6>Campo ferial</h6>
+                            <small>
+                                <p class="text-muted">
+                                    Un espacio dedicado para la feria, que no es en la vía pública.
+                                </p>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="fairground" id="fairground_true" value="True"{% if marketplace.fairground == True %} checked{% endif %}>
+                                    <label class="form-check-label" for="fairground_true">Sí</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="fairground" id="fairground_false" value="False"{% if marketplace.fairground == False %} checked{% endif %}>
+                                    <label class="form-check-label" for="fairground_false">No</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="fairground" id="fairground_unknown" value="None"{% if marketplace.fairground == None %} checked{% endif %}>
+                                    <label class="form-check-label" for="fairground_unknown">Desconocido</label>
+                                </div>
+                                <p class="border p-2 text-center">Votos: {{ features_dict.fairground_votes }} | Sí: {{ features_dict.fairground_yes }} | No: {{ features_dict.fairground_no }} <br> Valor actual: {{ marketplace.fairground }}</p>
+                            </small>  
+                        </div>
+                        <div class="col">
+                            <h6>Bajo techo</h6>
+                            <small>
+                                <p class="text-muted">
+                                    Espacio protegido con una estructura ya sea permanente o temporal que protege a los participantes de la lluvia y el sol.
+                                </p>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="indoor" id="indoor_true" value="True"{% if marketplace.indoor == True %} checked{% endif %}>
+                                    <label class="form-check-label" for="indoor_true">Sí</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="indoor" id="indoor_false" value="False"{% if marketplace.indoor == False %} checked{% endif %}>
+                                    <label class="form-check-label" for="indoor_false">No</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="indoor" id="indoor_unknown" value="None"{% if marketplace.indoor == None %} checked{% endif %}
+                                    <label class="form-check-label" for="indoor_unknown">Desconocido</label>
+                                </div>
+                                <p class="border p-2 text-center">Votos: {{ features_dict.indoor_votes }} | Sí: {{ features_dict.indoor_yes }} | No: {{ features_dict.indoor_no }} <br> Valor actual: {{ marketplace.indoor }}</p>
+                            </small>
+                        </div>
+                        <div class="col">
+                            <h6>Servicios sanitarios</h6>
+                            <small>
+                                <p class="text-muted">
+                                    Batería de servicios sanitarios habilitados para el público visitante, con las condiciones apropiadas de aseo e implementos.
+                                </p>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="toilets" id="toilets_true" value="True"{% if marketplace.toilets == True %} checked{% endif %}>
+                                    <label class="form-check-label" for="toilets_true">Sí</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="toilets" id="toilets_false" value="False"{% if marketplace.toilets == False %} checked{% endif %}>
+                                    <label class="form-check-label" for="toilets_false">No</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="toilets" id="toilets_unknown" value="None"{% if marketplace.toilets == None %} checked{% endif %}
+                                    <label class="form-check-label" for="toilets_unknown">Desconocido</label>
+                                </div>
+                                <p class="border p-2 text-center">Votos: {{ features_dict.toilets_votes }} | Sí: {{ features_dict.toilets_yes }} | No: {{ features_dict.toilets_no }} <br> Valor actual: {{ marketplace.toilets }}</p>
+                            </small>
+                        </div>
+                        <div class="col">
+                            <h6>Lavabo para manos</h6>
+                            <small>
+                                <p class="text-muted">
+                                    Lavabo o pila para el lavado de manos de las personas visitantes, con disponibilidad de agua y jabón.
+                                </p>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="handwashing"
+                                        id="handwashing_true" value="True"{% if marketplace.handwashing == True %} checked{% endif %}>
+                                    <label class="form-check-label" for="handwashing_true">Sí</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="handwashing" id="handwashing_false" value="False"{% if marketplace.handwashing == False %} checked{% endif %}>
+                                    <label class="form-check-label" for="handwashing_false">No</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="handwashing" id="handwashing_unknown" value="None"{% if marketplace.handwashing == None %} checked{% endif %}
+                                    <label class="form-check-label" for="handwashing_unknown">Desconocido</label>
+                                </div>
+                                <p class="border p-2 text-center">Votos: {{ features_dict.handwashing_votes }} | Sí: {{ features_dict.handwashing_yes }} | No: {{ features_dict.handwashing_no }} <br> Valor actual: {{ marketplace.handwashing }}</p>
+                            </small>
+                        </div>
+                        <div class="col">
+                            <h6>Agua potable</h6>
+                            <small>
+                                <p class="text-muted">
+                                    Fuente de agua potable disponible para consumo de las personas visitantes.
+                                </p>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="drinking_water" id="drinking_water_true" value="True"{% if marketplace.drinking_water == True %} checked{% endif %}>
+                                    <label class="form-check-label" for="drinking_water_true">Sí</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="drinking_water" id="drinking_water_false" value="False"{% if marketplace.drinking_water == False %} checked{% endif %}>
+                                    <label class="form-check-label" for="drinking_water_false">No</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="drinking_water" id="drinking_water_unknown" value="None"{% if marketplace.drinking_water == None %} checked{% endif %}
+                                    <label class="form-check-label" for="drinking_water_unknown">Desconocido</label>
+                                </div>
+                                <p class="border p-2 text-center">Votos: {{ features_dict.drinking_water_votes }} | Sí: {{ features_dict.drinking_water_yes }} | No: {{ features_dict.drinking_water_no }} <br> Valor actual: {{ marketplace.drinking_water }}</p>
+                            </small>
+                        </div>
+                        <div class="col">
+                            <h6>Estacionamiento</h6>
+                            <small>
+                                <p class="text-muted">
+                                    Espacio dedicado de estacionamiento de vehículos, que no sea en la calle.
+                                </p>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="parking" id="parking_true" value="True"{% if marketplace.parking == True %} checked{% endif %}>
+                                    <label class="form-check-label" for="parking_true">Sí</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="parking" id="parking_false" value="False"{% if marketplace.parking == False %} checked{% endif %}>
+                                    <label class="form-check-label" for="parking_false">No</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="parking" id="parking_unknown" value="None"{% if marketplace.parking == None %} checked{% endif %}
+                                    <label class="form-check-label" for="parking_unknown">Desconocido</label>
+                                </div>
+                                <p class="border p-2 text-center">Votos: {{ features_dict.parking_votes }} | Sí: {{ features_dict.parking_yes }} | No: {{ features_dict.parking_no }} <br> Valor actual: {{ marketplace.parking }}</p>
+                            </small>
+                        </div>
+                        <div class="col">
+                            <h6>Estacionamiento para bicicletas</h6>
+                            <small>
+                                <p class="text-muted">
+                                    Espacio de estacionamiento para bicicletas con estructura para poder amarrarlas.
+                                </p>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="bicycle_parking" id="bicycle_parking_true" value="True"{% if marketplace.bicycle_parking == True %} checked{% endif %}>
+                                    <label class="form-check-label" for="bicycle_parking_true">Sí</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="bicycle_parking" id="bicycle_parking_false" value="False"{% if marketplace.bicycle_parking == False %} checked{% endif %}>
+                                    <label class="form-check-label" for="bicycle_parking_false">No</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="bicycle_parking" id="bicycle_parking_unknown" value="None"{% if marketplace.bicycle_parking == None %} checked{% endif %}
+                                    <label class="form-check-label" for="bicycle_parking_unknown">Desconocido</label>
+                                </div>
+                                <p class="border p-2 text-center">Votos: {{ features_dict.bicycle_parking_votes }} | Sí: {{ features_dict.bicycle_parking_yes }} | No: {{ features_dict.bicycle_parking_no }} <br> Valor actual: {{ marketplace.bicycle_parking }}</p>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-1 g-4 pb-4">
+            <!-- Amenidades -->
+            <div class="col d-flex align-items-start">
+                <span class="bi rojo flex-shrink-0 me-3">
+                    <i class="fa-solid fa-2x fa-glass-water"></i>
+                </span>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Amenidades</h3>
+                    <p>La feria es un espacio comercial con más opciones que los productos frescos, ¿qué más hay en esta feria?</p>
+                    <div class="row row-cols-1 row-cols-lg-4 g-4 pb-4"">
+                        <div class=" col">
+                        <h6>Comidas</h6>
+                        <small>
+                            <p class="text-muted">
+                                Venta de comidas preparadas, como desayunos, almuerzos, etc., para comer en el sitio o para llevar.
+                            </p>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="food" id="food_true" value="True"{% if marketplace.food == True %} checked{% endif %}>
+                                <label class="form-check-label" for="food_true">Sí</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="food" id="food_false" value="False"{% if marketplace.food == False %} checked{% endif %}>
+                                <label class="form-check-label" for="food_false">No</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="food" id="food_unknown" value="None"{% if marketplace.food == None %} checked{% endif %}
+                                <label class="form-check-label" for="food_unknown">Desconocido</label>
+                            </div>
+                            <p class="border p-2 text-center">Votos: {{ features_dict.food_votes }} | Sí: {{ features_dict.food_yes }} | No: {{ features_dict.food_no }} <br> Valor actual: {{ marketplace.food }}</p>
+                        </small>
+                    </div>
+                    <div class="col">
+                        <h6>Bebidas y jugos</h6>
+                        <small>
+                            <p class="text-muted">
+                                Venta de bebidas y jugos de frutas y vegetales, como jugo de naranja, jugo de caña, fresco de chan o mozote, y similares.
+                            </p>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="drinks" id="drinks_true" value="True"{% if marketplace.drinks == True %} checked{% endif %}>
+                                <label class="form-check-label" for="drinks_true">Sí</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="drinks" id="drinks_false" value="False"{% if marketplace.drinks == False %} checked{% endif %}>
+                                <label class="form-check-label" for="drinks_false">No</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="drinks" id="drinks_unknown" value="None"{% if marketplace.drinks == None %} checked{% endif %}
+                                <label class="form-check-label" for="drinks_unknown">Desconocido</label>
+                            </div>
+                            <p class="border p-2 text-center">Votos: {{ features_dict.drinks_votes }} | Sí: {{ features_dict.drinks_yes }} | No: {{ features_dict.drinks_no }} <br> Valor actual: {{ marketplace.drinks }}</p>
+                        </small>
+                    </div>
+                    <div class="col">
+                        <h6>Artesanías</h6>
+                        <small>
+                            <p class="text-muted">
+                                Venta de artesanías y otros productos de la agroindustria, como condimentos, café, bebidas envasadas, etc.
+                            </p>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="handicrafts" id="handicrafts_true" value="True"{% if marketplace.handicrafts == True %} checked{% endif %}>
+                                <label class="form-check-label" for="handicrafts_true">Sí</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="handicrafts" id="handicrafts_false" value="False"{% if marketplace.handicrafts == False %} checked{% endif %}>
+                                <label class="form-check-label" for="handicrafts_false">No</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="handicrafts" id="handicrafts_unknown" value="None"{% if marketplace.handicrafts == None %} checked{% endif %}
+                                <label class="form-check-label" for="handicrafts_unknown">Desconocido</label>
+                            </div>
+                            <p class="border p-2 text-center">Votos: {{ features_dict.handicrafts_votes }} | Sí: {{ features_dict.handicrafts_yes }} | No: {{ features_dict.handicrafts_no }} <br> Valor actual: {{ marketplace.handicrafts }}</p>
+                        </small>
+                    </div>
+                    <div class="col">
+                        <h6>Carnicería</h6>
+                        <small>
+                            <p class="text-muted">
+                                Venta de productos cárnicos del sector avícola o ganadero.
+                            </p>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="butcher" id="butcher_true" value="True"{% if marketplace.butcher == True %} checked{% endif %}>
+                                <label class="form-check-label" for="butcher_true">Sí</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="butcher" id="butcher_false" value="False"{% if marketplace.butcher == False %} checked{% endif %}>
+                                <label class="form-check-label" for="butcher_false">No</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="butcher" id="butcher_unknown" value="None"{% if marketplace.butcher == None %} checked{% endif %}
+                                <label class="form-check-label" for="butcher_unknown">Desconocido</label>
+                            </div>
+                            <p class="border p-2 text-center">Votos: {{ features_dict.butcher_votes }} | Sí: {{ features_dict.butcher_yes }} | No: {{ features_dict.butcher_no }} <br> Valor actual: {{ marketplace.butcher }}</p>
+                        </small>
+                    </div>
+                    <div class="col">
+                        <h6>Productos lácteos</h6>
+                        <small>
+                            <p class="text-muted">
+                                Venta de productos lácteos, como queso, natilla, leche agria y similares.
+                            </p>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="dairy" id="dairy_true" value="True"{% if marketplace.dairy == True %} checked{% endif %}>
+                                <label class="form-check-label" for="dairy_true">Sí</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="dairy" id="dairy_false" value="False"{% if marketplace.dairy == False %} checked{% endif %}>
+                                <label class="form-check-label" for="dairy_false">No</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="dairy" id="dairy_unknown" value="None"{% if marketplace.dairy == None %} checked{% endif %}
+                                <label class="form-check-label" for="dairy_unknown">Desconocido</label>
+                            </div>
+                            <p class="border p-2 text-center">Votos: {{ features_dict.dairy_votes }} | Sí: {{ features_dict.dairy_yes }} | No: {{ features_dict.dairy_no }} <br> Valor actual: {{ marketplace.dairy }}</p>
+                        </small>
+                    </div>
+                    <div class="col">
+                        <h6>Pescadería y/o marisquería</h6>
+                        <small>
+                            <p class="text-muted">
+                                Venta de alimentos del mar, como pescado y mariscos.
+                            </p>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="seafood" id="seafood_true" value="True"{% if marketplace.seafood == True %} checked{% endif %}>
+                                <label class="form-check-label" for="seafood_true">Sí</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="seafood" id="seafood_false" value="False"{% if marketplace.seafood == False %} checked{% endif %}>
+                                <label class="form-check-label" for="seafood_false">No</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="seafood" id="seafood_unknown" value="None"{% if marketplace.seafood == None %} checked{% endif %}
+                                <label class="form-check-label" for="seafood_unknown">Desconocido</label>
+                            </div>
+                            <p class="border p-2 text-center">Votos: {{ features_dict.seafood_votes }} | Sí: {{ features_dict.seafood_yes }} | No: {{ features_dict.seafood_no }} <br> Valor actual: {{ marketplace.seafood }}</p>
+                        </small>
+                    </div>
+                    <div class="col">
+                        <h6>Plantas</h6>
+                        <small>
+                            <p class="text-muted">
+                                Venta de plantas para uso ornamental.
+                            </p>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="garden_centre" id="garden_centre_true" value="True"{% if marketplace.garden_centre == True %} checked{% endif %}>
+                                <label class="form-check-label" for="garden_centre_true">Sí</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="garden_centre" id="garden_centre_false" value="False"{% if marketplace.garden_centre == False %} checked{% endif %}>
+                                <label class="form-check-label" for="garden_centre_false">No</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="garden_centre" id="garden_centre_unknown" value="None"{% if marketplace.garden_centre == None %} checked{% endif %}
+                                <label class="form-check-label" for="garden_centre_unknown">Desconocido</label>
+                            </div>
+                            <p class="border p-2 text-center">Votos: {{ features_dict.garden_centre_votes }} | Sí: {{ features_dict.garden_centre_yes }} | No: {{ features_dict.garden_centre_no }} <br> Valor actual: {{ marketplace.garden_centre }}</p>
+                        </small>
+                    </div>
+                    <div class="col">
+                        <h6>Floristería</h6>
+                        <small>
+                            <p class="text-muted">
+                                Venta de flores y productos relacionados.
+                            </p>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="florist" id="florist_true" value="True"{% if marketplace.florist == True %} checked{% endif %}>
+                                <label class="form-check-label" for="florist_true">Sí</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="florist" id="florist_false" value="False"{% if marketplace.florist == False %} checked{% endif %}>
+                                <label class="form-check-label" for="florist_false">No</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="florist" id="florist_unknown" value="None"{% if marketplace.florist == None %} checked{% endif %}
+                                <label class="form-check-label" for="florist_unknown">Desconocido</label>
+                            </div>
+                            <p class="border p-2 text-center">Votos: {{ features_dict.florist_votes }} | Sí: {{ features_dict.florist_yes }} | No: {{ features_dict.florist_no }} <br> Valor actual: {{ marketplace.florist }}</p>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Nombre de la persona y botón de envío de sugerencias -->
+        <div class="card mt-2 my-3 mx-auto border-0 rounded-5 background-cafe" style="max-width: 500px;">
+            <div class="card-body text-white">
+                <p class="lead">
+                    Su nombre (opcional):
+                    <input type="text" class="underline-input" id="submitted_by" name="submitted_by" style="color: white; font-weight: bold;">
+                </p>
+                <div class="d-flex justify-content-center">
+                    <button onclick="confirmSubmission(event)" class="btn btn-warning btn-lg px-4 gap-3">Enviar sugerencias</button>
+                </div>
+            </div>
+            <img src="{% static 'images/stickers/sandia.png' %}" width="80px" class="floating-strawberry">
+        </div>
+        
+    </form>
+
+
+</div>
 
 {% endblock %}

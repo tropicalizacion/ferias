@@ -46,9 +46,9 @@ class MarketplaceEdit(models.Model):
     opening_date = models.DateField(blank=True, null=True)
     location = models.PointField(blank=True, null=True)
     area = models.PolygonField(blank=True, null=True)
-    province = models.CharField(max_length=31)
-    canton = models.CharField(max_length=31)
-    district = models.CharField(max_length=31)
+    province = models.CharField(max_length=31, blank=True, null=True)
+    canton = models.CharField(max_length=31, blank=True, null=True)
+    district = models.CharField(max_length=31, blank=True, null=True)
     postal_code = models.IntegerField(blank=True, null=True)
     address = models.TextField(blank=True, null=True)
     size = models.CharField(choices=SIZE_CHOICES, max_length=2, blank=True, null=True)
@@ -57,52 +57,22 @@ class MarketplaceEdit(models.Model):
         choices=BRANCH_CHOICES, max_length=63, blank=True, null=True
     )
     # Infrastructure
-    parking = models.CharField(
-        choices=PARKING_CHOICES, max_length=31, blank=True, null=True
-    )
-    bicycle_parking = models.CharField(
-        choices=FEATURE_CHOICES, max_length=1, blank=True, null=True
-    )
-    fairground = models.CharField(
-        choices=FEATURE_CHOICES, max_length=1, blank=True, null=True
-    )
-    indoor = models.CharField(
-        choices=FEATURE_CHOICES, max_length=1, blank=True, null=True
-    )
-    toilets = models.CharField(
-        choices=FEATURE_CHOICES, max_length=1, blank=True, null=True
-    )
-    handwashing = models.CharField(
-        choices=FEATURE_CHOICES, max_length=1, blank=True, null=True
-    )
-    drinking_water = models.CharField(
-        choices=FEATURE_CHOICES, max_length=1, blank=True, null=True
-    )
+    parking = models.BooleanField(default=None, blank=True, null=True)
+    bicycle_parking = models.BooleanField(default=None, blank=True, null=True)
+    fairground = models.BooleanField(default=None, blank=True, null=True)
+    indoor = models.BooleanField(default=None, blank=True, null=True)
+    toilets = models.BooleanField(default=None, blank=True, null=True)
+    handwashing = models.BooleanField(default=None, blank=True, null=True)
+    drinking_water = models.BooleanField(default=None, blank=True, null=True)
     # Services
-    food = models.CharField(
-        choices=FEATURE_CHOICES, max_length=1, blank=True, null=True
-    )
-    drinks = models.CharField(
-        choices=FEATURE_CHOICES, max_length=1, blank=True, null=True
-    )
-    handicrafts = models.CharField(
-        choices=FEATURE_CHOICES, max_length=1, blank=True, null=True
-    )
-    butcher = models.CharField(
-        choices=FEATURE_CHOICES, max_length=1, blank=True, null=True
-    )
-    dairy = models.CharField(
-        choices=FEATURE_CHOICES, max_length=1, blank=True, null=True
-    )
-    seafood = models.CharField(
-        choices=FEATURE_CHOICES, max_length=1, blank=True, null=True
-    )
-    garden_centre = models.CharField(
-        choices=FEATURE_CHOICES, max_length=1, blank=True, null=True
-    )
-    florist = models.CharField(
-        choices=FEATURE_CHOICES, max_length=1, blank=True, null=True
-    )
+    food = models.BooleanField(default=None, blank=True, null=True)
+    drinks = models.BooleanField(default=None, blank=True, null=True)
+    handicrafts = models.BooleanField(default=None, blank=True, null=True)
+    butcher = models.BooleanField(default=None, blank=True, null=True)
+    dairy = models.BooleanField(default=None, blank=True, null=True)
+    seafood = models.BooleanField(default=None, blank=True, null=True)
+    garden_centre = models.BooleanField(default=None, blank=True, null=True)
+    florist = models.BooleanField(default=None, blank=True, null=True)
     # Other
     payment = models.ManyToManyField(Payment, blank=True)
     # Products
@@ -155,19 +125,46 @@ class OpeningHoursEdit(models.Model):
         choices=DAY_CHOICES, max_length=2, blank=True, null=True
     )
     hour_closes = models.TimeField(blank=True, null=True)
+    is_reviewed = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.marketplace}: {self.day_opens} {self.hour_opens} - {self.hour_closes}"
 
 
-class ContactEdit(models.Model):
-    """Model definition for Contact."""
+class PhoneEdit(models.Model):
+    """Model definition for Phone."""
+
+    marketplace = models.ForeignKey(Marketplace, on_delete=models.CASCADE)
+    marketplace_edit_id = models.ForeignKey("MarketplaceEdit", on_delete=models.CASCADE)
+    phone = models.TextField(max_length=31, blank=True, null=True)
+    type = models.CharField(max_length=31, blank=True, null=True)
+    is_reviewed = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.marketplace} ({self.marketplace_edit_id.submitted_on})"
+
+
+class EmailEdit(models.Model):
+    """Model definition for Email."""
+
+    marketplace = models.ForeignKey(Marketplace, on_delete=models.CASCADE)
+    marketplace_edit_id = models.ForeignKey("MarketplaceEdit", on_delete=models.CASCADE)
+    email = models.EmailField(max_length=127, blank=True, null=True)
+    type = models.CharField(max_length=31, blank=True, null=True)
+    is_reviewed = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.marketplace} ({self.marketplace_edit_id.submitted_on})"
+
+
+class WebsiteEdit(models.Model):
+    """Model definition for Website."""
 
     marketplace = models.ForeignKey(Marketplace, on_delete=models.CASCADE)
     marketplace_edit_id = models.ForeignKey("MarketplaceEdit", on_delete=models.CASCADE)
     website = models.URLField(max_length=127, blank=True, null=True)
-    phone = models.TextField(max_length=31, blank=True, null=True)
-    email = models.EmailField(max_length=127, blank=True, null=True)
+    type = models.CharField(max_length=31, blank=True, null=True)
+    is_reviewed = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.marketplace} ({self.marketplace_edit_id.submitted_on})"

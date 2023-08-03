@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from marketplaces.models import Marketplace
-from .models import MarketplaceEdit, PhotoEdit, OpeningHoursEdit, ContactEdit
+from .models import MarketplaceEdit, OpeningHoursEdit, PhoneEdit, EmailEdit, WebsiteEdit
 import osm_opening_hours_humanized as hoh
 from django.contrib.auth.decorators import login_required
+from django.db.models import Q
+import ast
 
 # Create your views here.
 
@@ -48,23 +50,23 @@ def sugerencias_feria(request, marketplace_url):
             marketplace_edit.opening_date = request.POST.get("opening_date")
         
         # Infrastructure
-        marketplace_edit.fairground = request.POST.get("fairground")
-        marketplace_edit.indoor = request.POST.get("indoor")
-        marketplace_edit.toilets = request.POST.get("toilets")
-        marketplace_edit.handwashing = request.POST.get("handwashing")
-        marketplace_edit.drinking_water = request.POST.get("drinking_water")
-        marketplace_edit.parking = request.POST.get("parking")
-        marketplace_edit.bicycle_parking = request.POST.get("bicycle_parking")
+        marketplace_edit.fairground = ast.literal_eval(request.POST.get("fairground"))
+        marketplace_edit.indoor = ast.literal_eval(request.POST.get("indoor"))
+        marketplace_edit.toilets = ast.literal_eval(request.POST.get("toilets"))
+        marketplace_edit.handwashing = ast.literal_eval(request.POST.get("handwashing"))
+        marketplace_edit.drinking_water = ast.literal_eval(request.POST.get("drinking_water"))
+        marketplace_edit.parking = ast.literal_eval(request.POST.get("parking"))
+        marketplace_edit.bicycle_parking = ast.literal_eval(request.POST.get("bicycle_parking"))
         
         # Services
-        marketplace_edit.food = request.POST.get("food")
-        marketplace_edit.drinks = request.POST.get("drinks")
-        marketplace_edit.handicrafts = request.POST.get("handicrafts")
-        marketplace_edit.butcher = request.POST.get("butcher")
-        marketplace_edit.dairy = request.POST.get("dairy")
-        marketplace_edit.seafood = request.POST.get("seafood")
-        marketplace_edit.garden_centre = request.POST.get("garden_centre")
-        marketplace_edit.florist = request.POST.get("florist")
+        marketplace_edit.food = ast.literal_eval(request.POST.get("food"))
+        marketplace_edit.drinks = ast.literal_eval(request.POST.get("drinks"))
+        marketplace_edit.handicrafts = ast.literal_eval(request.POST.get("handicrafts"))
+        marketplace_edit.butcher = ast.literal_eval(request.POST.get("butcher"))
+        marketplace_edit.dairy = ast.literal_eval(request.POST.get("dairy"))
+        marketplace_edit.seafood = ast.literal_eval(request.POST.get("seafood"))
+        marketplace_edit.garden_centre = ast.literal_eval(request.POST.get("garden_centre"))
+        marketplace_edit.florist = ast.literal_eval(request.POST.get("florist"))
 
         # Submitted by
         marketplace_edit.submitted_by = request.POST.get("submitted_by")
@@ -72,40 +74,47 @@ def sugerencias_feria(request, marketplace_url):
         # Save the marketplace edit object
         marketplace_edit.save()
 
-        # Save the phones, emails and websites in the contact edit table
+        # Save the phones
         i = 1
-        go = (
-            ((f"phone_{i}" in request.POST) and (request.POST.get(f"phone_{i}") != ""))
-            or ((f"email_{i}" in request.POST) and (request.POST.get(f"email_{i}") != ""))
-            or ((f"link_{i}" in request.POST) and (request.POST.get(f"link_{i}") != ""))
-        )
+        go = f"phone_{i}" in request.POST
         while go:
-            if f"phone_{i}" in request.POST:
-                phone = request.POST.get(f"phone_{i}")
-            else:
-                phone = None
-            if f"email_{i}" in request.POST:
-                email = request.POST.get(f"email_{i}")
-            else:
-                email = None
-            if f"link_{i}" in request.POST:
-                website = request.POST.get(f"link_{i}")
-            else:
-                website = None
-            contact_edit = ContactEdit(
+            phone = request.POST.get(f"phone_{i}")
+            phone_edit = PhoneEdit(
                 marketplace=marketplace,
                 marketplace_edit_id=marketplace_edit,
                 phone=phone,
+            )
+            phone_edit.save()
+            i += 1
+            go = f"phone_{i}" in request.POST
+        
+        # Save the emails
+        i = 1
+        go = f"email_{i}" in request.POST
+        while go:
+            email = request.POST.get(f"email_{i}")
+            email_edit = EmailEdit(
+                marketplace=marketplace,
+                marketplace_edit_id=marketplace_edit,
                 email=email,
+            )
+            email_edit.save()
+            i += 1
+            go = f"email_{i}" in request.POST
+
+        # Save the websites
+        i = 1
+        go = f"link_{i}" in request.POST
+        while go:
+            website = request.POST.get(f"link_{i}")
+            website_edit = WebsiteEdit(
+                marketplace=marketplace,
+                marketplace_edit_id=marketplace_edit,
                 website=website,
             )
-            contact_edit.save()
+            website_edit.save()
             i += 1
-            go = (
-                (f"phone_{i}" in request.POST)
-                or (f"email_{i}" in request.POST)
-                or (f"link_{i}" in request.POST)
-            )
+            go = f"link_{i}" in request.POST
 
         # Save the opening hours in the opening hours edit table
         i = 1
@@ -180,7 +189,43 @@ def revisiones_productos(request):
 
 
 def revisiones_feria(request, marketplace_url):
-    return render(request, "revisiones_feria.html")
+
+    marketplace = Marketplace.objects.get(marketplace_url=marketplace_url)
+    marketplace_edits = MarketplaceEdit.objects.filter(marketplace=marketplace)
+    marketplace_edits_unreviewed = marketplace_edits.filter(is_reviewed=False)
+    marketplace_edits_reviewed = marketplace_edits.filter(is_reviewed=True)
+    phone_edits_unreviewed = PhoneEdit.objects.filter(marketplace=marketplace, is_reviewed=False)
+    phone_edits_reviewed = PhoneEdit.objects.filter(marketplace=marketplace, is_reviewed=True)
+    email_edits_unreviewed = EmailEdit.objects.filter(marketplace=marketplace, is_reviewed=False)
+    email_edits_reviewed = EmailEdit.objects.filter(marketplace=marketplace, is_reviewed=True)
+    website_edits_unreviewed = WebsiteEdit.objects.filter(marketplace=marketplace, is_reviewed=False)
+    website_edits_reviewed = WebsiteEdit.objects.filter(marketplace=marketplace, is_reviewed=True)
+    opening_hours_edits_unreviewed = OpeningHoursEdit.objects.filter(marketplace=marketplace, is_reviewed=False)
+    opening_hours_edits_reviewed = OpeningHoursEdit.objects.filter(marketplace=marketplace, is_reviewed=True)
+
+    features = ['fairground', 'indoor', 'toilets', 'handwashing', 'drinking_water', 'parking', 'bicycle_parking', 'food', 'drinks', 'handicrafts', 'butcher', 'dairy', 'seafood', 'garden_centre', 'florist']
+    features_dict = {}
+    for feature in features:
+        features_dict[f"{feature}_yes"] = marketplace_edits.filter(**{feature: True}).count()
+        features_dict[f"{feature}_no"] = marketplace_edits.filter(**{feature: False}).count()
+        features_dict[f"{feature}_votes"] = features_dict[f"{feature}_yes"] + features_dict[f"{feature}_no"]
+
+    context = {
+        "marketplace": marketplace,
+        "marketplace_edits_unreviewed": marketplace_edits_unreviewed,
+        "marketplace_edits_reviewed": marketplace_edits_reviewed,
+        "phone_edits_unreviewed": phone_edits_unreviewed,
+        "phone_edits_reviewed": phone_edits_reviewed,
+        "email_edits_unreviewed": email_edits_unreviewed,
+        "email_edits_reviewed": email_edits_reviewed,
+        "website_edits_unreviewed": website_edits_unreviewed,
+        "website_edits_reviewed": website_edits_reviewed,
+        "opening_hours_edits_unreviewed": opening_hours_edits_unreviewed,
+        "opening_hours_edits_reviewed": opening_hours_edits_reviewed,
+        "features_dict": features_dict,
+    }
+    
+    return render(request, "revisiones_feria.html", context)
 
 
 def revisiones_producto(request, product_url):
