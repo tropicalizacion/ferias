@@ -39,13 +39,15 @@ def ingresar(request):
         username = request.POST.get("username")
         password = request.POST.get("password")
         user = authenticate(
-            request,
             username=username,
             password=password,
         )
         if user is not None:
             login(request, user)
-            return redirect("/")
+            if 'next' in request.GET:
+                return redirect(request.GET.get('next'))
+            else:
+                return redirect("/")
         else:
             return render(request, "login.html", {"error": True})
     else:
