@@ -189,6 +189,7 @@ def revisiones_productos(request):
     return render(request, "revisiones_productos.html")
 
 
+@login_required(login_url="/ingresar/")
 def revisiones_feria(request, marketplace_url):
 
     marketplace = Marketplace.objects.get(marketplace_url=marketplace_url)
@@ -241,11 +242,13 @@ def revisiones_feria(request, marketplace_url):
         marketplace_history.seafood = marketplace.seafood
         marketplace_history.garden_centre = marketplace.garden_centre
         marketplace_history.florist = marketplace.florist
-        # marketplace_history.payment.set(marketplace.payment.all())
         marketplace_history.other_services = marketplace.other_services
-        # marketplace_history.products.set(marketplace.products.all())
         marketplace_history.updated_by = request.user
         marketplace_history.comments_reviewer = request.POST.get("comments_reviewer")
+        marketplace_history.save()
+
+        marketplace_history.payment.set(marketplace.payment.all())
+        marketplace_history.products.set(marketplace.products.all())
         marketplace_history.save()
 
         name = request.POST.get("name")
