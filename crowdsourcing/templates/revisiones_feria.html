@@ -20,21 +20,6 @@
     <!-- Formulario -->
     <form method="POST" id="form">
         {% csrf_token %}
-        <div class="row row-cols-1 g-4 py-4">
-            <!-- Comentarios -->
-            <div class="col d-flex align-items-start">
-                <span class="bi amarillo flex-shrink-0 me-3">
-                    <i class="fa-solid fa-2x fa-comment"></i>
-                </span>
-                <div>
-                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Comentarios</h3>
-                    <p>¿Tiene otras sugerencias o comentarios para nuestro sitio y la feria de {{ marketplace.name }}? ¿Hay otras amenidades o infraestructura que ofrece la feria? Agradecemos nos lo indique aquí.</p>
-                    <p>
-                        <textarea class="underline-input" rows="5" id="comments" name="comments" placeholder="Comentarios"></textarea>
-                    </p>
-                </div>
-            </div>
-        </div>
         <div class="row row-cols-1 row-cols-lg-3 g-4 pb-4">
             <!-- Nombre de la feria -->
             <div class="col d-flex align-items-start">
@@ -733,15 +718,15 @@
                                     Espacio dedicado de estacionamiento de vehículos, que no sea en la calle.
                                 </p>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="parking" id="parking_true" value="True"{% if marketplace.parking == True %} checked{% endif %}>
+                                    <input class="form-check-input" type="radio" name="parking" id="parking_true" value="surface"{% if marketplace.parking == "surface" %} checked{% endif %}>
                                     <label class="form-check-label" for="parking_true">Sí</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="parking" id="parking_false" value="False"{% if marketplace.parking == False %} checked{% endif %}>
+                                    <input class="form-check-input" type="radio" name="parking" id="parking_false" value="lane"{% if marketplace.parking != "surface" %} checked{% endif %}>
                                     <label class="form-check-label" for="parking_false">No</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="parking" id="parking_unknown" value="None"{% if marketplace.parking == None %} checked{% endif %}
+                                    <input class="form-check-input" type="radio" name="parking" id="parking_unknown" value="lane"{% if marketplace.parking == None %} checked{% endif %}
                                     <label class="form-check-label" for="parking_unknown">Desconocido</label>
                                 </div>
                                 <p class="border p-2 text-center">Votos: {{ features_dict.parking_votes }} | Sí: {{ features_dict.parking_yes }} | No: {{ features_dict.parking_no }} <br> Valor actual: {{ marketplace.parking }}</p>
@@ -953,18 +938,32 @@
                 </div>
             </div>
         </div>
+        <div class="row row-cols-1 g-4 py-4">
+            <!-- Comentarios -->
+            <div class="col d-flex align-items-start">
+                <span class="bi amarillo flex-shrink-0 me-3">
+                    <i class="fa-solid fa-2x fa-comment"></i>
+                </span>
+                <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Comentarios</h3>
+                    <p>¿Tiene otras sugerencias o comentarios para nuestro sitio y la feria de {{ marketplace.name }}? ¿Hay otras amenidades o infraestructura que ofrece la feria? Agradecemos nos lo indique aquí.</p>
+                    <p>
+                        <textarea class="underline-input" rows="5" id="comments_reviewer" name="comments_reviewer" placeholder="Comentarios"></textarea>
+                    </p>
+                </div>
+            </div>
+        </div>
         <!-- Nombre de la persona y botón de envío de sugerencias -->
         <div class="card mt-2 my-3 mx-auto border-0 rounded-5 background-cafe" style="max-width: 500px;">
             <div class="card-body text-white">
                 <p class="lead">
-                    Su nombre (opcional):
-                    <input type="text" class="underline-input" id="submitted_by" name="submitted_by" style="color: white; font-weight: bold;">
+                    Su nombre:
+                    <input type="text" class="underline-input" id="updated_by" name="updated_by" style="color: white; font-weight: bold;">
                 </p>
                 <div class="d-flex justify-content-center">
-                    <button onclick="confirmSubmission(event)" class="btn btn-warning btn-lg px-4 gap-3">Enviar sugerencias</button>
+                    <button onclick="confirmSubmission(event)" class="btn btn-warning btn-lg px-4 gap-3"><i class="fa-solid fa-triangle-exclamation"></i> Actualizar datos de feria</button>
                 </div>
             </div>
-            <img src="{% static 'images/stickers/sandia.png' %}" width="80px" class="floating-strawberry">
         </div>
         
     </form>

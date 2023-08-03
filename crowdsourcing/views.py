@@ -1,10 +1,11 @@
 from django.shortcuts import render
-from marketplaces.models import Marketplace
+from marketplaces.models import Marketplace, MarketplaceHistory
 from .models import MarketplaceEdit, OpeningHoursEdit, PhoneEdit, EmailEdit, WebsiteEdit
 import osm_opening_hours_humanized as hoh
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 import ast
+from datetime import datetime
 
 # Create your views here.
 
@@ -195,37 +196,171 @@ def revisiones_feria(request, marketplace_url):
     marketplace_edits_unreviewed = marketplace_edits.filter(is_reviewed=False)
     marketplace_edits_reviewed = marketplace_edits.filter(is_reviewed=True)
     phone_edits_unreviewed = PhoneEdit.objects.filter(marketplace=marketplace, is_reviewed=False)
-    phone_edits_reviewed = PhoneEdit.objects.filter(marketplace=marketplace, is_reviewed=True)
     email_edits_unreviewed = EmailEdit.objects.filter(marketplace=marketplace, is_reviewed=False)
-    email_edits_reviewed = EmailEdit.objects.filter(marketplace=marketplace, is_reviewed=True)
     website_edits_unreviewed = WebsiteEdit.objects.filter(marketplace=marketplace, is_reviewed=False)
-    website_edits_reviewed = WebsiteEdit.objects.filter(marketplace=marketplace, is_reviewed=True)
     opening_hours_edits_unreviewed = OpeningHoursEdit.objects.filter(marketplace=marketplace, is_reviewed=False)
-    opening_hours_edits_reviewed = OpeningHoursEdit.objects.filter(marketplace=marketplace, is_reviewed=True)
 
-    features = ['fairground', 'indoor', 'toilets', 'handwashing', 'drinking_water', 'parking', 'bicycle_parking', 'food', 'drinks', 'handicrafts', 'butcher', 'dairy', 'seafood', 'garden_centre', 'florist']
-    features_dict = {}
-    for feature in features:
-        features_dict[f"{feature}_yes"] = marketplace_edits.filter(**{feature: True}).count()
-        features_dict[f"{feature}_no"] = marketplace_edits.filter(**{feature: False}).count()
-        features_dict[f"{feature}_votes"] = features_dict[f"{feature}_yes"] + features_dict[f"{feature}_no"]
+    if request.method == "POST":
+        
+        # Save all data on the marketplace object in a new entry of MarketplaceHistory
+        marketplace_history = MarketplaceHistory()
+        marketplace_history.marketplace_history_id = f"{marketplace.marketplace_url}_{datetime.now()}"
+        marketplace_history.marketplace = marketplace
+        marketplace_history.name = marketplace.name
+        marketplace_history.name_alternate = marketplace.name_alternate
+        marketplace_history.description = marketplace.description
+        marketplace_history.opening_hours = marketplace.opening_hours
+        marketplace_history.opening_date = marketplace.opening_date
+        marketplace_history.location = marketplace.location
+        marketplace_history.area = marketplace.area
+        marketplace_history.province = marketplace.province
+        marketplace_history.canton = marketplace.canton
+        marketplace_history.district = marketplace.district
+        marketplace_history.postal_code = marketplace.postal_code
+        marketplace_history.address = marketplace.address
+        marketplace_history.size = marketplace.size
+        marketplace_history.phone = marketplace.phone
+        marketplace_history.email = marketplace.email
+        marketplace_history.website = marketplace.website
+        marketplace_history.instagram = marketplace.instagram
+        marketplace_history.facebook = marketplace.facebook
+        marketplace_history.operator = marketplace.operator
+        marketplace_history.branch = marketplace.branch
+        marketplace_history.parking = marketplace.parking
+        marketplace_history.bicycle_parking = marketplace.bicycle_parking
+        marketplace_history.fairground = marketplace.fairground
+        marketplace_history.indoor = marketplace.indoor
+        marketplace_history.toilets = marketplace.toilets
+        marketplace_history.handwashing = marketplace.handwashing
+        marketplace_history.drinking_water = marketplace.drinking_water
+        marketplace_history.food = marketplace.food
+        marketplace_history.drinks = marketplace.drinks
+        marketplace_history.handicrafts = marketplace.handicrafts
+        marketplace_history.butcher = marketplace.butcher
+        marketplace_history.dairy = marketplace.dairy
+        marketplace_history.seafood = marketplace.seafood
+        marketplace_history.garden_centre = marketplace.garden_centre
+        marketplace_history.florist = marketplace.florist
+        # marketplace_history.payment.set(marketplace.payment.all())
+        marketplace_history.other_services = marketplace.other_services
+        # marketplace_history.products.set(marketplace.products.all())
+        marketplace_history.updated_by = request.user
+        marketplace_history.comments_reviewer = request.POST.get("comments_reviewer")
+        marketplace_history.save()
 
-    context = {
-        "marketplace": marketplace,
-        "marketplace_edits_unreviewed": marketplace_edits_unreviewed,
-        "marketplace_edits_reviewed": marketplace_edits_reviewed,
-        "phone_edits_unreviewed": phone_edits_unreviewed,
-        "phone_edits_reviewed": phone_edits_reviewed,
-        "email_edits_unreviewed": email_edits_unreviewed,
-        "email_edits_reviewed": email_edits_reviewed,
-        "website_edits_unreviewed": website_edits_unreviewed,
-        "website_edits_reviewed": website_edits_reviewed,
-        "opening_hours_edits_unreviewed": opening_hours_edits_unreviewed,
-        "opening_hours_edits_reviewed": opening_hours_edits_reviewed,
-        "features_dict": features_dict,
-    }
-    
-    return render(request, "revisiones_feria.html", context)
+        name = request.POST.get("name")
+        if (name != "") and (name != marketplace.name):
+            marketplace.name = name
+        name_alternate = request.POST.get("name_alternate")
+        if (name_alternate != "") and (name_alternate != marketplace.name_alternate):
+            marketplace.name_alternate = name_alternate
+        operator = request.POST.get("operator")
+        if (operator != "") and (operator != marketplace.operator):
+            marketplace.operator = operator
+        phone = request.POST.get("phone")
+        if (phone != "") and (phone != marketplace.phone):
+            marketplace.phone = phone
+        email = request.POST.get("email")
+        if (email != "") and (email != marketplace.email):
+            marketplace.email = email
+        website = request.POST.get("website")
+        if (website != "") and (website != marketplace.website):
+            marketplace.website = website
+        description = request.POST.get("description")
+        if (description != "") and (description != marketplace.description):
+            marketplace.description = description
+        address = request.POST.get("address")
+        if (address != "") and (address != marketplace.address):
+            marketplace.address = address
+        size = request.POST.get("size")
+        if (size != "size_unknown") and (size != marketplace.size):
+            marketplace.size = size
+        opening_hours = request.POST.get("opening_hours")
+        if (opening_hours != "") and (opening_hours != marketplace.opening_hours):
+            marketplace.opening_hours = opening_hours
+        opening_date = request.POST.get("opening_date")
+        if (opening_date != "") and (opening_date != marketplace.opening_date):
+            marketplace.opening_date = opening_date
+        fairground = ast.literal_eval(request.POST.get("fairground"))
+        if (fairground != marketplace.fairground):
+            marketplace.fairground = fairground
+        indoor = ast.literal_eval(request.POST.get("indoor"))
+        if (indoor != marketplace.indoor):
+            marketplace.indoor = indoor
+        toilets = ast.literal_eval(request.POST.get("toilets"))
+        if (toilets != marketplace.toilets):
+            marketplace.toilets = toilets
+        handwashing = ast.literal_eval(request.POST.get("handwashing"))
+        if (handwashing != marketplace.handwashing):
+            marketplace.handwashing = handwashing
+        drinking_water = ast.literal_eval(request.POST.get("drinking_water"))
+        if (drinking_water != marketplace.drinking_water):
+            marketplace.drinking_water = drinking_water
+        parking = request.POST.get("parking")
+        if (parking != "") and (parking != marketplace.parking):
+            marketplace.parking = parking
+        bicycle_parking = ast.literal_eval(request.POST.get("bicycle_parking"))
+        if (bicycle_parking != marketplace.bicycle_parking):
+            marketplace.bicycle_parking = bicycle_parking
+        food = ast.literal_eval(request.POST.get("food"))
+        if (food != marketplace.food):
+            marketplace.food = food
+        drinks = ast.literal_eval(request.POST.get("drinks"))
+        if (drinks != marketplace.drinks):
+            marketplace.drinks = drinks
+        handicrafts = ast.literal_eval(request.POST.get("handicrafts"))
+        if (handicrafts != marketplace.handicrafts):
+            marketplace.handicrafts = handicrafts
+        butcher = ast.literal_eval(request.POST.get("butcher"))
+        if (butcher != marketplace.butcher):
+            marketplace.butcher = butcher
+        dairy = ast.literal_eval(request.POST.get("dairy"))
+        if (dairy != marketplace.dairy):
+            marketplace.dairy = dairy
+        seafood = ast.literal_eval(request.POST.get("seafood"))
+        if (seafood != marketplace.seafood):
+            marketplace.seafood = seafood
+        garden_centre = ast.literal_eval(request.POST.get("garden_centre"))
+        if (garden_centre != marketplace.garden_centre):
+            marketplace.garden_centre = garden_centre
+        florist = ast.literal_eval(request.POST.get("florist"))
+        if (florist != marketplace.florist):
+            marketplace.florist = florist
+        
+        print(f"Para guardar:\n{marketplace}")
+
+        return render(request, "revisiones_feria.html")
+
+    else:
+        
+        phone_edits_reviewed = PhoneEdit.objects.filter(marketplace=marketplace, is_reviewed=True)
+        email_edits_reviewed = EmailEdit.objects.filter(marketplace=marketplace, is_reviewed=True)
+        website_edits_reviewed = WebsiteEdit.objects.filter(marketplace=marketplace, is_reviewed=True)
+        opening_hours_edits_reviewed = OpeningHoursEdit.objects.filter(marketplace=marketplace, is_reviewed=True)
+
+        features = ['fairground', 'indoor', 'toilets', 'handwashing', 'drinking_water', 'parking', 'bicycle_parking', 'food', 'drinks', 'handicrafts', 'butcher', 'dairy', 'seafood', 'garden_centre', 'florist']
+        features_dict = {}
+        for feature in features:
+            features_dict[f"{feature}_yes"] = marketplace_edits.filter(**{feature: True}).count()
+            features_dict[f"{feature}_no"] = marketplace_edits.filter(**{feature: False}).count()
+            features_dict[f"{feature}_votes"] = features_dict[f"{feature}_yes"] + features_dict[f"{feature}_no"]
+
+        context = {
+            "marketplace": marketplace,
+            "marketplace_edits_unreviewed": marketplace_edits_unreviewed,
+            "marketplace_edits_reviewed": marketplace_edits_reviewed,
+            "phone_edits_unreviewed": phone_edits_unreviewed,
+            "phone_edits_reviewed": phone_edits_reviewed,
+            "email_edits_unreviewed": email_edits_unreviewed,
+            "email_edits_reviewed": email_edits_reviewed,
+            "website_edits_unreviewed": website_edits_unreviewed,
+            "website_edits_reviewed": website_edits_reviewed,
+            "opening_hours_edits_unreviewed": opening_hours_edits_unreviewed,
+            "opening_hours_edits_reviewed": opening_hours_edits_reviewed,
+            "features_dict": features_dict,
+        }
+        
+        return render(request, "revisiones_feria.html", context)
 
 
 def revisiones_producto(request, product_url):
