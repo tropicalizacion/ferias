@@ -2,12 +2,13 @@ from django.shortcuts import render, get_object_or_404
 from .models import Marketplace
 from website.models import Announcement
 from django.contrib.gis.db.models.functions import Distance
-import osm_opening_hours_humanized as ooh
+import humanized_opening_hours as hoh
 from django.db.models import Q
 from django.contrib.gis.db.models.functions import Distance
 from django.contrib.gis.geos import Point
 import math
 import json
+from datetime import datetime
 
 # Create your views here.
 
@@ -90,6 +91,8 @@ def ferias(request):
 def feria(request, marketplace_url):
     """View function for every feria page of site."""
 
+    today = datetime.today()
+
     marketplace = get_object_or_404(Marketplace, pk=marketplace_url)
     closest_marketplaces = (
         Marketplace.objects.annotate(
@@ -98,17 +101,30 @@ def feria(request, marketplace_url):
         .exclude(pk=marketplace_url)
         .order_by("distance")[0:3]
     )
-    #horarios
+    for closest_marketplace in closest_marketplaces:
+        closest_marketplace.distance = round(closest_marketplace.distance.km, 1)
+
     opening_hours = marketplace.opening_hours
-    horarios_separados = opening_hours.split(";")
-    horarios_humanizados = []
-# Crea una instancia del analizador de opening_hours
-    for horario in horarios_separados:
-     parser = ooh.OHParser(horario.strip(), locale="es")
-# Obtiene la descripción humanizada del horario
-     horario_texto = "".join(parser.description())
-     horario_texto = horario_texto.replace("On ", "")
-     horarios_humanizados.append(horario_texto)
+    is_open = None
+    description = None
+    opens_in = None
+    closes_in = None
+    if opening_hours != "":
+        try:
+            oh = hoh.OHParser(opening_hours)
+            is_open = oh.is_open()
+            if is_open:
+                closes_in = oh.render().time_before_next_change(word=False)
+                closes_in = closes_in.replace("days", "días").replace("day", "día").replace("hours", "horas").replace("hour", "hora").replace("minutes", "minutos").replace("minute", "minuto").replace("seconds", "segundos").replace("second", "segundo")
+            else:
+                opens_in = oh.render().time_before_next_change(word=False)
+                opens_in = opens_in.replace("days", "días").replace("day", "día").replace("hours", "horas").replace("hour", "hora").replace("minutes", "minutos").replace("minute", "minuto").replace("seconds", "segundos").replace("second", "segundo")
+            description = oh.render().full_description()
+            for i, _ in enumerate(description):
+                description[i] = description[i].replace("Monday", "Lunes").replace("Tuesday", "Martes").replace("Wednesday", "Miércoles").replace("Thursday", "Jueves").replace("Friday", "Viernes").replace("Saturday", "Sábado").replace("Sunday", "Domingo").replace(": ", ", de ").replace("to", "a")
+        except:
+            pass
+    
     infrastructure = {
         "campo ferial": marketplace.fairground,
         "espacio bajo techo": marketplace.indoor,
@@ -117,6 +133,7 @@ def feria(request, marketplace_url):
         "agua potable": marketplace.drinking_water,
         "estacionamiento de bicicletas": marketplace.bicycle_parking,
     }
+
     services = {
         "comidas": marketplace.food,
         "bebidas": marketplace.drinks,
@@ -127,13 +144,18 @@ def feria(request, marketplace_url):
         "plantas ornamentales": marketplace.garden_centre,
         "floristería": marketplace.florist,
     }
+
     announcements = Announcement.objects.filter(marketplace=marketplace_url).order_by("-created")
+    
     context = {
         "marketplace": marketplace,
+        "is_open": is_open,
+        "opens_in": opens_in,
+        "closes_in": closes_in,
+        "description": description,
         "closest_marketplaces": closest_marketplaces,
         "infrastructure": infrastructure,
         "services": services,
-	"horarios_humanizados": horarios_humanizados,
         "announcements": announcements,
     }
 
