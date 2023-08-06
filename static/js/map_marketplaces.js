@@ -3,7 +3,7 @@ var places = document.currentScript.getAttribute('data-marketplaces-map');
 places = JSON.parse(places);
 
 // Initialize the map to Costa Rica
-var map = L.map('map').setView([9.7489, -83.7534], 7);
+var map = L.map('map').setView([9.9347, -84.0796], 7);
 
 // Add the tile layer (e.g., OpenStreetMap)
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
