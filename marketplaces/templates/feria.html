@@ -2,11 +2,440 @@
 
 {% load static %}
 
-{% block page_title %} Feria de {{ marketplace.name }} {% endblock %}
+{% block page_title %} {{ marketplace.name }} {% endblock %}
+
+{% block bg-navbar %} background-azul {% endblock %}
 
 {% block main %}
 
 {% load l10n %}
+
+<!-- Portada -->
+<div class="px-4 pt-3 pb-4 text-center background-azul">
+    <h1 class="text-white fw-bold">Feria del agricultor de</h1>
+    <h1 class="display-1 text-white display-deferia">{{ marketplace.name }}</h1>
+
+    {% if marketplace.opening_date %}
+    <!-- Año de inauguración -->
+    <p><span class="badge text-bg-success">Desde {{ marketplace.opening_date|date:"Y" }}</span></p>
+    {% endif %}
+    {% if marketplace.description %}
+    <!-- Descripción -->
+    <div class="row row-cols-1 row-cols-md-2 text-white g-4 mt-3 d-flex justify-content-center">
+        <div class="col col-md-6 lead">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum augue augue, quis placerat nisl vehicula sed. Maecenas sit amet luctus velit. Integer tincidunt, nisi et eleifend porta, quam orci pretium orci, a efficitur enim turpis at nunc. Fusce urna ex, scelerisque at diam et, aliquet finibus sem. Curabitur mollis egestas eleifend. Suspendisse ullamcorper ipsum ante, vel tristique turpis placerat in.
+        </div>
+    </div>
+    {% endif %}
+    {% if marketplace.name_alternate %}
+    <!-- Nombres alternativos -->
+    <p class="text-center text-white mt-4">
+        <span class="small">También conocida como:</span> <br>
+        <span class="lead">{{ marketplace.name_alternate }}</span>
+    </p>
+    {% endif %}
+    <!-- Botones de redes sociales -->
+    <div class="container my-1 d-flex justify-content-end small">
+        {% if marketplace.facebook %}
+            <a href="{{ marketplace.facebook }}" target="_blank" class="text-decoration-none text-white">
+                <i class="fa-brands fa-square-facebook"></i>
+                <span class="text-uppercase small">Facebook</span>
+            </a>
+        {% endif %}
+        {% if marketplace.instagram %}
+            &nbsp;&nbsp;&nbsp;
+            <a href="{{ marketplace.instagram }}" target="_blank" class="text-decoration-none text-white">
+                <i class="fa-brands fa-square-instagram"></i>
+                <span class="text-uppercase small">Instagram</span>
+            </a>
+        {% endif %}
+        {% if marketplace.website %}
+            &nbsp;&nbsp;&nbsp;
+            <a href="{{ marketplace.website }}" target="_blank" class="text-decoration-none text-white">
+                <i class="fa-solid fa-globe"></i>
+                <span class="text-uppercase small">Sitio web</span>
+            </a>  
+        {% endif %}
+    </div>
+</div>
+
+<!-- Horario, mapa y dirección -->
+<div class="container mt-5">
+    <div class="card background-amarillo rounded-5 border-0">
+        <div class="card-body">
+            <div class="row g-4 py-4 row-cols-1 row-cols-lg-3 d-flex align-items-center text-center">
+                <div class="feature col">
+                    <h5 class="text-uppercase">Horario</h5>
+                    {% if marketplace.opening_hours %}
+                    <h3>
+                    {% for day in description %}
+                    {{ day }} <br>
+                    {% endfor %}
+                    </h3>
+                    {% if is_open %}
+                    <h3><span class="badge text-bg-success mt-2">Abierta ahora</span></h3>
+                    <span class="small text-uppercase">Cierra en {{ closes_in }}</span>
+                    {% else %}
+                    <h3><span class="badge text-bg-danger mt-2">Cerrada ahora</span></h3>
+                    <span class="small text-uppercase">Abre en {{ opens_in }}</span>
+                    {% endif %}                
+                    {% else %}
+                    <p>
+                        No tenemos este dato. <br> Si lo conoce, <a href="{% url 'sugerencias' %}">colabore con nosotros</a> <i class="fa-solid fa-triangle-exclamation"></i>
+                    </p>
+                    {% endif %}
+                </div>
+                <div class="feature col">
+                    <div class="rounded-4" id="map" style="max-width: 800px; height: 300px;"></div>
+                </div>
+                <div class="feature col">
+                    <h5 class="text-uppercase">Dirección</h5>
+                    <p class="lead">
+                        {{ marketplace.address|capfirst }}
+                    </p>
+                    <p class="small">
+                        {{ marketplace.province }} | 
+                        {{ marketplace.canton }} |
+                        {{ marketplace.district }} |
+                        {{ marketplace.postal_code }}
+                    </p>
+                    <p class="fw-bold">¡Vamos!</p>
+                    <p class="text-center">
+                        <a target="_blank" href="https://ul.waze.com/ul?ll={{ marketplace.location.y|unlocalize }}%2C{{ marketplace.location.x|unlocalize }}&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
+                        class="btn btn-primary"><i class="fa-brands fa-waze"></i> Waze</a>
+                        <a target="_blank" href="https://www.google.com/maps/dir/?api=1&destination={{ marketplace.location.y|unlocalize }},{{ marketplace.location.x|unlocalize }}"
+                        class="btn btn-primary"><i class="fa-brands fa-google"></i> Maps</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>
+
+<!-- Anuncios -->
+<div class="container mt-5">
+    <div class="row p-2 d-flex align-items-center">
+        <div class="col-1 text-center">
+            <i class="fa-solid fa-newspaper"></i>
+        </div>
+        <div class="col-11">
+            <span class="fw-bolder">Título del anuncio para hacer en esta feria</span>
+            <br>
+            <span class="my-1">Este es un texto que describe la noticia que hay que dar aquí en este espacio tan límpido azul como el cielo.</span>
+            <br>
+            <span class="small text-muted">Nombre de la persona, 5 de agosto de 2023</span>
+        </div>
+    </div>
+</div>
+
+<!-- Amenidades -->
+{% if marketplace.food or marketplace.drinks or marketplace.handicrafts or marketplace.garden_centre or marketplace.florist or marketplace.dairy or marketplace.seafood or marketplace.butcher %}
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
+        <div class="col d-flex flex-column align-items-start gap-2">
+            <h1 class="display-deferia">¡Más para aprovechar la feria!</h1>
+            <p class="text-body-secondary">Ya aquí encuentra las frutas y verduras que necesita, ¡pero hay más! Es mejor llevar más bolsas (reutilizables) para poder traer todo.</p>
+            <h4>En esta feria puede encontrar <i class="fa-solid fa-circle-right"></i></h4>
+            <div class="background-fruit rounded-5 border-0 mt-3" style="width: 100%; height: 200px;"></div>
+        </div>
+
+        <div class="col">
+            <div class="row row-cols-2 row-cols-sm-3 g-4">
+                {% if marketplace.food %}
+                <div class="col d-flex flex-column gap-2">
+                    <div class="rojo">
+                        <i class="fa-solid fa-2x fa-utensils"></i>
+                    </div>
+                    <h4 class="fw-semibold mb-0 text-body-emphasis">Comidas</h4>
+                    <span class="text-body-secondary">¡Qué rico comerse un gallito en la feria!</span>
+                </div>
+                {% endif %}
+
+                {% if marketplace.drinks %}
+                <div class="col d-flex flex-column gap-2">
+                    <div class="amarillo">
+                        <i class="fa-solid fa-2x fa-glass-water"></i>
+                    </div>
+                    <h4 class="fw-semibold mb-0 text-body-emphasis">Bebidas</h4>
+                    <span class="text-body-secondary">¡No sea mozote! Tómese un jugo bien frío.</span>
+                </div>
+                {% endif %}
+
+                {% if True %}
+                <div class="col d-flex flex-column gap-2">
+                    <div class="verde">
+                        <i class="fa-solid fa-2x fa-jar"></i>
+                    </div>
+                    <h4 class="fw-semibold mb-0 text-body-emphasis">Condimentos</h4>
+                    <p class="text-body-secondary">Póngale sazón a ese picadillo que va a hacer.</p>
+                </div>
+                {% endif %}
+
+                {% if marketplace.handicrafts %}
+                <div class="col d-flex flex-column gap-2">
+                    <div class="cafe">
+                        <i class="fa-solid fa-2x fa-gift"></i>
+                    </div>
+                    <h4 class="fw-semibold mb-0 text-body-emphasis">Artesanías</h4>
+                    <p class="text-body-secondary">Apareció el regalo que andaba buscando.</p>
+                </div>
+                {% endif %}
+
+                {% if marketplace.garden_centre %}
+                <div class="col d-flex flex-column gap-2">
+                    <div class="azul">
+                        <i class="fa-solid fa-2x fa-seedling"></i>
+                    </div>
+                    <h4 class="fw-semibold mb-0 text-body-emphasis">Plantas</h4>
+                    <p class="text-body-secondary">Para darle más vida a la casa, una matica (otra).</p>
+                </div>
+                {% endif %}
+
+                {% if marketplace.florist %}
+                <div class="col d-flex flex-column gap-2">
+                    <div class="rosado">
+                        <i class="fa-solid fa-2x fa-spa"></i>
+                    </div>
+                    <h4 class="fw-semibold mb-0 text-body-emphasis">Flores</h4>
+                    <p class="text-body-secondary">Al partir de la feria, un fresco y una flor.</p>
+                </div>
+                {% endif %}
+
+                {% if marketplace.dairy %}
+                <div class="col d-flex flex-column gap-2">
+                    <div class="rojo">
+                        <i class="fa-solid fa-2x fa-cow"></i>
+                    </div>
+                    <h4 class="fw-semibold mb-0 text-body-emphasis">Lácteos</h4>
+                    <p class="text-body-secondary">¿Qué es eso? ¡Queso! Con una natilla que sí sabe.</p>
+                </div>
+                {% endif %}
+
+                {% if marketplace.seafood %}
+                <div class="col d-flex flex-column gap-2">
+                    <div class="verde">
+                        <i class="fa-solid fa-2x fa-fish"></i>
+                    </div>
+                    <h4 class="fw-semibold mb-0 text-body-emphasis">Pescadería</h4>
+                    <p class="text-body-secondary">Ese ceviche no se va a hacer solo.</p>
+                </div>
+                {% endif %}
+
+                {% if marketplace.butcher %}
+                <div class="col d-flex flex-column gap-2">
+                    <div class="rojo">
+                        <i class="fa-solid fa-2x fa-drumstick-bite"></i>
+                    </div>
+                    <h4 class="fw-semibold mb-0 text-body-emphasis">Carnicería</h4>
+                    <p class="text-body-secondary">Ya tiene las papas, falta el pollito. Aquí está.</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="container my-4"><i class="fa-solid fa-circle-info"></i> ¿Cuáles otros productos y servicios ofrece esta feria? <a href="sugerencias/ferias/{{ marketplace.marketplace_url }}">Ayúdenos</a> con esta información.</div>
+{% endif %}
+
+<!-- Infraestructura -->
+<div class="container">
+    <hr>
+    <div class="row row-cols-2 row-cols-sm-4 text-center g-4 py-3 d-flex justify-content-center">
+        <div class="col-sm-2{% if marketplace.fairground is None %} text-muted{% endif %}">
+            <i class="fa-solid fa-2x fa-location-dot"></i> <br>
+            {% if marketplace.fairground %}
+            Con campo ferial <br>
+            <i class="fa-solid fa-circle-check text-success"></i> <br>
+            {% elif marketplace.fairground == False %}
+            Sin campo ferial <br>
+            <i class="fa-solid fa-circle-exclamation text-warning"></i> <br>
+            {% else %}
+            Campo ferial <br>
+            <a role="button" data-bs-toggle="tooltip" data-bs-title="No tenemos este dato">
+                <i class="fa-solid fa-circle-question"></i>
+            </a>
+            {% endif %}
+        </div>
+        <div class="col-sm-2{% if marketplace.indoor is None %} text-muted{% endif %}">
+            <i class="fa-solid fa-2x fa-people-roof"></i> <br>
+            {% if marketplace.indoor %}
+            Bajo techo <br>
+            <i class="fa-solid fa-circle-check text-success"></i> <br>
+            {% elif marketplace.indoor == False %}
+            Al aire libre <br>
+            <i class="fa-solid fa-circle-exclamation text-warning"></i> <br>
+            {% else %}
+            Bajo techo <br>
+            <a role="button" data-bs-toggle="tooltip" data-bs-title="No tenemos este dato">
+                <i class="fa-solid fa-circle-question"></i>
+            </a>
+            {% endif %}
+        </div>
+        <div class="col-sm-2{% if marketplace.handwashing is None %} text-muted{% endif %}">
+            <i class="fa-solid fa-2x fa-hands-bubbles"></i> <br>
+            {% if marketplace.handwashing %}
+            Con lavabos <br>
+            <i class="fa-solid fa-circle-check text-success"></i> <br>
+            {% elif marketplace.handwashing == False %}
+            Sin lavabos <br>
+            <i class="fa-solid fa-circle-exclamation text-warning"></i> <br>
+            {% else %}
+            Lavabos <br>
+            <a role="button" data-bs-toggle="tooltip" data-bs-title="No tenemos este dato">
+                <i class="fa-solid fa-circle-question"></i>
+            </a>
+            {% endif %}
+        </div>
+        <div class="col-sm-2{% if marketplace.toilets is None %} text-muted{% endif %}">
+            <i class="fa-solid fa-2x fa-toilet"></i> <br>
+            {% if marketplace.toilets %}
+            Con sanitarios <br>
+            <i class="fa-solid fa-circle-check text-success"></i> <br>
+            {% elif marketplace.toilets == False %}
+            Sin sanitarios <br>
+            <i class="fa-solid fa-circle-exclamation text-warning"></i> <br>
+            {% else %}
+            Sanitarios <br>
+            <a role="button" data-bs-toggle="tooltip" data-bs-title="No tenemos este dato">
+                <i class="fa-solid fa-circle-question"></i>
+            </a>
+            {% endif %}
+        </div>
+        <div class="col-sm-2{% if marketplace.parking is None %} text-muted{% endif %}">
+            <i class="fa-solid fa-2x fa-square-parking"></i> <br>
+            {% if marketplace.parking == "surface" %}
+            Con estacionamiento <br>
+            <i class="fa-solid fa-circle-check text-success"></i> <br>
+            {% elif marketplace.parking != "surface" %}
+            Sin estacionamiento <br>
+            <i class="fa-solid fa-circle-exclamation text-warning"></i> <br>
+            {% else %}
+            Estacionamiento <br>
+            <a role="button" data-bs-toggle="tooltip" data-bs-title="No tenemos este dato">
+                <i class="fa-solid fa-circle-question"></i>
+            </a>
+            {% endif %}
+        </div>
+        <div class="col-sm-2{% if marketplace.bicycle_parking is None %} text-muted{% endif %}">
+            <i class="fa-solid fa-2x fa-bicycle"></i> <br>
+            {% if marketplace.bicycle_parking %}
+            Espacio de bicicletas <br>
+            <i class="fa-solid fa-circle-check text-success"></i> <br>
+            {% elif marketplace.bicycle_parking == False %}
+            Sin bicicletas <br>
+            <i class="fa-solid fa-circle-exclamation text-warning"></i> <br>
+            {% else %}
+            Bicicletas <br>
+            <a role="button" data-bs-toggle="tooltip" data-bs-title="No tenemos este dato">
+                <i class="fa-solid fa-circle-question"></i>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+    <hr>   
+</div>
+
+<!-- Tamaño -->
+<div class="container">
+    <div class="row text-center mt-5 d-flex justify-content-center">
+        <div class="col-6 small text-uppercase">
+            Tamaño de la feria
+            {% if marketplace.size == None %}
+            <a role="button" class="rojo" data-bs-toggle="tooltip" data-bs-title="No tenemos este dato">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row row-cols-4 text-center my-1 d-flex justify-content-center">
+        <div class="col-2 circle-size{% if marketplace.size == 'S' %} size-s{% endif %}">S</div>
+        <div class="col-2 circle-size{% if marketplace.size == 'M' %} size-m{% endif %}">M</div>
+        <div class="col-2 circle-size{% if marketplace.size == 'L' %} size-l{% endif %}">L</div>
+        <div class="col-2 circle-size{% if marketplace.size == 'XL' %} size-xl{% endif %}">XL</div>
+    </div>
+    <div class="row text-center mb-5 d-flex justify-content-center">
+        <div class="col-6 small text-muted fst-italic">
+            <a tabindex="0" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="Tamaños de las ferias" data-bs-content="Nuestra clasificación es la siguiente: pequeña (S): menos de 50 tramos, mediana (M): entre 50 y 100 tramos, grande (L): entre 100 y 200 tramos, extra grande (XL): más de 200.">¿Qué es esto?</a>
+        </div>
+    </div>
+</div>
+
+<!-- Ferias cercanas -->
+<div class="container my-5">
+    <hr>
+    <div class="row row-cols-1 row-cols-md-3 d-flex align-items-center">
+        <div class="col-md-5">
+            <h1 class="title-deferia">Otras ferias cercanas</h1>
+            <p>¿Qué tal visitar alguna otra feria? Estas son las más próximas.</p>
+        </div>
+        <div class="col-md-6">
+            <div class="row d-flex align-items-center">
+                {% for marketplace in closest_marketplaces %}
+                <div class="col-4">
+                    <h6><a class="link-dark" href="/ferias/{{ marketplace.marketplace_url }}">{{ marketplace.name }}</a></h6>
+                    <p class="text-muted">a {{ marketplace.distance }} km</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-md-1 text-center">
+            <a href="/ferias/buscar" class="link-dark">
+                <i class="fa-solid fa-2x fa-magnifying-glass"></i> <br>
+                <span class="small">Buscar más</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Selección de productos -->
+<div class="container">
+<p>¡Ayúdenos! ¿Cuáles productos sabe usted que venden en esta feria?</p>
+</div>
+
+<!-- Contacto -->
+<div class="container mt-5">
+    <div class="card background-verde text-white rounded-5 border-0">
+        <div class="container px-4 py-1">
+            <div class="row g-4 py-4 row-cols-1 row-cols-sm-4 d-flex align-items-center text-center">
+                <div class="feature col">
+                    <h1>Contacto</h1>
+                </div>
+                <div class="feature col">
+                    <i class="fa-solid fa-address-card"></i> <br>
+                    <span class="text-uppercase small">Administración</span> <br>
+                    {% if marketplace.operator %}
+                    {{ marketplace.operator }}
+                    {% if marketplace.branch %}
+                    <br><em>División regional</em>: {{ marketplace.branch }}
+                    {% endif %}
+                    {% else %}
+                    <em>No tenemos este dato</em>
+                    {% endif %}
+                </div>
+                <div class="feature col">
+                    <i class="fa-solid fa-phone"></i> <br>
+                    <span class="text-uppercase small">Teléfono</span> <br>
+                    {% if marketplace.phone %}
+                    <a href="tel:506{{ marketplace.phone }}" class="text-white">{{ marketplace.phone }}</a>
+                    {% else %}
+                    <em>No tenemos este dato</em>
+                    {% endif %}
+                </div>
+                <div class="feature col">
+                    <i class="fa-solid fa-at"></i> <br>
+                    <span class="text-uppercase small">Correo electrónico</span> <br>
+                    {% if marketplace.email %}
+                    <a href="mailto:{{ marketplace.email }}" class="text-white">{{ marketplace.email }}</a>
+                    {% else %}
+                    <em>No tenemos este dato</em>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>
+
 
 <p>
 <div class="card" style="width: 200px;">
@@ -16,24 +445,6 @@
     </div>
 </div>    
 </p>
-
-<h1 class="display-2" style="font-weight: 900;">Feria de {{ marketplace.name }}</h1>
-
-<h3>Nombre alternativo</h3>
-
-<p>{{ marketplace.name_alternate }}</p>
-
-<h3>Descripción</h3>
-
-<p>{{ marketplace.description }}</p>
-
-<p>Fecha de fundación: {{ marketplace.opening_date }}</p>
-
-<h3>Horario</h3>
-{% for horario in horarios_humanizados %}
-
-   <p>{{ horario }}</p>
-{% endfor %}
 
 <h3>Fotos</h3>
 
@@ -54,80 +465,12 @@
 <p>No hay anuncios</p>
 {% endif %}
 
-<h3>Ubicación</h3>
-
-<p>
-<div id="map" style="width: 300px; height: 300px;"></div>
-</p>
-
-<h3>Dirección</h3>
-
-<p>
-    {{ marketplace.province }} |
-    {{ marketplace.canton }} |
-    {{ marketplace.district }} |
-    {{ marketplace.postal_code }} (código postal)
-</p>
-
-<p>
-    {{ marketplace.address }}
-</p>
-
-<p>
-    <a target="_blank"
-        href="https://ul.waze.com/ul?ll={{ marketplace.location.y|unlocalize }}%2C{{ marketplace.location.x|unlocalize }}&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
-        class="btn btn-primary">Waze</a>
-    <a target="_blank"
-        href="https://www.google.com/maps/dir/?api=1&destination={{ marketplace.location.y|unlocalize }},{{ marketplace.location.x|unlocalize }}"
-        class="btn btn-primary">Google Maps</a>
-</p>
-
-<h3>Tamaño</h3>
-
-<p>{{ marketplace.size }}</p>
-
-<h3>Otras ferias cercanas</h3>
-
-<ul>
-    {% for marketplace in closest_marketplaces %}
-    <li><a href="/ferias/{{ marketplace.marketplace_url }}">{{ marketplace.name }}</a></li>
-    {% endfor %}
-</ul>
-
-<h3>Infraestructura</h3>
-
-{% include 'infrastructure.html' %}
-
-<h3>Servicios</h3>
-
-{% include 'services.html' %}
-
 <h3>Productos</h3>
 
 <p>Lista de productos disponibles en esta feria (todavía no hay datos al respecto, quizá es mejor no ponerlo todavía).
 </p>
 
-<h3>Contacto</h3>
-
-<dl>
-    <dt>Teléfono</dt>
-    <dd>{{ marketplace.phone }}</dd>
-    <dt>Correo electrónico</dt>
-    <dd><a href="mailto:{{ marketplace.email }}">{{ marketplace.email }}</a></dd>
-    <dt>Sitio web</dt>
-    <dd><a href="{{ marketplace.website }}" target="_blank">{{ marketplace.website }}</a></dd>
-</dl>
-
-<h3>Administración</h3>
-
-<dl>
-    <dt>Operador</dt>
-    <dd>{{ marketplace.operator }}</dd>
-    <dt>División regional</dt>
-    <dd>{{ marketplace.branch }}</dd>
-</dl>
-
-
+<div class="crowdsourcing-box rounded-4 background-amarillo shadow">Ayúdenos</div>
 
 <!-- Leaflet Map -->
 <script>
