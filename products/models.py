@@ -13,6 +13,7 @@ class Product(models.Model):
         ("legumbre", "Legumbre (leguminosa)"),
         ("tubérculo", "Tubérculo o raíz"),
         ("condimento", "Condimento (especia)"),
+        ("hierba", "Hierba aromática"),
         ("otro", "Otra categoría"),
     ]
 
