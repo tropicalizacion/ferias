@@ -15,10 +15,11 @@ def cover(request):
 
 def index(request):
     if request.method == "POST":
-        marketplaces_match, marketplaces_others, marketplaces_keyword, keyword, query_text = search_marketplaces(request.POST)
+        marketplaces_match, marketplaces_others, marketplaces_keyword, keyword, query_text, by_location = search_marketplaces(request.POST)
         context = {
             "show_results": True,
             "query_text": query_text,
+            "by_location": by_location,
             "keyword": keyword,
             "marketplaces_match": marketplaces_match,
             "marketplaces_others": marketplaces_others,
@@ -31,6 +32,10 @@ def index(request):
 
 def acerca(request):
     return render(request, "acerca.html")
+
+
+def sobre_ferias(request):
+    return render(request, "sobre-ferias.html")
 
 
 def ingresar(request):
