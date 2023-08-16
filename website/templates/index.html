@@ -10,9 +10,10 @@
 
 <!-- Hero -->
 <div class="px-4 pt-3 pb-5 text-center background-verde">
-    <div class="col-lg-6 mx-auto">
-        <h1 class="display-3 my-5 text-white title-deferia">La feria es el lugar de la variedad y los buenos precios de los productos frescos.</h1>
-        <div class="d-flex justify-content-center">
+    <div class="card col-lg-6 mx-auto bg-transparent border-0">
+        <h1 class="display-3 my-5 text-white title-deferia">La feria es el lugar de la variedad, la frescura y los buenos precios</h1>
+        <h3 class="title-deferia text-white">…y también es el lugar <br><span id="hero"></span></h3>
+        <div class="d-flex justify-content-center mt-5">
             <a href="#search" class="link-dark text-decoration-none">
                 <div class="vstack circle-cta background-amarillo shadow-lg">
                     <div class="verde">¡Vamos!</div>
@@ -20,7 +21,9 @@
                 </div>
             </a>
         </div>
-        <img src="{% static 'images/sandia.png' %}" width="75px" class="floating-watermelon">
+        <img src="{% static 'images/banano.png' %}" width="75px" class="index-sticker-1">
+        <img src="{% static 'images/lima.png' %}" width="75px" class="index-sticker-2">
+        <img src="{% static 'images/berenjena.png' %}" width="75px" class="index-sticker-3">
     </div>
 </div>
 
@@ -28,93 +31,53 @@
 {% include 'search.html' %}
 
 <!-- Por qué (beneficios) -->
-<div class="background-rosado border-0">
-    <div class="container px-4 py-1" id="featured-3">
+<div class="background-azul text-white border-0">
+    <div class="container px-4 py-1">
         <div class="row g-4 py-4 row-cols-1 row-cols-md-3">
             <div class="feature col">
-                <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+                <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3 background-amarillo rounded p-2">
                     <img src="{% static 'images/stickers/fresa.png' %}" alt="" height="50px">
                 </div>
                 <h2 class="title-deferia">Es más saludable</h2>
-                <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                <a href="#" class="icon-link">
-                    Leer más >
-                </a>
+                <p>La alimentación basada en productos frescos es la mejor para nuestra salud y la feria es el mejor lugar para conseguirlos.</p>
             </div>
             <div class="feature col">
-                <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+                <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3 background-amarillo rounded p-2">
                     <img src="{% static 'images/stickers/tomate.png' %}" alt="" height="50px">
                 </div>
                 <h2 class="title-deferia">Es más barato</h2>
-                <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                <a href="#" class="icon-link">
-                    Leer más >
-                </a>
+                <p>Estudio tras estudio demuestra lo que ya sabíamos: cuando compramos en la feria, compramos más barato.</p>
             </div>
             <div class="feature col">
-                <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+                <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3 background-amarillo rounded p-2">
                     <img src="{% static 'images/stickers/sandia.png' %}" alt="" height="50px">
                 </div>
                 <h2 class="title-deferia">Es más nuestro</h2>
-                <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                <a href="#" class="icon-link">
-                    Leer más >
-                </a>
+                <p>La feria es de la comunidad y para la comunidad. Aquí encontramos a la gente que conocemos, vendiendo la cosecha de su trabajo.</p>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Información de productos -->
-
-<div class="container pt-5 px-3">
-    <div class="row g-4 pt-4 pb-5 row-cols-1 row-cols-lg-2 d-flex align-items-center">
-        <div class="col col-md-8 mx-auto">
-            <h1 class="title-deferia">
-                La variedad, la frescura y los precios de la feria... solo en la feria
-            </h1>
-            <img src="{% static 'images/stickers/sandia.png' %}" width="75px" class="floating-watermelon">
-        </div>
-        <div class="col col-md-4 mx-auto">
-            <div class="card mb-3 rounded-4 background-naranja border-0 text-white">
-                <div class="card-body">
-                    <h4 class="card-title title-deferia">Hola</h4>
-                    <p class="card-text lead">Quiero una feria cerca de mí</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Contenidos del sitio: ferias y productos -->
-
-<div class="container pt-5 pb-5 px-3">
-    <div class="row g-4 pt-4 pb-5 row-cols-1 row-cols-lg-2">
-        <div class="col-md-6 mx-auto">
-            <div class="card mb-3 rounded-4 background-azul border-0 text-white">
-                <div class="card-body">
-                    <h4 class="card-title title-deferia">Hola</h4>
-                    <p class="card-text lead">Quiero una feria cerca de mí, que abra los sábados, con campo ferial, bajo techo, con floristería…</p>
-                </div>
-                <img src="{% static 'images/stickers/sandia.png' %}" width="75px" class="floating-watermelon">
-            </div>
-            <h3 class="card-title title-deferia my-3">Más de 80 ferias</h3>
-            <p class="card-text lead">Conozca más sobre las ferias del agricultor en Costa Rica</p>
-        </div>
-        <div class="col-md-6 mx-auto">
-            <div class="card mb-3 rounded-4 background-verde border-0 text-white">
-                <div class="card-body">
-                    <h4 class="card-title title-deferia">Hola</h4>
-                    <p class="card-text lead">Quiero una feria cerca de mí, que abra los sábados, con campo ferial, bajo techo, con floristería…</p>
-                </div>
-                <img src="{% static 'images/stickers/cebolla.png' %}" width="65px" class="floating-onion">
-            </div>
-            <h3 class="card-title title-deferia my-3">Más de 100 productos</i></h3>
-            <p class="card-text lead">Explore la variedad frutas, verduras, granos, legumbres y más que conseguimos en la feria</p>
-        </div>
-    </div>
-</div>
-
+<!-- TypeIt JS -->
+<script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+<script>
+new TypeIt("#hero", {
+    speed: 50,
+    loop: true,
+    startDelay: 900,
+    })
+    .type("para apoyar a la comunidad", { delay: 1500 })
+    .delete(21, { delay: 100 })
+    .type("un jugo bien frío", { delay: 1500 })
+    .delete(17, { delay: 100 })
+    .type("una sonrisa amable", { delay: 1500 })
+    .delete(18, { delay: 100 })
+    .type("un jocote de feria", { delay: 1500 })
+    .delete(18, { delay: 100 })
+    .type("saludar a la gente", { delay: 1500 })
+    .go();
+</script>
 
 <!-- JavaScript search.js -->
 <script src="{% static 'js/search.js' %}"></script>
