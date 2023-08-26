@@ -4,7 +4,29 @@
 
 {% block page_title %} {{ product.common_name|capfirst }} {% endblock %}
 
+{% block bg-navbar %} background-rojo {% endblock %}
+
 {% block main %}
+
+<!-- Hero -->
+<div class="px-4 pt-3 pb-5 text-center background-rojo">
+    <h1 class="text-white fw-bold">¡Productos de feria!</h1>
+    <h1 class="display-1 text-white title-deferia">{{ product.common_name|capfirst }}</h1>
+    <div class="row row-cols-1 row-cols-md-2 text-white g-4 mt-3 d-flex justify-content-center">
+        <div class="col col-md-3">
+            <div class="mb-4 rojo">
+                <i class="fa-solid fa-2x fa-calendar-check"></i>
+            </div>
+            <h5 class="fw-bolder">Hola</h5>
+        </div>
+        <div class="col col-md-3">
+            <div class="mb-4 amarillo">
+                <i class="fa-solid fa-2x fa-map-location-dot"></i>
+            </div>
+            Entonces
+        </div>
+    </div>
+</div>
 
 <p>
     <div class="card" style="width: 200px;">
