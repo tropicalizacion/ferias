@@ -30,7 +30,7 @@
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Nombre de la feria</h3>
                     <p>Nombre principal de la feria, que aparece en la página de nuestro sitio.</p>
                     <p>
-                        <input type="text" class="underline-input" id="name" name="name" placeholder="Nombre de la feria">
+                        <input type="text" class="underline-input w-100" id="name" name="name" placeholder="Nombre de la feria">
                         <small class="text-muted">
                             Actual: {{ marketplace.name }}
                         </small>
@@ -46,7 +46,7 @@
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Nombres alternativos</h3>
                     <p>¿Hay algún otro nombre por el cual sea conocida la feria?</p>
                     <p>
-                        <input type="text" class="underline-input" id="name_alternate" name="name_alternate" placeholder="Nombres alternativos">
+                        <input type="text" class="underline-input w-100" id="name_alternate" name="name_alternate" placeholder="Nombres alternativos">
                         <small class="text-muted">
                             Actual: {% if marketplace.name_alternate %}{{ marketplace.name_alternate }}{% else %}(sin registro actual){% endif %}
                         </small>
@@ -62,7 +62,7 @@
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Operador</h3>
                     <p>Nombre de la entidad encargada de la operación de la feria.</p>
                     <p>
-                        <input type="text" class="underline-input" id="operator" name="operator" placeholder="Operador">
+                        <input type="text" class="underline-input w-100" id="operator" name="operator" placeholder="Operador">
                         <small class="text-muted">
                             Actual: {% if marketplace.operator %}{{ marketplace.operator }}{% else %}(sin registro actual){% endif %}
                         </small>
@@ -141,7 +141,7 @@
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Descripción</h3>
                     <p>¿Hay alguna característica de la feria que quiere compartir con nosotros? Por ejemplo: una reseña histórica, anécdotas o similar.</p>
                     <p>
-                        <textarea class="underline-input" rows="5" id="description" name="description" placeholder="Descripción"></textarea>
+                        <textarea class="underline-input w-100" rows="5" id="description" name="description" placeholder="Descripción"></textarea>
                     </p>
                 </div>
             </div>
@@ -154,7 +154,7 @@
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Dirección</h3>
                     <p>¿Cuál es la dirección o indicaciones utilizadas para llegar a la feria? ¿Ha cambiado esta dirección recientemente?</p>
                     <p>
-                        <textarea class="underline-input" rows="5" id="address" name="address" placeholder="Dirección"></textarea>
+                        <textarea class="underline-input w-100" rows="5" id="address" name="address" placeholder="Dirección"></textarea>
                     </p>
                 </div>
             </div>
@@ -228,7 +228,7 @@
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Fecha de inauguración</h3>
                     <p>¿Conoce la fecha aproximada de inauguración de esta feria?</p>
                     <p>
-                        <input type="date" class="underline-input" id="opening_date" name="opening_date">
+                        <input type="date" class="underline-input w-100" id="opening_date" name="opening_date">
                         <small class="text-muted">
                             Actual: {% if marketplace.opening_date %}{{ marketplace.opening_date }}{% else %}(sin registro actual){% endif %}
                         </small>
@@ -574,7 +574,7 @@
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Comentarios</h3>
                     <p>¿Tiene otras sugerencias o comentarios para nuestro sitio y la feria de {{ marketplace.name }}? ¿Hay otras amenidades o infraestructura que ofrece la feria? Agradecemos nos lo indique aquí.</p>
                     <p>
-                        <textarea class="underline-input" rows="5" id="comments" name="comments" placeholder="Comentarios"></textarea>
+                        <textarea class="underline-input w-100" rows="5" id="comments" name="comments" placeholder="Comentarios"></textarea>
                     </p>
                 </div>
             </div>
@@ -584,7 +584,7 @@
             <div class="card-body text-white">
                 <p class="lead">
                     Su nombre (opcional):
-                    <input type="text" class="underline-input" id="submitted_by" name="submitted_by" style="color: white; font-weight: bold;">
+                    <input type="text" class="underline-input w-100" id="submitted_by" name="submitted_by" style="color: white; font-weight: bold;">
                 </p>
                 <div class="d-flex justify-content-center">
                     <button onclick="confirmSubmission(event)" class="btn btn-warning btn-lg px-4 gap-3">Enviar sugerencias</button>
