@@ -33,6 +33,7 @@ function addOpeningDaysInput() {
     // Create the select element 1
     var selectElement1 = document.createElement("select");
     selectElement1.classList.add("underline-input");
+    selectElement1.classList.add("w-100");
     selectElement1.setAttribute("id", "day_opens_" + inputCount);
     selectElement1.setAttribute("name", "day_opens_" + inputCount);
     selectElement1.setAttribute("aria-label", "Seleccione una opción");
@@ -79,6 +80,7 @@ function addOpeningDaysInput() {
     // Create the time input element 2
     var inputElement2 = document.createElement("input");
     inputElement2.classList.add("underline-input");
+    inputElement2.classList.add("w-100");
     inputElement2.setAttribute("type", "time");
     inputElement2.setAttribute("id", "hour_opens_" + inputCount);
     inputElement2.setAttribute("name", "hour_opens_" + inputCount);
@@ -102,6 +104,7 @@ function addOpeningDaysInput() {
     // Create the time input element 3
     var inputElement3 = document.createElement("input");
     inputElement3.classList.add("underline-input");
+    inputElement3.classList.add("w-100");
     inputElement3.setAttribute("type", "time");
     inputElement3.setAttribute("id", "hour_closes_" + inputCount);
     inputElement3.setAttribute("name", "hour_closes_" + inputCount);

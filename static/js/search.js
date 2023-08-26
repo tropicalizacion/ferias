@@ -42,6 +42,7 @@ function displaySuggestions(predictions, status) {
     predictions.forEach(prediction => {
         const placeName = prediction.description;
         const listItem = document.createElement("li");
+        listItem.setAttribute("role", "button");
         listItem.textContent = placeName;
         listItem.addEventListener("click", function () {
             document.getElementById("some-place").value = placeName;
