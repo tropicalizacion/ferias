@@ -29,7 +29,7 @@ def ferias(request):
 
     if request.method == "POST":
 
-        marketplaces_match, marketplaces_others, marketplaces_keyword, keyword, query_text = search_marketplaces(request.POST)
+        marketplaces_match, marketplaces_others, marketplaces_keyword, keyword, query_text, by_location = search_marketplaces(request.POST)
         context = {
             "show_results": True,
             "marketplaces": marketplaces,
@@ -38,6 +38,7 @@ def ferias(request):
             "marketplaces_others": marketplaces_others,
             "marketplaces_keyword": marketplaces_keyword,
             "query_text": query_text,
+            "by_location": by_location,
             "keyword": keyword,
         }
         return render(request, "results.html", context)
@@ -185,6 +186,7 @@ def search_marketplaces(submission):
     location = submission.get("location")
     if location == "any_location":
         marketplaces = Marketplace.objects.all().order_by("name")
+        by_location = "any"
     elif location == "my_location":
         longitude = float(submission.get("my_longitude"))
         latitude = float(submission.get("my_latitude"))
@@ -192,6 +194,7 @@ def search_marketplaces(submission):
         marketplaces = Marketplace.objects.annotate(
             distance=Distance("location", coordinates)
         ).order_by("distance")
+        by_location = "my"
     elif location == "some_location":
         longitude = float(submission.get("some_longitude"))
         latitude = float(submission.get("some_latitude"))
@@ -199,6 +202,7 @@ def search_marketplaces(submission):
         marketplaces = Marketplace.objects.annotate(
             distance=Distance("location", coordinates)
         ).order_by("distance")
+        by_location = "some"
 
     # Search by day of the week
     day = submission.get("day")
@@ -276,9 +280,17 @@ def search_marketplaces(submission):
     # Get other marketplaces
 
     marketplaces_others = marketplaces.difference(marketplaces_match)
+    if by_location != "any":
+        marketplaces_others = marketplaces_others.order_by("distance")
+
+    if by_location != "any":
+        for marketplace in marketplaces_match:
+            marketplace.distance = round(marketplace.distance.km, 1)
+        for marketplace in marketplaces_others:
+            marketplace.distance = round(marketplace.distance.km, 1)
 
     # Query text
 
     query_text = submission.get("query_text")
 
-    return marketplaces_match, marketplaces_others, marketplaces_keyword, keyword, query_text
+    return marketplaces_match, marketplaces_others, marketplaces_keyword, keyword, query_text, by_location

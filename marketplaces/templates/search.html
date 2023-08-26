@@ -2,61 +2,80 @@
 
 <!-- Mostrar resultados -->
 {% if show_results %}
-<div class="container">
-    <div class="mt-2 p-3">
-        <div class="text-center">
-            <p><i class="fa-solid fa-3x fa-magnifying-glass"></i></p>
-            <p class="lead">Resultados para la búsqueda de una feria {{ query_text }}</p> 
+
+<!-- Modal -->
+<div class="modal fade" id="resultados" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 fw-bolder verde" id="exampleModalLabel">
+            <img src="{% static 'images/logos/logo_verde.png' %}" width="60px" alt="Logo de feria">
+          </h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <!-- Resultados por palabra clave -->
-        {% if marketplaces_keyword %}
-        <h5>Resultados por palabra clave ({{ marketplaces_keyword|length }})</h5>
-        <p>Otras ferias que cumplen el mismo criterio de búsqueda de ubicación y día de la semana y además tienen algo similar a la palabra clave "{{ keyword }}" en el nombre o la descripción.</p>
-        <ul>
-            {% for marketplace in marketplaces_keyword %}
-            <li>
-                <a href="/ferias/{{ marketplace.marketplace_url }}">
-                    {{ marketplace.name }}
-                </a>
-            </li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        <!-- Resultados exactos -->
-        {% if marketplaces_match|length == 0 %}
-        <p class="lead"><i class="fa-solid fa-triangle-exclamation"></i> No hay resultados exactos de la búsqueda. Por favor intente de nuevo con otros criterios.</p>
-        {% else %}
-        <h5>Resultados ({{ marketplaces_match|length }})</h5>
-        <ul>
-            {% for marketplace in marketplaces_match %}
-            <li>
-                <a href="/ferias/{{ marketplace.marketplace_url }}">
-                    {{ marketplace.name }}
-                </a>
-            </li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        <!-- Resultados similares -->
-        {% if marketplaces_others|length > 0 %}
-        <h5>Resultados similares ({{ marketplaces_others|length }})</h5>
-        <p>Otras ferias que cumplen el mismo criterio de búsqueda de ubicación y día de la semana pero no cumplen con los otros criterios de tamaño, infraestructura o amenidades.</p>
-        <ul>
-            {% for marketplace in marketplaces_others %}
-            <li>
-                <a href="/ferias/{{ marketplace.marketplace_url }}">
-                    {{ marketplace.name }}
-                </a>
-            </li>
-            {% endfor %}
-        </ul>
-        {% endif %}
+        <div class="modal-body">
+            <p class="lead">Resultados para la búsqueda de una feria {{ query_text }}</p>
+            <!-- Resultados por palabra clave -->
+            {% if marketplaces_keyword %}
+            <h5>Resultados por palabra clave ({{ marketplaces_keyword|length }})</h5>
+            <p class="lead">Otras ferias que cumplen el mismo criterio de búsqueda de ubicación y día de la semana y además tienen algo similar a la palabra clave "{{ keyword }}" en el nombre o la descripción.</p>
+            <ul>
+                {% for marketplace in marketplaces_keyword %}
+                <li>
+                    <a class="link-dark link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" style="font-weight: 800;" href="/ferias/{{ marketplace.marketplace_url }}">
+                        {{ marketplace.name }} {% if by_location != "any" %}<span class="small text-muted">(a {{ marketplace.distance }} km)</span>{% endif %}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <!-- Resultados exactos -->
+            {% if marketplaces_match|length == 0 %}
+            <p class="text-center"><strong>¡Qué vaina!</strong> <br> No encontramos ni papa <br> <i class="fa-regular fa-face-surprise"></i> <br> Por favor intente de nuevo con otros criterios de búsqueda.</p>
+            {% else %}
+            <h5>Resultados exactos ({{ marketplaces_match|length }})</h5>
+            <p class="small text-muted">{% if by_location == "my" %}(Distancia desde su ubicación actual){% elif by_location == "some" %}(Distancia desde el lugar elegido){% endif %}</p>
+            <ul>
+                {% for marketplace in marketplaces_match %}
+                <li>
+                    <a class="link-dark link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" style="font-weight: 800;" href="/ferias/{{ marketplace.marketplace_url }}">
+                        {{ marketplace.name }} {% if by_location != "any" %}<span class="small text-muted">(a {{ marketplace.distance }} km)</span>{% endif %}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <!-- Resultados similares -->
+            {% if marketplaces_others|length > 0 %}
+            <h5>Resultados similares ({{ marketplaces_others|length }})</h5>
+            <p>Otras ferias que cumplen el mismo criterio de búsqueda de ubicación y día de la semana pero no cumplen con los otros criterios de tamaño, infraestructura o amenidades.</p>
+            <ul>
+                {% for marketplace in marketplaces_others %}
+                <li>
+                    <a class="link-dark link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" style="font-weight: 800;" href="/ferias/{{ marketplace.marketplace_url }}">
+                        {{ marketplace.name }} {% if by_location != "any" %}<span class="small text-muted">(a {{ marketplace.distance }} km)</span>{% endif %}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" href="search">Nueva búsqueda</button>
+        </div>
+      </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function(){
+        $("#resultados").modal('show');
+    });
+</script>
 {% endif %}
 
 <!-- Buscador -->
-<div class="container px-4 pt-4">
+<div class="container px-4 pt-4" id="search">
     <div class="row">
         <div class="col text-center">
             <h1 class="display-5 display-deferia rojo">¿Dónde está mi feria?</h1>
@@ -64,7 +83,7 @@
         </div>
     </div>
 </div>
-<div class="container px-4 bt-3 pb-5" id="search">
+<div class="container px-4 bt-3 pb-5">
     <form method="POST">
         {% csrf_token %}
         <!-- Criterios de búsqueda -->
@@ -76,7 +95,7 @@
                 </span>
                 <div>
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Por ubicación</h3>
-                    <p>Hay ferias en las siete provincias, ¿dónde quiere buscar su feria?</p>
+                    <p>Hay ferias en las siete provincias, ¿dónde quiere buscar la suya?</p>
                     <p>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" id="any-location" name="location" value="any_location" checked>
@@ -152,7 +171,7 @@
                 </span>
                 <div>
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Por tamaño</h3>
-                    <p>Las ferias tienen desde 20 hasta 400 tramos de ventas, ¿cuál es su preferencia?</p>
+                    <p>Las ferias tienen desde 20 hasta 400 tramos de ventas, ¿qué prefiere?</p>
                     <p>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="size" value="any_size" id="any-size" checked>
@@ -195,7 +214,7 @@
                 </span>
                 <div>
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Por infraestructura</h3>
-                    <p>Cada feria tiene sus facilidades, ¿cuáles prefiere usted?</p>
+                    <p>Cada feria tiene sus facilidades, ¿está buscando alguna?</p>
                     <p>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="fairground" name="fairground" value="True">
@@ -271,7 +290,7 @@
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Por palabra clave</h3>
                     <p>¿Busca alguna palabra clave en el nombre o la descripción de la feria?</p>
                     <p>
-                        <input type="text" class="underline-input" id="keyword" name="keyword" placeholder="Palabra clave">
+                        <input type="text" class="underline-input w-100" id="keyword" name="keyword" placeholder="Palabra clave">
                     </p>
                 </div>
             </div>

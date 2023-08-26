@@ -60,65 +60,60 @@
 </div>
 
 <!-- Horario, mapa y dirección -->
-<div class="container mt-5">
-    <div class="card background-amarillo rounded-5 border-0">
-        <div class="card-body">
-            <div class="row g-4 py-4 row-cols-1 row-cols-lg-3 d-flex align-items-center text-center">
-                <div class="feature col">
-                    <h5 class="text-uppercase">Horario</h5>
-                    {% if marketplace.opening_hours %}
-                    <h3>
-                    {% for day in description %}
-                    {{ day }} <br>
-                    {% endfor %}
-                    </h3>
-                    {% if is_open %}
-                    <h3><span class="badge text-bg-success mt-2">Abierta ahora</span></h3>
-                    <span class="small text-uppercase">Cierra en {{ closes_in }}</span>
-                    {% else %}
-                    <h3><span class="badge text-bg-danger mt-2">Cerrada ahora</span></h3>
-                    <span class="small text-uppercase">Abre en {{ opens_in }}</span>
-                    {% endif %}                
-                    {% else %}
-                    <p>
-                        No tenemos este dato. <br> Si lo conoce, <a href="{% url 'sugerencias' %}">colabore con nosotros</a> <i class="fa-solid fa-triangle-exclamation"></i>
-                    </p>
-                    {% endif %}
-                </div>
-                <div class="feature col">
-                    <div class="rounded-4" id="map" style="max-width: 800px; height: 300px;"></div>
-                </div>
-                <div class="feature col">
-                    <h5 class="text-uppercase">Dirección</h5>
-                    <p class="lead">
-                        {{ marketplace.address|capfirst }}
-                    </p>
-                    <p class="small">
-                        {{ marketplace.province }} | 
-                        {{ marketplace.canton }} |
-                        {{ marketplace.district }} |
-                        {{ marketplace.postal_code }}
-                    </p>
-                    <p class="fw-bold">¡Vamos!</p>
-                    <p class="text-center">
-                        <a target="_blank" href="https://ul.waze.com/ul?ll={{ marketplace.location.y|unlocalize }}%2C{{ marketplace.location.x|unlocalize }}&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
-                        class="btn btn-primary"><i class="fa-brands fa-waze"></i> Waze</a>
-                        <a target="_blank" href="https://www.google.com/maps/dir/?api=1&destination={{ marketplace.location.y|unlocalize }},{{ marketplace.location.x|unlocalize }}"
-                        class="btn btn-primary"><i class="fa-brands fa-google"></i> Maps</a>
-                    </p>
-                </div>
-            </div>
+<div class="container my-5">
+    <div class="row g-4 row-cols-1 row-cols-lg-3">
+        <div class="feature col">
+            <h2 class="title-deferia">Horario</h2>
+            {% if marketplace.opening_hours %}
+            <p class="lead">
+            {% for day in description %}
+            {{ day }} <br>
+            {% endfor %}
+            </p>
+            {% if is_open %}
+            <h5 class="verde"><i class="fa-solid fa-circle-check"></i> Abierta ahora</h5>
+            <span class="small text-uppercase">Cierra en {{ closes_in }}</span>
+            {% else %}
+            <h5 class="rojo"><i class="fa-solid fa-lock"></i> Cerrada ahora</h5>
+            <span class="small text-uppercase">Abre en {{ opens_in }}</span>
+            {% endif %}                
+            {% else %}
+            <p>
+                No tenemos este dato. <br> Si lo conoce, <a href="{% url 'sugerencias' %}">colabore con nosotros</a> <i class="fa-solid fa-triangle-exclamation"></i>
+            </p>
+            {% endif %}
         </div>
-    </div>    
+        <div class="feature col">
+            <h2 class="title-deferia">Dirección</h2>
+            <p class="lead">
+                {{ marketplace.address|capfirst }}
+            </p>
+            <p class="small">
+                {{ marketplace.province }} | 
+                {{ marketplace.canton }} |
+                {{ marketplace.district }} |
+                {{ marketplace.postal_code }}
+            </p>
+            <p class="fw-bold">¡Vamos!
+                <a target="_blank" href="https://ul.waze.com/ul?ll={{ marketplace.location.y|unlocalize }}%2C{{ marketplace.location.x|unlocalize }}&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"><span class="badge text-bg-primary"><i class="fa-solid fa-car-side"></i> Waze</span></a>
+                <a target="_blank" href="https://www.google.com/maps/dir/?api=1&destination={{ marketplace.location.y|unlocalize }},{{ marketplace.location.x|unlocalize }}"><span class="badge text-bg-primary"><i class="fa-brands fa-google"></i> Maps</span></a>
+            </p>
+        </div>
+        <div class="feature col">
+            <h2 class="title-deferia">Mapa</h2>
+            <div class="rounded-4" id="map" style="max-width: 800px; height: 200px;"></div>
+        </div>
+    </div>  
 </div>
 
-<!-- Anuncios -->
-<div class="container mt-5">
-    <div class="row p-2 d-flex align-items-center">
-        <div class="col-1 text-center">
-            <i class="fa-solid fa-newspaper"></i>
+<!-- Anuncios
+<div class="container my-5">
+    <hr>
+    <div class="row p-2 d-flex align-items-center mb-5">
+        <div class="col-2 text-center">
+            <i class="fa-solid fa-2x fa-newspaper"></i>
         </div>
-        <div class="col-11">
+        <div class="col-10">
             <span class="fw-bolder">Título del anuncio para hacer en esta feria</span>
             <br>
             <span class="my-1">Este es un texto que describe la noticia que hay que dar aquí en este espacio tan límpido azul como el cielo.</span>
@@ -126,15 +121,26 @@
             <span class="small text-muted">Nombre de la persona, 5 de agosto de 2023</span>
         </div>
     </div>
+    {% if announcements %}
+    <dl>
+    {% for announcement in announcements %}
+    <dt>{{ announcement.title }}</dt>
+    <dd>{{ announcement.content }}</dd>
+    {% endfor %}
+    </dl>
+    {% else %}
+    <p>No hay anuncios</p>
+    {% endif %}
 </div>
+ -->
 
 <!-- Amenidades -->
 {% if marketplace.food or marketplace.drinks or marketplace.handicrafts or marketplace.garden_centre or marketplace.florist or marketplace.dairy or marketplace.seafood or marketplace.butcher %}
 <div class="container">
     <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
         <div class="col d-flex flex-column align-items-start gap-2">
-            <h1 class="display-deferia">¡Más para aprovechar la feria!</h1>
-            <p class="text-body-secondary">Ya aquí encuentra las frutas y verduras que necesita, ¡pero hay más! Es mejor llevar más bolsas (reutilizables) para poder traer todo.</p>
+            <h1 class="display-deferia">¡Aquí hay más para aprovechar la feria!</h1>
+            <p class="text-body-secondary">Ya están las frutas y verduras que necesita, ¡pero hay más! Es mejor llevar más bolsas (reutilizables) para poder traer todo.</p>
             <h4>En esta feria puede encontrar <i class="fa-solid fa-circle-right"></i></h4>
             <div class="background-fruit rounded-5 border-0 mt-3" style="width: 100%; height: 200px;"></div>
         </div>
@@ -240,16 +246,16 @@
 
 <!-- Infraestructura -->
 <div class="container">
-    <hr>
+    <h2 class="title-deferia">Infraestructura de la feria</h2>
     <div class="row row-cols-2 row-cols-sm-4 text-center g-4 py-3 d-flex justify-content-center">
         <div class="col-sm-2{% if marketplace.fairground is None %} text-muted{% endif %}">
             <i class="fa-solid fa-2x fa-location-dot"></i> <br>
             {% if marketplace.fairground %}
-            Con campo ferial <br>
+            <span class="fw-bold">Con campo ferial</span> <br>
             <i class="fa-solid fa-circle-check text-success"></i> <br>
             {% elif marketplace.fairground == False %}
             Sin campo ferial <br>
-            <i class="fa-solid fa-circle-exclamation text-warning"></i> <br>
+            <i class="fa-solid fa-circle-exclamation text-body-secondary"></i> <br>
             {% else %}
             Campo ferial <br>
             <a role="button" data-bs-toggle="tooltip" data-bs-title="No tenemos este dato">
@@ -260,11 +266,11 @@
         <div class="col-sm-2{% if marketplace.indoor is None %} text-muted{% endif %}">
             <i class="fa-solid fa-2x fa-people-roof"></i> <br>
             {% if marketplace.indoor %}
-            Bajo techo <br>
+            <span class="fw-bold">Bajo techo</span> <br>
             <i class="fa-solid fa-circle-check text-success"></i> <br>
             {% elif marketplace.indoor == False %}
             Al aire libre <br>
-            <i class="fa-solid fa-circle-exclamation text-warning"></i> <br>
+            <i class="fa-solid fa-circle-exclamation text-body-secondary"></i> <br>
             {% else %}
             Bajo techo <br>
             <a role="button" data-bs-toggle="tooltip" data-bs-title="No tenemos este dato">
@@ -275,11 +281,11 @@
         <div class="col-sm-2{% if marketplace.handwashing is None %} text-muted{% endif %}">
             <i class="fa-solid fa-2x fa-hands-bubbles"></i> <br>
             {% if marketplace.handwashing %}
-            Con lavabos <br>
+            <span class="fw-bold">Con lavabos</span> <br>
             <i class="fa-solid fa-circle-check text-success"></i> <br>
             {% elif marketplace.handwashing == False %}
             Sin lavabos <br>
-            <i class="fa-solid fa-circle-exclamation text-warning"></i> <br>
+            <i class="fa-solid fa-circle-exclamation text-body-secondary"></i> <br>
             {% else %}
             Lavabos <br>
             <a role="button" data-bs-toggle="tooltip" data-bs-title="No tenemos este dato">
@@ -290,11 +296,11 @@
         <div class="col-sm-2{% if marketplace.toilets is None %} text-muted{% endif %}">
             <i class="fa-solid fa-2x fa-toilet"></i> <br>
             {% if marketplace.toilets %}
-            Con sanitarios <br>
+            <span class="fw-bold">Con sanitarios</span> <br>
             <i class="fa-solid fa-circle-check text-success"></i> <br>
             {% elif marketplace.toilets == False %}
             Sin sanitarios <br>
-            <i class="fa-solid fa-circle-exclamation text-warning"></i> <br>
+            <i class="fa-solid fa-circle-exclamation text-body-secondary"></i> <br>
             {% else %}
             Sanitarios <br>
             <a role="button" data-bs-toggle="tooltip" data-bs-title="No tenemos este dato">
@@ -305,11 +311,11 @@
         <div class="col-sm-2{% if marketplace.parking is None %} text-muted{% endif %}">
             <i class="fa-solid fa-2x fa-square-parking"></i> <br>
             {% if marketplace.parking == "surface" %}
-            Con estacionamiento <br>
+            <span class="fw-bold">Con estacionamiento</span> <br>
             <i class="fa-solid fa-circle-check text-success"></i> <br>
             {% elif marketplace.parking != "surface" %}
             Sin estacionamiento <br>
-            <i class="fa-solid fa-circle-exclamation text-warning"></i> <br>
+            <i class="fa-solid fa-circle-exclamation text-body-secondary"></i> <br>
             {% else %}
             Estacionamiento <br>
             <a role="button" data-bs-toggle="tooltip" data-bs-title="No tenemos este dato">
@@ -320,11 +326,11 @@
         <div class="col-sm-2{% if marketplace.bicycle_parking is None %} text-muted{% endif %}">
             <i class="fa-solid fa-2x fa-bicycle"></i> <br>
             {% if marketplace.bicycle_parking %}
-            Espacio de bicicletas <br>
+            <span class="fw-bold">Espacio de bicicletas</span> <br>
             <i class="fa-solid fa-circle-check text-success"></i> <br>
             {% elif marketplace.bicycle_parking == False %}
             Sin bicicletas <br>
-            <i class="fa-solid fa-circle-exclamation text-warning"></i> <br>
+            <i class="fa-solid fa-circle-exclamation text-body-secondary"></i> <br>
             {% else %}
             Bicicletas <br>
             <a role="button" data-bs-toggle="tooltip" data-bs-title="No tenemos este dato">
@@ -332,8 +338,7 @@
             </a>
             {% endif %}
         </div>
-    </div>
-    <hr>   
+    </div>   
 </div>
 
 <!-- Tamaño -->
@@ -370,7 +375,7 @@
             <p>¿Qué tal visitar alguna otra feria? Estas son las más próximas.</p>
         </div>
         <div class="col-md-6">
-            <div class="row d-flex align-items-center">
+            <div class="row d-flex p-2 align-items-center">
                 {% for marketplace in closest_marketplaces %}
                 <div class="col-4">
                     <h6><a class="link-dark" href="/ferias/{{ marketplace.marketplace_url }}">{{ marketplace.name }}</a></h6>
@@ -386,12 +391,14 @@
             </a>
         </div>
     </div>
+    <hr>
 </div>
 
-<!-- Selección de productos -->
+<!-- Selección de productos
 <div class="container">
 <p>¡Ayúdenos! ¿Cuáles productos sabe usted que venden en esta feria?</p>
 </div>
+ -->
 
 <!-- Contacto -->
 <div class="container mt-5">
@@ -436,7 +443,7 @@
     </div>    
 </div>
 
-
+<!-- Fotos 
 <p>
 <div class="card" style="width: 200px;">
     <img src="https://placehold.co/600x300/png" alt="Foto de portada" style="width: 200px;">
@@ -451,26 +458,11 @@
 <p>
     {% include 'photos.html' %}
 </p>
+-->
 
-<h3>Anuncios</h3>
-
-{% if announcements %}
-<dl>
-    {% for announcement in announcements %}
-    <dt>{{ announcement.title }}</dt>
-    <dd>{{ announcement.content }}</dd>
-    {% endfor %}
-</dl>
-{% else %}
-<p>No hay anuncios</p>
-{% endif %}
-
-<h3>Productos</h3>
-
-<p>Lista de productos disponibles en esta feria (todavía no hay datos al respecto, quizá es mejor no ponerlo todavía).
-</p>
-
-<div class="crowdsourcing-box rounded-4 background-amarillo shadow">Ayúdenos</div>
+<a href="/sugerencias/ferias/{{ marketplace.marketplace_url }}">
+    <div class="crowdsourcing-box link-dark background-amarillo text-center small shadow">Actualizar <br> datos</div>
+</a>
 
 <!-- Leaflet Map -->
 <script>
