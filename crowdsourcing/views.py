@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from marketplaces.models import Marketplace, MarketplaceHistory
+from products.models import Product
 from .models import MarketplaceEdit, OpeningHoursEdit, PhoneEdit, EmailEdit, WebsiteEdit
 import osm_opening_hours_humanized as hoh
 from django.contrib.auth.decorators import login_required
@@ -179,6 +180,15 @@ def sugerencias_feria(request, marketplace_url):
 
 def sugerencias_producto(request, product_url):
     return render(request, "sugerencias_producto.html")
+
+def revisiones(request):
+    marketplaces = Marketplace.objects.all()
+    products = Product.objects.all()
+    context = {
+        "marketplaces": marketplaces,
+        "products": products,
+    }
+    return render(request, "revisiones.html", context)
 
 
 def revisiones_ferias(request):
@@ -380,6 +390,7 @@ def revisiones_feria(request, marketplace_url):
             return render(request, "revisiones_feria.html", context)
         else:
             return redirect("/")
+
 
 def revisiones_producto(request, product_url):
     return render(request, "revisiones_producto.html")
