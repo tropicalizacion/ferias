@@ -72,7 +72,9 @@
           <img src="{% static 'images/logos/logo_verde.png' %}" width="70px" alt="Logo de feria">
         </a>
         <p class="small text-body-secondary">Un proyecto del trabajo comunal universitario "Tropicalización de la tecnología" de la Universidad de Costa Rica.</p>
-        <p class="small rojo fw-bold"><a href="#" class="nav-link p-0">Sobre el proyecto...</a></p>
+        <p class="rojo display-deferia"><a href="{% url 'sobre' %}" class="nav-link p-0">
+          <i class="fa-solid fa-circle-plus"></i> Sobre el proyecto 
+        </a></p>
       </div>
   
       <div class="col mb-3">
@@ -99,11 +101,12 @@
       </div>
   
       <div class="col mb-3">
-        <h5>El proyecto</h5>
+        <h5>Sobre el sitio</h5>
         <ul class="nav flex-column">
           <li class="nav-item mb-2"><a href="{% url 'sugerencias' %}" class="nav-link p-0 text-body-secondary">¡Aportar datos!</a></li>
           <li class="nav-item mb-2"><a href="{% url 'sobre-ferias' %}" class="nav-link p-0 text-body-secondary">Sobre las ferias</a></li>
-          <li class="nav-item mb-2"><a href="{% url 'ingresar' %}" class="nav-link p-0 text-body-secondary">Ingresar al sitio</a></li>
+          <li class="nav-item mb-2"><a href="{% url 'sobre' %}" class="nav-link p-0 text-body-secondary">Sobre el proyecto</a></li>
+          <li class="nav-item mb-2"><a href="{% url 'ingresar' %}" class="nav-link p-0 text-body-secondary">Ingresar a cuenta</a></li>
           {% if user.is_authenticated %}
           <li class="nav-item mb-2"><a href="{% url 'salir' %}" class="nav-link p-0 text-body-secondary">Cerrar sesión <span class="small">({{ user.first_name }})</span></a></li>
           {% endif %}
