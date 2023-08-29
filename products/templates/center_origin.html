@@ -2,6 +2,7 @@
     {% for origin in product.center_origin.all %}
     <dt>{{ origin }}</dt>
     <dl>{{ origin.description }}</dl>
+    <img src="{{ origin.mapamundi.url }}" alt="Map" width="900px">
     {% endfor %}
 </dl>
 <p>

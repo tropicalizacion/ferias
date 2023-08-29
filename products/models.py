@@ -86,6 +86,7 @@ class Origin(models.Model):
     name = models.CharField(max_length=63)
     description = models.TextField(blank=True, null=True)
     region = models.PolygonField(blank=True, null=True)
+    mapamundi = models.ImageField(upload_to="maps", blank=True, null=True)
 
     def __str__(self):
         return f'{self.code} - {self.name}'
