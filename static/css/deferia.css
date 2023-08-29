@@ -68,6 +68,36 @@ body {
     color: #E7502C;
 }
 
+.style-fruta {
+    background-color: #E64128;
+    color: #FFFFFF;
+}
+
+.style-raiz {
+    background-color: #FFD73F;
+    color: #000000;
+}
+
+.style-verdura {
+    background-color: #008D4A;
+    color: #FFFFFF;
+}
+
+.style-hierba {
+    background-color: #3879B5;
+    color: #FFFFFF;
+}
+
+.style-legumbre {
+    background-color: #CD7535;
+    color: #FFFFFF;
+}
+
+.style-otro {
+    background-color: #222222;
+    color: #FFFFFF;
+}
+
 .background-transparente {
     background-color: rgba(0, 0, 0, 0.1);
 }
@@ -147,7 +177,9 @@ body {
     z-index: 9999;
 }
 
-h4, h5, h6 {
+h4,
+h5,
+h6 {
     font-weight: 900;
 }
 
@@ -193,7 +225,7 @@ h4, h5, h6 {
     justify-content: center;
     align-items: center;
     z-index: 9999;
-  }
+}
 
 .circle-cta {
     width: 100px;
@@ -209,52 +241,52 @@ h4, h5, h6 {
     border-collapse: separate;
     border-spacing: 0 4px;
     margin: auto;
-  }
-  
-  .custom-table tbody tr {
+}
+
+.custom-table tbody tr {
     background-color: white;
-  }
-  
-  .custom-table tbody tr td {
+}
+
+.custom-table tbody tr td {
     border: none;
     padding: 10px;
-  }
-  
-  .custom-table tbody tr td:first-child {
+}
+
+.custom-table tbody tr td:first-child {
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
-  }
-  
-  .custom-table tbody tr td:last-child {
+}
+
+.custom-table tbody tr td:last-child {
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-  }
-  
-  .custom-table tbody tr:not(:last-child) {
+}
+
+.custom-table tbody tr:not(:last-child) {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
+}
 
 
-  .season-0 {
+.season-0 {
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="season-1" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>');
     width: 16px;
     height: 16px;
-  }
-  
-  .season-1 {
+}
+
+.season-1 {
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-half" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/></svg>');
     width: 16px;
     height: 16px;
-  }
+}
 
-  .season-2 {
+.season-2 {
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8"/></svg>');
     width: 16px;
     height: 16px;
-  }
-  
-  .season-3 {
+}
+
+.season-3 {
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>');
     width: 16px;
     height: 16px;
-  }
+}
