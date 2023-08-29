@@ -1,6 +1,4 @@
 django
 python-decouple
-bootstrap-py
-psycopg2
 geopy
 osm_opening_hours_humanized
