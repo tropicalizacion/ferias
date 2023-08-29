@@ -41,8 +41,8 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg sticky-top {% block bg-navbar %}{% endblock %}">
     <div class="container-lg">
-      <a class="navbar-brand" href="{% url 'index' %}">
-        <img src="{% static 'images/logos/logo_blanco.png' %}" width="80px" alt="Logo de feria">
+      <a class="navbar-brand" href="{% url 'inicio' %}">
+        <img src="{% static 'images/logos/logo_blanco.png' %}" width="90px" alt="Logo de feria">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,10 +50,22 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ms-auto">
-          <a class="nav-link nav-link-deferia" href="{% url 'ferias' %}">Ferias</a>
-          <a class="nav-link nav-link-deferia" href="{% url 'productos' %}">Productos</a>
-          <a class="nav-link nav-link-deferia" href="{% url 'consejos' %}">Consejos</a>
-          <a class="nav-link nav-link-deferia" href="{% url 'sugerencias' %}">¡Ayúdenos!</a>
+          <a class="nav-link nav-link-deferia" href="{% url 'inicio' %}">
+            <i class="fa-solid fa-seedling"></i> Inicio
+          </a>
+          <a class="nav-link nav-link-deferia" href="{% url 'ferias' %}">
+            <i class="fa-solid fa-store"></i> Ferias
+          </a>
+          <a class="nav-link nav-link-deferia" href="{% url 'productos' %}">
+            <i class="fa-solid fa-carrot"></i> Productos
+          </a>
+          <!-- Versión sin blog
+          <a class="nav-link nav-link-deferia" href="{% url 'consejos' %}">
+            Consejos
+          </a> -->
+          <a class="nav-link nav-link-deferia" href="{% url 'sugerencias' %}">
+            <i class="fa-solid fa-comment-dots"></i> Aportar datos
+          </a>
         </div>
       </div>
     </div>
@@ -93,17 +105,18 @@
       <div class="col mb-3">
         <h5>Menú del sitio</h5>
         <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="{% url 'index' %}" class="nav-link p-0 text-body-secondary">Página de inicio</a></li>
+          <li class="nav-item mb-2"><a href="{% url 'inicio' %}" class="nav-link p-0 text-body-secondary">Página de inicio</a></li>
           <li class="nav-item mb-2"><a href="{% url 'ferias' %}" class="nav-link p-0 text-body-secondary">Todas las ferias</a></li>
           <li class="nav-item mb-2"><a href="{% url 'productos' %}" class="nav-link p-0 text-body-secondary">Todos los productos</a></li>
-          <li class="nav-item mb-2"><a href="{% url 'consejos' %}" class="nav-link p-0 text-body-secondary">Nuestros consejos</a></li>
+          <li class="nav-item mb-2"><a href="{% url 'sugerencias' %}" class="nav-link p-0 text-body-secondary">¡Aportar datos!</a></li>
+          <!-- Sin blog
+          <li class="nav-item mb-2"><a href="{% url 'consejos' %}" class="nav-link p-0 text-body-secondary">Nuestros consejos</a></li> -->
         </ul>
       </div>
   
       <div class="col mb-3">
-        <h5>Sobre el sitio</h5>
+        <h5>deferia.cr</h5>
         <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="{% url 'sugerencias' %}" class="nav-link p-0 text-body-secondary">¡Aportar datos!</a></li>
           <li class="nav-item mb-2"><a href="{% url 'sobre-ferias' %}" class="nav-link p-0 text-body-secondary">Sobre las ferias</a></li>
           <li class="nav-item mb-2"><a href="{% url 'sobre' %}" class="nav-link p-0 text-body-secondary">Sobre el proyecto</a></li>
           <li class="nav-item mb-2"><a href="{% url 'ingresar' %}" class="nav-link p-0 text-body-secondary">Ingresar a cuenta</a></li>
