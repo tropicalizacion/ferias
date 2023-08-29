@@ -31,7 +31,7 @@ def index(request):
 
 
 def acerca(request):
-    return render(request, "acerca.html")
+    return render(request, "sobre-proyecto.html")
 
 
 def sobre_ferias(request):
