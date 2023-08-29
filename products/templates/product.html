@@ -10,88 +10,204 @@
 
 <!-- Hero -->
 <div class="px-4 pt-3 pb-5 text-center background-rojo">
-    <h1 class="text-white fw-bold">¡Productos de feria!</h1>
-    <h1 class="display-1 text-white title-deferia">{{ product.common_name|capfirst }}</h1>
-    <div class="row row-cols-1 row-cols-md-2 text-white g-4 mt-3 d-flex justify-content-center">
-        <div class="col col-md-3">
-            <div class="mb-4 rojo">
-                <i class="fa-solid fa-2x fa-calendar-check"></i>
+    <!-- Icono (icon) -->
+    {% if product.icon %}
+    <img src="{{ product.icon.url }}" alt="Icono del producto" style="height: 80px;">
+    {% endif %}
+    <!-- Nombre común (common_name) -->
+    <h1 class="display-1 text-white display-deferia">{{ product.common_name|capfirst }}</h1>
+    <!-- Nombre alternativo (common_name_alternate) -->
+    {% if product.common_name_alternate %}
+    <h3 class="text-white title-deferia">(cc. {{ product.common_name_alternate }})</h2>
+    {% endif %}
+</div>
+
+<!-- Información general -->
+<div class="text-center my-3">
+    <!-- Categoría (category) -->
+    <h4><span class="badge style-{{ product.category }}">{{ product.get_category_display }}</span></h4>
+    <!-- Canasta básica recomendada (food_basket) -->
+    {% if product.food_basket == True %}
+    <i class="amarillo fa-solid fa-star-of-life"></i> Canasta básica recomendada
+    {% endif %}
+</div>
+
+<!-- Descripción (description) -->
+<div class="d-flex justify-content-center my-4 px-4">
+    <div class="card col-lg-6 rounded-5 border-0 background-verde">
+        <div class="card-body text-center">
+            <div class="lead text-white">
+                ¿Fruta o verdura? No importa, igual es delicioso. El aguacate es parte importantísima de nuestra dieta y de nuestra cultura. Es un alimento muy nutritivo y versátil, que se puede comer en ensaladas, guacamole y salsas, ¡y también en recetas dulces!
             </div>
-            <h5 class="fw-bolder">Hola</h5>
-        </div>
-        <div class="col col-md-3">
-            <div class="mb-4 amarillo">
-                <i class="fa-solid fa-2x fa-map-location-dot"></i>
-            </div>
-            Entonces
         </div>
     </div>
 </div>
 
-<p>
-    <div class="card" style="width: 200px;">
-        <img src="https://placehold.co/600x300/png" alt="Foto de portada" style="width: 200px;">
-        <div class="card-body">
-            <p class="card-text">Ícono</p>
+<!-- Variedades (varieties) -->
+<div class="d-flex justify-content-center my-4 px-4">
+    <div class="col-lg-{% if varieties.count == 1 %}2{% elif varieties.count == 2 %}4{% else %}6{% endif %} text-center">
+        {% if varieties.count > 1 %}
+        <h1 class="title-deferia">Variedades</h1>
+        {% endif %}
+        <div class="row row-cols-1 row-cols-md-{% if varieties.count == 1 %}1{% elif varieties.count == 2 %}2{% else %}3{% endif %} g-4 mt-2">
+            {% for variety in varieties %}
+            <div class="col">
+                <div class="card h-100 shadow-lg border-0">
+                    <img src="{{ variety.image.url }}" class="card-img-top" alt="Imagen de {{ product.common_name }} {{ variety.common_name_variety }}">
+                    <div class="card-body">
+                        <h5 class="card-title title-deferia">
+                            {{ product.common_name|capfirst }} 
+                            {% if variety.common_name_variety %}
+                            {{ variety.common_name_variety }}
+                            {% endif %}
+                        </h5>
+                        <p><small class="text-body-secondary"><em>
+                            {{ variety.scientific_name }} 
+                            {% if variety.scientific_name_variety %}
+                            var. {{ variety.scientific_name_variety }}
+                            {% endif %}
+                        </em></small></p>
+                        {% if variety.common_name_variety_alternate %}
+                        <p>Otros nombres: {{ variety.common_name_variety_alternate }}</p>
+                        {% endif %}
+                        {% if variety.description %}
+                        <p class="card-text">Descripción: {{ variety.description }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
         </div>
-    </div>    
-</p>
-
-<!-- Información general -->
-<h1 class="display-2"  style="font-weight: 900;">{{ product.common_name|capfirst }}</h1>
-
-<p>Nombre alternativo: {{ product.common_name_alternate }}</p>
-
-<!-- Categoría -->
-<h3>Categoría</h3>
-<p>
-    <span class="badge text-bg-success">{{ product.get_category_display }}</span>
-</p>
-
-<!-- Descripción -->
-<h3>Descripción</h3>
-<p class="lead">{{ product.description }}</p>
-
-<!-- Variedades -->
-{% include 'variety.html' %}
-
-<br>
-<br>
-
-<!-- Canasta básica recomendada -->
-<h3>Canasta básica recomendada</h3>
-
-<p>
-    {% if marketplace.food_basket == True %}
-        <span class="badge text-bg-success">Sí</span>
-    {% else %}
-        <span class="badge text-bg-danger">No</span>
-    {% endif %}
-
-</p>
+    </div>
+</div>
 
 <!-- Reseña nutricional -->
-<h3>Reseña nutricional</h3>
-<p>{{ product.nutrition_notes }}</p>
+<div class="d-flex justify-content-center my-5 px-4">
+    <div class="col-lg-6">
+        <h2 class="display-deferia verde">Reseña nutricional</h2>
+        <p>
+            {{ product.nutrition_notes }}
+            El rey de las grasas buenas, el aguacate sabe cómo hacernos sentir bien.
+        </p>
+    </div>
+</div>
 
 <!-- Métodos de preparación -->
-<h3>Preparación</h3>
-{% include 'preparation.html' %}
+<div class="d-flex justify-content-center my-5 px-4">
+    <div class="col-lg-6">
+        <h2 class="display-deferia cafe">Métodos de preparación</h2>
+        <p>El rey de las grasas buenas, el aguacate sabe cómo hacernos sentir bien.</p>
+        <p>{{ product.preparation_notes }}</p>
+        <p>Métodos:</p>
+        <dl>
+            {% for preparation in product.preparation.all %}
+            <dt>(Ícono) {{ preparation.method_name|capfirst }}</dt>
+            <dd>{{ preparation.method_description }}</dd>
+            {% endfor %}
+        </dl>
+    </div>
+</div>
 
 <!-- Métodos de almacenamiento -->
-<h3>Almacenamiento</h3>
-{% include 'storage.html' %}
+<div class="d-flex justify-content-center my-5 px-4">
+    <div class="col-lg-6">
+        <h2 class="display-deferia rojo">Métodos de almacenamiento</h2>
+        <p>El rey de las grasas buenas, el aguacate sabe cómo hacernos sentir bien.</p>
+        <p>{{ product.storage_notes }}Es bien conocida la dificultad del aguacate para identificar cuándo está en su punto exacto.</p>
+        <p>Métodos:</p>
+        <dl>
+            {% for storage in product.storage.all %}
+            <dt>(Ícono) {{ storage.method_name|capfirst }}</dt>
+            <dd>{{ storage.method_description }}</dd>
+            {% endfor %}
+        </dl>
+    </div>
+</div>
 
 <!-- Centros de origen -->
-<h3>Centro de origen</h3>
-{% include 'center_origin.html' %}
+<div class="d-flex justify-content-center my-5 px-4">
+    <div class="col-lg-6">
+        <h2 class="display-deferia verde">¿De dónde viene?</h2>
+        <p>¡Todos los cultivos comenzaron en algún lugar!</p>
+        <!-- Datos del primer centro de origen -->
+        <dl class="lead">
+            <dt>{{ product.center_origin.all.0 }}</dt>
+            <dl>{{ product.center_origin.all.0.description }}</dl>
+        </dl>
+        <img src="{{ product.center_origin.all.0.mapamundi.url }}" alt="Map" style="max-width: 576px;">
+        <!-- Datos de todos los centros de origen -->
+        {% if product.center_origin.all.count > 1 %}
+        <p>En ocasiones, un producto puede considerarse con más de un centro de origen, como resultado de las variaciones realizadas en cada región.</p>
+        {% endif %}
+        <p>
+            Notas: {{ product.center_origin_notes }}
+        </p>
+        <!-- Leer más sobre los centros de origen -->
+    </div>
+</div>
 
 <!-- Estacionalidad -->
+<div class="d-flex justify-content-center my-5 px-4">
+    <div class="col-lg-6">
+        <h2 class="display-deferia azul">Estacionalidad</h2>
+        <p>En Costa Rica, esta es la estacionalidad para este producto.</p>
+        <div style="max-width: 900px;">
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+</div>
 
-<h3>Estacionalidad</h3>
-{% include 'seasonality.html' %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<br>
-<br>
+<script>
+    const ctx = document.getElementById('myChart');
+    var yLabels = {0: 'Ninguna', 1: 'Menor', 2: 'Mayor', 3: 'Alta'}
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Setiembre','Octubre', 'Noviembre', 'Diciembre'],
+            datasets: [
+                {% for variety in varieties %}
+                {
+                    label: '{{ product.common_name }} {{ variety.common_name_variety }}',
+                    data: [
+                        {{ variety.jan }}, 
+                        {{ variety.feb }},
+                        {{ variety.mar }},
+                        {{ variety.apr }},
+                        {{ variety.may }},
+                        {{ variety.jun }},
+                        {{ variety.jul }},
+                        {{ variety.aug }},
+                        {{ variety.sep }},
+                        {{ variety.oct }},
+                        {{ variety.nov }},
+                        {{ variety.dec }} 
+                    ],
+                    tension: 0.3,
+                    fill: true,
+                },
+                {% endfor %}
+            ]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Disponibilidad'
+                    },
+                    ticks: {
+                        callback: function(value, index, values) {
+                            return yLabels[value];
+                        }
+                    }
+                }
+            }
+        }
+    });
+</script>
 
 {% endblock %}

@@ -7,12 +7,12 @@ class Product(models.Model):
     """Model definition for Product."""
 
     CATEGORY_CHOICES = [
-        ("verdura", "Verdura (hortaliza)"),
+        ("verdura", "Verdura u hortaliza"),
         ("fruta", "Fruta"),
-        ("cereal", "Cereal (grano)"),
-        ("legumbre", "Legumbre (leguminosa)"),
-        ("tubérculo", "Tubérculo o raíz"),
-        ("condimento", "Condimento (especia)"),
+        ("cereal", "Cereal o grano"),
+        ("legumbre", "Legumbre o leguminosa"),
+        ("raiz", "Tubérculo o raíz"),
+        ("condimento", "Condimento o especia"),
         ("hierba", "Hierba aromática"),
         ("otro", "Otra categoría"),
     ]
