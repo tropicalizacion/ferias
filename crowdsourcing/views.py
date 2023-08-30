@@ -13,7 +13,11 @@ from datetime import datetime
 
 def sugerencias(request):
     marketplaces = Marketplace.objects.all()
-    context = {"marketplaces": marketplaces}
+    products = Product.objects.all()
+    context = {
+        "marketplaces": marketplaces,
+        "products": products,
+    }
     return render(request, "sugerencias.html", context)
 
 
@@ -179,7 +183,10 @@ def sugerencias_feria(request, marketplace_url):
 
 
 def sugerencias_producto(request, product_url):
-    return render(request, "sugerencias_producto.html")
+    product = Product.objects.get(product_url=product_url)
+    context = {"product": product}
+    return render(request, "sugerencias_producto.html", context)
+
 
 def revisiones(request):
     marketplaces = Marketplace.objects.all()
