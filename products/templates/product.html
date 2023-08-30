@@ -128,13 +128,13 @@
 <div class="d-flex justify-content-center my-5 px-4">
     <div class="col-lg-6">
         <h2 class="display-deferia verde">¿De dónde viene?</h2>
-        <p>¡Todos los cultivos comenzaron en algún lugar!</p>
+        <p>¡Todos los cultivos comenzaron en algún lugar! Este es el lugar de origen en el mundo.</p>
         <!-- Datos del primer centro de origen -->
         <dl class="lead">
             <dt>{{ product.center_origin.all.0 }}</dt>
             <dl>{{ product.center_origin.all.0.description }}</dl>
         </dl>
-        <img src="{{ product.center_origin.all.0.mapamundi.url }}" alt="Map" style="max-width: 576px;">
+        <img src="{{ product.center_origin.all.0.mapamundi.url }}" alt="Mapamundi con el centro de origen del producto" class="img-fluid">
         <!-- Datos de todos los centros de origen -->
         {% if product.center_origin.all.count > 1 %}
         <p>En ocasiones, un producto puede considerarse con más de un centro de origen, como resultado de las variaciones realizadas en cada región.</p>
