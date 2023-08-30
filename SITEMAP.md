@@ -9,24 +9,26 @@ graph TD;
     feria(Cada feria)
     productos(Todos los productos)
     producto(Cada producto)
+    informacion(Información de productos)
     sugerencias(Sugerencias)
-    sugerencias_ferias(Sugerencias para ferias)
+    sugerencias_ferias(Todas las ferias)
     sugerencias_feria(Cada feria)
-    sugerencias_productos(Sugerencias para productos)
+    sugerencias_productos(Todos los productos)
     sugerencias_producto(Cada producto)
     revisiones(Revisiones)
-    revisiones_ferias(Revisiones para ferias)
+    revisiones_ferias(Todas las ferias)
     revisiones_feria(Cada feria)
-    revisiones_productos(Revisiones para productos)
+    revisiones_productos(Todos los productos)
     revisiones_producto(Cada producto)
     
     inicio --> sobre
-    inicio --> sobre_ferias
     inicio --> ferias
     inicio --> productos
     inicio --> sugerencias
+    sobre --> sobre_ferias
     ferias --> feria
     productos --> producto
+    productos --> informacion
     sugerencias --> sugerencias_ferias
     sugerencias --> sugerencias_productos
     sugerencias --> revisiones
@@ -43,7 +45,7 @@ graph TD;
 ("inicio")
 app: `website`
 
-Página de bienvenida al sitio con buscador, características
+Página de bienvenida al sitio con buscador, características de las ferias. Pendiente: tipo "portada de periódico", con vistazo a los datos, la información, los artículos de blog, redes sociales, etc.
 
 :globe_with_meridians: **Sobre el proyecto**
 `/sobre/`
@@ -67,7 +69,7 @@ app: `marketplaces`
 Datos generales de las ferias (ubicación, ferias por provincia, días de la semana, amenidades, infraestructura), el buscador de ferias y la lista de las ferias (nombre con link más provincia)
 
 :wave: **Página de cada feria**
-`/ferias/<marketplace_url>`
+`/ferias/<marketplace_url>/`
 ("feria")
 app: `marketplaces`
 
@@ -81,11 +83,18 @@ app: `products`
 Lista de todos los productos según categoría: frutas, verduras, tubérculos y raíces, legumbres, hierbas y otros.
 
 :tomato: **Página de cada producto**
-`/ferias/<product_url>`
+`/productos/<product_url>/`
 ("producto")
 app: `products`
 
-Para cada feria: horario, dirección y mapa. Lista de amenidades e infraestructura. Otras ferias cercanas. Información de contacto.
+Para cada producto: icono, nombre, nombres alternativos, categoría, canasta básica recomendada, descripción, variedades, reseña nutricional, métodos de preparación, métodos de almacenamiento, centro de origen, estacionalidad.
+
+:tomato: **Página de información de productos**
+`/productos/informacion`
+("informacion")
+app: `products`
+
+Ampliación de las informaciones sobre categorías, centro de origen y estacionalidad. Pendiente: páginas para la canasta básica recomendada, para métodos de preparación y almacenamiento. Podría ser aquí mismo, pero también podría convertirse en una página muy grande. También alguna información de aquí puede aparecer en "modales" dentro de la página de cada producto, para fácil acceso.
 
 :speech_balloon: **Sugerencias para ferias y productos**
 `/sugerencias/`
@@ -102,7 +111,7 @@ app: `crowdsourcing`
 Lista de todas las ferias donde se puede colaborar con datos.
 
 :speech_balloon: **Sugerencias para cada feria**
-`/sugerencias/ferias/<marketplace_url>`
+`/sugerencias/ferias/<marketplace_url>/`
 ("producto")
 app: `crowdsourcing`
 
@@ -116,7 +125,7 @@ app: `crowdsourcing`
 Lista de todos los productos donde se puede colaborar con datos.
 
 :speech_balloon: **Sugerencias para cada producto**
-`/sugerencias/productos/<product_url>`
+`/sugerencias/productos/<product_url>/`
 ("sugerencias_producto")
 app: `crowdsourcing`
 
@@ -137,7 +146,7 @@ app: `crowdsourcing`
 Lista de todas las ferias donde se puede revisar los datos.
 
 :white_check_mark: **Revisión de sugerencias para cada feria**
-`/sugerencias/revisiones/ferias/<marketplace_url>`
+`/sugerencias/revisiones/ferias/<marketplace_url>/`
 ("revisiones_feria")
 app: `crowdsourcing`
 
@@ -151,7 +160,7 @@ app: `crowdsourcing`
 Lista de todos los productos donde se puede revisar los datos.
 
 :white_check_mark: **Revisión de sugerencias para cada producto**
-`sugerencias/revisiones/productos/<product_url>`
+`sugerencias/revisiones/productos/<product_url>/`
 ("revisiones_producto")
 app: `crowdsourcing`
 
@@ -185,6 +194,7 @@ Páginas:
 - [ ] Página de cada feria
 - [ ] Todos los productos
 - [ ] Página de cada producto
+- [ ] Información de los productos
 - [ ] Sugerencias
 - [ ] Sugerencias de ferias
 - [ ] Sugerencias de cada feria
