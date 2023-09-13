@@ -6,16 +6,28 @@ Estos son algunos consejos e instrucciones para usar el proyecto localmente o en
 
 La clave secreta de Django y otras configuraciones están en un archivo `.env` y es manipulado por el paquete `python-decouple` ([documentación](https://pypi.org/project/python-decouple/)).
 
-Para iniciar:
+(Opcional) Crear un ambiente virtual para correr el proyecto (recomendado).
 
 ```bash
-pip install python-decouple
+ferias: $ python -m venv feriasenv
 ```
 
-Agregar: en `editor/settings.py`:
+y activarlo con:
 
-```python
-from decouple import config
+```bash
+source feriasenv/bin/activate
+```
+
+y desactivarlo con:
+
+```bash
+deactivate
+```
+
+Para iniciar, instalar todos los paquetes especificados en el archivo `requirements.txt`, con:
+
+```bash
+pip install -r requirements.txt
 ```
 
 Se agrega el archivo `.env` al directorio raíz. Nota: (en caso de ser necesario) al descargar el archivo `.env` y pasarlo al directorio raíz puede salir como `.env.env` se debe cambiar esto a solo `.env`.
@@ -52,14 +64,14 @@ El proyecto utiliza [PostgreSQL](https://www.postgresql.org/). Una vez instalado
 
 Los pasos de creación de la base de datos son:
 
-- Instalar PostgreSQL.
-- Instalar PostGIS.
+- Instalar PostgreSQL en la máquina según el OS.
+- Instalar PostGIS en la máquina [según el OS](https://postgis.net/documentation/getting_started/#installing-postgis).
 - Crear base de datos `ferias` con `$ createdb ferias`.
 - Ingresar a la base de datos con `$ psql ferias`.
 - [Habilitar PostGIS](https://docs.djangoproject.com/en/4.2/ref/contrib/gis/install/postgis/) para la base de datos `ferias` en `psql` con `# CREATE EXTENSION postgis;`.
 - Habilitar la búsqueda por [_trigram similarity_](https://docs.djangoproject.com/en/4.2/ref/contrib/postgres/lookups/#trigram-similarity) en `psql ferias` con `CREATE EXTENSION IF NOT EXISTS pg_trgm;`
 - Habilitar la búsqueda [_sin acentos_](https://www.postgresql.org/docs/current/unaccent.html) en `psql ferias` con `CREATE EXTENSION IF NOT EXISTS unaccent;`
-- Modificar `settings.py` con (asumiendo que la DB no tiene password):
+- En `settings.py` está (asumiendo que la DB no tiene password):
 ```python
 DATABASES = {
     "default": {
@@ -77,7 +89,7 @@ INSTALLED_APPS = [
     "django.contrib.gis",
 ]
 ```
-- Agregar a `.env` (asumiendo que el usuario de PostgreSQL es `postgres`, y si no lo sabe puede hacer en psql: `# SELECT current_user;`):
+- Modificar `.env` (asumiendo que el usuario de PostgreSQL es `postgres`, y si no lo sabe puede hacer en psql: `# SELECT current_user;`):
 ```
 DB_NAME=ferias
 DB_USER=postgres
@@ -107,12 +119,9 @@ o lo que corresponda según el sistema operativo.
 - Hacer todas las migraciones con `$ python manage.py makemigrations marketplaces` y así para cada app (products, crowdsourcing, website, etc.)
 - Migrar con `$ python manage.py migrate` para crear las tablas.
 - Hacer `$ python manage.py loaddata auth` para cargar los datos de usuarios de prueba del fixture (peligroso).
-- Para ver mapas de OpenStreetMap en el panel de administración, hay que editar `marketplaces/admin.py` con:
-```python
-from django.contrib.gis import admin
-(...)
-admin.site.register(Marketplace, admin.GISModelAdmin)
-```
+- Hacer `$ python manage.py loaddata marketplaces` para cargar los datos de las ferias del fixture (peligroso).
+- Hacer `$ python manage.py loaddata products` para cargar los datos de los productos del fixture (peligroso).
+- (etc.)
 
 Con esto debería funcionar la aplicación con PostgreSQL y PostGIS activado para usar GeoDjango, que permite guardar ubicaciones y regiones en el mapa y hacer búsquedas geoespaciales.
 
