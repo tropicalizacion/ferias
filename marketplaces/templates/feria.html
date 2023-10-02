@@ -2,6 +2,34 @@
 
 {% load static %}
 
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "EventVenue",
+        "name": "{{ marketplace.name|escapejs }}",
+        "description": "{{ marketplace.description|escapejs }}",
+        "alternateName": "{{ marketplace.name_alternate|escapejs }}",
+        "keywords": ["{{ marketplace.province|escapejs }}","{{ marketplace.canton|escapejs }}","{{ marketplace.district|escapejs }}"],
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "{{ marketplace.canton|escapejs }}",
+            "addressRegion": "{{ marketplace.province|escapejs }}",
+            "postalCode": "{{ marketplace.postal_code|escapejs }}",
+            "streetAddress": "{{ marketplace.address|escapejs }}"
+        },
+        "location": "{{ marketplace.location|escapejs }}",
+        "latitude": "{{ marketplace.location.x|escapejs }}",
+        "longitude": "{{ marketplace.location.y|escapejs }}",
+        "openingHours": "{{ marketplace.opening_hours|escapejs }}",
+        "currenciesAccepted": "CRC",
+        "significantLink": ["{{ marketplace.facebook|escapejs }}","{{ marketplace.instagram|escapejs }}","{{ marketplace.website|escapejs }}"],
+        "isAccessibleForFree": true,
+        "publicAccess": true,
+        "isFamilyFriendly": true,
+        "smokingAllowed": false
+    }
+</script>
+
 {% block page_title %} {{ marketplace.name }} {% endblock %}
 
 {% block bg-navbar %} background-azul {% endblock %}
