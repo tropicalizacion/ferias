@@ -2,6 +2,38 @@
 
 {% load static %}
 
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": "{{ product.common_name|escapejs }}",
+        "description": "{{ product.description|escapejs }}",
+        "alternateName": "{{ product.common_name_alternate|escapejs }}",
+        "image": "{{ product.icon|escapejs }}"
+        "category": "{{ product.category|escapejs }}"
+        "keywords": [ 
+            {% for variety in varieties %}
+            "{{ variety.scientific_name|escapejs }}"
+            {% if not forloop.last %},{% endif %}
+            {% endfor %}
+        ],
+        "recipeIngredient": "{{ product.common_name|escapejs }}",
+        "nutrition": "{{ product.nutrition_notes|escapejs }}",
+        "cookingMethod": [
+            {% for preparation in product.preparation.all %}
+            "{{ preparation.method_name|escapejs }}"
+            {% if not forloop.last %},{% endif %}
+            {% endfor %}
+        ],
+        "recipeInstructions": [
+            {% for preparation in product.preparation.all %}
+            "{{ preparation.method_description|escapejs }}"
+            {% if not forloop.last %},{% endif %}
+            {% endfor %}
+        ]
+    }
+</script>
+
 {% block page_title %} {{ product.common_name|capfirst }} {% endblock %}
 
 {% block bg-navbar %} background-rojo {% endblock %}
