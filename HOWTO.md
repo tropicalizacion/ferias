@@ -296,3 +296,22 @@ Ahora hay que instalar PostGIS, con:
 brew install postgis
 ```
 Luego es posible seguir el procedimiento de migración a GeoDjango indicado arriba.
+
+### Problemas con GDAL
+
+A veces GDAL da problemas. (GDAL sirve para PostGIS). Con la reciente actualización de Homebrew, algo estaba saliendo mal, que decía tipo:
+
+```
+...
+from django.contrib.gis.gdal.prototypes import ds as vcapi
+...
+Reason: tried: '/opt/homebrew/opt/hdf5/lib/libhdf5_hl.200.dylib' (no such file) ... '/usr/lib/libhdf5_hl.200.dylib' (no such file, not in dyld cache)
+```
+
+La solución (aparentemente riesgosa) fue hacer:
+
+```bash
+brew reinstall gdal --build-from-source
+```
+
+que parece que sabían sus creadores de [OSGEO](https://github.com/OSGeo/homebrew-osgeo4mac/issues/1368#issuecomment-596452645). 
