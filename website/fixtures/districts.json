@@ -1,0 +1,5834 @@
+[
+    {
+        "model": "website.district",
+        "pk": 10101,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "San Jos\u00e9",
+            "n_canton": 1,
+            "district": "Carmen",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10102,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "San Jos\u00e9",
+            "n_canton": 1,
+            "district": "Merced",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10103,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "San Jos\u00e9",
+            "n_canton": 1,
+            "district": "Hospital",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10104,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "San Jos\u00e9",
+            "n_canton": 1,
+            "district": "Catedral",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10105,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "San Jos\u00e9",
+            "n_canton": 1,
+            "district": "Zapote",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10106,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "San Jos\u00e9",
+            "n_canton": 1,
+            "district": "San Francisco de Dos R\u00edos",
+            "n_district": 6
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10107,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "San Jos\u00e9",
+            "n_canton": 1,
+            "district": "Uruca",
+            "n_district": 7
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10108,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "San Jos\u00e9",
+            "n_canton": 1,
+            "district": "Mata Redonda",
+            "n_district": 8
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10109,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "San Jos\u00e9",
+            "n_canton": 1,
+            "district": "Pavas",
+            "n_district": 9
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10110,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "San Jos\u00e9",
+            "n_canton": 1,
+            "district": "Hatillo",
+            "n_district": 10
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10111,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "San Jos\u00e9",
+            "n_canton": 1,
+            "district": "San Sebasti\u00e1n",
+            "n_district": 11
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10201,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Escaz\u00fa",
+            "n_canton": 2,
+            "district": "Escaz\u00fa",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10202,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Escaz\u00fa",
+            "n_canton": 2,
+            "district": "San Antonio",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10203,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Escaz\u00fa",
+            "n_canton": 2,
+            "district": "San Rafael",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10301,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Desamparados",
+            "n_canton": 3,
+            "district": "Desamparados",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10302,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Desamparados",
+            "n_canton": 3,
+            "district": "San Miguel",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10303,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Desamparados",
+            "n_canton": 3,
+            "district": "San Juan de Dios",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10304,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Desamparados",
+            "n_canton": 3,
+            "district": "San Rafael Arriba",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10305,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Desamparados",
+            "n_canton": 3,
+            "district": "San Antonio",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10306,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Desamparados",
+            "n_canton": 3,
+            "district": "Frailes",
+            "n_district": 6
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10307,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Desamparados",
+            "n_canton": 3,
+            "district": "Patarr\u00e1",
+            "n_district": 7
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10308,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Desamparados",
+            "n_canton": 3,
+            "district": "San Crist\u00f3bal",
+            "n_district": 8
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10309,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Desamparados",
+            "n_canton": 3,
+            "district": "Rosario",
+            "n_district": 9
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10310,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Desamparados",
+            "n_canton": 3,
+            "district": "Damas",
+            "n_district": 10
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10311,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Desamparados",
+            "n_canton": 3,
+            "district": "San Rafael Abajo",
+            "n_district": 11
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10312,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Desamparados",
+            "n_canton": 3,
+            "district": "Gravilias",
+            "n_district": 12
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10313,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Desamparados",
+            "n_canton": 3,
+            "district": "Los Guido",
+            "n_district": 13
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10401,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Puriscal",
+            "n_canton": 4,
+            "district": "Santiago",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10402,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Puriscal",
+            "n_canton": 4,
+            "district": "Mercedes Sur",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10403,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Puriscal",
+            "n_canton": 4,
+            "district": "Barbacoas",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10404,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Puriscal",
+            "n_canton": 4,
+            "district": "Grifo Alto",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10405,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Puriscal",
+            "n_canton": 4,
+            "district": "San Rafael",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10406,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Puriscal",
+            "n_canton": 4,
+            "district": "Candelarita",
+            "n_district": 6
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10407,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Puriscal",
+            "n_canton": 4,
+            "district": "Desamparaditos",
+            "n_district": 7
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10408,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Puriscal",
+            "n_canton": 4,
+            "district": "San Antonio",
+            "n_district": 8
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10409,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Puriscal",
+            "n_canton": 4,
+            "district": "Chires",
+            "n_district": 9
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10501,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Tarraz\u00fa",
+            "n_canton": 5,
+            "district": "San Marcos",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10502,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Tarraz\u00fa",
+            "n_canton": 5,
+            "district": "San Lorenzo",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10503,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Tarraz\u00fa",
+            "n_canton": 5,
+            "district": "San Carlos",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10601,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Aserr\u00ed",
+            "n_canton": 6,
+            "district": "Aserr\u00ed",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10602,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Aserr\u00ed",
+            "n_canton": 6,
+            "district": "Tarbaca",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10603,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Aserr\u00ed",
+            "n_canton": 6,
+            "district": "Vuelta de Jorco",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10604,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Aserr\u00ed",
+            "n_canton": 6,
+            "district": "San Gabriel",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10605,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Aserr\u00ed",
+            "n_canton": 6,
+            "district": "La Legua",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10606,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Aserr\u00ed",
+            "n_canton": 6,
+            "district": "Monterrey",
+            "n_district": 6
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10607,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Aserr\u00ed",
+            "n_canton": 6,
+            "district": "Salitrillos",
+            "n_district": 7
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10701,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Mora",
+            "n_canton": 7,
+            "district": "Col\u00f3n",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10702,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Mora",
+            "n_canton": 7,
+            "district": "Guayabo",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10703,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Mora",
+            "n_canton": 7,
+            "district": "Tabarcia",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10704,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Mora",
+            "n_canton": 7,
+            "district": "Piedras Negras",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10705,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Mora",
+            "n_canton": 7,
+            "district": "Picagres",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10706,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Mora",
+            "n_canton": 7,
+            "district": "Jaris",
+            "n_district": 6
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10707,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Mora",
+            "n_canton": 7,
+            "district": "Quitirris\u00ed",
+            "n_district": 7
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10801,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Goicoechea",
+            "n_canton": 8,
+            "district": "Guadalupe",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10802,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Goicoechea",
+            "n_canton": 8,
+            "district": "San Francisco",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10803,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Goicoechea",
+            "n_canton": 8,
+            "district": "Calle Blancos",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10804,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Goicoechea",
+            "n_canton": 8,
+            "district": "Mata de Pl\u00e1tano",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10805,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Goicoechea",
+            "n_canton": 8,
+            "district": "Ip\u00eds",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10806,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Goicoechea",
+            "n_canton": 8,
+            "district": "Rancho Redondo",
+            "n_district": 6
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10807,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Goicoechea",
+            "n_canton": 8,
+            "district": "Purral",
+            "n_district": 7
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10901,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Santa Ana",
+            "n_canton": 9,
+            "district": "Santa Ana",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10902,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Santa Ana",
+            "n_canton": 9,
+            "district": "Salitral",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10903,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Santa Ana",
+            "n_canton": 9,
+            "district": "Pozos",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10904,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Santa Ana",
+            "n_canton": 9,
+            "district": "Uruca",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10905,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Santa Ana",
+            "n_canton": 9,
+            "district": "Piedades",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 10906,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Santa Ana",
+            "n_canton": 9,
+            "district": "Brasil",
+            "n_district": 6
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11001,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Alajuelita",
+            "n_canton": 10,
+            "district": "Alajuelita",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11002,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Alajuelita",
+            "n_canton": 10,
+            "district": "San Josecito",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11003,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Alajuelita",
+            "n_canton": 10,
+            "district": "San Antonio",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11004,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Alajuelita",
+            "n_canton": 10,
+            "district": "Concepci\u00f3n",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11005,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Alajuelita",
+            "n_canton": 10,
+            "district": "San Felipe",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11101,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "V\u00e1zquez de Coronado",
+            "n_canton": 11,
+            "district": "San Isidro",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11102,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "V\u00e1zquez de Coronado",
+            "n_canton": 11,
+            "district": "San Rafael",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11103,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "V\u00e1zquez de Coronado",
+            "n_canton": 11,
+            "district": "Dulce Nombre de Jes\u00fas",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11104,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "V\u00e1zquez de Coronado",
+            "n_canton": 11,
+            "district": "Patalillo",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11105,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "V\u00e1zquez de Coronado",
+            "n_canton": 11,
+            "district": "Cascajal",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11201,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Acosta",
+            "n_canton": 12,
+            "district": "San Ignacio",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11202,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Acosta",
+            "n_canton": 12,
+            "district": "Guaitil",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11203,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Acosta",
+            "n_canton": 12,
+            "district": "Palmichal",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11204,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Acosta",
+            "n_canton": 12,
+            "district": "Cangrejal",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11205,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Acosta",
+            "n_canton": 12,
+            "district": "Sabanillas",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11301,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Tib\u00e1s",
+            "n_canton": 13,
+            "district": "San Juan",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11302,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Tib\u00e1s",
+            "n_canton": 13,
+            "district": "Cinco Esquinas",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11303,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Tib\u00e1s",
+            "n_canton": 13,
+            "district": "Anselmo Llorente",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11304,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Tib\u00e1s",
+            "n_canton": 13,
+            "district": "Le\u00f3n XIII",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11305,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Tib\u00e1s",
+            "n_canton": 13,
+            "district": "Colima",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11401,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Moravia",
+            "n_canton": 14,
+            "district": "San Vicente",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11402,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Moravia",
+            "n_canton": 14,
+            "district": "San Jer\u00f3nimo",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11403,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Moravia",
+            "n_canton": 14,
+            "district": "La Trinidad",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11501,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Montes de Oca",
+            "n_canton": 15,
+            "district": "San Pedro",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11502,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Montes de Oca",
+            "n_canton": 15,
+            "district": "Sabanilla",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11503,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Montes de Oca",
+            "n_canton": 15,
+            "district": "Mercedes",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11504,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Montes de Oca",
+            "n_canton": 15,
+            "district": "San Rafael",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11601,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Turrubares",
+            "n_canton": 16,
+            "district": "San Pablo",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11602,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Turrubares",
+            "n_canton": 16,
+            "district": "San Pedro",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11603,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Turrubares",
+            "n_canton": 16,
+            "district": "San Juan de Mata",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11604,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Turrubares",
+            "n_canton": 16,
+            "district": "San Luis",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11605,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Turrubares",
+            "n_canton": 16,
+            "district": "Carara",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11701,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Dota",
+            "n_canton": 17,
+            "district": "Santa Mar\u00eda",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11702,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Dota",
+            "n_canton": 17,
+            "district": "Jard\u00edn",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11703,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Dota",
+            "n_canton": 17,
+            "district": "Copey",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11801,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Curridabat",
+            "n_canton": 18,
+            "district": "Curridabat",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11802,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Curridabat",
+            "n_canton": 18,
+            "district": "Granadilla",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11803,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Curridabat",
+            "n_canton": 18,
+            "district": "S\u00e1nchez",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11804,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Curridabat",
+            "n_canton": 18,
+            "district": "Tirrases",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11901,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "P\u00e9rez Zeled\u00f3n",
+            "n_canton": 19,
+            "district": "San Isidro de El General",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11902,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "P\u00e9rez Zeled\u00f3n",
+            "n_canton": 19,
+            "district": "El General",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11903,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "P\u00e9rez Zeled\u00f3n",
+            "n_canton": 19,
+            "district": "Daniel Flores",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11904,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "P\u00e9rez Zeled\u00f3n",
+            "n_canton": 19,
+            "district": "Rivas",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11905,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "P\u00e9rez Zeled\u00f3n",
+            "n_canton": 19,
+            "district": "San Pedro",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11906,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "P\u00e9rez Zeled\u00f3n",
+            "n_canton": 19,
+            "district": "Platanares",
+            "n_district": 6
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11907,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "P\u00e9rez Zeled\u00f3n",
+            "n_canton": 19,
+            "district": "Pejibaye",
+            "n_district": 7
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11908,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "P\u00e9rez Zeled\u00f3n",
+            "n_canton": 19,
+            "district": "Caj\u00f3n",
+            "n_district": 8
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11909,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "P\u00e9rez Zeled\u00f3n",
+            "n_canton": 19,
+            "district": "Bar\u00fa",
+            "n_district": 9
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11910,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "P\u00e9rez Zeled\u00f3n",
+            "n_canton": 19,
+            "district": "R\u00edo Nuevo",
+            "n_district": 10
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11911,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "P\u00e9rez Zeled\u00f3n",
+            "n_canton": 19,
+            "district": "P\u00e1ramo",
+            "n_district": 11
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 11912,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "P\u00e9rez Zeled\u00f3n",
+            "n_canton": 19,
+            "district": "La Amistad",
+            "n_district": 12
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 12001,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Le\u00f3n Cort\u00e9s Castro",
+            "n_canton": 20,
+            "district": "San Pablo",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 12002,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Le\u00f3n Cort\u00e9s Castro",
+            "n_canton": 20,
+            "district": "San Andr\u00e9s",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 12003,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Le\u00f3n Cort\u00e9s Castro",
+            "n_canton": 20,
+            "district": "Llano Bonito",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 12004,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Le\u00f3n Cort\u00e9s Castro",
+            "n_canton": 20,
+            "district": "San Isidro",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 12005,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Le\u00f3n Cort\u00e9s Castro",
+            "n_canton": 20,
+            "district": "Santa Cruz",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 12006,
+        "fields": {
+            "province": "San Jos\u00e9",
+            "n_province": 1,
+            "canton": "Le\u00f3n Cort\u00e9s Castro",
+            "n_canton": 20,
+            "district": "San Antonio",
+            "n_district": 6
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20101,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Alajuela",
+            "n_canton": 1,
+            "district": "Alajuela",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20102,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Alajuela",
+            "n_canton": 1,
+            "district": "San Jos\u00e9",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20103,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Alajuela",
+            "n_canton": 1,
+            "district": "Carrizal",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20104,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Alajuela",
+            "n_canton": 1,
+            "district": "San Antonio",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20105,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Alajuela",
+            "n_canton": 1,
+            "district": "Gu\u00e1cima",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20106,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Alajuela",
+            "n_canton": 1,
+            "district": "San Isidro",
+            "n_district": 6
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20107,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Alajuela",
+            "n_canton": 1,
+            "district": "Sabanilla",
+            "n_district": 7
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20108,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Alajuela",
+            "n_canton": 1,
+            "district": "San Rafael",
+            "n_district": 8
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20109,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Alajuela",
+            "n_canton": 1,
+            "district": "R\u00edo Segundo",
+            "n_district": 9
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20110,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Alajuela",
+            "n_canton": 1,
+            "district": "Desamparados",
+            "n_district": 10
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20111,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Alajuela",
+            "n_canton": 1,
+            "district": "Turr\u00facares",
+            "n_district": 11
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20112,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Alajuela",
+            "n_canton": 1,
+            "district": "Tambor",
+            "n_district": 12
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20113,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Alajuela",
+            "n_canton": 1,
+            "district": "Garita",
+            "n_district": 13
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20114,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Alajuela",
+            "n_canton": 1,
+            "district": "Sarapiqu\u00ed",
+            "n_district": 14
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20201,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "San Ram\u00f3n",
+            "n_canton": 2,
+            "district": "San Ram\u00f3n",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20202,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "San Ram\u00f3n",
+            "n_canton": 2,
+            "district": "Santiago",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20203,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "San Ram\u00f3n",
+            "n_canton": 2,
+            "district": "San Juan",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20204,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "San Ram\u00f3n",
+            "n_canton": 2,
+            "district": "Piedades Norte",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20205,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "San Ram\u00f3n",
+            "n_canton": 2,
+            "district": "Piedades Sur",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20206,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "San Ram\u00f3n",
+            "n_canton": 2,
+            "district": "San Rafael",
+            "n_district": 6
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20207,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "San Ram\u00f3n",
+            "n_canton": 2,
+            "district": "San Isidro",
+            "n_district": 7
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20208,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "San Ram\u00f3n",
+            "n_canton": 2,
+            "district": "\u00c1ngeles",
+            "n_district": 8
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20209,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "San Ram\u00f3n",
+            "n_canton": 2,
+            "district": "Alfaro",
+            "n_district": 9
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20210,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "San Ram\u00f3n",
+            "n_canton": 2,
+            "district": "Volio",
+            "n_district": 10
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20211,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "San Ram\u00f3n",
+            "n_canton": 2,
+            "district": "Concepci\u00f3n",
+            "n_district": 11
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20212,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "San Ram\u00f3n",
+            "n_canton": 2,
+            "district": "Zapotal",
+            "n_district": 12
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20213,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "San Ram\u00f3n",
+            "n_canton": 2,
+            "district": "Pe\u00f1as Blancas",
+            "n_district": 13
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20214,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "San Ram\u00f3n",
+            "n_canton": 2,
+            "district": "San Lorenzo",
+            "n_district": 14
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20301,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Grecia",
+            "n_canton": 3,
+            "district": "Grecia",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20302,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Grecia",
+            "n_canton": 3,
+            "district": "San Isidro",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20303,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Grecia",
+            "n_canton": 3,
+            "district": "San Jos\u00e9",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20304,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Grecia",
+            "n_canton": 3,
+            "district": "San Roque",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20305,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Grecia",
+            "n_canton": 3,
+            "district": "Tacares",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20307,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Grecia",
+            "n_canton": 3,
+            "district": "Puente de Piedra",
+            "n_district": 7
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20308,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Grecia",
+            "n_canton": 3,
+            "district": "Bol\u00edvar",
+            "n_district": 8
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20401,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "San Mateo",
+            "n_canton": 4,
+            "district": "San Mateo",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20402,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "San Mateo",
+            "n_canton": 4,
+            "district": "Desmonte",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20403,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "San Mateo",
+            "n_canton": 4,
+            "district": "Jes\u00fas Mar\u00eda",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20404,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "San Mateo",
+            "n_canton": 4,
+            "district": "Labrador",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20501,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Atenas",
+            "n_canton": 5,
+            "district": "Atenas",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20502,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Atenas",
+            "n_canton": 5,
+            "district": "Jes\u00fas",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20503,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Atenas",
+            "n_canton": 5,
+            "district": "Mercedes",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20504,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Atenas",
+            "n_canton": 5,
+            "district": "San Isidro",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20505,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Atenas",
+            "n_canton": 5,
+            "district": "Concepci\u00f3n",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20506,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Atenas",
+            "n_canton": 5,
+            "district": "San Jos\u00e9",
+            "n_district": 6
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20507,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Atenas",
+            "n_canton": 5,
+            "district": "Santa Eulalia",
+            "n_district": 7
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20508,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Atenas",
+            "n_canton": 5,
+            "district": "Escobal",
+            "n_district": 8
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20601,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Naranjo",
+            "n_canton": 6,
+            "district": "Naranjo",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20602,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Naranjo",
+            "n_canton": 6,
+            "district": "San Miguel",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20603,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Naranjo",
+            "n_canton": 6,
+            "district": "San Jos\u00e9",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20604,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Naranjo",
+            "n_canton": 6,
+            "district": "Cirr\u00ed Sur",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20605,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Naranjo",
+            "n_canton": 6,
+            "district": "San Jer\u00f3nimo",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20606,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Naranjo",
+            "n_canton": 6,
+            "district": "San Juan",
+            "n_district": 6
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20607,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Naranjo",
+            "n_canton": 6,
+            "district": "El Rosario",
+            "n_district": 7
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20608,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Naranjo",
+            "n_canton": 6,
+            "district": "Palmitos",
+            "n_district": 8
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20701,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Palmares",
+            "n_canton": 7,
+            "district": "Palmares",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20702,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Palmares",
+            "n_canton": 7,
+            "district": "Zaragoza",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20703,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Palmares",
+            "n_canton": 7,
+            "district": "Buenos Aires",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20704,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Palmares",
+            "n_canton": 7,
+            "district": "Santiago",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20705,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Palmares",
+            "n_canton": 7,
+            "district": "Candelaria",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20706,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Palmares",
+            "n_canton": 7,
+            "district": "Esquipulas",
+            "n_district": 6
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20707,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Palmares",
+            "n_canton": 7,
+            "district": "La Granja",
+            "n_district": 7
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20801,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Po\u00e1s",
+            "n_canton": 8,
+            "district": "San Pedro",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20802,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Po\u00e1s",
+            "n_canton": 8,
+            "district": "San Juan",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20803,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Po\u00e1s",
+            "n_canton": 8,
+            "district": "San Rafael",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20804,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Po\u00e1s",
+            "n_canton": 8,
+            "district": "Carrillos",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20805,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Po\u00e1s",
+            "n_canton": 8,
+            "district": "Sabana Redonda",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20901,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Orotina",
+            "n_canton": 9,
+            "district": "Orotina",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20902,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Orotina",
+            "n_canton": 9,
+            "district": "El Mastate",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20903,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Orotina",
+            "n_canton": 9,
+            "district": "Hacienda Vieja",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20904,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Orotina",
+            "n_canton": 9,
+            "district": "Coyolar",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 20905,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Orotina",
+            "n_canton": 9,
+            "district": "La Ceiba",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21001,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "San Carlos",
+            "n_canton": 10,
+            "district": "Quesada",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21002,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "San Carlos",
+            "n_canton": 10,
+            "district": "Florencia",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21003,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "San Carlos",
+            "n_canton": 10,
+            "district": "Buenavista",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21004,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "San Carlos",
+            "n_canton": 10,
+            "district": "Aguas Zarcas",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21005,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "San Carlos",
+            "n_canton": 10,
+            "district": "Venecia",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21006,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "San Carlos",
+            "n_canton": 10,
+            "district": "Pital",
+            "n_district": 6
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21007,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "San Carlos",
+            "n_canton": 10,
+            "district": "La Fortuna",
+            "n_district": 7
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21008,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "San Carlos",
+            "n_canton": 10,
+            "district": "La Tigra",
+            "n_district": 8
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21009,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "San Carlos",
+            "n_canton": 10,
+            "district": "La Palmera",
+            "n_district": 9
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21010,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "San Carlos",
+            "n_canton": 10,
+            "district": "Venado",
+            "n_district": 10
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21011,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "San Carlos",
+            "n_canton": 10,
+            "district": "Cutris",
+            "n_district": 11
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21012,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "San Carlos",
+            "n_canton": 10,
+            "district": "Monterrey",
+            "n_district": 12
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21013,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "San Carlos",
+            "n_canton": 10,
+            "district": "Pocosol",
+            "n_district": 13
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21101,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Zarcero",
+            "n_canton": 11,
+            "district": "Zarcero",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21102,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Zarcero",
+            "n_canton": 11,
+            "district": "Laguna",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21103,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Zarcero",
+            "n_canton": 11,
+            "district": "Tapesco",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21104,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Zarcero",
+            "n_canton": 11,
+            "district": "Guadalupe",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21105,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Zarcero",
+            "n_canton": 11,
+            "district": "Palmira",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21106,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Zarcero",
+            "n_canton": 11,
+            "district": "Zapote",
+            "n_district": 6
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21107,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Zarcero",
+            "n_canton": 11,
+            "district": "Brisas",
+            "n_district": 7
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21201,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Sarch\u00ed",
+            "n_canton": 12,
+            "district": "Sarch\u00ed Norte",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21202,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Sarch\u00ed",
+            "n_canton": 12,
+            "district": "Sarch\u00ed Sur",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21203,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Sarch\u00ed",
+            "n_canton": 12,
+            "district": "Toro Amarillo",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21204,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Sarch\u00ed",
+            "n_canton": 12,
+            "district": "San Pedro",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21205,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Sarch\u00ed",
+            "n_canton": 12,
+            "district": "Rodr\u00edguez",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21301,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Upala",
+            "n_canton": 13,
+            "district": "Upala",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21302,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Upala",
+            "n_canton": 13,
+            "district": "Aguas Claras",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21303,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Upala",
+            "n_canton": 13,
+            "district": "San Jos\u00e9 o Pizote",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21304,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Upala",
+            "n_canton": 13,
+            "district": "Bijagua",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21305,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Upala",
+            "n_canton": 13,
+            "district": "Delicias",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21306,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Upala",
+            "n_canton": 13,
+            "district": "Dos R\u00edos",
+            "n_district": 6
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21307,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Upala",
+            "n_canton": 13,
+            "district": "Yolillal",
+            "n_district": 7
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21308,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Upala",
+            "n_canton": 13,
+            "district": "Canalete",
+            "n_district": 8
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21401,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Los Chiles",
+            "n_canton": 14,
+            "district": "Los Chiles",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21402,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Los Chiles",
+            "n_canton": 14,
+            "district": "Ca\u00f1o Negro",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21403,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Los Chiles",
+            "n_canton": 14,
+            "district": "El Amparo",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21404,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Los Chiles",
+            "n_canton": 14,
+            "district": "San Jorge",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21501,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Guatuso",
+            "n_canton": 15,
+            "district": "San Rafael",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21502,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Guatuso",
+            "n_canton": 15,
+            "district": "Buenavista",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21503,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Guatuso",
+            "n_canton": 15,
+            "district": "Cote",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21504,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "Guatuso",
+            "n_canton": 15,
+            "district": "Katira",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21601,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "R\u00edo Cuarto",
+            "n_canton": 16,
+            "district": "R\u00edo Cuarto",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21602,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "R\u00edo Cuarto",
+            "n_canton": 16,
+            "district": "Santa Rita",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 21603,
+        "fields": {
+            "province": "Alajuela",
+            "n_province": 2,
+            "canton": "R\u00edo Cuarto",
+            "n_canton": 16,
+            "district": "Santa Isabel",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30101,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Cartago",
+            "n_canton": 1,
+            "district": "Oriental",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30102,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Cartago",
+            "n_canton": 1,
+            "district": "Occidental",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30103,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Cartago",
+            "n_canton": 1,
+            "district": "Carmen",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30104,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Cartago",
+            "n_canton": 1,
+            "district": "San Nicol\u00e1s",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30105,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Cartago",
+            "n_canton": 1,
+            "district": "Aguacaliente o San Francisco",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30106,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Cartago",
+            "n_canton": 1,
+            "district": "Guadalupe o Arenilla",
+            "n_district": 6
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30107,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Cartago",
+            "n_canton": 1,
+            "district": "Corralillo",
+            "n_district": 7
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30108,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Cartago",
+            "n_canton": 1,
+            "district": "Tierra Blanca",
+            "n_district": 8
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30109,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Cartago",
+            "n_canton": 1,
+            "district": "Dulce Nombre",
+            "n_district": 9
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30110,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Cartago",
+            "n_canton": 1,
+            "district": "Llano Grande",
+            "n_district": 10
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30111,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Cartago",
+            "n_canton": 1,
+            "district": "Quebradilla",
+            "n_district": 11
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30201,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Para\u00edso",
+            "n_canton": 2,
+            "district": "Para\u00edso",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30202,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Para\u00edso",
+            "n_canton": 2,
+            "district": "Santiago",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30203,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Para\u00edso",
+            "n_canton": 2,
+            "district": "Orosi",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30204,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Para\u00edso",
+            "n_canton": 2,
+            "district": "Cach\u00ed",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30205,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Para\u00edso",
+            "n_canton": 2,
+            "district": "Llanos de Santa Luc\u00eda",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30301,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "La Uni\u00f3n",
+            "n_canton": 3,
+            "district": "Tres R\u00edos",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30302,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "La Uni\u00f3n",
+            "n_canton": 3,
+            "district": "San Diego",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30303,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "La Uni\u00f3n",
+            "n_canton": 3,
+            "district": "San Juan",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30304,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "La Uni\u00f3n",
+            "n_canton": 3,
+            "district": "San Rafael",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30305,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "La Uni\u00f3n",
+            "n_canton": 3,
+            "district": "Concepci\u00f3n",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30306,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "La Uni\u00f3n",
+            "n_canton": 3,
+            "district": "Dulce Nombre",
+            "n_district": 6
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30307,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "La Uni\u00f3n",
+            "n_canton": 3,
+            "district": "San Ram\u00f3n",
+            "n_district": 7
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30308,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "La Uni\u00f3n",
+            "n_canton": 3,
+            "district": "R\u00edo Azul",
+            "n_district": 8
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30401,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Jim\u00e9nez",
+            "n_canton": 4,
+            "district": "Juan Vi\u00f1as",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30402,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Jim\u00e9nez",
+            "n_canton": 4,
+            "district": "Tucurrique",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30403,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Jim\u00e9nez",
+            "n_canton": 4,
+            "district": "Pejibaye",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30501,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Turrialba",
+            "n_canton": 5,
+            "district": "Turrialba",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30502,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Turrialba",
+            "n_canton": 5,
+            "district": "La Suiza",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30503,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Turrialba",
+            "n_canton": 5,
+            "district": "Peralta",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30504,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Turrialba",
+            "n_canton": 5,
+            "district": "Santa Cruz",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30505,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Turrialba",
+            "n_canton": 5,
+            "district": "Santa Teresita",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30506,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Turrialba",
+            "n_canton": 5,
+            "district": "Pavones",
+            "n_district": 6
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30507,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Turrialba",
+            "n_canton": 5,
+            "district": "Tuis",
+            "n_district": 7
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30508,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Turrialba",
+            "n_canton": 5,
+            "district": "Tayutic",
+            "n_district": 8
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30509,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Turrialba",
+            "n_canton": 5,
+            "district": "Santa Rosa",
+            "n_district": 9
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30510,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Turrialba",
+            "n_canton": 5,
+            "district": "Tres Equis",
+            "n_district": 10
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30511,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Turrialba",
+            "n_canton": 5,
+            "district": "La Isabel",
+            "n_district": 11
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30512,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Turrialba",
+            "n_canton": 5,
+            "district": "Chirrip\u00f3",
+            "n_district": 12
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30601,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Alvarado",
+            "n_canton": 6,
+            "district": "Pacayas",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30602,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Alvarado",
+            "n_canton": 6,
+            "district": "Cervantes",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30603,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Alvarado",
+            "n_canton": 6,
+            "district": "Capellades",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30701,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Oreamuno",
+            "n_canton": 7,
+            "district": "San Rafael",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30702,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Oreamuno",
+            "n_canton": 7,
+            "district": "Cot",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30703,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Oreamuno",
+            "n_canton": 7,
+            "district": "Potrero Cerrado",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30704,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Oreamuno",
+            "n_canton": 7,
+            "district": "Cipreses",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30705,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "Oreamuno",
+            "n_canton": 7,
+            "district": "Santa Rosa",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30801,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "El Guarco",
+            "n_canton": 8,
+            "district": "El Tejar",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30802,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "El Guarco",
+            "n_canton": 8,
+            "district": "San Isidro",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30803,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "El Guarco",
+            "n_canton": 8,
+            "district": "Tobosi",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 30804,
+        "fields": {
+            "province": "Cartago",
+            "n_province": 3,
+            "canton": "El Guarco",
+            "n_canton": 8,
+            "district": "Patio de Agua",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40101,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Heredia",
+            "n_canton": 1,
+            "district": "Heredia",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40102,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Heredia",
+            "n_canton": 1,
+            "district": "Mercedes",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40103,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Heredia",
+            "n_canton": 1,
+            "district": "San Francisco",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40104,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Heredia",
+            "n_canton": 1,
+            "district": "Ulloa",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40105,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Heredia",
+            "n_canton": 1,
+            "district": "Vara Blanca",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40201,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Barva",
+            "n_canton": 2,
+            "district": "Barva",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40202,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Barva",
+            "n_canton": 2,
+            "district": "San Pedro",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40203,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Barva",
+            "n_canton": 2,
+            "district": "San Pablo",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40204,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Barva",
+            "n_canton": 2,
+            "district": "San Roque",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40205,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Barva",
+            "n_canton": 2,
+            "district": "Santa Luc\u00eda",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40206,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Barva",
+            "n_canton": 2,
+            "district": "San Jos\u00e9 de la Monta\u00f1a",
+            "n_district": 6
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40301,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Santo Domingo",
+            "n_canton": 3,
+            "district": "Santo Domingo",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40302,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Santo Domingo",
+            "n_canton": 3,
+            "district": "San Vicente",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40303,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Santo Domingo",
+            "n_canton": 3,
+            "district": "San Miguel",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40304,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Santo Domingo",
+            "n_canton": 3,
+            "district": "Paracito",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40305,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Santo Domingo",
+            "n_canton": 3,
+            "district": "Santo Tom\u00e1s",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40306,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Santo Domingo",
+            "n_canton": 3,
+            "district": "Santa Rosa",
+            "n_district": 6
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40307,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Santo Domingo",
+            "n_canton": 3,
+            "district": "Tures",
+            "n_district": 7
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40308,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Santo Domingo",
+            "n_canton": 3,
+            "district": "Par\u00e1",
+            "n_district": 8
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40401,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Santa B\u00e1rbara",
+            "n_canton": 4,
+            "district": "Santa B\u00e1rbara",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40402,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Santa B\u00e1rbara",
+            "n_canton": 4,
+            "district": "San Pedro",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40403,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Santa B\u00e1rbara",
+            "n_canton": 4,
+            "district": "San Juan",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40404,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Santa B\u00e1rbara",
+            "n_canton": 4,
+            "district": "Jes\u00fas",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40405,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Santa B\u00e1rbara",
+            "n_canton": 4,
+            "district": "Santo Domingo",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40406,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Santa B\u00e1rbara",
+            "n_canton": 4,
+            "district": "Purab\u00e1",
+            "n_district": 6
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40501,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "San Rafael",
+            "n_canton": 5,
+            "district": "San Rafael",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40502,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "San Rafael",
+            "n_canton": 5,
+            "district": "San Josecito",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40503,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "San Rafael",
+            "n_canton": 5,
+            "district": "Santiago",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40504,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "San Rafael",
+            "n_canton": 5,
+            "district": "\u00c1ngeles",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40505,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "San Rafael",
+            "n_canton": 5,
+            "district": "Concepci\u00f3n",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40601,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "San Isidro",
+            "n_canton": 6,
+            "district": "San Isidro",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40602,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "San Isidro",
+            "n_canton": 6,
+            "district": "San Jos\u00e9",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40603,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "San Isidro",
+            "n_canton": 6,
+            "district": "Concepci\u00f3n",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40604,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "San Isidro",
+            "n_canton": 6,
+            "district": "San Francisco",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40701,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Bel\u00e9n",
+            "n_canton": 7,
+            "district": "San Antonio",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40702,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Bel\u00e9n",
+            "n_canton": 7,
+            "district": "La Ribera",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40703,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Bel\u00e9n",
+            "n_canton": 7,
+            "district": "La Asunci\u00f3n",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40801,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Flores",
+            "n_canton": 8,
+            "district": "San Joaqu\u00edn",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40802,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Flores",
+            "n_canton": 8,
+            "district": "Barrantes",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40803,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Flores",
+            "n_canton": 8,
+            "district": "Llorente",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40901,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "San Pablo",
+            "n_canton": 9,
+            "district": "San Pablo",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 40902,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "San Pablo",
+            "n_canton": 9,
+            "district": "Rinc\u00f3n Sabanilla",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 41001,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Sarapiqu\u00ed",
+            "n_canton": 10,
+            "district": "Puerto Viejo",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 41002,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Sarapiqu\u00ed",
+            "n_canton": 10,
+            "district": "La Virgen",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 41003,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Sarapiqu\u00ed",
+            "n_canton": 10,
+            "district": "Las Horquetas",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 41004,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Sarapiqu\u00ed",
+            "n_canton": 10,
+            "district": "Llanuras del Gaspar",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 41005,
+        "fields": {
+            "province": "Heredia",
+            "n_province": 4,
+            "canton": "Sarapiqu\u00ed",
+            "n_canton": 10,
+            "district": "Cure\u00f1a",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50101,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Liberia",
+            "n_canton": 1,
+            "district": "Liberia",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50102,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Liberia",
+            "n_canton": 1,
+            "district": "Ca\u00f1as Dulces",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50103,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Liberia",
+            "n_canton": 1,
+            "district": "Mayorga",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50104,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Liberia",
+            "n_canton": 1,
+            "district": "Nacascolo",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50105,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Liberia",
+            "n_canton": 1,
+            "district": "Curuband\u00e9",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50201,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Nicoya",
+            "n_canton": 2,
+            "district": "Nicoya",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50202,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Nicoya",
+            "n_canton": 2,
+            "district": "Mansi\u00f3n",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50203,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Nicoya",
+            "n_canton": 2,
+            "district": "San Antonio",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50204,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Nicoya",
+            "n_canton": 2,
+            "district": "Quebrada Honda",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50205,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Nicoya",
+            "n_canton": 2,
+            "district": "S\u00e1mara",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50206,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Nicoya",
+            "n_canton": 2,
+            "district": "Nosara",
+            "n_district": 6
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50207,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Nicoya",
+            "n_canton": 2,
+            "district": "Bel\u00e9n de Nosarita",
+            "n_district": 7
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50301,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Santa Cruz",
+            "n_canton": 3,
+            "district": "Santa Cruz",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50302,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Santa Cruz",
+            "n_canton": 3,
+            "district": "Bols\u00f3n",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50303,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Santa Cruz",
+            "n_canton": 3,
+            "district": "Veintisiete de Abril",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50304,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Santa Cruz",
+            "n_canton": 3,
+            "district": "Tempate",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50305,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Santa Cruz",
+            "n_canton": 3,
+            "district": "Cartagena",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50306,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Santa Cruz",
+            "n_canton": 3,
+            "district": "Cuajiniquil",
+            "n_district": 6
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50307,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Santa Cruz",
+            "n_canton": 3,
+            "district": "Diri\u00e1",
+            "n_district": 7
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50308,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Santa Cruz",
+            "n_canton": 3,
+            "district": "Cabo Velas",
+            "n_district": 8
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50309,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Santa Cruz",
+            "n_canton": 3,
+            "district": "Tamarindo",
+            "n_district": 9
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50401,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Bagaces",
+            "n_canton": 4,
+            "district": "Bagaces",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50402,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Bagaces",
+            "n_canton": 4,
+            "district": "La Fortuna",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50403,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Bagaces",
+            "n_canton": 4,
+            "district": "Mogote",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50404,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Bagaces",
+            "n_canton": 4,
+            "district": "R\u00edo Naranjo",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50501,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Carrillo",
+            "n_canton": 5,
+            "district": "Filadelfia",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50502,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Carrillo",
+            "n_canton": 5,
+            "district": "Palmira",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50503,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Carrillo",
+            "n_canton": 5,
+            "district": "Sardinal",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50504,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Carrillo",
+            "n_canton": 5,
+            "district": "Bel\u00e9n",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50601,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Ca\u00f1as",
+            "n_canton": 6,
+            "district": "Ca\u00f1as",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50602,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Ca\u00f1as",
+            "n_canton": 6,
+            "district": "Palmira",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50603,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Ca\u00f1as",
+            "n_canton": 6,
+            "district": "San Miguel",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50604,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Ca\u00f1as",
+            "n_canton": 6,
+            "district": "Bebedero",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50605,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Ca\u00f1as",
+            "n_canton": 6,
+            "district": "Porozal",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50701,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Abangares",
+            "n_canton": 7,
+            "district": "Las Juntas",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50702,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Abangares",
+            "n_canton": 7,
+            "district": "Sierra",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50703,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Abangares",
+            "n_canton": 7,
+            "district": "San Juan",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50704,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Abangares",
+            "n_canton": 7,
+            "district": "Colorado",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50801,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Tilar\u00e1n",
+            "n_canton": 8,
+            "district": "Tilar\u00e1n",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50802,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Tilar\u00e1n",
+            "n_canton": 8,
+            "district": "Quebrada Grande",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50803,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Tilar\u00e1n",
+            "n_canton": 8,
+            "district": "Tronadora",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50804,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Tilar\u00e1n",
+            "n_canton": 8,
+            "district": "Santa Rosa",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50805,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Tilar\u00e1n",
+            "n_canton": 8,
+            "district": "L\u00edbano",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50806,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Tilar\u00e1n",
+            "n_canton": 8,
+            "district": "Tierras Morenas",
+            "n_district": 6
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50807,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Tilar\u00e1n",
+            "n_canton": 8,
+            "district": "Arenal",
+            "n_district": 7
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50901,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Nandayure",
+            "n_canton": 9,
+            "district": "Carmona",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50902,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Nandayure",
+            "n_canton": 9,
+            "district": "Santa Rita",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50903,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Nandayure",
+            "n_canton": 9,
+            "district": "Zapotal",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50904,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Nandayure",
+            "n_canton": 9,
+            "district": "San Pablo",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50905,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Nandayure",
+            "n_canton": 9,
+            "district": "Porvenir",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 50906,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Nandayure",
+            "n_canton": 9,
+            "district": "Bejuco",
+            "n_district": 6
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 51001,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "La Cruz",
+            "n_canton": 10,
+            "district": "La Cruz",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 51002,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "La Cruz",
+            "n_canton": 10,
+            "district": "Santa Cecilia",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 51003,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "La Cruz",
+            "n_canton": 10,
+            "district": "La Garita",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 51004,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "La Cruz",
+            "n_canton": 10,
+            "district": "Santa Elena",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 51101,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Hojancha",
+            "n_canton": 11,
+            "district": "Hojancha",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 51102,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Hojancha",
+            "n_canton": 11,
+            "district": "Monte Romo",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 51103,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Hojancha",
+            "n_canton": 11,
+            "district": "Puerto Carrillo",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 51104,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Hojancha",
+            "n_canton": 11,
+            "district": "Huacas",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 51105,
+        "fields": {
+            "province": "Guanacaste",
+            "n_province": 5,
+            "canton": "Hojancha",
+            "n_canton": 11,
+            "district": "Matamb\u00fa",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60101,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Puntarenas",
+            "n_canton": 1,
+            "district": "Puntarenas",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60102,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Puntarenas",
+            "n_canton": 1,
+            "district": "Pitahaya",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60103,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Puntarenas",
+            "n_canton": 1,
+            "district": "Chomes",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60104,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Puntarenas",
+            "n_canton": 1,
+            "district": "Lepanto",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60105,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Puntarenas",
+            "n_canton": 1,
+            "district": "Paquera",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60106,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Puntarenas",
+            "n_canton": 1,
+            "district": "Manzanillo",
+            "n_district": 6
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60107,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Puntarenas",
+            "n_canton": 1,
+            "district": "Guacimal",
+            "n_district": 7
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60108,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Puntarenas",
+            "n_canton": 1,
+            "district": "Barranca",
+            "n_district": 8
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60109,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Puntarenas",
+            "n_canton": 1,
+            "district": "Monte Verde",
+            "n_district": 9
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60111,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Puntarenas",
+            "n_canton": 1,
+            "district": "C\u00f3bano",
+            "n_district": 11
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60112,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Puntarenas",
+            "n_canton": 1,
+            "district": "Chacarita",
+            "n_district": 12
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60113,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Puntarenas",
+            "n_canton": 1,
+            "district": "Chira",
+            "n_district": 13
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60114,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Puntarenas",
+            "n_canton": 1,
+            "district": "Acapulco",
+            "n_district": 14
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60115,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Puntarenas",
+            "n_canton": 1,
+            "district": "El Roble",
+            "n_district": 15
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60116,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Puntarenas",
+            "n_canton": 1,
+            "district": "Arancibia",
+            "n_district": 16
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60201,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Esparza",
+            "n_canton": 2,
+            "district": "Esp\u00edritu Santo",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60202,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Esparza",
+            "n_canton": 2,
+            "district": "San Juan Grande",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60203,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Esparza",
+            "n_canton": 2,
+            "district": "Macacona",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60204,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Esparza",
+            "n_canton": 2,
+            "district": "San Rafael",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60205,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Esparza",
+            "n_canton": 2,
+            "district": "San Jer\u00f3nimo",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60206,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Esparza",
+            "n_canton": 2,
+            "district": "Caldera",
+            "n_district": 6
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60301,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Buenos Aires",
+            "n_canton": 3,
+            "district": "Buenos Aires",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60302,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Buenos Aires",
+            "n_canton": 3,
+            "district": "Volc\u00e1n",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60303,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Buenos Aires",
+            "n_canton": 3,
+            "district": "Potrero Grande",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60304,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Buenos Aires",
+            "n_canton": 3,
+            "district": "Boruca",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60305,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Buenos Aires",
+            "n_canton": 3,
+            "district": "Pilas",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60306,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Buenos Aires",
+            "n_canton": 3,
+            "district": "Colinas",
+            "n_district": 6
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60307,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Buenos Aires",
+            "n_canton": 3,
+            "district": "Ch\u00e1nguena",
+            "n_district": 7
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60308,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Buenos Aires",
+            "n_canton": 3,
+            "district": "Biolley",
+            "n_district": 8
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60309,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Buenos Aires",
+            "n_canton": 3,
+            "district": "Brunka",
+            "n_district": 9
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60401,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Montes de Oro",
+            "n_canton": 4,
+            "district": "Miramar",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60402,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Montes de Oro",
+            "n_canton": 4,
+            "district": "La Uni\u00f3n",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60403,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Montes de Oro",
+            "n_canton": 4,
+            "district": "San Isidro",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60501,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Osa",
+            "n_canton": 5,
+            "district": "Puerto Cort\u00e9s",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60502,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Osa",
+            "n_canton": 5,
+            "district": "Palmar",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60503,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Osa",
+            "n_canton": 5,
+            "district": "Sierpe",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60504,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Osa",
+            "n_canton": 5,
+            "district": "Bah\u00eda Ballena",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60505,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Osa",
+            "n_canton": 5,
+            "district": "Piedras Blancas",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60506,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Osa",
+            "n_canton": 5,
+            "district": "Bah\u00eda Drake",
+            "n_district": 6
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60601,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Quepos",
+            "n_canton": 6,
+            "district": "Quepos",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60602,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Quepos",
+            "n_canton": 6,
+            "district": "Savegre",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60603,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Quepos",
+            "n_canton": 6,
+            "district": "Naranjito",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60701,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Golfito",
+            "n_canton": 7,
+            "district": "Golfito",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60702,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Golfito",
+            "n_canton": 7,
+            "district": "Puerto Jim\u00e9nez",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60703,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Golfito",
+            "n_canton": 7,
+            "district": "Guaycar\u00e1",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60704,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Golfito",
+            "n_canton": 7,
+            "district": "Pav\u00f3n",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60801,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Coto Brus",
+            "n_canton": 8,
+            "district": "San Vito",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60802,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Coto Brus",
+            "n_canton": 8,
+            "district": "Sabalito",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60803,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Coto Brus",
+            "n_canton": 8,
+            "district": "Aguabuena",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60804,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Coto Brus",
+            "n_canton": 8,
+            "district": "Limoncito",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60805,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Coto Brus",
+            "n_canton": 8,
+            "district": "Pittier",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60806,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Coto Brus",
+            "n_canton": 8,
+            "district": "Guti\u00e9rrez Braun",
+            "n_district": 6
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 60901,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Parrita",
+            "n_canton": 9,
+            "district": "Parrita",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 61001,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Corredores",
+            "n_canton": 10,
+            "district": "Corredor",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 61002,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Corredores",
+            "n_canton": 10,
+            "district": "La Cuesta",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 61003,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Corredores",
+            "n_canton": 10,
+            "district": "Canoas",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 61004,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Corredores",
+            "n_canton": 10,
+            "district": "Laurel",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 61101,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Garabito",
+            "n_canton": 11,
+            "district": "Jac\u00f3",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 61102,
+        "fields": {
+            "province": "Puntarenas",
+            "n_province": 6,
+            "canton": "Garabito",
+            "n_canton": 11,
+            "district": "T\u00e1rcoles",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 70101,
+        "fields": {
+            "province": "Lim\u00f3n",
+            "n_province": 7,
+            "canton": "Lim\u00f3n",
+            "n_canton": 1,
+            "district": "Lim\u00f3n",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 70102,
+        "fields": {
+            "province": "Lim\u00f3n",
+            "n_province": 7,
+            "canton": "Lim\u00f3n",
+            "n_canton": 1,
+            "district": "Valle La Estrella",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 70103,
+        "fields": {
+            "province": "Lim\u00f3n",
+            "n_province": 7,
+            "canton": "Lim\u00f3n",
+            "n_canton": 1,
+            "district": "R\u00edo Blanco",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 70104,
+        "fields": {
+            "province": "Lim\u00f3n",
+            "n_province": 7,
+            "canton": "Lim\u00f3n",
+            "n_canton": 1,
+            "district": "Matama",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 70201,
+        "fields": {
+            "province": "Lim\u00f3n",
+            "n_province": 7,
+            "canton": "Pococ\u00ed",
+            "n_canton": 2,
+            "district": "Gu\u00e1piles",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 70202,
+        "fields": {
+            "province": "Lim\u00f3n",
+            "n_province": 7,
+            "canton": "Pococ\u00ed",
+            "n_canton": 2,
+            "district": "Jim\u00e9nez",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 70203,
+        "fields": {
+            "province": "Lim\u00f3n",
+            "n_province": 7,
+            "canton": "Pococ\u00ed",
+            "n_canton": 2,
+            "district": "Rita",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 70204,
+        "fields": {
+            "province": "Lim\u00f3n",
+            "n_province": 7,
+            "canton": "Pococ\u00ed",
+            "n_canton": 2,
+            "district": "Roxana",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 70205,
+        "fields": {
+            "province": "Lim\u00f3n",
+            "n_province": 7,
+            "canton": "Pococ\u00ed",
+            "n_canton": 2,
+            "district": "Cariari",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 70206,
+        "fields": {
+            "province": "Lim\u00f3n",
+            "n_province": 7,
+            "canton": "Pococ\u00ed",
+            "n_canton": 2,
+            "district": "Colorado",
+            "n_district": 6
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 70207,
+        "fields": {
+            "province": "Lim\u00f3n",
+            "n_province": 7,
+            "canton": "Pococ\u00ed",
+            "n_canton": 2,
+            "district": "La Colonia",
+            "n_district": 7
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 70301,
+        "fields": {
+            "province": "Lim\u00f3n",
+            "n_province": 7,
+            "canton": "Siquirres",
+            "n_canton": 3,
+            "district": "Siquirres",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 70302,
+        "fields": {
+            "province": "Lim\u00f3n",
+            "n_province": 7,
+            "canton": "Siquirres",
+            "n_canton": 3,
+            "district": "Pacuarito",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 70303,
+        "fields": {
+            "province": "Lim\u00f3n",
+            "n_province": 7,
+            "canton": "Siquirres",
+            "n_canton": 3,
+            "district": "Florida",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 70304,
+        "fields": {
+            "province": "Lim\u00f3n",
+            "n_province": 7,
+            "canton": "Siquirres",
+            "n_canton": 3,
+            "district": "Germania",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 70305,
+        "fields": {
+            "province": "Lim\u00f3n",
+            "n_province": 7,
+            "canton": "Siquirres",
+            "n_canton": 3,
+            "district": "El Cairo",
+            "n_district": 5
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 70306,
+        "fields": {
+            "province": "Lim\u00f3n",
+            "n_province": 7,
+            "canton": "Siquirres",
+            "n_canton": 3,
+            "district": "La Alegr\u00eda",
+            "n_district": 6
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 70307,
+        "fields": {
+            "province": "Lim\u00f3n",
+            "n_province": 7,
+            "canton": "Siquirres",
+            "n_canton": 3,
+            "district": "Reventaz\u00f3n",
+            "n_district": 7
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 70401,
+        "fields": {
+            "province": "Lim\u00f3n",
+            "n_province": 7,
+            "canton": "Talamanca",
+            "n_canton": 4,
+            "district": "Bratsi",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 70402,
+        "fields": {
+            "province": "Lim\u00f3n",
+            "n_province": 7,
+            "canton": "Talamanca",
+            "n_canton": 4,
+            "district": "Sixaola",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 70403,
+        "fields": {
+            "province": "Lim\u00f3n",
+            "n_province": 7,
+            "canton": "Talamanca",
+            "n_canton": 4,
+            "district": "Cahuita",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 70404,
+        "fields": {
+            "province": "Lim\u00f3n",
+            "n_province": 7,
+            "canton": "Talamanca",
+            "n_canton": 4,
+            "district": "Telire",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 70501,
+        "fields": {
+            "province": "Lim\u00f3n",
+            "n_province": 7,
+            "canton": "Matina",
+            "n_canton": 5,
+            "district": "Matina",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 70502,
+        "fields": {
+            "province": "Lim\u00f3n",
+            "n_province": 7,
+            "canton": "Matina",
+            "n_canton": 5,
+            "district": "Bat\u00e1n",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 70503,
+        "fields": {
+            "province": "Lim\u00f3n",
+            "n_province": 7,
+            "canton": "Matina",
+            "n_canton": 5,
+            "district": "Carrandi",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 70601,
+        "fields": {
+            "province": "Lim\u00f3n",
+            "n_province": 7,
+            "canton": "Gu\u00e1cimo",
+            "n_canton": 6,
+            "district": "Gu\u00e1cimo",
+            "n_district": 1
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 70602,
+        "fields": {
+            "province": "Lim\u00f3n",
+            "n_province": 7,
+            "canton": "Gu\u00e1cimo",
+            "n_canton": 6,
+            "district": "Mercedes",
+            "n_district": 2
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 70603,
+        "fields": {
+            "province": "Lim\u00f3n",
+            "n_province": 7,
+            "canton": "Gu\u00e1cimo",
+            "n_canton": 6,
+            "district": "Pocora",
+            "n_district": 3
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 70604,
+        "fields": {
+            "province": "Lim\u00f3n",
+            "n_province": 7,
+            "canton": "Gu\u00e1cimo",
+            "n_canton": 6,
+            "district": "R\u00edo Jim\u00e9nez",
+            "n_district": 4
+        }
+    },
+    {
+        "model": "website.district",
+        "pk": 70605,
+        "fields": {
+            "province": "Lim\u00f3n",
+            "n_province": 7,
+            "canton": "Gu\u00e1cimo",
+            "n_canton": 6,
+            "district": "Duacar\u00ed",
+            "n_district": 5
+        }
+    }
+]

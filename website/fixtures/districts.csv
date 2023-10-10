@@ -1,0 +1,487 @@
+postal_code,province,n_province,canton,n_canton,district,n_district
+10101,San José,1,San José,1,Carmen,1
+10102,San José,1,San José,1,Merced,2
+10103,San José,1,San José,1,Hospital,3
+10104,San José,1,San José,1,Catedral,4
+10105,San José,1,San José,1,Zapote,5
+10106,San José,1,San José,1,San Francisco de Dos Ríos,6
+10107,San José,1,San José,1,Uruca,7
+10108,San José,1,San José,1,Mata Redonda,8
+10109,San José,1,San José,1,Pavas,9
+10110,San José,1,San José,1,Hatillo,10
+10111,San José,1,San José,1,San Sebastián,11
+10201,San José,1,Escazú,2,Escazú,1
+10202,San José,1,Escazú,2,San Antonio,2
+10203,San José,1,Escazú,2,San Rafael,3
+10301,San José,1,Desamparados,3,Desamparados,1
+10302,San José,1,Desamparados,3,San Miguel,2
+10303,San José,1,Desamparados,3,San Juan de Dios,3
+10304,San José,1,Desamparados,3,San Rafael Arriba,4
+10305,San José,1,Desamparados,3,San Antonio,5
+10306,San José,1,Desamparados,3,Frailes,6
+10307,San José,1,Desamparados,3,Patarrá,7
+10308,San José,1,Desamparados,3,San Cristóbal,8
+10309,San José,1,Desamparados,3,Rosario,9
+10310,San José,1,Desamparados,3,Damas,10
+10311,San José,1,Desamparados,3,San Rafael Abajo,11
+10312,San José,1,Desamparados,3,Gravilias,12
+10313,San José,1,Desamparados,3,Los Guido,13
+10401,San José,1,Puriscal,4,Santiago,1
+10402,San José,1,Puriscal,4,Mercedes Sur,2
+10403,San José,1,Puriscal,4,Barbacoas,3
+10404,San José,1,Puriscal,4,Grifo Alto,4
+10405,San José,1,Puriscal,4,San Rafael,5
+10406,San José,1,Puriscal,4,Candelarita,6
+10407,San José,1,Puriscal,4,Desamparaditos,7
+10408,San José,1,Puriscal,4,San Antonio,8
+10409,San José,1,Puriscal,4,Chires,9
+10501,San José,1,Tarrazú,5,San Marcos,1
+10502,San José,1,Tarrazú,5,San Lorenzo,2
+10503,San José,1,Tarrazú,5,San Carlos,3
+10601,San José,1,Aserrí,6,Aserrí,1
+10602,San José,1,Aserrí,6,Tarbaca,2
+10603,San José,1,Aserrí,6,Vuelta de Jorco,3
+10604,San José,1,Aserrí,6,San Gabriel,4
+10605,San José,1,Aserrí,6,La Legua,5
+10606,San José,1,Aserrí,6,Monterrey,6
+10607,San José,1,Aserrí,6,Salitrillos,7
+10701,San José,1,Mora,7,Colón,1
+10702,San José,1,Mora,7,Guayabo,2
+10703,San José,1,Mora,7,Tabarcia,3
+10704,San José,1,Mora,7,Piedras Negras,4
+10705,San José,1,Mora,7,Picagres,5
+10706,San José,1,Mora,7,Jaris,6
+10707,San José,1,Mora,7,Quitirrisí,7
+10801,San José,1,Goicoechea,8,Guadalupe,1
+10802,San José,1,Goicoechea,8,San Francisco,2
+10803,San José,1,Goicoechea,8,Calle Blancos,3
+10804,San José,1,Goicoechea,8,Mata de Plátano,4
+10805,San José,1,Goicoechea,8,Ipís,5
+10806,San José,1,Goicoechea,8,Rancho Redondo,6
+10807,San José,1,Goicoechea,8,Purral,7
+10901,San José,1,Santa Ana,9,Santa Ana,1
+10902,San José,1,Santa Ana,9,Salitral,2
+10903,San José,1,Santa Ana,9,Pozos,3
+10904,San José,1,Santa Ana,9,Uruca,4
+10905,San José,1,Santa Ana,9,Piedades,5
+10906,San José,1,Santa Ana,9,Brasil,6
+11001,San José,1,Alajuelita,10,Alajuelita,1
+11002,San José,1,Alajuelita,10,San Josecito,2
+11003,San José,1,Alajuelita,10,San Antonio,3
+11004,San José,1,Alajuelita,10,Concepción,4
+11005,San José,1,Alajuelita,10,San Felipe,5
+11101,San José,1,Vázquez de Coronado,11,San Isidro,1
+11102,San José,1,Vázquez de Coronado,11,San Rafael,2
+11103,San José,1,Vázquez de Coronado,11,Dulce Nombre de Jesús,3
+11104,San José,1,Vázquez de Coronado,11,Patalillo,4
+11105,San José,1,Vázquez de Coronado,11,Cascajal,5
+11201,San José,1,Acosta,12,San Ignacio,1
+11202,San José,1,Acosta,12,Guaitil,2
+11203,San José,1,Acosta,12,Palmichal,3
+11204,San José,1,Acosta,12,Cangrejal,4
+11205,San José,1,Acosta,12,Sabanillas,5
+11301,San José,1,Tibás,13,San Juan,1
+11302,San José,1,Tibás,13,Cinco Esquinas,2
+11303,San José,1,Tibás,13,Anselmo Llorente,3
+11304,San José,1,Tibás,13,León XIII,4
+11305,San José,1,Tibás,13,Colima,5
+11401,San José,1,Moravia,14,San Vicente,1
+11402,San José,1,Moravia,14,San Jerónimo,2
+11403,San José,1,Moravia,14,La Trinidad,3
+11501,San José,1,Montes de Oca,15,San Pedro,1
+11502,San José,1,Montes de Oca,15,Sabanilla,2
+11503,San José,1,Montes de Oca,15,Mercedes,3
+11504,San José,1,Montes de Oca,15,San Rafael,4
+11601,San José,1,Turrubares,16,San Pablo,1
+11602,San José,1,Turrubares,16,San Pedro,2
+11603,San José,1,Turrubares,16,San Juan de Mata,3
+11604,San José,1,Turrubares,16,San Luis,4
+11605,San José,1,Turrubares,16,Carara,5
+11701,San José,1,Dota,17,Santa María,1
+11702,San José,1,Dota,17,Jardín,2
+11703,San José,1,Dota,17,Copey,3
+11801,San José,1,Curridabat,18,Curridabat,1
+11802,San José,1,Curridabat,18,Granadilla,2
+11803,San José,1,Curridabat,18,Sánchez,3
+11804,San José,1,Curridabat,18,Tirrases,4
+11901,San José,1,Pérez Zeledón,19,San Isidro de El General,1
+11902,San José,1,Pérez Zeledón,19,El General,2
+11903,San José,1,Pérez Zeledón,19,Daniel Flores,3
+11904,San José,1,Pérez Zeledón,19,Rivas,4
+11905,San José,1,Pérez Zeledón,19,San Pedro,5
+11906,San José,1,Pérez Zeledón,19,Platanares,6
+11907,San José,1,Pérez Zeledón,19,Pejibaye,7
+11908,San José,1,Pérez Zeledón,19,Cajón,8
+11909,San José,1,Pérez Zeledón,19,Barú,9
+11910,San José,1,Pérez Zeledón,19,Río Nuevo,10
+11911,San José,1,Pérez Zeledón,19,Páramo,11
+11912,San José,1,Pérez Zeledón,19,La Amistad,12
+12001,San José,1,León Cortés Castro,20,San Pablo,1
+12002,San José,1,León Cortés Castro,20,San Andrés,2
+12003,San José,1,León Cortés Castro,20,Llano Bonito,3
+12004,San José,1,León Cortés Castro,20,San Isidro,4
+12005,San José,1,León Cortés Castro,20,Santa Cruz,5
+12006,San José,1,León Cortés Castro,20,San Antonio,6
+20101,Alajuela,2,Alajuela,1,Alajuela,1
+20102,Alajuela,2,Alajuela,1,San José,2
+20103,Alajuela,2,Alajuela,1,Carrizal,3
+20104,Alajuela,2,Alajuela,1,San Antonio,4
+20105,Alajuela,2,Alajuela,1,Guácima,5
+20106,Alajuela,2,Alajuela,1,San Isidro,6
+20107,Alajuela,2,Alajuela,1,Sabanilla,7
+20108,Alajuela,2,Alajuela,1,San Rafael,8
+20109,Alajuela,2,Alajuela,1,Río Segundo,9
+20110,Alajuela,2,Alajuela,1,Desamparados,10
+20111,Alajuela,2,Alajuela,1,Turrúcares,11
+20112,Alajuela,2,Alajuela,1,Tambor,12
+20113,Alajuela,2,Alajuela,1,Garita,13
+20114,Alajuela,2,Alajuela,1,Sarapiquí,14
+20201,Alajuela,2,San Ramón,2,San Ramón,1
+20202,Alajuela,2,San Ramón,2,Santiago,2
+20203,Alajuela,2,San Ramón,2,San Juan,3
+20204,Alajuela,2,San Ramón,2,Piedades Norte,4
+20205,Alajuela,2,San Ramón,2,Piedades Sur,5
+20206,Alajuela,2,San Ramón,2,San Rafael,6
+20207,Alajuela,2,San Ramón,2,San Isidro,7
+20208,Alajuela,2,San Ramón,2,Ángeles,8
+20209,Alajuela,2,San Ramón,2,Alfaro,9
+20210,Alajuela,2,San Ramón,2,Volio,10
+20211,Alajuela,2,San Ramón,2,Concepción,11
+20212,Alajuela,2,San Ramón,2,Zapotal,12
+20213,Alajuela,2,San Ramón,2,Peñas Blancas,13
+20214,Alajuela,2,San Ramón,2,San Lorenzo,14
+20301,Alajuela,2,Grecia,3,Grecia,1
+20302,Alajuela,2,Grecia,3,San Isidro,2
+20303,Alajuela,2,Grecia,3,San José,3
+20304,Alajuela,2,Grecia,3,San Roque,4
+20305,Alajuela,2,Grecia,3,Tacares,5
+20307,Alajuela,2,Grecia,3,Puente de Piedra,7
+20308,Alajuela,2,Grecia,3,Bolívar,8
+20401,Alajuela,2,San Mateo,4,San Mateo,1
+20402,Alajuela,2,San Mateo,4,Desmonte,2
+20403,Alajuela,2,San Mateo,4,Jesús María,3
+20404,Alajuela,2,San Mateo,4,Labrador,4
+20501,Alajuela,2,Atenas,5,Atenas,1
+20502,Alajuela,2,Atenas,5,Jesús,2
+20503,Alajuela,2,Atenas,5,Mercedes,3
+20504,Alajuela,2,Atenas,5,San Isidro,4
+20505,Alajuela,2,Atenas,5,Concepción,5
+20506,Alajuela,2,Atenas,5,San José,6
+20507,Alajuela,2,Atenas,5,Santa Eulalia,7
+20508,Alajuela,2,Atenas,5,Escobal,8
+20601,Alajuela,2,Naranjo,6,Naranjo,1
+20602,Alajuela,2,Naranjo,6,San Miguel,2
+20603,Alajuela,2,Naranjo,6,San José,3
+20604,Alajuela,2,Naranjo,6,Cirrí Sur,4
+20605,Alajuela,2,Naranjo,6,San Jerónimo,5
+20606,Alajuela,2,Naranjo,6,San Juan,6
+20607,Alajuela,2,Naranjo,6,El Rosario,7
+20608,Alajuela,2,Naranjo,6,Palmitos,8
+20701,Alajuela,2,Palmares,7,Palmares,1
+20702,Alajuela,2,Palmares,7,Zaragoza,2
+20703,Alajuela,2,Palmares,7,Buenos Aires,3
+20704,Alajuela,2,Palmares,7,Santiago,4
+20705,Alajuela,2,Palmares,7,Candelaria,5
+20706,Alajuela,2,Palmares,7,Esquipulas,6
+20707,Alajuela,2,Palmares,7,La Granja,7
+20801,Alajuela,2,Poás,8,San Pedro,1
+20802,Alajuela,2,Poás,8,San Juan,2
+20803,Alajuela,2,Poás,8,San Rafael,3
+20804,Alajuela,2,Poás,8,Carrillos,4
+20805,Alajuela,2,Poás,8,Sabana Redonda,5
+20901,Alajuela,2,Orotina,9,Orotina,1
+20902,Alajuela,2,Orotina,9,El Mastate,2
+20903,Alajuela,2,Orotina,9,Hacienda Vieja,3
+20904,Alajuela,2,Orotina,9,Coyolar,4
+20905,Alajuela,2,Orotina,9,La Ceiba,5
+21001,Alajuela,2,San Carlos,10,Quesada,1
+21002,Alajuela,2,San Carlos,10,Florencia,2
+21003,Alajuela,2,San Carlos,10,Buenavista,3
+21004,Alajuela,2,San Carlos,10,Aguas Zarcas,4
+21005,Alajuela,2,San Carlos,10,Venecia,5
+21006,Alajuela,2,San Carlos,10,Pital,6
+21007,Alajuela,2,San Carlos,10,La Fortuna,7
+21008,Alajuela,2,San Carlos,10,La Tigra,8
+21009,Alajuela,2,San Carlos,10,La Palmera,9
+21010,Alajuela,2,San Carlos,10,Venado,10
+21011,Alajuela,2,San Carlos,10,Cutris,11
+21012,Alajuela,2,San Carlos,10,Monterrey,12
+21013,Alajuela,2,San Carlos,10,Pocosol,13
+21101,Alajuela,2,Zarcero,11,Zarcero,1
+21102,Alajuela,2,Zarcero,11,Laguna,2
+21103,Alajuela,2,Zarcero,11,Tapesco,3
+21104,Alajuela,2,Zarcero,11,Guadalupe,4
+21105,Alajuela,2,Zarcero,11,Palmira,5
+21106,Alajuela,2,Zarcero,11,Zapote,6
+21107,Alajuela,2,Zarcero,11,Brisas,7
+21201,Alajuela,2,Sarchí,12,Sarchí Norte,1
+21202,Alajuela,2,Sarchí,12,Sarchí Sur,2
+21203,Alajuela,2,Sarchí,12,Toro Amarillo,3
+21204,Alajuela,2,Sarchí,12,San Pedro,4
+21205,Alajuela,2,Sarchí,12,Rodríguez,5
+21301,Alajuela,2,Upala,13,Upala,1
+21302,Alajuela,2,Upala,13,Aguas Claras,2
+21303,Alajuela,2,Upala,13,San José o Pizote,3
+21304,Alajuela,2,Upala,13,Bijagua,4
+21305,Alajuela,2,Upala,13,Delicias,5
+21306,Alajuela,2,Upala,13,Dos Ríos,6
+21307,Alajuela,2,Upala,13,Yolillal,7
+21308,Alajuela,2,Upala,13,Canalete,8
+21401,Alajuela,2,Los Chiles,14,Los Chiles,1
+21402,Alajuela,2,Los Chiles,14,Caño Negro,2
+21403,Alajuela,2,Los Chiles,14,El Amparo,3
+21404,Alajuela,2,Los Chiles,14,San Jorge,4
+21501,Alajuela,2,Guatuso,15,San Rafael,1
+21502,Alajuela,2,Guatuso,15,Buenavista,2
+21503,Alajuela,2,Guatuso,15,Cote,3
+21504,Alajuela,2,Guatuso,15,Katira,4
+21601,Alajuela,2,Río Cuarto,16,Río Cuarto,1
+21602,Alajuela,2,Río Cuarto,16,Santa Rita,2
+21603,Alajuela,2,Río Cuarto,16,Santa Isabel,3
+30101,Cartago,3,Cartago,1,Oriental,1
+30102,Cartago,3,Cartago,1,Occidental,2
+30103,Cartago,3,Cartago,1,Carmen,3
+30104,Cartago,3,Cartago,1,San Nicolás,4
+30105,Cartago,3,Cartago,1,Aguacaliente o San Francisco,5
+30106,Cartago,3,Cartago,1,Guadalupe o Arenilla,6
+30107,Cartago,3,Cartago,1,Corralillo,7
+30108,Cartago,3,Cartago,1,Tierra Blanca,8
+30109,Cartago,3,Cartago,1,Dulce Nombre,9
+30110,Cartago,3,Cartago,1,Llano Grande,10
+30111,Cartago,3,Cartago,1,Quebradilla,11
+30201,Cartago,3,Paraíso,2,Paraíso,1
+30202,Cartago,3,Paraíso,2,Santiago,2
+30203,Cartago,3,Paraíso,2,Orosi,3
+30204,Cartago,3,Paraíso,2,Cachí,4
+30205,Cartago,3,Paraíso,2,Llanos de Santa Lucía,5
+30301,Cartago,3,La Unión,3,Tres Ríos,1
+30302,Cartago,3,La Unión,3,San Diego,2
+30303,Cartago,3,La Unión,3,San Juan,3
+30304,Cartago,3,La Unión,3,San Rafael,4
+30305,Cartago,3,La Unión,3,Concepción,5
+30306,Cartago,3,La Unión,3,Dulce Nombre,6
+30307,Cartago,3,La Unión,3,San Ramón,7
+30308,Cartago,3,La Unión,3,Río Azul,8
+30401,Cartago,3,Jiménez,4,Juan Viñas,1
+30402,Cartago,3,Jiménez,4,Tucurrique,2
+30403,Cartago,3,Jiménez,4,Pejibaye,3
+30501,Cartago,3,Turrialba,5,Turrialba,1
+30502,Cartago,3,Turrialba,5,La Suiza,2
+30503,Cartago,3,Turrialba,5,Peralta,3
+30504,Cartago,3,Turrialba,5,Santa Cruz,4
+30505,Cartago,3,Turrialba,5,Santa Teresita,5
+30506,Cartago,3,Turrialba,5,Pavones,6
+30507,Cartago,3,Turrialba,5,Tuis,7
+30508,Cartago,3,Turrialba,5,Tayutic,8
+30509,Cartago,3,Turrialba,5,Santa Rosa,9
+30510,Cartago,3,Turrialba,5,Tres Equis,10
+30511,Cartago,3,Turrialba,5,La Isabel,11
+30512,Cartago,3,Turrialba,5,Chirripó,12
+30601,Cartago,3,Alvarado,6,Pacayas,1
+30602,Cartago,3,Alvarado,6,Cervantes,2
+30603,Cartago,3,Alvarado,6,Capellades,3
+30701,Cartago,3,Oreamuno,7,San Rafael,1
+30702,Cartago,3,Oreamuno,7,Cot,2
+30703,Cartago,3,Oreamuno,7,Potrero Cerrado,3
+30704,Cartago,3,Oreamuno,7,Cipreses,4
+30705,Cartago,3,Oreamuno,7,Santa Rosa,5
+30801,Cartago,3,El Guarco,8,El Tejar,1
+30802,Cartago,3,El Guarco,8,San Isidro,2
+30803,Cartago,3,El Guarco,8,Tobosi,3
+30804,Cartago,3,El Guarco,8,Patio de Agua,4
+40101,Heredia,4,Heredia,1,Heredia,1
+40102,Heredia,4,Heredia,1,Mercedes,2
+40103,Heredia,4,Heredia,1,San Francisco,3
+40104,Heredia,4,Heredia,1,Ulloa,4
+40105,Heredia,4,Heredia,1,Vara Blanca,5
+40201,Heredia,4,Barva,2,Barva,1
+40202,Heredia,4,Barva,2,San Pedro,2
+40203,Heredia,4,Barva,2,San Pablo,3
+40204,Heredia,4,Barva,2,San Roque,4
+40205,Heredia,4,Barva,2,Santa Lucía,5
+40206,Heredia,4,Barva,2,San José de la Montaña,6
+40301,Heredia,4,Santo Domingo,3,Santo Domingo,1
+40302,Heredia,4,Santo Domingo,3,San Vicente,2
+40303,Heredia,4,Santo Domingo,3,San Miguel,3
+40304,Heredia,4,Santo Domingo,3,Paracito,4
+40305,Heredia,4,Santo Domingo,3,Santo Tomás,5
+40306,Heredia,4,Santo Domingo,3,Santa Rosa,6
+40307,Heredia,4,Santo Domingo,3,Tures,7
+40308,Heredia,4,Santo Domingo,3,Pará,8
+40401,Heredia,4,Santa Bárbara,4,Santa Bárbara,1
+40402,Heredia,4,Santa Bárbara,4,San Pedro,2
+40403,Heredia,4,Santa Bárbara,4,San Juan,3
+40404,Heredia,4,Santa Bárbara,4,Jesús,4
+40405,Heredia,4,Santa Bárbara,4,Santo Domingo,5
+40406,Heredia,4,Santa Bárbara,4,Purabá,6
+40501,Heredia,4,San Rafael,5,San Rafael,1
+40502,Heredia,4,San Rafael,5,San Josecito,2
+40503,Heredia,4,San Rafael,5,Santiago,3
+40504,Heredia,4,San Rafael,5,Ángeles,4
+40505,Heredia,4,San Rafael,5,Concepción,5
+40601,Heredia,4,San Isidro,6,San Isidro,1
+40602,Heredia,4,San Isidro,6,San José,2
+40603,Heredia,4,San Isidro,6,Concepción,3
+40604,Heredia,4,San Isidro,6,San Francisco,4
+40701,Heredia,4,Belén,7,San Antonio,1
+40702,Heredia,4,Belén,7,La Ribera,2
+40703,Heredia,4,Belén,7,La Asunción,3
+40801,Heredia,4,Flores,8,San Joaquín,1
+40802,Heredia,4,Flores,8,Barrantes,2
+40803,Heredia,4,Flores,8,Llorente,3
+40901,Heredia,4,San Pablo,9,San Pablo,1
+40902,Heredia,4,San Pablo,9,Rincón Sabanilla,2
+41001,Heredia,4,Sarapiquí,10,Puerto Viejo,1
+41002,Heredia,4,Sarapiquí,10,La Virgen,2
+41003,Heredia,4,Sarapiquí,10,Las Horquetas,3
+41004,Heredia,4,Sarapiquí,10,Llanuras del Gaspar,4
+41005,Heredia,4,Sarapiquí,10,Cureña,5
+50101,Guanacaste,5,Liberia,1,Liberia,1
+50102,Guanacaste,5,Liberia,1,Cañas Dulces,2
+50103,Guanacaste,5,Liberia,1,Mayorga,3
+50104,Guanacaste,5,Liberia,1,Nacascolo,4
+50105,Guanacaste,5,Liberia,1,Curubandé,5
+50201,Guanacaste,5,Nicoya,2,Nicoya,1
+50202,Guanacaste,5,Nicoya,2,Mansión,2
+50203,Guanacaste,5,Nicoya,2,San Antonio,3
+50204,Guanacaste,5,Nicoya,2,Quebrada Honda,4
+50205,Guanacaste,5,Nicoya,2,Sámara,5
+50206,Guanacaste,5,Nicoya,2,Nosara,6
+50207,Guanacaste,5,Nicoya,2,Belén de Nosarita,7
+50301,Guanacaste,5,Santa Cruz,3,Santa Cruz,1
+50302,Guanacaste,5,Santa Cruz,3,Bolsón,2
+50303,Guanacaste,5,Santa Cruz,3,Veintisiete de Abril,3
+50304,Guanacaste,5,Santa Cruz,3,Tempate,4
+50305,Guanacaste,5,Santa Cruz,3,Cartagena,5
+50306,Guanacaste,5,Santa Cruz,3,Cuajiniquil,6
+50307,Guanacaste,5,Santa Cruz,3,Diriá,7
+50308,Guanacaste,5,Santa Cruz,3,Cabo Velas,8
+50309,Guanacaste,5,Santa Cruz,3,Tamarindo,9
+50401,Guanacaste,5,Bagaces,4,Bagaces,1
+50402,Guanacaste,5,Bagaces,4,La Fortuna,2
+50403,Guanacaste,5,Bagaces,4,Mogote,3
+50404,Guanacaste,5,Bagaces,4,Río Naranjo,4
+50501,Guanacaste,5,Carrillo,5,Filadelfia,1
+50502,Guanacaste,5,Carrillo,5,Palmira,2
+50503,Guanacaste,5,Carrillo,5,Sardinal,3
+50504,Guanacaste,5,Carrillo,5,Belén,4
+50601,Guanacaste,5,Cañas,6,Cañas,1
+50602,Guanacaste,5,Cañas,6,Palmira,2
+50603,Guanacaste,5,Cañas,6,San Miguel,3
+50604,Guanacaste,5,Cañas,6,Bebedero,4
+50605,Guanacaste,5,Cañas,6,Porozal,5
+50701,Guanacaste,5,Abangares,7,Las Juntas,1
+50702,Guanacaste,5,Abangares,7,Sierra,2
+50703,Guanacaste,5,Abangares,7,San Juan,3
+50704,Guanacaste,5,Abangares,7,Colorado,4
+50801,Guanacaste,5,Tilarán,8,Tilarán,1
+50802,Guanacaste,5,Tilarán,8,Quebrada Grande,2
+50803,Guanacaste,5,Tilarán,8,Tronadora,3
+50804,Guanacaste,5,Tilarán,8,Santa Rosa,4
+50805,Guanacaste,5,Tilarán,8,Líbano,5
+50806,Guanacaste,5,Tilarán,8,Tierras Morenas,6
+50807,Guanacaste,5,Tilarán,8,Arenal,7
+50901,Guanacaste,5,Nandayure,9,Carmona,1
+50902,Guanacaste,5,Nandayure,9,Santa Rita,2
+50903,Guanacaste,5,Nandayure,9,Zapotal,3
+50904,Guanacaste,5,Nandayure,9,San Pablo,4
+50905,Guanacaste,5,Nandayure,9,Porvenir,5
+50906,Guanacaste,5,Nandayure,9,Bejuco,6
+51001,Guanacaste,5,La Cruz,10,La Cruz,1
+51002,Guanacaste,5,La Cruz,10,Santa Cecilia,2
+51003,Guanacaste,5,La Cruz,10,La Garita,3
+51004,Guanacaste,5,La Cruz,10,Santa Elena,4
+51101,Guanacaste,5,Hojancha,11,Hojancha,1
+51102,Guanacaste,5,Hojancha,11,Monte Romo,2
+51103,Guanacaste,5,Hojancha,11,Puerto Carrillo,3
+51104,Guanacaste,5,Hojancha,11,Huacas,4
+51105,Guanacaste,5,Hojancha,11,Matambú,5
+60101,Puntarenas,6,Puntarenas,1,Puntarenas,1
+60102,Puntarenas,6,Puntarenas,1,Pitahaya,2
+60103,Puntarenas,6,Puntarenas,1,Chomes,3
+60104,Puntarenas,6,Puntarenas,1,Lepanto,4
+60105,Puntarenas,6,Puntarenas,1,Paquera,5
+60106,Puntarenas,6,Puntarenas,1,Manzanillo,6
+60107,Puntarenas,6,Puntarenas,1,Guacimal,7
+60108,Puntarenas,6,Puntarenas,1,Barranca,8
+60109,Puntarenas,6,Puntarenas,1,Monte Verde,9
+60111,Puntarenas,6,Puntarenas,1,Cóbano,11
+60112,Puntarenas,6,Puntarenas,1,Chacarita,12
+60113,Puntarenas,6,Puntarenas,1,Chira,13
+60114,Puntarenas,6,Puntarenas,1,Acapulco,14
+60115,Puntarenas,6,Puntarenas,1,El Roble,15
+60116,Puntarenas,6,Puntarenas,1,Arancibia,16
+60201,Puntarenas,6,Esparza,2,Espíritu Santo,1
+60202,Puntarenas,6,Esparza,2,San Juan Grande,2
+60203,Puntarenas,6,Esparza,2,Macacona,3
+60204,Puntarenas,6,Esparza,2,San Rafael,4
+60205,Puntarenas,6,Esparza,2,San Jerónimo,5
+60206,Puntarenas,6,Esparza,2,Caldera,6
+60301,Puntarenas,6,Buenos Aires,3,Buenos Aires,1
+60302,Puntarenas,6,Buenos Aires,3,Volcán,2
+60303,Puntarenas,6,Buenos Aires,3,Potrero Grande,3
+60304,Puntarenas,6,Buenos Aires,3,Boruca,4
+60305,Puntarenas,6,Buenos Aires,3,Pilas,5
+60306,Puntarenas,6,Buenos Aires,3,Colinas,6
+60307,Puntarenas,6,Buenos Aires,3,Chánguena,7
+60308,Puntarenas,6,Buenos Aires,3,Biolley,8
+60309,Puntarenas,6,Buenos Aires,3,Brunka,9
+60401,Puntarenas,6,Montes de Oro,4,Miramar,1
+60402,Puntarenas,6,Montes de Oro,4,La Unión,2
+60403,Puntarenas,6,Montes de Oro,4,San Isidro,3
+60501,Puntarenas,6,Osa,5,Puerto Cortés,1
+60502,Puntarenas,6,Osa,5,Palmar,2
+60503,Puntarenas,6,Osa,5,Sierpe,3
+60504,Puntarenas,6,Osa,5,Bahía Ballena,4
+60505,Puntarenas,6,Osa,5,Piedras Blancas,5
+60506,Puntarenas,6,Osa,5,Bahía Drake,6
+60601,Puntarenas,6,Quepos,6,Quepos,1
+60602,Puntarenas,6,Quepos,6,Savegre,2
+60603,Puntarenas,6,Quepos,6,Naranjito,3
+60701,Puntarenas,6,Golfito,7,Golfito,1
+60702,Puntarenas,6,Golfito,7,Puerto Jiménez,2
+60703,Puntarenas,6,Golfito,7,Guaycará,3
+60704,Puntarenas,6,Golfito,7,Pavón,4
+60801,Puntarenas,6,Coto Brus,8,San Vito,1
+60802,Puntarenas,6,Coto Brus,8,Sabalito,2
+60803,Puntarenas,6,Coto Brus,8,Aguabuena,3
+60804,Puntarenas,6,Coto Brus,8,Limoncito,4
+60805,Puntarenas,6,Coto Brus,8,Pittier,5
+60806,Puntarenas,6,Coto Brus,8,Gutiérrez Braun,6
+60901,Puntarenas,6,Parrita,9,Parrita,1
+61001,Puntarenas,6,Corredores,10,Corredor,1
+61002,Puntarenas,6,Corredores,10,La Cuesta,2
+61003,Puntarenas,6,Corredores,10,Canoas,3
+61004,Puntarenas,6,Corredores,10,Laurel,4
+61101,Puntarenas,6,Garabito,11,Jacó,1
+61102,Puntarenas,6,Garabito,11,Tárcoles,2
+70101,Limón,7,Limón,1,Limón,1
+70102,Limón,7,Limón,1,Valle La Estrella,2
+70103,Limón,7,Limón,1,Río Blanco,3
+70104,Limón,7,Limón,1,Matama,4
+70201,Limón,7,Pococí,2,Guápiles,1
+70202,Limón,7,Pococí,2,Jiménez,2
+70203,Limón,7,Pococí,2,Rita,3
+70204,Limón,7,Pococí,2,Roxana,4
+70205,Limón,7,Pococí,2,Cariari,5
+70206,Limón,7,Pococí,2,Colorado,6
+70207,Limón,7,Pococí,2,La Colonia,7
+70301,Limón,7,Siquirres,3,Siquirres,1
+70302,Limón,7,Siquirres,3,Pacuarito,2
+70303,Limón,7,Siquirres,3,Florida,3
+70304,Limón,7,Siquirres,3,Germania,4
+70305,Limón,7,Siquirres,3,El Cairo,5
+70306,Limón,7,Siquirres,3,La Alegría,6
+70307,Limón,7,Siquirres,3,Reventazón,7
+70401,Limón,7,Talamanca,4,Bratsi,1
+70402,Limón,7,Talamanca,4,Sixaola,2
+70403,Limón,7,Talamanca,4,Cahuita,3
+70404,Limón,7,Talamanca,4,Telire,4
+70501,Limón,7,Matina,5,Matina,1
+70502,Limón,7,Matina,5,Batán,2
+70503,Limón,7,Matina,5,Carrandi,3
+70601,Limón,7,Guácimo,6,Guácimo,1
+70602,Limón,7,Guácimo,6,Mercedes,2
+70603,Limón,7,Guácimo,6,Pocora,3
+70604,Limón,7,Guácimo,6,Río Jiménez,4
+70605,Limón,7,Guácimo,6,Duacarí,5
