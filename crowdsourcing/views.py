@@ -22,11 +22,19 @@ def sugerencias(request):
 
 
 def sugerencias_ferias(request):
-    return render(request, "sugerencias_ferias.html")
+    marketplaces = Marketplace.objects.all()
+    context = {
+        "marketplaces": marketplaces,
+    }
+    return render(request, "sugerencias_ferias.html", context)
 
 
 def sugerencias_productos(request):
-    return render(request, "sugerencias_productos.html")
+    products = Product.objects.all()
+    context = {
+        "products": products,
+    }
+    return render(request, "sugerencias_productos.html", context)
 
 
 def sugerencias_feria(request, marketplace_url):
