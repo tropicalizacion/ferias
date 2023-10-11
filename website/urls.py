@@ -4,8 +4,7 @@ from .views import acerca
 from . import views
 
 urlpatterns = [
-    path('', views.cover, name='cover'),
-    path('index', views.index, name='inicio'), 
+    path('', views.index, name='inicio'), 
     path('sobre/', views.acerca, name='sobre'),
     path('sobre/ferias/', views.sobre_ferias, name='sobre-ferias'),
     path('ingresar/', views.ingresar, name='ingresar'),
