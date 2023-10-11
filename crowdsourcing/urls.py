@@ -7,6 +7,7 @@ urlpatterns = [
     path('ferias/', views.sugerencias_ferias, name='sugerencias_ferias'),
     path('productos/', views.sugerencias_productos, name='sugerencias_productos'),
     path('ferias/<marketplace_url>/', views.sugerencias_feria, name='sugerencias_feria'),
+    path('ferias/<marketplace_url>/productos/', views.sugerencias_feria_productos, name='sugerencias_feria_productos'),
     path('productos/<product_url>/', views.sugerencias_producto, name='sugerencias_producto'),
     path('revisiones/', views.revisiones, name='revisiones'),
     path('revisiones/ferias/', views.revisiones_ferias, name='revisiones_ferias'),

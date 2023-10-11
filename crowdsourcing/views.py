@@ -1,7 +1,14 @@
 from django.shortcuts import render, redirect
 from marketplaces.models import Marketplace, MarketplaceHistory
-from products.models import Product
-from .models import MarketplaceEdit, OpeningHoursEdit, PhoneEdit, EmailEdit, WebsiteEdit
+from products.models import Product, Variety
+from .models import (
+    MarketplaceEdit,
+    MarketplaceProductsEdit,
+    OpeningHoursEdit,
+    PhoneEdit,
+    EmailEdit,
+    WebsiteEdit,
+)
 import osm_opening_hours_humanized as hoh
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
@@ -38,11 +45,10 @@ def sugerencias_productos(request):
 
 
 def sugerencias_feria(request, marketplace_url):
-    
     if request.method == "POST":
         marketplace = Marketplace.objects.get(marketplace_url=marketplace_url)
         print(f"\nPost:\n{request.POST}\n")
-        
+
         # Create the marketplace edit object
         marketplace_edit = MarketplaceEdit()
 
@@ -62,16 +68,20 @@ def sugerencias_feria(request, marketplace_url):
             marketplace_edit.size = request.POST.get("size")
         if request.POST.get("opening_date") != "":
             marketplace_edit.opening_date = request.POST.get("opening_date")
-        
+
         # Infrastructure
         marketplace_edit.fairground = ast.literal_eval(request.POST.get("fairground"))
         marketplace_edit.indoor = ast.literal_eval(request.POST.get("indoor"))
         marketplace_edit.toilets = ast.literal_eval(request.POST.get("toilets"))
         marketplace_edit.handwashing = ast.literal_eval(request.POST.get("handwashing"))
-        marketplace_edit.drinking_water = ast.literal_eval(request.POST.get("drinking_water"))
+        marketplace_edit.drinking_water = ast.literal_eval(
+            request.POST.get("drinking_water")
+        )
         marketplace_edit.parking = ast.literal_eval(request.POST.get("parking"))
-        marketplace_edit.bicycle_parking = ast.literal_eval(request.POST.get("bicycle_parking"))
-        
+        marketplace_edit.bicycle_parking = ast.literal_eval(
+            request.POST.get("bicycle_parking")
+        )
+
         # Services
         marketplace_edit.food = ast.literal_eval(request.POST.get("food"))
         marketplace_edit.drinks = ast.literal_eval(request.POST.get("drinks"))
@@ -79,7 +89,9 @@ def sugerencias_feria(request, marketplace_url):
         marketplace_edit.butcher = ast.literal_eval(request.POST.get("butcher"))
         marketplace_edit.dairy = ast.literal_eval(request.POST.get("dairy"))
         marketplace_edit.seafood = ast.literal_eval(request.POST.get("seafood"))
-        marketplace_edit.garden_centre = ast.literal_eval(request.POST.get("garden_centre"))
+        marketplace_edit.garden_centre = ast.literal_eval(
+            request.POST.get("garden_centre")
+        )
         marketplace_edit.florist = ast.literal_eval(request.POST.get("florist"))
 
         # Submitted by
@@ -101,7 +113,7 @@ def sugerencias_feria(request, marketplace_url):
             phone_edit.save()
             i += 1
             go = f"phone_{i}" in request.POST
-        
+
         # Save the emails
         i = 1
         go = f"email_{i}" in request.POST
@@ -190,6 +202,43 @@ def sugerencias_feria(request, marketplace_url):
         return render(request, "sugerencias_feria.html", context)
 
 
+def sugerencias_feria_productos(request, marketplace_url):
+    marketplace = Marketplace.objects.get(marketplace_url=marketplace_url)
+
+    if request.method == "POST":
+        marketplace_products_edit = MarketplaceProductsEdit()
+        marketplace_products_edit.marketplace = marketplace
+
+        varieties = request.POST.dict()
+        varieties.pop("csrfmiddlewaretoken")
+        varieties.pop("submitted_by")
+
+        marketplace_products_edit.varieties = varieties
+        marketplace_products_edit.submitted_by = request.POST.get("submitted_by")
+        marketplace_products_edit.save()
+
+        context = {"marketplace": marketplace}
+        return render(request, "sugerencias_gracias.html", context)
+    else:
+        varieties = Variety.objects.all().order_by("product_url")
+        varieties_otros = varieties.filter(product_url__category="otro")
+        varieties_frutas = varieties.filter(product_url__category="fruta")
+        varieties_hierbas = varieties.filter(product_url__category="hierba")
+        varieties_verduras = varieties.filter(product_url__category="verdura")
+        varieties_legumbres = varieties.filter(product_url__category="legumbre")
+        varieties_tuberculos = varieties.filter(product_url__category="tubérculo")
+        context = {
+            "marketplace": marketplace,
+            "varieties_otros": varieties_otros,
+            "varieties_frutas": varieties_frutas,
+            "varieties_hierbas": varieties_hierbas,
+            "varieties_verduras": varieties_verduras,
+            "varieties_legumbres": varieties_legumbres,
+            "varieties_tuberculos": varieties_tuberculos,
+        }
+        return render(request, "sugerencias_feria_productos.html", context)
+
+
 def sugerencias_producto(request, product_url):
     product = Product.objects.get(product_url=product_url)
     context = {"product": product}
@@ -216,21 +265,29 @@ def revisiones_productos(request):
 
 @login_required(login_url="/ingresar/")
 def revisiones_feria(request, marketplace_url):
-
     marketplace = Marketplace.objects.get(marketplace_url=marketplace_url)
     marketplace_edits = MarketplaceEdit.objects.filter(marketplace=marketplace)
     marketplace_edits_unreviewed = marketplace_edits.filter(is_reviewed=False)
     marketplace_edits_reviewed = marketplace_edits.filter(is_reviewed=True)
-    phone_edits_unreviewed = PhoneEdit.objects.filter(marketplace=marketplace, is_reviewed=False)
-    email_edits_unreviewed = EmailEdit.objects.filter(marketplace=marketplace, is_reviewed=False)
-    website_edits_unreviewed = WebsiteEdit.objects.filter(marketplace=marketplace, is_reviewed=False)
-    opening_hours_edits_unreviewed = OpeningHoursEdit.objects.filter(marketplace=marketplace, is_reviewed=False)
+    phone_edits_unreviewed = PhoneEdit.objects.filter(
+        marketplace=marketplace, is_reviewed=False
+    )
+    email_edits_unreviewed = EmailEdit.objects.filter(
+        marketplace=marketplace, is_reviewed=False
+    )
+    website_edits_unreviewed = WebsiteEdit.objects.filter(
+        marketplace=marketplace, is_reviewed=False
+    )
+    opening_hours_edits_unreviewed = OpeningHoursEdit.objects.filter(
+        marketplace=marketplace, is_reviewed=False
+    )
 
     if request.method == "POST":
-        
         # Save outdated version of marketplace in history
         marketplace_history = MarketplaceHistory()
-        marketplace_history.marketplace_history_id = f"{marketplace.marketplace_url}_{datetime.now()}"
+        marketplace_history.marketplace_history_id = (
+            f"{marketplace.marketplace_url}_{datetime.now()}"
+        )
         marketplace_history.marketplace = marketplace
         marketplace_history.name = marketplace.name
         marketplace_history.name_alternate = marketplace.name_alternate
@@ -302,7 +359,7 @@ def revisiones_feria(request, marketplace_url):
         if (address != "") and (address != marketplace.address):
             marketplace.address = address
         size = request.POST.get("size")
-        if (size != marketplace.size):
+        if size != marketplace.size:
             marketplace.size = size
         opening_hours = request.POST.get("opening_hours")
         if (opening_hours != "") and (opening_hours != marketplace.opening_hours):
@@ -311,49 +368,49 @@ def revisiones_feria(request, marketplace_url):
         if (opening_date != "") and (opening_date != marketplace.opening_date):
             marketplace.opening_date = opening_date
         fairground = ast.literal_eval(request.POST.get("fairground"))
-        if (fairground != marketplace.fairground):
+        if fairground != marketplace.fairground:
             marketplace.fairground = fairground
         indoor = ast.literal_eval(request.POST.get("indoor"))
-        if (indoor != marketplace.indoor):
+        if indoor != marketplace.indoor:
             marketplace.indoor = indoor
         toilets = ast.literal_eval(request.POST.get("toilets"))
-        if (toilets != marketplace.toilets):
+        if toilets != marketplace.toilets:
             marketplace.toilets = toilets
         handwashing = ast.literal_eval(request.POST.get("handwashing"))
-        if (handwashing != marketplace.handwashing):
+        if handwashing != marketplace.handwashing:
             marketplace.handwashing = handwashing
         drinking_water = ast.literal_eval(request.POST.get("drinking_water"))
-        if (drinking_water != marketplace.drinking_water):
+        if drinking_water != marketplace.drinking_water:
             marketplace.drinking_water = drinking_water
         parking = request.POST.get("parking")
         if (parking != "") and (parking != marketplace.parking):
             marketplace.parking = parking
         bicycle_parking = ast.literal_eval(request.POST.get("bicycle_parking"))
-        if (bicycle_parking != marketplace.bicycle_parking):
+        if bicycle_parking != marketplace.bicycle_parking:
             marketplace.bicycle_parking = bicycle_parking
         food = ast.literal_eval(request.POST.get("food"))
-        if (food != marketplace.food):
+        if food != marketplace.food:
             marketplace.food = food
         drinks = ast.literal_eval(request.POST.get("drinks"))
-        if (drinks != marketplace.drinks):
+        if drinks != marketplace.drinks:
             marketplace.drinks = drinks
         handicrafts = ast.literal_eval(request.POST.get("handicrafts"))
-        if (handicrafts != marketplace.handicrafts):
+        if handicrafts != marketplace.handicrafts:
             marketplace.handicrafts = handicrafts
         butcher = ast.literal_eval(request.POST.get("butcher"))
-        if (butcher != marketplace.butcher):
+        if butcher != marketplace.butcher:
             marketplace.butcher = butcher
         dairy = ast.literal_eval(request.POST.get("dairy"))
-        if (dairy != marketplace.dairy):
+        if dairy != marketplace.dairy:
             marketplace.dairy = dairy
         seafood = ast.literal_eval(request.POST.get("seafood"))
-        if (seafood != marketplace.seafood):
+        if seafood != marketplace.seafood:
             marketplace.seafood = seafood
         garden_centre = ast.literal_eval(request.POST.get("garden_centre"))
-        if (garden_centre != marketplace.garden_centre):
+        if garden_centre != marketplace.garden_centre:
             marketplace.garden_centre = garden_centre
         florist = ast.literal_eval(request.POST.get("florist"))
-        if (florist != marketplace.florist):
+        if florist != marketplace.florist:
             marketplace.florist = florist
 
         marketplace.save()
@@ -373,19 +430,48 @@ def revisiones_feria(request, marketplace_url):
         return redirect(f"/ferias/{marketplace_url}/")
 
     else:
-        
         if request.user.is_staff:
-            phone_edits_reviewed = PhoneEdit.objects.filter(marketplace=marketplace, is_reviewed=True)
-            email_edits_reviewed = EmailEdit.objects.filter(marketplace=marketplace, is_reviewed=True)
-            website_edits_reviewed = WebsiteEdit.objects.filter(marketplace=marketplace, is_reviewed=True)
-            opening_hours_edits_reviewed = OpeningHoursEdit.objects.filter(marketplace=marketplace, is_reviewed=True)
+            phone_edits_reviewed = PhoneEdit.objects.filter(
+                marketplace=marketplace, is_reviewed=True
+            )
+            email_edits_reviewed = EmailEdit.objects.filter(
+                marketplace=marketplace, is_reviewed=True
+            )
+            website_edits_reviewed = WebsiteEdit.objects.filter(
+                marketplace=marketplace, is_reviewed=True
+            )
+            opening_hours_edits_reviewed = OpeningHoursEdit.objects.filter(
+                marketplace=marketplace, is_reviewed=True
+            )
 
-            features = ['fairground', 'indoor', 'toilets', 'handwashing', 'drinking_water', 'parking', 'bicycle_parking', 'food', 'drinks', 'handicrafts', 'butcher', 'dairy', 'seafood', 'garden_centre', 'florist']
+            features = [
+                "fairground",
+                "indoor",
+                "toilets",
+                "handwashing",
+                "drinking_water",
+                "parking",
+                "bicycle_parking",
+                "food",
+                "drinks",
+                "handicrafts",
+                "butcher",
+                "dairy",
+                "seafood",
+                "garden_centre",
+                "florist",
+            ]
             features_dict = {}
             for feature in features:
-                features_dict[f"{feature}_yes"] = marketplace_edits.filter(**{feature: True}).count()
-                features_dict[f"{feature}_no"] = marketplace_edits.filter(**{feature: False}).count()
-                features_dict[f"{feature}_votes"] = features_dict[f"{feature}_yes"] + features_dict[f"{feature}_no"]
+                features_dict[f"{feature}_yes"] = marketplace_edits.filter(
+                    **{feature: True}
+                ).count()
+                features_dict[f"{feature}_no"] = marketplace_edits.filter(
+                    **{feature: False}
+                ).count()
+                features_dict[f"{feature}_votes"] = (
+                    features_dict[f"{feature}_yes"] + features_dict[f"{feature}_no"]
+                )
 
             context = {
                 "marketplace": marketplace,
@@ -401,7 +487,7 @@ def revisiones_feria(request, marketplace_url):
                 "opening_hours_edits_reviewed": opening_hours_edits_reviewed,
                 "features_dict": features_dict,
             }
-            
+
             return render(request, "revisiones_feria.html", context)
         else:
             return redirect("/")

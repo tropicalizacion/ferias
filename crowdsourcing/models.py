@@ -90,6 +90,21 @@ class MarketplaceEdit(models.Model):
         return f"{self.marketplace} ({self.submitted_on})"
 
 
+class MarketplaceProductsEdit(models.Model):
+    """Model definition for MarketplaceProducts."""
+
+    marketplace = models.ForeignKey(Marketplace, on_delete=models.CASCADE)
+    varieties = models.JSONField(blank=True, null=True)
+    submitted_by = models.CharField(max_length=127, blank=True, null=True)
+    is_reviewed = models.BooleanField(default=False)
+    reviewed_by = models.ForeignKey(
+        User, on_delete=models.SET_NULL, blank=True, null=True
+    )
+
+    def __str__(self):
+        return f"{self.marketplace}"
+
+
 class PhotoEdit(models.Model):
     """Model definition for Photo."""
 
@@ -139,7 +154,9 @@ class PhoneEdit(models.Model):
     phone = models.TextField(max_length=31, blank=True, null=True)
     type = models.CharField(max_length=31, blank=True, null=True)
     is_reviewed = models.BooleanField(default=False)
-    reviewed_by = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
+    reviewed_by = models.ForeignKey(
+        User, on_delete=models.SET_NULL, blank=True, null=True
+    )
 
     def __str__(self):
         return f"{self.marketplace} ({self.marketplace_edit_id.submitted_on})"
@@ -153,7 +170,9 @@ class EmailEdit(models.Model):
     email = models.EmailField(max_length=127, blank=True, null=True)
     type = models.CharField(max_length=31, blank=True, null=True)
     is_reviewed = models.BooleanField(default=False)
-    reviewed_by = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
+    reviewed_by = models.ForeignKey(
+        User, on_delete=models.SET_NULL, blank=True, null=True
+    )
 
     def __str__(self):
         return f"{self.marketplace} ({self.marketplace_edit_id.submitted_on})"
@@ -167,7 +186,9 @@ class WebsiteEdit(models.Model):
     website = models.URLField(max_length=127, blank=True, null=True)
     type = models.CharField(max_length=31, blank=True, null=True)
     is_reviewed = models.BooleanField(default=False)
-    reviewed_by = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
+    reviewed_by = models.ForeignKey(
+        User, on_delete=models.SET_NULL, blank=True, null=True
+    )
 
     def __str__(self):
         return f"{self.marketplace} ({self.marketplace_edit_id.submitted_on})"
