@@ -72,7 +72,10 @@ class Variety(models.Model):
     dec = models.IntegerField(choices=SEASON_CHOICES, blank=True, null=True)
 
     def __str__(self):
-        return f"({self.product_url}) {self.common_name_variety}"
+        string = self.product_url.common_name
+        if self.common_name_variety:
+            string += f" {self.common_name_variety}"
+        return string
 
 
 class Origin(models.Model):
