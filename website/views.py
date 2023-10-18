@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from marketplaces.models import Marketplace
-from .models import Announcement
+from .models import Announcement, Text
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.contrib.gis.db.models.functions import Distance
@@ -14,9 +14,19 @@ def cover(request):
 
 
 def index(request):
+    # Get the text for the home page where "page" is "/"
+    text = Text.objects.filter(page="/")
+    text_hero = text.filter(section="hero")
+    text_saludable = text.filter(section="features", subsection="saludable")
+    text_barato = text.filter(section="features", subsection="barato")
+    text_nuestro = text.filter(section="features", subsection="nuestro")
     if request.method == "POST":
         marketplaces_match, marketplaces_others, marketplaces_keyword, keyword, query_text, by_location = search_marketplaces(request.POST)
         context = {
+            "text_hero": text_hero,
+            "text_saludable": text_saludable,
+            "text_barato": text_barato,
+            "text_nuestro": text_nuestro,
             "show_results": True,
             "query_text": query_text,
             "by_location": by_location,
@@ -27,7 +37,14 @@ def index(request):
         }
         return render(request, "index.html", context)
     else:
-        return render(request, "index.html")
+        context = {
+            "text_hero": text_hero,
+            "text_saludable": text_saludable,
+            "text_barato": text_barato,
+            "text_nuestro": text_nuestro,
+        }
+        print(text_hero)
+        return render(request, "index.html", context)
 
 
 def acerca(request):

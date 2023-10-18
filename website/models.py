@@ -20,3 +20,17 @@ class Announcement(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Text(models.Model):
+    page = models.CharField(max_length=100)
+    section = models.CharField(max_length=100)
+    subsection = models.CharField(max_length=100, blank=True, null=True)
+    content = models.TextField()
+
+    def __str__(self):
+        string = self.page + " - " + self.section
+        if self.subsection:
+            string += " - " + self.subsection
+        return string
+    
