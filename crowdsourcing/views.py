@@ -28,6 +28,10 @@ def sugerencias(request):
     return render(request, "sugerencias.html", context)
 
 
+def sugerencias_gracias(request):
+    return render(request, "sugerencias_gracias.html")
+
+
 def sugerencias_ferias(request):
     marketplaces = Marketplace.objects.all()
     context = {
@@ -217,8 +221,10 @@ def sugerencias_feria_productos(request, marketplace_url):
         marketplace_products_edit.submitted_by = request.POST.get("submitted_by")
         marketplace_products_edit.save()
 
+        print(f"\nPost:\n{request.POST}\n")
+
         context = {"marketplace": marketplace}
-        return render(request, "sugerencias_gracias.html", context)
+        return redirect("sugerencias_gracias")
     else:
         varieties = Variety.objects.all().order_by("product_url")
         varieties_otros = varieties.filter(product_url__category="otro")

@@ -4,6 +4,7 @@ from . import views
 
 urlpatterns = [
     path('', views.sugerencias, name='sugerencias'),
+    path('gracias/', views.sugerencias_gracias, name='sugerencias_gracias'),
     path('ferias/', views.sugerencias_ferias, name='sugerencias_ferias'),
     path('productos/', views.sugerencias_productos, name='sugerencias_productos'),
     path('ferias/<marketplace_url>/', views.sugerencias_feria, name='sugerencias_feria'),
