@@ -1,5 +1,5 @@
 from django.contrib.gis.db import models
-from products.models import Product
+from products.models import Variety
 from django.contrib.auth.models import User
 
 # Create your models here.
@@ -77,8 +77,8 @@ class Marketplace(models.Model):
     # Other
     payment = models.ManyToManyField("Payment", blank=True)
     other_services = models.CharField(max_length=255, blank=True, null=True)
-    # Products
-    products = models.ManyToManyField(Product, blank=True)
+    # Products (varieties)
+    varieties = models.ManyToManyField(Variety, blank=True)
 
     def __str__(self):
         return self.name
@@ -182,8 +182,8 @@ class MarketplaceHistory(models.Model):
     # Other
     payment = models.ManyToManyField("Payment", blank=True)
     other_services = models.CharField(max_length=255, blank=True, null=True)
-    # Products
-    products = models.ManyToManyField(Product, blank=True)
+    # Products (varieties)
+    varieties = models.ManyToManyField(Variety, blank=True)
     # History
     saved_at = models.DateTimeField(auto_now_add=True)
     updated_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
