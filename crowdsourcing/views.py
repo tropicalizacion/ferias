@@ -499,5 +499,42 @@ def revisiones_feria(request, marketplace_url):
             return redirect("/")
 
 
+@login_required(login_url="/ingresar/")
+def revisiones_feria_productos(request, marketplace_url):
+    marketplace = Marketplace.objects.get(marketplace_url=marketplace_url)
+
+    if request.method == "POST":
+
+        varieties = request.POST.dict()
+        varieties.pop("csrfmiddlewaretoken")
+
+        for variety in varieties:
+            if varieties[variety] == "True":
+                marketplace.varieties.add(variety)
+            else:
+                marketplace.varieties.remove(variety)
+
+        context = {"marketplace": marketplace}
+        return redirect("sugerencias_gracias")
+    else:
+        varieties = Variety.objects.all().order_by("product_url")
+        varieties_otros = varieties.filter(product_url__category="otro")
+        varieties_frutas = varieties.filter(product_url__category="fruta")
+        varieties_hierbas = varieties.filter(product_url__category="hierba")
+        varieties_verduras = varieties.filter(product_url__category="verdura")
+        varieties_legumbres = varieties.filter(product_url__category="legumbre")
+        varieties_tuberculos = varieties.filter(product_url__category="tubérculo")
+        context = {
+            "marketplace": marketplace,
+            "varieties_otros": varieties_otros,
+            "varieties_frutas": varieties_frutas,
+            "varieties_hierbas": varieties_hierbas,
+            "varieties_verduras": varieties_verduras,
+            "varieties_legumbres": varieties_legumbres,
+            "varieties_tuberculos": varieties_tuberculos,
+        }
+        return render(request, "revisiones_feria_productos.html", context)
+
+
 def revisiones_producto(request, product_url):
     return render(request, "revisiones_producto.html")
