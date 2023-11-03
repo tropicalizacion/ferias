@@ -183,6 +183,20 @@ Es posible probar la asignación con `getent group www-data`, que devolverá alg
 
 Luego de esto viene el reinicio usual de Nginx y Gunicorn (que no sé si será estrictamente necesario).
 
+Otra forma de resolver (cuando le da la gana) este problema es asignando manualmente y directamente los permisos a `www-data` para acceder a `staticfiles/`, así:
+
+```bash
+sudo chown -R www-data:www-data /path/to/static/files
+```
+
+y luego:
+
+```bash
+sudo chown -R www-data:www-data /path/to/static/files
+```
+
+y finalmente reiniciando Nginx y Gunicorn.
+
 ## Aplicaciones del sitio
 
 Django utiliza "apps" para manejar el sitio. Por experiencia, sabemos que son divisiones útiles para la organización del sitio, aunque realmente desde una sola app se podrían realizar todas las funciones. Por orden, sin embargo, es mejor hacer una separación funcional. En ese sentido, y con base en la funcionalidad esperada del sitio, se han creado los siguientes apps:
