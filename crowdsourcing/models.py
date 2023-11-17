@@ -80,6 +80,8 @@ class MarketplaceEdit(models.Model):
     # Crowdsourcing-specific fields
     comments = models.TextField(blank=True, null=True)
     submitted_by = models.CharField(max_length=127, blank=True, null=True)
+    submitted_by_role = models.CharField(max_length=255, blank=True, null=True)
+    submitted_by_contact = models.CharField(max_length=255, blank=True, null=True)
     submitted_on = models.DateTimeField(auto_now_add=True)
     is_reviewed = models.BooleanField(default=False)
     reviewed_by = models.ForeignKey(

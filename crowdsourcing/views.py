@@ -28,9 +28,8 @@ def sugerencias(request):
     return render(request, "sugerencias.html", context)
 
 
-def sugerencias_gracias(request, marketplace_name):
-    context = {"marketplace_name": marketplace_name}
-    return render(request, "sugerencias_gracias.html", context)
+def sugerencias_gracias(request):
+    return render(request, "sugerencias_gracias.html")
 
 
 def sugerencias_ferias(request):
@@ -101,6 +100,8 @@ def sugerencias_feria(request, marketplace_url):
 
         # Submitted by
         marketplace_edit.submitted_by = request.POST.get("submitted_by")
+        marketplace_edit.submitted_by_role = request.POST.get("submitted_by_role")
+        marketplace_edit.submitted_by_contact = request.POST.get("submitted_by_contact")
 
         # Save the marketplace edit object
         marketplace_edit.save()

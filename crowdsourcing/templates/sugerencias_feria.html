@@ -589,8 +589,18 @@
         <div class="card mt-2 my-3 mx-auto border-0 rounded-5 background-cafe" style="max-width: 500px;">
             <div class="card-body text-white">
                 <p class="lead">
-                    Su nombre (opcional):
-                    <input type="text" class="underline-input w-100" id="submitted_by" name="submitted_by" style="color: white; font-weight: bold;">
+                    Su nombre:
+                    <input type="text" class="underline-input w-100" id="submitted_by" name="submitted_by" style="color: white; font-weight: bold;" required>
+                </p>
+                <p>
+                    Participación en la feria (opcional):
+                    <input type="text" class="underline-input w-100" id="submitted_by_role" name="submitted_by_role" style="color: white;">
+                    <span class="small">¿Es usted parte de la administración, consumidor regular de esta feria, vendedor, miembro de la comunidad o similar?</span>
+                </p>
+                <p>
+                    Información de contacto (opcional):
+                    <input type="text" class="underline-input w-100" id="submitted_by_contact" name="submitted_by_contact" style="color: white;">
+                    <span class="small">Si nos permite contactarlo para alguna pregunta relacionada con la feria, agradecemos que nos comparta su información de contacto, como teléfono o correo.</span>
                 </p>
                 <div class="d-flex justify-content-center">
                     <button onclick="confirmSubmission(event)" class="btn btn-warning btn-lg px-4 gap-3">Enviar sugerencias</button>

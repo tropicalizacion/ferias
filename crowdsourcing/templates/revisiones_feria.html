@@ -44,7 +44,7 @@
                         <ul>
                             {% for suggestion in marketplace_edits_unreviewed %}
                             {% if suggestion.name != "" %}
-                            <li>{{ suggestion.name }}</li>
+                            <li>{{ suggestion.name }} <br> <span class="small text-secondary">{{ suggestion.submitted_by }}, {{ suggestion.submitted_by_role }}</span></li>
                             {% endif %}
                             {% endfor %}
                         </ul>
@@ -56,7 +56,7 @@
                         <ul>
                             {% for suggestion in marketplace_edits_reviewed %}
                             {% if suggestion.name != "" %}
-                            <li>{{ suggestion.name }}</li>
+                            <li>{{ suggestion.name }} <br> <span class="small text-secondary">{{ suggestion.submitted_by }}, {{ suggestion.submitted_by_role }}</span></li>
                             {% endif %}
                             {% endfor %}
                         </ul>
@@ -95,7 +95,7 @@
                         <ul>
                             {% for suggestion in marketplace_edits_unreviewed %}
                             {% if suggestion.name_alternate %}
-                            <li>{{ suggestion.name_alternate }}</li>
+                            <li>{{ suggestion.name_alternate }} <br> <span class="small text-secondary">{{ suggestion.submitted_by }}, {{ suggestion.submitted_by_role }}</span></li>
                             {% endif %}
                             {% endfor %}
                         </ul>
@@ -107,7 +107,7 @@
                         <ul>
                             {% for suggestion in marketplace_edits_reviewed %}
                             {% if suggestion.name_alternate %}
-                            <li>{{ suggestion.name_alternate }}</li>
+                            <li>{{ suggestion.name_alternate }} <br> <span class="small text-secondary">{{ suggestion.submitted_by }}, {{ suggestion.submitted_by_role }}</span></li>
                             {% endif %}
                             {% endfor %}
                         </ul>
@@ -146,7 +146,7 @@
                         <ul>
                             {% for suggestion in marketplace_edits_unreviewed %}
                             {% if suggestion.operator %}
-                            <li>{{ suggestion.operator }}</li>
+                            <li>{{ suggestion.operator }} <br> <span class="small text-secondary">{{ suggestion.submitted_by }}, {{ suggestion.submitted_by_role }}</span></li>
                             {% endif %}
                             {% endfor %}
                         </ul>
@@ -158,7 +158,7 @@
                         <ul>
                             {% for suggestion in marketplace_edits_reviewed %}
                             {% if suggestion.operator %}
-                            <li>{{ suggestion.operator }}</li>
+                            <li>{{ suggestion.operator }} <br> <span class="small text-secondary">{{ suggestion.submitted_by }}, {{ suggestion.submitted_by_role }}</span></li>
                             {% endif %}
                             {% endfor %}
                         </ul>
@@ -197,7 +197,7 @@
                         {% if phone_edits_unreviewed %}
                         <ul>
                             {% for i in phone_edits_unreviewed %}
-                            <li>{{ i.phone }}</li>
+                            <li>{{ i.phone }} <br> <span class="small text-secondary">{{ i.marketplace_edit_id.submitted_by }}, {{ i.marketplace_edit_id.submitted_by_role }}</span></li>
                             {% endfor %}
                         </ul>
                         {% else %}
@@ -207,7 +207,7 @@
                         {% if phone_edits_reviewed %}
                         <ul>
                             {% for i in phone_edits_reviewed %}
-                            <li>{{ i.phone }}</li>
+                            <li>{{ i.phone }} <br> <span class="small text-secondary">{{ i.marketplace_edit_id.submitted_by }}, {{ i.marketplace_edit_id.submitted_by_role }}</span></li>
                             {% endfor %}
                         </ul>
                         {% else %}
@@ -245,7 +245,7 @@
                         {% if email_edits_unreviewed %}
                         <ul>
                             {% for i in email_edits_unreviewed %}
-                            <li>{{ i.email }}</li>
+                            <li>{{ i.email }} <br> <span class="small text-secondary">{{ i.marketplace_edit_id.submitted_by }}, {{ i.marketplace_edit_id.submitted_by_role }}</span></li>
                             {% endfor %}
                         </ul>
                         {% else %}
@@ -255,7 +255,7 @@
                         {% if email_edits_reviewed %}
                         <ul>
                             {% for i in email_edits_reviewed %}
-                            <li>{{ i.email }}</li>
+                            <li>{{ i.email }} <br> <span class="small text-secondary">{{ i.marketplace_edit_id.submitted_by }}, {{ i.marketplace_edit_id.submitted_by_role }}</span></li>
                             {% endfor %}
                         </ul>
                         {% else %}
@@ -293,7 +293,7 @@
                         {% if website_edits_unreviewed %}
                         <ul>
                             {% for i in website_edits_unreviewed %}
-                            <li>{{ i.website }}</li>
+                            <li>{{ i.website }} <br> <span class="small text-secondary">{{ i.marketplace_edit_id.submitted_by }}, {{ i.marketplace_edit_id.submitted_by_role }}</span></li>
                             {% endfor %}
                         </ul>
                         {% else %}
@@ -303,7 +303,7 @@
                         {% if website_edits_reviewed %}
                         <ul>
                             {% for i in website_edits_reviewed %}
-                            <li>{{ i.website }}</li>
+                            <li>{{ i.website }} <br> <span class="small text-secondary">{{ i.marketplace_edit_id.submitted_by }}, {{ i.marketplace_edit_id.submitted_by_role }}</span></li>
                             {% endfor %}
                         </ul>
                         {% else %}
@@ -341,7 +341,7 @@
                         <ul>
                             {% for suggestion in marketplace_edits_unreviewed %}
                             {% if suggestion.description %}
-                            <li>{{ suggestion.description }}</li>
+                            <li>{{ suggestion.description }} <br> <span class="small text-secondary">{{ suggestion.submitted_by }}, {{ suggestion.submitted_by_role }}</span></li>
                             {% endif %}
                             {% endfor %}
                         </ul>
@@ -353,7 +353,7 @@
                         <ul>
                             {% for suggestion in marketplace_edits_reviewed %}
                             {% if suggestion.description %}
-                            <li>{{ suggestion.description }}</li>
+                            <li>{{ suggestion.description }} <br> <span class="small text-secondary">{{ suggestion.submitted_by }}, {{ suggestion.submitted_by_role }}</span></li>
                             {% endif %}
                             {% endfor %}
                         </ul>
@@ -393,7 +393,7 @@
                         <ul>
                             {% for suggestion in marketplace_edits_unreviewed %}
                             {% if suggestion.address %}
-                            <li>{{ suggestion.address }}</li>
+                            <li>{{ suggestion.address }} <br> <span class="small text-secondary">{{ suggestion.submitted_by }}, {{ suggestion.submitted_by_role }}</span></li>
                             {% endif %}
                             {% endfor %}
                         </ul>
@@ -405,7 +405,7 @@
                         <ul>
                             {% for suggestion in marketplace_edits_reviewed %}
                             {% if suggestion.address %}
-                            <li>{{ suggestion.address }}</li>
+                            <li>{{ suggestion.address }} <br> <span class="small text-secondary">{{ suggestion.submitted_by }}, {{ suggestion.submitted_by_role }}</span></li>
                             {% endif %}
                             {% endfor %}
                         </ul>
@@ -463,7 +463,7 @@
                         <ul>
                             {% for suggestion in marketplace_edits_unreviewed %}
                             {% if suggestion.size %}
-                            <li>{{ suggestion.size }}</li>
+                            <li>{{ suggestion.size }} <br> <span class="small text-secondary">{{ suggestion.submitted_by }}, {{ suggestion.submitted_by_role }}</span></li>
                             {% endif %}
                             {% endfor %}
                         </ul>
@@ -475,7 +475,7 @@
                         <ul>
                             {% for suggestion in marketplace_edits_reviewed %}
                             {% if suggestion.size %}
-                            <li>{{ suggestion.size }}</li>
+                            <li>{{ suggestion.size }} <br> <span class="small text-secondary">{{ suggestion.submitted_by }}, {{ suggestion.submitted_by_role }}</span></li>
                             {% endif %}
                             {% endfor %}
                         </ul>
@@ -516,7 +516,7 @@
                         {% if opening_hours_edits_unreviewed %}
                         <ul>
                             {% for i in opening_hours_edits_unreviewed %}
-                            <li>{{ i.day_opens }} {{ i.hour_opens }}-{{ i.hour_closes }}</li>
+                            <li>{{ i.day_opens }} {{ i.hour_opens }}-{{ i.hour_closes }} <br> <span class="small text-secondary">{{ i.marketplace_edit_id.submitted_by }}, {{ i.marketplace_edit_id.submitted_by_role }}</span></li>
                             {% endfor %}
                         </ul>
                         {% else %}
@@ -526,7 +526,7 @@
                         {% if opening_hours_edits_reviewed %}
                         <ul>
                             {% for i in opening_hours_edits_reviewed %}
-                            <li>{{ i.day_opens }} {{ i.hour_opens }}-{{ i.hour_closes }}</li>
+                            <li>{{ i.day_opens }} {{ i.hour_opens }}-{{ i.hour_closes }} <br> <span class="small text-secondary">{{ i.marketplace_edit_id.submitted_by }}, {{ i.marketplace_edit_id.submitted_by_role }}</span></li>
                             {% endfor %}
                         </ul>
                         {% else %}
@@ -565,7 +565,7 @@
                         <ul>
                             {% for suggestion in marketplace_edits_unreviewed %}
                             {% if suggestion.opening_date %}
-                            <li>{{ suggestion.opening_date }}</li>
+                            <li>{{ suggestion.opening_date }} <br> <span class="small text-secondary">{{ suggestion.submitted_by }}, {{ suggestion.submitted_by_role }}</span></li>
                             {% endif %}
                             {% endfor %}
                         </ul>
@@ -577,7 +577,7 @@
                         <ul>
                             {% for suggestion in marketplace_edits_reviewed %}
                             {% if suggestion.opening_date %}
-                            <li>{{ suggestion.opening_date }}</li>
+                            <li>{{ suggestion.opening_date }} <br> <span class="small text-secondary">{{ suggestion.submitted_by }}, {{ suggestion.submitted_by_role }}</span></li>
                             {% endif %}
                             {% endfor %}
                         </ul>
