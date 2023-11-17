@@ -28,8 +28,9 @@ def sugerencias(request):
     return render(request, "sugerencias.html", context)
 
 
-def sugerencias_gracias(request):
-    return render(request, "sugerencias_gracias.html")
+def sugerencias_gracias(request, marketplace_name):
+    context = {"marketplace_name": marketplace_name}
+    return render(request, "sugerencias_gracias.html", context)
 
 
 def sugerencias_ferias(request):
@@ -183,9 +184,9 @@ def sugerencias_feria(request, marketplace_url):
                 and (f"hour_closes_{i}" in request.POST)
             )
 
-        context = {"marketplace": marketplace}
+        marketplace_name = marketplace.name
 
-        return render(request, "sugerencias_gracias.html", context)
+        return redirect("sugerencias_gracias")
 
     else:
         marketplace = Marketplace.objects.get(marketplace_url=marketplace_url)
