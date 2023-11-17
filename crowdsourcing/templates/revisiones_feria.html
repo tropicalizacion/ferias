@@ -35,7 +35,7 @@
                     </p>
                     <h6>Editar</h6>
                     <p>
-                        <input type="text" class="underline-input" id="name" name="name" placeholder="Nombre de la feria" value="{{ marketplace.name }}">
+                        <input type="text" class="underline-input w-100" id="name" name="name" placeholder="Nombre de la feria" value="{{ marketplace.name }}">
                     </p>
                     <h6>Sugerencias</h6>
                     <div style="height: 300px; overflow-y: auto;">
@@ -86,7 +86,7 @@
                     </p>
                     <h6>Editar</h6>
                     <p>
-                        <input type="text" class="underline-input" id="name_alternate" name="name_alternate" placeholder="Nombres alternativos">
+                        <input type="text" class="underline-input w-100" id="name_alternate" name="name_alternate" placeholder="Nombres alternativos">
                     </p>
                     <h6>Sugerencias</h6>
                     <div style="height: 300px; overflow-y: auto;" class="mb-2">
@@ -137,7 +137,7 @@
                     </p>
                     <h6>Editar</h6>
                     <p>
-                        <input type="text" class="underline-input" id="operator" name="operator" placeholder="Operador">
+                        <input type="text" class="underline-input w-100" id="operator" name="operator" placeholder="Operador">
                     </p>
                     <h6>Sugerencias</h6>
                     <div style="height: 300px; overflow-y: auto;">
@@ -188,7 +188,7 @@
                     </p>
                     <h6>Editar</h6>
                     <p>
-                        <input type="text" class="underline-input" id="phone" name="phone" placeholder="Teléfono">
+                        <input type="text" class="underline-input w-100" id="phone" name="phone" placeholder="Teléfono">
                         <small class="text-muted">Para colocar un nuevo número de teléfono es necesario hacer una llamada y confirmar con la persona que contesta.</small>
                     </p>
                     <h6>Sugerencias</h6>
@@ -236,7 +236,7 @@
                     </p>
                     <h6>Editar</h6>
                     <p>
-                        <input type="email" class="underline-input" id="email" name="email" placeholder="Correo electrónico">
+                        <input type="email" class="underline-input w-100" id="email" name="email" placeholder="Correo electrónico">
                         <small class="text-muted">Para colocar un nuevo correo electrónico es necesario enviar un correo y esperar la respuesta de confirmación.</small>
                     </p>
                     <h6>Sugerencias</h6>
@@ -284,7 +284,7 @@
                     </p>
                     <h6>Editar</h6>
                     <p>
-                        <input type="url" class="underline-input" id="website" name="website" placeholder="Sitio web">
+                        <input type="url" class="underline-input w-100" id="website" name="website" placeholder="Sitio web">
                         <small class="text-muted">Para colocar una nueva dirección es necesario visitar el link y confirmar que corresponde con la feria respectiva y que parece oficial y está activo.</small>
                     </p>
                     <h6>Sugerencias</h6>
@@ -332,7 +332,7 @@
                     </p>
                     <h6>Editar</h6>
                     <p>
-                        <textarea class="underline-input" rows="5" id="description" name="description" placeholder="Descripción">{% if marketplace.description %}{{ marketplace.description }}{% endif %}</textarea>
+                        <textarea class="underline-input w-100" rows="5" id="description" name="description" placeholder="Descripción">{% if marketplace.description %}{{ marketplace.description }}{% endif %}</textarea>
                     </p>
                     <h6>Sugerencias</h6>
                     <div style="height: 300px; overflow-y: auto;" class="mb-2">
@@ -383,7 +383,7 @@
                     </p>
                     <h6>Editar</h6>
                     <p>
-                        <textarea class="underline-input" rows="5" id="address" name="address" placeholder="Dirección">{% if marketplace.address %}{{ marketplace.address }}{% endif %}</textarea>
+                        <textarea class="underline-input w-100" rows="5" id="address" name="address" placeholder="Dirección">{% if marketplace.address %}{{ marketplace.address }}{% endif %}</textarea>
                         <small class="text-muted">(Primera letra en minúscula)</small>
                     </p>
                     <h6>Sugerencias</h6>
@@ -507,7 +507,7 @@
                     </p>
                     <h6>Editar</h6>
                     <p>
-                        <input type="text" class="underline-input" id="opening_hours" name="opening_hours" placeholder="Horario de operación">
+                        <input type="text" class="underline-input w-100" id="opening_hours" name="opening_hours" placeholder="Horario de operación">
                         <small class="text-muted">Debe ser editado en fiel concordancia con <a href="https://wiki.openstreetmap.org/wiki/Key:opening_hours">opening_hours</a> de OpenStreetMap.</small>
                     </p>
                     <h6>Sugerencias</h6>
@@ -555,7 +555,7 @@
                     </p>
                     <h6>Editar</h6>
                     <p>
-                        <input type="date" class="underline-input" id="opening_date" name="opening_date">
+                        <input type="date" class="underline-input w-100" id="opening_date" name="opening_date">
                         <small class="text-muted">Posiblemente solo sea utilizado el año o el año y el mes, así que la fecha exacta no es tan importante.</small>
                     </p>
                     <h6>Sugerencias</h6>
@@ -949,7 +949,7 @@
                     <p class="small  text-muted">Requerido</p>
                     <p>¿Cuáles fueron los principales cambios hechos en esta revisión? Favor agregar cualquier indicación relevante de la investigación hecha sobre los datos de la feria.</p>
                     <p>
-                        <textarea class="underline-input" rows="5" id="comments_reviewer" name="comments_reviewer" placeholder="Comentarios"required></textarea>
+                        <textarea class="underline-input w-100" rows="5" id="comments_reviewer" name="comments_reviewer" placeholder="Comentarios"required></textarea>
                     </p>
                 </div>
             </div>
