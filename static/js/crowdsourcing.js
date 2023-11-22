@@ -193,7 +193,7 @@ function addEmailInput() {
     var inputElement = document.createElement("input");
     inputElement.classList.add("underline-input");
     inputElement.classList.add("mb-2");
-    inputElement.setAttribute("type", "email");
+    inputElement.setAttribute("type", "text");
     inputElement.setAttribute("id", "email_" + emailInputCount);
     inputElement.setAttribute("name", "email_" + emailInputCount);
     inputElement.setAttribute("placeholder", "Correo electrónico " + emailInputCount);
