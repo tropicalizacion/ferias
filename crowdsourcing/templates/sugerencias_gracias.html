@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block page_title %} ¡Gracias por colaborar! {% endblock %}
+
+{% block bg-navbar %} background-cafe {% endblock %}
+
+{% block main %}
+
+<!-- Hero -->
+<div class="px-4 pt-3 pb-5 text-center background-cafe">
+    <div class="card col-lg-6 mx-auto bg-transparent border-0">
+        <h1 class="display-2 display-deferia text-white">¡Gracias por colaborar!</h1>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-center">
+        <div class="col-lg-6 text-center">
+            <p class="lead">Pronto actualizaremos los datos de nuestro sitio con la información provista.</p>
+            <p>Si quiere colaborar con más información, puede volver a <a href="{% url 'sugerencias' %}">enviar sugerencias</a>.</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="32"
+   height="32"
+   viewBox="0 0 8.4666665 8.4666669"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (b8e25be8, 2022-02-05)"
+   sodipodi:docname="icon.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="8.5384068"
+     inkscape:cx="20.085714"
+     inkscape:cy="15.518118"
+     inkscape:window-width="1399"
+     inkscape:window-height="955"
+     inkscape:window-x="2061"
+     inkscape:window-y="39"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <style
+       id="style824">
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #e44128;
+      }
+
+      .cls-3 {
+        fill: #008c4a;
+      }
+    </style>
+  </defs>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g840"
+       transform="matrix(0.01701364,0,0,0.01701364,1.0632669,0)">
+      <path
+         class="cls-2"
+         d="M 55.1,147.54 C 49.78,154.66 0,248.02 0,248.02 L 24.13,441.03 62.06,481.8 247.16,497.64 362.69,320.29 247.16,172.44 55.1,147.55 Z"
+         id="path828" />
+      <polygon
+         class="cls-3"
+         points="252.46,240 288.59,309.34 362.7,320.28 372.65,213.33 311.66,168.88 359.14,149.32 347.92,122.65 281.42,76.43 235.53,106.65 234.35,44.42 162.75,0 129.79,42.65 148.17,97.76 79.64,87.09 19.3,143.99 69.21,204.44 137.16,190.21 137.16,248.02 148.17,275.56 189.72,289.9 "
+         id="polygon830" />
+      <polygon
+         class="cls-1"
+         points="66.56,309.77 87.96,309.77 87.96,337.89 58.52,337.89 "
+         id="polygon832" />
+      <polygon
+         class="cls-1"
+         points="194.19,309.77 187.63,346.16 206.72,346.16 219.54,323.83 "
+         id="polygon834" />
+      <polygon
+         class="cls-1"
+         points="225.18,358.34 252.46,372.62 238.82,397.85 208.98,397.85 "
+         id="polygon836" />
+      <polygon
+         class="cls-1"
+         points="107,358.34 136.56,366.01 121.78,397.85 107,389.16 "
+         id="polygon838" />
+    </g>
+  </g>
+</svg>

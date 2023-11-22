@@ -2,18 +2,432 @@
 
 {% load static %}
 
-{% block page_title %} Lista de productos {% endblock %}
+{% block page_title %} Todos los productos {% endblock %}
+
+{% block bg-navbar %} background-rojo {% endblock %}
 
 {% block main %}
 
-<h1 class="display-1">Productos</h1>
+<!-- Hero -->
+<div class="px-4 pt-3 pb-5 text-center background-rojo">
+    <div class="card col-lg-6 mx-auto bg-transparent border-0">
+        <h1 class="display-3 my-5 text-white title-deferia">Tenemos una diversidad privilegiada de productos frescos para disfrutar</h1>
+        <h3 class="title-deferia text-white mb-5">(Y la feria es el lugar para aprovecharlos)</h3>
+        <div class="d-flex justify-content-center">
+            <a href="#search" class="link-dark text-decoration-none">
+                <div class="vstack circle-cta background-amarillo shadow-lg">
+                    <div class="verde">¡Vamos!</div>
+                    <div><img src="{% static 'images/logos/logo_rojo.png' %}" width="60px" alt="Logo de feria"></div>
+                </div>
+            </a>
+        </div>
+        <img src="{% static 'images/icons/ajo.svg' %}" width="75px" class="index-sticker-1">
+        <img src="{% static 'images/icons/acelga.svg' %}" width="75px" class="index-sticker-2">
+        <img src="{% static 'images/icons/naranja.svg' %}" width="75px" class="index-sticker-3">
+    </div>
+</div>
 
-<h2>Lista de productos</h2>
+<!-- Lista de los productos -->
+<div class="container mt-5">
+    <div class="d-flex justify-content-center">
+        <div class="col-lg-6 text-center">
+            <h1 class="display-5 display-deferia rojo">Lista de productos</h1>
+            <p class="lead">Hemos registrado más de 100 productos con la siguiente clasificación:</p>
+            <p class="lead title-deferia border rounded-3 p-2">
+                <span class="rojo">frutas</span>, <span class="verde">verduras</span>, <span class="amarillo">tubérculos y raíces</span>, <span class="cafe">legumbres</span>, <span class="azul">hierbas</span> y otros
+            </p>
+            <p>En estas tablas puede ver la <strong>disponibilidad</strong> mes a mes y la recomendación de canasta básica mejorada. Dé click y encuentre más información de cada uno, ¡y también colabórenos con sus secretos de preparación y almacenamiento!</p>
+        </div>
+    </div>
 
-<ul>
-{% for product in products %}
-    <li><a href="/productos/{{ product.product_url }}">{{ product.common_name }}</a></li>
-{% endfor %}
-</ul>
+    <!-- Indicaciones de la tabla -->
+    <div class="d-flex justify-content-center mb-3">
+        <div class="card col-lg-6 background-verde text-white rounded-5 border-0">
+            <div class="card-body text-center small">
+                <div class="row row-col-4">
+                    <div class="col text-center">
+                        <i class="fa-regular fa-circle"></i> Escaso
+                    </div>
+                    <div class="col text-center">
+                        <i class="fa-solid fa-circle-half-stroke"></i>
+                    </div>
+                    <div class="col text-center">
+                        <i class="fa-solid fa-circle"></i>
+                    </div>
+                    <div class="col text-center">
+                        <i class="fa-solid fa-circle-check"></i> Abundante
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center mb-3">
+        <div class="card col-lg-6 background-amarillo rounded-5 border-0">
+            <div class="card-body small">
+                <div class="row d-flex align-items-center">
+                    <div class="col-1">
+                        <i class="text-white fa-solid fa-star-of-life"></i>
+                    </div>
+                    <div class="col-11">
+                        Recomendación de canasta básica alimentaria <a href="https://www.ucr.ac.cr/noticias/2021/4/28/la-canasta-basica-refleja-el-comportamiento-de-consumo-costarricense-no-sus-necesidades-nutricionales.html">mejorada</a> (Universidad de Costa Rica)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Frutas -->
+    <div class="table-responsive">
+        <table class="custom-table">
+            <thead class="text-center">
+                <tr>
+                    <th scope="col" class="text-start pe-5"><span class="display-deferia fs-2 rojo">Frutas</span></th>
+                    <th scope="col"><i class="fa-solid fa-basket-shopping"></i></th>
+                    <th scope="col">E</th>
+                    <th scope="col">F</th>
+                    <th scope="col">M</th>
+                    <th scope="col">A</th>
+                    <th scope="col">M</th>
+                    <th scope="col">J</th>
+                    <th scope="col">J</th>
+                    <th scope="col">A</th>
+                    <th scope="col">S</th>
+                    <th scope="col">O</th>
+                    <th scope="col">N</th>
+                    <th scope="col">D</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for variety in varieties_frutas %}
+                <tr>
+                    <td><a class="link-dark link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" style="font-weight: 800;" href="/productos/{{ variety.product_url.product_url }}">{{ variety.product_url.common_name|capfirst }} {% if variety.common_name_variety %}{{ variety.common_name_variety }}{% endif %}</a></td>
+                    <!-- Canasta básica -->
+                    <td>{% if variety.product_url.food_basket %}<i class="small amarillo fa-solid fa-star-of-life"></i>{% endif %}</td>
+                    <!-- Estacionalidad por meses -->
+                    <td {% if month == 1 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.jan }}"></div>
+                    </td>
+                    <td {% if month == 2 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.feb }}"></div>
+                    </td> 
+                    <td {% if month == 3 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.mar }}"></div>
+                    </td>
+                    <td {% if month == 4 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.apr }}"></div>
+                    </td>
+                    <td {% if month == 5 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.may }}"></div>
+                    </td>
+                    <td {% if month == 6 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.jun }}"></div>
+                    </td>
+                    <td {% if month == 7 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.jul }}"></div>
+                    </td>
+                    <td {% if month == 8 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.aug }}"></div>
+                    </td>
+                    <td {% if month == 9 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.sep }}"></div>
+                    </td>
+                    <td {% if month == 10 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.oct }}"></div>
+                    </td>
+                    <td {% if month == 11 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.nov }}"></div>
+                    </td>
+                    <td {% if month == 12 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.dec }}"></div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Verduras -->
+    <div class="table-responsive mt-5">
+        <table class="custom-table">
+            <thead class="text-center">
+                <tr>
+                    <th scope="col" class="text-start pe-5"><span class="display-deferia fs-2 verde">Verduras</span></th>
+                    <th scope="col"><i class="fa-solid fa-basket-shopping"></i></th>
+                    <th scope="col">E</th>
+                    <th scope="col">F</th>
+                    <th scope="col">M</th>
+                    <th scope="col">A</th>
+                    <th scope="col">M</th>
+                    <th scope="col">J</th>
+                    <th scope="col">J</th>
+                    <th scope="col">A</th>
+                    <th scope="col">S</th>
+                    <th scope="col">O</th>
+                    <th scope="col">N</th>
+                    <th scope="col">D</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for variety in varieties_verduras %}
+                <tr>
+                    <td><a class="link-dark link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" style="font-weight: 800;" href="/productos/{{ variety.product_url.product_url }}">{{ variety.product_url.common_name|capfirst }} {% if variety.common_name_variety %}{{ variety.common_name_variety }}{% endif %}</a></td>
+                    <!-- Canasta básica -->
+                    <td>{% if variety.product_url.food_basket %}<i class="small amarillo fa-solid fa-star-of-life"></i>{% endif %}</td>
+                    <!-- Estacionalidad por meses -->
+                    <td {% if month == 1 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.jan }}"></div>
+                    </td>
+                    <td {% if month == 2 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.feb }}"></div>
+                    </td> 
+                    <td {% if month == 3 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.mar }}"></div>
+                    </td>
+                    <td {% if month == 4 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.apr }}"></div>
+                    </td>
+                    <td {% if month == 5 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.may }}"></div>
+                    </td>
+                    <td {% if month == 6 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.jun }}"></div>
+                    </td>
+                    <td {% if month == 7 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.jul }}"></div>
+                    </td>
+                    <td {% if month == 8 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.aug }}"></div>
+                    </td>
+                    <td {% if month == 9 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.sep }}"></div>
+                    </td>
+                    <td {% if month == 10 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.oct }}"></div>
+                    </td>
+                    <td {% if month == 11 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.nov }}"></div>
+                    </td>
+                    <td {% if month == 12 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.dec }}"></div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Tubérculos -->
+    <div class="table-responsive mt-5">
+        <table class="custom-table">
+            <thead class="text-center">
+                <tr>
+                    <th scope="col" class="text-start pe-5"><span class="display-deferia fs-2 amarillo">Tubérculos, raíces</span></th>
+                    <th scope="col"><i class="fa-solid fa-basket-shopping"></i></th>
+                    <th scope="col">E</th>
+                    <th scope="col">F</th>
+                    <th scope="col">M</th>
+                    <th scope="col">A</th>
+                    <th scope="col">M</th>
+                    <th scope="col">J</th>
+                    <th scope="col">J</th>
+                    <th scope="col">A</th>
+                    <th scope="col">S</th>
+                    <th scope="col">O</th>
+                    <th scope="col">N</th>
+                    <th scope="col">D</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for variety in varieties_tuberculos %}
+                <tr>
+                    <td><a class="link-dark link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" style="font-weight: 800;" href="/productos/{{ variety.product_url.product_url }}">{{ variety.product_url.common_name|capfirst }} {% if variety.common_name_variety %}{{ variety.common_name_variety }}{% endif %}</a></td>
+                    <!-- Canasta básica -->
+                    <td>{% if variety.product_url.food_basket %}<i class="small amarillo fa-solid fa-star-of-life"></i>{% endif %}</td>
+                    <!-- Estacionalidad por meses -->
+                    <td {% if month == 1 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.jan }}"></div>
+                    </td>
+                    <td {% if month == 2 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.feb }}"></div>
+                    </td> 
+                    <td {% if month == 3 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.mar }}"></div>
+                    </td>
+                    <td {% if month == 4 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.apr }}"></div>
+                    </td>
+                    <td {% if month == 5 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.may }}"></div>
+                    </td>
+                    <td {% if month == 6 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.jun }}"></div>
+                    </td>
+                    <td {% if month == 7 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.jul }}"></div>
+                    </td>
+                    <td {% if month == 8 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.aug }}"></div>
+                    </td>
+                    <td {% if month == 9 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.sep }}"></div>
+                    </td>
+                    <td {% if month == 10 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.oct }}"></div>
+                    </td>
+                    <td {% if month == 11 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.nov }}"></div>
+                    </td>
+                    <td {% if month == 12 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.dec }}"></div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Legumbres -->
+    <div class="table-responsive mt-5">
+        <table class="custom-table">
+            <thead class="text-center">
+                <tr>
+                    <th scope="col" class="text-start pe-5"><span class="display-deferia fs-2 cafe">Legumbres</span></th>
+                    <th scope="col"><i class="fa-solid fa-basket-shopping"></i></th>
+                    <th scope="col">E</th>
+                    <th scope="col">F</th>
+                    <th scope="col">M</th>
+                    <th scope="col">A</th>
+                    <th scope="col">M</th>
+                    <th scope="col">J</th>
+                    <th scope="col">J</th>
+                    <th scope="col">A</th>
+                    <th scope="col">S</th>
+                    <th scope="col">O</th>
+                    <th scope="col">N</th>
+                    <th scope="col">D</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for variety in varieties_legumbres %}
+                <tr>
+                    <td><a class="link-dark link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" style="font-weight: 800;" href="/productos/{{ variety.product_url.product_url }}">{{ variety.product_url.common_name|capfirst }} {% if variety.common_name_variety %}{{ variety.common_name_variety }}{% endif %}</a></td>
+                    <!-- Canasta básica -->
+                    <td>{% if variety.product_url.food_basket %}<i class="small amarillo fa-solid fa-star-of-life"></i>{% endif %}</td>
+                    <!-- Estacionalidad por meses -->
+                    <td {% if month == 1 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.jan }}"></div>
+                    </td>
+                    <td {% if month == 2 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.feb }}"></div>
+                    </td> 
+                    <td {% if month == 3 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.mar }}"></div>
+                    </td>
+                    <td {% if month == 4 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.apr }}"></div>
+                    </td>
+                    <td {% if month == 5 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.may }}"></div>
+                    </td>
+                    <td {% if month == 6 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.jun }}"></div>
+                    </td>
+                    <td {% if month == 7 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.jul }}"></div>
+                    </td>
+                    <td {% if month == 8 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.aug }}"></div>
+                    </td>
+                    <td {% if month == 9 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.sep }}"></div>
+                    </td>
+                    <td {% if month == 10 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.oct }}"></div>
+                    </td>
+                    <td {% if month == 11 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.nov }}"></div>
+                    </td>
+                    <td {% if month == 12 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.dec }}"></div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Hierbas -->
+    <div class="table-responsive mt-5">
+        <table class="custom-table">
+            <thead class="text-center">
+                <tr>
+                    <th scope="col" class="text-start pe-5"><span class="display-deferia fs-2 azul">Hierbas</span></th>
+                    <th scope="col"><i class="fa-solid fa-basket-shopping"></i></th>
+                    <th scope="col">E</th>
+                    <th scope="col">F</th>
+                    <th scope="col">M</th>
+                    <th scope="col">A</th>
+                    <th scope="col">M</th>
+                    <th scope="col">J</th>
+                    <th scope="col">J</th>
+                    <th scope="col">A</th>
+                    <th scope="col">S</th>
+                    <th scope="col">O</th>
+                    <th scope="col">N</th>
+                    <th scope="col">D</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for variety in varieties_hierbas %}
+                <tr>
+                    <td><a class="link-dark link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" style="font-weight: 800;" href="/productos/{{ variety.product_url.product_url }}">{{ variety.product_url.common_name|capfirst }} {% if variety.common_name_variety %}{{ variety.common_name_variety }}{% endif %}</a></td>
+                    <!-- Canasta básica -->
+                    <td>{% if variety.product_url.food_basket %}<i class="small amarillo fa-solid fa-star-of-life"></i>{% endif %}</td>
+                    <!-- Estacionalidad por meses -->
+                    <td {% if month == 1 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.jan }}"></div>
+                    </td>
+                    <td {% if month == 2 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.feb }}"></div>
+                    </td> 
+                    <td {% if month == 3 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.mar }}"></div>
+                    </td>
+                    <td {% if month == 4 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.apr }}"></div>
+                    </td>
+                    <td {% if month == 5 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.may }}"></div>
+                    </td>
+                    <td {% if month == 6 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.jun }}"></div>
+                    </td>
+                    <td {% if month == 7 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.jul }}"></div>
+                    </td>
+                    <td {% if month == 8 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.aug }}"></div>
+                    </td>
+                    <td {% if month == 9 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.sep }}"></div>
+                    </td>
+                    <td {% if month == 10 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.oct }}"></div>
+                    </td>
+                    <td {% if month == 11 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.nov }}"></div>
+                    </td>
+                    <td {% if month == 12 %}class="background-amarillo"{% endif %}>
+                        <div class="season-{{ variety.dec }}"></div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
 
 {% endblock %}

@@ -1,8 +1,0 @@
-<p>Notas: {{ product.preparation_notes }}</p>
-<p>Métodos:</p>
-<dl>
-    {% for preparation in product.preparation.all %}
-    <dt>(Ícono) {{ preparation.method_name|capfirst }}</dt>
-    <dd>{{ preparation.method_description }}</dd>
-    {% endfor %}
-</dl>

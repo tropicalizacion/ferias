@@ -2,139 +2,113 @@
 
 {% load static %}
 
-{% block page_title %} Lista de ferias {% endblock %}
+{% block page_title %} Todas las ferias {% endblock %}
+
+{% block bg-navbar %} background-azul {% endblock %}
 
 {% block main %}
 
-<h1 class="display-1">Ferias</h1>
-
-<h2>Las ferias en números</h2>
-
-<p>
-<div class="card text-center">
-    <div class="card-body">
-        <h2 class="card-title">{{ total_marketplaces }}</h2>
-        <p class="card-text">Total de ferias registradas</p>
+<!-- Hero -->
+<div class="px-4 pt-3 pb-5 text-center background-azul">
+    <div class="col-lg-6 mx-auto">
+        <h1 class="display-3 my-5 text-white title-deferia">¡Hay {{ total_marketplaces }} ferias en nuestro sitio para visitar!</h1>
+        <div class="d-flex justify-content-center">
+            <a href="#search" class="link-dark text-decoration-none">
+                <div class="vstack circle-cta background-amarillo shadow-lg">
+                    <div class="verde">¡Vamos!</div>
+                    <div><img src="{% static 'images/logos/logo_rojo.png' %}" width="60px" alt="Logo de feria"></div>
+                </div>
+            </a>
+        </div>
     </div>
 </div>
-</p>
 
-<h4>Ferias por provincia</h4>
+<!-- Ubicación de las ferias -->
+<div class="container mt-4">
+    <div class="d-flex justify-content-center">
+        <div class="col-lg-6 text-center">
+            <h1 class="display-5 display-deferia rojo">Ubicación de las ferias</h1>
+            <p class="lead">Las ferias están en las siete provincias del país.</p>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-2 g-4 py-4">
+        <div class="col">
+            <h3><i class="fa-solid fa-chart-simple verde"></i></i><br> Ferias por provincia</h3>
+            <canvas id="n-provinces"></canvas>
+        </div>
+        <div class="col-lg-6">
+            <h3><i class="fa-solid fa-map-location-dot rojo"></i><br> Mapa de las ferias</h3>
+            <div class="rounded-4" id="map" style="max-width: 768px; height: 325px;"></div>
+        </div>
+    </div>
+</div>
 
-<ul>
-    <li>Ferias en San José: {{ n_sanjose }}</li>
-    <li>Ferias en Alajuela: {{ n_alajuela }}</li>
-    <li>Ferias en Cartago: {{ n_cartago }}</li>
-    <li>Ferias en Heredia: {{ n_heredia }}</li>
-    <li>Ferias en Guanacaste: {{ n_guanacaste }}</li>
-    <li>Ferias en liuntarenas: {{ n_liuntarenas }}</li>
-    <li>Ferias en Limón: {{ n_limon }}</li>
-</ul>
+<!-- Las ferias en números -->
+<div class="container mt-4">
+    <div class="row">
+        <div class="col text-center">
+            <h1 class="display-5 display-deferia verde">Las ferias en números</h1>
+            <p class="lead">Aquí le ayudamos a buscar su feria entre las más de 80 que hay en el país.</p>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4 py-4">
+        <div class="col">
+            <h3><i class="fa-regular fa-calendar-days amarillo"></i><br> Ferias por día de la semana</h3>
+            <canvas id="n-days"></canvas>
+        </div>
+        <div class="col">
+            <h3><i class="fa-solid fa-glass-water rojo"></i><br> Amenidades ofrecidas</h3>
+            <canvas id="n-amenities"></canvas>
+        </div>
+        <div class="col">
+            <h3><i class="fa-solid fa-store verde"></i><br> Infraestructura</h3>
+            <canvas id="n-infrastructure"></canvas>
+        </div>
+    </div>
+</div>
 
-<h4>Ferias por día de la semana</h4>
+<!-- Buscar mi feria -->
+{% include 'search.html' %}
 
-<ul>
-    <li>Abiertas los lunes: {{ n_monday }}</li>
-    <li>Abiertas los martes: {{ n_tuesday }}</li>
-    <li>Abiertas los miércoles: {{ n_wednesday }}</li>
-    <li>Abiertas los jueves: {{ n_thursday }}</li>
-    <li>Abiertas los viernes: {{ n_friday }}</li>
-    <li>Abiertas los sábados: {{ n_saturday }}</li>
-    <li>Abiertas los domingos: {{ n_sunday }}</li>
-</ul>
+<!-- Lista de las ferias -->
+<div class="container">
+    <div class="d-flex justify-content-center">
+        <div class="col-lg-6 text-center">
+            <h1 class="display-5 display-deferia rojo">Lista de ferias</h1>
+            <p class="lead">Todas las ferias registradas en el proyecto <span class="fw-bolder">deferia.cr</span> en orden alfabético.</p>
+        </div>
+    </div>
+    <table class="custom-table">
+        <thead>
+            <tr>
+                <th scope="col">Nombre de la feria</th>
+                <th scope="col">Provincia</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for marketplace in marketplaces %}
+            <tr>
+                <td><a class="link-dark link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover fw-bold" href="/ferias/{{ marketplace.marketplace_url }}">{{ marketplace.name }}</a></td>
+                <td>{{ marketplace.province }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 
-<h4>Porcentaje con ciertos servicios</h4>
-
-<ul>
-    <li>Porcentaje con campo ferial: {{ n_fairground }}</li>
-    <li>Porcentaje bajo techo: {{ n_indoor }}</li>
-    <li>Porcentaje con venta de comidas: {{ n_food }}</li>    
-</ul>
-
-
-<h2>Lista de ferias</h2>
-
-<ul>
-    {% for marketplace in marketplaces %}
-    <li><a href="/ferias/{{ marketplace.marketplace_url }}">{{ marketplace.name }}</a></li>
-    {% endfor %}
-</ul>
-
-<h2>Mapa con todas las ferias</h2>
-
-<p>Aquí un día estará un mapa con todas las ferias del país. Un día.</p>
-
+<!-- JavaScript -->
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<h2>Gráfico de ferias por provincia</h2>
+<script src="{% static 'js/map_marketplaces.js' %}" data-marketplaces-map="{{ marketplaces_map }}"></script>
 
-<canvas id="nProvinces"></canvas>
+<script src="{% static 'js/marketplaces.js' %}" data-n-days="{{ n_days }}" data-n-provinces="{{ n_provinces }}"
+    data-n-infrastructure="{{ n_infrastructure }}" data-n-amenities="{{ n_amenities }}"></script>
 
-<h2>Gráfico de ferias por días de la semana</h2>
+<script src="{% static 'js/search.js' %}"></script>
 
-<canvas id="nDays"></canvas>
-
-<script>
-    // Data
-    var data = {
-        labels: ['San José', 'Alajuela', 'Cartago', 'Heredia', 'Guanacaste', 'Puntarenas', 'Limón'],
-        datasets: [{
-            label: 'Númeo de ferias',
-            data: {{ n_provinces }},
-        backgroundColor: ['#EBB615', '#008D4A', '#3879B5', '#D1C5BA', '#E64128', '#CD7535', '#F29196'],
-        borderWidth: 0 // Remove border
-      }]
-    };
-
-    // Configuration
-    var config = {
-        type: 'bar',
-        data: data,
-        options: {
-            responsive: true,
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    };
-
-    // Create the chart
-    const nProvinces = new Chart(document.getElementById('nProvinces'), config);
-</script>
-
-<script>
-    // Data
-    var data = {
-        labels: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
-        datasets: [{
-            label: 'Númeo de ferias',
-            data: {{ n_days }},
-        backgroundColor: ['#EBB615', '#008D4A', '#3879B5', '#D1C5BA', '#E64128', '#CD7535', '#F29196'],
-        borderWidth: 0 // Remove border
-    }]
-  };
-
-    // Configuration
-    var config = {
-        type: 'bar',
-        data: data,
-        options: {
-            responsive: true,
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    };
-
-    // Create the chart
-    const nDays = new Chart(document.getElementById('nDays'), config);
-</script>
-
-
+<!-- Google Maps API and Keys -->
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2WP2FoMe4DRz20FsGGi51opPlfjcm4KM&libraries=places"></script>
 
 {% endblock %}

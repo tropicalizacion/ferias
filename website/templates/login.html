@@ -1,0 +1,122 @@
+{% load static %}
+
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ingresar | de feria</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- De Feria CSS -->
+    <link rel="stylesheet" href="{% static 'css/deferia.css' %}">
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Calistoga&family=Caprasimo&family=Caveat:wght@400;500;600;700&family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Suez+One&family=Titan+One&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/1ae7c4e024.js" crossorigin="anonymous"></script>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <!-- Google Analytics tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-96HQFNE7QN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-96HQFNE7QN');
+    </script>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        .form-signin {
+            max-width: 330px;
+            padding: 1rem;
+        }
+
+        .form-signin .form-floating:focus-within {
+            z-index: 2;
+        }
+
+        .form-signin input[type="text"] {
+            margin-bottom: -1px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        .form-signin input[type="password"] {
+            margin-bottom: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+    </style>
+</head>
+
+<body class="text-center">
+    <main class="form-signin w-100 m-auto d-flex align-items-center" style="height: 100vh;">
+        <form method="POST">
+            {% csrf_token %}
+            <img class="mb-4" src="{% static 'images/logos/logo_verde.png' %}" alt="" width="100">
+            <h1 class="h3 mb-3 fw-normal">Administración del sitio</h1>
+
+            {% if logged_in %}
+            <div class="alert alert-info mt-3 small" role="alert">
+                Ya ha iniciado sesión como {{ user.first_name }}. Puede <a href="{% url 'salir' %}">cerrar sesión</a>, ingresar las credenciales a continuación para ingresar con otro usuario o ir a la <a href="/">página principal</a>.
+            </div>
+            {% endif %}
+            {% if request.GET.logout == "true" %}
+            <div class="alert alert-success mt-3 small" role="alert">
+                Ha cerrado sesión. Puede ingresar las credenciales a continuación para ingresar de nuevo o ir a la <a href="/">página principal</a>.
+            </div>
+            {% endif %}
+
+            <div class="form-floating">
+                <input type="text" class="form-control" id="username" name="username" placeholder="nombre@ejemplo.com">
+                <label for="username">Nombre de usuario</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña">
+                <label for="password">Contraseña</label>
+            </div>
+            <button class="btn btn-primary w-100 py-2" type="submit">Ingresar</button>
+
+            {% if error %}
+            <div class="alert alert-danger mt-3" role="alert">
+                Problemas de ingreso al sitio. Por favor, intente de nuevo.
+            </div>
+            {% endif %}
+            <div class="text-start my-3">
+                ¿No tiene credenciales de ingreso? Consulte a <a href="mailto:tropicalizacion@ucr.ac.cr">tropicalizacion@ucr.ac.cr</a>.
+            </div>
+            <hr>
+            <p class="text-center small mt-3">Un proyecto del trabajo comunal universitario <br> TC&#8209;691 <em>Tropicalización de la tecnología</em>, <br> de la Escuela de Ingeniería Eléctrica <br> de la Universidad de Costa Rica.</p>
+            <div class="row text-center">
+                <div class="col">
+                    <img src="{% static 'logos/ucr_logo.png' %}" height="30px" alt="">
+                </div>
+                <div class="col">
+                    <img src="{% static 'logos/tcu_logo.png' %}" height="30px" alt="">
+                </div>
+                <div class="col">
+                    <img src="{% static 'logos/eie_logo.png' %}" height="30px" alt="">
+                </div>
+            </div>
+            <p class="mt-4 text-body-secondary small">&copy; 2023</p>
+        </form>
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

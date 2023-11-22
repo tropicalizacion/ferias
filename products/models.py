@@ -7,12 +7,13 @@ class Product(models.Model):
     """Model definition for Product."""
 
     CATEGORY_CHOICES = [
-        ("verdura", "Verdura (hortaliza)"),
+        ("verdura", "Verdura u hortaliza"),
         ("fruta", "Fruta"),
-        ("cereal", "Cereal (grano)"),
-        ("legumbre", "Legumbre (leguminosa)"),
-        ("tubérculo", "Tubérculo o raíz"),
-        ("condimento", "Condimento (especia)"),
+        ("cereal", "Cereal o grano"),
+        ("legumbre", "Legumbre o leguminosa"),
+        ("raiz", "Tubérculo o raíz"),
+        ("condimento", "Condimento o especia"),
+        ("hierba", "Hierba aromática"),
         ("otro", "Otra categoría"),
     ]
 
@@ -71,7 +72,10 @@ class Variety(models.Model):
     dec = models.IntegerField(choices=SEASON_CHOICES, blank=True, null=True)
 
     def __str__(self):
-        return f"({self.product_url}) {self.common_name_variety}"
+        string = self.product_url.common_name
+        if self.common_name_variety:
+            string += f" {self.common_name_variety}"
+        return string
 
 
 class Origin(models.Model):
@@ -85,6 +89,7 @@ class Origin(models.Model):
     name = models.CharField(max_length=63)
     description = models.TextField(blank=True, null=True)
     region = models.PolygonField(blank=True, null=True)
+    mapamundi = models.ImageField(upload_to="maps", blank=True, null=True)
 
     def __str__(self):
         return f'{self.code} - {self.name}'

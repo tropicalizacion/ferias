@@ -1,134 +1,89 @@
 from django.shortcuts import render, redirect
 from marketplaces.models import Marketplace
-from .models import Announcement
+from .models import Announcement, Text
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.contrib.gis.db.models.functions import Distance
-from django.contrib.auth.decorators import login_required
 from django.contrib.gis.geos import Point
+from marketplaces.views import search_marketplaces
+from django.contrib.auth import login, authenticate, logout
+
+
+def cover(request):
+    return render(request, "cover.html")
 
 
 def index(request):
-
+    # Get the text for the home page where "page" is "/"
+    text = Text.objects.filter(page="/")
+    text_hero = text.filter(section="hero")
+    text_saludable = text.filter(section="features", subsection="saludable")
+    text_barato = text.filter(section="features", subsection="barato")
+    text_nuestro = text.filter(section="features", subsection="nuestro")
     if request.method == "POST":
-
-        # Search by location
-
-        location = request.POST.get("location")
-        if location == "any_location":
-            marketplaces = Marketplace.objects.all().order_by("name")
-        elif location == "my_location":
-            longitude = float(request.POST.get("my_longitude"))
-            latitude = float(request.POST.get("my_latitude"))
-            coordinates = Point(longitude, latitude, srid=4326)
-            marketplaces = Marketplace.objects.annotate(
-                distance=Distance("location", coordinates)
-            ).order_by("distance")
-        elif location == "some_location":
-            longitude = float(request.POST.get("some_longitude"))
-            latitude = float(request.POST.get("some_latitude"))
-            coordinates = Point(longitude, latitude, srid=4326)
-            marketplaces = Marketplace.objects.annotate(
-                distance=Distance("location", coordinates)
-            ).order_by("distance")
-
-        # Search by day of the week
-
-        day = request.POST.get("day")
-        if day != "any_day":
-            marketplaces = marketplaces.filter(opening_hours__contains=day)
-
-        # Filter results for exact match
-
-        marketplaces_match = marketplaces
-
-        # Filter by size
-
-        size = request.POST.get("size")
-        if size != "any_size":
-            query_size = Q()
-            if "size_s" in request.POST:
-                query_size |= Q(size="S")
-            if "size_m" in request.POST:
-                query_size |= Q(size="M")
-            if "size_l" in request.POST:
-                query_size |= Q(size="L")
-            if "size_xl" in request.POST:
-                query_size |= Q(size="XL")
-            marketplaces_match = marketplaces_match.filter(query_size)
-
-        # Filter by infrastructure
-
-        query_infrastructure = Q()
-        if "fairground" in request.POST:
-            query_infrastructure &= Q(fairground=True)
-        if "indoor" in request.POST:
-            query_infrastructure &= Q(indoor=True)
-        if "parking" in request.POST:
-            query_infrastructure &= Q(parking="surface")
-        marketplaces_match = marketplaces_match.filter(query_infrastructure)
-
-        # Filter by amenities
-
-        query_amenities = Q()
-        if "food" in request.POST:
-            query_amenities &= Q(food=True)
-        if "drinks" in request.POST:
-            query_amenities &= Q(drinks=True)
-        if "handicrafts" in request.POST:
-            query_amenities &= Q(handicrafts=True)
-        if "butcher" in request.POST:
-            query_amenities &= Q(butcher=True)
-        if "dairy" in request.POST:
-            query_amenities &= Q(dairy=True)
-        if "seafood" in request.POST:
-            query_amenities &= Q(seafood=True)
-        if "garden_centre" in request.POST:
-            query_amenities &= Q(garden_centre=True)
-        if "florist" in request.POST:
-            query_amenities &= Q(florist=True)
-        marketplaces_match = marketplaces_match.filter(query_amenities)
-
-        # Filter by keyword
-
-        marketplaces_keyword = None
-        if "keyword" in request.POST:
-            keyword = request.POST.get("keyword")
-            print(f'Keyword: {keyword}')
-            try:
-                marketplaces_keyword = marketplaces
-                marketplaces_keyword = marketplaces_keyword.filter(
-                    Q(name__unaccent__trigram_similar=keyword) | 
-                    Q(description__unaccent__trigram_similar=keyword)
-                )
-            except:
-                pass
-        
-        # Get other marketplaces
-
-        marketplaces_others = marketplaces.difference(marketplaces_match)
-
-        # Query text
-
-        query_text = request.POST.get("query_text")
-
+        marketplaces_match, marketplaces_others, marketplaces_keyword, keyword, query_text, by_location = search_marketplaces(request.POST)
         context = {
-            "query_text": query_text,
+            "text_hero": text_hero,
+            "text_saludable": text_saludable,
+            "text_barato": text_barato,
+            "text_nuestro": text_nuestro,
             "show_results": True,
+            "query_text": query_text,
+            "by_location": by_location,
+            "keyword": keyword,
             "marketplaces_match": marketplaces_match,
             "marketplaces_others": marketplaces_others,
             "marketplaces_keyword": marketplaces_keyword,
-            "keyword": keyword,
         }
-
         return render(request, "index.html", context)
-
     else:
-
-        return render(request, "index.html")
+        context = {
+            "text_hero": text_hero,
+            "text_saludable": text_saludable,
+            "text_barato": text_barato,
+            "text_nuestro": text_nuestro,
+        }
+        print(text_hero)
+        return render(request, "index.html", context)
 
 
 def acerca(request):
-    return render(request, "acerca.html")
+    return render(request, "sobre-proyecto.html")
+
+
+def sobre_ferias(request):
+    return render(request, "sobre-ferias.html")
+
+
+def ingresar(request):
+
+    if request.method == "POST":
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+        user = authenticate(
+            username=username,
+            password=password,
+        )
+        if user is not None:
+            login(request, user)
+            if 'next' in request.GET:
+                return redirect(request.GET.get('next'))
+            else:
+                return redirect("/")
+        else:
+            return render(request, "login.html", {"error": True})
+    else:
+        if request.user.is_authenticated:
+            context = {"logged_in": True}
+        else:
+            context = {"logged_in": False}
+        return render(request, "login.html", context)
+
+
+def salir(request):
+    logout(request)
+    url = "/ingresar/?logout=true"
+    return redirect(url)
 
 
 def contacto(request):

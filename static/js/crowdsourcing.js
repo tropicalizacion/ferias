@@ -1,6 +1,10 @@
+// --------------------
+// Opening hours inputs
+// --------------------
+
 var inputCount = 0;
 
-function addTextInput() {
+function addOpeningDaysInput() {
     inputCount++;
 
     // Get the input container
@@ -13,6 +17,7 @@ function addTextInput() {
     // Create the div row element
     var divRowElement = document.createElement("div");
     divRowElement.classList.add("row");
+    divRowElement.classList.add("mb-3");
 
     // Create the div element 1
     var divElement1 = document.createElement("div");
@@ -27,7 +32,8 @@ function addTextInput() {
 
     // Create the select element 1
     var selectElement1 = document.createElement("select");
-    selectElement1.classList.add("form-select");
+    selectElement1.classList.add("underline-input");
+    selectElement1.classList.add("w-100");
     selectElement1.setAttribute("id", "day_opens_" + inputCount);
     selectElement1.setAttribute("name", "day_opens_" + inputCount);
     selectElement1.setAttribute("aria-label", "Seleccione una opción");
@@ -71,9 +77,10 @@ function addTextInput() {
     labelElement2.classList.add("form-label");
     labelElement2.textContent = "Hora de apertura";
 
-    // Create the time input element
+    // Create the time input element 2
     var inputElement2 = document.createElement("input");
-    inputElement2.classList.add("form-control");
+    inputElement2.classList.add("underline-input");
+    inputElement2.classList.add("w-100");
     inputElement2.setAttribute("type", "time");
     inputElement2.setAttribute("id", "hour_opens_" + inputCount);
     inputElement2.setAttribute("name", "hour_opens_" + inputCount);
@@ -94,9 +101,10 @@ function addTextInput() {
     labelElement3.classList.add("form-label");
     labelElement3.textContent = "Hora de cierre";
 
-    // Create the time input element
+    // Create the time input element 3
     var inputElement3 = document.createElement("input");
-    inputElement3.classList.add("form-control");
+    inputElement3.classList.add("underline-input");
+    inputElement3.classList.add("w-100");
     inputElement3.setAttribute("type", "time");
     inputElement3.setAttribute("id", "hour_closes_" + inputCount);
     inputElement3.setAttribute("name", "hour_closes_" + inputCount);
@@ -116,7 +124,24 @@ function addTextInput() {
     inputContainer.appendChild(divRowElement);
 }
 
-var phoneInputCount = 1;
+function deleteOpeningDaysInput() {
+    if (inputCount > 0) {
+        inputCount--;
+
+        // Get the input container
+        var inputContainer = document.getElementById("opening-days");
+
+        // Remove the last childs
+        inputContainer.removeChild(inputContainer.lastChild);
+        inputContainer.removeChild(inputContainer.lastChild);
+    }
+}
+
+// ----------------------------
+// Phone, email and link inputs
+// ----------------------------
+
+var phoneInputCount = 0;
 
 function addPhoneInput() {
     phoneInputCount++;
@@ -127,18 +152,36 @@ function addPhoneInput() {
     // Create the input element
     var inputElement = document.createElement("input");
     inputElement.classList.add("underline-input");
-    inputElement.classList.add("mt-3");
+    inputElement.classList.add("mb-2");
     inputElement.setAttribute("type", "text");
     inputElement.setAttribute("id", "phone_" + phoneInputCount);
     inputElement.setAttribute("name", "phone_" + phoneInputCount);
     inputElement.setAttribute("placeholder", "Teléfono " + phoneInputCount);
     inputElement.setAttribute("style", "width: 100%;");
+    inputElement.setAttribute("required", "required");
 
     // Append the input element to the input container
     inputContainer.appendChild(inputElement);
+
+    // Focus on the new input
+    inputElement.focus();
 }
 
-var emailInputCount = 1;
+// Create button to delete last phone input
+function deletePhoneInput() {
+    if (phoneInputCount > 0) {
+        phoneInputCount--;
+        
+        // Get the input container
+        var inputContainer = document.getElementById("phones");
+
+        // Remove the last child
+        inputContainer.removeChild(inputContainer.lastChild);
+    }
+}
+
+
+var emailInputCount = 0;
 
 function addEmailInput() {
     emailInputCount++;
@@ -149,18 +192,35 @@ function addEmailInput() {
     // Create the input element
     var inputElement = document.createElement("input");
     inputElement.classList.add("underline-input");
-    inputElement.classList.add("mt-3");
-    inputElement.setAttribute("type", "email");
+    inputElement.classList.add("mb-2");
+    inputElement.setAttribute("type", "text");
     inputElement.setAttribute("id", "email_" + emailInputCount);
     inputElement.setAttribute("name", "email_" + emailInputCount);
     inputElement.setAttribute("placeholder", "Correo electrónico " + emailInputCount);
     inputElement.setAttribute("style", "width: 100%;");
+    inputElement.setAttribute("required", "required");
 
     // Append the input element to the input container
     inputContainer.appendChild(inputElement);
+
+    // Focus on the new input
+    inputElement.focus();
 }
 
-var linkInputCount = 1;
+// Create button to delete last email input
+function deleteEmailInput() {
+    if (emailInputCount > 0) {
+        emailInputCount--;
+
+        // Get the input container
+        var inputContainer = document.getElementById("emails");
+
+        // Remove the last child
+        inputContainer.removeChild(inputContainer.lastChild);
+    }
+}
+
+var linkInputCount = 0;
 
 function addLinkInput() {
     linkInputCount++;
@@ -171,13 +231,39 @@ function addLinkInput() {
     // Create the input element
     var inputElement = document.createElement("input");
     inputElement.classList.add("underline-input");
-    inputElement.classList.add("mt-3");
+    inputElement.classList.add("mb-2");
     inputElement.setAttribute("type", "text");
     inputElement.setAttribute("id", "link_" + linkInputCount);
     inputElement.setAttribute("name", "link_" + linkInputCount);
     inputElement.setAttribute("placeholder", "Link " + linkInputCount);
     inputElement.setAttribute("style", "width: 100%;");
+    inputElement.setAttribute("required", "required");
 
     // Append the input element to the input container
     inputContainer.appendChild(inputElement);
+
+    // Focus on the new input
+    inputElement.focus();
+}
+
+// Create button to delete last link input
+function deleteLinkInput() {
+    if (linkInputCount > 0) {
+        linkInputCount--;
+
+        // Get the input container
+        var inputContainer = document.getElementById("links");
+
+        // Remove the last child
+        inputContainer.removeChild(inputContainer.lastChild);
+    }
+}
+
+// A function to ask the user to confirm the submission of the form when clicking the submit button
+function confirmSubmission(event) {
+    var confirmation = confirm("¿Desea enviar el formulario de sugerencias?");
+
+    if (!confirmation) {
+        event.preventDefault();
+    }
 }

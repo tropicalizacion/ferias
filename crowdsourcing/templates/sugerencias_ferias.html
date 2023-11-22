@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block page_title %} Sugerencias de ferias {% endblock %}
+
+{% block bg-navbar %} background-cafe {% endblock %}
+
+{% block main %}
+
+<!-- Load CSS for DataTables -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+
+<!-- Hero -->
+<div class="px-4 pt-3 pb-5 text-center background-cafe">
+    <div class="card col-lg-6 mx-auto bg-transparent border-0">
+        <h1 class="display-3 my-5 text-white title-deferia">Aquí están todas las ferias para actualizar su información</h1>
+    </div>
+</div>
+
+<div class="container mt-5 mb-2">
+    <div class="d-flex justify-content-center">
+        <div class="col-lg-6 text-center">
+            <h1 class="display-deferia azul">Sugerencias para las ferias</h1>
+            <p class="lead">Para cada feria usted nos puede sugerir datos generales, corregir alguna información o darnos cualquier dato que guste compartir. ¡Elija una aquí!</p>
+        </div>
+    </div>
+</div>
+
+<!-- Tabla de ferias -->
+<div class="d-flex justify-content-center px-3">
+    <div class="col-lg-6 small">
+        <table id="ferias" class="display">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Provincia</th>
+                    <th>Cantón</th>
+                    <th>Distrito</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for marketplace in marketplaces %}
+                    <tr>
+                        <td><a href="/sugerencias/ferias/{{ marketplace.marketplace_url }}">{{ marketplace.name }}</a></td>
+                        <td>{{ marketplace.province }}</td>
+                        <td>{{ marketplace.canton }}</td>
+                        <td>{{ marketplace.district }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Load JavaScript for DataTables -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script>
+    new DataTable('#ferias', {
+        language: {
+            sLengthMenu: "Mostrar _MENU_ ferias",
+            sSearch: "Buscar feria:",
+            sInfo: "Mostrando de _START_ a _END_ ferias de un total de _TOTAL_",
+            oPaginate: {
+                sFirst: "Primero",
+                sLast: "Último",
+                sNext: "Siguiente",
+                sPrevious: "Anterior"
+            },
+        }
+    });
+</script>
+
+{% endblock %}
