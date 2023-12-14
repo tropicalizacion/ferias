@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block page_title %} 404 {% endblock %}
+
+{% block main %}
+
+<section>
+    <div class="container">
+    <div class="text">
+        <h1>404 Página No Encontrada</h1>
+        <p>Vaya, no hemos podido encontrar la página. Revisá el URL por algún error.</p>
+        <div class="input-box">
+        <input type="text" placeholder="Search...">
+        <button><i class="fa-solid fa-search"></i></button>
+        </div>
+        <ul class="menu">
+        <li><a href="#">Ir a Ferias</a></li>
+        <li><a href="#">Ir a Productos</a></li>
+        <li><a href="#">Ir a Consejos</a></li>
+        <li><a href="#">Visitá nuestro Blog</a></li>
+        </ul>
+    </div>
+    <div><img src="../media/images/404img.svg" alt=""></div>
+    </div>
+    </div>
+</section>
+
+{% endblock %}
