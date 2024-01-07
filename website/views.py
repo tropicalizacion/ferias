@@ -155,3 +155,6 @@ def editar(request, slug):
             "marketplaces": marketplaces,
         }
         return render(request, "editar.html", context)
+
+def custom_404(request, exception):
+    return render(request, '../static/404.html', status=404)
