@@ -19,6 +19,7 @@ def index(request):
     text = Text.objects.filter(page="/")
     texts = {
         'hero': text.filter(page="/", section="hero").first().content,
+        'buscador': text.filter(page="/", section="buscador").first().content,
         'features': {
             'saludable': text.filter(page="/", section="features", subsection="saludable").first().content,
             'barato': text.filter(page="/", section="features", subsection="barato").first().content,

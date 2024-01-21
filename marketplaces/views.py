@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Marketplace
-from website.models import Announcement
+from website.models import Announcement, Text
 from django.contrib.gis.db.models.functions import Distance
 import humanized_opening_hours as hoh
 from django.db.models import Q
@@ -77,6 +77,12 @@ def ferias(request):
         n_florist = marketplaces.filter(florist=True).count() / total_marketplaces * 100
         n_amenities = [n_food, n_drinks, n_handicrafts, n_butcher, n_dairy, n_seafood, n_garden_centre, n_florist]
         n_amenities = [math.ceil(i) for i in n_amenities]
+        
+        text = Text.objects.filter(page="/")
+        texts = {
+            'buscador': text.filter(page="/", section="buscador").first().content,
+        }
+        
         context = {
             "marketplaces": marketplaces,
             "marketplaces_map": marketplaces_map,
@@ -85,6 +91,7 @@ def ferias(request):
             "n_days": n_days,
             "n_infrastructure": n_infrastructure,
             "n_amenities": n_amenities,
+            "texts": texts
         }
         return render(request, "ferias.html", context)
 
