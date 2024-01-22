@@ -78,9 +78,14 @@ def ferias(request):
         n_amenities = [n_food, n_drinks, n_handicrafts, n_butcher, n_dairy, n_seafood, n_garden_centre, n_florist]
         n_amenities = [math.ceil(i) for i in n_amenities]
         
-        text = Text.objects.filter(page="/")
+        # Se extraen los textos de la base de datos y se almacenan en un diccionario
+        text = Text.objects.filter(page="/ferias")
         texts = {
-            'buscador': text.filter(page="/", section="buscador").first().content,
+            'hero': text.filter(page="/ferias", section="hero").first().content,
+            'ubicacion': text.filter(page="/ferias", section="ubicacion").first().content,
+            'numeros': text.filter(page="/ferias", section="numeros").first().content,
+            'buscador': text.filter(page="/ferias", section="buscador").first().content,
+            'lista': text.filter(page="/ferias", section="lista").first().content,
         }
         
         context = {
