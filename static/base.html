@@ -63,6 +63,9 @@
           <a class="nav-link nav-link-deferia" href="{% url 'consejos' %}">
             Consejos
           </a> -->
+          <a class="nav-link nav-link-deferia" href="{% url 'interactivo' %}">
+            <i class="fa-solid fa-carrot"></i> Información
+          </a>
           <a class="nav-link nav-link-deferia" href="{% url 'sugerencias' %}">
             <i class="fa-solid fa-comment-dots"></i> Aportar datos
           </a>
@@ -142,6 +145,15 @@
     const popover = new bootstrap.Popover('.popover-dismiss', {
       trigger: 'focus'
     })
+  </script>
+
+  <script>
+    let engine = Matter.Engine.create();
+
+    let render = Matter.Render.create({
+      element: document.body,
+      engine:engine
+    });
   </script>
 
 </body>
