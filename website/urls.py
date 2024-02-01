@@ -14,4 +14,5 @@ urlpatterns = [
     path('anuncios/crear/', views.crear, name='crear_anuncio'),
     path('anuncios/<slug:slug>/', views.anuncio, name='anuncio'),
     path('anuncios/<slug:slug>/editar', views.editar, name='anuncio'),
+    path('404', views.custom_404, name='404')
 ]

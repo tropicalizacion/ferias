@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block page_title %} Aquí no hay ni papa {% endblock %}
+
+{% block bg-navbar %} background-verde {% endblock %}
+
+{% block main %}
+
+<!-- Hero -->
+<div class="px-4 pt-3 pb-5 text-center background-verde">
+    <div class="card col-lg-6 mx-auto bg-transparent border-0">
+        <h1 class="display-3 my-5 text-white title-deferia">
+            ¡En esta dirección no encontramos ni papa!
+        </h1>
+        <img src="{% static 'images/icons/banano.svg' %}" width="75px" class="index-sticker-1">
+        <img src="{% static 'images/icons/anona.svg' %}" width="75px" class="index-sticker-2">
+        <img src="{% static 'images/icons/berenjena.svg' %}" width="75px" class="index-sticker-3">
+    </div>
+</div>
+
+<!-- Ubicación de las ferias -->
+<div class="container mt-4">
+    <div class="d-flex justify-content-center">
+        <div class="col-lg-6 text-center">
+            <h1 class="display-5 display-deferia rojo">Error 404</h1>
+            <p class="lead">Hay que revisar bien la dirección o ir al menú principal. Gracias.</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
