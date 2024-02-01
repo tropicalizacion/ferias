@@ -25,12 +25,8 @@ class Announcement(models.Model):
 class Text(models.Model):
     page = models.CharField(max_length=100)
     section = models.CharField(max_length=100)
-    subsection = models.CharField(max_length=100, blank=True, null=True)
     content = models.TextField()
 
     def __str__(self):
-        string = self.page + " - " + self.section
-        if self.subsection:
-            string += " - " + self.subsection
-        return string
+        return f"{self.page}: {self.section}"
     

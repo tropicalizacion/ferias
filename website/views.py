@@ -14,19 +14,18 @@ def cover(request):
 
 
 def index(request):
-    # Get the text for the home page where "page" is "/"
+
     text = Text.objects.filter(page="/")
-    text_hero = text.filter(section="hero")
-    text_saludable = text.filter(section="features", subsection="saludable")
-    text_barato = text.filter(section="features", subsection="barato")
-    text_nuestro = text.filter(section="features", subsection="nuestro")
+    texts = {}
+    texts["hero"] = text.filter(section="hero").first()
+    texts["buscador"] = text.filter(section="buscador").first()
+    texts["features_saludable"] = text.filter(section="features_saludable").first()
+    texts["features_barato"] = text.filter(section="features_barato").first()
+    texts["features_nuestro"] = text.filter(section="features_nuestro").first()
     if request.method == "POST":
         marketplaces_match, marketplaces_others, marketplaces_keyword, keyword, query_text, by_location = search_marketplaces(request.POST)
         context = {
-            "text_hero": text_hero,
-            "text_saludable": text_saludable,
-            "text_barato": text_barato,
-            "text_nuestro": text_nuestro,
+            "texts": texts,
             "show_results": True,
             "query_text": query_text,
             "by_location": by_location,
@@ -38,12 +37,8 @@ def index(request):
         return render(request, "index.html", context)
     else:
         context = {
-            "text_hero": text_hero,
-            "text_saludable": text_saludable,
-            "text_barato": text_barato,
-            "text_nuestro": text_nuestro,
+            "texts": texts,
         }
-        print(text_hero)
         return render(request, "index.html", context)
 
 
@@ -156,6 +151,10 @@ def editar(request, slug):
         }
         return render(request, "editar.html", context)
 
+
 def custom_404(request, exception):
-    print(exception)
     return render(request, '404.html', status=404)
+
+
+def presentacion(request):
+    return render(request, "presentacion.html")
