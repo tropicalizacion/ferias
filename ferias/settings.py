@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "products.apps.ProductsConfig",
     "content.apps.ContentConfig",
     "crowdsourcing.apps.CrowdsourcingConfig",
+    "informacion.apps.InformacionConfig",
     "api.apps.ApiConfig",
     "website.apps.WebsiteConfig",
     "users.apps.UsersConfig",
