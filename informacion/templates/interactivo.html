@@ -2,18 +2,353 @@
 
 {% load static %}
 
+{% block page_title %} Página interactiva {% endblock %}
+
+{% block bg-navbar %} background-rojo {% endblock %}
+
 {% block main %}
 
-<h1>Página interactiva</h1>
-
-<p>En un lugar de La Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un caballeros de los adarga antigua, rocín flaco, lanza en astillero y galgo corredor.</p>
-
-<div>
-    <canvas id="myChart"></canvas>
+<div class="px-4 pt-3 pb-5 text-center background-rojo">
+  <div class="card col-lg-6 mx-auto bg-transparent border-0">
+      <h1 class="display-3 my-5 text-white title-deferia">Página interactiva</h1>
+      <h3 class="title-deferia text-white mb-5">(prueba)</h3>
+      <div class="d-flex justify-content-center">
+          <a href="#search" class="link-dark text-decoration-none">
+              <div class="vstack circle-cta background-amarillo shadow-lg">
+                  <div class="verde">¡Vamos!</div>
+                  <div><img src="{% static 'images/logos/logo_rojo.png' %}" width="60px" alt="Logo de feria"></div>
+              </div>
+          </a>
+      </div>
+      <img src="{% static 'images/icons/ajo.svg' %}" width="75px" class="index-sticker-1">
+      <img src="{% static 'images/icons/acelga.svg' %}" width="75px" class="index-sticker-2">
+      <img src="{% static 'images/icons/naranja.svg' %}" width="75px" class="index-sticker-3">
+  </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div class="container mt-5">
+  <div class="col-lg-6 text-center">
+    <h1 class="display-5 display-deferia rojo">Sopa de letras</h1>
+  </div>
+  <div style="margin-top: 4%" class="d-flex justify-content-center">
+    <main></main>
+  </div>
 
+  <div class="col-lg-6 text-center">
+    <h1 class="display-5 display-deferia rojo">Línea de tiempo</h1>
+  </div>
+  <div>
+    <ul class="time-line">
+        
+      <li class="tl-header">
+          <h2>2020年01月</h2>
+      </li>
+      <ul class="tl-body">
+          <li>
+              <span>11日</span>
+              <h3>
+                  <a href="https://nowtime.cc/software/834.html" target="_blank">ffmpeg 使用方法合集</a>
+              </h3>
+          </li>
+      </ul>
+
+
+      <li class="tl-header">
+          <h2>2019年12月</h2>
+      </li>
+      <ul class="tl-body"><li>
+      <span>08日</span>
+      <h3>
+          <a href="https://nowtime.cc/html5/827.html" target="_blank">CSS3 动画卡顿性能优化解决方案</a>
+      </h3>
+  </li>
+      <li>
+          <span>07日</span>
+          <h3>
+              <a href="https://nowtime.cc/android/824.html" target="_blank">Android 加了电话权限，运行还是闪退报错</a>
+          </h3>
+      </li>
+  </ul>
+
+
+      <li class="tl-header">
+          <h2>2019年11日</h2>
+      </li>
+      <ul class="tl-body"><li>
+      <span>23日</span>
+      <h3>
+          <a href="https://nowtime.cc/java/819.html" target="_blank">Java 创建子线程，使它立即开始执行</a>
+      </h3>
+  </li>
+      <li>
+          <span>20日</span>
+          <h3>
+              <a href="https://nowtime.cc/js/817.html" target="_blank">JavaScript 遍历 document.querySelectorAll()</a>
+          </h3>
+      </li>
+      <li>
+          <span>08日</span>
+          <h3>
+              <a href="https://nowtime.cc/java/815.html" target="_blank">Java 中的标号：outer 的作用</a>
+          </h3>
+      </li>
+      <li>
+          <span>08日</span>
+          <h3>
+              <a href="https://nowtime.cc/chat/814.html" target="_blank">[官方]国内 Android Studio 下载地址</a>
+          </h3>
+      </li>
+  </ul>
+
+
+      <li class="tl-header">
+          <h2>2019年10月</h2>
+      </li>
+      <ul class="tl-body">
+          <li>
+              <span>25日</span>
+              <h3>
+                  <a href="https://nowtime.cc/linux/812.html" target="_blank">[简单体验]QQ for Linux 于 2019-10-24 更新</a>
+              </h3>
+          </li>
+          <li>
+              <span>22日</span>
+              <h3>
+                  <a href="https://nowtime.cc/js/804.html" target="_blank">JavaScript 随机产生不重复的数字思路(递归法)</a>
+              </h3>
+          </li>
+          <li>
+              <span>20日</span>
+              <h3>
+                  <a href="https://nowtime.cc/software/802.html" target="_blank">AutoCAD 学生版</a>
+              </h3>
+          </li>
+      </ul>
+
+      <li class="tl-header start">
+          <h2>开始</h2>
+      </li>
+  </ul>
+  </div>
+
+  <div class="col-lg-6 text-center">
+    <h1 class="display-5 display-deferia rojo">chart.js para infografías</h1>
+  </div>
+  <div>
+    <canvas id="myChart"></canvas>
+  </div>
+
+  <div class="col-lg-6 text-center">
+    <h1 class="display-5 display-deferia rojo">matter.js para juegos interactivos</h1>
+  </div>
+</div>
+
+<style>
+  .time-line li{
+    list-style-type: none;
+}
+
+.time-line .tl-header{
+    margin: 8px;
+    cursor: pointer;
+}
+
+/*鼠标移动到 年月 的效果*/
+.time-line .tl-header:hover{
+    -webkit-filter:brightness(.9);
+}
+
+
+.time-line .tl-header{
+    margin: 8px;
+    background-color: #23b7e5;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    padding: 0 10px;
+    border-radius: 8px;
+}
+.time-line .tl-header h2{
+    font-size: 14px;
+    line-height: 8px;
+}
+
+
+/*时间垂直线*/
+.time-line .tl-body{
+    border-left: 4px solid #23b7e5;
+    margin-left: 52px;
+    min-height: 88px;
+    margin-top: -10px;
+    padding-top: 1px;
+    margin-bottom: -8px;
+    position: relative;
+    padding-bottom: 1px;
+}
+/*时间线左侧，日 样式*/
+.time-line .tl-body span{
+    position: absolute;
+    left: -60px;
+    top: 16px;
+    font-weight: 400;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.time-line .tl-body li{
+    display: block;
+    position: relative;
+    left: -24px;
+    margin: 8px 0;
+}
+.time-line .tl-body li:before{
+    position: absolute;
+    content: "";
+    top: 22px;
+    left: -22px;
+    width: 4px;
+    height: 4px;
+    background: #fff;
+    border: 2px solid #23b7e5;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px #fff;
+}
+
+
+/*设置时间线内容样式*/
+.time-line .tl-body li h3{
+    font-size: 15px;
+    background-color: #23b7e5;
+    display: inline-block;
+    margin: 8px 0;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: normal;
+    max-width: 360px;
+}
+.time-line .tl-body li h3:before{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: -8px;
+    border: 10px solid rgba(0, 0, 0, 0);
+    border-right-color: #23b7e5;
+    border-left: 0;
+}
+
+.time-line .tl-body li a{
+    text-decoration: none;
+    color: white;
+}
+
+
+
+/*设置时间线开始样式*/
+.tl-header.start{
+    position: relative;
+    left: 18px;
+    background: white!important;
+    border-color: #dee5e7;
+    border-bottom-color: #d8e1e3;
+    -webkit-box-shadow: 0 1px 1px rgba(90,90,90,.1);
+    box-shadow: 0 1px 1px rgba(90,90,90,.1);
+    color: black;
+    padding: 0 16px;
+}
+.tl-header.start > h2{
+    font-weight: 500;
+}
+
+
+
+
+/*分组设置时间线颜色*/
+.time-line .tl-header:nth-child(7n+2),
+.time-line .tl-header:nth-child(7n+2) + .tl-body h3{
+    background: #fad733;
+}
+.time-line .tl-header:nth-child(7n+2) + .tl-body{
+    border-left: 4px solid #fad733;
+}
+.time-line .tl-header:nth-child(7n+2) + .tl-body li:before{
+    border-color: #fad733;
+}
+.time-line .tl-header:nth-child(7n+2) + .tl-body h3:before{
+    border-right-color: #fad733;
+}
+
+
+.time-line .tl-header:nth-child(7n+3),
+.time-line .tl-header:nth-child(7n+3) + .tl-body h3{
+    background: #27c24c;
+}
+.time-line .tl-header:nth-child(7n+3) + .tl-body{
+    border-left: 4px solid #27c24c;
+}
+.time-line .tl-header:nth-child(7n+3) + .tl-body li:before{
+    border-color: #27c24c;
+}
+.time-line .tl-header:nth-child(7n+3) + .tl-body h3:before{
+    border-right-color: #27c24c;
+}
+
+.time-line .tl-header:nth-child(7n+4),
+.time-line .tl-header:nth-child(7n+4) + .tl-body h3{
+    background: #3a3f51;
+}
+.time-line .tl-header:nth-child(7n+4) + .tl-body{
+    border-left: 4px solid #3a3f51;
+}
+.time-line .tl-header:nth-child(7n+4) + .tl-body li:before{
+    border-color: #3a3f51;
+}
+.time-line .tl-header:nth-child(7n+4) + .tl-body h3:before{
+    border-right-color: #3a3f51;
+}
+
+.time-line .tl-header:nth-child(7n+5),
+.time-line .tl-header:nth-child(7n+5) + .tl-body h3{
+    background: #1c2b36;
+}
+.time-line .tl-header:nth-child(7n+5) + .tl-body{
+    border-left: 4px solid #1c2b36;
+}
+.time-line .tl-header:nth-child(7n+5) + .tl-body li:before{
+    border-color: #1c2b36;
+}
+.time-line .tl-header:nth-child(7n+5) + .tl-body h3:before{
+    border-right-color: #1c2b36;
+}
+
+.time-line .tl-header:nth-child(7n+6),
+.time-line .tl-header:nth-child(7n+6) + .tl-body h3{
+    background: #7266ba;
+}
+.time-line .tl-header:nth-child(7n+6) + .tl-body{
+    border-left: 4px solid #7266ba;
+}
+.time-line .tl-header:nth-child(7n+6) + .tl-body li:before{
+    border-color: #7266ba;
+}
+.time-line .tl-header:nth-child(7n+6) + .tl-body h3:before{
+    border-right-color: #7266ba;
+}
+
+.time-line .tl-header:nth-child(7n+7),
+.time-line .tl-header:nth-child(7n+7) + .tl-body h3{
+    background: #f05050;
+}
+.time-line .tl-header:nth-child(7n+7) + .tl-body{
+    border-left: 4px solid #f05050;
+}
+.time-line .tl-header:nth-child(7n+7) + .tl-body li:before{
+    border-color: #f05050;
+}
+.time-line .tl-header:nth-child(7n+7) + .tl-body h3:before{
+    border-right-color: #f05050;
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
   const ctx = document.getElementById('myChart');
 
@@ -37,8 +372,11 @@
   });
 </script>
 
+<script src="{% static 'js/timeline.js' %}"></script>
+<script src="{% static 'js/word_search.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js" integrity="sha512-0z8URjGET6GWnS1xcgiLBZBzoaS8BNlKayfZyQNKz4IRp+s7CKXx0yz7Eco2+TcwoeMBa5KMwmTX7Kus7Fa5Uw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  
 <script>
     //parms: x,y,width,height,options
     let engine = Matter.Engine.create();
