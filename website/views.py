@@ -157,4 +157,5 @@ def editar(request, slug):
         return render(request, "editar.html", context)
 
 def custom_404(request, exception):
-    return render(request, '../static/404.html', status=404)
+    print(exception)
+    return render(request, '404.html', status=404)
