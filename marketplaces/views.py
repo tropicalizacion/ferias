@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Marketplace
-from website.models import Announcement
+from website.models import Announcement, Text
 from django.contrib.gis.db.models.functions import Distance
 import humanized_opening_hours as hoh
 from django.db.models import Q
@@ -17,6 +17,8 @@ def ferias(request):
     """View function for all ferias page of site."""
     
     marketplaces = Marketplace.objects.all().order_by("name")
+    texts = Text.objects.filter(page="/ferias")
+    # Crear diccionario "texts" con key=section y value=content
 
     marketplaces_map = []
     for marketplace in marketplaces:
@@ -85,6 +87,7 @@ def ferias(request):
             "n_days": n_days,
             "n_infrastructure": n_infrastructure,
             "n_amenities": n_amenities,
+            "texts": texts,
         }
         return render(request, "ferias.html", context)
 
