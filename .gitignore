@@ -145,6 +145,7 @@ celerybeat.pid
 # Environments
 .env
 .venv
+feriasenv/
 env/
 venv/
 ENV/

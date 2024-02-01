@@ -98,7 +98,7 @@
                     <p>Hay ferias en las siete provincias, ¿dónde quiere buscar la suya?</p>
                     <p>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" id="any-location" name="location" value="any_location" checked>
+                        <input class="form-check-input" type="radio" id="any-location" name="location" value="any_location" onclick="enableSearch()" checked>
                         <label class="form-check-label" for="any-location">
                             En cualquier lugar
                         </label>
@@ -304,7 +304,7 @@
                 <input type="text" id="query-text" name="query_text" readonly hidden>
                 <hr>
                 <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-danger btn-lg px-4 gap-3">Buscar</button>
+                    <button id="searchMPbutton" type="submit" class="btn btn-danger btn-lg px-4 gap-3">Buscar</button>
                 </div>
             </div>
             <img src="{% static 'images/icons/coco.svg' %}" width="75px" class="floating-strawberry">
