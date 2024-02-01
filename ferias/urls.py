@@ -28,6 +28,7 @@ urlpatterns = [
     path('sugerencias/', include('crowdsourcing.urls'), name='sugerencias'),
     path('api/', include('api.urls'), name='api'),
     path('usuarios/', include('users.urls'), name='usuarios'),
+    path('interactivo/', include('informacion.urls'), name='interactivo'),
 ]
 
 if settings.DEBUG:
