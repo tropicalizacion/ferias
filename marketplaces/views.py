@@ -161,6 +161,11 @@ def feria(request, marketplace_url):
 
     announcements = Announcement.objects.filter(marketplace=marketplace_url).order_by("-created")
     
+    text = Text.objects.filter(page="/ferias/feria")
+    texts = {}
+    texts["servicios_titulo"] = text.filter(section="servicios_titulo").first()
+    texts["servicios_descripcion"] = text.filter(section="servicios_descripcion").first()
+    
     context = {
         "marketplace": marketplace,
         "is_open": is_open,
@@ -171,6 +176,7 @@ def feria(request, marketplace_url):
         "infrastructure": infrastructure,
         "services": services,
         "announcements": announcements,
+        "texts": texts
     }
 
     return render(request, "feria.html", context)

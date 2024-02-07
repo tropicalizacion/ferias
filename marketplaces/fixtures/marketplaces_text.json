@@ -43,5 +43,23 @@
       "section": "lista",
       "content": "Todas las ferias registradas en el proyecto deferia.cr en orden alfabético."
     }
+  },
+  {
+    "model": "website.text",
+    "pk": 12,
+    "fields": {
+      "page": "/ferias/feria",
+      "section": "servicios_titulo",
+      "content": "¡Aquí hay más para aprovechar la feria!"
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 13,
+    "fields": {
+      "page": "/ferias/feria",
+      "section": "servicios_descripcion",
+      "content": "Ya están las frutas y verduras que necesita, ¡pero hay más! Es mejor llevar más bolsas (reutilizables) para poder traer todo."
+    }
   }
 ]
