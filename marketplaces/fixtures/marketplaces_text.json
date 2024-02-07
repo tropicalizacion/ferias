@@ -1,0 +1,47 @@
+[
+  {
+    "model": "website.text",
+    "pk": 7,
+    "fields": {
+      "page": "/ferias",
+      "section": "hero",
+      "content": "¡Hay 87 ferias en nuestro sitio para visitar!"
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 8,
+    "fields": {
+      "page": "/ferias",
+      "section": "ubicacion",
+      "content": "Las ferias están en las siete provincias del país."
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 9,
+    "fields": {
+      "page": "/ferias",
+      "section": "numeros",
+      "content": "Aquí le ayudamos a buscar su feria entre las más de 80 que hay en el país."
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 10,
+    "fields": {
+      "page": "/ferias",
+      "section": "buscador",
+      "content": "Aquí le ayudamos a buscar su feria entre las más de 80 que hay en el país."
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 11,
+    "fields": {
+      "page": "/ferias",
+      "section": "lista",
+      "content": "Todas las ferias registradas en el proyecto deferia.cr en orden alfabético."
+    }
+  }
+]
