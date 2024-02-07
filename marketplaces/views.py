@@ -79,6 +79,16 @@ def ferias(request):
         n_florist = marketplaces.filter(florist=True).count() / total_marketplaces * 100
         n_amenities = [n_food, n_drinks, n_handicrafts, n_butcher, n_dairy, n_seafood, n_garden_centre, n_florist]
         n_amenities = [math.ceil(i) for i in n_amenities]
+        
+        text = Text.objects.filter(page="/ferias")
+        texts = {}
+        texts["hero"] = text.filter(section="hero").first()
+        texts["ubicacion"] = text.filter(section="ubicacion").first()
+        texts["features_saludable"] = text.filter(section="features_saludable").first()
+        texts["numeros"] = text.filter(section="numeros").first()
+        texts["buscador"] = text.filter(section="buscador").first()
+        texts["lista"] = text.filter(section="lista").first()
+        
         context = {
             "marketplaces": marketplaces,
             "marketplaces_map": marketplaces_map,
@@ -151,6 +161,11 @@ def feria(request, marketplace_url):
 
     announcements = Announcement.objects.filter(marketplace=marketplace_url).order_by("-created")
     
+    text = Text.objects.filter(page="/ferias/feria")
+    texts = {}
+    texts["servicios_titulo"] = text.filter(section="servicios_titulo").first()
+    texts["servicios_descripcion"] = text.filter(section="servicios_descripcion").first()
+    
     context = {
         "marketplace": marketplace,
         "is_open": is_open,
@@ -161,6 +176,7 @@ def feria(request, marketplace_url):
         "infrastructure": infrastructure,
         "services": services,
         "announcements": announcements,
+        "texts": texts
     }
 
     return render(request, "feria.html", context)

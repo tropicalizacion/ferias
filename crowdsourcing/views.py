@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from marketplaces.models import Marketplace, MarketplaceHistory
 from products.models import Product, Variety
+from website.models import Text
 from .models import (
     MarketplaceEdit,
     MarketplaceProductsEdit,
@@ -21,9 +22,17 @@ from datetime import datetime
 def sugerencias(request):
     marketplaces = Marketplace.objects.all()
     products = Product.objects.all()
+    
+    text = Text.objects.filter(page="/sugerencias")
+    texts = {}
+    texts["hero"] = text.filter(section="hero").first()
+    texts["sugerencias_ferias"] = text.filter(section="sugerencias_ferias").first()
+    texts["sugerencias_productos"] = text.filter(section="sugerencias_productos").first()
+    
     context = {
         "marketplaces": marketplaces,
         "products": products,
+        "texts": texts
     }
     return render(request, "sugerencias.html", context)
 

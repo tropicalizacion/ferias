@@ -1,42 +1,200 @@
 [
-    {
-        "model": "website.text",
-        "pk": 2,
-        "fields": {
-            "page": "/",
-            "section": "hero",
-            "subsection": null,
-            "content": "La feria es el lugar de la variedad, la frescura y los buenos precios"
-        }
-    },
-    {
-        "model": "website.text",
-        "pk": 3,
-        "fields": {
-            "page": "/",
-            "section": "features",
-            "subsection": "saludable",
-            "content": "La alimentación basada en productos frescos es la mejor para nuestra salud y la feria es el mejor lugar para conseguirlos."
-        }
-    },
-    {
-        "model": "website.text",
-        "pk": 4,
-        "fields": {
-            "page": "/",
-            "section": "features",
-            "subsection": "barato",
-            "content": "Estudio tras estudio demuestra lo que ya sabíamos: cuando compramos en la feria, compramos más barato."
-        }
-    },
-    {
-        "model": "website.text",
-        "pk": 5,
-        "fields": {
-            "page": "/",
-            "section": "features",
-            "subsection": "nuestro",
-            "content": "La feria es de la comunidad y para la comunidad. Aquí encontramos a la gente que conocemos, vendiendo la cosecha de su trabajo."
-        }
+  {
+    "model": "website.text",
+    "pk": 2,
+    "fields": {
+      "page": "/",
+      "section": "hero",
+      "content": "La feria es el lugar de la variedad, la frescura y los buenos precios"
     }
+  },
+  {
+    "model": "website.text",
+    "pk": 3,
+    "fields": {
+      "page": "/",
+      "section": "features_saludable",
+      "content": "La alimentación basada en productos frescos es la mejor para nuestra salud y la feria es el mejor lugar para conseguirlos."
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 4,
+    "fields": {
+      "page": "/",
+      "section": "features_barato",
+      "content": "Estudio tras estudio demuestra lo que ya sabíamos: cuando compramos en la feria, compramos más barato."
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 5,
+    "fields": {
+      "page": "/",
+      "section": "features_nuestro",
+      "content": "La feria es de la comunidad y para la comunidad. Aquí encontramos a la gente que conocemos, vendiendo la cosecha de su trabajo."
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 6,
+    "fields": {
+      "page": "/",
+      "section": "buscador",
+      "content": "Aquí le ayudamos a buscar su feria entre las más de 80 que hay en el país."
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 18,
+    "fields": {
+      "page": "/sobre",
+      "section": "hero",
+      "content": "¡Creemos que la feria es buena para la economía, para la salud y para la comunidad!"
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 19,
+    "fields": {
+      "page": "/sobre/ferias",
+      "section": "hero",
+      "content": "Las ferias del agricultor y los mercados libres: una alternativa para el desarrollo sostenible"
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 20,
+    "fields": {
+      "page": "/sobre/ferias",
+      "section": "consignas",
+      "content": "Las ferias están en las siete provincias del país."
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 7,
+    "fields": {
+      "page": "/ferias",
+      "section": "hero",
+      "content": "¡Hay 87 ferias en nuestro sitio para visitar!"
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 8,
+    "fields": {
+      "page": "/ferias",
+      "section": "ubicacion",
+      "content": "Las ferias están en las siete provincias del país."
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 9,
+    "fields": {
+      "page": "/ferias",
+      "section": "numeros",
+      "content": "Aquí le ayudamos a buscar su feria entre las más de 80 que hay en el país."
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 10,
+    "fields": {
+      "page": "/ferias",
+      "section": "buscador",
+      "content": "Aquí le ayudamos a buscar su feria entre las más de 80 que hay en el país."
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 11,
+    "fields": {
+      "page": "/ferias",
+      "section": "lista",
+      "content": "Todas las ferias registradas en el proyecto deferia.cr en orden alfabético."
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 12,
+    "fields": {
+      "page": "/ferias/feria",
+      "section": "servicios_titulo",
+      "content": "¡Aquí hay más para aprovechar la feria!"
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 13,
+    "fields": {
+      "page": "/ferias/feria",
+      "section": "servicios_descripcion",
+      "content": "Ya están las frutas y verduras que necesita, ¡pero hay más! Es mejor llevar más bolsas (reutilizables) para poder traer todo."
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 14,
+    "fields": {
+      "page": "/productos",
+      "section": "hero",
+      "content": "Tenemos una diversidad privilegiada de productos frescos para disfrutar"
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 15,
+    "fields": {
+      "page": "/productos",
+      "section": "hero_parentesis",
+      "content": "(Y la feria es el lugar para aprovecharlos)"
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 16,
+    "fields": {
+      "page": "/productos",
+      "section": "lista",
+      "content": "Hemos registrado más de 100 productos con la siguiente clasificación:"
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 17,
+    "fields": {
+      "page": "/productos",
+      "section": "lista_descripcion",
+      "content": "En estas tablas puede ver la disponibilidad mes a mes y la recomendación de canasta básica mejorada. Dé click y encuentre más información de cada uno, ¡y también colabórenos con sus secretos de preparación y almacenamiento!"
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 21,
+    "fields": {
+      "page": "/sugerencias",
+      "section": "hero",
+      "content": "Las ferias están en las siete provincias del país."
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 22,
+    "fields": {
+      "page": "/sugerencias",
+      "section": "sugerencias_ferias",
+      "content": "Para cada feria usted nos puede sugerir datos generales, corregir alguna información o darnos cualquier dato que guste compartir. ¡Elija una aquí!"
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 23,
+    "fields": {
+      "page": "/sugerencias",
+      "section": "sugerencias_productos",
+      "content": "Para cada producto usted nos puede sugerir nuevas variedades, métodos de preparación, métodos de almacenamiento, recetas, corregir alguna información o darnos cualquier dato que guste compartir. ¡Elija uno aquí!"
+    }
+  }
 ]
