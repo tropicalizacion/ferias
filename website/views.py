@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from marketplaces.models import Marketplace
-from .models import Announcement, Text
+from .models import Announcement, Text, Student
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.contrib.gis.db.models.functions import Distance
@@ -43,7 +43,11 @@ def index(request):
 
 
 def acerca(request):
-    return render(request, "sobre-proyecto.html")
+    students = Student.objects.all()
+    context = {
+        "students": students,
+    }
+    return render(request, "sobre-proyecto.html", context)
 
 
 def sobre_ferias(request):

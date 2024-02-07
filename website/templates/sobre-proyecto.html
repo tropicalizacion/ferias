@@ -23,18 +23,31 @@
 <!-- Ubicación de las ferias -->
 <div class="container mt-4">
     <div class="d-flex justify-content-center">
-        <div class="col-lg-6 text-center">
-            <h1 class="display-5 display-deferia rojo">Nuestras consignas</h1>
-            <p class="lead">Las ferias están en las siete provincias del país.</p>
-        </div>
-    </div>
-    <div class="row row-cols-1 row-cols-md-2 g-4 py-4">
-        <div class="col">
-            <h3><i class="fa-solid fa-chart-simple verde"></i></i><br> Ferias por provincia</h3>
-        </div>
         <div class="col-lg-6">
-            <h3><i class="fa-solid fa-map-location-dot rojo"></i><br> Mapa de las ferias</h3>
-            <div class="rounded-4" id="map" style="max-width: 768px; height: 325px;"></div>
+            <p class="lead">Este es un proyecto del trabajo comunal universitario TC-691 "Tropicalización de la tecnología" de la Universidad de Costa Rica.</p>
+
+            <p>#SomosAcciónSocial #SomosUCR</p>
+            
+            <h1 class="display-deferia rojo">Sobre TC-691 "Tropicalización de la tecnología"</h1>
+            <p>"Tropicalizar" la tecnología es un proceso de transferencia de conocimientos técnicos para abordar problemáticas propias de nuestras comunidades. Con este propósito nació el trabajo comunal universitario en la Escuela de Ingeniería Eléctrica</p>
+
+            <h1 class="display-deferia rojo">Sobre el proyecto</h1>
+            <p>Nuestro TCU realiza trabajos con la comunidad para utilizar tecnologías de información al servicio de necesidades como el acceso al transporte público, para lo cual anteriormente habíamos desarrollado un sitio web. Con base en esa experiencia, identificamos una nueva necesidad de disponibilidad de información: ¿dónde y cuándo está la feria?</p>
+            
+            <h1 class="display-deferia rojo">Quiénes somos</h1>
+            <p>El proyecto De Feria es coordinado por el profesor Fabián Abarca Calderón de la Escuela de Ingeniería Eléctrica de la Universidad de Costa Rica.</p>
+
+            <ul>
+                {% for student in students %}
+                <li><strong>{{ student.name }} {{ student.last_name }}</strong>, <em>{{ student.career }}</em></li>
+                {% endfor %}
+            </ul>
+            
+            <h1 class="display-deferia rojo">Agradecimientos institucionales</h1>
+            <p>Agradecemos a las siguientes personas que nos ayudaron.</p>
+            
+            <h1 class="display-deferia rojo">Agradecimientos especiales</h1>
+            <p>Los "amigos y amigas del TCU" (<strong>amits</strong>) nos ayudan de</p>
         </div>
     </div>
 </div>

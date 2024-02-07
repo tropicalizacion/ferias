@@ -29,4 +29,14 @@ class Text(models.Model):
 
     def __str__(self):
         return f"{self.page}: {self.section}"
-    
+
+
+class Student(models.Model):
+    name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    career = models.CharField(max_length=100)
+    work = models.TextField()
+    factor = models.PositiveIntegerField()
+
+    def __str__(self):
+        return f"{self.name} {self.last_name}"
