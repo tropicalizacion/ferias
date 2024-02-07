@@ -1,0 +1,220 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block page_title %} Página interactiva {% endblock %}
+
+{% block bg-navbar %} background-rojo {% endblock %}
+
+{% block main %}
+
+<script src="{% static 'index-bundle.js' %}" type="module"></script>
+
+<div class="px-4 pt-3 pb-5 text-center background-rojo">
+  <div class="card col-lg-6 mx-auto bg-transparent border-0">
+      <h1 class="display-3 my-5 text-white title-deferia">Página interactiva</h1>
+      <h3 class="title-deferia text-white mb-5">(prueba)</h3>
+      <div class="d-flex justify-content-center">
+          <a href="#search" class="link-dark text-decoration-none">
+              <div class="vstack circle-cta background-amarillo shadow-lg">
+                  <div class="verde">¡Vamos!</div>
+                  <div><img src="{% static 'images/logos/logo_rojo.png' %}" width="60px" alt="Logo de feria"></div>
+              </div>
+          </a>
+      </div>
+      <img src="{% static 'images/icons/ajo.svg' %}" width="75px" class="index-sticker-1">
+      <img src="{% static 'images/icons/acelga.svg' %}" width="75px" class="index-sticker-2">
+      <img src="{% static 'images/icons/naranja.svg' %}" width="75px" class="index-sticker-3">
+  </div>
+</div>
+
+<div id="columns">
+  <div id="first-column">
+    <div id="title-block">
+      <div id="crossword-source">
+        <label for="crossword-file">Pick crossword</label>
+        <input
+          type="file"
+          id="crossword-file"
+          accept=".json,application/json,.yml,.yaml,application/yaml"
+        />
+      </div>
+      <ul>
+        <li>
+          Source: <a href="" target="_blank" id="info-source-url"></a>
+        </li>
+        <li>
+          Setter: <a href="" target="_blank" id="info-setter-url"></a>
+        </li>
+      </ul>
+    </div>
+    <div id="current-clue">
+      <span id="current-clue-label"></span>
+      <span id="current-clue-text"></span>
+    </div>
+    <div id="crossword-grid-placeholder"></div>
+  </div>
+  <div id="second-column">
+    <p id="api-block-title">Menu</p>
+    <div id="api-block">
+      <div id="cell-buttons">
+        <p>Letter</p>
+        <button id="reveal-cell">Reveal</button>
+      </div>
+      <div id="clue-buttons">
+        <p>Clue</p>
+        <button id="test-clue">Check</button>
+        <button id="clean-clue">Clean</button>
+        <button id="reveal-clue">Reveal</button>
+        <button id="reset-clue">Reset</button>
+      </div>
+      <div id="grid-buttons">
+        <p>Crossword</p>
+        <button id="test-crossword">Check</button>
+        <button id="clean-crossword">Clean</button>
+        <button id="reveal-crossword">Reveal</button>
+        <button id="reset-crossword">Reset</button>
+      </div>
+    </div>
+  </div>
+  <div id="third-column">
+    <div id="crossword-clues-placeholder"></div>
+  </div>
+</div>
+<!-- Crossword solved elements -->
+<div id="crossword-solved-overlay">
+  <div id="crossword-solved-dialog">
+    <span id="crossword-solved-close">&times;</span>
+    <h3><em>Congratulations!</em></h3>
+    <h3>You've solved the crossword</h3>
+  </div>
+</div>
+
+<div id="clue-solved-notification">
+  <h3><em>That's correct!</em></h3>
+  <h3>Keep going</h3>
+</div>
+<div id="incomplete-notification">
+  <h3><em>Correct so far!</em></h3>
+  <h3>Keep going</h3>
+</div>
+
+<body data-spy="scroll" data-target="#mainNav" ng-controller="MainController">
+  <div class="container">
+    <h1>Crosswords.js</h1>
+    <p>Simple, fast, framework-free crosswords for the web.</p>
+    <p>
+      Find out more on
+      <a href="https://github.com/dwmkerr/crosswords-js"
+        >github.com/dwmkerr/crosswords-js</a
+      >
+    </p>
+    <hr />
+    <h3>
+      {{info.title}} <small><em>Set by {{info.setter.title}}</em></small>
+    </h3>
+    <h4></h4>
+    <p class="small">
+      Original source: <a href="{{info.source}}">{{info.source}}</a>.
+    </p>
+    <hr />
+    <div id="cell-buttons">
+      <button id="reveal-cell" (click)="revealCurrentCell()">
+        Reveal Cell
+      </button>
+    </div>
+    <div id="clue-buttons">
+      <button id="test-clue" (click)="testCurrentClue()">Test Clue</button>
+      <button id="clean-clue" (click)="cleanCurrentClue()">Clean Clue</button>
+      <button id="reveal-clue" (click)="revealCurrentClue()">
+        Reveal Clue
+      </button>
+      <button id="reset-clue" (click)="resetCurrentClue()">Reset Clue</button>
+    </div>
+    <div id="grid-buttons">
+      <button id="test-crossword" (click)="testCrossword()">
+        Test Crossword
+      </button>
+      <button id="clean-crossword" (click)="cleanCrossword()">
+        Clean Crossword
+      </button>
+      <button id="reveal-crossword" (click)="revealCrossword()">
+        Reveal Crossword
+      </button>
+      <button id="reset-crossword" (click)="resetCrossword()">
+        Reset Crossword
+      </button>
+    </div>
+    <hr />
+    <p ng-if="currentClue">
+      {{currentClue.clueLabel}} {{currentClue.clueText}}
+      {{currentClue.lengthText}}
+    </p>
+    <div id="crossword1"></div>
+    <table>
+      <tr>
+        <td>
+          <p><strong>Across</strong></p>
+          <div
+            ng-repeat="clue in acrossClues"
+            ng-click="selectClue(clue)"
+            ng-class="{selectedClue: isHighlightedClue(clue)}"
+          >
+            <p>{{clue.clueLabel}} {{clue.clueText}} {{clue.lengthText}}</p>
+          </div>
+        </td>
+        <td>
+          <p><strong>Down</strong></p>
+          <div
+            ng-repeat="clue in downClues"
+            ng-click="selectClue(clue)"
+            ng-class="{selectedClue: isHighlightedClue(clue)}"
+          >
+            <p>{{clue.clueLabel}} {{clue.clueText}} {{clue.lengthText}}</p>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js" integrity="sha512-KZmyTq3PLx9EZl0RHShHQuXtrvdJ+m35tuOiwlcZfs/rE7NZv29ygNA8SFCkMXTnYZQK2OX0Gm2qKGfvWEtRXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<style>
+  body {
+    font-size: 20px; /* the only pixels we will use, the rest will be in ems */
+  }
+
+  h1 {
+    font-family: 'PT Serif', serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 3em;
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'PT Serif', serif;
+  }
+  p {
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande',
+      sans-serif;
+  }
+  .small {
+    font-size: 0.9em;
+    color: #bebebe;
+  }
+  .selectedClue {
+    background-color: #fff7b2;
+    font-weight: bold;
+  }
+  #crossword1 {
+    max-width: 640px;
+  }
+</style>
+
+{% endblock %}
+
+
