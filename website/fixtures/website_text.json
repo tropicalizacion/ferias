@@ -70,5 +70,131 @@
       "section": "consignas",
       "content": "Las ferias están en las siete provincias del país."
     }
+  },
+  {
+    "model": "website.text",
+    "pk": 7,
+    "fields": {
+      "page": "/ferias",
+      "section": "hero",
+      "content": "¡Hay 87 ferias en nuestro sitio para visitar!"
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 8,
+    "fields": {
+      "page": "/ferias",
+      "section": "ubicacion",
+      "content": "Las ferias están en las siete provincias del país."
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 9,
+    "fields": {
+      "page": "/ferias",
+      "section": "numeros",
+      "content": "Aquí le ayudamos a buscar su feria entre las más de 80 que hay en el país."
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 10,
+    "fields": {
+      "page": "/ferias",
+      "section": "buscador",
+      "content": "Aquí le ayudamos a buscar su feria entre las más de 80 que hay en el país."
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 11,
+    "fields": {
+      "page": "/ferias",
+      "section": "lista",
+      "content": "Todas las ferias registradas en el proyecto deferia.cr en orden alfabético."
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 12,
+    "fields": {
+      "page": "/ferias/feria",
+      "section": "servicios_titulo",
+      "content": "¡Aquí hay más para aprovechar la feria!"
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 13,
+    "fields": {
+      "page": "/ferias/feria",
+      "section": "servicios_descripcion",
+      "content": "Ya están las frutas y verduras que necesita, ¡pero hay más! Es mejor llevar más bolsas (reutilizables) para poder traer todo."
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 14,
+    "fields": {
+      "page": "/productos",
+      "section": "hero",
+      "content": "Tenemos una diversidad privilegiada de productos frescos para disfrutar"
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 15,
+    "fields": {
+      "page": "/productos",
+      "section": "hero_parentesis",
+      "content": "(Y la feria es el lugar para aprovecharlos)"
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 16,
+    "fields": {
+      "page": "/productos",
+      "section": "lista",
+      "content": "Hemos registrado más de 100 productos con la siguiente clasificación:"
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 17,
+    "fields": {
+      "page": "/productos",
+      "section": "lista_descripcion",
+      "content": "En estas tablas puede ver la disponibilidad mes a mes y la recomendación de canasta básica mejorada. Dé click y encuentre más información de cada uno, ¡y también colabórenos con sus secretos de preparación y almacenamiento!"
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 21,
+    "fields": {
+      "page": "/sugerencias",
+      "section": "hero",
+      "content": "Las ferias están en las siete provincias del país."
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 22,
+    "fields": {
+      "page": "/sugerencias",
+      "section": "sugerencias_ferias",
+      "content": "Para cada feria usted nos puede sugerir datos generales, corregir alguna información o darnos cualquier dato que guste compartir. ¡Elija una aquí!"
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 23,
+    "fields": {
+      "page": "/sugerencias",
+      "section": "sugerencias_productos",
+      "content": "Para cada producto usted nos puede sugerir nuevas variedades, métodos de preparación, métodos de almacenamiento, recetas, corregir alguna información o darnos cualquier dato que guste compartir. ¡Elija uno aquí!"
+    }
   }
 ]
