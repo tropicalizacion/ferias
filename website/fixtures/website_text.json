@@ -43,5 +43,32 @@
       "section": "buscador",
       "content": "Aquí le ayudamos a buscar su feria entre las más de 80 que hay en el país."
     }
+  },
+  {
+    "model": "website.text",
+    "pk": 18,
+    "fields": {
+      "page": "/sobre",
+      "section": "hero",
+      "content": "¡Creemos que la feria es buena para la economía, para la salud y para la comunidad!"
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 19,
+    "fields": {
+      "page": "/sobre/ferias",
+      "section": "hero",
+      "content": "Las ferias del agricultor y los mercados libres: una alternativa para el desarrollo sostenible"
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 20,
+    "fields": {
+      "page": "/sobre/ferias",
+      "section": "consignas",
+      "content": "Las ferias están en las siete provincias del país."
+    }
   }
 ]

@@ -43,11 +43,30 @@ def index(request):
 
 
 def acerca(request):
-    return render(request, "sobre-proyecto.html")
+    
+    text = Text.objects.filter(page="/sobre")
+    texts = {}
+    texts["hero"] = text.filter(section="hero").first()
+    
+    context = {
+        "texts": texts,
+    }
+    
+    return render(request, "sobre-proyecto.html", context)
 
 
 def sobre_ferias(request):
-    return render(request, "sobre-ferias.html")
+    
+    text = Text.objects.filter(page="/sobre/ferias")
+    texts = {}
+    texts["hero"] = text.filter(section="hero").first()
+    texts["consignas"] = text.filter(section="consignas").first()
+    
+    context = {
+        "texts": texts,
+    }
+    
+    return render(request, "sobre-ferias.html", context)
 
 
 def ingresar(request):
