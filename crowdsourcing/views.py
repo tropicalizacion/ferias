@@ -26,6 +26,8 @@ def sugerencias(request):
     text = Text.objects.filter(page="/sugerencias")
     texts = {}
     texts["hero"] = text.filter(section="hero").first()
+    texts["hero_subtitulo"] = text.filter(section="hero_subtitulo").first()
+    print(texts["hero_subtitulo"])
     texts["sugerencias_ferias"] = text.filter(section="sugerencias_ferias").first()
     texts["sugerencias_productos"] = text.filter(section="sugerencias_productos").first()
     

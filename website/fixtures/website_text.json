@@ -77,7 +77,7 @@
     "fields": {
       "page": "/ferias",
       "section": "hero",
-      "content": "¡Hay 87 ferias en nuestro sitio para visitar!"
+      "content": "¡Hay más de 90 ferias en Costa Rica para visitar!"
     }
   },
   {
@@ -176,12 +176,21 @@
     "fields": {
       "page": "/sugerencias",
       "section": "hero",
-      "content": "Las ferias están en las siete provincias del país."
+      "content": "Usted puede ayudarnos a actualizar nuestros datos"
     }
   },
   {
     "model": "website.text",
     "pk": 22,
+    "fields": {
+      "page": "/sugerencias",
+      "section": "hero_subtitulo",
+      "content": "Aquí puede aportar su información sobre ferias y productos para mantener el sitio actualizado. ¡Gracias por su colaboración!"
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 23,
     "fields": {
       "page": "/sugerencias",
       "section": "sugerencias_ferias",
@@ -190,7 +199,7 @@
   },
   {
     "model": "website.text",
-    "pk": 23,
+    "pk": 24,
     "fields": {
       "page": "/sugerencias",
       "section": "sugerencias_productos",
