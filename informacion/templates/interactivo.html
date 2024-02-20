@@ -8,134 +8,35 @@
 
 {% block main %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'css/wordfind.css' %}">
-
 <div class="px-4 pt-3 pb-5 text-center background-rojo">
-  <div class="card col-lg-6 mx-auto bg-transparent border-0">
-      <h1 class="display-3 my-5 text-white title-deferia">Página interactiva</h1>
-      <h3 class="title-deferia text-white mb-5">(prueba)</h3>
-      <div class="d-flex justify-content-center">
-          <a href="#search" class="link-dark text-decoration-none">
-              <div class="vstack circle-cta background-amarillo shadow-lg">
-                  <div class="verde">¡Vamos!</div>
-                  <div><img src="{% static 'images/logos/logo_rojo.png' %}" width="60px" alt="Logo de feria"></div>
-              </div>
-          </a>
-      </div>
-      <img src="{% static 'images/icons/ajo.svg' %}" width="75px" class="index-sticker-1">
-      <img src="{% static 'images/icons/acelga.svg' %}" width="75px" class="index-sticker-2">
-      <img src="{% static 'images/icons/naranja.svg' %}" width="75px" class="index-sticker-3">
-  </div>
+    <div class="card col-lg-6 mx-auto bg-transparent border-0">
+        <h1 class="display-3 my-5 text-white title-deferia">Página interactiva</h1>
+        <h3 class="title-deferia text-white mb-5">(prueba)</h3>
+        <div class="d-flex justify-content-center">
+            <a href="#search" class="link-dark text-decoration-none">
+                <div class="vstack circle-cta background-amarillo shadow-lg">
+                    <div class="verde">¡Vamos!</div>
+                    <div><img src="{% static 'images/logos/logo_rojo.png' %}" width="60px" alt="Logo de feria"></div>
+                </div>
+            </a>
+        </div>
+        <img src="{% static 'images/icons/ajo.svg' %}" width="75px" class="index-sticker-1">
+        <img src="{% static 'images/icons/acelga.svg' %}" width="75px" class="index-sticker-2">
+        <img src="{% static 'images/icons/naranja.svg' %}" width="75px" class="index-sticker-3">
+    </div>
 </div>
 
 <div class="container mt-5">
     <div class="d-flex justify-content-center">
         <div class="col-lg-6 text-center">
-            <h1 class="display-5 display-deferia rojo">Sopa de letras</h1>
-            <div id="main" role="main">
-                <div id="puzzle"></div>
-                <ul id="words">
-                    <li><button id="add-word">Add word</button></li>
-                </ul>
-                <fieldset id="controls">
-                    <label for="allowed-missing-words">Allowed missing words :
-                        <input id="allowed-missing-words" type="number" min="0" max="5" step="1" value="2">
-                    </label>
-                    <label for="max-grid-growth">Max grid growth :
-                        <input id="max-grid-growth" type="number" min="0" max="5" step="1" value="0">
-                    </label>
-                    <label for="extra-letters">Extra letters :
-                        <select id="extra-letters">
-                            <option value="secret-word" selected>form a secret word</option>
-                            <option value="none">none, allow blanks</option>
-                            <option value="secret-word-plus-blanks">form a secret word but allow for extra blanks</option>
-                            <option value="random">random</option>
-                        </select>
-                    </label>
-                    <label for="secret-word">Secret word :
-                        <input id="secret-word">
-                    </label>
-                    <button id="create-grid">Create grid</button>
-                    <p id="result-message"></p>
-                    <button id="solve">Solve Puzzle</button>
-                </fieldset>
-            </div>
+            <h1 class="display-5 display-deferia rojo">Crucigrama</h1>
+
         </div>
     </div>
 </div>
 
-
-
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
-<script type="text/javascript" src="{% static 'js/wordfind.js' %}"></script> 
-<script type="text/javascript" src="{% static 'js/wordfindgame.js' %}"></script>
-<script>
-    /* Example words setup */
-    [
-        /*'adorable',
-        'comique',
-        'curieuse',
-        'drole',
-        'engagee',
-        'enjouee',
-        'fidele',
-        'futee',
-        'radieuse',
-        'sensible',
-        'sincere',*/
-        'complice',
-        'creative',
-        'elegante',
-        'farceuse',
-        'joviale',
-        'motivee',
-        'ordonnee',
-        'prudente',
-        'sexy',
-        'tendre',
-    ].map(word => WordFindGame.insertWordBefore($('#add-word').parent(), word));
-    $('#secret-word').val('LAETITIA');
-
-    /* Init */
-    function recreate() {
-        $('#result-message').removeClass();
-        var fillBlanks, game;
-        if ($('#extra-letters').val() === 'none') {
-            fillBlanks = false;
-        } else if ($('#extra-letters').val().startsWith('secret-word')) {
-            fillBlanks = $('#secret-word').val();
-        }
-        try {
-            game = new WordFindGame('#puzzle', {
-                allowedMissingWords: +$('#allowed-missing-words').val(),
-                maxGridGrowth: +$('#max-grid-growth').val(),
-                fillBlanks: fillBlanks,
-                allowExtraBlanks: ['none', 'secret-word-plus-blanks'].includes($('#extra-letters').val()),
-                maxAttempts: 100,
-            });
-        } catch (error) {
-            $('#result-message').text(`😞 ${error}, try to specify less ones`).css({color: 'red'});
-            return;
-        }
-        wordfind.print(game);
-        if (window.game) {
-            var emptySquaresCount = WordFindGame.emptySquaresCount();
-            $('#result-message').text(`😃 ${emptySquaresCount ? 'but there are empty squares' : ''}`).css({color: ''});
-        }
-        window.game = game;
-    }
-    recreate();
-
-    /* Event listeners */
-    $('#extra-letters').change((evt) => $('#secret-word').prop('disabled', !evt.target.value.startsWith('secret-word')));
-
-    $('#add-word').click( () => WordFindGame.insertWordBefore($('#add-word').parent()));
-
-    $('#create-grid').click(recreate);
-
-    $('#solve').click(() => game.solve());
-    </script>
+<div class="ratio ratio-16x9">
+    <iframe src="http://localhost:8080"></iframe>
+</div>
 
 {% endblock %}
-
-
