@@ -1,0 +1,5 @@
+{"showenumerations":true,"notes":"","puzzle":[
+    [1,2,0],
+    [0,{"style":{"barred":"L"},"cell":0},{"style":{"barred":"TL"},"cell":3}],
+    [{"style":{"barred":"T"},"cell":4},0,0]
+],"copyright":"","intro":"","version":"http://ipuz.org/v2","origin":"Crossword Compiler 10.21","title":"","kind":["http://ipuz.org/crossword#1"],"clues":{"Across":[{"enumeration":"3","number":1,"clue":"Sphere"},{"enumeration":"3","number":4,"clue":"Female sheep"}],"Down":[{"enumeration":"2","number":1,"clue":"Cow"},{"enumeration":"3","number":2,"clue":"Uncooked"},{"enumeration":"2","number":3,"clue":"First person plural"}]},"dimensions":{"width":3,"height":3},"author":"","solution":[[{"value":"O","cell":1},{"value":"R","cell":2},{"value":"B","cell":0}],[{"value":"X","cell":0},{"value":"A","cell":0},{"value":"W","cell":3}],[{"value":"E","cell":4},{"value":"W","cell":0},{"value":"E","cell":0}]]}

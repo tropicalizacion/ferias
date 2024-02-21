@@ -1,0 +1,42 @@
+{
+    "showenumerations":true,
+    "notes":"",
+    "puzzle":[
+        [1,0,2],
+        [0,"#",0],
+        [3,0,0]
+    ],"copyright":"",
+    "intro":"",
+    "version":"http://ipuz.org/v2",
+    "origin":"Crossword Compiler 10.21",
+    "title":"",
+    "kind":["http://ipuz.org/crossword#1"],
+    "clues":{
+        "Across":[
+            {"enumeration":"3","number":1,"clue":"Leatherworking tool"},
+            {"enumeration":"3","number":3,"clue":"Church bench"}
+        ],"Down":[
+            {"enumeration":"3","number":1,"clue":"Unit of current"},
+            {"enumeration":"3","number":2,"clue":"Rules"}
+        ]
+    },
+    "dimensions":{
+        "width":3,"height":3
+    },
+    "author":"",
+    "solution":[
+        [
+            {"value":"A","cell":1},
+            {"value":"W","cell":0},
+            {"value":"L","cell":2}
+        ],[
+            {"value":"M","cell":0},
+            "#",
+            {"value":"A","cell":0}
+        ],[
+            {"value":"P","cell":3},
+            {"value":"E","cell":0},
+            {"value":"W","cell":0}
+        ]
+    ]
+}

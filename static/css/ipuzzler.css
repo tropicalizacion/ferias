@@ -1,0 +1,233 @@
+div.ipuzzler {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    margin: 0;
+    padding: 3px;
+    display: grid;
+    grid-template: 1fr/auto 1fr 1fr
+}
+
+div.ipuzzler * {
+    line-height: 1em
+}
+
+@media only screen and (max-width: 640px) {
+    div.ipuzzler {
+        display: block
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    div.ipuzzler div.puzzle-grid span span.clue-number {
+        font-size: 6px
+    }
+}
+
+div.ipuzzler div#buttons {
+    text-align: center
+}
+
+div.ipuzzler div#buttons button {
+    margin: 6px 4px 2px 0;
+    width: 6em;
+    background-color: #36f;
+    border: 0;
+    padding: 4px;
+    color: #fff;
+    font-weight: 400;
+    border-radius: 4px
+}
+
+div.ipuzzler div#buttons div#grid-buttons button {
+    background-color: #809fff
+}
+
+div.ipuzzler div#buttons div#grid-buttons.no-solution,
+div.ipuzzler div#buttons div#clue-buttons.no-solution {
+    display: inline
+}
+
+div.ipuzzler div#buttons div#clue-buttons.no-solution button {
+    background-color: #809fff
+}
+
+div.ipuzzler div#buttons div#submit-buttons button {
+    background-color: #36f;
+    padding: 6px;
+    width: 10em
+}
+
+div.ipuzzler div.clue-bar {
+    display: none
+}
+
+@media only screen and (max-width: 640px) {
+    div.ipuzzler div.clue-bar {
+        display: block
+    }
+}
+
+div.ipuzzler div.clue-bar#above-clue-bar {
+    margin-bottom: 8px
+}
+
+div.ipuzzler div.clue-bar#below-clue-bar {
+    margin: 8px 0
+}
+
+div.ipuzzler div.clue-bar label {
+    font-weight: 700
+}
+
+div.ipuzzler div.clue-bar label:after {
+    content: " "
+}
+
+div.ipuzzler div.clue-bar span:before {
+    content: " "
+}
+
+div.ipuzzler div.puzzle-grid {
+    background-color: #ff0;
+    display: grid;
+    background-color: #000;
+    grid-gap: 1px;
+    border: 1px solid #000;
+    width: 420px;
+    height: 420px;
+    max-width: 100%;
+    box-sizing: border-box;
+    grid-template: repeat(15, 1fr)/repeat(15, 1fr);
+    margin: 0
+}
+
+@media only screen and (max-width: 640px) {
+    div.ipuzzler div.puzzle-grid {
+        width: calc(100vw - 10px);
+        height: calc(100vw - 10px)
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    div.ipuzzler div.puzzle-grid {
+        width: 310px;
+        height: 310px
+    }
+}
+
+div.ipuzzler div.puzzle-grid>span {
+    background-color: #fff;
+    text-align: center;
+    position: relative
+}
+
+div.ipuzzler div.puzzle-grid>span label {
+    font-size: 8px;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 1px;
+    left: 1px;
+    z-index: 0;
+    background: transparent
+}
+
+div.ipuzzler div.puzzle-grid>span.block {
+    background-color: #000
+}
+
+div.ipuzzler div.puzzle-grid>span.blank {
+    background-color: #933
+}
+
+div.ipuzzler div.puzzle-grid>span.barred-top {
+    border-top: 3px solid #000
+}
+
+div.ipuzzler div.puzzle-grid>span.barred-left {
+    border-left: 3px solid #000
+}
+
+div.ipuzzler div.puzzle-grid>span.highlighted {
+    background-color: #9cf
+}
+
+div.ipuzzler div.puzzle-grid>span input {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: transparent;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    margin: 0;
+    padding: 10% 0 0;
+    font-weight: 700;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    mix-blend-mode: darken
+}
+
+div.ipuzzler div.puzzle-grid>span input:focus {
+    font-weight: 700;
+    background-color: #36f !important;
+    outline: 2px solid #000
+}
+
+div.ipuzzler section.puzzle-clue-list {
+    padding: 0 8px
+}
+
+@media only screen and (max-width: 640px) {
+    div.ipuzzler section.puzzle-clue-list {
+        padding: 0
+    }
+}
+
+div.ipuzzler section.puzzle-clue-list h2 {
+    font-size: 100%;
+    margin: 0 0 8px
+}
+
+div.ipuzzler section.puzzle-clue-list ol {
+    cursor: pointer;
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+div.ipuzzler section.puzzle-clue-list ol li {
+    padding: 4px 4px 4px 1.8em;
+    margin: 0 0 2px;
+    border-radius: 4px;
+    text-indent: -1.8em;
+    line-height: 1.2em
+}
+
+div.ipuzzler section.puzzle-clue-list ol li.highlighted {
+    background-color: #9cf
+}
+
+div.ipuzzler section.puzzle-clue-list ol li.halflighted {
+    background-color: #bdf
+}
+
+div.ipuzzler section.puzzle-clue-list ol li label {
+    min-width: 1.4em;
+    font-weight: 700;
+    display: inline-block;
+    text-indent: 0;
+    margin: 0;
+    padding: 0 .3em 0 .1em
+}
+
+div.ipuzzler section.puzzle-clue-list ol li span:before {
+    content: " "
+}
