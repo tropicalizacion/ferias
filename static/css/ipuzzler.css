@@ -1,5 +1,14 @@
+.my-custom-scrollbar::-webkit-scrollbar {
+    background-color: #ffd73f;
+}
+
+.my-custom-scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 1vh;
+    background-color: lightgray;
+}
+
 div.ipuzzler {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 12px;
     margin: 0;
     padding: 3px;

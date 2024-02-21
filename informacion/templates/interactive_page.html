@@ -36,36 +36,13 @@
 </div>
 
 <div class="d-flex justify-content-center">
-    <div class="card background-amarillo rounded-5 border-0 object-fit-scale object-fit-contain">
-        <div class="card-body object-fit-scale object-fit-contain">
+    <div class="card object-fit-scale object-fit-contain align-content-center justify-content-center background-amarillo rounded-5 border-0 ">
+        <div class="card-body m-md-3">
             <div class="my-custom-scrollbar my-custom-scrollbar-primary overflow-x-auto">
                 <ipuzzler-puzzle src="{% static 'puzzles/15x15-acid-test.ipuz' %}"></ipuzzler-puzzle>
             </div>
         </div>
     </div>
 </div>
-
-<style>
-    .my-custom-scrollbar::-webkit-scrollbar {
-        background-color: #ffd73f;
-    }
-
-    .my-custom-scrollbar::-webkit-scrollbar-thumb {
-        border-radius: 1vh;
-        background-color: lightgray;
-    }
-</style>
-
-<script>
-    var myCustomScrollbar = document.querySelector('.my-custom-scrollbar');
-    var ps = new PerfectScrollbar(myCustomScrollbar);
-
-    var scrollbarY = myCustomScrollbar.querySelector('.ps__rail-y');
-
-    myCustomScrollbar.onscroll = function () {
-        scrollbarY.style.cssText = `top: ${this.scrollTop}px!important; right: ${-this.scrollLeft}px`;
-    }
-</script>
-
 
 {% endblock %}
