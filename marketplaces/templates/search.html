@@ -6,69 +6,69 @@
 <!-- Modal -->
 <div class="modal fade" id="resultados" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5 fw-bolder verde" id="exampleModalLabel">
-            <img src="{% static 'images/logos/logo_verde.png' %}" width="60px" alt="Logo de feria">
-          </h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 fw-bolder verde" id="exampleModalLabel">
+                    <img src="{% static 'images/logos/logo_verde.png' %}" width="60px" alt="Logo de feria">
+                </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="lead">Resultados para la búsqueda de una feria {{ query_text }}</p>
+                <!-- Resultados por palabra clave -->
+                {% if marketplaces_keyword %}
+                <h5>Resultados por palabra clave ({{ marketplaces_keyword|length }})</h5>
+                <p class="lead">Otras ferias que cumplen el mismo criterio de búsqueda de ubicación y día de la semana y además tienen algo similar a la palabra clave "{{ keyword }}" en el nombre o la descripción.</p>
+                <ul>
+                    {% for marketplace in marketplaces_keyword %}
+                    <li>
+                        <a class="link-dark link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" style="font-weight: 800;" href="/ferias/{{ marketplace.marketplace_url }}">
+                            {{ marketplace.name }} {% if by_location != "any" %}<span class="small text-muted">(a {{ marketplace.distance }} km)</span>{% endif %}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                <!-- Resultados exactos -->
+                {% if marketplaces_match|length == 0 %}
+                <p class="text-center"><strong>¡Qué vaina!</strong> <br> No encontramos ni papa <br> <i class="fa-regular fa-face-surprise"></i> <br> Por favor intente de nuevo con otros criterios de búsqueda.</p>
+                {% else %}
+                <h5>Resultados exactos ({{ marketplaces_match|length }})</h5>
+                <p class="small text-muted">{% if by_location == "my" %}(Distancia desde su ubicación actual){% elif by_location == "some" %}(Distancia desde el lugar elegido){% endif %}</p>
+                <ul>
+                    {% for marketplace in marketplaces_match %}
+                    <li>
+                        <a class="link-dark link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" style="font-weight: 800;" href="/ferias/{{ marketplace.marketplace_url }}">
+                            {{ marketplace.name }} {% if by_location != "any" %}<span class="small text-muted">(a {{ marketplace.distance }} km)</span>{% endif %}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                <!-- Resultados similares -->
+                {% if marketplaces_others|length > 0 %}
+                <h5>Resultados similares ({{ marketplaces_others|length }})</h5>
+                <p>Otras ferias que cumplen el mismo criterio de búsqueda de ubicación y día de la semana pero no cumplen con los otros criterios de tamaño, infraestructura o amenidades.</p>
+                <ul>
+                    {% for marketplace in marketplaces_others %}
+                    <li>
+                        <a class="link-dark link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" style="font-weight: 800;" href="/ferias/{{ marketplace.marketplace_url }}">
+                            {{ marketplace.name }} {% if by_location != "any" %}<span class="small text-muted">(a {{ marketplace.distance }} km)</span>{% endif %}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" href="search">Nueva búsqueda</button>
+            </div>
         </div>
-        <div class="modal-body">
-            <p class="lead">Resultados para la búsqueda de una feria {{ query_text }}</p>
-            <!-- Resultados por palabra clave -->
-            {% if marketplaces_keyword %}
-            <h5>Resultados por palabra clave ({{ marketplaces_keyword|length }})</h5>
-            <p class="lead">Otras ferias que cumplen el mismo criterio de búsqueda de ubicación y día de la semana y además tienen algo similar a la palabra clave "{{ keyword }}" en el nombre o la descripción.</p>
-            <ul>
-                {% for marketplace in marketplaces_keyword %}
-                <li>
-                    <a class="link-dark link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" style="font-weight: 800;" href="/ferias/{{ marketplace.marketplace_url }}">
-                        {{ marketplace.name }} {% if by_location != "any" %}<span class="small text-muted">(a {{ marketplace.distance }} km)</span>{% endif %}
-                    </a>
-                </li>
-                {% endfor %}
-            </ul>
-            {% endif %}
-            <!-- Resultados exactos -->
-            {% if marketplaces_match|length == 0 %}
-            <p class="text-center"><strong>¡Qué vaina!</strong> <br> No encontramos ni papa <br> <i class="fa-regular fa-face-surprise"></i> <br> Por favor intente de nuevo con otros criterios de búsqueda.</p>
-            {% else %}
-            <h5>Resultados exactos ({{ marketplaces_match|length }})</h5>
-            <p class="small text-muted">{% if by_location == "my" %}(Distancia desde su ubicación actual){% elif by_location == "some" %}(Distancia desde el lugar elegido){% endif %}</p>
-            <ul>
-                {% for marketplace in marketplaces_match %}
-                <li>
-                    <a class="link-dark link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" style="font-weight: 800;" href="/ferias/{{ marketplace.marketplace_url }}">
-                        {{ marketplace.name }} {% if by_location != "any" %}<span class="small text-muted">(a {{ marketplace.distance }} km)</span>{% endif %}
-                    </a>
-                </li>
-                {% endfor %}
-            </ul>
-            {% endif %}
-            <!-- Resultados similares -->
-            {% if marketplaces_others|length > 0 %}
-            <h5>Resultados similares ({{ marketplaces_others|length }})</h5>
-            <p>Otras ferias que cumplen el mismo criterio de búsqueda de ubicación y día de la semana pero no cumplen con los otros criterios de tamaño, infraestructura o amenidades.</p>
-            <ul>
-                {% for marketplace in marketplaces_others %}
-                <li>
-                    <a class="link-dark link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" style="font-weight: 800;" href="/ferias/{{ marketplace.marketplace_url }}">
-                        {{ marketplace.name }} {% if by_location != "any" %}<span class="small text-muted">(a {{ marketplace.distance }} km)</span>{% endif %}
-                    </a>
-                </li>
-                {% endfor %}
-            </ul>
-            {% endif %}
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" href="search">Nueva búsqueda</button>
-        </div>
-      </div>
     </div>
 </div>
 
 <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
         $("#resultados").modal('show');
     });
 </script>
@@ -133,34 +133,34 @@
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Por día de la semana</h3>
                     <p>Las ferias abren uno o varios días a la semana, ¿qué día está buscando?</p>
                     <p>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="day" value="any_day" id="any-day" checked>
-                            <label class="form-check-label" for="any-day">
-                                Cualquier día
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="day" value="today" id="today">
-                            <label class="form-check-label" for="today">
-                                Hoy
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="day" value="some_day" id="some-day">
-                            <label class="form-check-label" for="some-day">
-                                Los
-                            </label>
-                            <select class="underline-input" aria-label="Día de la semana" id="choose-day" name="choose_day" disabled>
-                                <option value="any_day" selected>días</option>
-                                <option value="Mo">lunes</option>
-                                <option value="Tu">martes</option>
-                                <option value="We">miércoles</option>
-                                <option value="Th">jueves</option>
-                                <option value="Fr">viernes</option>
-                                <option value="Sa">sábados</option>
-                                <option value="Su">domingos</option>
-                            </select>
-                        </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="day" value="any_day" id="any-day" checked>
+                        <label class="form-check-label" for="any-day">
+                            Cualquier día
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="day" value="today" id="today">
+                        <label class="form-check-label" for="today">
+                            Hoy
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="day" value="some_day" id="some-day">
+                        <label class="form-check-label" for="some-day">
+                            Los
+                        </label>
+                        <select class="underline-input" aria-label="Día de la semana" id="choose-day" name="choose_day" disabled>
+                            <option value="any_day" selected>días</option>
+                            <option value="Mo">lunes</option>
+                            <option value="Tu">martes</option>
+                            <option value="We">miércoles</option>
+                            <option value="Th">jueves</option>
+                            <option value="Fr">viernes</option>
+                            <option value="Sa">sábados</option>
+                            <option value="Su">domingos</option>
+                        </select>
+                    </div>
                     </p>
                 </div>
             </div>
@@ -171,7 +171,9 @@
                 </span>
                 <div>
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Por tamaño</h3>
-                    <p>Las ferias tienen desde 20 hasta 400 tramos de ventas, ¿qué prefiere?</p>
+                    <p>
+                        Las ferias tienen desde 20 hasta más de 400 tramos de ventas, ¿qué prefiere?
+                    </p>
                     <p>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="size" value="any_size" id="any-size" checked>
@@ -184,6 +186,7 @@
                         <label class="form-check-label" for="some-size">
                             Por tamaño
                         </label>
+                        <a tabindex="0" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="Tamaños de las ferias" data-bs-content="Nuestra clasificación es la siguiente: pequeña (S): menos de 50 tramos, mediana (M): entre 50 y 100 tramos, grande (L): entre 100 y 200 tramos, extra grande (XL): más de 200."><i class="fa-solid fa-circle-info"></i></a>
                         <br>
                         <small>
                             <div class="form-check form-check-inline">
@@ -300,7 +303,7 @@
             <div class="card-body">
                 <p class="lead">
                     Quiero una feria <span id="status"></span>
-                </p>            
+                </p>
                 <input type="text" id="query-text" name="query_text" readonly hidden>
                 <hr>
                 <div class="d-flex justify-content-center">
