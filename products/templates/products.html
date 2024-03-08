@@ -12,7 +12,7 @@
 <div class="px-4 pt-3 pb-5 text-center background-rojo">
     <div class="card col-lg-8 mx-auto bg-transparent border-0">
         <h1 class="display-3 my-5 text-white hero-deferia">{{texts.hero.content}}</h1>
-        <h3 class="title-deferia text-white mb-5">{{texts.hero_parentesis.content}}</h3>
+        <h3 class="title-deferia text-white">¡Y la feria es el lugar para aprovecharlos! <br> ¿Qué tal si vamos a la feria por<br><span id="hero"></span></h3>
         <img src="{% static 'images/icons/ajo.svg' %}" width="75px" class="index-sticker-1">
         <img src="{% static 'images/icons/acelga.svg' %}" width="75px" class="index-sticker-2">
         <img src="{% static 'images/icons/naranja.svg' %}" width="75px" class="index-sticker-3">
@@ -23,11 +23,8 @@
 <div class="container mt-5">
     <div class="d-flex justify-content-center">
         <div class="col-lg-6 text-center">
-            <h1 class="display-5 display-deferia rojo">Lista de productos</h1>
+            <h1 class="display-3 hero-deferia verde">Lista de productos</h1>
             <p class="lead">{{texts.lista.content}}</p>
-            <p class="lead title-deferia border rounded-3 p-2">
-                <span class="rojo">frutas</span>, <span class="verde">verduras</span>, <span class="amarillo">tubérculos y raíces</span>, <span class="cafe">legumbres</span>, <span class="azul">hierbas</span> y otros
-            </p>
             <p>{{texts.lista_descripcion.content}}</p>
         </div>
     </div>
@@ -421,5 +418,25 @@
     </div>
 
 </div>
+
+<!-- TypeIt JS -->
+<script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+<script>
+    new TypeIt("#hero", {
+        speed: 50,
+        loop: true,
+        startDelay: 900,
+    })
+        .type("plátano verde para un picadillo?", { delay: 1500 })
+        .delete(32, { delay: 100 })
+        .type("unos cases para un fresco?", { delay: 1500 })
+        .delete(26, { delay: 100 })
+        .type("romero para un té?", { delay: 1500 })
+        .delete(18, { delay: 100 })
+        .type("cebolla morada para un ceviche?", { delay: 1500 })
+        .delete(31, { delay: 100 })
+        .type("camote para un puré?", { delay: 1500 })
+        .go();
+</script>
 
 {% endblock %}
