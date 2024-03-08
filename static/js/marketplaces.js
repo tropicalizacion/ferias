@@ -192,6 +192,8 @@ var config = {
         responsive: true,
         scales: {
             x: {
+                beginAtZero: true,
+                max: 100,
                 grid: {
                     display: false
                 },
@@ -201,8 +203,6 @@ var config = {
                 }
             },
             y: {
-                beginAtZero: true,
-                max: 100,
                 grid: {
                     display: false
                 }

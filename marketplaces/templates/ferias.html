@@ -19,31 +19,11 @@
     </div>
 </div>
 
-<!-- Ubicación de las ferias -->
-<div class="container mt-4">
-    <div class="d-flex justify-content-center">
-        <div class="col-lg-6 text-center">
-            <h1 class="display-5 display-deferia rojo">Ubicación de las ferias</h1>
-            <p class="lead">{{texts.ubicacion.content}}</p>
-        </div>
-    </div>
-    <div class="row row-cols-1 row-cols-md-2 g-4 py-4">
-        <div class="col">
-            <h3><i class="fa-solid fa-chart-simple verde"></i></i><br> Ferias por provincia</h3>
-            <canvas id="n-provinces"></canvas>
-        </div>
-        <div class="col-lg-6">
-            <h3><i class="fa-solid fa-map-location-dot rojo"></i><br> Mapa de las ferias</h3>
-            <div class="rounded-4" id="map" style="max-width: 768px; height: 325px;"></div>
-        </div>
-    </div>
-</div>
-
 <!-- Las ferias en números -->
 <div class="container mt-4">
     <div class="row">
         <div class="col text-center">
-            <h1 class="display-5 display-deferia verde">Las ferias en números</h1>
+            <h1 class="display-3 hero-deferia rojo">Las ferias en números</h1>
             <p class="lead">{{texts.numeros.content}}</p>
         </div>
     </div>
@@ -61,6 +41,16 @@
             <canvas id="n-infrastructure"></canvas>
         </div>
     </div>
+    <div class="row row-cols-1 row-cols-md-2 g-4 py-4">
+        <div class="col">
+            <h3><i class="fa-solid fa-chart-simple verde"></i></i><br> Ferias por provincia</h3>
+            <canvas id="n-provinces"></canvas>
+        </div>
+        <div class="col-lg-6">
+            <h3><i class="fa-solid fa-map-location-dot rojo"></i><br> Mapa de las ferias</h3>
+            <div class="rounded-4" id="map" style="max-width: 768px; height: 325px;"></div>
+        </div>
+    </div>
 </div>
 
 <!-- Buscar mi feria -->
@@ -70,26 +60,30 @@
 <div class="container">
     <div class="d-flex justify-content-center">
         <div class="col-lg-6 text-center">
-            <h1 class="display-5 display-deferia rojo">Lista de ferias</h1>
-            <p class="lead">Todas las ferias registradas en el proyecto <span class="fw-bolder">deferia.cr</span> en orden alfabético.</p>
+            <h1 class="display-3 hero-deferia azul">Lista de ferias</h1>
+            <p class="lead">Todas las ferias registradas en el proyecto <span class="fw-bold">deferia.cr</span>, en orden alfabético.</p>
         </div>
     </div>
-    <table class="custom-table">
-        <thead>
-            <tr>
-                <th scope="col">Nombre de la feria</th>
-                <th scope="col">Provincia</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for marketplace in marketplaces %}
-            <tr>
-                <td><a class="link-dark link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover fw-bold" href="/ferias/{{ marketplace.marketplace_url }}">{{ marketplace.name }}</a></td>
-                <td>{{ marketplace.province }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <div class="d-flex justify-content-center">
+        <div class="d-inline-block overflow-y-auto" style="height: 600px;">
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre de la feria</th>
+                        <th scope="col">Provincia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for marketplace in marketplaces %}
+                    <tr>
+                        <td><a class="link-dark link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover fw-bold" href="/ferias/{{ marketplace.marketplace_url }}">{{ marketplace.name }}</a></td>
+                        <td>{{ marketplace.province }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 
 <!-- JavaScript -->
@@ -98,33 +92,31 @@
 
 <script src="{% static 'js/map_marketplaces.js' %}" data-marketplaces-map="{{ marketplaces_map }}"></script>
 
-<script src="{% static 'js/marketplaces.js' %}" data-n-days="{{ n_days }}" data-n-provinces="{{ n_provinces }}"
-    data-n-infrastructure="{{ n_infrastructure }}" data-n-amenities="{{ n_amenities }}"></script>
+<script src="{% static 'js/marketplaces.js' %}" data-n-days="{{ n_days }}" data-n-provinces="{{ n_provinces }}" data-n-infrastructure="{{ n_infrastructure }}" data-n-amenities="{{ n_amenities }}"></script>
 
 <script src="{% static 'js/search.js' %}"></script>
 
 <!-- TypeIt JS -->
 <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
 <script>
-new TypeIt("#hero", {
-    speed: 50,
-    loop: true,
-    startDelay: 900,
+    new TypeIt("#hero", {
+        speed: 50,
+        loop: true,
+        startDelay: 900,
     })
-    .type("apoyar a la comunidad", { delay: 1500 })
-    .delete(21, { delay: 100 })
-    .type("un jugo bien frío", { delay: 1500 })
-    .delete(17, { delay: 100 })
-    .type("una sonrisa amable", { delay: 1500 })
-    .delete(18, { delay: 100 })
-    .type("un jocote de feria", { delay: 1500 })
-    .delete(18, { delay: 100 })
-    .type("saludar a la gente", { delay: 1500 })
-    .go();
+        .type("apoyar a la comunidad", { delay: 1500 })
+        .delete(21, { delay: 100 })
+        .type("un jugo bien frío", { delay: 1500 })
+        .delete(17, { delay: 100 })
+        .type("una sonrisa amable", { delay: 1500 })
+        .delete(18, { delay: 100 })
+        .type("un jocote de feria", { delay: 1500 })
+        .delete(18, { delay: 100 })
+        .type("saludar a la gente", { delay: 1500 })
+        .go();
 </script>
 
 <!-- Google Maps API and Keys -->
-<script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2WP2FoMe4DRz20FsGGi51opPlfjcm4KM&libraries=places"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2WP2FoMe4DRz20FsGGi51opPlfjcm4KM&libraries=places"></script>
 
 {% endblock %}
