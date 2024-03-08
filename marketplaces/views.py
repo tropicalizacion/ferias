@@ -18,7 +18,48 @@ def ferias(request):
     
     marketplaces = Marketplace.objects.all().order_by("name")
     texts = Text.objects.filter(page="/ferias")
-    # Crear diccionario "texts" con key=section y value=content
+
+    total_marketplaces = marketplaces.count()
+    n_sanjose = marketplaces.filter(province="San José").count()
+    n_alajuela = marketplaces.filter(province="Alajuela").count()
+    n_cartago = marketplaces.filter(province="Cartago").count()
+    n_heredia = marketplaces.filter(province="Heredia").count()
+    n_guanacaste = marketplaces.filter(province="Guanacaste").count()
+    n_puntarenas = marketplaces.filter(province="Puntarenas").count()
+    n_limon = marketplaces.filter(province="Limón").count()
+    n_provinces = [n_sanjose, n_alajuela, n_cartago, n_heredia, n_guanacaste, n_puntarenas, n_limon]
+    n_monday = marketplaces.filter(opening_hours__contains="Mo").count()
+    n_tuesday = marketplaces.filter(opening_hours__contains="Tu").count()
+    n_wednesday = marketplaces.filter(opening_hours__contains="We").count()
+    n_thursday = marketplaces.filter(opening_hours__contains="Th").count()
+    n_friday = marketplaces.filter(opening_hours__contains="Fr").count()
+    n_saturday = marketplaces.filter(opening_hours__contains="Sa").count()
+    n_sunday = marketplaces.filter(opening_hours__contains="Su").count()
+    n_days = [n_monday, n_tuesday, n_wednesday, n_thursday, n_friday, n_saturday, n_sunday]
+    n_fairground = marketplaces.filter(fairground=True).count() / total_marketplaces * 100
+    n_indoor = marketplaces.filter(indoor=True).count() / total_marketplaces * 100
+    n_parking = marketplaces.filter(parking="surface").count() / total_marketplaces * 100
+    n_infrastructure = [n_fairground, n_indoor, n_parking]
+    n_infrastructure = [math.ceil(i) for i in n_infrastructure]
+    n_food = marketplaces.filter(food=True).count() / total_marketplaces * 100
+    n_drinks = marketplaces.filter(drinks=True).count() / total_marketplaces * 100
+    n_handicrafts = marketplaces.filter(handicrafts=True).count() / total_marketplaces * 100
+    n_butcher = marketplaces.filter(butcher=True).count() / total_marketplaces * 100
+    n_dairy = marketplaces.filter(dairy=True).count() / total_marketplaces * 100
+    n_seafood = marketplaces.filter(seafood=True).count() / total_marketplaces * 100
+    n_garden_centre = marketplaces.filter(garden_centre=True).count() / total_marketplaces * 100
+    n_florist = marketplaces.filter(florist=True).count() / total_marketplaces * 100
+    n_amenities = [n_food, n_drinks, n_handicrafts, n_butcher, n_dairy, n_seafood, n_garden_centre, n_florist]
+    n_amenities = [math.ceil(i) for i in n_amenities]
+    
+    text = Text.objects.filter(page="/ferias")
+    texts = {}
+    texts["hero"] = text.filter(section="hero").first()
+    texts["ubicacion"] = text.filter(section="ubicacion").first()
+    texts["features_saludable"] = text.filter(section="features_saludable").first()
+    texts["numeros"] = text.filter(section="numeros").first()
+    texts["buscador"] = text.filter(section="buscador").first()
+    texts["lista"] = text.filter(section="lista").first()
 
     marketplaces_map = []
     for marketplace in marketplaces:
@@ -28,78 +69,29 @@ def ferias(request):
         marketplace_dict["longitude"] = marketplace.location.x
         marketplaces_map.append(marketplace_dict)    
     marketplaces_map = json.dumps(marketplaces_map)
+    
+    context = {
+        "texts": texts,
+        "marketplaces": marketplaces,
+        "marketplaces_map": marketplaces_map,
+        "total_marketplaces": total_marketplaces,
+        "n_provinces": n_provinces,
+        "n_days": n_days,
+        "n_infrastructure": n_infrastructure,
+        "n_amenities": n_amenities,
+    }
 
     if request.method == "POST":
-
         marketplaces_match, marketplaces_others, marketplaces_keyword, keyword, query_text, by_location = search_marketplaces(request.POST)
-        context = {
-            "show_results": True,
-            "marketplaces": marketplaces,
-            "marketplaces_map": marketplaces_map,
-            "marketplaces_match": marketplaces_match,
-            "marketplaces_others": marketplaces_others,
-            "marketplaces_keyword": marketplaces_keyword,
-            "query_text": query_text,
-            "by_location": by_location,
-            "keyword": keyword,
-        }
-        return render(request, "results.html", context)
+        context["show_results"] = True
+        context["query_text"] = query_text
+        context["by_location"] = by_location
+        context["keyword"] = keyword
+        context["marketplaces_match"] = marketplaces_match
+        context["marketplaces_others"] = marketplaces_others
+        context["marketplaces_keyword"] = marketplaces_keyword  
     
-    else:
-
-        total_marketplaces = marketplaces.count()
-        n_sanjose = marketplaces.filter(province="San José").count()
-        n_alajuela = marketplaces.filter(province="Alajuela").count()
-        n_cartago = marketplaces.filter(province="Cartago").count()
-        n_heredia = marketplaces.filter(province="Heredia").count()
-        n_guanacaste = marketplaces.filter(province="Guanacaste").count()
-        n_puntarenas = marketplaces.filter(province="Puntarenas").count()
-        n_limon = marketplaces.filter(province="Limón").count()
-        n_provinces = [n_sanjose, n_alajuela, n_cartago, n_heredia, n_guanacaste, n_puntarenas, n_limon]
-        n_monday = marketplaces.filter(opening_hours__contains="Mo").count()
-        n_tuesday = marketplaces.filter(opening_hours__contains="Tu").count()
-        n_wednesday = marketplaces.filter(opening_hours__contains="We").count()
-        n_thursday = marketplaces.filter(opening_hours__contains="Th").count()
-        n_friday = marketplaces.filter(opening_hours__contains="Fr").count()
-        n_saturday = marketplaces.filter(opening_hours__contains="Sa").count()
-        n_sunday = marketplaces.filter(opening_hours__contains="Su").count()
-        n_days = [n_monday, n_tuesday, n_wednesday, n_thursday, n_friday, n_saturday, n_sunday]
-        n_fairground = marketplaces.filter(fairground=True).count() / total_marketplaces * 100
-        n_indoor = marketplaces.filter(indoor=True).count() / total_marketplaces * 100
-        n_parking = marketplaces.filter(parking="surface").count() / total_marketplaces * 100
-        n_infrastructure = [n_fairground, n_indoor, n_parking]
-        n_infrastructure = [math.ceil(i) for i in n_infrastructure]
-        n_food = marketplaces.filter(food=True).count() / total_marketplaces * 100
-        n_drinks = marketplaces.filter(drinks=True).count() / total_marketplaces * 100
-        n_handicrafts = marketplaces.filter(handicrafts=True).count() / total_marketplaces * 100
-        n_butcher = marketplaces.filter(butcher=True).count() / total_marketplaces * 100
-        n_dairy = marketplaces.filter(dairy=True).count() / total_marketplaces * 100
-        n_seafood = marketplaces.filter(seafood=True).count() / total_marketplaces * 100
-        n_garden_centre = marketplaces.filter(garden_centre=True).count() / total_marketplaces * 100
-        n_florist = marketplaces.filter(florist=True).count() / total_marketplaces * 100
-        n_amenities = [n_food, n_drinks, n_handicrafts, n_butcher, n_dairy, n_seafood, n_garden_centre, n_florist]
-        n_amenities = [math.ceil(i) for i in n_amenities]
-        
-        text = Text.objects.filter(page="/ferias")
-        texts = {}
-        texts["hero"] = text.filter(section="hero").first()
-        texts["ubicacion"] = text.filter(section="ubicacion").first()
-        texts["features_saludable"] = text.filter(section="features_saludable").first()
-        texts["numeros"] = text.filter(section="numeros").first()
-        texts["buscador"] = text.filter(section="buscador").first()
-        texts["lista"] = text.filter(section="lista").first()
-        
-        context = {
-            "marketplaces": marketplaces,
-            "marketplaces_map": marketplaces_map,
-            "total_marketplaces": total_marketplaces,
-            "n_provinces": n_provinces,
-            "n_days": n_days,
-            "n_infrastructure": n_infrastructure,
-            "n_amenities": n_amenities,
-            "texts": texts,
-        }
-        return render(request, "ferias.html", context)
+    return render(request, "ferias.html", context)
 
 
 def feria(request, marketplace_url):
