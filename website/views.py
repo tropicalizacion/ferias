@@ -18,6 +18,7 @@ def index(request):
     text = Text.objects.filter(page="/")
     texts = {}
     texts["hero"] = text.filter(section="hero").first()
+    texts["hero_desc"] = text.filter(section="hero_desc").first()
     texts["buscador"] = text.filter(section="buscador").first()
     texts["features_saludable"] = text.filter(section="features_saludable").first()
     texts["features_barato"] = text.filter(section="features_barato").first()
