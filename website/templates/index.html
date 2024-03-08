@@ -28,27 +28,30 @@
 <!-- Por qué (beneficios) -->
 <div class="background-azul text-white border-0">
     <div class="container px-4 py-1">
+        <div class="m-3">
+            <h1 class="text-center hero-deferia">Pero... ¿por qué ir a la&nbsp;feria?</h1>
+        </div>
         <div class="row g-4 py-4 row-cols-1 row-cols-md-3">
             <div class="feature col">
                 <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
-                    <img src="{% static 'images/icons/sandia.svg' %}" alt="" height="50px">
+                    <img src="{% static 'images/icons/hierbabuena.svg' %}" alt="" height="50px">
                 </div>
-                <h2 class="title-deferia">Es más saludable</h2>
-                <p>{{ texts.features_saludable.content }}</p>
+                <h2 class="title-deferia">Es más <strong>saludable</strong></h2>
+                <p class="lead">{{ texts.features_saludable.content }}</p>
             </div>
             <div class="feature col">
                 <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
-                    <img src="{% static 'images/icons/tomate.svg' %}" alt="" height="50px">
+                    <img src="{% static 'images/icons/melon.svg' %}" alt="" height="50px">
                 </div>
-                <h2 class="title-deferia">Es más barato</h2>
-                <p>{{ texts.features_barato.content }}</p>
+                <h2 class="title-deferia">Es más <strong>barato</strong></h2>
+                <p class="lead">{{ texts.features_barato.content }}</p>
             </div>
             <div class="feature col">
                 <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
-                    <img src="{% static 'images/icons/manzana.svg' %}" alt="" height="50px">
+                    <img src="{% static 'images/icons/maiz.svg' %}" alt="" height="50px">
                 </div>
-                <h2 class="title-deferia">Es más nuestro</h2>
-                <p>{{ texts.features_nuestro.content }}</p>
+                <h2 class="title-deferia">Es más <strong>nuestro</strong></h2>
+                <p class="lead">{{ texts.features_nuestro.content }}</p>
             </div>
         </div>
     </div>
