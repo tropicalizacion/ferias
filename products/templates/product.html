@@ -33,15 +33,17 @@
 </div>
 
 <!-- Descripción (description) -->
+{% if product.description %}
 <div class="d-flex justify-content-center my-4 px-4">
     <div class="card col-lg-6 rounded-5 border-0 background-verde">
         <div class="card-body text-center">
             <div class="lead text-white">
-                ¿Fruta o verdura? No importa, igual es delicioso. El aguacate es parte importantísima de nuestra dieta y de nuestra cultura. Es un alimento muy nutritivo y versátil, que se puede comer en ensaladas, guacamole y salsas, ¡y también en recetas dulces!
+                {{ product.description }}
             </div>
         </div>
     </div>
 </div>
+{% endif %}
 
 <!-- Variedades (varieties) -->
 <div class="d-flex justify-content-center my-4 px-4">
@@ -82,6 +84,7 @@
 </div>
 
 <!-- Reseña nutricional -->
+{% if product.nutrition_notes %}
 <div class="d-flex justify-content-center my-5 px-4">
     <div class="col-lg-6">
         <h2 class="display-deferia verde">Reseña nutricional</h2>
@@ -91,13 +94,15 @@
         </p>
     </div>
 </div>
+{% endif %}
 
 <!-- Métodos de preparación -->
+{% if product.preparation_notes or product.preparation.all.count %}
 <div class="d-flex justify-content-center my-5 px-4">
     <div class="col-lg-6">
         <h2 class="display-deferia cafe">Métodos de preparación</h2>
-        <p>El rey de las grasas buenas, el aguacate sabe cómo hacernos sentir bien.</p>
         <p>{{ product.preparation_notes }}</p>
+        {% if product.preparation.all %}
         <p>Métodos:</p>
         <dl>
             {% for preparation in product.preparation.all %}
@@ -105,15 +110,18 @@
             <dd>{{ preparation.method_description }}</dd>
             {% endfor %}
         </dl>
+        {% endif %}
     </div>
 </div>
+{% endif %}
 
 <!-- Métodos de almacenamiento -->
+{% if product.storage_notes or product.storage.all.count %}
 <div class="d-flex justify-content-center my-5 px-4">
     <div class="col-lg-6">
         <h2 class="display-deferia rojo">Métodos de almacenamiento</h2>
-        <p>El rey de las grasas buenas, el aguacate sabe cómo hacernos sentir bien.</p>
-        <p>{{ product.storage_notes }}Es bien conocida la dificultad del aguacate para identificar cuándo está en su punto exacto.</p>
+        <p>{{ product.storage_notes }}</p>
+        {% if product.storage.all %}
         <p>Métodos:</p>
         <dl>
             {% for storage in product.storage.all %}
@@ -121,10 +129,13 @@
             <dd>{{ storage.method_description }}</dd>
             {% endfor %}
         </dl>
+        {% endif %}
     </div>
 </div>
+{% endif %}
 
 <!-- Centros de origen -->
+{% if product.center_origin.all.count > 0 %}
 <div class="d-flex justify-content-center my-5 px-4">
     <div class="col-lg-6">
         <h2 class="display-deferia verde">¿De dónde viene?</h2>
@@ -140,11 +151,12 @@
         <p>En ocasiones, un producto puede considerarse con más de un centro de origen, como resultado de las variaciones realizadas en cada región.</p>
         {% endif %}
         <p>
-            Notas: {{ product.center_origin_notes }}
+            {{ product.center_origin_notes }}
         </p>
         <!-- Leer más sobre los centros de origen -->
     </div>
 </div>
+{% endif %}
 
 <!-- Estacionalidad -->
 <div class="d-flex justify-content-center my-5 px-4">

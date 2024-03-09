@@ -7,7 +7,7 @@
             "common_name": "acelga",
             "common_name_alternate": null,
             "description": "La acelga, al igual que la espinaca, brilla en ensaladas, pues aporta frescura y un inmenso valor nutricional. Reconocida por su alto aporte en minerales y vitaminas esenciales, es la adici\u00f3n perfecta para una dieta equilibrada.",
-            "icon": "images\/icons\/acelga.svg",
+            "icon": "icons\/acelga.svg",
             "name_origin": null,
             "center_origin": [
                 "VI"
@@ -29,7 +29,7 @@
             "common_name": "aguacate",
             "common_name_alternate": "palta",
             "description": "\u00bfFruta o verdura? No importa, igual es delicioso. El aguacate es parte important\u00edsima de nuestra dieta y de nuestra cultura. Es un alimento muy nutritivo y vers\u00e1til, que se puede comer en ensaladas, guacamole y salsas, \u00a1y tambi\u00e9n en recetas dulces!",
-            "icon": "images\/icons\/aguacate.svg",
+            "icon": "icons\/aguacate.svg",
             "name_origin": null,
             "center_origin": [
                 "VII"
@@ -51,7 +51,7 @@
             "common_name": "ajo",
             "common_name_alternate": null,
             "description": "Aleja a los vampiros, pero atrae a los buenos sabores a los platos. Integrante estrella de la triada de la saz\u00f3n junto con el ajo y el chile dulce, no hay sofrito que se respete sin la presencia de un diente de ajo. Este saborizante natural,adem\u00e1s, fortalece su sistema inmunol\u00f3gico.",
-            "icon": "images\/icons\/ajo.svg",
+            "icon": "icons\/ajo.svg",
             "name_origin": null,
             "center_origin": [
                 "III"
@@ -73,7 +73,7 @@
             "common_name": "albahaca",
             "common_name_alternate": "albaca, alf\u00e1bega, alh\u00e1bega",
             "description": "Lleve sus platos de pasta a un nivel superior con el sabor agregado de la albahaca. Incorpore a las ensaladas su aroma mediterr\u00e1neo o termine su d\u00eda prepar\u00e1ndola como un t\u00e9 relajante.",
-            "icon": "images\/icons\/albahaca.svg",
+            "icon": "icons\/albahaca.svg",
             "name_origin": null,
             "center_origin": [
                 "V"
@@ -95,7 +95,7 @@
             "common_name": "alfalfa",
             "common_name_alternate": "afalfe, afarfa, alfal, alfalce, alfalce bordo, alfalfa , alfalfa brava, alfalfa mansa, alfalfa silvestre, alfalfe, alfalz, alfance, alfange, alfarfa, alfauce, alfaz, alf\u00e1s, alholva, almierca, amelca, amielcas, arfarfa, carret\u00f3n, carret\u00f3n borde, ervaye, falfa, farfa, melga, merga, miajera, mielca, mielc\u00f3n, mielga, mielgas, mierga, miergas, mierpes, nielga, probayernos, trebolillo, tr\u00e9bol de Espa\u00f1a, zarza.",
             "description": "Igual que su tocayo de \"Los Peque\u00f1os Traviesos\", la alfalfa es una hierba bastante tenaz, ya que se adapta sin problemas a climas fr\u00edos y c\u00e1lidos. Usualmente utilizada en ensaladas, la alfalfa tambi\u00e9n puede tener usos bastante controvertidos en s\u00e1ndwiches y sopas.",
-            "icon": "images\/icons\/alfalfa.svg",
+            "icon": "icons\/alfalfa.svg",
             "name_origin": null,
             "center_origin": [
                 "IV"
@@ -117,7 +117,7 @@
             "common_name": "anona",
             "common_name_alternate": "chirimoya, sincuya, zuncuya",
             "description": "No se deje enga\u00f1ar por la ruda apariencia de esta fruta, ya que en su interior guarda un tesoro: una masa suave, dulce y cremosa que se puede comer como se le ocurra. Puede hacerla  en jugo o convertirla en su pr\u00f3ximo postre favorito. Es el sabor del Caribe en una fruta.",
-            "icon": "images\/icons\/anona.svg",
+            "icon": "icons\/anona.svg",
             "name_origin": null,
             "center_origin": [
                 "VII",
@@ -141,7 +141,7 @@
             "common_name": "apazote",
             "common_name_alternate": "epazote, pazote, epasote, pizate, paico, pasota, pasote",
             "description": "El apazote es una hierba ic\u00f3nica en la cocina mexicana y un ingrediente emblem\u00e1tico en la preparaci\u00f3n de frijoles negros. Una pizca de esta hierba llenar\u00e1 de sabor y personalidad sus frijoles, sopas o tamales.",
-            "icon": "images\/icons\/apazote.svg",
+            "icon": "icons\/apazote.svg",
             "name_origin": null,
             "center_origin": [
                 "VII"
@@ -163,7 +163,7 @@
             "common_name": "apio",
             "common_name_alternate": "pio, apio acu\u00e1tico,  apio bastardo, apio blanco, apio borde, apio bravo, apio brav\u00edo, apio com\u00fan, apio acu\u00e1tico, apio de agua, apio de arroyo, apio de arroyos, apio de huerta, apio de laguna, apio de las lagunas, apio de los huertos, apio de monte, apio dulce, apio laguna, apio nabo, apio palustre, apio silvestre, celerio, c\u00e9lery, habit, perejil de agua,apio Espa\u00f1a, panul",
             "description": "Sabor discreto y jugoso, con pocas calor\u00edas y mucha fibra, \u00bfqu\u00e9 no le podr\u00eda gustar del apio? Ya sea crudo, con aderezos, frito o al vapor, ese \u00a1crunch! es demasiado bueno para dejarlo pasar. ",
-            "icon": "images\/icons\/apio.svg",
+            "icon": "icons\/apio.svg",
             "name_origin": null,
             "center_origin": [
                 "V"
@@ -185,7 +185,7 @@
             "common_name": "ar\u00e1ndano",
             "common_name_alternate": "morti\u00f1o, anavia",
             "description": "Como una lluvia ma\u00f1anera, el ar\u00e1ndano es fresco y tiene un sabor deliciosamente balanceado, ni muy dulce, ni muy \u00e1cido. Pr\u00e1ctica y de f\u00e1cil consumo, esta baya azul es la adici\u00f3n ideal para enriquecer sus desayunos con abundantes vitaminas y antioxidantes.",
-            "icon": "images\/icons\/arandano.svg",
+            "icon": "icons\/arandano.svg",
             "name_origin": null,
             "center_origin": [
                 "V",
@@ -208,7 +208,7 @@
             "common_name": "arracache",
             "common_name_alternate": null,
             "description": "El picadillo preferido de los \"gallos\" de tortilla. El arracache es una ra\u00edz que, cuando se cocina, se convierte en una deliciosa guarnici\u00f3n para platos fuertes como, por ejemplo, los famosos casados.",
-            "icon": "images\/icons\/arracache.svg",
+            "icon": "icons\/arracache.svg",
             "name_origin": null,
             "center_origin": [
                 "I"
@@ -230,7 +230,7 @@
             "common_name": "ar\u00fagula",
             "common_name_alternate": "r\u00facula, aballicos, alhuce\u00f1a, aruga, arugua, berza alhuce\u00f1a, eruca, eruga, hierba meona, jamargo, jamargo blanco, jamarguillo, jaramago, oruga, oruga blanca, oruga de barrancos, oruga pestosa, oruga roqueta, oruga vejigosa, pestosas, picograjo, rabaniza blanca, roqueta, ruca, rucas, ruqueta, tamarillas.  ",
             "description": "Sin\u00f3nimo de vitalidad y elegancia en los platos, la ar\u00fagula es una hierba de sabor picante que puede ser combinada con sus ensaladas habituales para darles un toque extra de sabor y un impulso de calcio a su dieta.",
-            "icon": "images\/icons\/arugula.svg",
+            "icon": "icons\/arugula.svg",
             "name_origin": null,
             "center_origin": [
                 "VI"
@@ -252,7 +252,7 @@
             "common_name": "guisante",
             "common_name_alternate": "abejaquilla, alvilla, arbeja, arbella, arveja, arvejana, arvejo, arvejote, arvej\u00f3n, bisaltera, bisaltero, bisalto, bisantes, bisarto, chicharro, ch\u00edcharo, cuchillejo, disante mayor, disante menor, fasolera, garbaneta, guisante, guisante ordinario, guisantera, guis\u00f3n, haberos, ilar, moros, nanos, pelailla, peque\u00f1icos, poa, prinsol, pr\u00e9soles, p\u00e9sole, tabilla, tirabeques, tres reyes.  ",
             "description": "Para comer como un guiso, en cremas, acompa\u00f1ando otras verduras, como guarnici\u00f3n, o mezclado con arroz, los guisantes son, por su versatilidad culinaria y altos valores nutritivos, el peque\u00f1o gigante de la cocina. Si usted quiere, adem\u00e1s, reducir sus niveles de colesterol, incl\u00fayalo con frecuencia en sus comidas. ",
-            "icon": "images\/icons\/guisante.svg",
+            "icon": "icons\/guisante.svg",
             "name_origin": null,
             "center_origin": [
                 "IV"
@@ -274,7 +274,7 @@
             "common_name": "ayote",
             "common_name_alternate": null,
             "description": "Ya sea como fruta u hortaliza, el ayote se consume de m\u00faltiples maneras: al vapor, frito, relleno, hervido, crudo, al horno, seco, en pur\u00e9, en pasteles e, incluso, encurtido. El reino de la vitamina A tiene plantada una bandera en el ayote.  ",
-            "icon": "images\/icons\/ayote.svg",
+            "icon": "icons\/ayote.svg",
             "name_origin": null,
             "center_origin": [
                 "VII",
@@ -297,7 +297,7 @@
             "common_name": "banano",
             "common_name_alternate": "banana, pl\u00e1tano, guineo",
             "description": "Fuente de minerales y vitaminas, si usted desea reducir el cansancio, evitar fatigas y alargar la salud de su coraz\u00f3n, no deje pasar nunca la ocasi\u00f3n de comerse un banano. Recuerde que al comerlo est\u00e1 usted, no solo aliment\u00e1ndose, sino tambi\u00e9n honrando la fama mundial de los bananos costarricenses.",
-            "icon": "images\/icons\/banano.svg",
+            "icon": "icons\/banano.svg",
             "name_origin": null,
             "center_origin": [
                 "IIa"
@@ -319,7 +319,7 @@
             "common_name": "berenjena",
             "common_name_alternate": null,
             "description": "La berenjena, no es s\u00f3lo un emoji popular, sino que tambi\u00e9n es una fuente enorme de fibra y potasio con una baj\u00edsima cantidad de calor\u00edas por porci\u00f3n. Estas propiedades la convierten en un alimento completo y saludable, adem\u00e1s de ser un excelente aliado para las personas que buscan perder peso.",
-            "icon": "images\/icons\/berenjena.svg",
+            "icon": "icons\/berenjena.svg",
             "name_origin": null,
             "center_origin": [
                 "II"
@@ -341,7 +341,7 @@
             "common_name": "berro",
             "common_name_alternate": "mastuerzo, nastuerzo, berraza, berra, berro de agua, mastuerzo de agua, agr\u00f3n  ",
             "description": "Berro, berro, \u00bfqu\u00e9 ves? Mucha vitamina C y amplios minerales. El berro es considerado uno de los vegetales m\u00e1s nutritivos y usted est\u00e1 de suerte porque su distintivo sabor picante, parecido al de la mostaza, lo convierte en una adici\u00f3n perfecta para las pastas, pizza, tortas de huevo y ensaladas.",
-            "icon": "images\/icons\/berro.svg",
+            "icon": "icons\/berro.svg",
             "name_origin": null,
             "center_origin": [
                 "VI"
@@ -363,7 +363,7 @@
             "common_name": "bok choy",
             "common_name_alternate": null,
             "description": "\u00bfCansado de lo cotidiano en su plato? El bok choy es una variedad de col china que se puede comer crumarinada. H\u00e1gale justicia al a\u00f1adirla a sopas o fideos. Con estas maravillosas notas herb\u00e1ceas bailando entre las verduras y carnes podr\u00e1 elevar sin mucho esfuerzo el perfil de sabor de sus platos.",
-            "icon": "images\/icons\/bokchoy.svg",
+            "icon": "icons\/bokchoy.svg",
             "name_origin": null,
             "center_origin": [
                 "III"
@@ -385,7 +385,7 @@
             "common_name": "br\u00f3coli",
             "common_name_alternate": null,
             "description": "Ganador en textura, practicidad y nutrici\u00f3n, el br\u00f3coli es uno de los mejores vegetales que puede incorporar a su dieta. Si necesita una ensalada r\u00e1pida, hi\u00e9rvalo y est\u00e1 listo para acompa\u00f1ar carnes, sopas, pastas y m\u00e1s. Si se siente creativo, \u00e1selo y acomp\u00e1\u00f1elo con queso cheddar.",
-            "icon": "images\/icons\/brocoli.svg",
+            "icon": "icons\/brocoli.svg",
             "name_origin": null,
             "center_origin": [
                 "IV"
@@ -407,7 +407,7 @@
             "common_name": "camote",
             "common_name_alternate": null,
             "description": "El camote es un tub\u00e9rculo dulce oriundo de Am\u00e9rica Central y Suram\u00e9rica. Rico en potasio, vitaminas B y C, y fibra, se vuelve parte importante de la mesa por su valor nutritivo, su variada y f\u00e1cil cocci\u00f3n y su muy asequible valor monetario en las tarimas de cualquier feria.",
-            "icon": "images\/icons\/camote.svg",
+            "icon": "icons\/camote.svg",
             "name_origin": null,
             "center_origin": [
                 "VII"
@@ -429,7 +429,7 @@
             "common_name": "carambola",
             "common_name_alternate": null,
             "description": "\u00a1Esta fruta es toda una estrella! Literalmente... La carambola es muy conocida por su delicioso sabor a la hora de tomarla en un refresco natural, pero tambi\u00e9n por ser un \u00edcono tropical por las porciones en forma de estrella que se forman al rebanarla.",
-            "icon": "images\/icons\/carambola.svg",
+            "icon": "icons\/carambola.svg",
             "name_origin": null,
             "center_origin": [
                 "V"
@@ -451,7 +451,7 @@
             "common_name": "cas",
             "common_name_alternate": null,
             "description": "Una de las especialidades de Costa Rica y una buena elecci\u00f3n para convertir en jugo. El cas promete un profundo sabor agridulce con una potente dosis de vitamina C en cada sorbo.",
-            "icon": "images\/icons\/cas.svg",
+            "icon": "icons\/cas.svg",
             "name_origin": null,
             "center_origin": [
                 "VII"
@@ -473,7 +473,7 @@
             "common_name": "cebolla",
             "common_name_alternate": null,
             "description": "La cebolla marca un antes y un despu\u00e9s en nuestra cultura culinaria. Es integrante de la tr\u00edada fant\u00e1stica de la saz\u00f3n, junto con el chile dulce y el ajo. Su inigualable sabor la hace esencial en sofritos, ensaladas, salsas y m\u00e1s. Nos hizo llorar, pero \u00a1eran l\u00e1grimas de alegr\u00eda!",
-            "icon": "images\/icons\/cebolla.svg",
+            "icon": "icons\/cebolla.svg",
             "name_origin": null,
             "center_origin": [
                 "III"
@@ -495,7 +495,7 @@
             "common_name": "cebollino",
             "common_name_alternate": null,
             "description": "El cebollino es un delgado tallo hueco de grato aroma que suele cortarse en diminutos pedazos y agregarse a platos de carne, huevos, papas al horno, ensaladas o sopas, para que su aporte a la mezcla de colores y olores enriquezca nuestras producciones culinarias.",
-            "icon": "images\/icons\/cebollino.svg",
+            "icon": "icons\/cebollino.svg",
             "name_origin": null,
             "center_origin": [
                 "IV"
@@ -517,7 +517,7 @@
             "common_name": "chan",
             "common_name_alternate": null,
             "description": "\u00a1La parte m\u00e1s importante del fresco de chan! Las semillas de chan, tambi\u00e9n conocidas como chia, son \u00fanicas. Estas absorben m\u00e1s de 10 veces su peso en agua, lo que las convierte en un alimento saciador, adem\u00e1s de darle esa textura gelatinosa al fresco.",
-            "icon": "images\/icons\/chan.svg",
+            "icon": "icons\/chan.svg",
             "name_origin": null,
             "center_origin": [
                 "VII"
@@ -539,7 +539,7 @@
             "common_name": "chayote",
             "common_name_alternate": null,
             "description": "En Costa Rica el chayote es la punta de lanza de las hortalizas. Un picadillo que incluya cubitos crudos de ra\u00edz de chayote - ese controlador natural de los niveles de az\u00facar en sangre - es una estampilla de la cocina tica tradicional.",
-            "icon": "images\/icons\/chayote.svg",
+            "icon": "icons\/chayote.svg",
             "name_origin": null,
             "center_origin": [
                 "VII"
@@ -561,7 +561,7 @@
             "common_name": "chile dulce",
             "common_name_alternate": null,
             "description": "Multifuncional verdura que contiene altas dosis de vitaminas C, E y antioxidantes, el chile dulce es parte de la tr\u00edada fant\u00e1stica de la saz\u00f3n, junto con el ajo y la cebolla, y puede comerse triturado, crudo, asado. No prescinda usted de la posibilidad de incorporar un proteico chile dulce a su dieta diaria.",
-            "icon": "images\/icons\/chiledulce.svg",
+            "icon": "icons\/chiledulce.svg",
             "name_origin": null,
             "center_origin": [
                 "VII"
@@ -583,7 +583,7 @@
             "common_name": "chile picante",
             "common_name_alternate": null,
             "description": "Peque\u00f1o pero mat\u00f3n. El chile picante es infaltable en la comida caribe\u00f1a. No s\u00f3lo brilla en salsas, sino que tambi\u00e9n a\u00f1ade personalidad a sus platos, lo cual hace de cada bocado una experiencia intensa.",
-            "icon": "images\/icons\/chilepicante.svg",
+            "icon": "icons\/chilepicante.svg",
             "name_origin": null,
             "center_origin": [
                 "VII"
@@ -605,7 +605,7 @@
             "common_name": "chilote",
             "common_name_alternate": "ma\u00edz baby, mini mazorca",
             "description": "Desde Paso Canoas hasta Pe\u00f1as Blancas, un buen guiso caliente de chilote es plato que se invita solo a la mesa de los costarricenses. Su presencia y dulce sabor es tambi\u00e9n acompa\u00f1ante de sopas, picadillos, carnes, e, incluso, vinagretas. ",
-            "icon": "images\/icons\/chilote.svg",
+            "icon": "icons\/chilote.svg",
             "name_origin": null,
             "center_origin": [
                 "VIIIa"
@@ -627,7 +627,7 @@
             "common_name": "ciruela",
             "common_name_alternate": null,
             "description": "Ya sea cruda, en batidos acompa\u00f1ando a otras frutas, o en mermeladas, pasteles o pudines, la dulce ciruela ser\u00e1 siempre una apetecible fruta. Muro de contenci\u00f3n de la diabetes, es admirable su capacidad para reducir los niveles de glucosa en sangre.",
-            "icon": "images\/icons\/ciruela.svg",
+            "icon": "icons\/ciruela.svg",
             "name_origin": null,
             "center_origin": [
                 "VII"
@@ -649,7 +649,7 @@
             "common_name": "coco",
             "common_name_alternate": "pipa",
             "description": "Si no desea complicarse en la cocina elaborando postres, helados, o flanes de coco, siempre le quedar\u00e1 la opci\u00f3n de disfrutar crudos su pulpa y su refrescante jugo. No obstante, tome en cuenta que al hacer un aut\u00e9ntico rice and beans caribe\u00f1o, ser\u00eda casi un sacrilegio no incluir el aceite de coco en la cocci\u00f3n. ",
-            "icon": "images\/icons\/coco.svg",
+            "icon": "icons\/coco.svg",
             "name_origin": null,
             "center_origin": [
                 "VII"
@@ -671,7 +671,7 @@
             "common_name": "col de Bruselas",
             "common_name_alternate": null,
             "description": "Col de bruselas o repollito: digestiva, antiinflamatoria verdura de renombre como antibi\u00f3tico natural. Se deja comer lo mismo hervida que asada, al horno, preferiblemente con mantequilla, como ensalada o salteada como guarnici\u00f3n. No solo el buen perfume viene en envase peque\u00f1o: ah\u00ed est\u00e1 la Col de Bruselas como prueba para demostrarlo.",
-            "icon": "images\/icons\/coldebruselas.svg",
+            "icon": "icons\/coldebruselas.svg",
             "name_origin": null,
             "center_origin": [
                 "V"
@@ -693,7 +693,7 @@
             "common_name": "cola de caballo",
             "common_name_alternate": null,
             "description": "Con solo ver esta hierba, es claro de d\u00f3nde viene su nombre. La cola de caballo, no s\u00f3lo ayuda como un diur\u00e9tico natural, sino que tambi\u00e9n tiene grandes usos en el jard\u00edn, d\u00f3nde se puede utilizar como pesticida natural.",
-            "icon": "images\/icons\/coladecaballo.svg",
+            "icon": "icons\/coladecaballo.svg",
             "name_origin": null,
             "center_origin": [
                 "V"
@@ -715,7 +715,7 @@
             "common_name": "coliflor",
             "common_name_alternate": null,
             "description": "Rica en potasio, f\u00f3sforo y vitaminas B y C, la coliflor puede comerse cruda, al vapor, hervida, e, incluso, frita. Si usted quiere adelgazar o controlar su hipertensi\u00f3n, incl\u00fayala con frecuencia en su men\u00fa. En el podio de premiaciones para las verduras, siempre habr\u00e1 una medalla reservada para la coliflor.",
-            "icon": "images\/icons\/coliflor.svg",
+            "icon": "icons\/coliflor.svg",
             "name_origin": null,
             "center_origin": [
                 "IV"
@@ -737,7 +737,7 @@
             "common_name": "cubaces",
             "common_name_alternate": null,
             "description": "No hay mejor leguminosa que los cubaces para robarse el show en cualquier mesa donde se sirva un chifrijo. Para comer con carnes, lomo, costillas o patas de cerdo, en guisos o con verduras, tampoco dejan los cal\u00f3ricos y proteicos cubaces que los bajen de la tarima. ",
-            "icon": "images\/icons\/cubaces.svg",
+            "icon": "icons\/cubaces.svg",
             "name_origin": null,
             "center_origin": [
                 "VII"
@@ -759,7 +759,7 @@
             "common_name": "culantro",
             "common_name_alternate": null,
             "description": "Ya sea como un ingrediente que aporta su aroma y su sabor ligeramente c\u00edtrico y refrescante en salsas, frijoles, sofritos, cremas; o en ensaladas, ceviches, incluso como t\u00e9, el aporte de las hojas de culantro se agradece siempre en el paladar, y en nuestra salud, por su valor agregado como analg\u00e9sico y antiinflamatorio.  ",
-            "icon": "images\/icons\/culantro.svg",
+            "icon": "icons\/culantro.svg",
             "name_origin": null,
             "center_origin": [
                 "V"
@@ -781,7 +781,7 @@
             "common_name": "culantro coyote",
             "common_name_alternate": null,
             "description": "Rico en \u00e1cido f\u00f3lico y vitaminas A y C, el culantro coyote es hierba arom\u00e1tica con un s\u00f3lido aroma que se agradece al elaborar sopas, frijoles, carnes, guisos y aderezos. Fuente tambi\u00e9n generosa del necesario hierro, no hay anemia que se atreva a plantarle cara al culantro coyote. ",
-            "icon": "images\/icons\/culantrocoyote.svg",
+            "icon": "icons\/culantrocoyote.svg",
             "name_origin": null,
             "center_origin": [
                 "VIII"
@@ -803,7 +803,7 @@
             "common_name": "c\u00farcuma",
             "common_name_alternate": null,
             "description": "C\u00farcuma: Colorante infalible y aromatizante proveniente de la India, la c\u00farcuma puede utilizarse fresca o seca. Util\u00edcela seca como condimento de arroces, sopas o asados a la parrilla. Como parte de adobos o al marinar, aproveche la ra\u00edz fresca de esta especia ya infaltable en la cocina. Adem\u00e1s, con ella se hace un excelente t\u00e9, el cual es muy recomendado a causa de sus propiedades antiinflamatorias",
-            "icon": "images\/icons\/curcuma.svg",
+            "icon": "icons\/curcuma.svg",
             "name_origin": null,
             "center_origin": [
                 "IIa"
@@ -825,7 +825,7 @@
             "common_name": "eneldo",
             "common_name_alternate": null,
             "description": "Aunque suene como apellido de abuelito, el eneldo es una hierba muy importante en diversas gastronom\u00edas mundiales. Su principal fortaleza es la de cargar de aroma y sabor a diversos platillos. Sin embargo, tambi\u00e9n es muy utilizado en la medicina alternativa",
-            "icon": "images\/icons\/eneldo.svg",
+            "icon": "icons\/eneldo.svg",
             "name_origin": null,
             "center_origin": [
                 "V"
@@ -847,7 +847,7 @@
             "common_name": "esp\u00e1rrago",
             "common_name_alternate": null,
             "description": "En su id\u00f3nea simplicidad, al esp\u00e1rrago lo conforma un tallo esbelto y tierno envuelto en un sabor terroso y suave. Este diur\u00e9tico natural se presta a la creatividad, ya sea asado, salteado o al vapor. Disfr\u00fatelo crudo, si lo que busca es una merienda nutritiva.",
-            "icon": "images\/icons\/esparrago.svg",
+            "icon": "icons\/esparrago.svg",
             "name_origin": null,
             "center_origin": [
                 "V"
@@ -869,7 +869,7 @@
             "common_name": "espinaca",
             "common_name_alternate": null,
             "description": "Verdura antioxidante con alto valor proteico, rica, adem\u00e1s, en fibra y minerales de hierro y potasio, no por gusto el legendario y musculoso Popeye la escogi\u00f3 como su primer alimento. Cruda o cocida, en sopas o en ensaladas, salud de hierro se augura a todo el que generosamente la consuma.",
-            "icon": "images\/icons\/espinaca.svg",
+            "icon": "icons\/espinaca.svg",
             "name_origin": null,
             "center_origin": [
                 "III"
@@ -891,7 +891,7 @@
             "common_name": "estrag\u00f3n",
             "common_name_alternate": null,
             "description": "No hay aut\u00e9ntico mojito cubano sin estrag\u00f3n, vers\u00e1til y arom\u00e1tica hierba, condimento y ali\u00f1o a la vez de carnes blancas y rojas, sopas y ensaladas. Digno de aplausos por sus propiedades antioxidantes y digestivas, y rico en potasio, hierro y vitaminas A, B6 y C, el estrag\u00f3n ser\u00e1 por siempre un aliado de su buena salud.",
-            "icon": "images\/icons\/estragon.svg",
+            "icon": "icons\/estragon.svg",
             "name_origin": null,
             "center_origin": [
                 "V"
@@ -913,7 +913,7 @@
             "common_name": "fresa",
             "common_name_alternate": null,
             "description": "Absolutamente congruentes su estilizado perfil est\u00e9tico y su grato sabor. La fresa, antioxidante infalible y reductora ejemplar de la presi\u00f3n arterial, suele comerse cruda, en batidos, en mermeladas, pasteles, helados, cereales y yogurt.",
-            "icon": "images\/icons\/fresa.svg",
+            "icon": "icons\/fresa.svg",
             "name_origin": null,
             "center_origin": [
                 "V"
@@ -935,7 +935,7 @@
             "common_name": "frijol",
             "common_name_alternate": null,
             "description": "La variedad de platos que podr\u00e1 elaborar con cualquiera de los colores dentro de la gama que ofrece el frijol, lo convierte en una legumbre multifac\u00e9tica. Ya sea en sopas, refritos, empanadas o, acompa\u00f1ando en el pinto a su inseparable hermano el arroz, no hay manera de servir una buena mesa sin el frijol.",
-            "icon": "images\/icons\/frijol.svg",
+            "icon": "icons\/frijol.svg",
             "name_origin": null,
             "center_origin": [
                 "VII"
@@ -957,7 +957,7 @@
             "common_name": "garbanzo",
             "common_name_alternate": null,
             "description": "Los garbanzos, vers\u00e1tiles y ricos en prote\u00ednas, se integran perfectamente en carnes, sopas, pastas, s\u00e1ndwiches, ensaladas o en un delicioso hummus casero. Adem\u00e1s, estas legumbres, al aumentar su tama\u00f1o hasta tres veces al cocinarse, llenan el est\u00f3mago hasta la saciedad.",
-            "icon": "images\/icons\/garbanzo.svg",
+            "icon": "icons\/garbanzo.svg",
             "name_origin": null,
             "center_origin": [
                 "III",
@@ -980,7 +980,7 @@
             "common_name": "granadilla",
             "common_name_alternate": null,
             "description": "Licuada y mezclada con agua o con leche y algo de az\u00facar o miel, la pulpa de la fruta de la granadilla termina siendo un jugo o un batido impostergable. Pero, adem\u00e1s, pescados, pollos, c\u00f3cteles, ensaladas y mariscos miran siempre agradecidos a la granadilla cuando esta se ofrece a acompa\u00f1arlos en la preparaci\u00f3n de diversos platillos culinarios.  ",
-            "icon": "images\/icons\/granadilla.svg",
+            "icon": "icons\/granadilla.svg",
             "name_origin": null,
             "center_origin": [
                 "VIII"
@@ -1002,7 +1002,7 @@
             "common_name": "guan\u00e1bana",
             "common_name_alternate": null,
             "description": "\u00a1Una delicia en fresco! La guan\u00e1bana es dulce y refrescante, lo que la hace un fruto muy popular en Costa Rica. Su deliciosa pulpa blanca es protegida por el exterior verde y espinas de la fruta. \u00a1Ven como no hay que juzgar a un libro por su portada!",
-            "icon": "images\/icons\/guanabana.svg",
+            "icon": "icons\/guanabana.svg",
             "name_origin": null,
             "center_origin": [
                 "VII",
@@ -1026,7 +1026,7 @@
             "common_name": "guayaba",
             "common_name_alternate": null,
             "description": "Autora de quiz\u00e1s la mermelada m\u00e1s ic\u00f3nica de la regi\u00f3n, la guayaba contiene incluso m\u00e1s vitamina C que los c\u00edtricos, por lo que est\u00e1 a la cabeza cuando de fortalecer nuestro sistema inmunol\u00f3gico se trata. Con su masa suave y cremosa, cada mordisco es un testimonio de la generosidad de la naturaleza. ",
-            "icon": "images\/icons\/guayaba.svg",
+            "icon": "icons\/guayaba.svg",
             "name_origin": null,
             "center_origin": [
                 "VII"
@@ -1048,7 +1048,7 @@
             "common_name": "hierbabuena",
             "common_name_alternate": null,
             "description": "Ciertamente buena, esta hierba mentolada, preparada en forma de t\u00e9 o infusiones, ayuda a paliar problemas digestivos, intestinales y del h\u00edgado, y reduce los mareos. Su fresco sabor prevalece en las ensaladas y en las salsas que con hierbabuena se elaboran para acompa\u00f1ar algunas carnes.",
-            "icon": "images\/icons\/hierbabuena.svg",
+            "icon": "icons\/hierbabuena.svg",
             "name_origin": null,
             "center_origin": [
                 "V",
@@ -1072,7 +1072,7 @@
             "common_name": "hinojo",
             "common_name_alternate": null,
             "description": "Verdura de milenaria utilidad, no es poca la historia humana que su culinario pedigree ha visto pasar, crudo o cocido, desde las hojas hasta el bulbo, entre caldos, pescados y guisos, el vitam\u00ednico y anisado hinojo.  ",
-            "icon": "images\/icons\/hinojo.svg",
+            "icon": "icons\/hinojo.svg",
             "name_origin": null,
             "center_origin": [
                 "V"
@@ -1094,7 +1094,7 @@
             "common_name": "hongo",
             "common_name_alternate": null,
             "description": "Secos, asados, salteados, como condimento para sopas, o como guarnici\u00f3n para acompa\u00f1ar pastas, carnes, verduras o pescados, los hongos comestibles, adem\u00e1s de su ex\u00f3tica manera de dejarse ver, aportan una carga considerable de vitaminas, minerales y prote\u00ednas. ",
-            "icon": "images\/icons\/hongo.svg",
+            "icon": "icons\/hongo.svg",
             "name_origin": null,
             "center_origin": [
                 "V"
@@ -1116,7 +1116,7 @@
             "common_name": "jengibre",
             "common_name_alternate": null,
             "description": "Su sabor picante contribuye a resaltar los sabores de varios platos. Fresco y rallado, enriquece las ensaladas, los sofritos, las salsas. De invaluable ayuda al marinar carnes y pescados, el jengibre tiene adem\u00e1s un valor agregado como analg\u00e9sico, antiinflamatorio y antis\u00e9ptico.",
-            "icon": "images\/icons\/jengibre.svg",
+            "icon": "icons\/jengibre.svg",
             "name_origin": null,
             "center_origin": [
                 "II"
@@ -1138,7 +1138,7 @@
             "common_name": "jocote",
             "common_name_alternate": null,
             "description": "Rico en vitamina C y antioxidantes, el agridulce fruto del jocote es parte importante de la cultura tica y su amplio espectro culinario va desde el pan de jocote, las mermeladas, los frescos y los pasteles, hasta el simple jocote con sal.",
-            "icon": "images\/icons\/jocote.svg",
+            "icon": "icons\/jocote.svg",
             "name_origin": null,
             "center_origin": [
                 "VII"
@@ -1160,7 +1160,7 @@
             "common_name": "kale",
             "common_name_alternate": "col rizada",
             "description": "Si hubiera un premio por la verdura m\u00e1s saludable, la col rizada (o kale) estar\u00eda en los primeros lugares. Una fuente enorme en vitaminas y minerales; adem\u00e1s de tener un bajo contenido cal\u00f3rico, el kale se puede usar en batidos, ensaladas o hasta cruda.",
-            "icon": "images\/icons\/kale.svg",
+            "icon": "icons\/kale.svg",
             "name_origin": null,
             "center_origin": [
                 "V"
@@ -1182,7 +1182,7 @@
             "common_name": "kiwi",
             "common_name_alternate": null,
             "description": "Incluida entre las frutas que m\u00e1s contribuyen a consolidar la salud humana, el kiwi destaca por su s\u00f3lida carga vitam\u00ednica. De sabor inconfundible, su verde pulpa se disfruta de forma singular. Puede usted incluirlo como parte de un delicioso coctel de frutas, en un batido, o, incluso, degustarlo como mermelada.",
-            "icon": "images\/icons\/kiwi.svg",
+            "icon": "icons\/kiwi.svg",
             "name_origin": null,
             "center_origin": [
                 "II",
@@ -1205,7 +1205,7 @@
             "common_name": "lechuga",
             "common_name_alternate": null,
             "description": "La lechuga est\u00e1 compuesta por alrededor de un 95% de agua, lo que le aporta un toque extra fresco a sus comidas y la convierte en un alimento altamente hidratante. Desate todo su potencial al combinarla con otros ingredientes, ya sea en ensaladas, s\u00e1ndwiches o wraps.",
-            "icon": "images\/icons\/lechuga.svg",
+            "icon": "icons\/lechuga.svg",
             "name_origin": null,
             "center_origin": [
                 "V"
@@ -1227,7 +1227,7 @@
             "common_name": "lenteja",
             "common_name_alternate": null,
             "description": "He aqu\u00ed las ganadoras del aporte proteico entre las legumbres. Ricas en fibra y aliadas para bajar el colesterol, estas legumbres coronan desde guisos hasta ensaladas con su sabor y nutrici\u00f3n. ",
-            "icon": "images\/icons\/lenteja.svg",
+            "icon": "icons\/lenteja.svg",
             "name_origin": null,
             "center_origin": [
                 "IV",
@@ -1250,7 +1250,7 @@
             "common_name": "lim\u00f3n",
             "common_name_alternate": null,
             "description": "No ha vivido del todo quien no haya tomado una limonada bien fr\u00eda, ni ha comido sabroso aquel que no haya utilizado un lim\u00f3n al sazonar sus alimentos, al preparar pescados y carnes. Sin rivales a la hora de marinar y aromatizar alimentos, el lim\u00f3n es tambi\u00e9n el comod\u00edn todoterreno de la cocina",
-            "icon": "images\/icons\/limon.svg",
+            "icon": "icons\/limon.svg",
             "name_origin": null,
             "center_origin": [
                 "II"
@@ -1272,7 +1272,7 @@
             "common_name": "linaza",
             "common_name_alternate": null,
             "description": "El boom de las semillas de linaza lo consolid\u00f3 su aporte de Omega 3 a la salud humana y su incorporaci\u00f3n a los panes y galletas integrales. Molida e incluida en ensaladas, sopas, cremas, como infusi\u00f3n o en el yogur en el desayuno, la semilla de linaza es hoy por hoy un estandarte culinario",
-            "icon": "images\/icons\/linaza.svg",
+            "icon": "icons\/linaza.svg",
             "name_origin": null,
             "center_origin": [
                 "V"
@@ -1294,7 +1294,7 @@
             "common_name": "ma\u00edz",
             "common_name_alternate": null,
             "description": "El ma\u00edz, planta sagrada entre los ind\u00edgenas de Am\u00e9rica, se destaca por la creatividad culinaria en torno a \u00e9l  y por su alto aporte de energ\u00eda. Patrimonio cultural costarricense, esta verdura es la base de las chorreadas, bizcochos y diversas creaciones culinarias, tanto dulces como saladas.",
-            "icon": "images\/icons\/maiz.svg",
+            "icon": "icons\/maiz.svg",
             "name_origin": null,
             "center_origin": [
                 "VII"
@@ -1316,7 +1316,7 @@
             "common_name": "malanga",
             "common_name_alternate": null,
             "description": "No hay cuerpo humano que no agradezca un buen pur\u00e9 de malanga, unas frituras de malanga, un trozo de carne o unas legumbres acompa\u00f1adas por una raci\u00f3n de malanga, ese tub\u00e9rculo controlador natural de la glucemia y reductor de indeseados eventos cardiovasculares.",
-            "icon": "images\/icons\/malanga.svg",
+            "icon": "icons\/malanga.svg",
             "name_origin": null,
             "center_origin": [
                 "II"
@@ -1338,7 +1338,7 @@
             "common_name": "mandarina",
             "common_name_alternate": null,
             "description": "Deliciosa fruta para saborear entera, gajo a gajo, o en jugo. La mandarina es tan singular por su dulce sabor, que uno termina coloc\u00e1ndola entre los c\u00edtricos favoritos. Las habituales infusiones hechas con su c\u00e1scara la convierten en una fruta completamente aprovechable en t\u00e9rminos culinarios.",
-            "icon": "images\/icons\/mandarina.svg",
+            "icon": "icons\/mandarina.svg",
             "name_origin": null,
             "center_origin": [
                 "I"
@@ -1360,7 +1360,7 @@
             "common_name": "mango",
             "common_name_alternate": null,
             "description": "El mango no solo aporta generosas dosis de vitaminas A y C, sino que, adem\u00e1s, nuestra piel y huesos agradecen su consumo. Vers\u00e1til fruta tropical de m\u00faltiples usos culinarios, podemos comerla cruda, en batidos, en ensaladas, incorporarla a la reposter\u00eda, cocinarla a la plancha e, incluso, comerla deshidratada como crujiente snack.",
-            "icon": "images\/icons\/mango.svg",
+            "icon": "icons\/mango.svg",
             "name_origin": null,
             "center_origin": [
                 "II"
@@ -1382,7 +1382,7 @@
             "common_name": "manzana",
             "common_name_alternate": null,
             "description": "La manzana es, quiz\u00e1, la reina de las frutas. Proveedora de vitaminas B y C y de minerales como calcio y f\u00f3sforo, puede usted disfrutarla cruda o en compotas, pasteles, guisos, postres o como otro sano ingrediente en ensaladas. \"Una manzana al d\u00eda, al doctor alejar\u00eda\", reza un viejo refr\u00e1n.",
-            "icon": "images\/icons\/manzana.svg",
+            "icon": "icons\/manzana.svg",
             "name_origin": null,
             "center_origin": [
                 "III"
@@ -1404,7 +1404,7 @@
             "common_name": "manzana de agua",
             "common_name_alternate": null,
             "description": "Fruta carnosa y m\u00e1s jugosa que la manzana habitual, suele comerse fresca, a mordiscos. De haberse comido Eva una manzana de agua, es probable que no hubiera querido compartirla, y las Sagradas Escrituras y la especie humana habr\u00edamos tomado quiz\u00e1 otro rumbo.",
-            "icon": "images\/icons\/manzanadeagua.svg",
+            "icon": "icons\/manzanadeagua.svg",
             "name_origin": null,
             "center_origin": [
                 "IV",
@@ -1427,7 +1427,7 @@
             "common_name": "manzanilla",
             "common_name_alternate": null,
             "description": "Un t\u00e9 de flores y hojas de manzanilla siempre ser\u00e1 oportuno para aliviar los s\u00edntomas de un resfriado, como infusi\u00f3n digestiva o relajante, y para calmar los mareos. Su aroma es, adem\u00e1s, ingrediente de algunas sopas y sugerentes salsas que se utilizan para cocer el pollo. ",
-            "icon": "images\/icons\/manzanilla.svg",
+            "icon": "icons\/manzanilla.svg",
             "name_origin": null,
             "center_origin": [
                 "IV",
@@ -1450,7 +1450,7 @@
             "common_name": "maracuy\u00e1",
             "common_name_alternate": null,
             "description": "Si desea comer cruda esta fruta, agarre usted una cuchara y disfrute la pulpa gelatinosa del maracuy\u00e1. Tambi\u00e9n puede licuarla y tomarla a la manera de un batido, pero si cocinarla es la intenci\u00f3n, las deliciosas cremas, tartas y mermeladas de maracuy\u00e1 lo esperan.",
-            "icon": "images\/icons\/maracuya.svg",
+            "icon": "icons\/maracuya.svg",
             "name_origin": null,
             "center_origin": [
                 "VIIIb"
@@ -1472,7 +1472,7 @@
             "common_name": "melocot\u00f3n",
             "common_name_alternate": null,
             "description": "Ya sea para comerlo a puros mordiscos o en ensaladas de frutas; o cocinado ya, en mermeladas, pasteles y postres, siempre le ayudar\u00e1 esta fruta antioxidante con textura de terciopelo a detener el tiempo y a reducir sus niveles de colesterol y su presi\u00f3n arterial.",
-            "icon": "images\/icons\/melocoton.svg",
+            "icon": "icons\/melocoton.svg",
             "name_origin": null,
             "center_origin": [
                 "I"
@@ -1494,7 +1494,7 @@
             "common_name": "mel\u00f3n",
             "common_name_alternate": null,
             "description": "Tal vez la m\u00e1s refrescante de las frutas, aunque se puede consumir en ensaladas, como jugo, o en escabeche, el mel\u00f3n se digiere y aprovecha mejor si se lo come solo. Rico en vitamina C y antioxidantes, los calores del verano se aten\u00faan mejor disfrutando un mel\u00f3n.   ",
-            "icon": "images\/icons\/melon.svg",
+            "icon": "icons\/melon.svg",
             "name_origin": null,
             "center_origin": [
                 "VI",
@@ -1517,7 +1517,7 @@
             "common_name": "menta",
             "common_name_alternate": null,
             "description": "Por su peculiar, intenso y grato olor y sabor es la menta un aromatizante natural hasta de la propia vida. C\u00f3cteles, infusiones, postres, helados, ensaladas, y algunas ex\u00f3ticas recetas de pollo y pescado con la menta como base o ingrediente no dejan espacio a dudas.",
-            "icon": "images\/icons\/menta.svg",
+            "icon": "icons\/menta.svg",
             "name_origin": null,
             "center_origin": [
                 "V"
@@ -1539,7 +1539,7 @@
             "common_name": "mora",
             "common_name_alternate": null,
             "description": "Peque\u00f1a fruta silvestre que entre las bayas por su sabor y valor se agiganta. La mora es un antiinflamatorio y antioxidante rico en vitaminas A y C, a la que, ya sea en su forma natural, o en pasteles, yogures, jaleas, mermeladas o siropes, su paladar y su salud un monumento le levantan.",
-            "icon": "images\/icons\/mora.svg",
+            "icon": "icons\/mora.svg",
             "name_origin": null,
             "center_origin": [
                 "V",
@@ -1562,7 +1562,7 @@
             "common_name": "mostaza china",
             "common_name_alternate": null,
             "description": "Cruda, o cocida, agr\u00e9guele unas hojas de mostaza china a sus ensaladas, a sus carnes, al chop suey, al arroz frito, a los huevos, y estar\u00e1 usted, sin propon\u00e9rselo acaso, agregando un pasajero m\u00e1s a una de las regiones m\u00e1s saludables de la cultura culinaria.  ",
-            "icon": "images\/icons\/mostazachina.svg",
+            "icon": "icons\/mostazachina.svg",
             "name_origin": null,
             "center_origin": [
                 "IV",
@@ -1585,7 +1585,7 @@
             "common_name": "mozote",
             "common_name_alternate": null,
             "description": "An\u00edmese usted a tomar un fresco elaborado con el le\u00f1oso tallo del mozote y ya ver\u00e1 c\u00f3mo su est\u00f3mago se refresca y, adem\u00e1s, se lo agradece. T\u00f3melo solo, t\u00f3melo mezclado con Tamarindo o con Cas, con algo de az\u00facar o con vainilla, pero t\u00f3melo.  ",
-            "icon": "images\/icons\/mozote.svg",
+            "icon": "icons\/mozote.svg",
             "name_origin": null,
             "center_origin": [
                 "VII",
@@ -1608,7 +1608,7 @@
             "common_name": "\u00f1ame",
             "common_name_alternate": null,
             "description": "El \u00f1ame se deja comer como mejor le parezca a usted; frito, al vapor, al horno o hervido. Dado su bajo costo, su buen sabor y su riqueza en potasio, f\u00f3sforo, calcio y vitamina C, el \u00f1ame puede llegar a ser un tub\u00e9rculo infaltable en la mesa de cada hogar.",
-            "icon": "images\/icons\/name.svg",
+            "icon": "icons\/name.svg",
             "name_origin": null,
             "center_origin": [
                 "II"
@@ -1630,7 +1630,7 @@
             "common_name": "\u00f1amp\u00ed",
             "common_name_alternate": "malanga",
             "description": "Puede que no sea tan conocida como la yuca o el camote, pero la malanga no tiene nada que envidiarle a estos otros tub\u00e9rculos. Es un excelente complemento para una olla de carne o puede, incluso, hacerla en picadillo.",
-            "icon": "images\/icons\/nampi.svg",
+            "icon": "icons\/nampi.svg",
             "name_origin": null,
             "center_origin": [
                 "VII",
@@ -1653,7 +1653,7 @@
             "common_name": "naranja",
             "common_name_alternate": null,
             "description": "Haya encontrado o no usted a su media naranja, siempre tendr\u00e1 ocasi\u00f3n de cortar en dos mitades, exprimir y disfrutar el sabroso jugo de una refrescante y dulce naranja real. Por las tierras de las cremas pasteleras a la c\u00e1scara de la naranja sin recogimiento alguno se la ve pasar.",
-            "icon": "images\/icons\/naranja.svg",
+            "icon": "icons\/naranja.svg",
             "name_origin": null,
             "center_origin": [
                 "I"
@@ -1675,7 +1675,7 @@
             "common_name": "or\u00e9gano",
             "common_name_alternate": null,
             "description": "Condimento indispensable para carnes, pastas, verduras, pizzas, salsas, pescados, quesos, ensaladas y sopas. Especia de lujo en cualquier cocina, el sabor y el aroma de su comida se enriquecer\u00e1n siempre con un toque de or\u00e9gano.",
-            "icon": "images\/icons\/oregano.svg",
+            "icon": "icons\/oregano.svg",
             "name_origin": null,
             "center_origin": [
                 "V"
@@ -1697,7 +1697,7 @@
             "common_name": "palmito",
             "common_name_alternate": null,
             "description": "Entre los platos m\u00e1s aut\u00e9nticos de la cocina tica est\u00e1 el arroz con palmito. Casi siempre en rodajas, puede cocerlo de varias maneras: al vapor, sofrito, al horno, asado o a la parrilla. En asuntos de salud, encontrar\u00e1 en el palmito un vegetal hipocal\u00f3rico que aporta fibra y vitaminas.",
-            "icon": "images\/icons\/palmito.svg",
+            "icon": "icons\/palmito.svg",
             "name_origin": null,
             "center_origin": [
                 "VIII"
@@ -1719,7 +1719,7 @@
             "common_name": "papa",
             "common_name_alternate": null,
             "description": "Tub\u00e9rculo universal que de mil maneras podr\u00e1 elaborarar \u00a1C\u00f3mo podr\u00eda gozarse del todo la vida, sin una buena raci\u00f3n de papas fritas! Es la papa, adem\u00e1s, la madre de los pur\u00e9s, de las ensaladas y las sopas, de los alimentos hervidos, al horno, y de los snacks. La madre, en definitiva, de nuestros alimentos.",
-            "icon": "images\/icons\/papa.svg",
+            "icon": "icons\/papa.svg",
             "name_origin": null,
             "center_origin": [
                 "VIII"
@@ -1741,7 +1741,7 @@
             "common_name": "papaya",
             "common_name_alternate": null,
             "description": "Fruta tropical de dulce pulpa, se deja comer cruda y madura en jugosos trozos de un color naranja que recuerda ciertos bell\u00edsimos crep\u00fasculos. Pero no desaproveche la posibilidad de consumir tambi\u00e9n la digestiva papaya a la manera de un batido, un postre o una sabrosa mermelada. ",
-            "icon": "images\/icons\/papaya.svg",
+            "icon": "icons\/papaya.svg",
             "name_origin": null,
             "center_origin": [
                 "VII"
@@ -1763,7 +1763,7 @@
             "common_name": "pejibaye",
             "common_name_alternate": null,
             "description": "Nacido de palmera, el pejibaye es una fruta infaltable en la mesa tica. Suele prepararse de preferencia cocido en agua y sal, para comer caliente con mayonesa. Y no obstante, en ensaladas, sopas y pasteles tambi\u00e9n puede disfrutarse su peculiar sabor. ",
-            "icon": "images\/icons\/pejibaye.svg",
+            "icon": "icons\/pejibaye.svg",
             "name_origin": null,
             "center_origin": [
                 "VIII"
@@ -1785,7 +1785,7 @@
             "common_name": "pepino",
             "common_name_alternate": null,
             "description": "Es casi agua crujiente y el ganador en t\u00e9rminos de practicidad. Reb\u00e1nelo y est\u00e1 listo para ser a\u00f1adido a cualquier ensalada, pero no subestime lo bien que se lleva con los ingredientes de un salteado. Adem\u00e1s, por sus conocidas propiedades hidratantes y contenido de vitamina C, es esencial para una piel sana.",
-            "icon": "images\/icons\/pepino.svg",
+            "icon": "icons\/pepino.svg",
             "name_origin": null,
             "center_origin": [
                 "VIII"
@@ -1807,7 +1807,7 @@
             "common_name": "pera",
             "common_name_alternate": null,
             "description": "Dulce como la miel y jugosa como el durazno, la pera es una fruta alta en fibra que es perfecta para ensaladas de frutas, jugos o compotas. \u00a1Solo tiene que saber cu\u00e1ndo est\u00e1 en su punto!",
-            "icon": "images\/icons\/pera.svg",
+            "icon": "icons\/pera.svg",
             "name_origin": null,
             "center_origin": [
                 "IV",
@@ -1830,7 +1830,7 @@
             "common_name": "perejil",
             "common_name_alternate": null,
             "description": "Hierba arom\u00e1tica utilizada como condimento, el perejil forma, junto a la sal y el ajo, un equipo imperdible. Para preparar adobos, vinagretas, salsas, en sopas, para marinar o asar, el perejil levanta la mano que no tiene y da el paso al frente con la confianza de los triunfadores.",
-            "icon": "images\/icons\/perejil.svg",
+            "icon": "icons\/perejil.svg",
             "name_origin": null,
             "center_origin": [
                 "V"
@@ -1852,7 +1852,7 @@
             "common_name": "pi\u00f1a",
             "common_name_alternate": null,
             "description": "Alguna vez coronada como la fruta m\u00e1s ex\u00f3tica, hoy divide al mundo en el debate: pizza sin pi\u00f1a o con pi\u00f1a. Como quiera que sea, la pi\u00f1a siempre ha sido deliciosa y altamente vers\u00e1til. Es la base de bebidas y postres, adem\u00e1s de ser un excelente endulzante natural.",
-            "icon": "images\/icons\/pina.svg",
+            "icon": "icons\/pina.svg",
             "name_origin": null,
             "center_origin": [
                 "VIIIb"
@@ -1874,7 +1874,7 @@
             "common_name": "pitahaya",
             "common_name_alternate": "fruta del drag\u00f3n",
             "description": "La fruta del drag\u00f3n, o pitahaya, le da honor a su nombre por su peculiar forma: un exterior rosado y escamoso con un interior carnoso y delicioso. Esta fruta es ex\u00f3tica para el resto del mundo pero abundante en Costa Rica, lo que confirma cuanta suerte tenemos de vivir ac\u00e1.",
-            "icon": "images\/icons\/pitahaya.svg",
+            "icon": "icons\/pitahaya.svg",
             "name_origin": null,
             "center_origin": [
                 "VII"
@@ -1896,7 +1896,7 @@
             "common_name": "pl\u00e1tano",
             "common_name_alternate": null,
             "description": "No por ser su textura m\u00e1s dura que la fruta  del banano, es menos apreciado el pl\u00e1tano en la mesa tica. Ya sea frito verde como patac\u00f3n o en tiras, frito maduro, relleno de carne o queso, o hervido, el pl\u00e1tano, fuente de vitaminas A, B y C y minerales como el magnesio, es un rey en su trono sobre la mesa de los ticos.",
-            "icon": "images\/icons\/platano.svg",
+            "icon": "icons\/platano.svg",
             "name_origin": null,
             "center_origin": [
                 "IIa"
@@ -1918,7 +1918,7 @@
             "common_name": "puerro",
             "common_name_alternate": null,
             "description": "Verdura de alto calibre por su valor nutricional y efectos positivos en la salud como fuente de vitamina C y potasio, con un sabor a medio camino entre el ajo y la cebolla, el estilizado puerro se deja ver con frecuencia en las pasarelas en donde compiten las sopas, las cremas y las ensaladas.",
-            "icon": "images\/icons\/puerro.svg",
+            "icon": "icons\/puerro.svg",
             "name_origin": null,
             "center_origin": [
                 "IV"
@@ -1940,7 +1940,7 @@
             "common_name": "r\u00e1bano",
             "common_name_alternate": null,
             "description": "Hortaliza de sabor levemente picante, el r\u00e1bano suele comerse crudo, en rodajas y con frecuencia en ensaladas a las que aporta la peculiaridad de su sabor y la alegr\u00eda de su color. Rico en vitamina C, se le atribuyen, adem\u00e1s, propiedades digestivas y anticancer\u00edgenas",
-            "icon": "images\/icons\/rabano.svg",
+            "icon": "icons\/rabano.svg",
             "name_origin": null,
             "center_origin": [
                 "I"
@@ -1962,7 +1962,7 @@
             "common_name": "remolacha",
             "common_name_alternate": null,
             "description": "Hortaliza de sabor terroso y dulz\u00f3n e intenso color p\u00farpura. Para comer cruda  en rodajas, tiras, o rallada en ensaladas, o para comer hervida, asada o al vapor. Y si desea ponerse creativo en la cocina, avent\u00farese con el hummus o la crema fr\u00eda de remolacha.",
-            "icon": "images\/icons\/remolacha.svg",
+            "icon": "icons\/remolacha.svg",
             "name_origin": null,
             "center_origin": [
                 "V"
@@ -1984,7 +1984,7 @@
             "common_name": "repollo",
             "common_name_alternate": null,
             "description": "Guisada, al vapor, cruda, hervida, fermentada, en ensaladas, encurtida, por su suave sabor esta verdura se adec\u00faa a m\u00faltiples formas de preparaci\u00f3n. Desde tiempos del Imperio Romano se la venera por sus propiedades nutritivas y efectos positivos en la salud.",
-            "icon": "images\/icons\/repollo.svg",
+            "icon": "icons\/repollo.svg",
             "name_origin": null,
             "center_origin": [
                 "V"
@@ -2006,7 +2006,7 @@
             "common_name": "romero",
             "common_name_alternate": null,
             "description": "Sin llegar a comerse, el aporte aromatizante de esta hierba se agradece en la elaboraci\u00f3n de carnes, pescados, pollo, arroces y paellas. Su valor agregado como antioxidante y antiinflamatorio lo convierten en un protagonista de la cocina y los remedios caseros.   ",
-            "icon": "images\/icons\/romero.svg",
+            "icon": "icons\/romero.svg",
             "name_origin": null,
             "center_origin": [
                 "V"
@@ -2028,7 +2028,7 @@
             "common_name": "ruda",
             "common_name_alternate": null,
             "description": "La ruda es una hierba muy utilizada en la medicina alternativa, gracias a sus propiedades antiinflamatorias y antis\u00e9pticas. Ayuda a las mujeres con problemas menstruales, pero debe ser evitada por mujeres embarazadas y en per\u00edodo de lactancia.",
-            "icon": "images\/icons\/ruda.svg",
+            "icon": "icons\/ruda.svg",
             "name_origin": null,
             "center_origin": [
                 "V"
@@ -2050,7 +2050,7 @@
             "common_name": "s\u00e1bila",
             "common_name_alternate": null,
             "description": "Cruda o cocida, en platos fr\u00edos como ceviches y ensaladas, la s\u00e1bila se abre camino con fuerza en la cocina. Por sus efectos positivos para reducir las quemaduras y la psoriasis, adem\u00e1s de su riqueza en vitaminas A, B, C, E y \u00e1cido f\u00f3lico, en el mundo de la cosm\u00e9tica ya le tienden tambi\u00e9n sus alfombras rojas.",
-            "icon": "images\/icons\/sabila.svg",
+            "icon": "icons\/sabila.svg",
             "name_origin": null,
             "center_origin": [
                 "VI"
@@ -2072,7 +2072,7 @@
             "common_name": "salvia",
             "common_name_alternate": null,
             "description": "Su nombre, que significa \"salvar\" o \"curar\", refleja su versatilidad y propiedades beneficiosas. Desde aliviar trastornos estomacales hasta calmar el dolor de garganta, sus usos son innumerables. La salvia tambi\u00e9n puede realzar el sabor de carnes como el cerdo, pero su fragancia intensa exige moderaci\u00f3n en su uso.",
-            "icon": "images\/icons\/salvia.svg",
+            "icon": "icons\/salvia.svg",
             "name_origin": null,
             "center_origin": [
                 "V"
@@ -2094,7 +2094,7 @@
             "common_name": "sand\u00eda",
             "common_name_alternate": null,
             "description": "\u00a1No hay duda de que la sand\u00eda es imponente! El llamativo tono rojo de su carne se debe al licopeno, un poderoso antioxidante. Su elevado contenido de agua la hace derretirse en el paladar y la consagra como el s\u00edmbolo por excelencia del verano.",
-            "icon": "images\/icons\/sandia.svg",
+            "icon": "icons\/sandia.svg",
             "name_origin": null,
             "center_origin": [
                 "VI"
@@ -2116,7 +2116,7 @@
             "common_name": "tacaco",
             "common_name_alternate": null,
             "description": "Sin tacaco la t\u00edpica olla de carne tica no tiene raz\u00f3n de ser. Hervidos y servidos con mayonesa, o miel de dulce, tambi\u00e9n conocida como Piloncillo, el aut\u00f3ctono fruto del tacaco se afianza como un plato \u00fanicamente tico. El f\u00f3sforo, el hierro y la vitamina A, tienen en el tacaco un puerto seguro.",
-            "icon": "images\/icons\/tacaco.svg",
+            "icon": "icons\/tacaco.svg",
             "name_origin": null,
             "center_origin": [
                 "VII"
@@ -2138,7 +2138,7 @@
             "common_name": "tamarindo",
             "common_name_alternate": null,
             "description": "El tamarindo, joya agridulce, bautiza a los bagace\u00f1os como \"pansagrias\", por ser maestros para convertir sus frutos maduros en refrescantes jugos. Su pulpa, utilizada como condimento, a\u00f1ade un toque \u00fanico a diversos platillos alrededor del mundo, adem\u00e1s de ser un excelente diur\u00e9tico natural.",
-            "icon": "images\/icons\/tamarindo.svg",
+            "icon": "icons\/tamarindo.svg",
             "name_origin": null,
             "center_origin": [
                 "II"
@@ -2160,7 +2160,7 @@
             "common_name": "tiquisque",
             "common_name_alternate": null,
             "description": "Honorable tub\u00e9rculo rico en prote\u00ednas y carbohidratos, el tiquisque se come y se disfruta de la misma manera en frituras, que hervido, hecho pur\u00e9, crema o harina. Generoso en fibra diet\u00e9tica, el tiquisque reduce el colesterol al tiempo que ayuda a mejorar el proceso digestivo.",
-            "icon": "images\/icons\/tiquisque.svg",
+            "icon": "icons\/tiquisque.svg",
             "name_origin": null,
             "center_origin": [
                 "VII",
@@ -2183,7 +2183,7 @@
             "common_name": "tomate",
             "common_name_alternate": null,
             "description": "Culpe de una mala ensalada a la falta de un tomate. Originario de Am\u00e9rica, el tomate posee una pulpa jugosa y ligeramente \u00e1cida que lo convierte en la elecci\u00f3n predilecta para la creaci\u00f3n de salsas, aderezos y para acompa\u00f1ar una amplia variedad de platos. No es de extra\u00f1ar que sea el vegetal m\u00e1s popular.",
-            "icon": "images\/icons\/tomate.svg",
+            "icon": "icons\/tomate.svg",
             "name_origin": null,
             "center_origin": [
                 "VII"
@@ -2205,7 +2205,7 @@
             "common_name": "tomillo",
             "common_name_alternate": null,
             "description": "El tomillo, adem\u00e1s de tener propiedades medicinales, es una hierba arom\u00e1tica que aporta un sabor de fondo excepcional, enriqueciendo los platos sin dominarlos. Cuando se combina con aceite, se convierte en un aliado perfecto para realzar el sabor de carnes y panes.",
-            "icon": "images\/icons\/tomillo.svg",
+            "icon": "icons\/tomillo.svg",
             "name_origin": null,
             "center_origin": [
                 "V"
@@ -2227,7 +2227,7 @@
             "common_name": "toronja",
             "common_name_alternate": null,
             "description": "Deliciosa y refrescante fruta para consumir entera o en jugo, la toronja aporta una dosis considerable de vitaminas A, B y C a nuestro organismo. Preparada tambi\u00e9n en forma de casquitos, se convierte en un delicado postre con el que cerrar un almuerzo o cena.",
-            "icon": "images\/icons\/toronja.svg",
+            "icon": "icons\/toronja.svg",
             "name_origin": null,
             "center_origin": [
                 "VII",
@@ -2250,7 +2250,7 @@
             "common_name": "uchuva",
             "common_name_alternate": null,
             "description": "\u00bfQu\u00e9 pasar\u00eda si el tomate fuera dulce? \u00a1Ser\u00eda una uchuva! Esta ex\u00f3tica fruta, tambi\u00e9n referida como physalis, se puede consumir fresca, elaborada en mermeladas y jaleas o ba\u00f1ada en chocolate. Adem\u00e1s, se utiliza en salsas o, incluso, como aromatizante para helados. ",
-            "icon": "images\/icons\/uchuva.svg",
+            "icon": "icons\/uchuva.svg",
             "name_origin": null,
             "center_origin": [
                 "VIII"
@@ -2272,7 +2272,7 @@
             "common_name": "uva",
             "common_name_alternate": null,
             "description": "La materia primordial del vino, tan antiguo como la tradici\u00f3n humana. La uva, no solo es ampliamente vers\u00e1til, sino que tambi\u00e9n es muy f\u00e1cil de comer y almacenar, convirti\u00e9ndola en el aperitivo perfecto para una merienda escolar o un d\u00eda de campo.",
-            "icon": "images\/icons\/uva.svg",
+            "icon": "icons\/uva.svg",
             "name_origin": null,
             "center_origin": [
                 "V"
@@ -2294,7 +2294,7 @@
             "common_name": "vainica",
             "common_name_alternate": "jud\u00edas verdes, habichuelas verdes",
             "description": "La vainica, ideal para picadillos, es una elecci\u00f3n pr\u00e1ctica para variar las opciones verdes en el plato y a\u00f1adir un toque saludable. Pru\u00e9belas crudas, en ensaladas, salteadas o incorp\u00f3relas en sofritos con carne.",
-            "icon": "images\/icons\/vainica.svg",
+            "icon": "icons\/vainica.svg",
             "name_origin": null,
             "center_origin": [
                 "VII"
@@ -2316,7 +2316,7 @@
             "common_name": "yuca",
             "common_name_alternate": null,
             "description": "La yuca se roba el show cuando de aporte en carbohidratos se trata, \u00a1es una fuente de energ\u00eda imbatible! Esta ra\u00edz brilla en todas sus formas: frita, hervida, en pur\u00e9 o con salsa. Adem\u00e1s de ser deliciosa, es f\u00e1cil de digerir y una aliada para combatir padecimientos estomacales.",
-            "icon": "images\/icons\/yuca.svg",
+            "icon": "icons\/yuca.svg",
             "name_origin": null,
             "center_origin": [
                 "VIIIb"
@@ -2338,7 +2338,7 @@
             "common_name": "zacate lim\u00f3n",
             "common_name_alternate": null,
             "description": "No lo confunda usted con un simple zacate \u00a1Oh modelo de las buenas hierbas! El zacate lim\u00f3n, con su fragancia c\u00edtrica, no solo deleita los sentidos en infusiones y aceites, sino que tambi\u00e9n consiente al est\u00f3mago, fortalece las defensas, purifica la piel, combate el insomnio y la lista contin\u00faa.",
-            "icon": "images\/icons\/zacatelimon.svg",
+            "icon": "icons\/zacatelimon.svg",
             "name_origin": null,
             "center_origin": [
                 "II"
@@ -2360,7 +2360,7 @@
             "common_name": "zanahoria",
             "common_name_alternate": null,
             "description": "Su textura robusta y su tenue sabor complementan muy bien una amplia variedad de platos. Hervida en sopas, rayada en ensaladas y postres, o como delicia en crudo, esta verdura es vers\u00e1til y rica en betacaroteno . Y como si eso no fuera suficiente, adem\u00e1s es de larga duraci\u00f3n.",
-            "icon": "images\/icons\/zanahoria.svg",
+            "icon": "icons\/zanahoria.svg",
             "name_origin": null,
             "center_origin": [
                 "III"
@@ -2382,7 +2382,7 @@
             "common_name": "zapallo",
             "common_name_alternate": null,
             "description": "Digestiva hortaliza que su paladar y est\u00f3mago siempre agradecer\u00e1n. Ya sea hervido, crudo, o al horno, como crema, rallado, o en guisos, el zapallo sirve, adem\u00e1s, como elemento valioso en la primera dieta s\u00f3lida: apenas deje el pecho de su madre el beb\u00e9, ah\u00ed estar\u00e1 el zapallo esper\u00e1ndolo.",
-            "icon": "images\/icons\/zapallo.svg",
+            "icon": "icons\/zapallo.svg",
             "name_origin": null,
             "center_origin": [
                 "VIII",
@@ -2405,7 +2405,7 @@
             "common_name": "zucchini",
             "common_name_alternate": null,
             "description": "Dado su sabor neutral, se le combina sin contratiempos con otros ingredientes para formar platos tan diversos como chips al horno, pizzetas, pastas, tortillas, estofados y verduras salteadas. En rodajas, rallada, cruda, cocida, o en postres, esta hortaliza califica entre las m\u00e1s vers\u00e1tiles por sus m\u00faltiples usos culinarios. ",
-            "icon": "images\/icons\/zucchini.svg",
+            "icon": "icons\/zucchini.svg",
             "name_origin": null,
             "center_origin": [
                 "VII"
