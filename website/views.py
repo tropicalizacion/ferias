@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from marketplaces.models import Marketplace
-from .models import Announcement, Text
+from .models import Announcement, Text, Student
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.contrib.gis.db.models.functions import Distance
@@ -48,9 +48,13 @@ def acerca(request):
     text = Text.objects.filter(page="/sobre")
     texts = {}
     texts["hero"] = text.filter(section="hero").first()
+    texts["hero_desc"] = text.filter(section="hero_desc").first()
+
+    students = Student.objects.all().order_by("-factor")
     
     context = {
         "texts": texts,
+        "students": students,
     }
     
     return render(request, "sobre-proyecto.html", context)

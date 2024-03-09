@@ -10,33 +10,56 @@
 
 <!-- Hero -->
 <div class="px-4 pt-3 pb-5 text-center background-verde">
-    <div class="card col-lg-6 mx-auto bg-transparent border-0">
-        <h1 class="display-3 my-5 text-white title-deferia">
-            {{texts.hero.content}}
-        </h1>
-        <img src="{% static 'images/icons/banano.svg' %}" width="75px" class="index-sticker-1">
-        <img src="{% static 'images/icons/anona.svg' %}" width="75px" class="index-sticker-2">
-        <img src="{% static 'images/icons/berenjena.svg' %}" width="75px" class="index-sticker-3">
+    <div class="card col-lg-8 mx-auto bg-transparent border-0">
+        <h1 class="display-1 mt-5 text-white hero-deferia">{{ texts.hero.content }}</h1>
+        <div class="card col-lg-6 mx-auto bg-transparent border-0 mt-5">
+            <h3 class="title-deferia text-white">
+                Este es un proyecto del trabajo comunal universitario TC&#8209;691 <em>Tropicalización de la tecnología</em> de la Escuela de Ingeniería Eléctrica de la Universidad de Costa Rica
+                <br>
+                <img src="{% static 'images/logos/ucr_logo.png' %}" height="40px" alt="">
+                <img src="{% static 'images/logos/tcu_logo.png' %}" height="40px" alt="" class="mx-3 my-5">
+                <img src="{% static 'images/logos/eie_logo.png' %}" height="40px" alt="">
+            </h3>
+        </div>
     </div>
 </div>
 
-<!-- Ubicación de las ferias -->
-<div class="container mt-4">
-    <div class="d-flex justify-content-center">
-        <div class="col-lg-6 text-center">
-            <h1 class="display-5 display-deferia rojo">Nuestras consignas</h1>
-            <p class="lead">Las ferias están en las siete provincias del país.</p>
-        </div>
-    </div>
-    <div class="row row-cols-1 row-cols-md-2 g-4 py-4">
-        <div class="col">
-            <h3><i class="fa-solid fa-chart-simple verde"></i></i><br> Ferias por provincia</h3>
-        </div>
-        <div class="col-lg-6">
-            <h3><i class="fa-solid fa-map-location-dot rojo"></i><br> Mapa de las ferias</h3>
-            <div class="rounded-4" id="map" style="max-width: 768px; height: 325px;"></div>
-        </div>
-    </div>
+<!-- Presentación -->
+<div class="container mt-5">
+
+    <h2 class="text-center title-deferia verde">{{ texts.hero_desc.content }}</h2>
+
+    <p class="lead text-center">Contacto: <a href="mailto:tropicalizacion@ucr.ac.cr" target="_blank">tropicalizacion@ucr.ac.cr</a></p>
+
+    <hr>
+
+    <h4>Dirección</h4>
+    <p class="lead">
+        <span class="fw-bold">Fabián Abarca Calderón</span> <br>
+        <em>Escuela de Ingeniería Eléctrica</em> <br>
+        <em>Universidad de Costa Rica</em> <br>
+        <span class="small"><a href="mailto:fabian.abarca@ucr.ac.cr" target="_blank">fabian.abarca@ucr.ac.cr</a></span>
+    </p>
+
+    <h4>Estudiantes</h4>
+
+    <dl>
+        {% for student in students %}
+        <dt><strong>{{ student.name }} {{ student.last_name }}</strong> <br> <em>{{ student.career }}</em></dt>
+        <dd>{{ student.work }}</dd>
+        {% endfor %}
+    </dl>
+
+    <h4>Amigas y amigos del TCU</h4>
+
+    <p>¡Gracias a las siguientes personas que nos ayudaron a financiar el sitio web!</p>
+
+    <ul>
+        <li>Tamires Santana y Gustavo Núñez</li>
+        <li>Chloe Lohmeyer y Cris Montoya</li>
+        <li>Sofía Abarca y Pablo Berthely</li>
+    </ul>
+
 </div>
 
 {% endblock %}
