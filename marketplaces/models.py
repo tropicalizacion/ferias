@@ -30,6 +30,11 @@ class Marketplace(models.Model):
         ("street_side", "al lado de la calle en espacio dedicado"),
         ("surface", "un un espacio amplio de parqueo"),
     ]
+    MARKETPLACE_TYPE_CHOICES = [
+        ("feria", "Feria del Agricultor"),
+        ("mercado", "Mercado Libre"),
+        ("otro", "Otro tipo de feria"),
+    ]
 
     marketplace_url = models.CharField(max_length=50, primary_key=True)
     # General information
@@ -37,23 +42,26 @@ class Marketplace(models.Model):
     name_alternate = models.CharField(max_length=127, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
     opening_hours = models.CharField(max_length=1023, blank=True, null=True)
-    opening_date = models.DateField(blank=True, null=True)
     location = models.PointField(blank=True, null=True)
     area = models.PolygonField(blank=True, null=True)
+    size = models.CharField(choices=SIZE_CHOICES, max_length=2, blank=True, null=True)
     province = models.CharField(max_length=31)
     canton = models.CharField(max_length=31)
     district = models.CharField(max_length=31)
     postal_code = models.IntegerField(blank=True, null=True)
     address = models.TextField(blank=True, null=True)
-    size = models.CharField(choices=SIZE_CHOICES, max_length=2, blank=True, null=True)
     phone = models.IntegerField(blank=True, null=True)
     email = models.EmailField(max_length=127, blank=True, null=True)
-    website = models.URLField(max_length=127, blank=True, null=True)
-    instagram = models.URLField(max_length=127, blank=True, null=True)
-    facebook = models.URLField(max_length=127, blank=True, null=True)
+    website = models.URLField(max_length=255, blank=True, null=True)
+    facebook = models.URLField(max_length=255, blank=True, null=True)
+    instagram = models.URLField(max_length=255, blank=True, null=True)
+    opening_date = models.DateField(blank=True, null=True)
     operator = models.CharField(max_length=255, blank=True, null=True)
     branch = models.CharField(
         choices=BRANCH_CHOICES, max_length=63, blank=True, null=True
+    )
+    marketplace_type = models.CharField(
+        max_length=31, choices=MARKETPLACE_TYPE_CHOICES, blank=True, null=True
     )
     # Infrastructure
     parking = models.CharField(
@@ -72,6 +80,7 @@ class Marketplace(models.Model):
     butcher = models.BooleanField(blank=True, null=True)
     dairy = models.BooleanField(blank=True, null=True)
     seafood = models.BooleanField(blank=True, null=True)
+    spices = models.BooleanField(blank=True, null=True)
     garden_centre = models.BooleanField(blank=True, null=True)
     florist = models.BooleanField(blank=True, null=True)
     # Other

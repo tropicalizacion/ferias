@@ -63,11 +63,14 @@ def ferias(request):
 
     marketplaces_map = []
     for marketplace in marketplaces:
-        marketplace_dict = {}
-        marketplace_dict["name"] = marketplace.name
-        marketplace_dict["latitude"] = marketplace.location.y
-        marketplace_dict["longitude"] = marketplace.location.x
-        marketplaces_map.append(marketplace_dict)    
+        try:
+            marketplace_dict = {}
+            marketplace_dict["name"] = marketplace.name
+            marketplace_dict["latitude"] = marketplace.location.y
+            marketplace_dict["longitude"] = marketplace.location.x
+            marketplaces_map.append(marketplace_dict)
+        except:
+            pass  
     marketplaces_map = json.dumps(marketplaces_map)
     
     context = {
