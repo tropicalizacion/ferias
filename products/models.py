@@ -18,21 +18,22 @@ class Product(models.Model):
     ]
 
     product_url = models.CharField(
-        primary_key=True, max_length=63, blank=False, null=False
+        primary_key=True, max_length=63
     )
-    common_name = models.CharField(max_length=63, blank=False, null=False)
-    common_name_alternate = models.CharField(max_length=127, blank=True, null=True)
     category = models.CharField(choices=CATEGORY_CHOICES, max_length=15)
+    common_name = models.CharField(max_length=63)
+    common_name_alternate = models.TextField(blank=True, null=True)
     description = models.TextField(blank=True, null=True)
-    icon = models.ImageField(upload_to="icons", blank=True, null=True)
+    icon = models.ImageField(upload_to="images/icons", blank=True, null=True)
+    name_origin = models.TextField(blank=True, null=True)
+    center_origin = models.ManyToManyField("Origin", blank=True)
+    center_origin_notes = models.TextField(blank=True, null=True)
     food_basket = models.BooleanField(default=False)
     nutrition_notes = models.TextField(blank=True, null=True)
     preparation = models.ManyToManyField("Preparation", blank=True)
     preparation_notes = models.TextField(blank=True, null=True)
     storage = models.ManyToManyField("Storage", blank=True)
     storage_notes = models.TextField(blank=True, null=True)
-    center_origin = models.ManyToManyField("Origin", blank=True)
-    center_origin_notes = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return self.common_name

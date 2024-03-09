@@ -7,12 +7,11 @@
 import pandas
 
 # leer csv y acondicionar dataframe
-table = pandas.read_csv("product.csv")
+table = pandas.read_csv("products_product.csv")
 
 # elimina todas las filas que no tengan
 # un pk y columnas ACTUALIZAR
 table.rename(columns={"product_url":"pk"}, inplace=True)
-table.drop(columns=["ACTUALIZAR", "ACTUALIZAR.1"], inplace=True)
 table = table[table["pk"].notnull()]
 
 # convertir la columna center_origin de string a lista
@@ -35,4 +34,4 @@ table = table[["model", "pk"]]
 table["fields"] = [table_fields[i].to_dict() for i in range(table.shape[0])]
 
 # exportar dataframe a JSON
-table.to_json("product.json", orient="records")
+table.to_json("products_product.json", orient="records")

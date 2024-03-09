@@ -6,18 +6,19 @@
             "category": "verdura",
             "common_name": "acelga",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "La acelga, al igual que la espinaca, brilla en ensaladas, pues aporta frescura y un inmenso valor nutricional. Reconocida por su alto aporte en minerales y vitaminas esenciales, es la adici\u00f3n perfecta para una dieta equilibrada.",
+            "icon": "images\/icons\/acelga.svg",
+            "name_origin": null,
             "center_origin": [
                 "VI"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "La cocina et\u00edope, rica en opciones vegetarianas, ha visto nacer a la acelga en sus tierras y ha sido la primera en acogerla como un ingrediente esencial en sus deliciosas recetas verdes.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "La acelga, rica en vitaminas A, C y K y minerales esenciales para el buen funcionamiento del organismo, como magnesio, hierro y potasio, tambi\u00e9n ayuda a regular los procesos digestivos. Su elevado contenido de vitamina K ayuda a mantener sanos los huesos y la sangre.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En un recipiente cerrado con poca humedad"
         }
     },
     {
@@ -26,19 +27,20 @@
         "fields": {
             "category": "fruta",
             "common_name": "aguacate",
-            "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "common_name_alternate": "palta",
+            "description": "\u00bfFruta o verdura? No importa, igual es delicioso. El aguacate es parte important\u00edsima de nuestra dieta y de nuestra cultura. Es un alimento muy nutritivo y vers\u00e1til, que se puede comer en ensaladas, guacamole y salsas, \u00a1y tambi\u00e9n en recetas dulces!",
+            "icon": "images\/icons\/aguacate.svg",
+            "name_origin": null,
             "center_origin": [
-                "II"
+                "VII"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Esta fruta fue sumamente importante en la dieta de las culturas nativas de Mesoam\u00e9rica, y hasta nuestra \u00e9poca sigue siendo un alimento din\u00e1mico que se utiliza tanto para platillos dulces como salados.",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "Entre sus m\u00e1s s\u00f3lidos nutrientes cuenta el aguacate con las vitaminas A, C y E. El aguacate es un reductor natural de los niveles de colesterol malo en sangre gracias a su destacada oferta de grasas saludables.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "El jugo de lim\u00f3n conservar\u00e1 la superficie del aguacate para evitar que se oscurezca"
         }
     },
     {
@@ -48,60 +50,63 @@
             "category": "verdura",
             "common_name": "ajo",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Aleja a los vampiros, pero atrae a los buenos sabores a los platos. Integrante estrella de la triada de la saz\u00f3n junto con el ajo y el chile dulce, no hay sofrito que se respete sin la presencia de un diente de ajo. Este saborizante natural,adem\u00e1s, fortalece su sistema inmunol\u00f3gico.",
+            "icon": "images\/icons\/ajo.svg",
+            "name_origin": null,
             "center_origin": [
                 "III"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Aparte de ser utilizado como un condimento para los alimentos, tambi\u00e9n se ha utilizado en la India como loci\u00f3n antibacterial para lavar heridas. Esto debido a sus propiedades antis\u00e9pticas.",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "Aunque su base nutricional se apoya sobre todo en sus componentes sulfurados (alicina, dialil sulfidos), el ajo tambi\u00e9n aporta f\u00f3sforo, potasio, magnesio, selenio, vitamina B6, yodo y prote\u00ednas. Su consumo fortalece adem\u00e1s los vasos sangu\u00edneos.\r",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Siempre en un sitio oscuro y seco"
         }
     },
     {
         "model": "products.product",
         "pk": "albahaca",
         "fields": {
-            "category": "verdura",
+            "category": "hierba",
             "common_name": "albahaca",
-            "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "common_name_alternate": "albaca, alf\u00e1bega, alh\u00e1bega",
+            "description": "Lleve sus platos de pasta a un nivel superior con el sabor agregado de la albahaca. Incorpore a las ensaladas su aroma mediterr\u00e1neo o termine su d\u00eda prepar\u00e1ndola como un t\u00e9 relajante.",
+            "icon": "images\/icons\/albahaca.svg",
+            "name_origin": null,
             "center_origin": [
                 "V"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Especie arom\u00e1tica reconocida por el gran sabor que le brinda a los alimentos, conocida tambi\u00e9n por la utilizaci\u00f3n como planta curativa en la medicina tradicional ayurveda de la India.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Rica en calcio, potasio, vitaminas A, B1 y C, hierro, sodio, f\u00f3sforo, prote\u00ednas y fibra vegetal, a la albahaca se le emplea para estimular la producci\u00f3n de leche materna, disminuir los gases, como analg\u00e9sico, cicatrizante y soluci\u00f3n capilar, digestivo y estimulante del apetito.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Guardar las hojas en un recipiente envueltas en papel de cocina para que absorba la humedad"
         }
     },
     {
         "model": "products.product",
         "pk": "alfalfa",
         "fields": {
-            "category": "legumbre",
+            "category": "hierba",
             "common_name": "alfalfa",
-            "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "common_name_alternate": "afalfe, afarfa, alfal, alfalce, alfalce bordo, alfalfa , alfalfa brava, alfalfa mansa, alfalfa silvestre, alfalfe, alfalz, alfance, alfange, alfarfa, alfauce, alfaz, alf\u00e1s, alholva, almierca, amelca, amielcas, arfarfa, carret\u00f3n, carret\u00f3n borde, ervaye, falfa, farfa, melga, merga, miajera, mielca, mielc\u00f3n, mielga, mielgas, mierga, miergas, mierpes, nielga, probayernos, trebolillo, tr\u00e9bol de Espa\u00f1a, zarza.",
+            "description": "Igual que su tocayo de \"Los Peque\u00f1os Traviesos\", la alfalfa es una hierba bastante tenaz, ya que se adapta sin problemas a climas fr\u00edos y c\u00e1lidos. Usualmente utilizada en ensaladas, la alfalfa tambi\u00e9n puede tener usos bastante controvertidos en s\u00e1ndwiches y sopas.",
+            "icon": "images\/icons\/alfalfa.svg",
+            "name_origin": null,
             "center_origin": [
                 "IV"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Se ha utilizado como alimento en partes de Rusia, China y Am\u00e9rica, por ejemplo, en la preparaci\u00f3n de tortillas, t\u00e9, croquetas, sopas y ensaladas crudas y cocidas. Mientras que en Sud\u00e1frica se utiliza ocasionalmente como sustituto de las espinacas.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Abundante en vitamina C, la alfalfa se erige como un antioxidante excepcional y una valiosa fuente de calcio. No solo eso, tambi\u00e9n despliega su eficacia como un tratamiento para la diabetes, al disminuir la absorci\u00f3n de glucosa en los intestinos y potenciar la generaci\u00f3n de insulina.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Dentro de una bolsa que no seaq herm\u00e9tica"
         }
     },
     {
@@ -110,42 +115,44 @@
         "fields": {
             "category": "fruta",
             "common_name": "anona",
-            "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "common_name_alternate": "chirimoya, sincuya, zuncuya",
+            "description": "No se deje enga\u00f1ar por la ruda apariencia de esta fruta, ya que en su interior guarda un tesoro: una masa suave, dulce y cremosa que se puede comer como se le ocurra. Puede hacerla  en jugo o convertirla en su pr\u00f3ximo postre favorito. Es el sabor del Caribe en una fruta.",
+            "icon": "images\/icons\/anona.svg",
+            "name_origin": null,
             "center_origin": [
                 "VII",
                 "VIII",
                 "VIIIb"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Originaria de Am\u00e9rica del Sur, se cree que la anona tiene sus ra\u00edces en Per\u00fa y Ecuador. Tradicionalmente, se consume partiendo la fruta por la mitad y disfrutando de su pulpa con cuchara. En Chile, la anona se transforma en un delicioso ponche navide\u00f1o.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "La anona, tesoro fitoqu\u00edmico de la medicina tradicional, despliega un arsenal nutricional: calcio, potasio e hierro para la salud cut\u00e1nea y de los tejidos, respaldados por las vitaminas B1, B2, B3 y B9, art\u00edfices clave de sus propiedades antioxidantes.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Lugar ventilado y fresco"
         }
     },
     {
         "model": "products.product",
         "pk": "apazote",
         "fields": {
-            "category": "condimento",
+            "category": "hierba",
             "common_name": "apazote",
-            "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "common_name_alternate": "epazote, pazote, epasote, pizate, paico, pasota, pasote",
+            "description": "El apazote es una hierba ic\u00f3nica en la cocina mexicana y un ingrediente emblem\u00e1tico en la preparaci\u00f3n de frijoles negros. Una pizca de esta hierba llenar\u00e1 de sabor y personalidad sus frijoles, sopas o tamales.",
+            "icon": "images\/icons\/apazote.svg",
+            "name_origin": null,
             "center_origin": [
                 "VII"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Nativo de los suelos arenosos de M\u00e9xico, el apazote, condimento arraigado en la cultura culinaria azteca, persiste como un sabor esencial en las recetas mexicanas, desde quesadillas hasta frijoles, y caldos de camar\u00f3n.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "El apazote despliega en sus hojas una rica amalgama de monoterpenos, entre los cuales destaca el ascaridol, reconocido por su eficacia en la erradicaci\u00f3n de gusanos intestinales y su utilidad como tratamiento para trastornos digestivos.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En una bolsa con sello herm\u00e9tico"
         }
     },
     {
@@ -154,19 +161,20 @@
         "fields": {
             "category": "verdura",
             "common_name": "apio",
-            "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "common_name_alternate": "pio, apio acu\u00e1tico,  apio bastardo, apio blanco, apio borde, apio bravo, apio brav\u00edo, apio com\u00fan, apio acu\u00e1tico, apio de agua, apio de arroyo, apio de arroyos, apio de huerta, apio de laguna, apio de las lagunas, apio de los huertos, apio de monte, apio dulce, apio laguna, apio nabo, apio palustre, apio silvestre, celerio, c\u00e9lery, habit, perejil de agua,apio Espa\u00f1a, panul",
+            "description": "Sabor discreto y jugoso, con pocas calor\u00edas y mucha fibra, \u00bfqu\u00e9 no le podr\u00eda gustar del apio? Ya sea crudo, con aderezos, frito o al vapor, ese \u00a1crunch! es demasiado bueno para dejarlo pasar. ",
+            "icon": "images\/icons\/apio.svg",
+            "name_origin": null,
             "center_origin": [
                 "V"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Originario del Mediterr\u00e1neo, el apio, en sus inicios medicinal y amargo, fue liberado de sus confines medicinales por h\u00e1biles agricultores que suavizaron su sabor. As\u00ed, empezando por Suecia, se convirti\u00f3 el apio en un deleite global disfrutado sin remordimientos.",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "A\u00f1adiendo a su notable contenido de fibra y potasio, el apio es rico en ftalida, un fitoqu\u00edmico reconocido por su capacidad para relajar las paredes arteriales. Esta propiedad potencia la circulaci\u00f3n sangu\u00ednea y contribuye a reducir la presi\u00f3n arterial.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Humedecer una toalla de papel de cocina y envolver las ramas del apio"
         }
     },
     {
@@ -174,42 +182,44 @@
         "pk": "arandano",
         "fields": {
             "category": "fruta",
-            "common_name": "arándano",
-            "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "common_name": "ar\u00e1ndano",
+            "common_name_alternate": "morti\u00f1o, anavia",
+            "description": "Como una lluvia ma\u00f1anera, el ar\u00e1ndano es fresco y tiene un sabor deliciosamente balanceado, ni muy dulce, ni muy \u00e1cido. Pr\u00e1ctica y de f\u00e1cil consumo, esta baya azul es la adici\u00f3n ideal para enriquecer sus desayunos con abundantes vitaminas y antioxidantes.",
+            "icon": "images\/icons\/arandano.svg",
+            "name_origin": null,
             "center_origin": [
                 "V",
                 "III"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Misterioso en su origen, el ar\u00e1ndano prospera de forma espont\u00e1nea en Europa, Asia y Norteam\u00e9rica, regi\u00f3n que alberga su principal productor, Estados Unidos, con m\u00e1s del 95% de la producci\u00f3n global. Tribus nativas norteamericanas lo cosechaban para enriquecer pasteles y carnes.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "De notable capacidad antioxidante, el ar\u00e1ndano aporta vitamina B3, fundamental para mejorar la funci\u00f3n cognitiva en adultos mayores, y vitaminas A, B y C, que fortalecen el sistema inmunol\u00f3gico. Su aporte en potasio contribuye adem\u00e1s a fortalecer el coraz\u00f3n.  ",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En un recipiente con papel toalla como base para que absorba la humedad"
         }
     },
     {
         "model": "products.product",
         "pk": "arracache",
         "fields": {
-            "category": "tubérculo",
+            "category": "raiz",
             "common_name": "arracache",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "El picadillo preferido de los \"gallos\" de tortilla. El arracache es una ra\u00edz que, cuando se cocina, se convierte en una deliciosa guarnici\u00f3n para platos fuertes como, por ejemplo, los famosos casados.",
+            "icon": "images\/icons\/arracache.svg",
+            "name_origin": null,
             "center_origin": [
                 "I"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Tub\u00e9rculo de origen andino, el arracache es ingrediente com\u00fan en la cocina sudamericana. La torta o queque de arracache es un pilar de la cultura gastron\u00f3mica peruana.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Sus aportes de hierro y calcio ayudan a prevenir la osteoporosis y a mejorar la salud de los dientes, al tiempo que su riqueza en vitaminas del complejo B y C, y zinc, solidifica el sistema inmunol\u00f3gico. Su alto contenido de vitamina B3 ayuda a disminuir los niveles de colesterol y triglic\u00e9ridos.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Se puede lavar, pelar y cortar en trocitos antes de refigerarlo"
         }
     },
     {
@@ -217,20 +227,21 @@
         "pk": "arugula",
         "fields": {
             "category": "verdura",
-            "common_name": "arúgula",
-            "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "common_name": "ar\u00fagula",
+            "common_name_alternate": "r\u00facula, aballicos, alhuce\u00f1a, aruga, arugua, berza alhuce\u00f1a, eruca, eruga, hierba meona, jamargo, jamargo blanco, jamarguillo, jaramago, oruga, oruga blanca, oruga de barrancos, oruga pestosa, oruga roqueta, oruga vejigosa, pestosas, picograjo, rabaniza blanca, roqueta, ruca, rucas, ruqueta, tamarillas.  ",
+            "description": "Sin\u00f3nimo de vitalidad y elegancia en los platos, la ar\u00fagula es una hierba de sabor picante que puede ser combinada con sus ensaladas habituales para darles un toque extra de sabor y un impulso de calcio a su dieta.",
+            "icon": "images\/icons\/arugula.svg",
+            "name_origin": null,
             "center_origin": [
                 "VI"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Desde su cuna en Etiop\u00eda hasta la antigua Roma, la ar\u00fagula conquista platos. En Italia, es complemento de ensaladas y pizzas. En Turqu\u00eda, acompa\u00f1a cruda al pescado, mientras que en Asia Occidental, sus semillas se transforman en el aceite de taramira. En tiempos recientes, su influencia se expande en restaurantes de Am\u00e9rica.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Su alto contenido de vitaminas K y C, contribuye a prevenir enfermedades cardiovasculares y mejorar el sistema inmunol\u00f3gico. Sus elevados niveles de vitaminas del complejo B ayuda a prevenir s\u00edntomas de anemia y depresi\u00f3n, a metabolizar los az\u00facares y fortalecer la masa muscular.  ",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Guardar las hojas en un recipiente envueltas en papel de cocina para que absorba la humedad"
         }
     },
     {
@@ -239,19 +250,20 @@
         "fields": {
             "category": "legumbre",
             "common_name": "guisante",
-            "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "common_name_alternate": "abejaquilla, alvilla, arbeja, arbella, arveja, arvejana, arvejo, arvejote, arvej\u00f3n, bisaltera, bisaltero, bisalto, bisantes, bisarto, chicharro, ch\u00edcharo, cuchillejo, disante mayor, disante menor, fasolera, garbaneta, guisante, guisante ordinario, guisantera, guis\u00f3n, haberos, ilar, moros, nanos, pelailla, peque\u00f1icos, poa, prinsol, pr\u00e9soles, p\u00e9sole, tabilla, tirabeques, tres reyes.  ",
+            "description": "Para comer como un guiso, en cremas, acompa\u00f1ando otras verduras, como guarnici\u00f3n, o mezclado con arroz, los guisantes son, por su versatilidad culinaria y altos valores nutritivos, el peque\u00f1o gigante de la cocina. Si usted quiere, adem\u00e1s, reducir sus niveles de colesterol, incl\u00fayalo con frecuencia en sus comidas. ",
+            "icon": "images\/icons\/guisante.svg",
+            "name_origin": null,
             "center_origin": [
                 "IV"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Los guisantes se cultivan en Asia Menor, su lugar de origen, desde hace miles de a\u00f1os. Sus cosechas se recogen sin llegar al estado de maduraci\u00f3n, y de ah\u00ed su color verde. La mayor parte de las cosechas de guisantes se utiliza en la elaboraci\u00f3n de piensos para animales.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Ricos en prote\u00ednas necesarias para el desarrollo de los m\u00fasculos, los guisantes son notable fuente de fibra, que mejora el tr\u00e1nsito intestinal y reduce el estre\u00f1imiento; y de \u00e1cido f\u00f3lico, que previene malformaciones cong\u00e9nitas en el embarazo.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En un recipiente cerrado"
         }
     },
     {
@@ -261,19 +273,20 @@
             "category": "verdura",
             "common_name": "ayote",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Ya sea como fruta u hortaliza, el ayote se consume de m\u00faltiples maneras: al vapor, frito, relleno, hervido, crudo, al horno, seco, en pur\u00e9, en pasteles e, incluso, encurtido. El reino de la vitamina A tiene plantada una bandera en el ayote.  ",
+            "icon": "images\/icons\/ayote.svg",
+            "name_origin": null,
             "center_origin": [
                 "VII",
                 "VIII"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Mesoam\u00e9rica y la regi\u00f3n Andina son las cunas del ayote. Preparado con tocino, cebolla, ajo y chile serrano, el ayote (calabaza en M\u00e9xico) a la mexicana es un plato abanderado de la cocina azteca.",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "Fuente de vitamina A, pilar de la salud visual y celular, y del crecimiento, el ayote aporta adem\u00e1s vitaminas B1 y B2, que mejoran los procesos metab\u00f3licos, y vitaminas C y E, que amurallan el sistema inmunol\u00f3gico y previenen diversos tipos de c\u00e1ncer. ",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En un lugar donde no haya mucha humedad"
         }
     },
     {
@@ -282,20 +295,20 @@
         "fields": {
             "category": "fruta",
             "common_name": "banano",
-            "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "common_name_alternate": "banana, pl\u00e1tano, guineo",
+            "description": "Fuente de minerales y vitaminas, si usted desea reducir el cansancio, evitar fatigas y alargar la salud de su coraz\u00f3n, no deje pasar nunca la ocasi\u00f3n de comerse un banano. Recuerde que al comerlo est\u00e1 usted, no solo aliment\u00e1ndose, sino tambi\u00e9n honrando la fama mundial de los bananos costarricenses.",
+            "icon": "images\/icons\/banano.svg",
+            "name_origin": null,
             "center_origin": [
-                "II",
-                "IV"
+                "IIa"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "El archipi\u00e9lago Indo-Malayo es la cuna del banano. Los bu\u00f1uelos de banano son un plato t\u00edpico de la comida callejera malaya y comer sobre hojas de pl\u00e1tano es costumbre ancestral en la India.",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "Minerales como el magnesio, el hierro, el potasio, el zinc  y el manganeso, presentes en altas dosis en el banano, contribuyen a robustecer la salud muscular. Rico en calcio, el banano fortalece dientes, huesos y cabello.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Nunca debere\u00edan de ser conservados en el refrigerador. Pueden congelarse sin c\u00e1scara si se ponen oscuros y usarse en preparaciones como batidos."
         }
     },
     {
@@ -305,18 +318,19 @@
             "category": "fruta",
             "common_name": "berenjena",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "La berenjena, no es s\u00f3lo un emoji popular, sino que tambi\u00e9n es una fuente enorme de fibra y potasio con una baj\u00edsima cantidad de calor\u00edas por porci\u00f3n. Estas propiedades la convierten en un alimento completo y saludable, adem\u00e1s de ser un excelente aliado para las personas que buscan perder peso.",
+            "icon": "images\/icons\/berenjena.svg",
+            "name_origin": null,
             "center_origin": [
                 "II"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Como almas gemelas, la berenjena es el complemento perfecto en guisos y curries hist\u00f3ricamente elaborados en la regi\u00f3n subcontinental de la India, tierra donde este fruto de numerosos nombres dio sus primeros pasos.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "La fibra de la berenjena favorece el buen estado de la flora bacteriana, mientras sus antocianinas provocan un efecto antioxidante. Compuestos qu\u00edmicos presentes en su piel y semillas, estimulan el buen funcionamiento del h\u00edgado. ",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Envolverla en servilletas y guardar en una bolsa que no debe de estar sellada"
         }
     },
     {
@@ -325,19 +339,20 @@
         "fields": {
             "category": "verdura",
             "common_name": "berro",
-            "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "common_name_alternate": "mastuerzo, nastuerzo, berraza, berra, berro de agua, mastuerzo de agua, agr\u00f3n  ",
+            "description": "Berro, berro, \u00bfqu\u00e9 ves? Mucha vitamina C y amplios minerales. El berro es considerado uno de los vegetales m\u00e1s nutritivos y usted est\u00e1 de suerte porque su distintivo sabor picante, parecido al de la mostaza, lo convierte en una adici\u00f3n perfecta para las pastas, pizza, tortas de huevo y ensaladas.",
+            "icon": "images\/icons\/berro.svg",
+            "name_origin": null,
             "center_origin": [
                 "VI"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Utilizada hasta el Renacimiento como medicina y refrescante para el aliento, esta poderosa hierba et\u00edope, se dice que cura resacas y ha servido a los soldados como remedio contra el hambre a lo largo de la historia.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "El berro ofrece notables valores de vitamina A, muy importante para la salud de la visi\u00f3n, la piel, las membranas mucosas y el desarrollo embrionario. Sus \u00fatiles cantidades de vitaminas del complejo B son necesarias para prevenir enfermedades coronarias y accidentes cerebrovasculares.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Guardarlo envolvi\u00e9ndolo en papel toalla un poco humedecida"
         }
     },
     {
@@ -347,18 +362,19 @@
             "category": "verdura",
             "common_name": "bok choy",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "\u00bfCansado de lo cotidiano en su plato? El bok choy es una variedad de col china que se puede comer crumarinada. H\u00e1gale justicia al a\u00f1adirla a sopas o fideos. Con estas maravillosas notas herb\u00e1ceas bailando entre las verduras y carnes podr\u00e1 elevar sin mucho esfuerzo el perfil de sabor de sus platos.",
+            "icon": "images\/icons\/bokchoy.svg",
+            "name_origin": null,
             "center_origin": [
                 "III"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Esta verdura tiene una diversidad de preparaciones, ya sea en ensaladas o al vapor. La encontramos mucho en la comida asi\u00e1tica, especialmente en el Kimchi, que es un platillo Coreano.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Antioxidantes como el \u00e1cido f\u00f3lico, las vitaminas C y E, y el betacaroteno, son componentes esenciales del bok choy, cuya tambi\u00e9n notable riqueza en calcio, magnesio y zinc, ayuda a fortalecer nuestros huesos. ",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Puede guardarse en una bolsa de pl\u00e1stico en el refrigerador"
         }
     },
     {
@@ -366,41 +382,43 @@
         "pk": "brocoli",
         "fields": {
             "category": "verdura",
-            "common_name": "brócoli",
+            "common_name": "br\u00f3coli",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Ganador en textura, practicidad y nutrici\u00f3n, el br\u00f3coli es uno de los mejores vegetales que puede incorporar a su dieta. Si necesita una ensalada r\u00e1pida, hi\u00e9rvalo y est\u00e1 listo para acompa\u00f1ar carnes, sopas, pastas y m\u00e1s. Si se siente creativo, \u00e1selo y acomp\u00e1\u00f1elo con queso cheddar.",
+            "icon": "images\/icons\/brocoli.svg",
+            "name_origin": null,
             "center_origin": [
                 "IV"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Planta originaria de los pa\u00edses mediterr\u00e1neos orientales, antes de ser utilizada como alimento en Europa, esta tuvo fines medicinales. El br\u00f3coli se encuentra muy presente en la cocina italiana, debido a que fue un alimento importante para el Imperio Romano. Podemos notar este alimento en preparaciones como pastas, cocida o, inclusive, en jugos.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "El sulforafano, compuesto azufrado del br\u00f3coli, evita que las c\u00e9lulas cancer\u00edgenas se desarrollen, al tiempo que sus altas dosis de vitaminas B1, B2 y B6, y de yodo, manganeso, zinc y cobre, combaten sin cuartel a la anemia ferrop\u00e9nica.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Puede guardarse en un recipiente con un poco de agua en el fondo para que se mantenga fresco"
         }
     },
     {
         "model": "products.product",
         "pk": "camote",
         "fields": {
-            "category": "tubérculo",
+            "category": "raiz",
             "common_name": "camote",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "El camote es un tub\u00e9rculo dulce oriundo de Am\u00e9rica Central y Suram\u00e9rica. Rico en potasio, vitaminas B y C, y fibra, se vuelve parte importante de la mesa por su valor nutritivo, su variada y f\u00e1cil cocci\u00f3n y su muy asequible valor monetario en las tarimas de cualquier feria.",
+            "icon": "images\/icons\/camote.svg",
+            "name_origin": null,
             "center_origin": [
                 "VII"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "De ra\u00edz mesoamericana, al camote, que no es tub\u00e9rculo sino ra\u00edz, se le llama \u201cla comida de pobres\u201d. El camote horneado ba\u00f1ado en leche condensada es plato habitual de la comida mexicana.",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "La elevada cantidad de potasio del camote reduce la presi\u00f3n arterial, mientras sus flavonoides reducen las inflamaciones y funcionan como eficientes antioxidantes. La vitamina A que posee el camote es nutriente b\u00e1sico para combatir infecciones.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En un lugar seco y oscuro"
         }
     },
     {
@@ -410,18 +428,19 @@
             "category": "fruta",
             "common_name": "carambola",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "\u00a1Esta fruta es toda una estrella! Literalmente... La carambola es muy conocida por su delicioso sabor a la hora de tomarla en un refresco natural, pero tambi\u00e9n por ser un \u00edcono tropical por las porciones en forma de estrella que se forman al rebanarla.",
+            "icon": "images\/icons\/carambola.svg",
+            "name_origin": null,
             "center_origin": [
                 "V"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "La carambola o fruta estrella es nativa del sudeste asi\u00e1tico, donde se le consume con frecuencia madura, guisada con az\u00facar y clavo de olor, y en ocasiones con manzana. En Tailandia suele comerse con camarones.",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "Su carga de vitaminas A y C le da notable valor antioxidante a la carambola, y una mejor preparaci\u00f3n al organismo para contrarrestar infecciones, formar gl\u00f3bulos rojos y fortalecer los huesos. Su aporte en potasio sirve para el mejoramiento de la actividad muscular. ",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Si al comprarla est\u00e1 verde, se debe guardar a temperatura ambiente. Si est\u00e1 madura, debe refrigerarse."
         }
     },
     {
@@ -431,18 +450,19 @@
             "category": "fruta",
             "common_name": "cas",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Una de las especialidades de Costa Rica y una buena elecci\u00f3n para convertir en jugo. El cas promete un profundo sabor agridulce con una potente dosis de vitamina C en cada sorbo.",
+            "icon": "images\/icons\/cas.svg",
+            "name_origin": null,
             "center_origin": [
                 "VII"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Originario de Centroam\u00e9rica, se presume que el cas naci\u00f3 en Costa Rica. Esta fruta, extendida desde el sur de M\u00e9xico hasta Ecuador, recibe diversos nombres, desde guayaba \u00e1cida hasta guayaba de agua, ya que se consume principalmente en refrescos.",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "El cas fortalece el sistema inmunol\u00f3gico con su alto contenido de vitamina C, sin demeritar el valor antioxidante y preventivo del c\u00e1ncer de los componentes fen\u00f3licos presentes en su c\u00e1scara y pulpa.  ",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Si al comprarlo est\u00e1 verde, se debe guardar a temperatura ambiente. Si est\u00e1 maduro, debe refrigerarse."
         }
     },
     {
@@ -452,18 +472,19 @@
             "category": "verdura",
             "common_name": "cebolla",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "La cebolla marca un antes y un despu\u00e9s en nuestra cultura culinaria. Es integrante de la tr\u00edada fant\u00e1stica de la saz\u00f3n, junto con el chile dulce y el ajo. Su inigualable sabor la hace esencial en sofritos, ensaladas, salsas y m\u00e1s. Nos hizo llorar, pero \u00a1eran l\u00e1grimas de alegr\u00eda!",
+            "icon": "images\/icons\/cebolla.svg",
+            "name_origin": null,
             "center_origin": [
                 "III"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Verdura proveniente de Asia Central y conocida por ser una de las mejores hortalizas para sazonar cualquier platillo salado. En Am\u00e9rica lleg\u00f3 junto con los primeros colonizadores y nuestro pa\u00eds es muy utilizada como sazonador base del arroz y el gallo pinto. ",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "Los elementos antioxidantes de la familia de los flavonoides presentes en la cebolla, son antiinflamatorios, vasodilatadores, analg\u00e9sicos y protectores contra el c\u00e1ncer por excelencia, especialmente los c\u00e1nceres de mama, pr\u00f3stata y colon.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En un lugar oscuro y aireado"
         }
     },
     {
@@ -473,18 +494,19 @@
             "category": "verdura",
             "common_name": "cebollino",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "El cebollino es un delgado tallo hueco de grato aroma que suele cortarse en diminutos pedazos y agregarse a platos de carne, huevos, papas al horno, ensaladas o sopas, para que su aporte a la mezcla de colores y olores enriquezca nuestras producciones culinarias.",
+            "icon": "images\/icons\/cebollino.svg",
+            "name_origin": null,
             "center_origin": [
                 "IV"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Con or\u00edgenes velados, el cebollino es un presunto nativo de Europa y China. Todas sus partes, excepto el bulbo, son comestibles: desde la flor hasta las hojas. En la cocina asi\u00e1tica, deslumbra en pancakes de kimchi, gyoza y variadas sopas.\r",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Como parte de la familia allium, el cebollino contiene componentes con propiedades anticancer\u00edgenas y, en cantidades reducidas, aporta colina, nutriente clave para el bienestar emocional y el sue\u00f1o reparador.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Puede guardarse en un recipiente con un poco de agua en el fondo para que se mantenga fresco"
         }
     },
     {
@@ -494,18 +516,19 @@
             "category": "otro",
             "common_name": "chan",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "\u00a1La parte m\u00e1s importante del fresco de chan! Las semillas de chan, tambi\u00e9n conocidas como chia, son \u00fanicas. Estas absorben m\u00e1s de 10 veces su peso en agua, lo que las convierte en un alimento saciador, adem\u00e1s de darle esa textura gelatinosa al fresco.",
+            "icon": "images\/icons\/chan.svg",
+            "name_origin": null,
             "center_origin": [
                 "VII"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Provenientes de Mesoam\u00e9rica, estas semillas son la elecci\u00f3n predilecta en Am\u00e9rica Central y del Sur para garantizar el toque extra saludable en bebidas, desde limonadas hasta t\u00e9s.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Su alto contenido en prote\u00ednas y fibra, sumado a su f\u00e1cil consumo, le han ganado el t\u00edtulo de superalimento. No solo eso, sus prote\u00ednas globulinas ayudan a reducir los niveles de colesterol y az\u00facar en la sangre.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En un lugar seco y a temperatura ambiente"
         }
     },
     {
@@ -515,18 +538,19 @@
             "category": "verdura",
             "common_name": "chayote",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "En Costa Rica el chayote es la punta de lanza de las hortalizas. Un picadillo que incluya cubitos crudos de ra\u00edz de chayote - ese controlador natural de los niveles de az\u00facar en sangre - es una estampilla de la cocina tica tradicional.",
+            "icon": "images\/icons\/chayote.svg",
+            "name_origin": null,
             "center_origin": [
                 "VII"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Producto importante en la \u00e9poca precolombina ya que fue perteneciente a la dieta de la cultura maya y azteca. Nuestro pa\u00eds y M\u00e9xico son los principales productores de esta deliciosa verdura, con ella podemos realizar el famoso picadillo de chayote  o las \u201cchancletas\u201d plato t\u00edpico de nuestra cocina costarricense. ",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "Hidratante alimento, fuente destacada de fibra y flavonoides, componentes apreciados por sus propiedades antiinflamatorias, anticancer\u00edgenas y antioxidantes. Todas sus partes son apreciadas en la medicina tradicional.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Puede guardarse en una bolsa de pl\u00e1stico sin sellar"
         }
     },
     {
@@ -536,18 +560,19 @@
             "category": "verdura",
             "common_name": "chile dulce",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Multifuncional verdura que contiene altas dosis de vitaminas C, E y antioxidantes, el chile dulce es parte de la tr\u00edada fant\u00e1stica de la saz\u00f3n, junto con el ajo y la cebolla, y puede comerse triturado, crudo, asado. No prescinda usted de la posibilidad de incorporar un proteico chile dulce a su dieta diaria.",
+            "icon": "images\/icons\/chiledulce.svg",
+            "name_origin": null,
             "center_origin": [
                 "VII"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "De ra\u00edz mesoamericana, el chile dulce, ya sea en su variante verde o roja, es ingrediente com\u00fan en picadillos, escabeches y guisos de la cocina yucateca, de Tabasco y Chiapas, estados del sur mexicano.",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "Su alto contenido de vitamina C, vitamina E y carotenoides, convierten al chile dulce en un eficaz antiinflamatorio y antioxidante. Las grandes cantidades de fibra del chile dulce, ayudan a mantener nuestro sistema digestivo en movimiento.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Se pueden colocar en bolsas de pl\u00e1stico perforadas antes de meterlos al refrigerador"
         }
     },
     {
@@ -557,18 +582,19 @@
             "category": "verdura",
             "common_name": "chile picante",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Peque\u00f1o pero mat\u00f3n. El chile picante es infaltable en la comida caribe\u00f1a. No s\u00f3lo brilla en salsas, sino que tambi\u00e9n a\u00f1ade personalidad a sus platos, lo cual hace de cada bocado una experiencia intensa.",
+            "icon": "images\/icons\/chilepicante.svg",
+            "name_origin": null,
             "center_origin": [
                 "VII"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Aunque de uso extendido a las culturas asi\u00e1ticas, por su origen, se identifica al Chile Picante con Mesoam\u00e9rica. D\u00edgase M\u00e9xico y ya estar\u00e1 usted pensando en una variedad abrumadora de platos que incluyen al chile picante. Con el chile poblano, un pimiento verde picante, se elabora el plato nacional mexicano: los chiles en nogada.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Las propiedades antiinflamatorias y antioxidantes de la capsaicina, componente b\u00e1sico del chile picante, ayudan a mantener un sistema cardiovascular saludable y a disminuir la presi\u00f3n arterial, pero adem\u00e1s tienen un efecto beneficioso para la formaci\u00f3n de la microbiota intestinal y el control del peso corporal.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Se pueden guardar en tarros de vidrio en la despensa"
         }
     },
     {
@@ -577,15 +603,16 @@
         "fields": {
             "category": "verdura",
             "common_name": "chilote",
-            "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "common_name_alternate": "ma\u00edz baby, mini mazorca",
+            "description": "Desde Paso Canoas hasta Pe\u00f1as Blancas, un buen guiso caliente de chilote es plato que se invita solo a la mesa de los costarricenses. Su presencia y dulce sabor es tambi\u00e9n acompa\u00f1ante de sopas, picadillos, carnes, e, incluso, vinagretas. ",
+            "icon": "images\/icons\/chilote.svg",
+            "name_origin": null,
             "center_origin": [
                 "VIIIa"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Aunque el ma\u00edz tiene sus ra\u00edces en Mesoam\u00e9rica, el chilote, una variedad a\u00fan sin madurar, revela sus primeros usos culinarios en Asia, especialmente en China y Tailandia, sus principales productores y consumidores hasta hoy. En esta regi\u00f3n, es com\u00fan encontrar el chilote en platos como currys, salteados o como deditos fritos.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Excelente fuente de potasio, \u00e1cido f\u00f3lico y vitamina E, conocida por ser antioxidante y anticuagulante. Si busca cuidar sus niveles de az\u00facar en sangre, considere el chilote antes que el ma\u00edz, pues este primero tiene un \u00edndice gluc\u00e9mico menor.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
@@ -599,18 +626,19 @@
             "category": "fruta",
             "common_name": "ciruela",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Ya sea cruda, en batidos acompa\u00f1ando a otras frutas, o en mermeladas, pasteles o pudines, la dulce ciruela ser\u00e1 siempre una apetecible fruta. Muro de contenci\u00f3n de la diabetes, es admirable su capacidad para reducir los niveles de glucosa en sangre.",
+            "icon": "images\/icons\/ciruela.svg",
+            "name_origin": null,
             "center_origin": [
                 "VII"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "La ciruela se consume tradicionalmente seca o deshidratada en la regi\u00f3n cauc\u00e1sica y en Persia, sus lugares de origen. No todas las ciruelas se comen de esta manera, pero el consumo de la variedad que se cultiva para secar ya se ha extendido por todo el mundo.\r",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Considerada un antioxidante superior, la ciruela es adem\u00e1s una fuente destacada de vitaminas A y B y un regulador de los efectos nocivos de los radicales libres. Su variedad en pasa act\u00faa como un laxante natural, promoviendo la salud del tracto gastrointestinal.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Separar las ciruelas duras de las suaves"
         }
     },
     {
@@ -619,19 +647,20 @@
         "fields": {
             "category": "fruta",
             "common_name": "coco",
-            "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "common_name_alternate": "pipa",
+            "description": "Si no desea complicarse en la cocina elaborando postres, helados, o flanes de coco, siempre le quedar\u00e1 la opci\u00f3n de disfrutar crudos su pulpa y su refrescante jugo. No obstante, tome en cuenta que al hacer un aut\u00e9ntico rice and beans caribe\u00f1o, ser\u00eda casi un sacrilegio no incluir el aceite de coco en la cocci\u00f3n. ",
+            "icon": "images\/icons\/coco.svg",
+            "name_origin": null,
             "center_origin": [
                 "VII"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "El coco ha tenido un papel muy importante en la historia de la humanidad, no solo ha sido un alimento sino tambi\u00e9n es fuente de agua y aceite. Por su resistencia se utiliz\u00f3 como material de construcci\u00f3n para los hogares en las zonas tropicales. Y observamos que en la India y Asia el coco se ha utilizado con fines medicinales.",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "El coco, en todas sus formas, rebosa de antioxidantes y colesterol saludable que ayuda a eliminar el colesterol no deseado del cuerpo. Adem\u00e1s, posee propiedades antibacterianas y es una fuente excepcional de hidrataci\u00f3n. Como prueba de su naturaleza integral, en casos extremos, es factible mantener una dieta saludable centrada en gran medida en coco.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Una vez partido, se puede sumergir en un recipiente con agua y colocarlo en el refrigerador"
         }
     },
     {
@@ -641,35 +670,37 @@
             "category": "verdura",
             "common_name": "col de Bruselas",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Col de bruselas o repollito: digestiva, antiinflamatoria verdura de renombre como antibi\u00f3tico natural. Se deja comer lo mismo hervida que asada, al horno, preferiblemente con mantequilla, como ensalada o salteada como guarnici\u00f3n. No solo el buen perfume viene en envase peque\u00f1o: ah\u00ed est\u00e1 la Col de Bruselas como prueba para demostrarlo.",
+            "icon": "images\/icons\/coldebruselas.svg",
+            "name_origin": null,
             "center_origin": [
                 "V"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Llamadas as\u00ed en honor a la ciudad que las cultiv\u00f3 por primera vez, Bruselas en B\u00e9lgica, esta verdura sufri\u00f3 de mala fama debido a su amargo sabor. Sin embargo, gracias a la polinizaci\u00f3n cruzada, las nuevas generaciones exhiben un delicioso sabor. En la actualidad, en B\u00e9lgica se disfrutan hervidas, acompa\u00f1adas de cebolla y mantequilla.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Con m\u00e1s del doble de las prote\u00ednas que aporta el repollo, la col de bruselas ha sido incluida dentro de la lista de los mejores vegetales, pues contiene altos niveles de los 17 nutrientes esenciales que previenen problemas del coraz\u00f3n y el c\u00e1ncer.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Colocarla en el lugar menos fr\u00edo del refrigerador y es importante no guardarlas en bolsas herm\u00e9ticas"
         }
     },
     {
         "model": "products.product",
         "pk": "coladecaballo",
         "fields": {
-            "category": "otro",
+            "category": "hierba",
             "common_name": "cola de caballo",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Con solo ver esta hierba, es claro de d\u00f3nde viene su nombre. La cola de caballo, no s\u00f3lo ayuda como un diur\u00e9tico natural, sino que tambi\u00e9n tiene grandes usos en el jard\u00edn, d\u00f3nde se puede utilizar como pesticida natural.",
+            "icon": "images\/icons\/coladecaballo.svg",
+            "name_origin": null,
             "center_origin": [
                 "V"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "De origen mediterr\u00e1neo, la cola de caballo es un diur\u00e9tico natural cuyos tallos ocasionalmente se consumen en la costa sur de Espa\u00f1a, lo mismo que los esp\u00e1rragos, fritos o al vapor.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "La cola de caballo destaca como un diur\u00e9tico natural ideal para combatir problemas renales. Ninguna otra planta posee una concentraci\u00f3n mayor de s\u00edlice, por lo que esta hierba es ideal para potenciar la generaci\u00f3n de col\u00e1geno y el crecimiento del cabello.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
@@ -683,18 +714,19 @@
             "category": "verdura",
             "common_name": "coliflor",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Rica en potasio, f\u00f3sforo y vitaminas B y C, la coliflor puede comerse cruda, al vapor, hervida, e, incluso, frita. Si usted quiere adelgazar o controlar su hipertensi\u00f3n, incl\u00fayala con frecuencia en su men\u00fa. En el podio de premiaciones para las verduras, siempre habr\u00e1 una medalla reservada para la coliflor.",
+            "icon": "images\/icons\/coliflor.svg",
+            "name_origin": null,
             "center_origin": [
                 "IV"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Oriunda del Mediterr\u00e1neo Oriental y el Asia menor, la coliflor, cultivada en tiempos ancestrales para ser empleada como f\u00e1rmaco natural contra diarreas y dolores de cabeza, hoy se incluye en incontables recetas gastron\u00f3micas. El estofado liban\u00e9s de coliflor es una gema gourmet del Cercano Oriente.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Su notable cantidad de fibra mejora el funcionamiento del tr\u00e1nsito intestinal, y su riqueza en potasio y f\u00f3sforo refuerza huesos y m\u00fasculos, a la vez que su alto contenido de vitaminas C y B ayuda a prevenir la anemia y contribuye al crecimiento celular.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Conservarla en el caj\u00f3n de las verduras del refrigerador"
         }
     },
     {
@@ -704,81 +736,85 @@
             "category": "legumbre",
             "common_name": "cubaces",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "No hay mejor leguminosa que los cubaces para robarse el show en cualquier mesa donde se sirva un chifrijo. Para comer con carnes, lomo, costillas o patas de cerdo, en guisos o con verduras, tampoco dejan los cal\u00f3ricos y proteicos cubaces que los bajen de la tarima. ",
+            "icon": "images\/icons\/cubaces.svg",
+            "name_origin": null,
             "center_origin": [
                 "VII"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Los frijoles, nativos de Am\u00e9rica Central y del Sur, encuentran una variante \u00fanica nacida en Costa Rica, los frijoles cubaces. A diferencia de los frijoles convencionales, estos se disfrutan principalmente con carnes, como en el popular plato t\u00edpico \"chifrijo\".",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "El folato presente en los cubaces es elemento de peso en la formaci\u00f3n de gl\u00f3bulos rojos sanos y muy necesario en la prevenci\u00f3n de malformaciones fetales en mujeres embarazadas. Ricos en fibra, tambi\u00e9n reducen los niveles del colesterol da\u00f1ino.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En un lugar con poca luz y humedad"
         }
     },
     {
         "model": "products.product",
         "pk": "culantro",
         "fields": {
-            "category": "verdura",
+            "category": "hierba",
             "common_name": "culantro",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Ya sea como un ingrediente que aporta su aroma y su sabor ligeramente c\u00edtrico y refrescante en salsas, frijoles, sofritos, cremas; o en ensaladas, ceviches, incluso como t\u00e9, el aporte de las hojas de culantro se agradece siempre en el paladar, y en nuestra salud, por su valor agregado como analg\u00e9sico y antiinflamatorio.  ",
+            "icon": "images\/icons\/culantro.svg",
+            "name_origin": null,
             "center_origin": [
                 "V"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "De origen incierto, parece haber tenido el culantro su cuna en el Mediterr\u00e1neo oriental, donde se le utiliza para condimentar las carnes. En la regi\u00f3n Oriental del \u00c1frica mediterr\u00e1nea es ingrediente insustituible del cusc\u00fas y el falafel.",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "Antioxidantes como la quercetina, los tecoferoles y el terpinene, presentes en el culantro, pueden estimular favorables efectos anticancer\u00edgenos,neuroprotectores e inmunoestimulantes en el organismo.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Guardar en un recipiente cubierto con papel absorbente"
         }
     },
     {
         "model": "products.product",
         "pk": "culantrocoyote",
         "fields": {
-            "category": "verdura",
+            "category": "hierba",
             "common_name": "culantro coyote",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Rico en \u00e1cido f\u00f3lico y vitaminas A y C, el culantro coyote es hierba arom\u00e1tica con un s\u00f3lido aroma que se agradece al elaborar sopas, frijoles, carnes, guisos y aderezos. Fuente tambi\u00e9n generosa del necesario hierro, no hay anemia que se atreva a plantarle cara al culantro coyote. ",
+            "icon": "images\/icons\/culantrocoyote.svg",
+            "name_origin": null,
             "center_origin": [
                 "VIII"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Originario de Am\u00e9rica Tropical, el culantro coyote se erige como un elemento cl\u00e1sico en la gastronom\u00eda amaz\u00f3nica del Per\u00fa. En Panam\u00e1, donde su demanda es elevada, se fusiona con perejil, ajo y cebolla para dar vida al \"recao verde\", un condimento esencial en sopas y guisos. En M\u00e9xico, encuentra su prop\u00f3sito en la saz\u00f3n del arroz.",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "A los monoterpenos, fenilpropanoides y sesquiterpenoides encontrados en los aceites esenciales de esta planta, se les atribuyen efectos antiinflamatorios, antioxidantes, anticonvulsionantes, antihelm\u00ednticos y anticonceptivos. El hierro, calcio y vitamina C que le acompa\u00f1an, contribuye a paliar las anemias.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Guardar en un recipiente cubierto con papel absorbente"
         }
     },
     {
         "model": "products.product",
         "pk": "curcuma",
         "fields": {
-            "category": "tubérculo",
-            "common_name": "cúrcuma",
+            "category": "raiz",
+            "common_name": "c\u00farcuma",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "C\u00farcuma: Colorante infalible y aromatizante proveniente de la India, la c\u00farcuma puede utilizarse fresca o seca. Util\u00edcela seca como condimento de arroces, sopas o asados a la parrilla. Como parte de adobos o al marinar, aproveche la ra\u00edz fresca de esta especia ya infaltable en la cocina. Adem\u00e1s, con ella se hace un excelente t\u00e9, el cual es muy recomendado a causa de sus propiedades antiinflamatorias",
+            "icon": "images\/icons\/curcuma.svg",
+            "name_origin": null,
             "center_origin": [
                 "IIa"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "La c\u00farcuma, nativa del Archipi\u00e9lago indo-malayo, es m\u00e1s que una especia. Enraizada en la historia con m\u00e1s de 4000 a\u00f1os de uso medicinal, te\u00f1\u00eda t\u00fanicas budistas y se usaba en rituales matrimoniales hind\u00faes. En los currys caracter\u00edsticos de la cocina de la regi\u00f3n no falta la c\u00farcuma como condimento.\r",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Con una amplia historia medicinal, la c\u00farcuma exhibe potentes propiedades antiinflamatorias y antioxidantes, encerradas en sus curcuminoides. Estos componentes son absorbidos por el cuerpo de manera m\u00e1s eficaz cuando se consumen junto con pimienta negra.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En un lugar con poca luz y humedad"
         }
     },
     {
@@ -788,18 +824,19 @@
             "category": "verdura",
             "common_name": "eneldo",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Aunque suene como apellido de abuelito, el eneldo es una hierba muy importante en diversas gastronom\u00edas mundiales. Su principal fortaleza es la de cargar de aroma y sabor a diversos platillos. Sin embargo, tambi\u00e9n es muy utilizado en la medicina alternativa",
+            "icon": "images\/icons\/eneldo.svg",
+            "name_origin": null,
             "center_origin": [
                 "V"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Para comer mariscos, pescados o sopas, es habitual el uso del eneldo en toda Europa Continental. La tostada de tomate, feta y eneldo es un bocadillo  usual en la cocina de la regi\u00f3n mediterr\u00e1nea, su lugar de origen.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Sus amplias cantidades de hierro, calcio y vitamina D promueven el crecimiento y la regeneraci\u00f3n de los huesos. Adem\u00e1s de ser un conocido antiinflamatorio, el eneldo es una excelente hierba para bajar los niveles de colesterol malo y triglic\u00e9ridos.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Envuelto en papel absorbente en una bolsa de pl\u00e1stico"
         }
     },
     {
@@ -807,20 +844,21 @@
         "pk": "esparrago",
         "fields": {
             "category": "verdura",
-            "common_name": "espárrago",
+            "common_name": "esp\u00e1rrago",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "En su id\u00f3nea simplicidad, al esp\u00e1rrago lo conforma un tallo esbelto y tierno envuelto en un sabor terroso y suave. Este diur\u00e9tico natural se presta a la creatividad, ya sea asado, salteado o al vapor. Disfr\u00fatelo crudo, si lo que busca es una merienda nutritiva.",
+            "icon": "images\/icons\/esparrago.svg",
+            "name_origin": null,
             "center_origin": [
                 "V"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "El esp\u00e1rrago es una verdura de origen mediterr\u00e1neo. Al sur de Espa\u00f1a se les consume mayormente salteados a la sart\u00e9n con huevo, roquefort, pi\u00f1ones y champi\u00f1ones, al vapor, o asados a la plancha.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Abundante en potasio, el esp\u00e1rrago es un aliado de la salud renal y card\u00edaca. Su contenido en el amino\u00e1cido asparagina lo convierte en un destacado diur\u00e9tico, eficaz para prevenir y combatir el edema.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Envueltos en papel de cocina h\u00famedo"
         }
     },
     {
@@ -830,39 +868,41 @@
             "category": "verdura",
             "common_name": "espinaca",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Verdura antioxidante con alto valor proteico, rica, adem\u00e1s, en fibra y minerales de hierro y potasio, no por gusto el legendario y musculoso Popeye la escogi\u00f3 como su primer alimento. Cruda o cocida, en sopas o en ensaladas, salud de hierro se augura a todo el que generosamente la consuma.",
+            "icon": "images\/icons\/espinaca.svg",
+            "name_origin": null,
             "center_origin": [
                 "III"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Oriunda de Asia Central, la espinaca, ingrediente de ensaladas, cocidos al vapor y sopas, ofrece tambi\u00e9n en la China el tinte de su rojo fruto para sellos oficiales y como colorante labial.\r",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Rica en fibra y reconocida por su notable contenido proteico, con 12.6 gramos por cada 100 calor\u00edas, la espinaca tambi\u00e9n es una potencia vitam\u00ednica, con altas dosis de vitaminas A, C y K. Estas vitaminas no solo fortalecen nuestros huesos, sino que tambi\u00e9n potencian nuestro sistema inmunol\u00f3gico.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Guardar en un recipiente herm\u00e9tico en la parte baja del refrigerador "
         }
     },
     {
         "model": "products.product",
         "pk": "estragon",
         "fields": {
-            "category": "otro",
-            "common_name": "estragón",
+            "category": "hierba",
+            "common_name": "estrag\u00f3n",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "No hay aut\u00e9ntico mojito cubano sin estrag\u00f3n, vers\u00e1til y arom\u00e1tica hierba, condimento y ali\u00f1o a la vez de carnes blancas y rojas, sopas y ensaladas. Digno de aplausos por sus propiedades antioxidantes y digestivas, y rico en potasio, hierro y vitaminas A, B6 y C, el estrag\u00f3n ser\u00e1 por siempre un aliado de su buena salud.",
+            "icon": "images\/icons\/estragon.svg",
+            "name_origin": null,
             "center_origin": [
                 "V"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Proveniente de Asia Central y Siberia, la variedad m\u00e1s arom\u00e1tica del estrag\u00f3n es la francesa, ampliamente utilizada en la cocina de Francia para realzar salsas y condimentar carnes. En pa\u00edses como Georgia y Rusia, el estrag\u00f3n encuentra su hogar en la Tarkhuna, una popular bebida gaseosa a base de estrag\u00f3n.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Su elevado contenido de fibra regula el tr\u00e1nsito intestinal, y su alta dosis natural de vitamina C, rico antioxidante, retrasa el envejecimiento y combate los radicales libres. El \u00e1cido salic\u00edlico presente en el estrag\u00f3n funciona como sedante contra los dolores de cabeza.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En un lugar con poca luz y humedad"
         }
     },
     {
@@ -872,18 +912,19 @@
             "category": "fruta",
             "common_name": "fresa",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Absolutamente congruentes su estilizado perfil est\u00e9tico y su grato sabor. La fresa, antioxidante infalible y reductora ejemplar de la presi\u00f3n arterial, suele comerse cruda, en batidos, en mermeladas, pasteles, helados, cereales y yogurt.",
+            "icon": "images\/icons\/fresa.svg",
+            "name_origin": null,
             "center_origin": [
                 "V"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "La fresa, de origen mediterraneo, es de la misma familia que las rosas. Combinadas con nata o vino son un platillo cl\u00e1sico en la Europa Mediterr\u00e1nea. Las fresas recubiertas de chocolate caliente tienen su origen en Chicago, EE.UU, pero r\u00e1pidamente se extendi\u00f3 por todo el mundo la receta como s\u00edmbolo de agasajo a un ser querido.",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "Por su alto contenido de vitamina C y manganeso, la fresa contribuye a mantener la salud de los huesos y protege nuestras c\u00e9lulas contra el da\u00f1o oxidativo. Rica en fibras, la fresa tambi\u00e9n contribuye a sostener un intestino saludable.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En un recipiente herm\u00e9tico cubierto con papel absorbente"
         }
     },
     {
@@ -893,18 +934,19 @@
             "category": "legumbre",
             "common_name": "frijol",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "La variedad de platos que podr\u00e1 elaborar con cualquiera de los colores dentro de la gama que ofrece el frijol, lo convierte en una legumbre multifac\u00e9tica. Ya sea en sopas, refritos, empanadas o, acompa\u00f1ando en el pinto a su inseparable hermano el arroz, no hay manera de servir una buena mesa sin el frijol.",
+            "icon": "images\/icons\/frijol.svg",
+            "name_origin": null,
             "center_origin": [
                 "VII"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Producto de origen Mesoamericano, y grano base en la dieta de las poblaciones ind\u00edgenas.  En nuestro pa\u00eds, es utilizado principalmente en el platillo t\u00edpico \u201cgallo pinto\u201d. Sin embargo en otras culturas como la Mexicana podemos observar que se utiliza de forma muy variada como por ejemplo en sopes, frijoles charros y enfrijoladas.",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "Siendo notables por su aporte en fibra, los frijoles reducen el colesterol malo y aumentan la cantidad de bacterias buenas en el organismo. Su aporte en minerales como potasio, hierro y f\u00f3sforo, reduce el riesgo de contraer enfermedades card\u00edacas. ",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En un lugar con poca luz y humedad"
         }
     },
     {
@@ -914,19 +956,20 @@
             "category": "legumbre",
             "common_name": "garbanzo",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Los garbanzos, vers\u00e1tiles y ricos en prote\u00ednas, se integran perfectamente en carnes, sopas, pastas, s\u00e1ndwiches, ensaladas o en un delicioso hummus casero. Adem\u00e1s, estas legumbres, al aumentar su tama\u00f1o hasta tres veces al cocinarse, llenan el est\u00f3mago hasta la saciedad.",
+            "icon": "images\/icons\/garbanzo.svg",
+            "name_origin": null,
             "center_origin": [
                 "III",
                 "II"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Nacidos en Syria y Turqu\u00eda, los garbanzos son un componente imperdible en la cocina india y del Medio Oriente. Estos son los protagonistas del conocido hummus, una pasta de garbanzos emblem\u00e1tica en la gastronom\u00eda de la regi\u00f3n. En el sur de Asia, la harina de garbanzo se emplea para empanizar y fre\u00edr vegetales.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Su riqueza en potasio, hierro y \u00e1cido f\u00f3lico reduce la hipertensi\u00f3n arterial y contribuye con nuestra salud cardiovascular, a la vez que sus compuestos del complejo vitam\u00ednico B son un soporte para el buen estado del sistema nervioso.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En un lugar con poca luz y humedad"
         }
     },
     {
@@ -936,14 +979,15 @@
             "category": "fruta",
             "common_name": "granadilla",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Licuada y mezclada con agua o con leche y algo de az\u00facar o miel, la pulpa de la fruta de la granadilla termina siendo un jugo o un batido impostergable. Pero, adem\u00e1s, pescados, pollos, c\u00f3cteles, ensaladas y mariscos miran siempre agradecidos a la granadilla cuando esta se ofrece a acompa\u00f1arlos en la preparaci\u00f3n de diversos platillos culinarios.  ",
+            "icon": "images\/icons\/granadilla.svg",
+            "name_origin": null,
             "center_origin": [
                 "VIII"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Nativa de las monta\u00f1as de Colombia, Bolivia y Venezuela, esta planta, hermana de la granada, destaca por su notable dulzura. La com\u00fan preferencia de la regi\u00f3n por consumirla cruda es un testimonio de su sabor excepcional.",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "Junto con las bayas, la granadilla destaca como la fruta m\u00e1s rica en fibra por taza, con una notable concentraci\u00f3n tanto en sus semillas como en su pulpa. Adem\u00e1s, es una excelente fuente de vitaminas C y A, y una opci\u00f3n ideal para mantener la piel hidratada y radiante.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
@@ -955,22 +999,23 @@
         "pk": "guanabana",
         "fields": {
             "category": "fruta",
-            "common_name": "guanábana",
+            "common_name": "guan\u00e1bana",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "\u00a1Una delicia en fresco! La guan\u00e1bana es dulce y refrescante, lo que la hace un fruto muy popular en Costa Rica. Su deliciosa pulpa blanca es protegida por el exterior verde y espinas de la fruta. \u00a1Ven como no hay que juzgar a un libro por su portada!",
+            "icon": "images\/icons\/guanabana.svg",
+            "name_origin": null,
             "center_origin": [
                 "VII",
                 "VIII",
                 "VIIIb"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Fruta nativa de Mesoam\u00e9rica y Sudam\u00e9rica, en M\u00e9xico se utiliza su pulpa en la elaboraci\u00f3n de helados, dulces, yogures, ensaladas, jugos y cocteles. Tambi\u00e9n en M\u00e9xico, sus semillas pulverizadas se usan como repelente contra insectos.",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "Entre las frutas con mayor aporte de vitamina C y potasio, su pulpa posee efectos antidiarreicos y antiparasitarios y es com\u00fanmente utilizada para incrementar la producci\u00f3n de leche materna.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Se puede congelar la pulpa de esta para que dure m\u00e1s tiempo"
         }
     },
     {
@@ -980,41 +1025,43 @@
             "category": "fruta",
             "common_name": "guayaba",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Autora de quiz\u00e1s la mermelada m\u00e1s ic\u00f3nica de la regi\u00f3n, la guayaba contiene incluso m\u00e1s vitamina C que los c\u00edtricos, por lo que est\u00e1 a la cabeza cuando de fortalecer nuestro sistema inmunol\u00f3gico se trata. Con su masa suave y cremosa, cada mordisco es un testimonio de la generosidad de la naturaleza. ",
+            "icon": "images\/icons\/guayaba.svg",
+            "name_origin": null,
             "center_origin": [
                 "VII"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Originaria de Mesoam\u00e9rica, la guayaba, puede usted all\u00ed lo mismo com\u00e9rsela a mordiscos que utilizar sus hojas para formar un arom\u00e1tico cigarrillo.",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "Encabezando la lista en cuanto a aporte de potasio y vitamina C, la guayaba puede contribuir a bajar la presi\u00f3n arterial. Su contenido en fibra ayuda a mejorar los procesos digestivos y a aliviar los s\u00edntomas del estre\u00f1imiento.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Puede introducirse en bolsas herm\u00e9ticas con un agujero para que entre el aire"
         }
     },
     {
         "model": "products.product",
         "pk": "hierbabuena",
         "fields": {
-            "category": "condimento",
+            "category": "hierba",
             "common_name": "hierbabuena",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Ciertamente buena, esta hierba mentolada, preparada en forma de t\u00e9 o infusiones, ayuda a paliar problemas digestivos, intestinales y del h\u00edgado, y reduce los mareos. Su fresco sabor prevalece en las ensaladas y en las salsas que con hierbabuena se elaboran para acompa\u00f1ar algunas carnes.",
+            "icon": "images\/icons\/hierbabuena.svg",
+            "name_origin": null,
             "center_origin": [
                 "V",
                 "IV",
                 "VI"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "De misterioso origen, se cree que la hierbabuena emergi\u00f3 en el Mediterr\u00e1neo, \u00c1frica del Norte y ciertas regiones de Asia. En Egipto, lleg\u00f3 a utilizarse como moneda. Gracias a su sabor distintivo, la hierbabuena conquist\u00f3 r\u00e1pidamente el mundo de los dulces en Europa. Las bolas de brandy, fusionando hierbabuena y canela, se convirtieron en la sensaci\u00f3n inglesa en la d\u00e9cada de 1850.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Por ser rica en componentes como vitamina A, hierro y magnesio, la hierbabuena mejora los niveles de hemoglobina. Esta adem\u00e1s exhibe propiedades antis\u00e9pticas y antiinflamatorias.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En un recipiente con papel absorbente un poco humedecido"
         }
     },
     {
@@ -1024,18 +1071,19 @@
             "category": "verdura",
             "common_name": "hinojo",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Verdura de milenaria utilidad, no es poca la historia humana que su culinario pedigree ha visto pasar, crudo o cocido, desde las hojas hasta el bulbo, entre caldos, pescados y guisos, el vitam\u00ednico y anisado hinojo.  ",
+            "icon": "images\/icons\/hinojo.svg",
+            "name_origin": null,
             "center_origin": [
                 "V"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Originaria del Mediterr\u00e1neo, esta hierba, empleada en la antig\u00fcedad en d\u00edas de ayuno para saciar el hambre, se utiliza hoy prolijamente en Italia para condimentar carnes, siendo tambi\u00e9n una favorita en las ensaladas de la cocina mediterr\u00e1nea.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "El potasio presente en el hinojo ayuda a regular la presi\u00f3n arterial, mientras otro de los minerales que lo conforman, el magnesio, contribuye a la formaci\u00f3n de prote\u00ednas y de masa \u00f3sea, e influye en el buen estado de los m\u00fasculos y el sistema nervioso. Sus flavonoides tienen propiedades antiinflamatorias y mejoran la condici\u00f3n de los vasos sangu\u00edneos y el sistema digestivo.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Puede guardarse en un recipiente con un poco de agua"
         }
     },
     {
@@ -1045,39 +1093,41 @@
             "category": "otro",
             "common_name": "hongo",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Secos, asados, salteados, como condimento para sopas, o como guarnici\u00f3n para acompa\u00f1ar pastas, carnes, verduras o pescados, los hongos comestibles, adem\u00e1s de su ex\u00f3tica manera de dejarse ver, aportan una carga considerable de vitaminas, minerales y prote\u00ednas. ",
+            "icon": "images\/icons\/hongo.svg",
+            "name_origin": null,
             "center_origin": [
                 "V"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Los hongos comestibles se reportaron por primera vez en la cuenca mediterr\u00e1nea y en la China. El cl\u00e1sico champi\u00f1\u00f3n a la mediterr\u00e1nea es un acompa\u00f1ante insustituible en platos de pastas, verduras asadas, y carnes.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Su aporte en fibra contribuye al cuidado de la microbiota intestinal y el mantenimiento del peso corporal en par\u00e1metros aceptables, al tiempo que sus vitaminas del grupo B contribuyen a metabolizar grasas y prote\u00ednas, mientras su alto contenido de selenio funciona como antiinflamatorio. ",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En un recipiente con papel absorbente"
         }
     },
     {
         "model": "products.product",
         "pk": "jengibre",
         "fields": {
-            "category": "tubérculo",
+            "category": "raiz",
             "common_name": "jengibre",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Su sabor picante contribuye a resaltar los sabores de varios platos. Fresco y rallado, enriquece las ensaladas, los sofritos, las salsas. De invaluable ayuda al marinar carnes y pescados, el jengibre tiene adem\u00e1s un valor agregado como analg\u00e9sico, antiinflamatorio y antis\u00e9ptico.",
+            "icon": "images\/icons\/jengibre.svg",
+            "name_origin": null,
             "center_origin": [
                 "II"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Producto sumamente importante y de gran valor economico en la Europa medieval utilizado como especia para condimentar una variedad de platillos. A nuestros dias podemos encontrarlo con facilidad para darle sabor a nuestros platos.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Con elevado contenido de flavonoides, taninos y gingerol, el jengibre es un antioxidante, antibacteriano y anti cancer\u00edgeno que retrasa el envejecimiento celular y combate los radicales libres. Por su alta cantidad de magnesio, f\u00f3sforo y calcio, previene los espasmos y la debilidad muscular. ",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En un lugar seco y oscuro"
         }
     },
     {
@@ -1087,14 +1137,15 @@
             "category": "fruta",
             "common_name": "jocote",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Rico en vitamina C y antioxidantes, el agridulce fruto del jocote es parte importante de la cultura tica y su amplio espectro culinario va desde el pan de jocote, las mermeladas, los frescos y los pasteles, hasta el simple jocote con sal.",
+            "icon": "images\/icons\/jocote.svg",
+            "name_origin": null,
             "center_origin": [
                 "VII"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Nativo de Mesoam\u00e9rica, en M\u00e9xico con el jocote verde se prepara una salsa agria, o son encurtidos en vinagre para comer con chile picante y sal. Al norte de Am\u00e9rica Central sus hojas se comen cocidas como vegetales.\r",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Rico en vitaminas A, B y C, el jocote previene resfriados e infecciones y por tanto revitaliza el sistema inmune y funciona como antioxidante. Por su aporte en fibra e hierro, el jocote ayuda a regular el peso corporal y combatir la falta de gl\u00f3bulos rojos, reduciendo la posibilidad de enfermar por anemia.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
@@ -1107,19 +1158,20 @@
         "fields": {
             "category": "verdura",
             "common_name": "kale",
-            "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "common_name_alternate": "col rizada",
+            "description": "Si hubiera un premio por la verdura m\u00e1s saludable, la col rizada (o kale) estar\u00eda en los primeros lugares. Una fuente enorme en vitaminas y minerales; adem\u00e1s de tener un bajo contenido cal\u00f3rico, el kale se puede usar en batidos, ensaladas o hasta cruda.",
+            "icon": "images\/icons\/kale.svg",
+            "name_origin": null,
             "center_origin": [
                 "V"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "El kale es originario del mediterraneo, sin embargo a lo largo de los a\u00f1os ha tomado popularidad  en diferentes lugares del mundo debido a su versatilidad. Un dato importante es que el Kale al igual que el br\u00f3coli, la coliflor, las coles de bruselas y el repollo son variedades de una misma especie de planta. Al tener esta versatilidad lo podemos encontrar en el famoso plato tradicional alem\u00e1n \u201cGr\u00fcnkohl mit Pinkel\u201d salchicha acompa\u00f1ada de Kale cocido.O bien tambi\u00e9n lo podemos comer crudo en ensaladas y batidos.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Con cantidades de calcio tan altas como la leche, el kale, rico en fibra y vitaminas A y C, es de los vegetales con la mayor cantidad de nutrientes por cada 100 gramos. Este es adem\u00e1s un buen acompa\u00f1amiento para comidas altas en carbohidratos ya que previene picos de glucosa.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Envuelto en papel de cocina en un contenedor o bolsa herm\u00e9tica"
         }
     },
     {
@@ -1129,19 +1181,20 @@
             "category": "fruta",
             "common_name": "kiwi",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Incluida entre las frutas que m\u00e1s contribuyen a consolidar la salud humana, el kiwi destaca por su s\u00f3lida carga vitam\u00ednica. De sabor inconfundible, su verde pulpa se disfruta de forma singular. Puede usted incluirlo como parte de un delicioso coctel de frutas, en un batido, o, incluso, degustarlo como mermelada.",
+            "icon": "images\/icons\/kiwi.svg",
+            "name_origin": null,
             "center_origin": [
                 "II",
                 "I"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "El kiwi es oriundo del Asia Oriental. Cortado en rodajas, en Jap\u00f3n el kiwi se utiliza con frecuencia para acompa\u00f1ar platos de pescado crudo (generalmente salm\u00f3n o at\u00fan) y como ingrediente en ensaladas de vegetales o algas.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Rico en \u00e1cido f\u00f3lico y vitamina C, el kiwi es una potencia inmunoestimulante que puede ayudar a acortar gripes y a acelerar la sanaci\u00f3n de heridas por su contenido en vitamina K.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En un lugar fresco, seco y alejado de la luz"
         }
     },
     {
@@ -1151,18 +1204,19 @@
             "category": "verdura",
             "common_name": "lechuga",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "La lechuga est\u00e1 compuesta por alrededor de un 95% de agua, lo que le aporta un toque extra fresco a sus comidas y la convierte en un alimento altamente hidratante. Desate todo su potencial al combinarla con otros ingredientes, ya sea en ensaladas, s\u00e1ndwiches o wraps.",
+            "icon": "images\/icons\/lechuga.svg",
+            "name_origin": null,
             "center_origin": [
                 "V"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "De una hierba silvestre al componente estrella en la ensalada griega. La lechuga fue inicialmente cultivada por los griegos y romanos por sus semillas ricas en aceite, pero r\u00e1pidamente sus hojas se robaron el show en las recetas verdes de todo el mundo.",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "Fuente de vitamina A y fibra, mientras m\u00e1s oscuras son sus hojas m\u00e1s antioxidantes contienen, por lo que sus variedades m\u00e1s claras poseen menos nutrientes que la mayor\u00eda de vegetales. A pesar de esto, por su contenido en fibra y agua, la lechuga es un alimento altamente saciador, por lo que es ideal para incorporar a una dieta baja en calor\u00edas.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Envuelto en papel de cocina en un contenedor o bolsa herm\u00e9tica"
         }
     },
     {
@@ -1172,19 +1226,20 @@
             "category": "legumbre",
             "common_name": "lenteja",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "He aqu\u00ed las ganadoras del aporte proteico entre las legumbres. Ricas en fibra y aliadas para bajar el colesterol, estas legumbres coronan desde guisos hasta ensaladas con su sabor y nutrici\u00f3n. ",
+            "icon": "images\/icons\/lenteja.svg",
+            "name_origin": null,
             "center_origin": [
                 "IV",
                 "III"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Originarias de Asia Menor en el Creciente F\u00e9rtil, las lentejas se encuentran en muchos platos asi\u00e1ticos, a menudo cocinadas junto con arroz debido a sus tiempos de cocci\u00f3n similares. En Egipto, el \"kushari\", plato nacional, es una mezcla de lentejas, garbanzos, arroz y pasta, creando una opci\u00f3n vegana altamente nutritiva.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Destacada fuente de prote\u00edna vegetal, con 18 gramos por cada taza, las lentejas son adem\u00e1s fuente de hierro, haci\u00e9ndolas una opci\u00f3n ideal para dietas vegetarianas. Estas legumbres son adem\u00e1s altas en fibra, lo que las convierte en aliadas para mantener un intestino saludable.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En un lugar seco y oscuro"
         }
     },
     {
@@ -1192,20 +1247,21 @@
         "pk": "limon",
         "fields": {
             "category": "fruta",
-            "common_name": "limón",
+            "common_name": "lim\u00f3n",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "No ha vivido del todo quien no haya tomado una limonada bien fr\u00eda, ni ha comido sabroso aquel que no haya utilizado un lim\u00f3n al sazonar sus alimentos, al preparar pescados y carnes. Sin rivales a la hora de marinar y aromatizar alimentos, el lim\u00f3n es tambi\u00e9n el comod\u00edn todoterreno de la cocina",
+            "icon": "images\/icons\/limon.svg",
+            "name_origin": null,
             "center_origin": [
                 "II"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "De origen incierto, se sospecha que el lim\u00f3n se gest\u00f3 en el subcontinente indio. En las tierras indias, el encurtido de lim\u00f3n es una guarnici\u00f3n com\u00fan servida en los restaurantes. Un desayuno tradicional del sur de la India es el \"chitranna\", arroz condimentado con jugo de lim\u00f3n que se come solo.",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "El c\u00f3ctel de vitaminas B, C y E presentes en el lim\u00f3n, m\u00e1s su aporte en minerales como el hierro, manganeso, cobre, potasio y zinc, funciona como coraza protectora de nuestro sistema inmunol\u00f3gico, protege nuestros tejidos, desinflama las lesiones, facilita la absorci\u00f3n del propio hierro y lo convierte en un antiviral y antibacterial efectivo.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En un lugar seco y oscuro"
         }
     },
     {
@@ -1215,60 +1271,63 @@
             "category": "otro",
             "common_name": "linaza",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "El boom de las semillas de linaza lo consolid\u00f3 su aporte de Omega 3 a la salud humana y su incorporaci\u00f3n a los panes y galletas integrales. Molida e incluida en ensaladas, sopas, cremas, como infusi\u00f3n o en el yogur en el desayuno, la semilla de linaza es hoy por hoy un estandarte culinario",
+            "icon": "images\/icons\/linaza.svg",
+            "name_origin": null,
             "center_origin": [
                 "V"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Los antiguos egipcios utilizaban la linaza, oriunda del Mediterr\u00e1neo, para hacer lienzos. El salm\u00f3n rostizado con pesto de linaza, avala el enfoque saludable de los platos de la cocina mediterr\u00e1nea.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Componentes minerales de la linaza como el manganeso y el magnesio, contribuyen al adecuado desarrollo de los huesos, al tiempo que el \u00e1cido alfa linol\u00e9ico de la semilla tiene propiedades antiinflamatorias, funciona como reductor del colesterol y soporte de la buena salud del sistema cardiovascular. Por su contenido en fibra, la linaza es utilizada para aliviar los s\u00edntomas del estre\u00f1imiento.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En un lugar seco y oscuro"
         }
     },
     {
         "model": "products.product",
         "pk": "maiz",
         "fields": {
-            "category": "fruta",
-            "common_name": "maíz",
+            "category": "verdura",
+            "common_name": "ma\u00edz",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "El ma\u00edz, planta sagrada entre los ind\u00edgenas de Am\u00e9rica, se destaca por la creatividad culinaria en torno a \u00e9l  y por su alto aporte de energ\u00eda. Patrimonio cultural costarricense, esta verdura es la base de las chorreadas, bizcochos y diversas creaciones culinarias, tanto dulces como saladas.",
+            "icon": "images\/icons\/maiz.svg",
+            "name_origin": null,
             "center_origin": [
                 "VII"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "De ra\u00edz mesoamericana, es considerado un alimento sagrado dentro de la cultura azteca. El pozol, las tortillas de ma\u00edz, el postre Pinole, las quesadillas, las enchiladas, las gorditas y los tacos son todos platillos cl\u00e1sicos de la gastronom\u00eda mexicana que utilizan el ma\u00edz en sus recetas.",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "La presencia del calcio entre sus nutrientes ayuda a mantener fuertes nuestros huesos. Rico en \u00e1cido f\u00f3lico, el ma\u00edz se recomienda tanto a embarazadas como a mujeres lactantes, y su vitamina B1 cuida nuestra salud cardiovascular, reduciendo la posibilidad de sufrir ataques al coraz\u00f3n.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Guardar en la parte baja del refrigerador "
         }
     },
     {
         "model": "products.product",
         "pk": "malanga",
         "fields": {
-            "category": "tubérculo",
+            "category": "raiz",
             "common_name": "malanga",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "No hay cuerpo humano que no agradezca un buen pur\u00e9 de malanga, unas frituras de malanga, un trozo de carne o unas legumbres acompa\u00f1adas por una raci\u00f3n de malanga, ese tub\u00e9rculo controlador natural de la glucemia y reductor de indeseados eventos cardiovasculares.",
+            "icon": "images\/icons\/malanga.svg",
+            "name_origin": null,
             "center_origin": [
                 "II"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Seg\u00fan antigua leyenda hawaiana, la malanga es un ni\u00f1o que creci\u00f3 dentro de esa planta y a partir de ah\u00ed se form\u00f3 la especie humana. Originaria de la India, all\u00ed se come frita o al vapor y es un sabor omnipresente en las panader\u00edas al estilo del Medio Oriente. ",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Con casi el doble de fibra que la papa, la malanga ayuda a controlar los picos de glucosa en el organismo, retarda la glucemia posprandial, mejora la salud intestinal y reduce las enfermedades coronarias. Su aporte en vitaminas A y C tiene efectos antioxidantes en el organismo.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Espacio oscuro y con buena ventilaci\u00f3n "
         }
     },
     {
@@ -1278,18 +1337,19 @@
             "category": "fruta",
             "common_name": "mandarina",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Deliciosa fruta para saborear entera, gajo a gajo, o en jugo. La mandarina es tan singular por su dulce sabor, que uno termina coloc\u00e1ndola entre los c\u00edtricos favoritos. Las habituales infusiones hechas con su c\u00e1scara la convierten en una fruta completamente aprovechable en t\u00e9rminos culinarios.",
+            "icon": "images\/icons\/mandarina.svg",
+            "name_origin": null,
             "center_origin": [
                 "I"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Se cree que es originaria del sur de Asia. La carne con mandarina es un plato cl\u00e1sico de China que usted probablemente ha escuchado como \u201cpollo a la naranja\u201d.",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "Rica en vitamina C y compuesta en un 85% de agua, la mandarina potencia nuestro sistema inmunol\u00f3gico contra virus y bacterias. Adem\u00e1s, beneficia la salud de nuestra piel, ya que la vitamina C contenida en esta estimula la producci\u00f3n de col\u00e1geno, contribuyendo as\u00ed a una piel tersa y saludable.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Se puede conservar a temperatura ambiente o en refrigeraci\u00f3n, siempre y cuando no se apilen y pueda circular el aire entre ellas."
         }
     },
     {
@@ -1299,18 +1359,19 @@
             "category": "fruta",
             "common_name": "mango",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "El mango no solo aporta generosas dosis de vitaminas A y C, sino que, adem\u00e1s, nuestra piel y huesos agradecen su consumo. Vers\u00e1til fruta tropical de m\u00faltiples usos culinarios, podemos comerla cruda, en batidos, en ensaladas, incorporarla a la reposter\u00eda, cocinarla a la plancha e, incluso, comerla deshidratada como crujiente snack.",
+            "icon": "images\/icons\/mango.svg",
+            "name_origin": null,
             "center_origin": [
                 "II"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "El mango ha recorrido un largo camino para llegar a nosotros. Originario de la India, all\u00ed el mango es apreciado por su acidez, la cual es usada para condimentar curris y elaborar encurtidos.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Adem\u00e1s de ofrecer un variado c\u00f3ctel de vitaminas inmunoprotectoras como la A y la C, su contenido en fibra insoluble fomenta la salud intestinal al prevenir la constipaci\u00f3n. Al mismo tiempo, su fibra soluble contribuye a reducir los niveles de colesterol malo. Dado su elevado contenido de az\u00facar natural, se aconseja consumirlo con moderaci\u00f3n para evitar picos de glucosa en la sangre.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Se conserva bien a temperatura ambiente"
         }
     },
     {
@@ -1320,18 +1381,19 @@
             "category": "fruta",
             "common_name": "manzana",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "La manzana es, quiz\u00e1, la reina de las frutas. Proveedora de vitaminas B y C y de minerales como calcio y f\u00f3sforo, puede usted disfrutarla cruda o en compotas, pasteles, guisos, postres o como otro sano ingrediente en ensaladas. \"Una manzana al d\u00eda, al doctor alejar\u00eda\", reza un viejo refr\u00e1n.",
+            "icon": "images\/icons\/manzana.svg",
+            "name_origin": null,
             "center_origin": [
                 "III"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "La manzana, originaria de Asia Central, se ha esparcido por todo el mundo, nutriendo tanto cuerpos como relatos a lo largo de las eras. \u201cLa fruta de la paz\u201d, como es tambi\u00e9n llamada en China, es a menudo consumida all\u00ed como postre frito acompa\u00f1ado de caramelo.",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "Abundante en fibra soluble, la manzana se ha revelado como una aliada crucial para la salud cardiovascular, demostrando prevenir problemas card\u00edacos cuando se consume de manera regular. Gracias a sus compuestos naturales, como los polifenoles, diversos estudios respaldan que su ingesta contribuye significativamente a la prevenci\u00f3n de la diabetes tipo 2.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En un lugar fresco, seco y oscuro"
         }
     },
     {
@@ -1341,15 +1403,16 @@
             "category": "fruta",
             "common_name": "manzana de agua",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Fruta carnosa y m\u00e1s jugosa que la manzana habitual, suele comerse fresca, a mordiscos. De haberse comido Eva una manzana de agua, es probable que no hubiera querido compartirla, y las Sagradas Escrituras y la especie humana habr\u00edamos tomado quiz\u00e1 otro rumbo.",
+            "icon": "images\/icons\/manzanadeagua.svg",
+            "name_origin": null,
             "center_origin": [
                 "IV",
                 "III"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Nativa del sudeste asi\u00e1tico e indio, esta fruta, debido a su delicada piel, es dif\u00edcil de exportar, por lo que se disfruta principalmente a nivel local. Considerada una exquisitez regional, en las islas del oc\u00e9ano Indio, se emplea con frecuencia en ensaladas y encurtidos.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Con una buena carga de antioxidantes como quercetina y \u00e1cido g\u00e1lico, la manzana de agua reduce el estr\u00e9s oxidativo y la inflamaci\u00f3n en el cuerpo. Esta adem\u00e1s posee propiedades reguladoras de glucosa y es un alimento altamente hidratante.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
@@ -1360,22 +1423,23 @@
         "model": "products.product",
         "pk": "manzanilla",
         "fields": {
-            "category": "otro",
+            "category": "hierba",
             "common_name": "manzanilla",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Un t\u00e9 de flores y hojas de manzanilla siempre ser\u00e1 oportuno para aliviar los s\u00edntomas de un resfriado, como infusi\u00f3n digestiva o relajante, y para calmar los mareos. Su aroma es, adem\u00e1s, ingrediente de algunas sopas y sugerentes salsas que se utilizan para cocer el pollo. ",
+            "icon": "images\/icons\/manzanilla.svg",
+            "name_origin": null,
             "center_origin": [
                 "IV",
                 "II"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "La manzanilla siempre ha sido una planta importante gracias a sus propiedades curativas, utilizada desde \u00e9pocas antiguas como en la cultura egipcia y la greco romana hasta nuestros d\u00edas. Mejor conocida en la preparaci\u00f3n de t\u00e9, aceites esenciales o bien para uso cosm\u00e9tico.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "La quercetina, sustancia antioxidante presente en la manzanilla, contribuye a regular el metabolismo, mientras que la crisina, tambi\u00e9n presente en esta hierba, reduce los s\u00edntomas de trastornos relacionados con la ansiedad y facilita el sue\u00f1o. Adem\u00e1s, la colina, compuesto de la vitamina B, protege al h\u00edgado de la acumulaci\u00f3n de grasa.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En un lugar seco."
         }
     },
     {
@@ -1383,20 +1447,21 @@
         "pk": "maracuya",
         "fields": {
             "category": "fruta",
-            "common_name": "maracuyá",
+            "common_name": "maracuy\u00e1",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Si desea comer cruda esta fruta, agarre usted una cuchara y disfrute la pulpa gelatinosa del maracuy\u00e1. Tambi\u00e9n puede licuarla y tomarla a la manera de un batido, pero si cocinarla es la intenci\u00f3n, las deliciosas cremas, tartas y mermeladas de maracuy\u00e1 lo esperan.",
+            "icon": "images\/icons\/maracuya.svg",
+            "name_origin": null,
             "center_origin": [
                 "VIIIb"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "El verano de la regi\u00f3n brasile\u00f1a-paraguaya lo vio nacer, el maracuy\u00e1, fruto de pasi\u00f3n. No hay duda de que en esta regi\u00f3n han sabido sacarle el jugo pues, hasta el d\u00eda de hoy, Brasil se mantiene como el l\u00edder productor de maracuy\u00e1.",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "Rico en hidratos de carbono y agua, el maracuy\u00e1 es alimento perfecto para recuperar energ\u00edas. Su alto contenido de vitamina A es esencial para la buena salud de las mucosas, los huesos, la visi\u00f3n y el sistema inmunol\u00f3gico. Su elevada dosis de vitamina C favorece la absorci\u00f3n de hierro y es b\u00e1sica para la formaci\u00f3n de huesos, gl\u00f3bulos rojos y col\u00e1geno.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Guardarla en el caj\u00f3n de las frutas."
         }
     },
     {
@@ -1404,20 +1469,21 @@
         "pk": "melocoton",
         "fields": {
             "category": "fruta",
-            "common_name": "melocotón",
+            "common_name": "melocot\u00f3n",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Ya sea para comerlo a puros mordiscos o en ensaladas de frutas; o cocinado ya, en mermeladas, pasteles y postres, siempre le ayudar\u00e1 esta fruta antioxidante con textura de terciopelo a detener el tiempo y a reducir sus niveles de colesterol y su presi\u00f3n arterial.",
+            "icon": "images\/icons\/melocoton.svg",
+            "name_origin": null,
             "center_origin": [
                 "I"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Luego de ser domesticado en su pa\u00eds de procedencia: China, el melocot\u00f3n viaj\u00f3 a Jap\u00f3n, India, Persia y finalmente a Europa gracias a la Ruta de la Seda. Para la cultura china esta fruta representa una larga vida. Adem\u00e1s de tener un sabor perfecto para la elaboraci\u00f3n de platos agridulces, los cuales son representativos en la cocina Oriental, tambi\u00e9n es una fruta ideal para postres y bebidas. ",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Repletos de vitamina A, los melocotones son de gran ayuda para mantener una piel saludable, reducir inflamaciones y sostener el sistema inmunol\u00f3gico, as\u00ed como para reducir la hipertensi\u00f3n arterial por la presencia en ellos de minerales de potasio y sodio. Por sus notables valores en fibra, los melocotones regulan el tr\u00e1nsito intestinal y eliminan el estre\u00f1imiento. ",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Se pueden guardar en bolsas herm\u00e9ticas en el refrigerador."
         }
     },
     {
@@ -1425,42 +1491,44 @@
         "pk": "melon",
         "fields": {
             "category": "fruta",
-            "common_name": "melón",
+            "common_name": "mel\u00f3n",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Tal vez la m\u00e1s refrescante de las frutas, aunque se puede consumir en ensaladas, como jugo, o en escabeche, el mel\u00f3n se digiere y aprovecha mejor si se lo come solo. Rico en vitamina C y antioxidantes, los calores del verano se aten\u00faan mejor disfrutando un mel\u00f3n.   ",
+            "icon": "images\/icons\/melon.svg",
+            "name_origin": null,
             "center_origin": [
                 "VI",
                 "III"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Se presume que la cuna del mel\u00f3n se encuentra en \u00c1frica, aunque se considera que su origen podr\u00eda extenderse a diversas partes de Asia. En \u00c1frica, las semillas del mel\u00f3n son empleadas para la elaboraci\u00f3n de aceite de cocina. En el sureste de Asia, ciertas variedades de mel\u00f3n se consumen como vegetales, preparadas en sabrosos salteados.",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "Por su contenido de potasio y magnesio el mel\u00f3n contribuye al soporte del equilibrio h\u00eddrico del cuerpo, a la contracci\u00f3n muscular y al mantenimiento saludable de huesos y dientes y del sistema cardiovascular. Las vitaminas A y C presentes en el mel\u00f3n, favorecen el buen estado de la piel y las mucosas, y la reparaci\u00f3n y cicatrizaci\u00f3n de tejidos. ",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Puede guardarse a temperatura ambiente. En caso de almacenarlo en el refrigerador, se podr\u00e1 guardar en una bolsa de pl\u00e1stico perforada para mantener la humedad."
         }
     },
     {
         "model": "products.product",
         "pk": "menta",
         "fields": {
-            "category": "otro",
+            "category": "hierba",
             "common_name": "menta",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Por su peculiar, intenso y grato olor y sabor es la menta un aromatizante natural hasta de la propia vida. C\u00f3cteles, infusiones, postres, helados, ensaladas, y algunas ex\u00f3ticas recetas de pollo y pescado con la menta como base o ingrediente no dejan espacio a dudas.",
+            "icon": "images\/icons\/menta.svg",
+            "name_origin": null,
             "center_origin": [
                 "V"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Al aceite esencial de menta, refrescante hierba de origen Mediterraneo, se le atribuyen en la regi\u00f3n cualidades como energizante emocional y estimulante. La menta es adem\u00e1s un paliativo recurrente all\u00ed para aliviar dolores, n\u00e1useas y mareos.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Rica en nutrientes como vitaminas A y C, hierro y folato, la menta destaca por sus propiedades antibacterianas. Masticar sus hojas o tomarla en t\u00e9 elimina el mal aliento de ra\u00edz al extinguir las bacterias bucales, mientras que previene y alivia s\u00edntomas de \u00falceras en la boca. Al ser adem\u00e1s una estimulante de las enzimas digestivas, la menta facilita la digesti\u00f3n.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Envolverla en una servilleta de papel en un recipiente o bolsa herm\u00e9tica."
         }
     },
     {
@@ -1470,19 +1538,20 @@
             "category": "fruta",
             "common_name": "mora",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Peque\u00f1a fruta silvestre que entre las bayas por su sabor y valor se agiganta. La mora es un antiinflamatorio y antioxidante rico en vitaminas A y C, a la que, ya sea en su forma natural, o en pasteles, yogures, jaleas, mermeladas o siropes, su paladar y su salud un monumento le levantan.",
+            "icon": "images\/icons\/mora.svg",
+            "name_origin": null,
             "center_origin": [
                 "V",
                 "III"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Posiblemente originaria del Mediterr\u00e1neo y Asia Central, la mora ha sido un elemento destacado en el folclore brit\u00e1nico. En la actualidad, una de las formas m\u00e1s comunes de disfrutar de las moras en la regi\u00f3n es a trav\u00e9s de la jalea, usualmente acompa\u00f1ada de pan. En algunas partes de Asia, la mora se incorpora en salsas para potenciar el sabor de las carnes.",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "Considerada la reina de las bayas, la mora contiene una de las mayores concentraciones de antioxidantes entre todas las frutas, beneficiosos para la salud cerebral. Su alto contenido en vitamina C sugiere posibles beneficios anticancer\u00edgenos al eliminar del cuerpo sustancias relacionadas al c\u00e1ncer, mientras que su fibra favorece la salud intestinal.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Colocarla en un recipiente con tapa dentro del refrigerador."
         }
     },
     {
@@ -1492,15 +1561,16 @@
             "category": "verdura",
             "common_name": "mostaza china",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Cruda, o cocida, agr\u00e9guele unas hojas de mostaza china a sus ensaladas, a sus carnes, al chop suey, al arroz frito, a los huevos, y estar\u00e1 usted, sin propon\u00e9rselo acaso, agregando un pasajero m\u00e1s a una de las regiones m\u00e1s saludables de la cultura culinaria.  ",
+            "icon": "images\/icons\/mostazachina.svg",
+            "name_origin": null,
             "center_origin": [
                 "IV",
                 "III"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "De origen impreciso, su ra\u00edz se le atribuye a la China e India. Dentro de la cocina china, el Chou Mei, un plato que incluye, entre otros ingredientes: carne de res, fideos de harina, ajo, pimiento, lechuga y hojas de mostaza china, se considera un cl\u00e1sico de la comida regional.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Este vegetal posee niveles sobresalientes de vitaminas A y K, que aumentan durante la cocci\u00f3n, llegando a superar el 100% de los valores diarios recomendados. La vitamina K es esencial para prevenir co\u00e1gulos en la sangre y problemas del coraz\u00f3n, as\u00ed como mantener la salud del cerebro. Adicionalmente, la vitamina A apoya el sistema inmune y favorece el crecimiento.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
@@ -1511,65 +1581,68 @@
         "model": "products.product",
         "pk": "mozote",
         "fields": {
-            "category": "otro",
+            "category": "hierba",
             "common_name": "mozote",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "An\u00edmese usted a tomar un fresco elaborado con el le\u00f1oso tallo del mozote y ya ver\u00e1 c\u00f3mo su est\u00f3mago se refresca y, adem\u00e1s, se lo agradece. T\u00f3melo solo, t\u00f3melo mezclado con Tamarindo o con Cas, con algo de az\u00facar o con vainilla, pero t\u00f3melo.  ",
+            "icon": "images\/icons\/mozote.svg",
+            "name_origin": null,
             "center_origin": [
                 "VII",
                 "II"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "El mozote es una planta de tallo le\u00f1oso y flores amarillas, originaria de Mesoam\u00e9rica y Centroam\u00e9rica. El fresco de mozote es bebida recurrente en algunas regiones de Costa Rica.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "El mozote posee compuestos naturales capaces de limpiar el colesterol malo y los triglic\u00e9ridos, al tiempo que aumentan el colesterol bueno. El interior de su tallo alberga una sustancia viscosa ampliamente utilizada para el tratamiento de problemas renales y como un diur\u00e9tico.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En un lugar seco"
         }
     },
     {
         "model": "products.product",
         "pk": "name",
         "fields": {
-            "category": "tubérculo",
-            "common_name": "ñame",
+            "category": "raiz",
+            "common_name": "\u00f1ame",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "El \u00f1ame se deja comer como mejor le parezca a usted; frito, al vapor, al horno o hervido. Dado su bajo costo, su buen sabor y su riqueza en potasio, f\u00f3sforo, calcio y vitamina C, el \u00f1ame puede llegar a ser un tub\u00e9rculo infaltable en la mesa de cada hogar.",
+            "icon": "images\/icons\/name.svg",
+            "name_origin": null,
             "center_origin": [
                 "II"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "En la India, su lugar de procedencia original, los chips de \u00f1ame acompa\u00f1an las comidas religiosas. Los \u00f1ames silvestres son materia prima esencial de laboratorios para elaborar hormonas y anticonceptivos orales.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Su importante cantidad de potasio es una ayuda para el buen funcionamiento del sistema nervioso, la frecuencia cardiaca y la presi\u00f3n arterial, y su alto contenido de fibra regula el tr\u00e1nsito intestinal. Las vitaminas del complejo B del \u00f1ame favorecen la buena salud del sistema circulatorio, y su vitamina C fortalece el sistema inmunol\u00f3gico.  ",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En un lugar oscuro y con poca humedad"
         }
     },
     {
         "model": "products.product",
         "pk": "nampi",
         "fields": {
-            "category": "tubérculo",
-            "common_name": "ñampí",
-            "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "category": "raiz",
+            "common_name": "\u00f1amp\u00ed",
+            "common_name_alternate": "malanga",
+            "description": "Puede que no sea tan conocida como la yuca o el camote, pero la malanga no tiene nada que envidiarle a estos otros tub\u00e9rculos. Es un excelente complemento para una olla de carne o puede, incluso, hacerla en picadillo.",
+            "icon": "images\/icons\/nampi.svg",
+            "name_origin": null,
             "center_origin": [
                 "VII",
                 "VIIIb"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Aunque se cultiva en todas las zonas tropicales y subtropicales del planeta, el \u00f1ampi tiene en Ocean\u00eda y el Asia tropical su probable regi\u00f3n de origen. En la cocina de los 5 continentes se le utiliza  como acompa\u00f1amiento habitual de carnes y pescados.",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "Tub\u00e9rculo energ\u00e9tico con gran cantidad de fibra diet\u00e9tica, ayuda a acelerar el proceso digestivo y disminuir el colesterol en el cuerpo. De abundante potasio y vitamina C, el consumo de \u00f1amp\u00ed previene las enfermedades cardiovasculares, mejora la capacidad de respuesta del sistema inmunol\u00f3gico y elimina los radicales libres. ",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En un lugar oscuro y con poca humedad"
         }
     },
     {
@@ -1579,39 +1652,41 @@
             "category": "fruta",
             "common_name": "naranja",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Haya encontrado o no usted a su media naranja, siempre tendr\u00e1 ocasi\u00f3n de cortar en dos mitades, exprimir y disfrutar el sabroso jugo de una refrescante y dulce naranja real. Por las tierras de las cremas pasteleras a la c\u00e1scara de la naranja sin recogimiento alguno se la ve pasar.",
+            "icon": "images\/icons\/naranja.svg",
+            "name_origin": null,
             "center_origin": [
                 "I"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Seg\u00fan el Confucianismo, la naranja, una fruta cuyo origen geogr\u00e1fico se ubica en el Asia Oriental, lleva en s\u00ed el color de la transformaci\u00f3n. En la China se considera a la naranja fuente de prosperidad y buena fortuna.",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "Su elevado contenido de vitamina C es un pilar antioxidante para la restauraci\u00f3n celular, la eliminaci\u00f3n de radicales libres y la solidificaci\u00f3n del sistema inmunol\u00f3gico. Como fuente de vitamina A, la naranja mantiene en buen estado la piel, las mucosas, la retina, los tejidos blandos y los huesos. Con sus folatos la naranja previene las anemias y ayuda a la formaci\u00f3n de gl\u00f3bulos rojos. ",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En un lugar seco, oscuro y lejos de la humedad"
         }
     },
     {
         "model": "products.product",
         "pk": "oregano",
         "fields": {
-            "category": "condimento",
-            "common_name": "orégano",
+            "category": "hierba",
+            "common_name": "or\u00e9gano",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Condimento indispensable para carnes, pastas, verduras, pizzas, salsas, pescados, quesos, ensaladas y sopas. Especia de lujo en cualquier cocina, el sabor y el aroma de su comida se enriquecer\u00e1n siempre con un toque de or\u00e9gano.",
+            "icon": "images\/icons\/oregano.svg",
+            "name_origin": null,
             "center_origin": [
                 "V"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "De ra\u00edz mediterr\u00e1nea, se considera en su lugar de origen que el humo del or\u00e9gano aleja a los demonios. El Medioevo europeo ahuyentaba a sus ahora legendarias brujas con plantas de or\u00e9gano.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Fuente potencial de vitamina C y carotenoides, el or\u00e9gano protege las c\u00e9lulas contra el da\u00f1o oxidativo y retarda el envejecimiento y la aparici\u00f3n de enfermedades cr\u00f3nico-degenerativas como el c\u00e1ncer, la diabetes y las enfermedades cardiovasculares. La beta-cariofilina del or\u00e9gano funciona como antiinflamatorio y es eficaz frente a la osteoporosis. Adicionalmente, sus fenoles carvacrol y timol funcionan como antimicrobianos.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En un lugar seco"
         }
     },
     {
@@ -1621,39 +1696,41 @@
             "category": "verdura",
             "common_name": "palmito",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Entre los platos m\u00e1s aut\u00e9nticos de la cocina tica est\u00e1 el arroz con palmito. Casi siempre en rodajas, puede cocerlo de varias maneras: al vapor, sofrito, al horno, asado o a la parrilla. En asuntos de salud, encontrar\u00e1 en el palmito un vegetal hipocal\u00f3rico que aporta fibra y vitaminas.",
+            "icon": "images\/icons\/palmito.svg",
+            "name_origin": null,
             "center_origin": [
                 "VIII"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "La palmera de palmito tiene su lugar de origen en las zonas andinas de Am\u00e9rica del Sur. En la gastronom\u00eda amaz\u00f3nica, en la regi\u00f3n selv\u00e1tica peruana, se utiliza el palmito en la elaboraci\u00f3n de ensaladas.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Bajo en grasas y rico en minerales como hierro y zinc, el palmito destaca por su alta carga de potasio, mineral que controla la presi\u00f3n arterial al eliminar los efectos da\u00f1inos del sodio en la sangre. Gracias a su contenido en vitamina B6, el palmito puede ayudar a disminuir las n\u00e1useas y contribuye al adecuado desarrollo del cerebro.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Escurrirlos bien y envolverlos en pl\u00e1stico de cocina para que se mantengan frescos por m\u00e1s tiempo"
         }
     },
     {
         "model": "products.product",
         "pk": "papa",
         "fields": {
-            "category": "verdura",
+            "category": "raiz",
             "common_name": "papa",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Tub\u00e9rculo universal que de mil maneras podr\u00e1 elaborarar \u00a1C\u00f3mo podr\u00eda gozarse del todo la vida, sin una buena raci\u00f3n de papas fritas! Es la papa, adem\u00e1s, la madre de los pur\u00e9s, de las ensaladas y las sopas, de los alimentos hervidos, al horno, y de los snacks. La madre, en definitiva, de nuestros alimentos.",
+            "icon": "images\/icons\/papa.svg",
+            "name_origin": null,
             "center_origin": [
                 "VIII"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "La papa no solo ha sido un alimento importante para la cultura Andina que fue su centro de origen y en donde se encuentra una gran variedad de estas. Si no que hoy en d\u00eda tambi\u00e9n representa una verdura importante para la dieta mundial y la para la elaboraci\u00f3n de platos t\u00edpicos en diferentes pa\u00edses, por ejemplo en Espa\u00f1a conocemos la famosa torta espa\u00f1ola, en Italia los \u00f1oquis, en nuestro pa\u00eds el picadillo de papa y no olvidar las famosas papas fritas muy conocidas en la mayoria de paises. ",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "Considerada una de las mejores fuentes de potasio y con una alta carga de vitamina C, la papa contribuye a regular la presi\u00f3n arterial y a fortalecer el sistema inmunol\u00f3gico. El almid\u00f3n resistente presente en esta es asociado con una mayor efectividad del cuerpo para eliminar az\u00facares da\u00f1inos de la sangre y con una microbiota intestinal sana. No prescinda de su c\u00e1scara, pues esta contiene gran parte de sus nutrientes.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Almacenar en un lugar oscuro y seco, evitando que les pegue la luz del sol directamente "
         }
     },
     {
@@ -1663,18 +1740,19 @@
             "category": "fruta",
             "common_name": "papaya",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Fruta tropical de dulce pulpa, se deja comer cruda y madura en jugosos trozos de un color naranja que recuerda ciertos bell\u00edsimos crep\u00fasculos. Pero no desaproveche la posibilidad de consumir tambi\u00e9n la digestiva papaya a la manera de un batido, un postre o una sabrosa mermelada. ",
+            "icon": "images\/icons\/papaya.svg",
+            "name_origin": null,
             "center_origin": [
                 "VII"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Originaria de Mesoam\u00e9rica y presuntamente domesticada por los mayas, la papaya es apreciada en M\u00e9xico por su docilidad para la elaboraci\u00f3n de postres. Se emplea para crear dulces y salsa de papaya, esta \u00faltima complementa una amplia gama de platos, desde carnes hasta ensaladas.",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "Con un destacado contenido de vitamina C, la papaya rebosa de antioxidantes con una mayor facilidad de absorci\u00f3n que en otras frutas. Por el licopeno en esta presente, la papaya disminuye el estr\u00e9s oxidativo vinculado al envejecimiento y al c\u00e1ncer. La papaya adem\u00e1s se compone de papa\u00edna, una enzima capaz de aliviar la constipaci\u00f3n y facilitar la digesti\u00f3n de la prote\u00edna.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En el lugar menos fr\u00edo del refrigerador "
         }
     },
     {
@@ -1684,14 +1762,15 @@
             "category": "fruta",
             "common_name": "pejibaye",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Nacido de palmera, el pejibaye es una fruta infaltable en la mesa tica. Suele prepararse de preferencia cocido en agua y sal, para comer caliente con mayonesa. Y no obstante, en ensaladas, sopas y pasteles tambi\u00e9n puede disfrutarse su peculiar sabor. ",
+            "icon": "images\/icons\/pejibaye.svg",
+            "name_origin": null,
             "center_origin": [
                 "VIII"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Conocido en nuestro pa\u00eds por su famoso nombre como \u201cpejibaye\". Y en Nicaragua como \u201cchontaduro\u201d. Esta fruta fue importante en \u00e9pocas precolombinas ya que fue fuente principal de alimento y bebidas. Un dato importante de esta fruta es que en la poblacion Bribri se realiza chicha a base de esta.",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "Con una buena carga de carbohidratos, el pejibaye destaca como un alimento energizante con 37 gramos de carbohidratos por cada 100 gramos. Gracias a su contenido en vitaminas A y C, potasio y calcio, el pejibaye es un aliado de nuestra piel, al estimular el crecimiento de nuevas c\u00e9lulas, mantener el equilibrio de humedad y fortalecer la barrera cut\u00e1nea.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
@@ -1705,18 +1784,19 @@
             "category": "verdura",
             "common_name": "pepino",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Es casi agua crujiente y el ganador en t\u00e9rminos de practicidad. Reb\u00e1nelo y est\u00e1 listo para ser a\u00f1adido a cualquier ensalada, pero no subestime lo bien que se lleva con los ingredientes de un salteado. Adem\u00e1s, por sus conocidas propiedades hidratantes y contenido de vitamina C, es esencial para una piel sana.",
+            "icon": "images\/icons\/pepino.svg",
+            "name_origin": null,
             "center_origin": [
                 "VIII"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "El pepino es originario de la India y dem\u00e1s zonas tropicales asi\u00e1ticas. Elaborado con yogur, pepino, vegetales, y especias, la raita india funciona como ensalada cuando es espesa. En un punto medio funciona como salsa. De cualquier manera tanto la raita como el pepino son 2 escuderos de la cocina tradicional de la India\r",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "El flavonol, antioxidante presente en el pepino, favorece la conectividad neuronal, a la vez que sus vitaminas del complejo B contribuyen al relajamiento del sistema nervioso. Su aporte en potasio previene la hipertensi\u00f3n arterial y protege al coraz\u00f3n, mientras su vitamina C estimula el sistema inmunitario.  ",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Envolverlos en una servilleta h\u00fameda y mantenerlos en un contenedor herm\u00e9tico."
         }
     },
     {
@@ -1726,40 +1806,42 @@
             "category": "fruta",
             "common_name": "pera",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Dulce como la miel y jugosa como el durazno, la pera es una fruta alta en fibra que es perfecta para ensaladas de frutas, jugos o compotas. \u00a1Solo tiene que saber cu\u00e1ndo est\u00e1 en su punto!",
+            "icon": "images\/icons\/pera.svg",
+            "name_origin": null,
             "center_origin": [
                 "IV",
                 "III"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Nativa de Europa Oriental y del Asia Menor y Central, la pera es ya fruta de cultivo y culto en el mundo entero. Las peras envueltas con masa filo es un platillo de la cocina tradicional griega.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Su alto contenido de calcio ayuda a fortalecer los huesos, los tejidos y el sistema nervioso, al tiempo que la vitamina B que posee previene enfermedades card\u00edacas y robustece el sistema cardiovascular. Rica en hierro, la pera ayuda a prevenir anemias y a robustecer los gl\u00f3bulos rojos.  ",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Lejos del sol, en un \u00e1rea ventilada."
         }
     },
     {
         "model": "products.product",
         "pk": "perejil",
         "fields": {
-            "category": "condimento",
+            "category": "hierba",
             "common_name": "perejil",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Hierba arom\u00e1tica utilizada como condimento, el perejil forma, junto a la sal y el ajo, un equipo imperdible. Para preparar adobos, vinagretas, salsas, en sopas, para marinar o asar, el perejil levanta la mano que no tiene y da el paso al frente con la confianza de los triunfadores.",
+            "icon": "images\/icons\/perejil.svg",
+            "name_origin": null,
             "center_origin": [
                 "V"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Originario del Mediterr\u00e1neo, el perejil, alguna vez vinculado a creencias m\u00edsticas, ha evolucionado de cultivos medicinales a ser uno de los ingredientes m\u00e1s conocidos, omnipresente en toda la cocina mediterr\u00e1nea, desde ensaladas hasta pastas y croquetas.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Fuente de vitamina A, elemento importante para la buena salud de la visi\u00f3n, el pelo y el crecimiento de los huesos, el perejil tambi\u00e9n aporta vitamina C, un rico antioxidante celular, y vitamina K, esencial para la buena coagulaci\u00f3n de la sangre.  ",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Envolverla en una servilleta de papel en un recipiente o bolsa herm\u00e9tica."
         }
     },
     {
@@ -1767,20 +1849,21 @@
         "pk": "pina",
         "fields": {
             "category": "fruta",
-            "common_name": "piña",
+            "common_name": "pi\u00f1a",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Alguna vez coronada como la fruta m\u00e1s ex\u00f3tica, hoy divide al mundo en el debate: pizza sin pi\u00f1a o con pi\u00f1a. Como quiera que sea, la pi\u00f1a siempre ha sido deliciosa y altamente vers\u00e1til. Es la base de bebidas y postres, adem\u00e1s de ser un excelente endulzante natural.",
+            "icon": "images\/icons\/pina.svg",
+            "name_origin": null,
             "center_origin": [
                 "VIIIb"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Fruta originaria del Sur de Am\u00e9rica, adem\u00e1s de ser una fruta fresca y dulce, tambi\u00e9n se utiliza para hacer bebidas como \u201cguarapo\u201d y \u201cchicha\u201d , bebidas tradicionales en la mayor\u00eda de pa\u00edses latinoamericanos.",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "El buen funcionamiento del colon y del tr\u00e1nsito intestinal tiene un aliado en el contenido de fibra de la pi\u00f1a. La enzima bromelina en ella presente, sirve como antiinflamatorio, agente antimicrobiano y para mejorar la digesti\u00f3n por su efecto sobre el est\u00f3mago y el p\u00e1ncreas. Su dosis de vitamina C ayuda como antioxidante celular.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En un espacio fresco"
         }
     },
     {
@@ -1789,19 +1872,20 @@
         "fields": {
             "category": "fruta",
             "common_name": "pitahaya",
-            "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "common_name_alternate": "fruta del drag\u00f3n",
+            "description": "La fruta del drag\u00f3n, o pitahaya, le da honor a su nombre por su peculiar forma: un exterior rosado y escamoso con un interior carnoso y delicioso. Esta fruta es ex\u00f3tica para el resto del mundo pero abundante en Costa Rica, lo que confirma cuanta suerte tenemos de vivir ac\u00e1.",
+            "icon": "images\/icons\/pitahaya.svg",
+            "name_origin": null,
             "center_origin": [
                 "VII"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Fruta de origen mesoamericano, conocida con distintos nombres como Pitahaya, Dragon fruit y para los mayas como wob, sac wob y chac wob. Posee distintos usos ya sea en la elaboraci\u00f3n de colorantes y uso medicinal. ",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Con un alto contenido en carbohidratos, la pitahaya es una potencia energizante rica en fibra prebi\u00f3tica que promueve la salud del metabolismo. Las peque\u00f1as semillas dentro de esta fruta son ricas en omega-3 y omega-9, ambas esenciales para mantener la salud del coraz\u00f3n.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Se deben conservar en un espacio fresco, seco, alejadas de focos de calor y sin entrar en contacto directo con la luz solar."
         }
     },
     {
@@ -1809,20 +1893,21 @@
         "pk": "platano",
         "fields": {
             "category": "fruta",
-            "common_name": "plátano",
+            "common_name": "pl\u00e1tano",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "No por ser su textura m\u00e1s dura que la fruta  del banano, es menos apreciado el pl\u00e1tano en la mesa tica. Ya sea frito verde como patac\u00f3n o en tiras, frito maduro, relleno de carne o queso, o hervido, el pl\u00e1tano, fuente de vitaminas A, B y C y minerales como el magnesio, es un rey en su trono sobre la mesa de los ticos.",
+            "icon": "images\/icons\/platano.svg",
+            "name_origin": null,
             "center_origin": [
                 "IIa"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "El pl\u00e1tano es originario del Archipi\u00e9lago Indo-Malayo. Los bu\u00f1uelos de pl\u00e1tano son un platillo de alta demanda en la cocina callejera malaya y por tanto una receta infaltable en el patrimonio culinario del pa\u00eds.",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "El pl\u00e1tano, rico en carbohidratos, es adem\u00e1s fuente s\u00f3lida de vitamina B6, la cual mantiene el funcionamiento saludable del cerebro, participa en la conversi\u00f3n de prote\u00edna y sintetiza anticuerpos para un sistema inmune m\u00e1s fortalecido. Por su destacado contenido en potasio, el pl\u00e1tano es un aliado de la salud de los m\u00fasculos y el coraz\u00f3n.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En un espacio alejado del sol y de las corrientes de aire"
         }
     },
     {
@@ -1832,18 +1917,19 @@
             "category": "verdura",
             "common_name": "puerro",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Verdura de alto calibre por su valor nutricional y efectos positivos en la salud como fuente de vitamina C y potasio, con un sabor a medio camino entre el ajo y la cebolla, el estilizado puerro se deja ver con frecuencia en las pasarelas en donde compiten las sopas, las cremas y las ensaladas.",
+            "icon": "images\/icons\/puerro.svg",
+            "name_origin": null,
             "center_origin": [
                 "IV"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Hace 3000 a\u00f1os el puerro ya se consum\u00eda en Asia menor, su regi\u00f3n de origen. Como entrante, guarnici\u00f3n, o plato combinado casero, el puerro braseado al estilo turco es un plato que agradece m\u00e1s de un paladar.\r",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Fuente s\u00f3lida de vitaminas A, C y K, el puerro ayuda a la visi\u00f3n, la coagulaci\u00f3n de la sangre, la salud del coraz\u00f3n y mantiene un sistema inmune fuerte. Como parte de la familia de las cebollas, el puerro es particularmente rico en alicina, un compuesto antimicrobiano que reduce el colesterol malo del cuerpo.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Puede colocarse en una bolsa pl\u00e1stica o recipiente herm\u00e9tico con una hoja de papel en el fondo"
         }
     },
     {
@@ -1851,20 +1937,21 @@
         "pk": "rabano",
         "fields": {
             "category": "verdura",
-            "common_name": "rábano",
+            "common_name": "r\u00e1bano",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Hortaliza de sabor levemente picante, el r\u00e1bano suele comerse crudo, en rodajas y con frecuencia en ensaladas a las que aporta la peculiaridad de su sabor y la alegr\u00eda de su color. Rico en vitamina C, se le atribuyen, adem\u00e1s, propiedades digestivas y anticancer\u00edgenas",
+            "icon": "images\/icons\/rabano.svg",
+            "name_origin": null,
             "center_origin": [
                 "I"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "El r\u00e1bano, oriundo del Asia Oriental, encuentra su prop\u00f3sito en la mesa china durante los inviernos, donde la medicina tradicional lo celebra por su capacidad para mantener el calor corporal. En Corea del sur, es un ingrediente bien conocido en el mundo del kimchi.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "El r\u00e1bano es un antimic\u00f3tico natural gracias a su prote\u00edna antif\u00fangica RsAFP2, la cual combate el esparcimiento de hongos infecciosos. Antioxidantes presentes en el r\u00e1bano como catequina, pirogalol y \u00e1cido van\u00edlico ayudan a combatir los radicales libres asociados a diversas enfermedades incluido el c\u00e1ncer, mientras que sus compuestos glucosinolato e isotiocianato ayudan a controlar los niveles de az\u00facar en sangre.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Cortar las hojas del r\u00e1bano. Colocarlos en una bolsa de pl\u00e1stico herm\u00e9tico envuelto con papel absorbente"
         }
     },
     {
@@ -1874,18 +1961,19 @@
             "category": "verdura",
             "common_name": "remolacha",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Hortaliza de sabor terroso y dulz\u00f3n e intenso color p\u00farpura. Para comer cruda  en rodajas, tiras, o rallada en ensaladas, o para comer hervida, asada o al vapor. Y si desea ponerse creativo en la cocina, avent\u00farese con el hummus o la crema fr\u00eda de remolacha.",
+            "icon": "images\/icons\/remolacha.svg",
+            "name_origin": null,
             "center_origin": [
                 "V"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Inicialmente los pobladores de la costa mediterr\u00e1nea utilizaron sus ra\u00edces para fines medicinales. No es hasta el siglo XVI que se populariz\u00f3 su consumo en pa\u00edses como Francia, Espa\u00f1a, Alemania e Inglaterra y finalmente en el siglo XIX se comercializ\u00f3 el az\u00facar extra\u00edda del jugo de la misma.",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "Sus carotenos se transforman en vitamina A, que ayuda al mantenimiento de los tejidos, protege contra las infecciones, y ayuda a la visi\u00f3n y el crecimiento corporal. La alta concentraci\u00f3n de vitamina C de la remolacha funciona como un antioxidante que ayuda a prevenir tumores cancer\u00edgenos y protege el sistema inmunol\u00f3gico, mientras el potasio en ella presente reduce la presi\u00f3n arterial.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Guardarla junto con las hojas para que se mantengan m\u00e1s tiempo"
         }
     },
     {
@@ -1895,56 +1983,59 @@
             "category": "verdura",
             "common_name": "repollo",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Guisada, al vapor, cruda, hervida, fermentada, en ensaladas, encurtida, por su suave sabor esta verdura se adec\u00faa a m\u00faltiples formas de preparaci\u00f3n. Desde tiempos del Imperio Romano se la venera por sus propiedades nutritivas y efectos positivos en la salud.",
+            "icon": "images\/icons\/repollo.svg",
+            "name_origin": null,
             "center_origin": [
                 "V"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Su origen se da en el Mediterraneo y es muy utilizado en Europa Central en el famoso platillo \u201cChucrut\u201d que se realiza a partir de la fermentaci\u00f3n del mismo, siendo este plato un excelente probi\u00f3tico. El repollo posee propiedades medicinales fascinantes es por esa raz\u00f3n que desde la Edad Media ha tenido una gran popularidad.",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "La presencia de fibra en el repollo reduce el colesterol malo y regula el tr\u00e1nsito intestinal. Sus compuestos de azufre y su contenido de vitaminas C y E son un eficaz antioxidante que retarda el envejecimiento celular, contribuye a prevenir enfermedades, e interviene en la formaci\u00f3n de col\u00e1geno, gl\u00f3bulos rojos, huesos y dientes, a la vez que su aporte en \u00e1cido f\u00f3lico favorece en las embarazadas la formaci\u00f3n del sistema nervioso del beb\u00e9.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Consservarlo en el caj\u00f3n de las verduras "
         }
     },
     {
         "model": "products.product",
         "pk": "romero",
         "fields": {
-            "category": "otro",
+            "category": "hierba",
             "common_name": "romero",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Sin llegar a comerse, el aporte aromatizante de esta hierba se agradece en la elaboraci\u00f3n de carnes, pescados, pollo, arroces y paellas. Su valor agregado como antioxidante y antiinflamatorio lo convierten en un protagonista de la cocina y los remedios caseros.   ",
+            "icon": "images\/icons\/romero.svg",
+            "name_origin": null,
             "center_origin": [
                 "V"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "El romero es ingrediente habitual en platos de cordero, carne de res o pescados en la comida mediterr\u00e1nea, su zona de origen. En la regi\u00f3n italiana Emilia-Romagna los platos de carnes y pollo se acompa\u00f1an con un racimo de hojas de Romero fresco.\r",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "El romero es bueno para combatir las anemias por su alto contenido de hierro. La alta dosis de \u00e1cido rosmar\u00ednico presente en la planta, inhibe la producci\u00f3n de l\u00edpidos y reduce la presi\u00f3n arterial, a la vez que su \u00e1cido carn\u00f3sico funciona como un antioxidante que tambi\u00e9n tiene un efecto antimicrobiano moderado, y es un factor de crecimiento neuronal fundamental para el desarrollo y mantenimiento del sistema nervioso. ",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Amarrar las ramitas de romero y colgarlas en un lugar oscuro y con poca humedad"
         }
     },
     {
         "model": "products.product",
         "pk": "ruda",
         "fields": {
-            "category": "otro",
+            "category": "hierba",
             "common_name": "ruda",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "La ruda es una hierba muy utilizada en la medicina alternativa, gracias a sus propiedades antiinflamatorias y antis\u00e9pticas. Ayuda a las mujeres con problemas menstruales, pero debe ser evitada por mujeres embarazadas y en per\u00edodo de lactancia.",
+            "icon": "images\/icons\/ruda.svg",
+            "name_origin": null,
             "center_origin": [
                 "V"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "La ruda es una planta arom\u00e1tica oriunda de la cuenca mediterr\u00e1nea y el norte de \u00c1frica. Se le utiliza como repelente de gatos e insectos, como ornamento, con fines medicinales y tambi\u00e9n culinarios. Mezclada con tomate, olivas y alcaparras, la ruda contribuye a dar cuerpo a una reconocida salsa italiana.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Los flavonoides de la ruda le confieren a esta planta un efecto antioxidante, y al mismo tiempo, sus esteroles reducen el colesterol. Los alcaloides de la ruda funcionan como un relajante natural y reductor de la carga del sistema nervioso, mientras que sus taninos son un exitoso antiinflamatorio.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
@@ -1956,20 +2047,21 @@
         "pk": "sabila",
         "fields": {
             "category": "otro",
-            "common_name": "sábila",
+            "common_name": "s\u00e1bila",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Cruda o cocida, en platos fr\u00edos como ceviches y ensaladas, la s\u00e1bila se abre camino con fuerza en la cocina. Por sus efectos positivos para reducir las quemaduras y la psoriasis, adem\u00e1s de su riqueza en vitaminas A, B, C, E y \u00e1cido f\u00f3lico, en el mundo de la cosm\u00e9tica ya le tienden tambi\u00e9n sus alfombras rojas.",
+            "icon": "images\/icons\/sabila.svg",
+            "name_origin": null,
             "center_origin": [
                 "VI"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Originaria del noreste africano y la Pen\u00ednsula Ar\u00e1biga, se le conoce en el mundo \u00e1rabe como la flor del desierto. A la s\u00e1bila se le dan usos medicinales, culinarios y \u00faltimamente cosm\u00e9ticos. Desde el Antiguo Egipto, Cleopatra nos marc\u00f3 una pauta para el uso medicinal y cosm\u00e9tico a un tiempo del aloe Vera, utiliz\u00e1ndolo para cuidar su piel\r",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "La s\u00e1bila es altamente beneficiosa tanto adentro como afuera de nuestro cuerpo, su contenido en alo\u00edna le confiere propiedades laxativas que estimulan la actividad intestinal, mientras que sus antioxidantes combaten los efectos de los radicales libres. La aloesina contenida en esta planta, acelera la curaci\u00f3n de heridas al facilitar la migraci\u00f3n de las c\u00e9lulas. La s\u00e1bila adem\u00e1s estimula la producci\u00f3n de \u00e1cido hialur\u00f3nico y col\u00e1geno.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Se puede colocar en un recipiente para hielos, de manera que se vaya obteniendo la cantidad necesaria sin estropear el resto"
         }
     },
     {
@@ -1979,18 +2071,19 @@
             "category": "otro",
             "common_name": "salvia",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Su nombre, que significa \"salvar\" o \"curar\", refleja su versatilidad y propiedades beneficiosas. Desde aliviar trastornos estomacales hasta calmar el dolor de garganta, sus usos son innumerables. La salvia tambi\u00e9n puede realzar el sabor de carnes como el cerdo, pero su fragancia intensa exige moderaci\u00f3n en su uso.",
+            "icon": "images\/icons\/salvia.svg",
+            "name_origin": null,
             "center_origin": [
                 "V"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Originaria del Mediterr\u00e1neo, esta est\u00e9tica hierba, apreciada por sus propiedades medicinales, encontr\u00f3 r\u00e1pidamente su lugar en uno de los t\u00e9s m\u00e1s buscados de Francia, el t\u00e9 de salvia. En la cocina, la salvia es un exquisito condimento, como lo demuestra el plato franc\u00e9s de vieiras en salsa de crema y salvia.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Su contenido en antioxidantes como \u00e1cido clorog\u00e9nico, caf\u00e9ico y rosmar\u00ednico, le atribuyen propiedades como mejora de la funci\u00f3n cerebral y de la memoria y menor riesgo de c\u00e1ncer. Su alto contenido en vitamina K, promueve la salud de los huesos, mientras que sus propiedades antimicrobianas eliminan bacterias de la boca causantes de placa dental e infecciones de garganta.\r",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Guardarla dentro de un contenedor con tapa"
         }
     },
     {
@@ -1998,20 +2091,21 @@
         "pk": "sandia",
         "fields": {
             "category": "fruta",
-            "common_name": "sandía",
+            "common_name": "sand\u00eda",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "\u00a1No hay duda de que la sand\u00eda es imponente! El llamativo tono rojo de su carne se debe al licopeno, un poderoso antioxidante. Su elevado contenido de agua la hace derretirse en el paladar y la consagra como el s\u00edmbolo por excelencia del verano.",
+            "icon": "images\/icons\/sandia.svg",
+            "name_origin": null,
             "center_origin": [
                 "VI"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Originaria del sur de \u00c1frica y apreciada por las comunidades ind\u00edgenas del desierto de Kalahari, la sand\u00eda, en sus inicios amarga, se valoraba por su capacidad para retener agua. Sus semillas, antiguamente tostadas por ser asequible fuente de nutrici\u00f3n, persisten hoy como snacks o adiciones a sopas y ensaladas.\r",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "Con antioxidantes como vitamina C, licopeno y carotenoides, la sand\u00eda promueve el fortalecimiento del sistema inmune y la salud del coraz\u00f3n al reducir el colesterol y la presi\u00f3n arterial. Por su aporte en vitaminas A y C, la sand\u00eda contribuye a la producci\u00f3n de col\u00e1geno y a la creaci\u00f3n y reparaci\u00f3n de c\u00e9lulas, ambos importantes para una piel saludable. ",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Colocarla en las estanter\u00edas inferiores del refrigerador, cubierta con papel film o en un recipiente herm\u00e9tico."
         }
     },
     {
@@ -2021,14 +2115,15 @@
             "category": "verdura",
             "common_name": "tacaco",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Sin tacaco la t\u00edpica olla de carne tica no tiene raz\u00f3n de ser. Hervidos y servidos con mayonesa, o miel de dulce, tambi\u00e9n conocida como Piloncillo, el aut\u00f3ctono fruto del tacaco se afianza como un plato \u00fanicamente tico. El f\u00f3sforo, el hierro y la vitamina A, tienen en el tacaco un puerto seguro.",
+            "icon": "images\/icons\/tacaco.svg",
+            "name_origin": null,
             "center_origin": [
                 "VII"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "El tacaco es muy importante para nosotros los ticos ya que nuestro pa\u00eds es su centro de origen y esta verdura nos ha acompa\u00f1ado en nuestra cocina en distintas recetas, la m\u00e1s conocida es la olla de carne, pero tambi\u00e9n se pueden acompa\u00f1ar con mayonesa, en ensaladas y se puede disfrutar incluso como \u201cmiel de tacaco\u201d",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Al ser una excelente fuente de fibra, el tacaco contribuye a la salud digestiva y favorece la saciedad. Su contenido en \u00e1cido f\u00f3lico contribuye al desarrollo celular, mientras que el potasio en este ayuda al equilibrio h\u00eddrico y funci\u00f3n muscular, a la vez que su vitamina C fortalece el sistema inmunol\u00f3gico y mejora la salud de la piel.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
@@ -2042,40 +2137,42 @@
             "category": "fruta",
             "common_name": "tamarindo",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "El tamarindo, joya agridulce, bautiza a los bagace\u00f1os como \"pansagrias\", por ser maestros para convertir sus frutos maduros en refrescantes jugos. Su pulpa, utilizada como condimento, a\u00f1ade un toque \u00fanico a diversos platillos alrededor del mundo, adem\u00e1s de ser un excelente diur\u00e9tico natural.",
+            "icon": "images\/icons\/tamarindo.svg",
+            "name_origin": null,
             "center_origin": [
                 "II"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Originario del \u00c1frica tropical y el subcontinente indio, el tamarindo guarda \u00edntima relaci\u00f3n con la cocina india y tailandesa. En el sur de India, la pulpa del tamarindo es la estrella del cotidiano Sambar, un caldo de verduras, mientras que en Tailandia se usa como condimento en los fideos de arroz con verduras.",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "De alto valor cal\u00f3rico por su riqueza en carbohidratos, el tamarindo funciona adem\u00e1s como reconstituyente de huesos y m\u00fasculos por su elevada cantidad de potasio. Por su contendio de vitaminas A y C el tamarindo contribuye a mantener saludables huesos, dientes y cabellos y funciona como antioxidante celular.   ",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "No sacarlo de su vaina para que se conserve por m\u00e1s tiempo."
         }
     },
     {
         "model": "products.product",
         "pk": "tiquisque",
         "fields": {
-            "category": "tubérculo",
+            "category": "raiz",
             "common_name": "tiquisque",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Honorable tub\u00e9rculo rico en prote\u00ednas y carbohidratos, el tiquisque se come y se disfruta de la misma manera en frituras, que hervido, hecho pur\u00e9, crema o harina. Generoso en fibra diet\u00e9tica, el tiquisque reduce el colesterol al tiempo que ayuda a mejorar el proceso digestivo.",
+            "icon": "images\/icons\/tiquisque.svg",
+            "name_origin": null,
             "center_origin": [
                 "VII",
                 "VIIIb"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Conocido en nuestro pa\u00eds como tiquisque o malanga. Originario de las Antillas debido a la gran variedad que se encuentra all\u00ed. En nuestra cocina tradicional esta verdura se consume de forma parecida al \u00f1ampi y la papa, siendo una excelente opci\u00f3n para \u201cLa olla de carne\u201d. ",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "Por su aporte en vitamina C, el tiquisque fortalece el sistema inmunol\u00f3gico, mejora la visi\u00f3n nocturna y previene algunos tipos de c\u00e1ncer eliminando los radicales libres que provocan la mutaci\u00f3n de c\u00e9lulas sanas en cancer\u00edgenas. Su contribuci\u00f3n al organismo en potasio y hierro, reduce el riesgo de contraer enfermedades cardiovasculares y anemias, respectivamente. ",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En un lugar seco y oscuro"
         }
     },
     {
@@ -2085,39 +2182,41 @@
             "category": "verdura",
             "common_name": "tomate",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Culpe de una mala ensalada a la falta de un tomate. Originario de Am\u00e9rica, el tomate posee una pulpa jugosa y ligeramente \u00e1cida que lo convierte en la elecci\u00f3n predilecta para la creaci\u00f3n de salsas, aderezos y para acompa\u00f1ar una amplia variedad de platos. No es de extra\u00f1ar que sea el vegetal m\u00e1s popular.",
+            "icon": "images\/icons\/tomate.svg",
+            "name_origin": null,
             "center_origin": [
                 "VII"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "El tomate ha tenido un gran viaje en distintos lugares del mundo. Por ejemplo en Am\u00e9rica del sur (lugar de origen), su tama\u00f1o era como el de un ar\u00e1ndano, cuando viaj\u00f3 a Am\u00e9rica central su tama\u00f1o increment\u00f3 al de una cereza. Finalmente en gran parte de Europa se le asociaba a una fruta venenosa por sus colores latentes y por su tama\u00f1o que conocemos hoy en d\u00eda. Sin embargo, despu\u00e9s de un tiempo la fruta cobr\u00f3 popularidad por su gran sabor en la preparaci\u00f3n de salsas. ",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "La vitamina A presente en el tomate mejora nuestra visi\u00f3n y protege nuestros ojos de enfermedades degenerativas, al tiempo que su vitamina K e hierro ayudan a controlar la coagulaci\u00f3n de la sangre y contribuyen a su buen estado. Sus altos porcientos de carotenos y licopeno act\u00faan como antioxidantes naturales en nuestro organismo.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "No apilarlos y colocarlos en el caj\u00f3n de las verduras del refrigerador"
         }
     },
     {
         "model": "products.product",
         "pk": "tomillo",
         "fields": {
-            "category": "otro",
+            "category": "hierba",
             "common_name": "tomillo",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "El tomillo, adem\u00e1s de tener propiedades medicinales, es una hierba arom\u00e1tica que aporta un sabor de fondo excepcional, enriqueciendo los platos sin dominarlos. Cuando se combina con aceite, se convierte en un aliado perfecto para realzar el sabor de carnes y panes.",
+            "icon": "images\/icons\/tomillo.svg",
+            "name_origin": null,
             "center_origin": [
                 "V"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "El tomillo es una hierba arom\u00e1tica imprescindible en la cocina de la regi\u00f3n mediterr\u00e1nea, su lugar de origen. Seca, se le utiliza all\u00ed para adobar encurtidos, elaborar panes, salsas y ali\u00f1os para ensaladas.\r",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "La fibra que ofrece el tomillo combate el estre\u00f1imiento y regula el tr\u00e1nsito intestinal. El calcio y el f\u00f3sforo necesarios para sostener con salud nuestros huesos y dientes, podemos tambi\u00e9n obtenerlos del tomillo. Sus componentes fen\u00f3licos, el timol y el carvacrol, estimulan la actividad antibacteriana, antif\u00fangica y antiviral.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En una bolsa herm\u00e9tica."
         }
     },
     {
@@ -2127,19 +2226,20 @@
             "category": "fruta",
             "common_name": "toronja",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Deliciosa y refrescante fruta para consumir entera o en jugo, la toronja aporta una dosis considerable de vitaminas A, B y C a nuestro organismo. Preparada tambi\u00e9n en forma de casquitos, se convierte en un delicado postre con el que cerrar un almuerzo o cena.",
+            "icon": "images\/icons\/toronja.svg",
+            "name_origin": null,
             "center_origin": [
                 "VII",
                 "VIII"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Aunque sus ra\u00edces provienen de Asia, el linaje de la toronja se arraiga en Mesoam\u00e9rica y Am\u00e9rica Central. Recetas como la c\u00e1scara de toronja confitada y los cascos dulces, son aut\u00f3ctonas de Am\u00e9rica Latina. En Atenas, Costa Rica, las toronjas se comen rellenas con dulce de leche.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Por sus tonos rosados, la toronja es fuente s\u00f3lida de antioxidantes como el betacaroteno y el licopeno, capaces de neutralizar los radicales libres que podr\u00edan acarrear algunos tipos de c\u00e1ncer y problemas del coraz\u00f3n. El betacaroteno en particular, se transforma en vitamina A, lo que puede ser beneficioso para la salud de nuestra piel. Como parte de su carga de antioxidantes, la toronja adem\u00e1s posee altas dosis de vitamina C.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En un ambiente seco y bien ventilado "
         }
     },
     {
@@ -2149,18 +2249,19 @@
             "category": "fruta",
             "common_name": "uchuva",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "\u00bfQu\u00e9 pasar\u00eda si el tomate fuera dulce? \u00a1Ser\u00eda una uchuva! Esta ex\u00f3tica fruta, tambi\u00e9n referida como physalis, se puede consumir fresca, elaborada en mermeladas y jaleas o ba\u00f1ada en chocolate. Adem\u00e1s, se utiliza en salsas o, incluso, como aromatizante para helados. ",
+            "icon": "images\/icons\/uchuva.svg",
+            "name_origin": null,
             "center_origin": [
                 "VIII"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "En nuestro pa\u00eds la conocemos c\u00f3mo Uchuva pero en otros pa\u00edses del sur  como Per\u00fa es conocida como Ushum y en Ecuador c\u00f3mo Uvilla. Fruta ex\u00f3tica originaria de los Andes que posee un gran sabor para la preparaci\u00f3n de mermeladas, jugos,  dulces y helados. Adem\u00e1s por sus propiedades curativas es una excelente fruta que debemos incluir en nuestra dieta. ",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "La uchuva, rica en vitamina B1, es beneficiosa para el metabolismo de az\u00facares, ayudando a prevenir enfermedades metab\u00f3licas y gastrointestinales. Su contenido de vitamina B3 contribuye a reducir los niveles de grasa sangu\u00ednea y a mejorar la funci\u00f3n cerebral, proporcionando energ\u00eda al cerebro. Adem\u00e1s, su generosa presencia de vitaminas A y C la convierte en una aliada para el sistema inmunol\u00f3gico y la salud de la piel.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En un recipiente de pl\u00e1stico destapado "
         }
     },
     {
@@ -2170,18 +2271,19 @@
             "category": "fruta",
             "common_name": "uva",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "La materia primordial del vino, tan antiguo como la tradici\u00f3n humana. La uva, no solo es ampliamente vers\u00e1til, sino que tambi\u00e9n es muy f\u00e1cil de comer y almacenar, convirti\u00e9ndola en el aperitivo perfecto para una merienda escolar o un d\u00eda de campo.",
+            "icon": "images\/icons\/uva.svg",
+            "name_origin": null,
             "center_origin": [
                 "V"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Mejor conocida por su uso primario  en la preparaci\u00f3n de vino.  Si bien Asia es su centro de origen,en la actualidad Europa es el principal productor de la misma. La uva se utiliza en una diversidad de platillos, como postres, jugos y tablas de queso. Adem\u00e1s en la medicina china se utiliza para tratar varias enfermedades debido a sus propiedades medicinales. ",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "La uva, rica en antioxidantes, es adem\u00e1s una excelente fuente de vitamina K, crucial para la coagulaci\u00f3n sangu\u00ednea y la salud \u00f3sea. Adem\u00e1s, aporta cantidades significativas de cobre, vital para la producci\u00f3n de gl\u00f3bulos rojos y energ\u00eda. Su contenido en resveratrol sugiere beneficios adicionales, como el est\u00edmulo de la producci\u00f3n de col\u00e1geno y la protecci\u00f3n de los fol\u00edculos capilares, promoviendo as\u00ed la salud de la piel y el cabello.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En la zona m\u00e1s fr\u00eda del refrigerador"
         }
     },
     {
@@ -2190,61 +2292,64 @@
         "fields": {
             "category": "legumbre",
             "common_name": "vainica",
-            "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "common_name_alternate": "jud\u00edas verdes, habichuelas verdes",
+            "description": "La vainica, ideal para picadillos, es una elecci\u00f3n pr\u00e1ctica para variar las opciones verdes en el plato y a\u00f1adir un toque saludable. Pru\u00e9belas crudas, en ensaladas, salteadas o incorp\u00f3relas en sofritos con carne.",
+            "icon": "images\/icons\/vainica.svg",
+            "name_origin": null,
             "center_origin": [
                 "VII"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Nacida en los suelos de M\u00e9xico y Guatemala, la vainica se come all\u00ed hervida o salteada, cocinada con aceite y servida en combinaci\u00f3n con diversas verduras.",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "La vainica es rica en \u00e1cido f\u00f3lico, vitamina esencial para la salud de embarazadas, el aumento de la hemoglobina y para la buena salud cardiovascular y neuronal. Su alto contenido en vitaminas A y C, la convierten en una aliada indudable del sistema inmunol\u00f3gico, la salud celular, y la piel.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En la gaveta de las verduras para que se protejan del fr\u00edo y mantengan la humedad adecuada"
         }
     },
     {
         "model": "products.product",
         "pk": "yuca",
         "fields": {
-            "category": "tubérculo",
+            "category": "raiz",
             "common_name": "yuca",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "La yuca se roba el show cuando de aporte en carbohidratos se trata, \u00a1es una fuente de energ\u00eda imbatible! Esta ra\u00edz brilla en todas sus formas: frita, hervida, en pur\u00e9 o con salsa. Adem\u00e1s de ser deliciosa, es f\u00e1cil de digerir y una aliada para combatir padecimientos estomacales.",
+            "icon": "images\/icons\/yuca.svg",
+            "name_origin": null,
             "center_origin": [
                 "VIIIb"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Conocida como \u201cmandioca\u201d en Am\u00e9rica del sur y empleada para la preparaci\u00f3n de harinas (base del platillo Brasile\u00f1o \u201cFarofa\u201d ) adem\u00e1s la yuca en esta zona tambi\u00e9n es utilizada en postres. En nuestro pa\u00eds su uso en las recetas es muy diferente ya que la podemos observar en sopa, fritas o simplemente cocida. ",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "Entre sus aportes nutricionales est\u00e1 el almid\u00f3n resistente, que contribuye a mejorar la salud intestinal por sus efectos positivos en la microbiota y su capacidad para reducir los niveles de glucosa en sangre. La vitamina K y el calcio presentes en la yuca ayudan a mantener sanos los huesos y previenen la osteoporosis, al tiempo que su contribuci\u00f3n en vitamina B6 favorece el cuidado de la piel y el pelo.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En un lugar seco y oscuro"
         }
     },
     {
         "model": "products.product",
         "pk": "zacatelimon",
         "fields": {
-            "category": "otro",
-            "common_name": "zacate limón",
+            "category": "hierba",
+            "common_name": "zacate lim\u00f3n",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "No lo confunda usted con un simple zacate \u00a1Oh modelo de las buenas hierbas! El zacate lim\u00f3n, con su fragancia c\u00edtrica, no solo deleita los sentidos en infusiones y aceites, sino que tambi\u00e9n consiente al est\u00f3mago, fortalece las defensas, purifica la piel, combate el insomnio y la lista contin\u00faa.",
+            "icon": "images\/icons\/zacatelimon.svg",
+            "name_origin": null,
             "center_origin": [
                 "II"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Conocemos esta hierba especialmente por su uso culinario en la cultura asi\u00e1tica.  Gracias a su fuerte aroma y sabor es frecuentemente utilizada para la preparaci\u00f3n de t\u00e9 y sopas.  Adem\u00e1s tambi\u00e9n es empleada para la elaboraci\u00f3n de cremas, repelentes y como planta medicinal.",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Los compuestos geraniol y nerol, presentes en el zacate lim\u00f3n, poseen propiedades antibi\u00f3ticas, mientras la combinaci\u00f3n de nutrientes esenciales como las vitaminas del grupo B, el magnesio, el f\u00f3sforo y el calcio, hacen del zacate lim\u00f3n un analg\u00e9sico y antiinflamatorio natural. ",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "En un recipiente con cierre herm\u00e9tico"
         }
     },
     {
@@ -2254,18 +2359,19 @@
             "category": "verdura",
             "common_name": "zanahoria",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Su textura robusta y su tenue sabor complementan muy bien una amplia variedad de platos. Hervida en sopas, rayada en ensaladas y postres, o como delicia en crudo, esta verdura es vers\u00e1til y rica en betacaroteno . Y como si eso no fuera suficiente, adem\u00e1s es de larga duraci\u00f3n.",
+            "icon": "images\/icons\/zanahoria.svg",
+            "name_origin": null,
             "center_origin": [
                 "III"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Afganist\u00e1n es el lugar de origen de la zanahoria. Sin embargo los or\u00edgenes de esta  pose\u00edan rasgos muy distintos a los que conocemos hoy en d\u00eda en nuestra mesa, ya que la pod\u00edamos encontrar en colores como moradas, blancas o amarillas. La zanahoria es un alimento con una gran versatilidad en todas las cocinas del mundo, ya que se come en ensaladas, al vapor, salteadas, o bien en postres",
             "food_basket": true,
-            "nutrition_notes": null,
+            "nutrition_notes": "Rica en f\u00f3sforo, la zanahoria vigoriza mentes y cuerpos cansados, a la vez que ofrece desde el betacaroteno, una fuente antioxidante y moduladora de la respuesta inmunitaria que permite enfrentar enfermedades cardiovasculares, c\u00e1nceres y cataratas. Por su contenido de hierro y cobre, reduce las anemias y favorece la formaci\u00f3n de gl\u00f3bulos rojos.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Envueltas en hojas de papel absorbente humedecido para que se mantengan frescas"
         }
     },
     {
@@ -2275,19 +2381,20 @@
             "category": "verdura",
             "common_name": "zapallo",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Digestiva hortaliza que su paladar y est\u00f3mago siempre agradecer\u00e1n. Ya sea hervido, crudo, o al horno, como crema, rallado, o en guisos, el zapallo sirve, adem\u00e1s, como elemento valioso en la primera dieta s\u00f3lida: apenas deje el pecho de su madre el beb\u00e9, ah\u00ed estar\u00e1 el zapallo esper\u00e1ndolo.",
+            "icon": "images\/icons\/zapallo.svg",
+            "name_origin": null,
             "center_origin": [
                 "VIII",
                 "VIIIb"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Su centro de origen es Am\u00e9rica, siendo esta verdura sumamente importante para la cultura prehisp\u00e1nica ya que se encuentra registro del uso de la misma. El calabac\u00edn o mejor conocido en nuestro pa\u00eds como Zapallo se puede preparar de formas distintas sin embargo la forma m\u00e1s conocida en nuestra mesa es en picadillos y cremas. ",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "Debido a su contenido en vitaminas A, B, C y E, el zapallo ayuda a cuidar la vista, a fortalecer la piel, los huesos y el cabello, a controlar la poluci\u00f3n corporal y evitar c\u00e1nceres, y a reducir la oxidaci\u00f3n celular. El magnesio que posee el zapallo puede  contribuir a evitar ataques card\u00edacos y derrames cerebrales.",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Alejarlo de los focos de luz"
         }
     },
     {
@@ -2297,18 +2404,19 @@
             "category": "verdura",
             "common_name": "zucchini",
             "common_name_alternate": null,
-            "description": null,
-            "icon": null,
+            "description": "Dado su sabor neutral, se le combina sin contratiempos con otros ingredientes para formar platos tan diversos como chips al horno, pizzetas, pastas, tortillas, estofados y verduras salteadas. En rodajas, rallada, cruda, cocida, o en postres, esta hortaliza califica entre las m\u00e1s vers\u00e1tiles por sus m\u00faltiples usos culinarios. ",
+            "icon": "images\/icons\/zucchini.svg",
+            "name_origin": null,
             "center_origin": [
                 "VII"
             ],
-            "center_origin_notes": null,
+            "center_origin_notes": "Originario de Mesoam\u00e9rica, el zucchini tom\u00f3 su forma actual en Italia, donde adopt\u00f3 su nombre. En M\u00e9xico, resalta en sopas y como relleno de quesadillas, mientras que en Italia, sus flores se fr\u00eden para dar vida al exquisito \"fiori di zucca\".",
             "food_basket": false,
-            "nutrition_notes": null,
+            "nutrition_notes": "El zucchini es rico en minerales como potasio y magnesio, bajo en calor\u00edas y alto en fibra. Con notables niveles de antioxidantes, como carotenoides y lute\u00edna, apoya la salud ocular y puede reducir el riesgo de enfermedades card\u00edacas y diabetes tipo 2. Adem\u00e1s, su contenido de agua y fibra favorece la digesti\u00f3n, contribuye a la p\u00e9rdida de peso y a un coraz\u00f3n m\u00e1s sano. ",
             "preparation": [],
             "preparation_notes": null,
             "storage": [],
-            "storage_notes": null
+            "storage_notes": "Puede guardarse dentro de una bolsa de pl\u00e1stico dentro del refrigerador"
         }
     }
 ]
