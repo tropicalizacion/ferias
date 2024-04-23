@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Marketplace
 from website.models import Announcement, Text
+from feed.models import Event
 from django.contrib.gis.db.models.functions import Distance
 import humanized_opening_hours as hoh
 from django.db.models import Q
@@ -154,6 +155,9 @@ def feria(request, marketplace_url):
         "floristería": marketplace.florist,
     }
 
+    events = Event.objects.filter(marketplace=marketplace_url).order_by("-start_date")
+    print(f"Evento: {events}")
+
     announcements = Announcement.objects.filter(marketplace=marketplace_url).order_by("-created")
     
     text = Text.objects.filter(page="/ferias/feria")
@@ -171,6 +175,7 @@ def feria(request, marketplace_url):
         "infrastructure": infrastructure,
         "services": services,
         "announcements": announcements,
+        "events": events,
         "texts": texts
     }
 
