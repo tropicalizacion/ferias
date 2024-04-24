@@ -177,6 +177,8 @@ Sin embargo, puede haber problemas al cargar imágenes o CSS, JS, etc. con un er
 sudo gpasswd -a tcu www-data
 ```
 
+Nota (24 de abril de 2024): la última vez el comando fue `sudo gpasswd -a www-data bucr` (`bucr` es otro usuario, equivalente a `tcu`) y sí funcionó. En fin.
+
 que le da permisos al usuario `tcu` dentro de `www-data`.
 
 Es posible probar la asignación con `getent group www-data`, que devolverá algo como `www-data:x:33:tcu`. ¿Qué es [www-data](https://askubuntu.com/questions/873839/what-is-the-www-data-user)?
