@@ -24,6 +24,7 @@ urlpatterns = [
     path('ferias/', include('marketplaces.urls'), name='ferias'),
     path('productos/', include('products.urls'), name='productos'),
     path('consejos/', include('content.urls'), name='consejos'),
+    path('avisos/', include('feed.urls'), name='avisos'),
     path('blog/', include('blog.urls'), name='blog'),
     path('sugerencias/', include('crowdsourcing.urls'), name='sugerencias'),
     path('api/', include('api.urls'), name='api'),
