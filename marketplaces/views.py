@@ -182,6 +182,10 @@ def feria(request, marketplace_url):
     return render(request, "feria.html", context)
 
 
+def edit(request, marketplace_url):
+    return render(request, "edit.html")
+
+
 def results(request):
     marketplaces = Marketplace.objects.all().order_by("name")
     if request.method == "POST":            

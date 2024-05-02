@@ -17,3 +17,15 @@ def news(request, news_slug):
 
 def alert(request, alert_slug):
     return render(request, "alert.html")
+
+
+def create_event(request):
+    return render(request, "create_event.html")
+
+
+def create_news(request):
+    return render(request, "create_news.html")
+
+
+def create_alert(request):
+    return render(request, "create_alert.html")
