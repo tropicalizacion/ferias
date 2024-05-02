@@ -10,7 +10,7 @@ class Event(models.Model):
     Data model: https://schema.org/Event
     """
 
-    event_slug = models.SlugField(max_length=200, unique=True)
+    event_slug = models.SlugField(max_length=200, unique=True, blank=True, null=True)
     marketplace = models.ForeignKey(Marketplace, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     description = models.TextField()
@@ -30,7 +30,7 @@ class News(models.Model):
     Data model: https://schema.org/NewsArticle
     """
 
-    news_slug = models.SlugField(max_length=200, unique=True)
+    news_slug = models.SlugField(max_length=200, unique=True, blank=True, null=True)
     marketplaces = models.ManyToManyField(Marketplace, blank=True)
     name = models.CharField(max_length=200)
     description = models.TextField()
@@ -48,7 +48,7 @@ class Alert(models.Model):
     Data model: None
     """
 
-    alert_slug = models.SlugField(max_length=200, unique=True)
+    alert_slug = models.SlugField(max_length=200, unique=True, blank=True, null=True)
     marketplaces = models.ManyToManyField(Marketplace, blank=True)
     name = models.CharField(max_length=200)
     description = models.TextField()
