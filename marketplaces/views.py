@@ -1,4 +1,6 @@
 from django.shortcuts import render, get_object_or_404
+
+from users.models import MarketplaceAdmin
 from .models import Marketplace
 from website.models import Announcement, Text
 from feed.models import Event
@@ -104,6 +106,19 @@ def feria(request, marketplace_url):
     today = datetime.today()
 
     marketplace = get_object_or_404(Marketplace, pk=marketplace_url)
+    
+    is_marketplace_admin = False
+    user = request.user
+    
+    if user.is_authenticated:
+        try:
+            marketplace_admin = MarketplaceAdmin.objects.get(user=request.user)
+            is_marketplace_admin = marketplace_admin.marketplace == marketplace
+            
+        except MarketplaceAdmin.DoesNotExist:
+            is_marketplace_admin = False
+    
+    
     closest_marketplaces = (
         Marketplace.objects.annotate(
             distance=Distance("location", marketplace.location)
@@ -176,7 +191,8 @@ def feria(request, marketplace_url):
         "services": services,
         "announcements": announcements,
         "events": events,
-        "texts": texts
+        "texts": texts,
+        "is_marketplace_admin": is_marketplace_admin
     }
 
     return render(request, "feria.html", context)
