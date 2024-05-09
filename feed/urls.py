@@ -11,6 +11,6 @@ urlpatterns = [
     path("noticias/crear", views.create_news, name="create_news"),
     path("alertas/crear", views.create_alert, name="create_alert"),
     path("eventos/<slug:event_slug>/", views.event, name="feed"),
-    path("noticias/<slug:news_slug>/", views.news, name="feed"),
+    path("noticias/<slug:news_slug>/", views.news, name="news"),
     path("alertas/<slug:alert_slug>/", views.alert, name="feed"),
 ]
