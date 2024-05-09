@@ -16,7 +16,13 @@
 
 <!-- Portada -->
 <div class="px-4 pt-3 pb-4 text-center background-azul">
-    <h1 class="text-white fw-bold">Feria del agricultor de</h1>
+    <h1 class="text-white fw-bold">
+        {% if marketplace.type == 'feria' %}
+        Feria del agricultor de
+        {% else %}
+        Mercado libre de
+        {% endif %}
+    </h1>
     <h1 class="display-1 text-white display-deferia">{{ marketplace.name }}</h1>
 
     {% if marketplace.opening_date %}
