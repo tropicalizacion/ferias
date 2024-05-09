@@ -4,64 +4,7 @@
 
 {% block page_title %} {{ marketplace.name }} {% endblock %}
 
-{% block schema %}
-<script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ShoppingCenter",
-        "name": "{{ marketplace.name|escapejs }}",
-        "address": {
-            "@type": "PostalAddress",
-            "postalCode": "{{ marketplace.postal_code|escapejs }}",
-            "streetAddress": "{{ marketplace.address|escapejs }}",
-            "addressLocality": "{{ marketplace.district|escapejs }}",
-            "addressRegion": "{{ marketplace.province|escapejs }}",
-            "addressCountry": "Costa Rica"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "{{ marketplace.location.x|escapejs }}",
-            "longitude": "{{ marketplace.location.y|escapejs }}"
-        },
-        "url": [
-            "{{ marketplace.facebook|escapejs }}",
-            "{{ marketplace.instagram|escapejs }}",
-            "{{ marketplace.website|escapejs }}"
-        ],
-        "telephone": "+12122459600",
-        "priceRange": "$",
-        "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday",
-                "Sunday"
-            ],
-            "opens": "{{ opens_in|escapejs }}",
-            "closes": "{{ closes_in|escapejs }}"
-        },
-        "amenityFeature": 
-            {% if marketplace.indoor %}
-            "Bajo techo",
-            {% elif marketplace.indoor == False %}
-            "Al aire libre",
-        "event": [
-            {% for event in events %}
-            {
-                "@type": "Event",
-                "name": "{{ event.name|escapejs }}",
-                "description": "{{ event.description|escapejs }}"
-            },
-            {% endfor %}
-        ],
-        "keywords": ""
-    }
-</script>
-{% endblock %}
+{% block schema %} {{ structured_data }} {% endblock %}
 
 {% block bg-navbar %} background-azul {% endblock %}
 

@@ -11,8 +11,72 @@ import math
 import json
 from datetime import datetime
 
-# Create your views here.
+# JSON-LD Structured Data
 
+def get_structured_data(marketplace, opens_in, closes_in, events):
+    indoor = ""
+
+    if marketplace.indoor:
+        indoor = "Bajo techo"
+    elif marketplace.indoor == False:
+        indoor = "Al aire libre"
+
+    sd_events = []
+
+    for event in events:
+        sd_event = {
+            "@type": "Event",
+            "name": event.name,
+            "description": event.description
+        }
+        sd_events.append(sd_event)
+
+    structured_data = {
+        "@context": "https://schema.org",
+        "@type": "ShoppingCenter",
+        "name": marketplace.name,
+        "address": {
+            "@type": "PostalAddress",
+            "postalCode": marketplace.postal_code,
+            "streetAddress": marketplace.address,
+            "addressLocality": marketplace.district,
+            "addressRegion": marketplace.province,
+            "addressCountry": "Costa Rica"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": marketplace.location.x,
+            "longitude": marketplace.location.y
+        },
+        "url": [
+            marketplace.facebook,
+            marketplace.instagram,
+            marketplace.website
+        ],
+        "telephone": "+506",
+        "priceRange": "$",
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+            ],
+            "opens": opens_in,
+            "closes": closes_in
+        },
+        "amenityFeature": indoor,
+        "event": sd_events,
+        "keywords": ""
+    }
+
+    return structured_data
+
+# Create your views here.
 
 def ferias(request):
     """View function for all ferias page of site."""
@@ -165,6 +229,10 @@ def feria(request, marketplace_url):
     texts["servicios_titulo"] = text.filter(section="servicios_titulo").first()
     texts["servicios_descripcion"] = text.filter(section="servicios_descripcion").first()
     
+    # JSON-LD Structured Data
+
+    structured_data = get_structured_data(marketplace, opens_in, closes_in, events)
+
     context = {
         "marketplace": marketplace,
         "is_open": is_open,
@@ -176,7 +244,8 @@ def feria(request, marketplace_url):
         "services": services,
         "announcements": announcements,
         "events": events,
-        "texts": texts
+        "texts": texts,
+        "structured_data": structured_data
     }
 
     return render(request, "feria.html", context)
@@ -317,3 +386,4 @@ def search_marketplaces(submission):
     query_text = submission.get("query_text")
 
     return marketplaces_match, marketplaces_others, marketplaces_keyword, keyword, query_text, by_location
+
