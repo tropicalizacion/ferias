@@ -1,7 +1,54 @@
-Aquí están todas las noticias, eventos y anuncios de las ferias.
+{% extends 'base.html' %}
+{% block page_title %} Avisos {% endblock %}
 
-<a href="{% url 'create_event' %}">Crear evento</a>
+{% block bg-navbar %} background-verde {% endblock %}
+{% load static %}
 
-<a href="{% url 'create_news' %}">Crear noticia</a>
+{% block main %}
 
-<a href="{% url 'create_alert' %}">Crear alerta</a>
+    <div class="d-flex flex-column justify-content-center">
+        <h1 class="hero-deferia rojo align-self-center fw-bold m-3">Aquí están todas las noticias, eventos y anuncios de las ferias.</h1>
+
+        {%if is_marketplace_admin %}
+            {%include "addFeed.html"%}
+        {% endif %}
+
+        {% if feed_list %}
+            <div class="container my-4 w-50">
+                {% for element in feed_list %}
+                    <a href="{% url 'news' element.id %}" class="text-decoration-none">
+                        <div class="card feed-card mb-3">
+                            <div class="card-header header-card-feed">
+                                <h5 class="card-title">{{ element.name }}</h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">{{ element.description }}</p>
+                                {% if element.start_date %}
+                                    <p class="card-text">Fecha de inicio: {{ element.start_date }}</p>
+                                {% endif %}
+                                {% if element.end_date %}
+                                    <p class="card-text">Fecha de fin: {{ element.end_date }}</p>
+                                {% endif %}
+                                {% if element.image %}
+                                    <img src="{{ element.image.url }}" class="w-25 h-25 card-img-top" alt="...">
+                                {% endif %}
+                            </div>
+                            <div class="card-footer text-muted">
+                                Creado el: {{ element.created_at }}
+                            </div>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>    
+        {% else %}
+            <div class="container my-4">
+                <div class="alert alert-primary" role="alert">
+                    No hay elementos para mostrar.
+                </div>    
+            </div>
+        {% endif %}
+
+
+    </div>
+
+{% endblock %}
