@@ -1,0 +1,15 @@
+<h1>Precios de los productos según recomendación del CNP</h1>
+
+<h2>Precios recomendados de la semana</h2>
+
+<ul>
+    {% for product in week_prices %}
+        <li>{{ product.variety|capfirst }}: {{ product.price }} CRC</li>
+    {% endfor %}
+</ul>
+
+<h2>Datos históricos</h2>
+
+Elegir producto(s): (menú)
+
+Gráfica de precios de los productos seleccionados semanalmente en los últimos años.

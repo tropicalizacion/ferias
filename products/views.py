@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Product, Variety
+from .models import Product, Variety, Price
 from website.models import Text
 import datetime
 
@@ -48,3 +48,16 @@ def product(request, product_url):
     }
 
     return render(request, "product.html", context)
+
+
+def prices(request):
+    prices = Price.objects.all()
+    year = datetime.datetime.now().isocalendar()[0]
+    week = datetime.datetime.now().isocalendar()[1]
+    week_prices = prices.filter(year=year, week=week)
+
+    context = {
+        "prices": prices,
+        "week_prices": week_prices,
+    }
+    return render(request, "prices.html", context)

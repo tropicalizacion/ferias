@@ -17,9 +17,7 @@ class Product(models.Model):
         ("otro", "Otra categoría"),
     ]
 
-    product_url = models.CharField(
-        primary_key=True, max_length=63
-    )
+    product_url = models.CharField(primary_key=True, max_length=63)
     category = models.CharField(choices=CATEGORY_CHOICES, max_length=15)
     common_name = models.CharField(max_length=63)
     common_name_alternate = models.TextField(blank=True, null=True)
@@ -79,6 +77,31 @@ class Variety(models.Model):
         return string
 
 
+class Price(models.Model):
+    """Model definition for Price."""
+
+    UNIT_CHOICES = [
+        ("kg", "Kilogramo"),
+        ("u", "Unidad"),
+    ]
+
+    price_id = models.AutoField(primary_key=True)
+    variety = models.ForeignKey(Variety, on_delete=models.SET_NULL, null=True)
+    unit = models.CharField(choices=UNIT_CHOICES, max_length=3)
+    price = models.IntegerField()
+    publication_date = models.DateField()
+    year = models.IntegerField()
+    week = models.IntegerField()
+
+    def save(self, *args, **kwargs):
+        self.year = self.publication_date.isocalendar()[0]
+        self.week = self.publication_date.isocalendar()[1]
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f"{self.variety.product_url.common_name} {self.variety.common_name_variety}: {self.publication_date}"
+
+
 class Origin(models.Model):
     """Model definition for Center of Origin."""
 
@@ -93,7 +116,7 @@ class Origin(models.Model):
     mapamundi = models.ImageField(upload_to="maps", blank=True, null=True)
 
     def __str__(self):
-        return f'{self.code} - {self.name}'
+        return f"{self.code} - {self.name}"
 
 
 class Preparation(models.Model):
