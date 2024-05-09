@@ -35,7 +35,8 @@
     gtag('config', 'G-96HQFNE7QN');
   </script>
   <!-- JSON-LD Schema.org -->
-  {% block schema %}{% endblock %}
+  {% load render_json_ld from json_ld %}
+  {% render_json_ld sd %}
 </head>
 
 <body>

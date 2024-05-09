@@ -245,7 +245,7 @@ def feria(request, marketplace_url):
         "announcements": announcements,
         "events": events,
         "texts": texts,
-        "structured_data": structured_data
+        "sd": structured_data
     }
 
     return render(request, "feria.html", context)
