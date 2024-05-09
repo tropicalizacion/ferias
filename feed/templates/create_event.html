@@ -1,1 +1,46 @@
-Nuevo evento aquí
+{% extends 'base.html' %}
+{% block page_title %} Crear evento {% endblock %}
+
+{% block bg-navbar %} background-azul {% endblock %}
+{% load static %}
+
+{% block main %}
+
+
+<div class="d-flex flex-column w-100 justify-content-center pt-4">
+
+    <h1 class="hero-deferia rojo align-self-center fw-bold m-3">Crear evento para la feria de {{marketplace_admin.marketplace}}</h1>
+
+    <div class="container-form-avisos text-white align-self-center">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group m-2">
+                <label for="name">Nombre del Evento:</label>
+                <input type="text" class="form-control" id="name" name="name">
+            </div>
+            <div class="form-group m-2">
+                <label for="description">Descripción:</label>
+                <textarea class="form-control" id="description" name="description"></textarea>
+            </div>
+            <div class="form-group m-2">
+                <label for="start_date">Fecha de Inicio:</label>
+                <input type="datetime-local" class="form-control" id="start_date" name="start_date">
+            </div>
+            <div class="form-group m-2">
+                <label for="end_date">Fecha de Fin:</label>
+                <input type="datetime-local" class="form-control" id="end_date" name="end_date">
+            </div>
+            <div class="form-group m-2">
+                <label for="location">Ubicación:</label>
+                <input type="text" class="form-control" id="location" name="location" value="{{marketplace_admin.marketplace}}">
+            </div>
+            <div class="form-group m-3">
+                <label for="image">Imagen:</label>
+                <input type="file" class="form-control-file" id="image" name="image">
+            </div>
+            <button type="submit" class="btn btn-primary m-2">Crear Evento</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
