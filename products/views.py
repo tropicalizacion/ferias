@@ -16,14 +16,14 @@ def products(request):
     varieties_verduras = varieties.filter(product_url__category="verdura")
     varieties_legumbres = varieties.filter(product_url__category="legumbre")
     varieties_tuberculos = varieties.filter(product_url__category="tubérculo")
-    
+
     text = Text.objects.filter(page="/productos")
     texts = {}
     texts["hero"] = text.filter(section="hero").first()
     texts["hero_parentesis"] = text.filter(section="hero_parentesis").first()
     texts["lista"] = text.filter(section="lista").first()
     texts["lista_descripcion"] = text.filter(section="lista_descripcion").first()
-    
+
     context = {
         "month": month,
         "varieties_otros": varieties_otros,
@@ -32,7 +32,7 @@ def products(request):
         "varieties_verduras": varieties_verduras,
         "varieties_legumbres": varieties_legumbres,
         "varieties_tuberculos": varieties_tuberculos,
-        "texts": texts
+        "texts": texts,
     }
     return render(request, "products.html", context)
 
