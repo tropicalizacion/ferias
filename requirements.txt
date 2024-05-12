@@ -4,6 +4,7 @@ djangorestframework
 drf-spectacular
 psycopg2-binary
 geopy
+pandas
 osm_opening_hours_humanized
 osm-humanized-opening-hours
 gunicorn
