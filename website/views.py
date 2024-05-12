@@ -24,7 +24,14 @@ def index(request):
     texts["features_barato"] = text.filter(section="features_barato").first()
     texts["features_nuestro"] = text.filter(section="features_nuestro").first()
     if request.method == "POST":
-        marketplaces_match, marketplaces_others, marketplaces_keyword, keyword, query_text, by_location = search_marketplaces(request.POST)
+        (
+            marketplaces_match,
+            marketplaces_others,
+            marketplaces_keyword,
+            keyword,
+            query_text,
+            by_location,
+        ) = search_marketplaces(request.POST)
         context = {
             "texts": texts,
             "show_results": True,
@@ -44,33 +51,33 @@ def index(request):
 
 
 def acerca(request):
-    
+
     text = Text.objects.filter(page="/sobre")
     texts = {}
     texts["hero"] = text.filter(section="hero").first()
     texts["hero_desc"] = text.filter(section="hero_desc").first()
 
     students = Student.objects.all().order_by("-factor")
-    
+
     context = {
         "texts": texts,
         "students": students,
     }
-    
+
     return render(request, "sobre-proyecto.html", context)
 
 
 def sobre_ferias(request):
-    
+
     text = Text.objects.filter(page="/sobre/ferias")
     texts = {}
     texts["hero"] = text.filter(section="hero").first()
     texts["consignas"] = text.filter(section="consignas").first()
-    
+
     context = {
         "texts": texts,
     }
-    
+
     return render(request, "sobre-ferias.html", context)
 
 
@@ -85,8 +92,8 @@ def ingresar(request):
         )
         if user is not None:
             login(request, user)
-            if 'next' in request.GET:
-                return redirect(request.GET.get('next'))
+            if "next" in request.GET:
+                return redirect(request.GET.get("next"))
             else:
                 return redirect("/")
         else:
@@ -177,7 +184,7 @@ def editar(request, slug):
 
 
 def custom_404(request, exception):
-    return render(request, '404.html', status=404)
+    return render(request, "404.html", status=404)
 
 
 def presentacion(request):

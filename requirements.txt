@@ -1,6 +1,9 @@
 django
 python-decouple
-psycopg2
+djangorestframework
+drf-spectacular
+psycopg2-binary
 geopy
 osm_opening_hours_humanized
 osm-humanized-opening-hours
+gunicorn
