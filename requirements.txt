@@ -5,6 +5,8 @@ drf-spectacular
 psycopg2-binary
 geopy
 pandas
+geopandas
+pillow
 openpyxl
 osm_opening_hours_humanized
 osm-humanized-opening-hours
