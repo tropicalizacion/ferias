@@ -14,7 +14,7 @@
   "PostalAddress": "schema:PostalAddress",
   "Event": "schema:Event",
   "OpeningHoursSpecification": "schema:OpeningHoursSpecification",
-  "GeoCoordinates": "schema:GeoCoordinates",
+  "GeoShape": "schema:GeoShape",
   "bbox": {
     "@container": "@list",
     "@id": "geojson:bbox"
@@ -39,8 +39,7 @@
   "addressCountry": "schema:addressCountry",
   "postalCode": "schema:postalCode",
   "geo": "schema:geo",
-  "latitude": "schema:latitude",
-  "longitude": "schema:longitude",
+  "polygon": "schema:polygon",
   "openingHoursSpecification": "schema:openingHoursSpecification",
   "dayOfWeek": "schema:dayOfWeek",
   "opens": "schema:opens",

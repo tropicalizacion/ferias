@@ -5,11 +5,86 @@ from feed.models import Event
 import humanized_opening_hours as hoh
 from django.db.models import Q
 from django.contrib.gis.db.models.functions import Distance
-from django.contrib.gis.geos import Point
+from django.contrib.gis.geos import Point, GEOSGeometry
 import math
 import json
 import jsonpickle
 from datetime import datetime
+
+# GeoJSON
+# polygon_str = "SRID=4326;POLYGON ((-83.9343774318695 9.967492765206455, -84.09253120422363 9.9290005763965, -84.08341705799103 9.778496959885052, -83.90381097793579 9.69983539777535, -83.80019187927246 9.78447063109153, -83.69711458683015 9.914389794902185, -83.86083126068115 9.908265226548764, -83.86308968067169 9.980938863268324, -83.90461564064026 10.052117305131944, -83.9343774318695 9.967492765206455))"
+
+def parse_polygon(polygon_str):
+
+    coords = polygon_str.split('((')[1].split('))')[0]
+    coord_pairs = [tuple(map(float, c.split(' '))) for c in coords.split(', ')]
+
+    return coord_pairs
+
+# "geometry": {"type": "Polygon", "coordinates": [[0.0, 0.0],[0.0, 0.0],[0.0, 0.0],[0.0, 0.0]]}
+
+def get_structured_geometry(marketplace):
+    polygon_field = marketplace.area
+    polygon_str = GEOSGeometry(polygon_field).wkt
+    
+    coord_pairs = parse_polygon(polygon_str)
+    coordinates = []
+    
+    for pair in coord_pairs:
+        x = pair[0]
+        y = pair[1]
+
+        coordinates.append([x, y])
+
+    geometry = {
+        "@type": "Polygon",
+        "coordinates": coordinates
+    }
+
+    return geometry
+
+def get_structured_geo(marketplace):
+    polygon = {
+        "@type": "Feature",
+        "geometry": get_structured_geometry(marketplace),
+        "properties": {
+            "title": marketplace.name,
+            "description": marketplace.description
+        }
+    }
+
+    geo_shape = {
+        "@type": "GeoShape",
+        "polygon": polygon
+    }
+
+    return geo_shape
+
+# JSON-LD Structured Data
+
+def get_structured_data(marketplace):
+    with open('static/json-ld/context.jsonld', 'r') as file:
+        context_data = json.load(file)
+
+    structured_data = {
+        "@context": context_data,
+        "@type": "ShoppingCenter",
+        "name": marketplace.name,
+        "address": get_structured_address(marketplace),
+        "geo": get_structured_geo(marketplace),
+        "openingHoursSpecification": get_structured_opening_hours(marketplace),
+        "amenityFeature": get_structured_feature(marketplace),
+        "event": get_structured_events(marketplace),
+        "url": [
+            marketplace.facebook,
+            marketplace.instagram,
+            marketplace.website
+        ],
+        "priceRange": "$",
+        "keywords": ""
+    }
+
+    return structured_data
 
 # Parse "We 12:00-20:00; Th 05:00-20:00; Fr 06:00-13:00" into the format "2015-02-10T15:04:55Z"
 
@@ -38,56 +113,6 @@ def get_structured_opening_hours(marketplace):
         opening_hours.append(specification)
 
     return opening_hours
-
-# GeoJSON
-# polygon_str = "SRID=4326;POLYGON ((-83.9343774318695 9.967492765206455, -84.09253120422363 9.9290005763965, -84.08341705799103 9.778496959885052, -83.90381097793579 9.69983539777535, -83.80019187927246 9.78447063109153, -83.69711458683015 9.914389794902185, -83.86083126068115 9.908265226548764, -83.86308968067169 9.980938863268324, -83.90461564064026 10.052117305131944, -83.9343774318695 9.967492765206455))"
-
-def parse_polygon(polygon_str):
-
-    coords = polygon_str.split('((')[1].split('))')[0]
-    coord_pairs = [tuple(map(float, c.split(' '))) for c in coords.split(', ')]
-
-    return coord_pairs
-
-# "geometry": {"type": "Polygon", "coordinates": [[0.0, 0.0],[0.0, 0.0],[0.0, 0.0],[0.0, 0.0]]}
-
-def get_structured_geometry(marketplace):
-    polygon_str = marketplace.area
-    
-    coord_pairs = parse_polygon(polygon_str)
-    coordinates = []
-    
-    for pair in coord_pairs:
-        x = pair[0]
-        y = pair[1]
-
-        coordinates.append([x, y])
-
-    geometry = {
-        "@type": "Polygon",
-        "coordinates": coordinates
-    }
-
-    return geometry
-
-def get_structured_geo(marketplace):
-    coordinates = {
-        "@type": "GeoCoordinates",
-        "latitude": marketplace.location.x,
-        "longitude": marketplace.location.y
-    }
-
-    polygon = {
-        "@type": "Feature",
-        "@id": "http://example.com/features/1",
-        "geometry": get_structured_geometry,
-        "properties": {
-            "title": marketplace.name,
-            "description": marketplace.description
-        }
-    }
-
-    return [coordinates, polygon]
 
 def get_structured_events(marketplace):
     events = Event.objects.filter(marketplace=marketplace).order_by("-start_date")
@@ -124,32 +149,6 @@ def get_structured_address(marketplace):
     }
 
     return address
-
-# JSON-LD Structured Data
-
-def get_structured_data(marketplace):
-    with open('static/json-ld/context.jsonld', 'r') as file:
-        context_data = json.load(file)
-
-    structured_data = {
-        "@context": context_data,
-        "@type": "ShoppingCenter",
-        "name": marketplace.name,
-        "address": get_structured_address(marketplace),
-        "geo": get_structured_geo(marketplace),
-        "openingHoursSpecification": get_structured_opening_hours(marketplace),
-        "amenityFeature": get_structured_feature(marketplace),
-        "event": get_structured_events(marketplace),
-        "url": [
-            marketplace.facebook,
-            marketplace.instagram,
-            marketplace.website
-        ],
-        "priceRange": "$",
-        "keywords": ""
-    }
-
-    return structured_data
 
 # Create your views here.
 
