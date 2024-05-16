@@ -12,6 +12,10 @@
     "MultiPolygon": "geojson:MultiPolygon",
     "Point": "geojson:Point",
     "Polygon": "geojson:Polygon",
+    "PostalAddress": "schema:PostalAddress",
+    "Event": "schema:Event",
+    "OpeningHoursSpecification": "schema:OpeningHoursSpecification",
+    "GeoCoordinates": "schema:GeoCoordinates",
     "bbox": {
       "@container": "@list",
       "@id": "geojson:bbox"
@@ -26,7 +30,26 @@
     },
     "geometry": "geojson:geometry",
     "properties": "geojson:properties",
-    "description": "http://purl.org/dc/terms/description",
-    "title": "http://purl.org/dc/terms/title"
+    "description": "schema:description",
+    "title": "schema:title",
+    "name": "schema:name",
+    "address": "schema:address",
+    "streetAddress": "schema:streetAddress",
+    "addressLocality": "schema:addressLocality",
+    "addressRegion": "schema:addressRegion",
+    "addressCountry": "schema:addressCountry",
+    "postalCode": "schema:postalCode",
+    "geo": "schema:geo",
+    "latitude": "schema:latitude",
+    "longitude": "schema:longitude",
+    "openingHoursSpecification": "schema:openingHoursSpecification",
+    "dayOfWeek": "schema:dayOfWeek",
+    "opens": "schema:opens",
+    "closes": "schema:closes",
+    "amenityFeature": "schema:amenityFeature",
+    "event": "schema:event",
+    "url": "schema:url",
+    "priceRange": "schema:priceRange",
+    "keywords": "schema:keywords"
   }
 }
