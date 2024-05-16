@@ -2,6 +2,50 @@ from django.shortcuts import render, get_object_or_404
 from .models import Product, Variety
 from website.models import Text
 import datetime
+import jsonpickle
+
+# JSON-LD Structured Data
+
+def get_structured_data(product):
+    structured_data = {
+        "@context": "http://schema.org/",
+        "@type": "MenuItem",
+        "additionalType": "Produce",
+        "name": product.common_name,
+        "alternateName": product.common_name_alternate,
+        "description": product.description,
+        "image": "", # product.icon.url,
+        "nutrition": {
+            "@type": "NutritionInformation",
+            "name": product.category,
+            "description": product.nutrition_notes
+        },
+        "menuAddOn": {
+            "@type": "MenuSection",
+            "additionalType": "Storage",
+            "description": product.storage_notes
+            # "countryOfOrigin": parse_country_origin(product.center_origin),
+        }
+    }
+
+    return structured_data
+
+def parse_country_origin(key):
+    regions_mapping = {
+        'I': 'Asia Oriental',
+        'II': 'Subcontinente indio',
+        'IIa': 'Archipiélago indo-malayo',
+        'III': 'Asia Central',
+        'IV': 'Asia Menor y Creciente Fértil',
+        'V': 'Mediterráneo',
+        'VI': 'Abisinia (actual Etiopía)',
+        'VII': 'Mesoamérica',
+        'VIII': 'Región andina tropical',
+        'VIIIa': 'Región chilena',
+        'VIIIb': 'Región brasileña-paraguaya'
+    }
+
+    return regions_mapping[key]
 
 # Create your views here.
 
@@ -42,9 +86,15 @@ def product(request, product_url):
 
     product = get_object_or_404(Product, product_url=product_url)
     varieties = Variety.objects.filter(product_url=product_url)
+
+    structured_data = get_structured_data(product)
+    serialized_json = jsonpickle.encode(structured_data, unpicklable=False)
+    structured_data = jsonpickle.decode(serialized_json)
+
     context = {
         "product": product,
         "varieties": varieties,
+        "structured_data": structured_data
     }
 
     return render(request, "product.html", context)
