@@ -8,35 +8,14 @@ from django.contrib.gis.db.models.functions import Distance
 from django.contrib.gis.geos import Point
 import math
 import json
+import jsonpickle
 from datetime import datetime
-
-
-# format date and time "2015-02-10T15:04:55Z"
-def test(marketplace):
-    opening_hours = marketplace.opening_hours
-    is_open = None
-    description = None
-    opens_in = None
-    closes_in = None
-    if opening_hours != "":
-        try:
-            oh = hoh.OHParser(opening_hours)
-            is_open = oh.is_open()
-            if is_open:
-                closes_in = oh.render().time_before_next_change(word=False)
-                closes_in = closes_in.replace("days", "días").replace("day", "día").replace("hours", "horas").replace("hour", "hora").replace("minutes", "minutos").replace("minute", "minuto").replace("seconds", "segundos").replace("second", "segundo")
-            else:
-                opens_in = oh.render().time_before_next_change(word=False)
-                opens_in = opens_in.replace("days", "días").replace("day", "día").replace("hours", "horas").replace("hour", "hora").replace("minutes", "minutos").replace("minute", "minuto").replace("seconds", "segundos").replace("second", "segundo")
-            description = oh.render().full_description()
-            for i, _ in enumerate(description):
-                description[i] = description[i].replace("Monday", "Lunes").replace("Tuesday", "Martes").replace("Wednesday", "Miércoles").replace("Thursday", "Jueves").replace("Friday", "Viernes").replace("Saturday", "Sábado").replace("Sunday", "Domingo").replace(": ", ", de ").replace("to", "a")
-        except:
-            pass
 
 # Parse "We 12:00-20:00; Th 05:00-20:00; Fr 06:00-13:00" into the format "2015-02-10T15:04:55Z"
 
-def get_structured_opening_hours(opening_hours_str):
+def get_structured_opening_hours(marketplace):
+    opening_hours_str = marketplace.opening_hours
+
     days_mapping = {'Mo': 'Monday', 'Tu': 'Tuesday', 'We': 'Wednesday', 'Th': 'Thursday', 'Fr': 'Friday', 'Sa': 'Saturday', 'Su': 'Sunday'}
     
     schedule_list = opening_hours_str.split('; ')
@@ -72,9 +51,11 @@ def parse_polygon(polygon_str):
 
 # "geometry": {"type": "Polygon", "coordinates": [[0.0, 0.0],[0.0, 0.0],[0.0, 0.0],[0.0, 0.0]]}
 
-def get_structured_geometry(polygon_str):
-    coordinates = []
+def get_structured_geometry(marketplace):
+    polygon_str = marketplace.area
+    
     coord_pairs = parse_polygon(polygon_str)
+    coordinates = []
     
     for pair in coord_pairs:
         x = pair[0]
@@ -108,7 +89,8 @@ def get_structured_geo(marketplace):
 
     return [coordinates, polygon]
 
-def get_structured_events(events):
+def get_structured_events(marketplace):
+    events = Event.objects.filter(marketplace=marketplace).order_by("-start_date")
     structured_events = []
 
     for event in events:
@@ -121,12 +103,12 @@ def get_structured_events(events):
 
     return structured_events
 
-def get_structured_feature(indoor):
+def get_structured_feature(marketplace):
     feature = ""
 
-    if indoor:
+    if marketplace.indoor:
         feature = "Bajo techo"
-    elif indoor == False:
+    elif marketplace.indoor == False:
         feature = "Al aire libre"
     
     return feature
@@ -146,21 +128,24 @@ def get_structured_address(marketplace):
 # JSON-LD Structured Data
 
 def get_structured_data(marketplace):
+    with open('static/json-ld/context.jsonld', 'r') as file:
+        context_data = json.load(file)
+
     structured_data = {
-        "@context": "{% static 'json-ld/context.jsonld' %}",
+        "@context": context_data,
         "@type": "ShoppingCenter",
         "name": marketplace.name,
-        "address": get_structured_address,
-        "geo": get_structured_geo,
+        "address": get_structured_address(marketplace),
+        "geo": get_structured_geo(marketplace),
+        "openingHoursSpecification": get_structured_opening_hours(marketplace),
+        "amenityFeature": get_structured_feature(marketplace),
+        "event": get_structured_events(marketplace),
         "url": [
             marketplace.facebook,
             marketplace.instagram,
             marketplace.website
         ],
         "priceRange": "$",
-        "openingHoursSpecification": get_structured_opening_hours,
-        "amenityFeature": get_structured_feature,
-        "event": get_structured_events,
         "keywords": ""
     }
 
@@ -321,6 +306,8 @@ def feria(request, marketplace_url):
     
     # JSON-LD Structured Data
     structured_data = get_structured_data(marketplace)
+    serialized_json = jsonpickle.encode(structured_data, unpicklable=False)
+    structured_data = jsonpickle.decode(serialized_json)
 
     context = {
         "marketplace": marketplace,
@@ -334,7 +321,7 @@ def feria(request, marketplace_url):
         "announcements": announcements,
         "events": events,
         "texts": texts,
-        "sd": structured_data
+        "structured_data": structured_data
     }
 
     return render(request, "feria.html", context)
