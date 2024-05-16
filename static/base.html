@@ -36,6 +36,7 @@
   </script>
 
   <!-- JSON-LD Schema.org + GeoJSON-LD -->
+  {% load render_json_ld from json_ld %}
   {% if structured_data %}
     {% render_json_ld structured_data %}
   {% endif %}
