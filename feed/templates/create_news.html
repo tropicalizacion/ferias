@@ -30,7 +30,7 @@
                 <label for="marketplaces">Ferias:</label>
                 <select class="form-control" id="marketplaces" name="marketplaces" multiple>
                     {% for marketplace in marketplaces %}
-                        <option value="{{ marketplace.id }}">{{ marketplace.name }}</option>
+                        <option value="{{ marketplace.marketplace_url }}">{{ marketplace.name }}</option>
                     {% endfor %}
                 </select>
             </div>
