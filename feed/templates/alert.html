@@ -1,1 +1,27 @@
-Esta es una alerta
+{% extends 'base.html' %}
+{% block page_title %} Detalles de la Alerta: {{ alert.name }} {% endblock %}
+
+{% block bg-navbar %} background-rojo {% endblock %}
+{% load static %}
+
+{% block main %}
+    <div class="container pt-3">
+        <div class="row">
+            <div class="col">
+                {% if alert.image %}
+                    <img src="{{ alert.image.url }}" alt="{{ alert.name }}" class="img-fluid">
+                {% endif %}
+                <h1 class="hero-deferia rojo fw-bold">{{ alert.name }}</h1>
+                <p>{{ alert.description }}</p>
+                <p><strong>Fecha de inicio:</strong> {{ alert.start_date }}</p>
+                <p><strong>Fecha de fin:</strong> {{ alert.end_date }}</p>
+                <p><strong>Ferias:</strong></p>
+                <ul>
+                    {% for marketplace in alert.marketplaces.all %}
+                        <li>{{ marketplace.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,1 +1,24 @@
-Este es un evento
+{% extends 'base.html' %}
+{% block page_title %} Detalles del Evento: {{ event.name }} {% endblock %}
+
+{% block bg-navbar %} background-azul {% endblock %}
+{% load static %}
+
+{% block main %}
+    <div class="container pt-3">
+        <div class="row">
+            <div class="col">
+                {% if event.image %}
+                    <img src="{{ event.image.url }}" alt="{{ event.name }}" class="img-fluid">
+                {% endif %}
+                <h1 class="hero-deferia fw-bold">{{ event.name }}</h1>
+                <p>{{ event.description }}</p>
+                <p><strong>Fecha de inicio:</strong> {{ event.start_date }}</p>
+                <p><strong>Fecha de fin:</strong> {{ event.end_date }}</p>
+                <p><strong>Lugar:</strong> {{ event.location }}</p>
+                <h2>Feria de:</h2>
+                <p>{{ event.marketplace.name }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

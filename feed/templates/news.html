@@ -8,11 +8,11 @@
     <div class="container pt-3">
         <div class="row">
             <div class="col">
-                <h1 class="hero-deferia verde fw-bold">{{ news_item.name }}</h1>
-                <p>{{ news_item.description }}</p>
                 {% if news_item.image %}
                     <img src="{{ news_item.image.url }}" alt="{{ news_item.name }}" class="img-fluid">
                 {% endif %}
+                <h1 class="hero-deferia verde fw-bold">{{ news_item.name }}</h1>
+                <p>{{ news_item.description }}</p>
                 <p>{{ news_item.text }}</p>
                 <p>Creado el: {{ news_item.created_at }}</p>
                 <p>Última actualización: {{ news_item.updated_at }}</p>
