@@ -2,7 +2,6 @@ from django.shortcuts import render, get_object_or_404
 from .models import Marketplace
 from website.models import Announcement, Text
 from feed.models import Event
-from django.contrib.gis.db.models.functions import Distance
 import humanized_opening_hours as hoh
 from django.db.models import Q
 from django.contrib.gis.db.models.functions import Distance
@@ -11,9 +10,55 @@ import math
 import json
 from datetime import datetime
 
+
+# format date and time "2015-02-10T15:04:55Z"
+
+# GeoJSON
+
+# polygon_str = "SRID=4326;POLYGON ((-83.9343774318695 9.967492765206455, -84.09253120422363 9.9290005763965, -84.08341705799103 9.778496959885052, -83.90381097793579 9.69983539777535, -83.80019187927246 9.78447063109153, -83.69711458683015 9.914389794902185, -83.86083126068115 9.908265226548764, -83.86308968067169 9.980938863268324, -83.90461564064026 10.052117305131944, -83.9343774318695 9.967492765206455))"
+def parse_polygon(polygon_str):
+
+    coords = polygon_str.split('((')[1].split('))')[0]
+    coord_pairs = [tuple(map(float, c.split(' '))) for c in coords.split(', ')]
+
+    return coord_pairs
+
+# "geometry": {"type": "Point", "coordinates": [0.0, 0.0]} POLYGON??
+def get_structured_geometry(polygon_str):
+
+    geometry = []
+    coord_pairs = parse_polygon(polygon_str)
+    
+    for pair in coord_pairs:
+        x = pair[0]
+        y = pair[1]
+
+        point = {
+            "type": "Point",
+            "coordinates": [x, y]
+        }
+
+        geometry.append(point)
+
+    return geometry
+
+def get_structured_geo(marketplace):
+
+    geojson = {
+        "type": "Feature",
+        "id": "http://example.com/features/1",
+        "geometry": get_structured_geometry,
+        "properties": {
+            "title": marketplace.name,
+            "description": marketplace.description
+        }
+    }
+
+    return geojson
+
 # JSON-LD Structured Data
 
-def get_structured_data(marketplace, opens_in, closes_in, events):
+def get_structured_data(marketplace):
     indoor = ""
 
     if marketplace.indoor:
@@ -33,45 +78,7 @@ def get_structured_data(marketplace, opens_in, closes_in, events):
 
     structured_data = {
         "@context": "https://schema.org",
-        "@type": "ShoppingCenter",
-        "name": marketplace.name,
-        "address": {
-            "@type": "PostalAddress",
-            "postalCode": marketplace.postal_code,
-            "streetAddress": marketplace.address,
-            "addressLocality": marketplace.district,
-            "addressRegion": marketplace.province,
-            "addressCountry": "Costa Rica"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": marketplace.location.x,
-            "longitude": marketplace.location.y
-        },
-        "url": [
-            marketplace.facebook,
-            marketplace.instagram,
-            marketplace.website
-        ],
-        "telephone": "+506",
-        "priceRange": "$",
-        "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday",
-                "Sunday"
-            ],
-            "opens": opens_in,
-            "closes": closes_in
-        },
-        "amenityFeature": indoor,
-        "event": sd_events,
-        "keywords": ""
+        "@type": "ShoppingCenter"
     }
 
     return structured_data
@@ -230,8 +237,7 @@ def feria(request, marketplace_url):
     texts["servicios_descripcion"] = text.filter(section="servicios_descripcion").first()
     
     # JSON-LD Structured Data
-
-    structured_data = get_structured_data(marketplace, opens_in, closes_in, events)
+    structured_data = get_structured_data(marketplace)
 
     context = {
         "marketplace": marketplace,
