@@ -305,14 +305,32 @@ h6 {
   transition-property: transform;
   transition-duration: 0.1s;
   cursor: pointer;
+  padding-top: 5px;
 }
 
-.feed-card:hover {
+.card-img-top {
+  float: left;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* .feed-card:hover {
   transform: scale(1.03);
+} */
+
+.header-card-news {
+  background-color: #3879b5;
+  color: white;
 }
 
-.header-card-feed {
-  background-color: #3879b5;
+.header-card-alerts {
+  background-color: #e83535;
+  color: white;
+}
+
+.header-card-events {
+  background-color: #008d4a;
   color: white;
 }
 
