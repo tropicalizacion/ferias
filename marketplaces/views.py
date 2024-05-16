@@ -12,10 +12,57 @@ from datetime import datetime
 
 
 # format date and time "2015-02-10T15:04:55Z"
+def test(marketplace):
+    opening_hours = marketplace.opening_hours
+    is_open = None
+    description = None
+    opens_in = None
+    closes_in = None
+    if opening_hours != "":
+        try:
+            oh = hoh.OHParser(opening_hours)
+            is_open = oh.is_open()
+            if is_open:
+                closes_in = oh.render().time_before_next_change(word=False)
+                closes_in = closes_in.replace("days", "días").replace("day", "día").replace("hours", "horas").replace("hour", "hora").replace("minutes", "minutos").replace("minute", "minuto").replace("seconds", "segundos").replace("second", "segundo")
+            else:
+                opens_in = oh.render().time_before_next_change(word=False)
+                opens_in = opens_in.replace("days", "días").replace("day", "día").replace("hours", "horas").replace("hour", "hora").replace("minutes", "minutos").replace("minute", "minuto").replace("seconds", "segundos").replace("second", "segundo")
+            description = oh.render().full_description()
+            for i, _ in enumerate(description):
+                description[i] = description[i].replace("Monday", "Lunes").replace("Tuesday", "Martes").replace("Wednesday", "Miércoles").replace("Thursday", "Jueves").replace("Friday", "Viernes").replace("Saturday", "Sábado").replace("Sunday", "Domingo").replace(": ", ", de ").replace("to", "a")
+        except:
+            pass
+
+# Parse "We 12:00-20:00; Th 05:00-20:00; Fr 06:00-13:00" into the format "2015-02-10T15:04:55Z"
+
+def get_structured_opening_hours(opening_hours_str):
+    days_mapping = {'Mo': 'Monday', 'Tu': 'Tuesday', 'We': 'Wednesday', 'Th': 'Thursday', 'Fr': 'Friday', 'Sa': 'Saturday', 'Su': 'Sunday'}
+    
+    schedule_list = opening_hours_str.split('; ')
+    opening_hours = []
+
+    for entry in schedule_list:
+        day, time_range = entry.split(' ')
+        start_time, end_time = time_range.split('-')
+
+        start_time = datetime.strptime(start_time, '%H:%M').strftime('%H:%M')
+        end_time = datetime.strptime(end_time, '%H:%M').strftime('%H:%M')
+
+        specification = {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": days_mapping[day],
+            "opens": start_time,
+            "closes": end_time
+        }
+        
+        opening_hours.append(specification)
+
+    return opening_hours
 
 # GeoJSON
-
 # polygon_str = "SRID=4326;POLYGON ((-83.9343774318695 9.967492765206455, -84.09253120422363 9.9290005763965, -84.08341705799103 9.778496959885052, -83.90381097793579 9.69983539777535, -83.80019187927246 9.78447063109153, -83.69711458683015 9.914389794902185, -83.86083126068115 9.908265226548764, -83.86308968067169 9.980938863268324, -83.90461564064026 10.052117305131944, -83.9343774318695 9.967492765206455))"
+
 def parse_polygon(polygon_str):
 
     coords = polygon_str.split('((')[1].split('))')[0]
@@ -23,30 +70,35 @@ def parse_polygon(polygon_str):
 
     return coord_pairs
 
-# "geometry": {"type": "Point", "coordinates": [0.0, 0.0]} POLYGON??
-def get_structured_geometry(polygon_str):
+# "geometry": {"type": "Polygon", "coordinates": [[0.0, 0.0],[0.0, 0.0],[0.0, 0.0],[0.0, 0.0]]}
 
-    geometry = []
+def get_structured_geometry(polygon_str):
+    coordinates = []
     coord_pairs = parse_polygon(polygon_str)
     
     for pair in coord_pairs:
         x = pair[0]
         y = pair[1]
 
-        point = {
-            "type": "Point",
-            "coordinates": [x, y]
-        }
+        coordinates.append([x, y])
 
-        geometry.append(point)
+    geometry = {
+        "@type": "Polygon",
+        "coordinates": coordinates
+    }
 
     return geometry
 
 def get_structured_geo(marketplace):
+    coordinates = {
+        "@type": "GeoCoordinates",
+        "latitude": marketplace.location.x,
+        "longitude": marketplace.location.y
+    }
 
-    geojson = {
-        "type": "Feature",
-        "id": "http://example.com/features/1",
+    polygon = {
+        "@type": "Feature",
+        "@id": "http://example.com/features/1",
         "geometry": get_structured_geometry,
         "properties": {
             "title": marketplace.name,
@@ -54,31 +106,62 @@ def get_structured_geo(marketplace):
         }
     }
 
-    return geojson
+    return [coordinates, polygon]
 
-# JSON-LD Structured Data
-
-def get_structured_data(marketplace):
-    indoor = ""
-
-    if marketplace.indoor:
-        indoor = "Bajo techo"
-    elif marketplace.indoor == False:
-        indoor = "Al aire libre"
-
-    sd_events = []
+def get_structured_events(events):
+    structured_events = []
 
     for event in events:
-        sd_event = {
+        structured_event = {
             "@type": "Event",
             "name": event.name,
             "description": event.description
         }
-        sd_events.append(sd_event)
+        structured_events.append(structured_event)
 
+    return structured_events
+
+def get_structured_feature(indoor):
+    feature = ""
+
+    if indoor:
+        feature = "Bajo techo"
+    elif indoor == False:
+        feature = "Al aire libre"
+    
+    return feature
+
+def get_structured_address(marketplace):
+    address = {
+        "@type": "PostalAddress",
+        "streetAddress": marketplace.address,
+        "addressLocality": marketplace.district,
+        "addressRegion": marketplace.province,
+        "addressCountry": "Costa Rica",
+        "postalCode": marketplace.postal_code,
+    }
+
+    return address
+
+# JSON-LD Structured Data
+
+def get_structured_data(marketplace):
     structured_data = {
-        "@context": "https://schema.org",
-        "@type": "ShoppingCenter"
+        "@context": "{% static 'json-ld/context.jsonld' %}",
+        "@type": "ShoppingCenter",
+        "name": marketplace.name,
+        "address": get_structured_address,
+        "geo": get_structured_geo,
+        "url": [
+            marketplace.facebook,
+            marketplace.instagram,
+            marketplace.website
+        ],
+        "priceRange": "$",
+        "openingHoursSpecification": get_structured_opening_hours,
+        "amenityFeature": get_structured_feature,
+        "event": get_structured_events,
+        "keywords": ""
     }
 
     return structured_data
