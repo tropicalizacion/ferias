@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 
 from users.models import MarketplaceAdmin
 from feed.models import Alert, Event, News
+from marketplaces.models import Marketplace
 
 # Create your views here.
 
@@ -23,6 +24,9 @@ def feed(request):
         reverse=True
     )
     
+    for item in feed_list:
+        item.type_ = type(item).__name__
+    
     if user.is_authenticated:
         try:
             marketplace_admin = MarketplaceAdmin.objects.get(user=request.user)
@@ -40,8 +44,13 @@ def feed(request):
 
 
 def event(request, event_slug):
-    return render(request, "event.html")
+    
+    event = get_object_or_404(Event, id=event_slug)
+    
+    return render(request, "event.html", {'event': event})
 
+def events(request):
+    return redirect('feed')
 
 def news(request, news_slug):
     
@@ -49,9 +58,17 @@ def news(request, news_slug):
     
     return render(request, "news.html", {'news_item': news_item})
 
+def newss(request):
+    return redirect('feed')
 
 def alert(request, alert_slug):
-    return render(request, "alert.html")
+    
+    alert = get_object_or_404(Alert, id=alert_slug)
+    
+    return render(request, "alert.html", {'alert': alert})
+
+def alerts(request):
+    return redirect('feed')
 
 @login_required
 def create_event(request):
@@ -110,7 +127,7 @@ def create_news(request):
             description = request.POST.get('description')
             text = request.POST.get('text')
             image = request.FILES.get('image')
-            marketplaces_ids = request.POST.getlist('marketplaces')
+            marketplace_urls = request.POST.getlist('marketplaces')
 
             news = News(
                 name=name,
@@ -118,6 +135,12 @@ def create_news(request):
                 text=text,
                 image=image,
             )
+            news.save()
+            
+            for marketplace_url in marketplace_urls:
+                marketplace = Marketplace.objects.get(marketplace_url=marketplace_url)
+                news.marketplaces.add(marketplace)
+            
             news.save()
 
             return redirect('feed')
@@ -148,7 +171,7 @@ def create_alert(request):
             start_date = request.POST.get('start_date')
             end_date = request.POST.get('end_date')
             image = request.FILES.get('image')
-            marketplaces_ids = request.POST.getlist('marketplaces')
+            marketplace_urls = request.POST.getlist('marketplaces')
 
             alert = Alert(
                 name=name,
@@ -157,6 +180,12 @@ def create_alert(request):
                 end_date=end_date,
                 image=image,
             )
+            alert.save()
+            
+            for marketplace_url in marketplace_urls:
+                marketplace = Marketplace.objects.get(marketplace_url=marketplace_url)
+                alert.marketplaces.add(marketplace)
+            
             alert.save()
 
             return redirect('feed')
