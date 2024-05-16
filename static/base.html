@@ -34,10 +34,11 @@
 
     gtag('config', 'G-96HQFNE7QN');
   </script>
-  <!-- JSON-LD Schema.org -->
+
+  <!-- JSON-LD Schema.org + GeoJSON-LD -->
   {% load render_json_ld from json_ld %}
-  {% if sd %}
-    {% render_json_ld sd %}
+  {% if structured_data %}
+    {% render_json_ld structured_data %}
   {% endif %}
 </head>
 
