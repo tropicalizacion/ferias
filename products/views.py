@@ -5,11 +5,11 @@ import datetime
 import jsonpickle
 
 # JSON-LD Structured Data
-
+# TODO: Revisar con Rich Results Test y completar campos faltantes
 def get_structured_data(product):
     structured_data = {
         "@context": "http://schema.org/",
-        "@type": "MenuItem",
+        "@type": "Thing",
         "additionalType": "Produce",
         "name": product.common_name,
         "alternateName": product.common_name_alternate,
