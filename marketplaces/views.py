@@ -13,60 +13,107 @@ from datetime import datetime
 
 # JSON-LD Structured Data
 def get_structured_data(marketplace):
-    with open('static/json-ld/context.jsonld', 'r') as file:
-        context_data = json.load(file)
+    # with open('static/json-ld/context.jsonld', 'r') as file:
+    #    context_data = json.load(file)
 
     structured_data = {
         "@context": "http://schema.org/",
         "@type": "LocalBusiness",
         "name": marketplace.name,
         "telephone": marketplace.phone,
-        "image": "", # TODO: Revisar modelo Photo para incluir imagen y texto alternativo.
+        "email": marketplace.email,
+        "image": "", # TODO: Revisar modelo Photo/ImageObject para incluir imagen y texto alternativo.
         "address": get_structured_address(marketplace),
         "geo": get_structured_geo(marketplace),
-        "openingHoursSpecification": get_structured_opening_hours(marketplace),
-        "amenityFeature": get_structured_feature(marketplace),
-        "event": get_structured_events(marketplace),
         "url": [
             marketplace.facebook,
             marketplace.instagram,
             marketplace.website
         ],
-        "priceRange": "$"
+        "openingHoursSpecification": get_structured_opening_hours(marketplace),
+        # "nearestMarketplaces": get_structured_closest_marketplaces(marketplace), # TODO: Revisar esta propiedad adicional.
+        "makesOffer": get_structured_infrastructure(marketplace) + get_structured_services(marketplace), # TODO: Revisar que sea reconocido por Google.
+        "event": get_structured_events(marketplace),
+        "parentOrganization": marketplace.operator,
+        "priceRange": "$",
+        "paymentAccepted": "", # TODO marketplace.payment
+        "currenciesAccepted": "CRC",
+        "publicAccess": True
     }
 
     return structured_data
 
-# TODO: marketplace.food or marketplace.drinks or marketplace.handicrafts or marketplace.garden_centre or marketplace.florist or marketplace.dairy or marketplace.seafood or marketplace.butcher
-def get_structured_services():
-    return 0
+def get_structured_services(marketplace):
+    services = Marketplace.objects.values(
+        'food', 'drinks', 'handicrafts', 'butcher', 'dairy', 
+        'seafood', 'spices', 'garden_centre', 'florist' 
+    ).filter(pk=marketplace.marketplace_url).first()
+    structured_services = []
 
-# TODO: marketplace.fairground marketplace.indoor marketplace.handwashing marketplace.toilets marketplace.parking marketplace.bicycle_parking 
-def get_structured_amenities():
-    return 0
+    for key, value in services.items():
+        if value:
+            service = {
+                "@type": "Offer",
+                "name": key.replace('_', ' ').title(),
+                "category": "Service",
+                "additionalProperty": True
+            }
 
-# TODO: closest_marketplaces
-def get_structured_closest():
-    return 0
+            structured_services.append(service)
 
-# schema:GeoCoordinates
+    return structured_services
+
+def get_structured_infrastructure(marketplace):
+    infrastructure = Marketplace.objects.values(
+        'parking', 'bicycle_parking', 'fairground', 'indoor', 
+        'toilets', 'handwashing', 'drinking_water', 
+    ).filter(pk=marketplace.marketplace_url).first()
+    structured_infrastructure = []
+
+    for key, value in infrastructure.items():
+        if value:
+            infrastructure = {
+                "@type": "Offer",
+                "name": key.replace('_', ' ').title(),
+                "category": "Infrastructure",
+                "availability": True
+            }
+
+            structured_infrastructure.append(infrastructure)
+
+    return structured_infrastructure
+
+def get_structured_closest_marketplaces(marketplace):
+    closest_marketplaces = (
+        Marketplace.objects.annotate(
+            distance=Distance("location", marketplace.location)
+        )
+        .exclude(pk=marketplace.marketplace_url)
+        .order_by("distance")[0:3]
+    )
+    structured_marketplaces = []
+
+    for closest_marketplace in closest_marketplaces:
+        closest_marketplace.distance = round(closest_marketplace.distance.km, 1)
+
+        structured_marketplace = get_structured_data(closest_marketplace)
+        structured_marketplaces.append(structured_marketplace)
+
+    return structured_marketplaces
+
 def get_structured_geo(marketplace):
     geo_coordinates = {
         "@type": "GeoCoordinates",
-        "longitude": marketplace.location.y,
-        "latitude": marketplace.location.x
+        "latitude": marketplace.location.y,
+        "longitude": marketplace.location.x
     }
 
     return geo_coordinates
 
-# Parse "We 12:00-20:00; Th 05:00-20:00; Fr 06:00-13:00" into the format "2015-02-10T15:04:55Z"
-# TODO: Parsear bien los días para reducir el tamaño del método de abajo
 def get_structured_opening_hours(marketplace):
-    opening_hours_str = marketplace.opening_hours
-
     days_mapping = {'Mo': 'Monday', 'Tu': 'Tuesday', 'We': 'Wednesday', 'Th': 'Thursday', 'Fr': 'Friday', 'Sa': 'Saturday', 'Su': 'Sunday'}
     
-    schedule_list = opening_hours_str.split('; ')
+    schedule_list = marketplace.opening_hours.split('; ')
     opening_hours = []
 
     for entry in schedule_list:
@@ -87,7 +134,7 @@ def get_structured_opening_hours(marketplace):
 
     return opening_hours
 
-# TODO: Revisar dónde colocar estos métodos
+# TODO: Revisar dónde colocar estos métodos.
 def get_structured_events(marketplace):
     events = Event.objects.filter(marketplace=marketplace).order_by("-start_date")
     structured_events = []
@@ -102,16 +149,6 @@ def get_structured_events(marketplace):
 
     return structured_events
 
-def get_structured_feature(marketplace):
-    feature = ""
-
-    if marketplace.indoor:
-        feature = "Bajo techo"
-    elif marketplace.indoor == False:
-        feature = "Al aire libre"
-    
-    return feature
-
 def get_structured_address(marketplace):
     address = {
         "@type": "PostalAddress",
@@ -119,10 +156,39 @@ def get_structured_address(marketplace):
         "addressLocality": marketplace.district,
         "addressRegion": marketplace.province,
         "addressCountry": "CR",
-        "postalCode": marketplace.postal_code,
+        "postalCode": marketplace.postal_code
     }
 
     return address
+
+def parse_opening_hours(marketplace):
+    opening_hours = marketplace.opening_hours
+    is_open = None
+    description = None
+    opens_in = None
+    closes_in = None
+
+    if opening_hours:
+        try:
+            oh = hoh.OHParser(opening_hours)
+            is_open = oh.is_open()
+
+            if is_open:
+                closes_in = oh.render().time_before_next_change(word=False)
+
+                # closes_in = oh.next_change(allow_recursion=True)
+                # closes_in = closes_in.render(locale_name="es")
+            else:
+                opens_in = oh.render().time_before_next_change(word=False)
+
+                # opens_in = oh.next_change(allow_recursion=True)
+                # opens_in = opens_in.render(locale_name="es") # TODO: Ver cómo solucionar que no haya soporte para español.
+
+            description = oh.render().field_description()
+        except Exception:
+            pass
+
+    return is_open, description, opens_in, closes_in
 
 # Create your views here.
 
@@ -225,6 +291,8 @@ def feria(request, marketplace_url):
     )
     for closest_marketplace in closest_marketplaces:
         closest_marketplace.distance = round(closest_marketplace.distance.km, 1)
+
+    # is_open, description, opens_in, closes_in = parse_opening_hours(marketplace)
 
     opening_hours = marketplace.opening_hours
     is_open = None
