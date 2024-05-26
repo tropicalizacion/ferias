@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "blog.apps.BlogConfig",
     "feed.apps.FeedConfig",
     "rest_framework",
+    'rest_framework_gis',
     "drf_spectacular",
     "django.contrib.admin",
     "django.contrib.auth",
