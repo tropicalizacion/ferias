@@ -3,6 +3,7 @@ from django.http import FileResponse
 from rest_framework import viewsets
 from marketplaces.models import Marketplace
 from .serializers import MarketplaceSerializer
+from .serializers import GeoMarketplaceSerializer
 from website.models import Text
 
 import pandas as pd
@@ -15,6 +16,10 @@ import io
 class MarketplaceViewSet(viewsets.ModelViewSet):
     queryset = Marketplace.objects.all().order_by("name")
     serializer_class = MarketplaceSerializer
+
+class GeoMarketplaceViewSet(viewsets.ModelViewSet):
+    queryset = Marketplace.objects.all().order_by("name")
+    serializer_class = GeoMarketplaceSerializer
 
 
 def datos(request):
