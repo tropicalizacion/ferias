@@ -23,7 +23,7 @@ def get_structured_data(marketplace):
         "address": get_structured_address(marketplace),
         "geo": get_structured_geo(marketplace),
         "url": [
-            "https://deferia.cr/ferias/" + marketplace.name.lower() + "/",
+            f"https://deferia.cr/ferias/{marketplace.name.lower()}/",
             marketplace.facebook,
             marketplace.instagram,
             marketplace.website
@@ -34,7 +34,7 @@ def get_structured_data(marketplace):
         "event": get_structured_events(marketplace),
         "parentOrganization": marketplace.operator,
         "priceRange": "$",
-        "paymentAccepted": "", # TODO marketplace.payment ManyToMany
+        "paymentAccepted": "", # TODO marketplace.payment ManyToMany.
         "currenciesAccepted": "CRC",
         "publicAccess": True
     }
@@ -158,34 +158,7 @@ def get_structured_address(marketplace):
 
     return address
 
-def parse_opening_hours(marketplace):
-    opening_hours = marketplace.opening_hours
-    is_open = None
-    description = None
-    opens_in = None
-    closes_in = None
 
-    if opening_hours:
-        try:
-            oh = hoh.OHParser(opening_hours)
-            is_open = oh.is_open()
-
-            if is_open:
-                closes_in = oh.render().time_before_next_change(word=False)
-
-                # closes_in = oh.next_change(allow_recursion=True)
-                # closes_in = closes_in.render(locale_name="es")
-            else:
-                opens_in = oh.render().time_before_next_change(word=False)
-
-                # opens_in = oh.next_change(allow_recursion=True)
-                # opens_in = opens_in.render(locale_name="es") # TODO: Ver cómo solucionar que no haya soporte para español.
-
-            description = oh.render().field_description()
-        except Exception:
-            pass
-
-    return is_open, description, opens_in, closes_in
 
 # Create your views here.
 
@@ -288,8 +261,6 @@ def feria(request, marketplace_url):
     )
     for closest_marketplace in closest_marketplaces:
         closest_marketplace.distance = round(closest_marketplace.distance.km, 1)
-
-    # is_open, description, opens_in, closes_in = parse_opening_hours(marketplace)
 
     opening_hours = marketplace.opening_hours
     is_open = None
