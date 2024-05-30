@@ -1,6 +1,7 @@
 from django.db import models
 from marketplaces.models import Marketplace
 from datetime import datetime
+from tinymce.models import HTMLField
 
 # Create your models here.
 
@@ -34,7 +35,7 @@ class News(models.Model):
     marketplaces = models.ManyToManyField(Marketplace, blank=True)
     name = models.CharField(max_length=200)
     description = models.TextField()
-    text = models.TextField()
+    text = HTMLField()
     image = models.ImageField(upload_to="news/")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

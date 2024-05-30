@@ -125,10 +125,11 @@ def create_news(request):
         if request.method == 'POST':
             name = request.POST.get('name')
             description = request.POST.get('description')
-            text = request.POST.get('text')
+            text = request.POST.get('content')
             image = request.FILES.get('image')
-            marketplace_urls = request.POST.getlist('marketplaces')
-
+            marketplace_admin = MarketplaceAdmin.objects.get(user=request.user)
+            marketplace = Marketplace.objects.get(name=marketplace_admin.marketplace)
+            
             news = News(
                 name=name,
                 description=description,
@@ -137,9 +138,7 @@ def create_news(request):
             )
             news.save()
             
-            for marketplace_url in marketplace_urls:
-                marketplace = Marketplace.objects.get(marketplace_url=marketplace_url)
-                news.marketplaces.add(marketplace)
+            news.marketplaces.add(marketplace)
             
             news.save()
 

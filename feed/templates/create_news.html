@@ -6,42 +6,51 @@
 
 {% block main %}
 
+<script>
+    tinymce.init({
+        selector: '#newsContent',
+        language_url: '../../static/tinymce/langs/es.js',
+        language:'es',
+        plugins: 'quickbars table link lists help',
+        toolbar: 'undo redo | blocks | fontfamily fontsize | forecolor backcolor | bold italic | alignleft aligncenter alignright alignjustify | indent outdent | bullist numlist',
+        content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
+        font_formats: 'Arial=arial,helvetica,sans-serif;Courier New=courier new,courier,monospace;AkrutiKndPadmini=Akpdmi-n',
+        content_css: "../../static/css/deferia.css",
+    });
+</script>
 
-<div class="d-flex flex-column w-100 justify-content-center pt-4">
+<div class="d-flex justify-content-center">
 
-    <h1 class="hero-deferia rojo align-self-center fw-bold m-3">Crear noticia para la feria de {{marketplace_admin.marketplace}}</h1>
+    <div class="w-md-50 pt-4">
 
-    <div class="container-form-avisos text-white align-self-center">
-        <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            <div class="form-group m-2">
-                <label for="name">Nombre de la Noticia:</label>
-                <input type="text" class="form-control" id="name" name="name">
-            </div>
-            <div class="form-group m-2">
-                <label for="description">Descripción:</label>
-                <textarea class="form-control" id="description" name="description"></textarea>
-            </div>
-            <div class="form-group m-2">
-                <label for="text">Texto:</label>
-                <textarea class="form-control" id="text" name="text"></textarea>
-            </div>
-            <div class="form-group m-2">
-                <label for="marketplaces">Ferias:</label>
-                <select class="form-control" id="marketplaces" name="marketplaces" multiple>
-                    {% for marketplace in marketplaces %}
-                        <option value="{{ marketplace.marketplace_url }}">{{ marketplace.name }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            <div class="form-group m-3">
-                <label for="image">Imagen:</label>
-                <input type="file" class="form-control-file" id="image" name="image">
-            </div>
-            <button type="submit" class="btn btn-primary m-2">Crear Noticia</button>
-        </form>
+        <h1 class="hero-deferia rojo align-self-center fw-bold m-3">Crear noticia para la feria de {{marketplace_admin.marketplace}}</h1>
+
+        <div class="container-form-avisos text-white align-self-center">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group m-2">
+                    <label for="name">Título de la noticia:</label>
+                    <input type="text" class="form-control" id="name" name="name">
+                </div>
+                <div class="form-group m-2">
+                    <label for="description">Descripción:</label>
+                    <textarea class="form-control" id="description" name="description" rows="1"></textarea>
+                </div>
+                <div class="form-group m-2">
+                    <label for="content">Contenido:</label>
+                    <textarea class="form-control" id="newsContent" name="content" rows="5"></textarea>
+                </div>
+                <div class="form-group m-3">
+                    <label for="image">Imagen de vista previa:</label>
+                    </br>
+                    <input type="file" class="form-control-file" id="image" name="image">
+                </div>
+                <button type="submit" class="btn btn-primary m-2">Crear Noticia</button>
+            </form>
+        </div>
+        
     </div>
-    
+
 </div>
 
 {% endblock %}
