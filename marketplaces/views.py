@@ -11,11 +11,8 @@ import json
 import jsonpickle
 from datetime import datetime
 
-# JSON-LD Structured Data
+# JSON-LD Structured Data TODO: Revisar dónde colocar todo esto.
 def get_structured_data(marketplace):
-    # with open('static/json-ld/context.jsonld', 'r') as file:
-    #    context_data = json.load(file)
-
     structured_data = {
         "@context": "http://schema.org/",
         "@type": "LocalBusiness",
@@ -26,17 +23,18 @@ def get_structured_data(marketplace):
         "address": get_structured_address(marketplace),
         "geo": get_structured_geo(marketplace),
         "url": [
+            "https://deferia.cr/ferias/" + marketplace.name.lower() + "/",
             marketplace.facebook,
             marketplace.instagram,
             marketplace.website
         ],
         "openingHoursSpecification": get_structured_opening_hours(marketplace),
         # "nearestMarketplaces": get_structured_closest_marketplaces(marketplace), # TODO: Revisar esta propiedad adicional.
-        "makesOffer": get_structured_infrastructure(marketplace) + get_structured_services(marketplace), # TODO: Revisar que sea reconocido por Google.
+        "makesOffer": get_structured_infrastructure(marketplace) + get_structured_services(marketplace),
         "event": get_structured_events(marketplace),
         "parentOrganization": marketplace.operator,
         "priceRange": "$",
-        "paymentAccepted": "", # TODO marketplace.payment
+        "paymentAccepted": "", # TODO marketplace.payment ManyToMany
         "currenciesAccepted": "CRC",
         "publicAccess": True
     }
@@ -56,7 +54,7 @@ def get_structured_services(marketplace):
                 "@type": "Offer",
                 "name": key.replace('_', ' ').title(),
                 "category": "Service",
-                "additionalProperty": True
+                "description": "Available"
             }
 
             structured_services.append(service)
@@ -76,7 +74,7 @@ def get_structured_infrastructure(marketplace):
                 "@type": "Offer",
                 "name": key.replace('_', ' ').title(),
                 "category": "Infrastructure",
-                "availability": True
+                "description": "Available"
             }
 
             structured_infrastructure.append(infrastructure)
@@ -134,7 +132,6 @@ def get_structured_opening_hours(marketplace):
 
     return opening_hours
 
-# TODO: Revisar dónde colocar estos métodos.
 def get_structured_events(marketplace):
     events = Event.objects.filter(marketplace=marketplace).order_by("-start_date")
     structured_events = []
