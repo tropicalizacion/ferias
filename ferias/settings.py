@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "users.apps.UsersConfig",
     "blog.apps.BlogConfig",
     "feed.apps.FeedConfig",
+    "recipes.apps.RecipesConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
