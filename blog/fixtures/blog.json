@@ -1,0 +1,41 @@
+[
+    {
+        "model": "blog.blogpost",
+        "pk": 3,
+        "fields": {
+            "title": "Explorando las Ferias del Agricultor en Costa Rica: Un Viaje a la Frescura y Sostenibilidad",
+            "content": "Las Ferias del Agricultor en Costa Rica son mucho más que simples mercados; son un vibrante encuentro de cultura, sostenibilidad y comunidad. Cada semana, agricultores locales traen lo mejor de sus cosechas, ofreciendo productos frescos y orgánicos directamente de sus campos a tu mesa. En este blog, te llevaremos a través de las coloridas y animadas ferias del país, explorando la diversidad de productos, conociendo a los apasionados productores y descubriendo recetas deliciosas que resaltan los sabores auténticos de Costa Rica. Únete a nosotros en esta travesía por las ferias del agricultor, donde la frescura, la sostenibilidad y la tradición se encuentran.",
+            "image": "blog_images/verduras_IO9fnMI.jpeg",
+            "tags": "ferias, agricultor, Costa Rica, sostenibilidad, frescura",
+            "publication_date": "2024-06-06T04:14:04.297Z",
+            "updated_date": "2024-06-06T04:30:59.330Z",
+            "read_time": 10
+        }
+    },
+    {
+        "model": "blog.blogpost",
+        "pk": 4,
+        "fields": {
+            "title": "La Competitividad de Precios en las Ferias del Agricultor de Costa Rica: Desafíos y Oportunidades frente a los Supermercados",
+            "content": "Las ferias del agricultor en Costa Rica se enfrentan a un reto constante: competir con los precios de los grandes supermercados. Mientras que las ferias ofrecen productos frescos y locales, muchas veces a precios justos para los productores, los supermercados pueden atraer a los consumidores con descuentos agresivos y promociones que son difíciles de igualar. En este blog, exploramos la dinámica de precios entre estos dos mercados, analizando las ventajas y desventajas para los consumidores y productores. Además, discutimos las estrategias que las ferias del agricultor pueden adoptar para mejorar su competitividad y atraer a más compradores conscientes de la calidad y el origen de sus alimentos. Descubre cómo estas ferias pueden seguir siendo un pilar importante en la economía local a pesar de los desafíos.",
+            "image": "blog_images/verduras_xktAkwh.jpeg",
+            "tags": "ferias, agricultor, Costa Rica, sostenibilidad, frescura",
+            "publication_date": "2024-06-06T04:16:53.668Z",
+            "updated_date": "2024-06-06T04:31:03.313Z",
+            "read_time": 15
+        }
+    },
+    {
+        "model": "blog.blogpost",
+        "pk": 5,
+        "fields": {
+            "title": "El Impacto de las Ferias del Agricultor en la Economía Local de Costa Rica: Más Allá del Precio Justo",
+            "content": "Las ferias del agricultor en Costa Rica no solo proporcionan productos frescos y orgánicos, sino que también juegan un papel crucial en la sostenibilidad y el desarrollo económico local. Al comprar directamente de los productores, los consumidores están apoyando a las pequeñas empresas y ayudando a mantener viva la agricultura familiar. En este blog, analizamos cómo estas ferias contribuyen a la economía local, creando empleos, promoviendo prácticas agrícolas sostenibles y fortaleciendo las comunidades rurales. También exploramos historias inspiradoras de agricultores que han transformado sus vidas y sus negocios gracias al apoyo recibido en estas ferias. Acompáñanos a descubrir cómo tu elección de compra puede tener un impacto positivo en la economía local y en el medio ambiente.",
+            "image": "",
+            "tags": "ferias, agricultor, Costa Rica, sostenibilidad, frescura",
+            "publication_date": "2024-06-06T04:31:45.208Z",
+            "updated_date": "2024-06-06T04:31:45.208Z",
+            "read_time": 6
+        }
+    }
+]

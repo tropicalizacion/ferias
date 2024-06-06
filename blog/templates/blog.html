@@ -1,11 +1,40 @@
 {% extends 'base.html' %}
+{% block page_title %} Blog {% endblock %}
+
+{% block bg-navbar %} background-azul {% endblock %}
 
 {% load static %}
 
 {% block main %}
 
-<h1>Blog</h1>
-
-<p>En un lugar de La Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un caballeros de los adarga antigua, rocín flaco, lanza en astillero y galgo corredor.</p>
+<div class="container mt-5">
+    <div class="card border-0 m-auto shadow mb-5 w-25">
+        <a href="{% url 'create_news' %}" class="btn background-verde text-white fw-bold btn-crear-aviso">Crear post</a>
+    </div>
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            {% for post in blog_posts %}
+                <div class="blog-post">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h2>{{ post.title }}</h2>
+                            <p class="meta-info">
+                                Por autor - {{ post.publication_date|date:"F j, Y" }}
+                            </p>
+                            <p>{{ post.content|truncatewords:40 }}</p>
+                            <div class="meta-info">
+                                <span class="tag">{{ post.tags }}</span>
+                                <span>{{ post.read_time }} min de lectura</span>
+                            </div>
+                        </div>
+                        {% if post.image %}
+                            <img src="{{ post.image.url }}" alt="Blog Image" class="img-fluid blog-image">
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 
 {% endblock %}

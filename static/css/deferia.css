@@ -3,6 +3,30 @@ body {
   background-color: #faf6ea;
 }
 
+.blog-post {
+  border-bottom: 1px solid #e3e3e3;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.blog-post:last-child {
+  border-bottom: none;
+}
+.blog-image {
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: cover;
+}
+.meta-info {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+.tag {
+  background-color: #ffffff;
+  padding: 2px 8px;
+  border-radius: 7px;
+  margin-right: 5px;
+}
+
 .nav-link-deferia {
   color: #ffffff;
   font-weight: 900;
