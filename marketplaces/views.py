@@ -11,75 +11,100 @@ import json
 import jsonpickle
 from datetime import datetime
 
-# JSON-LD Structured Data TODO: Revisar dónde colocar todo esto.
+
 def get_structured_data(marketplace):
+    # TODO: Revisar dónde colocar todo esto.
     structured_data = {
         "@context": "http://schema.org/",
         "@type": "LocalBusiness",
         "name": marketplace.name,
         "telephone": marketplace.phone,
         "email": marketplace.email,
-        "image": "", # TODO: Revisar modelo Photo/ImageObject para incluir imagen y texto alternativo.
+        "image": "",  # TODO: Revisar modelo Photo/ImageObject para incluir imagen y texto alternativo.
         "address": get_structured_address(marketplace),
         "geo": get_structured_geo(marketplace),
         "url": [
             f"https://deferia.cr/ferias/{marketplace.name.lower()}/",
             marketplace.facebook,
             marketplace.instagram,
-            marketplace.website
+            marketplace.website,
         ],
         "openingHoursSpecification": get_structured_opening_hours(marketplace),
         # "nearestMarketplaces": get_structured_closest_marketplaces(marketplace), # TODO: Revisar esta propiedad adicional.
-        "makesOffer": get_structured_infrastructure(marketplace) + get_structured_services(marketplace),
+        "makesOffer": get_structured_infrastructure(marketplace)
+        + get_structured_services(marketplace),
         "event": get_structured_events(marketplace),
         "parentOrganization": marketplace.operator,
         "priceRange": "$",
-        "paymentAccepted": "", # TODO marketplace.payment ManyToMany.
+        "paymentAccepted": "",  # TODO: marketplace.payment ManyToMany.
         "currenciesAccepted": "CRC",
-        "publicAccess": True
+        "publicAccess": True,
     }
 
     return structured_data
 
+
 def get_structured_services(marketplace):
-    services = Marketplace.objects.values(
-        'food', 'drinks', 'handicrafts', 'butcher', 'dairy', 
-        'seafood', 'spices', 'garden_centre', 'florist' 
-    ).filter(pk=marketplace.marketplace_url).first()
+    services = (
+        Marketplace.objects.values(
+            "food",
+            "drinks",
+            "handicrafts",
+            "butcher",
+            "dairy",
+            "seafood",
+            "spices",
+            "garden_centre",
+            "florist",
+        )
+        .filter(pk=marketplace.marketplace_url)
+        .first()
+    )
     structured_services = []
 
     for key, value in services.items():
         if value:
             service = {
                 "@type": "Offer",
-                "name": key.replace('_', ' ').title(),
+                "name": key.replace("_", " ").title(),
                 "category": "Service",
-                "description": "Available"
+                "description": "Available",
             }
 
             structured_services.append(service)
 
     return structured_services
 
+
 def get_structured_infrastructure(marketplace):
-    infrastructure = Marketplace.objects.values(
-        'parking', 'bicycle_parking', 'fairground', 'indoor', 
-        'toilets', 'handwashing', 'drinking_water', 
-    ).filter(pk=marketplace.marketplace_url).first()
+    infrastructure = (
+        Marketplace.objects.values(
+            "parking",
+            "bicycle_parking",
+            "fairground",
+            "indoor",
+            "toilets",
+            "handwashing",
+            "drinking_water",
+        )
+        .filter(pk=marketplace.marketplace_url)
+        .first()
+    )
     structured_infrastructure = []
 
     for key, value in infrastructure.items():
         if value:
             infrastructure = {
                 "@type": "Offer",
-                "name": key.replace('_', ' ').title(),
+                "name": key.replace("_", " ").title(),
                 "category": "Infrastructure",
-                "description": "Available"
+                "description": "Available",
             }
 
             structured_infrastructure.append(infrastructure)
 
     return structured_infrastructure
+
 
 def get_structured_closest_marketplaces(marketplace):
     closest_marketplaces = (
@@ -99,38 +124,49 @@ def get_structured_closest_marketplaces(marketplace):
 
     return structured_marketplaces
 
+
 def get_structured_geo(marketplace):
     geo_coordinates = {
         "@type": "GeoCoordinates",
         "latitude": marketplace.location.y,
-        "longitude": marketplace.location.x
+        "longitude": marketplace.location.x,
     }
 
     return geo_coordinates
 
+
 def get_structured_opening_hours(marketplace):
-    days_mapping = {'Mo': 'Monday', 'Tu': 'Tuesday', 'We': 'Wednesday', 'Th': 'Thursday', 'Fr': 'Friday', 'Sa': 'Saturday', 'Su': 'Sunday'}
-    
-    schedule_list = marketplace.opening_hours.split('; ')
+    days_mapping = {
+        "Mo": "Monday",
+        "Tu": "Tuesday",
+        "We": "Wednesday",
+        "Th": "Thursday",
+        "Fr": "Friday",
+        "Sa": "Saturday",
+        "Su": "Sunday",
+    }
+
+    schedule_list = marketplace.opening_hours.split("; ")
     opening_hours = []
 
     for entry in schedule_list:
-        day, time_range = entry.split(' ')
-        start_time, end_time = time_range.split('-')
+        day, time_range = entry.split(" ")
+        start_time, end_time = time_range.split("-")
 
-        start_time = datetime.strptime(start_time, '%H:%M').strftime('%H:%M')
-        end_time = datetime.strptime(end_time, '%H:%M').strftime('%H:%M')
+        start_time = datetime.strptime(start_time, "%H:%M").strftime("%H:%M")
+        end_time = datetime.strptime(end_time, "%H:%M").strftime("%H:%M")
 
         specification = {
             "@type": "OpeningHoursSpecification",
             "dayOfWeek": days_mapping[day],
             "opens": start_time,
-            "closes": end_time
+            "closes": end_time,
         }
-        
+
         opening_hours.append(specification)
 
     return opening_hours
+
 
 def get_structured_events(marketplace):
     events = Event.objects.filter(marketplace=marketplace).order_by("-start_date")
@@ -140,11 +176,12 @@ def get_structured_events(marketplace):
         structured_event = {
             "@type": "Event",
             "name": event.name,
-            "description": event.description
+            "description": event.description,
         }
         structured_events.append(structured_event)
 
     return structured_events
+
 
 def get_structured_address(marketplace):
     address = {
@@ -153,18 +190,18 @@ def get_structured_address(marketplace):
         "addressLocality": marketplace.district,
         "addressRegion": marketplace.province,
         "addressCountry": "CR",
-        "postalCode": marketplace.postal_code
+        "postalCode": marketplace.postal_code,
     }
 
     return address
 
 
-
 # Create your views here.
+
 
 def ferias(request):
     """View function for all ferias page of site."""
-    
+
     marketplaces = Marketplace.objects.all().order_by("name")
     texts = Text.objects.filter(page="/ferias")
 
@@ -176,7 +213,15 @@ def ferias(request):
     n_guanacaste = marketplaces.filter(province="Guanacaste").count()
     n_puntarenas = marketplaces.filter(province="Puntarenas").count()
     n_limon = marketplaces.filter(province="Limón").count()
-    n_provinces = [n_sanjose, n_alajuela, n_cartago, n_heredia, n_guanacaste, n_puntarenas, n_limon]
+    n_provinces = [
+        n_sanjose,
+        n_alajuela,
+        n_cartago,
+        n_heredia,
+        n_guanacaste,
+        n_puntarenas,
+        n_limon,
+    ]
     n_monday = marketplaces.filter(opening_hours__contains="Mo").count()
     n_tuesday = marketplaces.filter(opening_hours__contains="Tu").count()
     n_wednesday = marketplaces.filter(opening_hours__contains="We").count()
@@ -184,23 +229,48 @@ def ferias(request):
     n_friday = marketplaces.filter(opening_hours__contains="Fr").count()
     n_saturday = marketplaces.filter(opening_hours__contains="Sa").count()
     n_sunday = marketplaces.filter(opening_hours__contains="Su").count()
-    n_days = [n_monday, n_tuesday, n_wednesday, n_thursday, n_friday, n_saturday, n_sunday]
-    n_fairground = marketplaces.filter(fairground=True).count() / total_marketplaces * 100
+    n_days = [
+        n_monday,
+        n_tuesday,
+        n_wednesday,
+        n_thursday,
+        n_friday,
+        n_saturday,
+        n_sunday,
+    ]
+    n_fairground = (
+        marketplaces.filter(fairground=True).count() / total_marketplaces * 100
+    )
     n_indoor = marketplaces.filter(indoor=True).count() / total_marketplaces * 100
-    n_parking = marketplaces.filter(parking="surface").count() / total_marketplaces * 100
+    n_parking = (
+        marketplaces.filter(parking="surface").count() / total_marketplaces * 100
+    )
     n_infrastructure = [n_fairground, n_indoor, n_parking]
     n_infrastructure = [math.ceil(i) for i in n_infrastructure]
     n_food = marketplaces.filter(food=True).count() / total_marketplaces * 100
     n_drinks = marketplaces.filter(drinks=True).count() / total_marketplaces * 100
-    n_handicrafts = marketplaces.filter(handicrafts=True).count() / total_marketplaces * 100
+    n_handicrafts = (
+        marketplaces.filter(handicrafts=True).count() / total_marketplaces * 100
+    )
     n_butcher = marketplaces.filter(butcher=True).count() / total_marketplaces * 100
     n_dairy = marketplaces.filter(dairy=True).count() / total_marketplaces * 100
     n_seafood = marketplaces.filter(seafood=True).count() / total_marketplaces * 100
-    n_garden_centre = marketplaces.filter(garden_centre=True).count() / total_marketplaces * 100
+    n_garden_centre = (
+        marketplaces.filter(garden_centre=True).count() / total_marketplaces * 100
+    )
     n_florist = marketplaces.filter(florist=True).count() / total_marketplaces * 100
-    n_amenities = [n_food, n_drinks, n_handicrafts, n_butcher, n_dairy, n_seafood, n_garden_centre, n_florist]
+    n_amenities = [
+        n_food,
+        n_drinks,
+        n_handicrafts,
+        n_butcher,
+        n_dairy,
+        n_seafood,
+        n_garden_centre,
+        n_florist,
+    ]
     n_amenities = [math.ceil(i) for i in n_amenities]
-    
+
     text = Text.objects.filter(page="/ferias")
     texts = {}
     texts["hero"] = text.filter(section="hero").first()
@@ -219,9 +289,9 @@ def ferias(request):
             marketplace_dict["longitude"] = marketplace.location.x
             marketplaces_map.append(marketplace_dict)
         except:
-            pass  
+            pass
     marketplaces_map = json.dumps(marketplaces_map)
-    
+
     context = {
         "texts": texts,
         "marketplaces": marketplaces,
@@ -234,15 +304,22 @@ def ferias(request):
     }
 
     if request.method == "POST":
-        marketplaces_match, marketplaces_others, marketplaces_keyword, keyword, query_text, by_location = search_marketplaces(request.POST)
+        (
+            marketplaces_match,
+            marketplaces_others,
+            marketplaces_keyword,
+            keyword,
+            query_text,
+            by_location,
+        ) = search_marketplaces(request.POST)
         context["show_results"] = True
         context["query_text"] = query_text
         context["by_location"] = by_location
         context["keyword"] = keyword
         context["marketplaces_match"] = marketplaces_match
         context["marketplaces_others"] = marketplaces_others
-        context["marketplaces_keyword"] = marketplaces_keyword  
-    
+        context["marketplaces_keyword"] = marketplaces_keyword
+
     return render(request, "ferias.html", context)
 
 
@@ -273,16 +350,45 @@ def feria(request, marketplace_url):
             is_open = oh.is_open()
             if is_open:
                 closes_in = oh.render().time_before_next_change(word=False)
-                closes_in = closes_in.replace("days", "días").replace("day", "día").replace("hours", "horas").replace("hour", "hora").replace("minutes", "minutos").replace("minute", "minuto").replace("seconds", "segundos").replace("second", "segundo")
+                closes_in = (
+                    closes_in.replace("days", "días")
+                    .replace("day", "día")
+                    .replace("hours", "horas")
+                    .replace("hour", "hora")
+                    .replace("minutes", "minutos")
+                    .replace("minute", "minuto")
+                    .replace("seconds", "segundos")
+                    .replace("second", "segundo")
+                )
             else:
                 opens_in = oh.render().time_before_next_change(word=False)
-                opens_in = opens_in.replace("days", "días").replace("day", "día").replace("hours", "horas").replace("hour", "hora").replace("minutes", "minutos").replace("minute", "minuto").replace("seconds", "segundos").replace("second", "segundo")
+                opens_in = (
+                    opens_in.replace("days", "días")
+                    .replace("day", "día")
+                    .replace("hours", "horas")
+                    .replace("hour", "hora")
+                    .replace("minutes", "minutos")
+                    .replace("minute", "minuto")
+                    .replace("seconds", "segundos")
+                    .replace("second", "segundo")
+                )
             description = oh.render().full_description()
             for i, _ in enumerate(description):
-                description[i] = description[i].replace("Monday", "Lunes").replace("Tuesday", "Martes").replace("Wednesday", "Miércoles").replace("Thursday", "Jueves").replace("Friday", "Viernes").replace("Saturday", "Sábado").replace("Sunday", "Domingo").replace(": ", ", de ").replace("to", "a")
+                description[i] = (
+                    description[i]
+                    .replace("Monday", "Lunes")
+                    .replace("Tuesday", "Martes")
+                    .replace("Wednesday", "Miércoles")
+                    .replace("Thursday", "Jueves")
+                    .replace("Friday", "Viernes")
+                    .replace("Saturday", "Sábado")
+                    .replace("Sunday", "Domingo")
+                    .replace(": ", ", de ")
+                    .replace("to", "a")
+                )
         except:
             pass
-    
+
     infrastructure = {
         "campo ferial": marketplace.fairground,
         "espacio bajo techo": marketplace.indoor,
@@ -306,13 +412,17 @@ def feria(request, marketplace_url):
     events = Event.objects.filter(marketplace=marketplace_url).order_by("-start_date")
     print(f"Evento: {events}")
 
-    announcements = Announcement.objects.filter(marketplace=marketplace_url).order_by("-created")
-    
+    announcements = Announcement.objects.filter(marketplace=marketplace_url).order_by(
+        "-created"
+    )
+
     text = Text.objects.filter(page="/ferias/feria")
     texts = {}
     texts["servicios_titulo"] = text.filter(section="servicios_titulo").first()
-    texts["servicios_descripcion"] = text.filter(section="servicios_descripcion").first()
-    
+    texts["servicios_descripcion"] = text.filter(
+        section="servicios_descripcion"
+    ).first()
+
     # JSON-LD Structured Data
     structured_data = get_structured_data(marketplace)
     serialized_json = jsonpickle.encode(structured_data, unpicklable=False)
@@ -330,7 +440,7 @@ def feria(request, marketplace_url):
         "announcements": announcements,
         "events": events,
         "texts": texts,
-        "structured_data": structured_data
+        "structured_data": structured_data,
     }
 
     return render(request, "feria.html", context)
@@ -342,18 +452,24 @@ def edit(request, marketplace_url):
 
 def results(request):
     marketplaces = Marketplace.objects.all().order_by("name")
-    if request.method == "POST":            
-            marketplaces_match, marketplaces_others, marketplaces_keyword, keyword, query_text = search_marketplaces(request.POST)   
-            context = {
-                "show_results": True,
-                "marketplaces": marketplaces,
-                "marketplaces_match": marketplaces_match,
-                "marketplaces_others": marketplaces_others,
-                "marketplaces_keyword": marketplaces_keyword,
-                "query_text": query_text,
-                "keyword": keyword,
-            }
-            return render(request, "results.html", context)
+    if request.method == "POST":
+        (
+            marketplaces_match,
+            marketplaces_others,
+            marketplaces_keyword,
+            keyword,
+            query_text,
+        ) = search_marketplaces(request.POST)
+        context = {
+            "show_results": True,
+            "marketplaces": marketplaces,
+            "marketplaces_match": marketplaces_match,
+            "marketplaces_others": marketplaces_others,
+            "marketplaces_keyword": marketplaces_keyword,
+            "query_text": query_text,
+            "keyword": keyword,
+        }
+        return render(request, "results.html", context)
     else:
         return render(request, "results.html")
 
@@ -386,6 +502,7 @@ def search_marketplaces(submission):
     if day != "any_day":
         if day == "today":
             import datetime
+
             today = datetime.datetime.today().weekday()
             day = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"][today]
             marketplaces = marketplaces.filter(opening_hours__contains=day)
@@ -448,12 +565,12 @@ def search_marketplaces(submission):
         try:
             marketplaces_keyword = marketplaces
             marketplaces_keyword = marketplaces_keyword.filter(
-                Q(name__unaccent__trigram_similar=keyword) | 
-                Q(description__unaccent__trigram_similar=keyword)
+                Q(name__unaccent__trigram_similar=keyword)
+                | Q(description__unaccent__trigram_similar=keyword)
             )
         except:
             pass
-    
+
     # Get other marketplaces
 
     marketplaces_others = marketplaces.difference(marketplaces_match)
@@ -470,5 +587,11 @@ def search_marketplaces(submission):
 
     query_text = submission.get("query_text")
 
-    return marketplaces_match, marketplaces_others, marketplaces_keyword, keyword, query_text, by_location
-
+    return (
+        marketplaces_match,
+        marketplaces_others,
+        marketplaces_keyword,
+        keyword,
+        query_text,
+        by_location,
+    )
