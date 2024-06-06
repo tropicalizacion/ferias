@@ -5,7 +5,7 @@ from products.models import Variety
 
 class Ingredient(models.Model):
     """
-    Data model: https://schema.org/RecipeIngredient
+    Data model: https://schema.org/recipeIngredient
     """
 
     name = models.CharField(max_length=100, unique=True)
@@ -80,7 +80,7 @@ class Recipe(models.Model):
 
 class RecipeIngredient(models.Model):
     """
-    Data model: https://schema.org/RecipeIngredient
+    Data model: https://schema.org/recipeIngredient
     """
 
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
