@@ -29,6 +29,7 @@ urlpatterns = [
     path('sugerencias/', include('crowdsourcing.urls'), name='sugerencias'),
     path('api/', include('api.urls'), name='api'),
     path('usuarios/', include('users.urls'), name='usuarios'),
+    path('recetas/', include('recipes.urls'), name='recetas'),
 ]
 
 if settings.DEBUG:

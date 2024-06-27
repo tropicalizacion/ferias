@@ -11,8 +11,11 @@ class Ingredient(models.Model):
     name = models.CharField(max_length=100, unique=True)
     description = models.TextField(blank=True, null=True)
     # TODO: Evaluar cómo vincular con variedades de productos.
-    product = models.ForeignKey(Variety, blank=True, null=True, on_delete=models.SET_NULL)
+    product = models.ForeignKey(
+        Variety, blank=True, null=True, on_delete=models.SET_NULL
+    )
     # Si no tenemos algún producto, puede quedar blank. Si sí está, vincular con el existente.
+    is_vegetarian = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
@@ -20,6 +23,7 @@ class Ingredient(models.Model):
 
 class Category(models.Model):
     """
+    Recipe category. Examples: breakfast, lunch, dinner, dessert.
     Data model: https://schema.org/Category
     """
 
@@ -38,6 +42,7 @@ class Category(models.Model):
 
 class Tag(models.Model):
     """
+    Keywords or tags for recipes. Examples: vegan, gluten-free, low-carb.
     Data model: https://schema.org/DefinedTerm
     """
 
@@ -83,10 +88,21 @@ class RecipeIngredient(models.Model):
     Data model: https://schema.org/recipeIngredient
     """
 
+    UNIT_CHOICES = [
+        ("g", "gramos"),
+        ("kg", "kilogramos"),
+        ("ml", "mililitros"),
+        ("l", "litros"),
+        ("tsp", "cucharadita"),
+        ("tbsp", "cuacharada"),
+        ("cup", "taza"),
+        ("unit", "unidad"),
+    ]
+
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
     ingredient = models.ForeignKey(Ingredient, on_delete=models.CASCADE)
-    unit = models.CharField(max_length=50)  # choices (cucharadita, tazas, ...)
-    quantity = models.DecimalField(max_digits=5, decimal_places=2)
+    unit = models.CharField(max_length=50, choices=UNIT_CHOICES, default="unit")
+    quantity = models.DecimalField(max_digits=8, decimal_places=3)
 
     class Meta:
         unique_together = ("recipe", "ingredient")
@@ -101,13 +117,13 @@ class Step(models.Model):
     """
 
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
-    step_number = models.IntegerField()
+    step_sequence = models.IntegerField()
     title = models.CharField(max_length=100, blank=True, null=True)
     description = models.TextField()
     photo = models.ImageField(upload_to="steps/", blank=True, null=True)
 
     class Meta:
-        ordering = ["step_number"]
+        ordering = ["step_sequence"]
 
     def __str__(self):
-        return f"Step {self.step_number} for {self.recipe.name}"
+        return f"Step {self.step_sequence} for {self.recipe.name}"
