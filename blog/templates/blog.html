@@ -9,7 +9,7 @@
 
 <div class="container mt-5">
     <div class="card border-0 m-auto shadow mb-5 w-25">
-        <a href="{% url 'create_news' %}" class="btn background-verde text-white fw-bold btn-crear-aviso">Crear post</a>
+        <a href="{% url 'create_post' %}" class="btn background-verde text-white fw-bold btn-crear-aviso">Crear post</a>
     </div>
     <div class="row">
         <div class="col-md-8 offset-md-2">
@@ -17,18 +17,25 @@
                 <div class="blog-post">
                     <div class="d-flex justify-content-between">
                         <div>
-                            <h2>{{ post.title }}</h2>
+                            <h2><a class="text-black text-decoration-none" href="{% url 'post' post.id %}">{{ post.title }}</a></h2>
+                            {% if post.author.image %}
+                                <img src="{{ post.author.image.url }}" alt="Blog Image" class="img-fluid blog-image m-3">
+                            {% endif %}
                             <p class="meta-info">
-                                Por autor - {{ post.publication_date|date:"F j, Y" }}
+                                {{ post.author }} - {{ post.publication_date|date:"F j, Y" }}
                             </p>
-                            <p>{{ post.content|truncatewords:40 }}</p>
+                            <p>{{ post.description|truncatewords:40 }}</p>
                             <div class="meta-info">
-                                <span class="tag">{{ post.tags }}</span>
                                 <span>{{ post.read_time }} min de lectura</span>
+                            </div>
+                            <div class="tags">
+                                {% for tag in post.tags.all %}
+                                    <span class="badge bg-secondary">{{ tag.name }}</span>
+                                {% endfor %}
                             </div>
                         </div>
                         {% if post.image %}
-                            <img src="{{ post.image.url }}" alt="Blog Image" class="img-fluid blog-image">
+                            <img src="{{ post.image.url }}" alt="Blog Image" class="img-fluid blog-image m-3">
                         {% endif %}
                     </div>
                 </div>

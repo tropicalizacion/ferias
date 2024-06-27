@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block page_title %} {{post.title}} {% endblock %}
+
+{% block bg-navbar %} background-azul {% endblock %}
+{% load static %}
+
+{% block main %}
+    <div class="container pt-5 d-flex justify-content-center">
+        <div class="row w-75">
+            <div class="col">
+                <div class="blog-post">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h2>{{ post.title }}</h2>
+                            <p class="meta-info">
+                                {{ post.author }} - {{ post.publication_date|date:"F j, Y" }}
+                            </p>
+                            <p>{{ post.description|truncatewords:40 }}</p>
+                            <div class="meta-info">
+                                <span>{{ post.read_time }} min de lectura</span>
+                            </div>
+                        </div>
+                        {% if post.image %}
+                            <img src="{{ post.image.url }}" alt="Blog Image" class="img-fluid blog-image">
+                        {% endif %}
+                    </div>
+                </div>
+                {{ post.content|safe }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
