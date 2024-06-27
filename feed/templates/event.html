@@ -8,11 +8,8 @@
     <div class="container pt-3">
         <div class="row">
             <div class="col">
-                {% if event.image %}
-                    <img src="{{ event.image.url }}" alt="{{ event.name }}" class="img-fluid">
-                {% endif %}
                 <h1 class="hero-deferia fw-bold">{{ event.name }}</h1>
-                <p>{{ event.description }}</p>
+                {{ event.text|safe }}
                 <p><strong>Fecha de inicio:</strong> {{ event.start_date }}</p>
                 <p><strong>Fecha de fin:</strong> {{ event.end_date }}</p>
                 <p><strong>Lugar:</strong> {{ event.location }}</p>

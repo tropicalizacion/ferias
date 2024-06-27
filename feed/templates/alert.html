@@ -8,11 +8,8 @@
     <div class="container pt-3">
         <div class="row">
             <div class="col">
-                {% if alert.image %}
-                    <img src="{{ alert.image.url }}" alt="{{ alert.name }}" class="img-fluid">
-                {% endif %}
                 <h1 class="hero-deferia rojo fw-bold">{{ alert.name }}</h1>
-                <p>{{ alert.description }}</p>
+                {{ alert.text|safe }}
                 <p><strong>Fecha de inicio:</strong> {{ alert.start_date }}</p>
                 <p><strong>Fecha de fin:</strong> {{ alert.end_date }}</p>
                 <p><strong>Ferias:</strong></p>

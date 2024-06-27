@@ -6,6 +6,9 @@
 
 {% block main %}
 
+<script>
+    initializeTinyMCE('#alertContent');
+</script>
 
 <div class="d-flex flex-column w-100 justify-content-center pt-4">
 
@@ -21,6 +24,10 @@
             <div class="form-group m-2">
                 <label for="description">Descripción:</label>
                 <textarea class="form-control" id="description" name="description"></textarea>
+            </div>
+            <div class="form-group m-2">
+                <label for="content">Contenido:</label>
+                <textarea class="form-control" id="alertContent" name="content" rows="5"></textarea>
             </div>
             <div class="form-group m-2">
                 <label for="start_date">Fecha de Inicio:</label>
