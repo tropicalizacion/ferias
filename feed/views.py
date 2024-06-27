@@ -83,9 +83,10 @@ def create_event(request):
             print("Este usuario no es un administrador de una feria.")
             return redirect('feed')
         
-        if request.method == 'POST':    
+        if request.method == 'POST':
             name = request.POST.get('name')
             description = request.POST.get('description')
+            text = request.POST.get('content')
             start_date = request.POST.get('start_date')
             end_date = request.POST.get('end_date')
             location = request.POST.get('location')
@@ -94,6 +95,7 @@ def create_event(request):
             event = Event(
                 name=name,
                 description=description,
+                text=text,
                 start_date=start_date,
                 end_date=end_date,
                 location=location,
@@ -167,26 +169,26 @@ def create_alert(request):
         if request.method == 'POST':
             name = request.POST.get('name')
             description = request.POST.get('description')
+            text = request.POST.get('content')
             start_date = request.POST.get('start_date')
             end_date = request.POST.get('end_date')
             image = request.FILES.get('image')
-            marketplace_urls = request.POST.getlist('marketplaces')
+            marketplace_admin = MarketplaceAdmin.objects.get(user=request.user)
+            marketplace = Marketplace.objects.get(name=marketplace_admin.marketplace)
 
             alert = Alert(
                 name=name,
                 description=description,
+                text=text,
                 start_date=start_date,
                 end_date=end_date,
                 image=image,
             )
             alert.save()
             
-            for marketplace_url in marketplace_urls:
-                marketplace = Marketplace.objects.get(marketplace_url=marketplace_url)
-                alert.marketplaces.add(marketplace)
+            alert.marketplaces.add(marketplace)
             
             alert.save()
-
             return redirect('feed')
 
         context = {
