@@ -1,0 +1,21 @@
+[data-md-color-scheme="feria"] {
+    --md-primary-fg-color: #E64128;
+    --md-primary-fg-color--light: #EBB615;
+    --md-primary-fg-color--dark: #008D4A;
+}
+
+.celeste {
+    color: #00C0F3;
+}
+
+.azul {
+    color: #005DA4;
+}
+
+.verde {
+    color: #6DC067;
+}
+
+.amarillo {
+    color: #FFE06A;
+}
