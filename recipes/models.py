@@ -24,7 +24,7 @@ class Ingredient(models.Model):
 class Category(models.Model):
     """
     Recipe category. Examples: breakfast, lunch, dinner, dessert.
-    Data model: https://schema.org/Category
+    Data model: https://schema.org/category
     """
 
     name = models.CharField(max_length=100, unique=True)

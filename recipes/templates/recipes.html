@@ -1,1 +1,46 @@
-<h1>Todas las recetas</h1>
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block page_title %} Todas las recetas {% endblock %}
+
+{% block bg-navbar %} background-amarillo {% endblock %}
+
+{% block main %}
+
+<!-- Hero -->
+<div class="px-4 pt-3 pb-5 text-center background-amarillo">
+    <div class="card col-lg-8 mx-auto bg-transparent border-0">
+        <h1 class="display-3 my-5 text-white hero-deferia">{{texts.hero.content}}</h1>
+        <h3 class="title-deferia text-white">¡Explorá nuestras recetas tradicionales,<br>desde el arroz con pollo hasta el gallo pinto!</h3>
+        <img src="{% static 'images/stickers/ajo.svg' %}" width="75px" class="index-sticker-1">
+        <img src="{% static 'images/stickers/acelga.svg' %}" width="75px" class="index-sticker-2">
+        <img src="{% static 'images/stickers/naranja.svg' %}" width="75px" class="index-sticker-3">
+    </div>
+</div>
+
+<!-- Lista de las recetas -->
+<div class="container mt-5">
+    <h1 class="mb-4">Todas las recetas</h1>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        {% for recipe in recipes %}
+        <div class="col">
+            <div class="card h-100">
+                {% if recipe.image %}
+                <img src="{{ recipe.image.url }}" class="card-img-top" alt="{{ recipe.title }}">
+                {% else %}
+                <img src="{% static 'img/default_recipe_image.jpg' %}" class="card-img-top" alt="{{ recipe.title }}">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ recipe.title }}</h5>
+                    <p class="card-text">{{ recipe.description|truncatewords:15 }}</p>
+                    <a href="{% url 'recipes:recipe_detail' recipe.id %}" class="btn btn-primary">View Recipe</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

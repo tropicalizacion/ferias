@@ -6,7 +6,8 @@ from .models import Ingredient, Category, Tag, Recipe, RecipeIngredient, Step
 
 
 def recipes(request):
-    return render(request, "recipes.html")
+    recipes = Recipe.objects.all()
+    return render(request, "recipes.html", {'recipes': recipes})
 
 
 def recipe(request, slug):
