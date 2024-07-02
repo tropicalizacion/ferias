@@ -16,6 +16,11 @@ class Ingredient(models.Model):
     )
     # Si no tenemos algún producto, puede quedar blank. Si sí está, vincular con el existente.
     is_vegetarian = models.BooleanField(default=False)
+    is_vegan = models.BooleanField(default=False)
+    is_gluten_free = models.BooleanField(default=False)
+    is_dairy_free = models.BooleanField(default=False)
+    is_nut_free = models.BooleanField(default=False)
+    is_soy_free = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
