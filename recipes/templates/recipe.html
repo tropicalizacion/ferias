@@ -1,1 +1,77 @@
-<h1>Una buena receta</h1>
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block page_title %} Una buena receta {% endblock %}
+
+{% block bg-navbar %} background-amarillo {% endblock %}
+
+{% block main %}
+
+<!-- Hero -->
+<div class="px-4 pt-3 pb-5 text-center background-amarillo">
+    <div class="card col-lg-8 mx-auto bg-transparent border-0">
+        <h1 class="display-3 my-5 text-white hero-deferia">{{texts.hero.content}}</h1>
+        <h3 class="title-deferia text-white">¡Explorá nuestras recetas tradicionales,<br>desde el arroz con pollo hasta
+            el gallo pinto!</h3>
+        <img src="{% static 'images/stickers/ajo.svg' %}" width="75px" class="index-sticker-1">
+        <img src="{% static 'images/stickers/acelga.svg' %}" width="75px" class="index-sticker-2">
+        <img src="{% static 'images/stickers/naranja.svg' %}" width="75px" class="index-sticker-3">
+    </div>
+</div>
+
+<!-- Una receta -->
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 mb-4 mb-md-0">
+            {% if recipe.image %}
+            <img src="{{ recipe.image.url }}" class="img-fluid rounded" alt="{{ recipe.name }}">
+            {% else %}
+            <img src="{% static 'recipes/default_recipe_image.jpg' %}" class="img-fluid rounded"
+                alt="{{ recipe.name }}">
+            {% endif %}
+        </div>
+        <div class="col-md-6">
+            <div class="d-flex flex-column h-100">
+                <div class="mb-3">
+                    <h1 class="mb-2">{{ recipe.name|capfirst }}</h1>
+                    <div class="d-flex flex-wrap gap-2">
+                        {% for tag in recipe.tags.all %}
+                        <span class="badge background-verde">{{ tag.name }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                <p class="mb-4">{{ recipe.description }}</p>
+                <div class="mb-4">
+                    <h2 class="mb-3">Ingredientes</h2>
+                    <ul class="list-group">
+                        {% for recipe_ingredient in recipe.recipeingredient_set.all %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span>{{ recipe_ingredient.quantity }} {{ recipe_ingredient.unit }} de 
+                                {{ recipe_ingredient.ingredient.name }}</span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="mt-auto">
+                    <h2 class="mb-3">Pasos</h2>
+                    <ol class="list-group">
+                        {% for step in recipe.step_set.all %}
+                        <li class="list-group-item">
+                            {% if step.title %}
+                            <h5>{{ step.title }}</h5>
+                            {% endif %}
+                            {{ step.description }}
+                            {% if step.photo %}
+                            <img src="{{ step.photo.url }}" class="img-fluid mt-2 rounded" alt="{{ step.title }}">
+                            {% endif %}
+                        </li>
+                        {% endfor %}
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

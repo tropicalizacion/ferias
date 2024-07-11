@@ -1,1 +1,77 @@
-<h1>Crear receta</h1>
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block page_title %} Crear una receta {% endblock %}
+
+{% block bg-navbar %} background-amarillo {% endblock %}
+
+{% block main %}
+
+<div class="container my-5">
+    <h1 class="mb-4">Crear una receta</h1>
+
+    <form
+        action="{% if recipe.slug %}{% url 'edit_recipe' recipe.slug %}{% else %}{% url 'create_recipe' %}{% endif %}"
+        method="post"
+        enctype="multipart/form-data"
+        class="card p-4"
+    > <!-- Si la receta tiene un slug, significa que la mandaron por context y debe usarse el form editar. Si no, es el form de crear receta. -->
+        {% csrf_token %}
+
+        <div class="mb-3">
+            {{ recipe_form.name.label }}
+            {{ recipe_form.name }}
+        </div>
+        <div class="mb-3">
+            {{ recipe_form.description.label }}
+            {{ recipe_form.description }}
+        </div>
+        <div class="mb-3">
+            {{ recipe_form.category.label }}
+            {{ recipe_form.category }}
+        </div>
+        <div class="mb-3">
+            {{ recipe_form.tags.label }}
+            {{ recipe_form.tags }}
+        </div>
+        <div class="mb-3">
+            {{ recipe_form.image.label }}
+            {{ recipe_form.image }}
+        </div>
+
+        <!-- TODO: Aquí la idea es que también se puedan agregar ingredientes que no estén ya en la lista de ingredientes.
+            Para eso se debería poder crear un nuevo ingrediente en el form. 
+        -->
+        <h3>Ingredientes</h3>
+        <div id="ingredients-container">
+            {{ ingredient_formset.management_form }}
+            {% for form in ingredient_formset %}
+            <div class="ingredient-row mb-3">
+                {{ form.as_p }}
+                <button type="button" class="btn btn-danger btn-sm remove-ingredient">Quitar</button>
+            </div>
+            {% endfor %}
+        </div>
+        <button type="button" class="btn btn-primary" id="add-ingredient">Agregar ingrediente</button>
+
+        <!-- TODO: Aquí la idea es que también se puedan agregar pasos que no estén ya en la lista de pasos.
+            Para eso se debería poder crear un nuevo paso en el form. 
+        -->
+        <h3>Pasos</h3>
+        <div id="steps-container">
+            {{ step_formset.management_form }}
+            {% for form in step_formset %}
+            <div class="step-row mb-3">
+                {{ form.as_p }}
+                <button type="button" class="btn btn-danger btn-sm remove-step">Quitar</button>
+            </div>
+            {% endfor %}
+        </div>
+        <button type="button" class="btn btn-primary" id="add-step">Agregar paso</button>
+
+        <button type="submit" class="btn btn-success">Guardar receta</button>
+    </form>
+</div>
+
+{% endblock %}

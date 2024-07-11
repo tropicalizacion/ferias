@@ -21,8 +21,11 @@
 </div>
 
 <!-- Lista de las recetas -->
-<div class="container mt-5">
-    <h1 class="mb-4">Todas las recetas</h1>
+<div class="container my-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Todas las recetas</h1>
+        <a href="{% url 'create_recipe' %}" class="btn background-rojo text-white">Crear receta</a>
+    </div>
 
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         {% for recipe in recipes %}
@@ -35,21 +38,23 @@
                         {% endfor %}
                     </div>
                 </div>
-                {% if recipe.image %}
-                <img src="{{ recipe.image.url }}" class="card-img" alt="{{ recipe.name }}">
-                {% else %}
-                <img src="{% static 'recipes/default_recipe_image.jpg' %}" class="card-img-body" alt="{{ recipe.name }}">
-                {% endif %}
                 <div class="card-body">
-                    <h5 class="card-title">{{ recipe.name|capfirst }}</h5>
+                    {% if recipe.image %}
+                    <img src="{{ recipe.image.url }}" class="card-img-top" alt="{{ recipe.name }}">
+                    {% else %}
+                    <img src="{% static 'recipes/default_recipe_image.jpg' %}" class="card-img-top" alt="{{ recipe.name }}">
+                    {% endif %}
+                    <h5 class="card-title mt-3">{{ recipe.name|capfirst }}</h5>
                     <p class="card-text">{{ recipe.description|truncatewords:15 }}</p>
-
-                    <a href="{% url 'recipe' recipe.slug %}" class="btn btn-danger btn-md px-4 gap-3">Ver receta</a>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <a href="{% url 'recipe' recipe.slug %}" class="btn background-rojo text-white">Ver receta</a>
+                        <a href="{% url 'edit_recipe' recipe.slug %}" class="btn background-amarillo text-white">Editar receta</a>
+                    </div>
                 </div>
             </div>
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 </div>
 
 {% endblock %}
