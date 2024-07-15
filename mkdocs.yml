@@ -2,7 +2,7 @@ site_name: Proyecto deferia.cr
 
 nav:
     - Inicio: index.md
-    - Identidad: identidad.md
+    - Identidad visual: identidad.md
     - Sobre: sobre.md
 
 extra_css:

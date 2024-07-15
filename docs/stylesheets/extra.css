@@ -4,18 +4,34 @@
     --md-primary-fg-color--dark: #008D4A;
 }
 
-.celeste {
-    color: #00C0F3;
-}
-
-.azul {
-    color: #005DA4;
+.amarillo {
+    color: #EBB615;
 }
 
 .verde {
-    color: #6DC067;
+    color: #008D4A;
 }
 
-.amarillo {
-    color: #FFE06A;
+.azul {
+    color: #3879B5;
+}
+
+.gris {
+    color: #D1C5BA;
+}
+
+.rojo {
+    color: #E64128;
+}
+
+.cafe {
+    color: #CD7535;
+}
+
+.rosado {
+    color: #F29196;
+}
+
+.negro {
+    color: #000000;
 }
