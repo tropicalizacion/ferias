@@ -2,7 +2,7 @@
 
 ## Nombre
 
-"De feria" es una alusión a frases como:
+"De feria" es una alusión a frases comunes, como:
 
 - "¡Vamos de feria!"
 - "Frescura, variedad y precios de feria"
