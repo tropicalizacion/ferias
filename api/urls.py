@@ -4,6 +4,7 @@ from . import views
 
 router = routers.DefaultRouter()
 router.register(r"ferias", views.MarketplaceViewSet)
+router.register(r"geoferias", views.GeoMarketplaceViewSet, basename='geo_marketplace')
 
 urlpatterns = [
     path("", views.datos, name="datos"),

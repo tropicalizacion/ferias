@@ -1,6 +1,7 @@
 django
 python-decouple
 djangorestframework
+djangorestframework-gis
 drf-spectacular
 psycopg2-binary
 geopy

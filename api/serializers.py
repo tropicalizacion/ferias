@@ -1,5 +1,6 @@
 from marketplaces.models import Marketplace
 from rest_framework import serializers
+from rest_framework_gis.serializers import GeoFeatureModelSerializer
 
 
 class MarketplaceSerializer(serializers.ModelSerializer):
@@ -43,3 +44,16 @@ class MarketplaceSerializer(serializers.ModelSerializer):
             "florist",
             "other_services",
         ]
+
+class GeoMarketplaceSerializer(GeoFeatureModelSerializer):
+    class Meta:
+        model = Marketplace
+        geo_field = "location"
+        fields = (
+            "name",
+            "province",
+            "canton",
+            "district",
+            "postal_code",
+            "address",
+        )
