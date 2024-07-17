@@ -52,12 +52,12 @@ def product(request, product_url):
 
 def prices(request):
     prices = Price.objects.all()
-    year = datetime.datetime.now().isocalendar()[0]
-    week = datetime.datetime.now().isocalendar()[1]
-    week_prices = prices.filter(year=year, week=week)
+    this_year = datetime.datetime.now().isocalendar()[0]
+    this_week = datetime.datetime.now().isocalendar()[1]
+    this_week_prices = prices.filter(year=this_year, week=this_week)
 
     context = {
         "prices": prices,
-        "week_prices": week_prices,
+        "this_week_prices": this_week_prices,
     }
     return render(request, "prices.html", context)

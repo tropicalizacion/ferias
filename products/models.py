@@ -90,8 +90,8 @@ class Price(models.Model):
     unit = models.CharField(choices=UNIT_CHOICES, max_length=3)
     price = models.IntegerField()
     publication_date = models.DateField()
-    year = models.IntegerField()
-    week = models.IntegerField()
+    year = models.IntegerField(blank=True, null=True)
+    week = models.IntegerField(blank=True, null=True)
 
     def save(self, *args, **kwargs):
         self.year = self.publication_date.isocalendar()[0]

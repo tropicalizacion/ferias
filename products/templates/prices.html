@@ -3,8 +3,8 @@
 <h2>Precios recomendados de la semana</h2>
 
 <ul>
-    {% for product in week_prices %}
-        <li>{{ product.variety|capfirst }}: {{ product.price }} CRC</li>
+    {% for product in this_week_prices %}
+        <li>{{ product.variety|capfirst }}: {{ product.price }} CRC / {{ product.unit }}</li>
     {% endfor %}
 </ul>
 
@@ -13,3 +13,5 @@
 Elegir producto(s): (menú)
 
 Gráfica de precios de los productos seleccionados semanalmente en los últimos años.
+
+
