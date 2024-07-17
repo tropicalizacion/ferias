@@ -45,6 +45,7 @@ class MarketplaceSerializer(serializers.ModelSerializer):
             "other_services",
         ]
 
+
 class GeoMarketplaceSerializer(GeoFeatureModelSerializer):
     class Meta:
         model = Marketplace
