@@ -3,6 +3,18 @@ from django.utils.text import slugify
 from products.models import Variety
 
 
+class AllergyType(models.TextChoices):
+    GLUTEN = "gluten", "Gluten"
+    DAIRY = "dairy", "Lácteos"
+    EGG = "egg", "Huevo"
+    NUTS = "nuts", "Nueces"
+    SOYA = (
+        "soy",
+        "Soya",
+    )
+    FISH = "fish", "Pescado"
+
+
 class Ingredient(models.Model):
     """
     Data model: https://schema.org/recipeIngredient
@@ -11,16 +23,17 @@ class Ingredient(models.Model):
     name = models.CharField(max_length=100, unique=True)
     description = models.TextField(blank=True, null=True)
     # TODO: Evaluar cómo vincular con variedades de productos.
-    product = models.ForeignKey(
-        Variety, blank=True, null=True, on_delete=models.SET_NULL
-    )
+    product = models.ForeignKey(Variety, blank=True, null=True, on_delete=models.SET_NULL)
     # Si no tenemos algún producto, puede quedar blank. Si sí está, vincular con el existente.
     is_vegetarian = models.BooleanField(default=False)
     is_vegan = models.BooleanField(default=False)
+    # allergies = models.CharField(max_length=100, blank=True, null=True, choices=AllergyType.choices)
+    
     is_gluten_free = models.BooleanField(default=False)
     is_dairy_free = models.BooleanField(default=False)
     is_nut_free = models.BooleanField(default=False)
     is_soy_free = models.BooleanField(default=False)
+    
 
     def __str__(self):
         return self.name
@@ -73,7 +86,7 @@ class Recipe(models.Model):
     category = models.ForeignKey(
         Category, on_delete=models.SET_NULL, null=True, blank=True
     )
-    # image = models.ImageField(upload_to="recipes/", blank=True, null=True)
+    # TODO: image = models.ImageField(upload_to="recipes/", blank=True, null=True)
     tags = models.ManyToManyField(Tag, blank=True)
     ingredients = models.ManyToManyField(Ingredient, through="RecipeIngredient")
     created_at = models.DateTimeField(auto_now_add=True)
@@ -108,6 +121,7 @@ class RecipeIngredient(models.Model):
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
     ingredient = models.ForeignKey(Ingredient, on_delete=models.CASCADE)
     unit = models.CharField(max_length=50, choices=UNIT_CHOICES, default="unit")
+    # TODO: Que la cantidad mínima sea 0 y no pueda ser negativa.
     quantity = models.DecimalField(max_digits=8, decimal_places=3)
 
     class Meta:

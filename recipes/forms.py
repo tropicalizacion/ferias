@@ -63,7 +63,7 @@ class RecipeIngredient(models.Model):
         return f"{self.quantity} {self.unit} of {self.ingredient.name} for {self.recipe.name}"
 """
 
-
+# TODO: Debe haber un espacio donde el usuario pueda crear un nuevo ingrediente (que no esté en la lista de ingredientes que se despliega).
 class RecipeIngredientForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -76,7 +76,7 @@ class RecipeIngredientForm(forms.ModelForm):
 
 
 # Cada receta va a tener varias instancias de RecipeIngredientForm.
-# forms.inlineformset_factory() permite crear un conjunto de formularios (formset) relacionados a un modelo padre por medio del foreign key.
+# forms.inlineformset_factory() permite crear un conjunto de formularios (formset) relacionados a un modelo padre por medio de foreign keys.
 RecipeIngredientFormSet = forms.inlineformset_factory(
     Recipe,  # Modelo padre.
     RecipeIngredient,  # Modelo hijo.

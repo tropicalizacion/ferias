@@ -48,7 +48,7 @@
                     <p class="card-text">{{ recipe.description|truncatewords:15 }}</p>
                     <div class="d-flex justify-content-between align-items-center">
                         <a href="{% url 'recipe' recipe.slug %}" class="btn background-rojo text-white">Ver receta</a>
-                        <a href="{% url 'edit_recipe' recipe.slug %}" class="btn background-amarillo text-white">Editar receta</a>
+                        <a href="{% url 'edit_recipe' recipe.slug %}" class="btn btn-sm background-amarillo text-white"><i class="fa-solid fa-pen-to-square"></i></a>
                     </div>
                 </div>
             </div>
