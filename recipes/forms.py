@@ -1,29 +1,5 @@
 from django import forms
-from .models import Recipe, RecipeIngredient, Step, Tag
-
-
-"""
-class Recipe(models.Model):
-    name = models.CharField(max_length=100)
-    description = models.TextField()
-    category = models.ForeignKey(
-        Category, on_delete=models.SET_NULL, null=True, blank=True
-    )
-    # image = models.ImageField(upload_to="recipes/", blank=True, null=True)
-    tags = models.ManyToManyField(Tag, blank=True)
-    ingredients = models.ManyToManyField(Ingredient, through="RecipeIngredient")
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-    slug = models.SlugField(max_length=100, unique=True)
-
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.name)
-        super().save(*args, **kwargs)
-
-    def __str__(self):
-        return self.name
-"""
+from .models import Recipe, RecipeIngredient, Step, Tag, Ingredient, Variety
 
 
 class RecipeForm(forms.ModelForm):
@@ -47,21 +23,15 @@ class RecipeForm(forms.ModelForm):
             "category",
             "tags",
         ]  # Estos son los campos que se incluyen en el formulario. No se incluye slug porque ese se crea automáticamente.
+        widgets = {
+            "name": forms.TextInput(
+                attrs={"class": "form-control", "placeholder": "Introduzca un nombre"}
+            ),
+            "description": forms.Textarea(attrs={"class": "form-control", "rows": 4}),
+            "category": forms.Select(attrs={"class": "form-control"}),
+            "tags": forms.SelectMultiple(attrs={"class": "form-control", "size": 5}),
+        }
 
-
-"""
-class RecipeIngredient(models.Model):
-    recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
-    ingredient = models.ForeignKey(Ingredient, on_delete=models.CASCADE)
-    unit = models.CharField(max_length=50, choices=UNIT_CHOICES, default="unit")
-    quantity = models.DecimalField(max_digits=8, decimal_places=3)
-
-    class Meta:
-        unique_together = ("recipe", "ingredient")
-
-    def __str__(self):
-        return f"{self.quantity} {self.unit} of {self.ingredient.name} for {self.recipe.name}"
-"""
 
 # TODO: Debe haber un espacio donde el usuario pueda crear un nuevo ingrediente (que no esté en la lista de ingredientes que se despliega).
 class RecipeIngredientForm(forms.ModelForm):
@@ -73,6 +43,25 @@ class RecipeIngredientForm(forms.ModelForm):
     class Meta:
         model = RecipeIngredient
         fields = ["ingredient", "unit", "quantity"]
+        widgets = {
+            "ingredient": forms.Select(
+                attrs={
+                    "class": "form-control",
+                }
+            ),
+            "unit": forms.Select(
+                attrs={
+                    "class": "form-control",
+                }
+            ),
+            "quantity": forms.NumberInput(
+                attrs={
+                    "class": "form-control",
+                    "placeholder": "Cantidad",
+                    "min": 0,
+                }
+            ),
+        }
 
 
 # Cada receta va a tener varias instancias de RecipeIngredientForm.
@@ -83,22 +72,6 @@ RecipeIngredientFormSet = forms.inlineformset_factory(
     form=RecipeIngredientForm,  # Formulario a desplegar.
     extra=1,  # Mostrar un formulario extra inicialmente.
 )
-
-
-"""
-class Step(models.Model):
-    recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
-    step_sequence = models.IntegerField()
-    title = models.CharField(max_length=100, blank=True, null=True)
-    description = models.TextField()
-    photo = models.ImageField(upload_to="steps/", blank=True, null=True)
-
-    class Meta:
-        ordering = ["step_sequence"]
-
-    def __str__(self):
-        return f"Step {self.step_sequence} for {self.recipe.name}"
-"""
 
 
 class StepForm(forms.ModelForm):
@@ -116,6 +89,33 @@ class StepForm(forms.ModelForm):
             "description",
             "photo",
         ]
+        widgets = {
+            "step_sequence": forms.NumberInput(
+                attrs={
+                    "class": "form-control",
+                    "placeholder": "Introduzca un número",
+                    "min": 1,
+                }
+            ),
+            "title": forms.TextInput(
+                attrs={
+                    "class": "form-control",
+                    "placeholder": "Introduzca un título",
+                }
+            ),
+            "description": forms.Textarea(
+                attrs={
+                    "class": "form-control",
+                    "rows": 1,
+                }
+            ),
+            "photo": forms.ClearableFileInput(
+                attrs={
+                    "class": "form-control",
+                    "type": "file",
+                }
+            ),
+        }
 
 
 # Cada receta va a tener varias instancias de StepForm.
@@ -125,3 +125,69 @@ StepFormSet = forms.inlineformset_factory(
     form=StepForm,  # Formulario a desplegar.
     extra=1,  # Mostrar un formulario extra inicialmente.
 )
+
+
+class IngredientForm(forms.ModelForm):
+    class Meta:
+        model = Ingredient
+        fields = [
+            "name",
+            "description",
+            "product",
+            "is_vegetarian",
+            "is_vegan",
+            "is_gluten_free",
+            "is_dairy_free",
+            "is_nut_free",
+            "is_soy_free",
+        ]
+        widgets = {
+            "name": forms.TextInput(
+                attrs={
+                    "class": "form-control",
+                    "placeholder": "Enter ingredient name",
+                }
+            ),
+            "description": forms.Textarea(
+                attrs={
+                    "class": "form-control",
+                    "placeholder": "Enter a brief description",
+                    "rows": 3,
+                }
+            ),
+            "product": forms.Select(
+                attrs={
+                    "class": "form-control",
+                }
+            ),
+            "is_vegetarian": forms.CheckboxInput(
+                attrs={
+                    "class": "form-check-input",
+                }
+            ),
+            "is_vegan": forms.CheckboxInput(
+                attrs={
+                    "class": "form-check-input",
+                }
+            ),
+            "is_gluten_free": forms.CheckboxInput(
+                attrs={
+                    "class": "form-check-input",
+                }
+            ),
+            "is_dairy_free": forms.CheckboxInput(
+                attrs={
+                    "class": "form-check-input",
+                }
+            ),
+            "is_nut_free": forms.CheckboxInput(
+                attrs={
+                    "class": "form-check-input",
+                }
+            ),
+            "is_soy_free": forms.CheckboxInput(
+                attrs={
+                    "class": "form-check-input",
+                }
+            ),
+        }
