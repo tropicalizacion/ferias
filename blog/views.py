@@ -4,8 +4,16 @@ from users.models import Author
 from django.contrib.auth.decorators import login_required
 
 def blog(request):
-    blog_posts = BlogPost.objects.all()
-    return render(request, 'blog.html', {'blog_posts': blog_posts})
+    selected_tag_id = request.GET.get('tag')
+    tags = Tag.objects.all()
+    
+    if selected_tag_id:
+        blog_posts = BlogPost.objects.filter(tags__id=selected_tag_id)
+    else:
+        blog_posts = BlogPost.objects.all()
+        
+    return render(request, 'blog.html', {'blog_posts': blog_posts, 'tags': tags, 'selected_tag_id': selected_tag_id})
+
 
 @login_required
 def create_post(request):
@@ -60,7 +68,6 @@ def edit_post(request, slug):
             read_time = request.POST.get('read_time')
             tags_ids = request.POST.getlist('tags')
 
-            # Actualizar los campos del post existente
             blog_post.title = title
             blog_post.author = author
             blog_post.description = description
@@ -70,7 +77,6 @@ def edit_post(request, slug):
             blog_post.read_time = read_time
             blog_post.save()
 
-            # Actualizar los tags del post
             blog_post.tags.set(tags_ids)
             
             return redirect('blog')

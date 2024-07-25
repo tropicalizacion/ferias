@@ -329,6 +329,11 @@ h6 {
   border-radius: 20px;
 }
 
+.tags_filter {
+  top: 0;
+  right: 0
+}
+
 .feed-card {
   transition-property: transform;
   transition-duration: 0.1s;
