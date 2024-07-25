@@ -11,7 +11,14 @@
                 <div class="blog-post">
                     <div class="d-flex justify-content-between">
                         <div>
-                            <h2>{{ post.title }}</h2>
+                            <div class="d-flex">
+                                <h2>{{ post.title }}</h2>
+                                {% if user.is_authenticated %}
+                                    <a class="nav-link mx-2" href="{% url 'edit_post' post.slug %}">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
+                                {% endif %}
+                            </div>
                             <p class="meta-info">
                                 {{ post.author }} - {{ post.publication_date|date:"F j, Y" }}
                             </p>

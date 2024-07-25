@@ -43,3 +43,37 @@ def post(request, slug):
     blog_post = get_object_or_404(BlogPost, slug=slug)
     
     return render(request, 'post.html', {'post': blog_post})
+
+
+@login_required
+def edit_post(request, slug):
+    user = request.user
+    if user.is_authenticated:
+        blog_post = get_object_or_404(BlogPost, slug=slug)
+        
+        if request.method == 'POST':
+            author = Author.objects.get(user=request.user)
+            title = request.POST.get('title')
+            description = request.POST.get('description')
+            content = request.POST.get('content')
+            image = request.FILES.get('image')
+            read_time = request.POST.get('read_time')
+            tags_ids = request.POST.getlist('tags')
+
+            # Actualizar los campos del post existente
+            blog_post.title = title
+            blog_post.author = author
+            blog_post.description = description
+            blog_post.content = content
+            if image:
+                blog_post.image = image
+            blog_post.read_time = read_time
+            blog_post.save()
+
+            # Actualizar los tags del post
+            blog_post.tags.set(tags_ids)
+            
+            return redirect('blog')
+        
+        tags = Tag.objects.all()
+        return render(request, "edit_post.html", {'tags': tags, "blog_post": blog_post})
