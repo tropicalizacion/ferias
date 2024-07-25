@@ -17,7 +17,7 @@
                 <div class="blog-post">
                     <div class="d-flex justify-content-between">
                         <div>
-                            <h2><a class="text-black text-decoration-none" href="{% url 'post' post.id %}">{{ post.title }}</a></h2>
+                            <h2><a class="text-black text-decoration-none" href="{% url 'post' post.slug %}">{{ post.title }}</a></h2>
                             {% if post.author.image %}
                                 <img src="{{ post.author.image.url }}" alt="Blog Image" class="img-fluid blog-image m-3">
                             {% endif %}

@@ -39,7 +39,7 @@ def create_post(request):
         return render(request, "create_post.html", {'tags': tags})
 
 
-def post(request, id):
-    blog_post = get_object_or_404(BlogPost, id=id)
+def post(request, slug):
+    blog_post = get_object_or_404(BlogPost, slug=slug)
     
     return render(request, 'post.html', {'post': blog_post})
