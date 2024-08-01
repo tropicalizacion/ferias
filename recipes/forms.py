@@ -18,12 +18,14 @@ class RecipeForm(forms.ModelForm):
     class Meta:
         model = Recipe  # El tipo de modelo asociado al formulario.
         fields = [
+            "id",
             "name",
             "description",
             "category",
             "tags",
         ]  # Estos son los campos que se incluyen en el formulario. No se incluye slug porque ese se crea automáticamente.
         widgets = {
+            "id": forms.HiddenInput(),
             "name": forms.TextInput(
                 attrs={"class": "form-control", "placeholder": "Introduzca un nombre"}
             ),
@@ -42,8 +44,9 @@ class RecipeIngredientForm(forms.ModelForm):
 
     class Meta:
         model = RecipeIngredient
-        fields = ["ingredient", "unit", "quantity"]
+        fields = ["id", "ingredient", "unit", "quantity"]
         widgets = {
+            "id": forms.HiddenInput(),
             "ingredient": forms.Select(
                 attrs={
                     "class": "form-control",
@@ -84,12 +87,14 @@ class StepForm(forms.ModelForm):
     class Meta:
         model = Step
         fields = [
+            "id",
             "step_sequence",
             "title",
             "description",
             "photo",
         ]
         widgets = {
+            "id": forms.HiddenInput(),
             "step_sequence": forms.NumberInput(
                 attrs={
                     "class": "form-control",
@@ -144,14 +149,12 @@ class IngredientForm(forms.ModelForm):
         widgets = {
             "name": forms.TextInput(
                 attrs={
-                    "class": "form-control",
-                    "placeholder": "Enter ingredient name",
+                    "class": "form-control"
                 }
             ),
             "description": forms.Textarea(
                 attrs={
                     "class": "form-control",
-                    "placeholder": "Enter a brief description",
                     "rows": 3,
                 }
             ),

@@ -19,6 +19,8 @@
     > <!-- Si la receta tiene un slug, significa que la mandaron por context y debe usarse el form editar. Si no, es el form de crear receta. -->
         {% csrf_token %}
 
+        {{ recipe_form.id }}
+
         <div class="row mt-2">
             <div class="col-8">
                 <div class="form-group mb-3">
@@ -76,53 +78,55 @@
                 <div id="ingredients-container">
                     {{ ingredient_formset.management_form }}
                     {% for form in ingredient_formset %}
-                        <div class="ingredient-row mb-3">
-                            <label>Ingrediente</label>
-                            {{ form.ingredient }}
-                            {% if form.ingredient.errors %}
-                                <div class="alert alert-danger">
-                                    {% for error in form.ingredient.errors %}
-                                        {{ error }}
-                                    {% endfor %}
+                        {{ form.id }}
+                        <div class="ingredient-form">
+                            <div class="ingredient-row mb-3">
+                                <label>Ingrediente</label>
+                                <div id="ingredient">{{ form.ingredient }}</div>
+                                {% if form.ingredient.errors %}
+                                    <div class="alert alert-danger">
+                                        {% for error in form.ingredient.errors %}
+                                            {{ error }}
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label>Unidad</label>
+                                    <div id="unit">{{ form.unit }}</div>
+                                    {% if form.unit.errors %}
+                                        <div class="alert alert-danger">
+                                            {% for error in form.unit.errors %}
+                                                {{ error }}
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
                                 </div>
-                            {% endif %}
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col">
-                                <label>Unidad</label>
-                                {{ form.unit }}
-                                {% if form.unit.errors %}
-                                    <div class="alert alert-danger">
-                                        {% for error in form.unit.errors %}
-                                            {{ error }}
-                                        {% endfor %}
-                                    </div>
-                                {% endif %}
+                                <div class="col">
+                                    <label>Cantidad</label>
+                                    <div id="quantity">{{ form.quantity }}</div>
+                                    {% if form.quantity.errors %}
+                                        <div class="alert alert-danger">
+                                            {% for error in form.quantity.errors %}
+                                                {{ error }}
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                </div>
                             </div>
-                            <div class="col">
-                                <label>Cantidad</label>
-                                {{ form.quantity }}
-                                {% if form.quantity.errors %}
-                                    <div class="alert alert-danger">
-                                        {% for error in form.quantity.errors %}
-                                            {{ error }}
-                                        {% endfor %}
-                                    </div>
-                                {% endif %}
+                            <div class="d-flex justify-content-end mb-3">
+                                <button type="button" class="btn btn-primary" id="add-ingredient" onclick="addNewIngredient(this)"><i class="fa-solid fa-plus"></i></button>
                             </div>
-                        </div>
-                        <div class="d-flex justify-content-end mb-3">
-                            <button type="button" class="btn btn-primary" id="add-ingredient"><i class="fa-solid fa-plus"></i></button>
                         </div>
                     {% endfor %}
                 </div>
             </div>
-            <div class="col bg-light rounded">
-
+            <div class="col bg-light rounded p-4">
+                <h3>Ingredientes agregados</h3>
+                <ul id="ingredients-list"></ul>
             </div>
         </div>
-
-        
 
         <div class="row my-2 p-2">
             <div class="col-8 p-4 bg-light rounded">
@@ -130,62 +134,66 @@
                 <div id="steps-container">
                     {{ step_formset.management_form }}
                     {% for form in step_formset %}
-                        <div class="row mb-3">
-                            <div class="col">
-                                <label>Número de la secuencia</label>
-                                {{ form.step_sequence }}
-                                {% if form.step_sequence.errors %}
-                                    <div class="alert alert-danger">
-                                        {% for error in form.step_sequence.errors %}
-                                            {{ error }}
-                                        {% endfor %}
-                                    </div>
-                                {% endif %}
+                        {{ form.id }}
+                        <div class="step-form">
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label>Número de la secuencia</label>
+                                    <div id="step_sequence">{{ form.step_sequence }}</div>
+                                    {% if form.step_sequence.errors %}
+                                        <div class="alert alert-danger">
+                                            {% for error in form.step_sequence.errors %}
+                                                {{ error }}
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                                <div class="col-8">
+                                    <label>Título</label>
+                                    <div id="title">{{ form.title }}</div>
+                                    {% if form.title.errors %}
+                                        <div class="alert alert-danger">
+                                            {% for error in form.title.errors %}
+                                                {{ error }}
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                </div>
                             </div>
-                            <div class="col-8">
-                                <label>Título</label>
-                                {{ form.title }}
-                                {% if form.title.errors %}
-                                    <div class="alert alert-danger">
-                                        {% for error in form.title.errors %}
-                                            {{ error }}
-                                        {% endfor %}
-                                    </div>
-                                {% endif %}
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label>Imagen</label>
+                                    <div id="photo">{{ form.photo }}</div>
+                                    {% if form.photo.errors %}
+                                        <div class="alert alert-danger">
+                                            {% for error in form.photo.errors %}
+                                                {{ error }}
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                                <div class="col-8">
+                                    <label>Descripción</label>
+                                    <div id="description">{{ form.description }}</div>
+                                    {% if form.description.errors %}
+                                        <div class="alert alert-danger">
+                                            {% for error in form.description.errors %}
+                                                {{ error }}
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                </div>
                             </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col">
-                                <label>Imagen</label>
-                                {{ form.photo }}
-                                {% if form.photo.errors %}
-                                    <div class="alert alert-danger">
-                                        {% for error in form.photo.errors %}
-                                            {{ error }}
-                                        {% endfor %}
-                                    </div>
-                                {% endif %}
+                            <div class="d-flex justify-content-end mb-3">
+                                <button type="button" class="btn btn-primary" id="add-step" onclick="addNewStep(this)"><i class="fa-solid fa-plus"></i></button>
                             </div>
-                            <div class="col-8">
-                                <label>Descripción</label>
-                                {{ form.description }}
-                                {% if form.description.errors %}
-                                    <div class="alert alert-danger">
-                                        {% for error in form.description.errors %}
-                                            {{ error }}
-                                        {% endfor %}
-                                    </div>
-                                {% endif %}
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-end mb-3">
-                            <button type="button" class="btn btn-primary" id="add-step"><i class="fa-solid fa-plus"></i></button>
                         </div>
                     {% endfor %}
                 </div>
             </div>
-            <div class="col bg-light rounded">
-
+            <div class="col bg-light rounded p-4">
+                <h3>Pasos agregados</h3>
+                <ul id="steps-list"></ul>
             </div>
         </div>
         
@@ -202,5 +210,36 @@
         <button type="submit" class="btn btn-success mt-3">Guardar receta</button>
     </form>
 </div>
+
+<script>
+    function addNewIngredient(button) {
+        const ingredientForm = button.closest('.ingredient-form').parentNode;
+
+        const ingredientInput = ingredientForm.querySelector('#ingredient select');
+        const unitInput = ingredientForm.querySelector('#unit select');
+        const quantityInput = ingredientForm.querySelector('#quantity input');
+
+        const ingredient = ingredientInput.options[ingredientInput.selectedIndex].text;
+        const unit = unitInput.value;
+        const quantity = quantityInput.value;
+
+        const ingredientsList = document.getElementById("ingredients-list");
+        const newIngredient = document.createElement("li");
+        newIngredient.textContent = `${quantity} ${unit} de ${ingredient}`;
+        ingredientsList.appendChild(newIngredient);
+    }
+
+    function addNewStep(button) {
+        const stepForm = button.closest('.step-form').parentNode;
+
+        const sequence = stepForm.querySelector('#step_sequence input');
+        const title = stepForm.querySelector('#title input');
+
+        const stepsList = document.getElementById("steps-list");
+        const newStep = document.createElement("li");
+        newStep.textContent = `Paso ${sequence.value}: ${title.value}`;
+        stepsList.appendChild(newStep);
+    }
+</script>
 
 {% endblock %}

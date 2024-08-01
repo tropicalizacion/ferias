@@ -67,7 +67,7 @@ def create_recipe(request):
             request,
             "create_recipe.html",
             {
-                "title": "Crear una receta",
+                "title": "Crear receta",
                 "recipe_form": recipe_form,
                 "ingredient_formset": ingredient_formset,
                 "step_formset": step_formset,
@@ -77,7 +77,7 @@ def create_recipe(request):
 
     # Si es un GET, envía al template los formularios vacíos.
     context = {
-        "title": "Crear una receta",
+        "title": "Crear receta",
         "recipe_form": recipe_form,
         "ingredient_formset": ingredient_formset,
         "step_formset": step_formset,
@@ -95,7 +95,6 @@ def edit_recipe(request, slug):
     recipe_form = RecipeForm(instance=recipe)
     ingredient_formset = RecipeIngredientFormSet(instance=recipe, prefix="ingredients")
     step_formset = StepFormSet(instance=recipe, prefix="steps")
-    ingredient_form = IngredientForm()
 
     if request.method == "POST":
         recipe_form = RecipeForm(request.POST, request.FILES, instance=recipe)
@@ -115,6 +114,10 @@ def edit_recipe(request, slug):
             ingredient_formset.save()
             step_formset.save()
             return redirect("recetas")
+        else:
+            print(recipe_form.errors)
+            print(ingredient_formset.errors)
+            print(step_formset.errors)
 
     context = {
         "title": "Editar receta",
@@ -127,7 +130,6 @@ def edit_recipe(request, slug):
         "ingredients": Ingredient.objects.all(),
     }
     return render(request, "create_recipe.html", context)
-
 
 @login_required
 def delete_recipe(request, recipe_id):
