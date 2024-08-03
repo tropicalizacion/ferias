@@ -8,238 +8,108 @@
 
 {% block main %}
 
-<div class="container my-5">
+<div id="recipe-form" class="container my-5">
     <h1 class="mb-4">{{ title }}</h1>
 
-    <form
-        action="{% if recipe.slug %}{% url 'edit_recipe' recipe.slug %}{% else %}{% url 'create_recipe' %}{% endif %}"
-        method="post"
-        enctype="multipart/form-data"
-        class="card p-4"
-    > <!-- Si la receta tiene un slug, significa que la mandaron por context y debe usarse el form editar. Si no, es el form de crear receta. -->
-        {% csrf_token %}
+    <div class="card p-4">
 
-        {{ recipe_form.id }}
 
-        <div class="row mt-2">
-            <div class="col-8">
-                <div class="form-group mb-3">
-                    <label>Nombre de la receta</label>
-                    {{ recipe_form.name }}
-                    {% if recipe_form.name.errors %}
-                        <div class="alert alert-danger">
-                            {% for error in recipe_form.name.errors %}
-                                {{ error }}
-                            {% endfor %}
-                        </div>
-                    {% endif %}
-                </div>
-                <div class="form-group mb-3">
-                    <label>Descripción</label>
-                    {{ recipe_form.description }}
-                    {% if recipe_form.description.errors %}
-                        <div class="alert alert-danger">
-                            {% for error in recipe_form.description.errors %}
-                                {{ error }}
-                            {% endfor %}
-                        </div>
-                    {% endif %}
+        <form
+            action="{% if recipe.slug %}{% url 'edit_recipe' recipe.slug %}{% else %}{% url 'create_recipe' %}{% endif %}"
+            method="POST"
+            enctype="multipart/form-data"
+        >
+
+            {% csrf_token %}
+
+            <!-- Formulario de receta -->
+            <div class="row mt-2">
+                <div class="col-8">
+                    <div class="form-group mb-3">
+                        {{ recipe_form.id }}
+                        {{ recipe_form }}
+                    </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="form-group mb-3">
-                    <label>Categoría</label>
-                    {{ recipe_form.category }}
-                    {% if recipe_form.category.errors %}
-                        <div class="alert alert-danger">
-                            {% for error in recipe_form.category.errors %}
-                                {{ error }}
-                            {% endfor %}
+
+
+            <!-- Formulario de ingredientes -->
+            <div class="row mt-2">
+                <div class="col-8">
+                    <button type="button" class="btn btn-secondary" hx-get="{% url 'recipe_ingredient_form' 0 recipe.slug %}" hx-target="#ingredients-list" hx-swap="beforeend">Agregar ingredientes</button>
+                    <a class="btn btn-success" onclick="saveIngredients()">Guardar ingredientes</a>
+
+                    <div id="ingredients-list">
+                    {{ ingredient_formset.management_form }}
+                    {% for form in ingredient_formset %}
+                    <div class="ingredient my-3">
+                        <div class="ingredient-row mb-3">
+                            {{ form }}
                         </div>
-                    {% endif %}
+                    </div>
+                    {% endfor %}
+                    </div>
                 </div>
-                <div class="form-group mb-3">
-                    <label>Etiquetas</label>
-                    <div id="tag-container" class="container rounded p-3 bg-light">
-                        {% for tag in recipe_form.tags %}
-                            <div class="form-check form-check-inline">
-                                {{ tag.tag }}
-                                <label class="form-check-label badge rounded-pill background-verde" for="{{ tag.id_for_label }}">{{ tag.choice_label }}</label>
+            </div>
+
+
+            <!-- Formulario de pasos -->
+            <div class="row mt-2">
+                <div class="col-8">
+                    <button type="button" class="btn btn-secondary" hx-get="{% url 'recipe_step_form' 0 recipe.slug %}" hx-target="#steps-list" hx-swap="beforeend">Agregar pasos</button>
+                    <a class="btn btn-success" onclick="saveSteps()">Guardar pasos</a>
+
+                    <div id="steps-list">
+                        {{ step_formset.management_form }}
+                        {% for form in step_formset %}
+                        <div class="step my-3">
+                            <div class="step-row mb-3">
+                                {{ form }}
                             </div>
+                        </div>
                         {% endfor %}
                     </div>
                 </div>
             </div>
-        </div>
+            
+            <button type="submit" class="btn btn-success mt-3">Guardar receta</button>
+        </form>
 
-        <div class="row my-2 p-2">
-            <div class="col-8 p-4 bg-light rounded">
-                <h3>Ingredientes</h3>
-                <div id="ingredients-container">
-                    {{ ingredient_formset.management_form }}
-                    {% for form in ingredient_formset %}
-                        {{ form.id }}
-                        <div class="ingredient-form">
-                            <div class="ingredient-row mb-3">
-                                <label>Ingrediente</label>
-                                <div id="ingredient">{{ form.ingredient }}</div>
-                                {% if form.ingredient.errors %}
-                                    <div class="alert alert-danger">
-                                        {% for error in form.ingredient.errors %}
-                                            {{ error }}
-                                        {% endfor %}
-                                    </div>
-                                {% endif %}
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col">
-                                    <label>Unidad</label>
-                                    <div id="unit">{{ form.unit }}</div>
-                                    {% if form.unit.errors %}
-                                        <div class="alert alert-danger">
-                                            {% for error in form.unit.errors %}
-                                                {{ error }}
-                                            {% endfor %}
-                                        </div>
-                                    {% endif %}
-                                </div>
-                                <div class="col">
-                                    <label>Cantidad</label>
-                                    <div id="quantity">{{ form.quantity }}</div>
-                                    {% if form.quantity.errors %}
-                                        <div class="alert alert-danger">
-                                            {% for error in form.quantity.errors %}
-                                                {{ error }}
-                                            {% endfor %}
-                                        </div>
-                                    {% endif %}
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-end mb-3">
-                                <button type="button" class="btn btn-primary" id="add-ingredient" onclick="addNewIngredient(this)"><i class="fa-solid fa-plus"></i></button>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-            <div class="col bg-light rounded p-4">
-                <h3>Ingredientes agregados</h3>
-                <ul id="ingredients-list"></ul>
-            </div>
-        </div>
 
-        <div class="row my-2 p-2">
-            <div class="col-8 p-4 bg-light rounded">
-                <h3>Pasos</h3>
-                <div id="steps-container">
-                    {{ step_formset.management_form }}
-                    {% for form in step_formset %}
-                        {{ form.id }}
-                        <div class="step-form">
-                            <div class="row mb-3">
-                                <div class="col">
-                                    <label>Número de la secuencia</label>
-                                    <div id="step_sequence">{{ form.step_sequence }}</div>
-                                    {% if form.step_sequence.errors %}
-                                        <div class="alert alert-danger">
-                                            {% for error in form.step_sequence.errors %}
-                                                {{ error }}
-                                            {% endfor %}
-                                        </div>
-                                    {% endif %}
-                                </div>
-                                <div class="col-8">
-                                    <label>Título</label>
-                                    <div id="title">{{ form.title }}</div>
-                                    {% if form.title.errors %}
-                                        <div class="alert alert-danger">
-                                            {% for error in form.title.errors %}
-                                                {{ error }}
-                                            {% endfor %}
-                                        </div>
-                                    {% endif %}
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col">
-                                    <label>Imagen</label>
-                                    <div id="photo">{{ form.photo }}</div>
-                                    {% if form.photo.errors %}
-                                        <div class="alert alert-danger">
-                                            {% for error in form.photo.errors %}
-                                                {{ error }}
-                                            {% endfor %}
-                                        </div>
-                                    {% endif %}
-                                </div>
-                                <div class="col-8">
-                                    <label>Descripción</label>
-                                    <div id="description">{{ form.description }}</div>
-                                    {% if form.description.errors %}
-                                        <div class="alert alert-danger">
-                                            {% for error in form.description.errors %}
-                                                {{ error }}
-                                            {% endfor %}
-                                        </div>
-                                    {% endif %}
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-end mb-3">
-                                <button type="button" class="btn btn-primary" id="add-step" onclick="addNewStep(this)"><i class="fa-solid fa-plus"></i></button>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-            <div class="col bg-light rounded p-4">
-                <h3>Pasos agregados</h3>
-                <ul id="steps-list"></ul>
-            </div>
-        </div>
-        
-        <!-- TODO: Que se le pueda agregar una imagen a una receta. -->
 
-        <!-- TODO: Aquí la idea es que también se puedan agregar ingredientes que no estén ya en la lista de ingredientes que se despliega.
-            Para eso se debería poder crear un nuevo ingrediente en el form. 
-        -->
-
-        <!-- TODO: Que el usuario pueda ver los pasos recientemente agregados. -->
-        
-        
-
-        <button type="submit" class="btn btn-success mt-3">Guardar receta</button>
-    </form>
+    </div>
 </div>
 
 <script>
-    function addNewIngredient(button) {
-        const ingredientForm = button.closest('.ingredient-form').parentNode;
+    function saveIngredients() {
+        const ingredientsList = document.getElementById('ingredients-list');
+        const ingredientElements = ingredientsList.getElementsByClassName('ingredient-row');
 
-        const ingredientInput = ingredientForm.querySelector('#ingredient select');
-        const unitInput = ingredientForm.querySelector('#unit select');
-        const quantityInput = ingredientForm.querySelector('#quantity input');
+        const totalFormInputs = ingredientsList.querySelectorAll('[name$="recipeingredient_set-TOTAL_FORMS"]');
+        totalFormInputs.forEach(input => input.value=ingredientElements.length);
 
-        const ingredient = ingredientInput.options[ingredientInput.selectedIndex].text;
-        const unit = unitInput.value;
-        const quantity = quantityInput.value;
+        const initialFormInputs = ingredientsList.querySelectorAll('[name$="recipeingredient_set-INITIAL_FORMS"]');
+        initialFormInputs.forEach(input => input.value=0);
 
-        const ingredientsList = document.getElementById("ingredients-list");
-        const newIngredient = document.createElement("li");
-        newIngredient.textContent = `${quantity} ${unit} de ${ingredient}`;
-        ingredientsList.appendChild(newIngredient);
+        const minFormInputs = ingredientsList.querySelectorAll('[name$="recipeingredient_set-MIN_NUM_FORMS"]');
+        minFormInputs.forEach(input => input.value=ingredientElements.length);
     }
 
-    function addNewStep(button) {
-        const stepForm = button.closest('.step-form').parentNode;
+    function saveSteps() {
+        const stepsList = document.getElementById('steps-list');
+        const stepElements = stepsList.getElementsByClassName('step-row');
 
-        const sequence = stepForm.querySelector('#step_sequence input');
-        const title = stepForm.querySelector('#title input');
+        const totalFormInputs = stepsList.querySelectorAll('[name$="step_set-TOTAL_FORMS"]');
+        totalFormInputs.forEach(input => input.value=stepElements.length);
 
-        const stepsList = document.getElementById("steps-list");
-        const newStep = document.createElement("li");
-        newStep.textContent = `Paso ${sequence.value}: ${title.value}`;
-        stepsList.appendChild(newStep);
+        const initialFormInputs = stepsList.querySelectorAll('[name$="step_set-INITIAL_FORMS"]');
+        initialFormInputs.forEach(input => input.value=0);
+
+        const minFormInputs = stepsList.querySelectorAll('[name$="step_set-MIN_NUM_FORMS"]');
+        minFormInputs.forEach(input => input.value=stepElements.length);
     }
 </script>
+    
+
 
 {% endblock %}

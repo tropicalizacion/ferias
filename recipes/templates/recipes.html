@@ -65,7 +65,7 @@
                                         ¿Está seguro de que desea eliminar esta receta?
                                     </div>
                                     <div class="modal-footer">
-                                        <a href="{% url 'delete_recipe' recipe.id %}" class="btn btn-danger">Aceptar</a>
+                                        <a href="{% url 'delete_recipe' recipe.slug %}" class="btn btn-danger">Aceptar</a>
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                                     </div>
                                 </div>
