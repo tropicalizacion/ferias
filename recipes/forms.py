@@ -73,7 +73,7 @@ RecipeIngredientFormSet = forms.inlineformset_factory(
     Recipe,  # Modelo padre.
     RecipeIngredient,  # Modelo hijo.
     form=RecipeIngredientForm,  # Formulario a desplegar.
-    extra=1,  # Mostrar un formulario extra inicialmente.
+    extra=0,  # Mostrar un formulario extra inicialmente.
 )
 
 
@@ -128,7 +128,7 @@ StepFormSet = forms.inlineformset_factory(
     Recipe,  # Modelo padre.
     Step,  # Modelo hijo.
     form=StepForm,  # Formulario a desplegar.
-    extra=1,  # Mostrar un formulario extra inicialmente.
+    extra=0,  # Mostrar un formulario extra inicialmente.
 )
 
 

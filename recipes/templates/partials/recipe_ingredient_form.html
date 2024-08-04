@@ -1,10 +1,41 @@
-<div class="ingredient my-3">
-    <div class="ingredient-row mb-3">
+<div class="ingredient my-3 p-3 background-amarillo rounded">
+    <div class="ingredient-row row mb-3">
         {{ management_form }}
         {{ form.recipe_id }}
-        {{ form }}
-    </div>
-    <div class="d-flex justify-content-end mb-3">
-        <button type="button" class="btn btn-secondary" hx-get="{% url 'recipe_ingredient_form' next_ingredient recipe.slug %}" hx-target="#ingredients-list" hx-swap="beforeend">Agregar ingrediente</button>
+        {{ form.id }}
+
+        <div class="col">
+            <div id="ingredient-input">{{ form.ingredient }}</div>
+            {% if form.ingredient.errors %}
+                <div class="alert alert-danger m-2">
+                    {% for error in form.ingredient.errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="col">
+            <div id="unit-input">{{ form.unit }}</div>
+            {% if form.unit.errors %}
+                <div class="alert alert-danger m-2">
+                    {% for error in form.unit.errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="col">
+            <div id="quantity-input">{{ form.quantity }}</div>
+            {% if form.quantity.errors %}
+                <div class="alert alert-danger m-2">
+                    {% for error in form.quantity.errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="col-2">
+            <button type="button" class="btn btn-secondary" hx-get="{% if recipe.slug %}{% url 'edit_recipe_ingredient_form' next_ingredient recipe.slug %}{% else %}{% url 'create_recipe_ingredient_form' next_ingredient %}{% endif %}" hx-target="#ingredients-list" hx-swap="beforeend"><i class="fa fa-arrow-right"></i></button>
+        </div>
     </div>
 </div>

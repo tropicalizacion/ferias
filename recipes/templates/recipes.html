@@ -51,18 +51,18 @@
                         {% if user.is_staff %}
                         <div class="d-flex justify-content-end">
                             <a href="{% url 'edit_recipe' recipe.slug %}" class="link-warning me-1"><i class="fa-solid fa-pen-to-square"></i></a>
-                            <a class="link-warning ms-1" data-bs-toggle="modal" data-bs-target="#modal-delete"><i class="fa fa-trash"></i></a>
+                            <a class="link-warning ms-1" data-bs-toggle="modal" data-bs-target="#deleteModal{{ recipe.slug }}"><i class="fa fa-trash"></i></a>
                         </div>
                         
-                        <div class="modal fade" id="modal-delete" tabindex="-1" aria-labelledby="modal-delete-label" aria-hidden="true">
+                        <div class="modal fade" id="deleteModal{{ recipe.slug }}" tabindex="-1" aria-labelledby="deleteModalLabel{{ recipe.slug }}" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="modal-delete-label">Eliminar receta</h5>
+                                        <h5 class="modal-title" id="deleteModalLabel{{ recipe.slug }}">Eliminar receta</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        ¿Está seguro de que desea eliminar esta receta?
+                                        ¿Está seguro de que desea eliminar "{{ recipe.name }}"?
                                     </div>
                                     <div class="modal-footer">
                                         <a href="{% url 'delete_recipe' recipe.slug %}" class="btn btn-danger">Aceptar</a>

@@ -1,9 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from django.http import HttpRequest
-from .forms import RecipeForm, RecipeIngredientFormSet, StepFormSet, IngredientForm
 from .models import Ingredient, Category, Tag, Recipe, RecipeIngredient, Step
+from .forms import RecipeForm, RecipeIngredientFormSet, StepFormSet, IngredientForm
+
 
 # Create your views here.
 
@@ -39,31 +39,51 @@ def create_recipe(request):
         ingredient_formset = RecipeIngredientFormSet(request.POST, prefix="ingredients")
         step_formset = StepFormSet(request.POST, request.FILES, prefix="steps")
 
-        if recipe_form.is_valid() and ingredient_formset.is_valid() and step_formset.is_valid():
+        if recipe_form.is_valid():
             recipe = recipe_form.save()
             recipe.user = request.user
             recipe.save()
-            ingredient_formset.save()
-            step_formset.save()
+            save_recipe_ingredients(ingredient_formset, recipe)
+            save_recipe_steps(step_formset, recipe)
 
-            return redirect("recipe", recipe_id=recipe.id)
-        
+            if ingredient_formset.is_valid() and step_formset.is_valid():
+                return redirect("recipe", slug=recipe.slug)
+            else:
+                context = {
+                    "title": "Editar receta",
+                    "recipe": recipe,
+                    "recipe_form": recipe_form,
+                    "ingredient_formset": ingredient_formset,
+                    "next_ingredient": next_ingredient,
+                    "step_formset": step_formset,
+                    "next_step": next_step,
+                    "categories": Category.objects.all(),
+                    "tags": Tag.objects.all(),
+                    "ingredients": Ingredient.objects.all(),
+                }
+
+                return render(request, 'create_recipe.html', context)
         else:
             print(recipe_form.errors)
             print(ingredient_formset.errors)
             print(step_formset.errors)
 
+    next_ingredient = len(ingredient_formset.forms)
+    next_step = len(step_formset.forms)
+
     context = {
         "title": "Crear receta",
         "recipe_form": recipe_form,
         "ingredient_formset": ingredient_formset,
+        "next_ingredient": next_ingredient,
         "step_formset": step_formset,
+        "next_step": next_step,
         "categories": Category.objects.all(),
         "tags": Tag.objects.all(),
         "ingredients": Ingredient.objects.all(),
     }
     
-    return render(request, 'create_recipe.html', context)
+    return render(request, "create_recipe.html", context)
 
 
 # Este view hace lo mismo que create_recipe, pero en lugar de enviar los formularios vacíos en GET, primero obtiene los datos de la receta de la BD.
@@ -73,39 +93,58 @@ def edit_recipe(request, slug):
     recipe_form = RecipeForm(instance=recipe)
     ingredient_formset = RecipeIngredientFormSet(instance=recipe, prefix="ingredients")
     step_formset = StepFormSet(instance=recipe, prefix="steps")
-
+    
     if request.method == "POST":
         recipe_form = RecipeForm(request.POST, request.FILES, instance=recipe)
         ingredient_formset = RecipeIngredientFormSet(request.POST, instance=recipe, prefix="ingredients")
         step_formset = StepFormSet(request.POST, request.FILES, instance=recipe, prefix="steps")
 
-        if recipe_form.is_valid() and ingredient_formset.is_valid() and step_formset.is_valid():
+        if recipe_form.is_valid():
             recipe = recipe_form.save()
             recipe.user = request.user
             recipe.save()
-            ingredient_formset.save()
-            step_formset.save()
+            save_recipe_ingredients(ingredient_formset, recipe)
+            save_recipe_steps(step_formset, recipe)
 
-            return redirect("recipe", slug=recipe.slug)
+            if ingredient_formset.is_valid() and step_formset.is_valid():
+                return redirect("recipe", slug=recipe.slug)
+            else:
+                context = {
+                    "title": "Editar receta",
+                    "recipe": recipe,
+                    "recipe_form": recipe_form,
+                    "ingredient_formset": ingredient_formset,
+                    "next_ingredient": next_ingredient,
+                    "step_formset": step_formset,
+                    "next_step": next_step,
+                    "categories": Category.objects.all(),
+                    "tags": Tag.objects.all(),
+                    "ingredients": Ingredient.objects.all(),
+                }
+
+                return render(request, 'create_recipe.html', context)
         else:
             print(recipe_form.errors)
             print(ingredient_formset.errors)
             print(step_formset.errors)
+
+    next_ingredient = len(ingredient_formset.forms)
+    next_step = len(step_formset.forms)
 
     context = {
         "title": "Editar receta",
         "recipe": recipe,
         "recipe_form": recipe_form,
         "ingredient_formset": ingredient_formset,
+        "next_ingredient": next_ingredient,
         "step_formset": step_formset,
+        "next_step": next_step,
         "categories": Category.objects.all(),
         "tags": Tag.objects.all(),
         "ingredients": Ingredient.objects.all(),
     }
     
     return render(request, 'create_recipe.html', context)
-
-
 
 
 @login_required
@@ -123,10 +162,9 @@ def delete_recipe(request, slug):
 
 
 @login_required
-def recipe_ingredient_form(request, i:int, slug=None):
-    recipe = get_object_or_404(Recipe, slug=slug)
-    ingredient_formset = RecipeIngredientFormSet(instance=recipe)
-    ingredient_formset.min_num = i
+def create_recipe_ingredient_form(request, i:int):
+    ingredient_formset = RecipeIngredientFormSet(prefix="ingredients")
+    ingredient_formset.min_num = i + 1
 
     context = {
         "next_ingredient": i + 1,
@@ -139,10 +177,9 @@ def recipe_ingredient_form(request, i:int, slug=None):
 
 
 @login_required
-def recipe_step_form(request, i:int, slug=None):
-    recipe = get_object_or_404(Recipe, slug=slug)
-    step_formset = StepFormSet(instance=recipe)
-    step_formset.min_num = i
+def create_recipe_step_form(request, i:int):
+    step_formset = StepFormSet(prefix="steps")
+    step_formset.min_num = i + 1
 
     context = {
         "next_step": i + 1,
@@ -153,3 +190,66 @@ def recipe_step_form(request, i:int, slug=None):
 
     return render(request, "partials/recipe_step_form.html", context)
 
+
+@login_required
+def edit_recipe_ingredient_form(request, i:int, slug):
+    recipe = get_object_or_404(Recipe, slug=slug)
+    ingredient_formset = RecipeIngredientFormSet(instance=recipe, prefix="ingredients")
+    ingredient_formset.min_num = i + 1
+
+    context = {
+        "next_ingredient": i + 1,
+        "recipe": recipe,
+        "form": ingredient_formset.forms[i],
+        "management_form": ingredient_formset.management_form
+    }
+
+    return render(request, "partials/recipe_ingredient_form.html", context)
+
+
+@login_required
+def edit_recipe_step_form(request, i:int, slug):
+    recipe = get_object_or_404(Recipe, slug=slug)
+    step_formset = StepFormSet(instance=recipe, prefix="steps")
+    step_formset.min_num = i + 1
+
+    context = {
+        "next_step": i + 1,
+        "recipe": recipe,
+        "form": step_formset.forms[i],
+        "management_form": step_formset.management_form
+    }
+
+    return render(request, "partials/recipe_step_form.html", context)
+
+
+@login_required
+def save_recipe_ingredients(formset, parent):
+    for form in formset:
+        if form.is_valid():
+            recipe_ingredient = form.save(commit=False)
+
+            if not RecipeIngredient.objects.filter(
+                recipe=recipe_ingredient.recipe,
+                ingredient=recipe_ingredient.ingredient
+            ).exists():
+                recipe_ingredient.recipe = parent
+                recipe_ingredient.save()
+            else:
+                form.add_error(None, "Este ingrediente ya está agregado a la receta.")
+
+
+@login_required
+def save_recipe_steps(formset, parent):
+    for form in formset:
+        if form.is_valid():
+            recipe_step = form.save(commit=False)
+
+            if not Step.objects.filter(
+                recipe=recipe_step.recipe, 
+                step_sequence=recipe_step.step_sequence
+            ).exists():
+                recipe_step.recipe = parent
+                recipe_step.save()
+            else:
+                form.add_error(None, "Este paso ya está agregado a la receta.")

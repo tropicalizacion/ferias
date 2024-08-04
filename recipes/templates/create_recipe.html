@@ -11,102 +11,238 @@
 <div id="recipe-form" class="container my-5">
     <h1 class="mb-4">{{ title }}</h1>
 
-    <div class="card p-4">
+    <form
+        action="{% if recipe.slug %}{% url 'edit_recipe' recipe.slug %}{% else %}{% url 'create_recipe' %}{% endif %}"
+        method="POST"
+        enctype="multipart/form-data"
+        class="card p-4"
+    > <!-- Si la receta tiene un slug, significa que la mandaron por context y debe usarse el form editar. Si no, es el form de crear receta. -->
 
+        {% csrf_token %}
+        {{ recipe_form.id }}
 
-        <form
-            action="{% if recipe.slug %}{% url 'edit_recipe' recipe.slug %}{% else %}{% url 'create_recipe' %}{% endif %}"
-            method="POST"
-            enctype="multipart/form-data"
-        >
-
-            {% csrf_token %}
-
-            <!-- Formulario de receta -->
-            <div class="row mt-2">
-                <div class="col-8">
-                    <div class="form-group mb-3">
-                        {{ recipe_form.id }}
-                        {{ recipe_form }}
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Formulario de ingredientes -->
-            <div class="row mt-2">
-                <div class="col-8">
-                    <button type="button" class="btn btn-secondary" hx-get="{% url 'recipe_ingredient_form' 0 recipe.slug %}" hx-target="#ingredients-list" hx-swap="beforeend">Agregar ingredientes</button>
-                    <a class="btn btn-success" onclick="saveIngredients()">Guardar ingredientes</a>
-
-                    <div id="ingredients-list">
-                    {{ ingredient_formset.management_form }}
-                    {% for form in ingredient_formset %}
-                    <div class="ingredient my-3">
-                        <div class="ingredient-row mb-3">
-                            {{ form }}
+        <!-- Formulario de receta -->
+        <div class="row mt-2">
+            <div class="col-8">
+                <div class="form-group mb-3">
+                    <label>Nombre de la receta</label>
+                    {{ recipe_form.name }}
+                    {% if recipe_form.name.errors %}
+                        <div class="alert alert-danger m-2">
+                            {% for error in recipe_form.name.errors %}
+                                {{ error }}
+                            {% endfor %}
                         </div>
-                    </div>
-                    {% endfor %}
-                    </div>
+                    {% endif %}
+                </div>
+                <div class="form-group mb-3">
+                    <label>Descripción</label>
+                    {{ recipe_form.description }}
+                    {% if recipe_form.description.errors %}
+                        <div class="alert alert-danger m-2">
+                            {% for error in recipe_form.description.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
                 </div>
             </div>
-
-
-            <!-- Formulario de pasos -->
-            <div class="row mt-2">
-                <div class="col-8">
-                    <button type="button" class="btn btn-secondary" hx-get="{% url 'recipe_step_form' 0 recipe.slug %}" hx-target="#steps-list" hx-swap="beforeend">Agregar pasos</button>
-                    <a class="btn btn-success" onclick="saveSteps()">Guardar pasos</a>
-
-                    <div id="steps-list">
-                        {{ step_formset.management_form }}
-                        {% for form in step_formset %}
-                        <div class="step my-3">
-                            <div class="step-row mb-3">
-                                {{ form }}
+            <div class="col">
+                <div class="form-group mb-3">
+                    <label>Categoría</label>
+                    {{ recipe_form.category }}
+                    {% if recipe_form.category.errors %}
+                        <div class="alert alert-danger m-2">
+                            {% for error in recipe_form.category.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="form-group mb-3">
+                    <label>Etiquetas</label>
+                    <div id="tag-container" class="container rounded p-3 bg-light">
+                        {% for tag in recipe_form.tags %}
+                            <div class="form-check form-check-inline">
+                                {{ tag.tag }}
+                                <label class="form-check-label badge rounded-pill background-verde" for="{{ tag.id_for_label }}">{{ tag.choice_label }}</label>
                             </div>
-                        </div>
                         {% endfor %}
                     </div>
                 </div>
             </div>
-            
+        </div>
+
+
+        <!-- Formulario de ingredientes -->
+        <div class="row mt-2">
+            <div class="col-8 p-4 bg-light rounded">
+                <div class="d-flex justify-content-between">
+                    <h3>Ingredientes</h3>
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="btn btn-secondary me-2" hx-get="{% if recipe.slug %}{% url 'edit_recipe_ingredient_form' next_ingredient recipe.slug %}{% else %}{% url 'create_recipe_ingredient_form' next_ingredient %}{% endif %}" hx-target="#ingredients-list" hx-swap="beforeend"><i class="fa fa-plus"></i></button>
+                    </div>
+                </div>
+                <div id="added-ingredients-list">
+                    {% for form in ingredient_formset %}
+                    <div class="ingredient my-3 p-3 background-amarillo rounded">
+                        <div class="ingredient-row">
+                            <div class="row">
+                                <div class="col">
+                                    <div id="ingredient-input">{{ form.ingredient }}</div>
+                                    {% if form.ingredient.errors %}
+                                        <div class="alert alert-danger m-2">
+                                            {% for error in form.ingredient.errors %}
+                                                {{ error }}
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                                <div class="col">
+                                    <div id="unit-input">{{ form.unit }}</div>
+                                    {% if form.unit.errors %}
+                                        <div class="alert alert-danger m-2">
+                                            {% for error in form.unit.errors %}
+                                                {{ error }}
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                                <div class="col">
+                                    <div id="quantity-input">{{ form.quantity }}</div>
+                                    {% if form.quantity.errors %}
+                                        <div class="alert alert-danger m-2">
+                                            {% for error in form.quantity.errors %}
+                                                {{ error }}
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div id="ingredients-list">
+                    {{ ingredient_formset.management_form }}
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Formulario de pasos -->
+        <div class="row mt-2">
+            <div class="col-8 p-4 bg-light rounded">
+                <div class="d-flex justify-content-between">
+                    <h3>Pasos</h3>
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="btn btn-secondary me-2" hx-get="{% if recipe.slug %}{% url 'edit_recipe_step_form' next_step recipe.slug %}{% else %}{% url 'create_recipe_step_form' next_step %}{% endif %}" hx-target="#steps-list" hx-swap="beforeend"><i class="fa fa-plus"></i></button>
+                    </div>
+                </div>
+                <div id="added-steps-list">
+                    {% for form in step_formset %}
+                    <div class="step my-3 p-3 background-amarillo rounded">
+                        <div class="step-row">
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <div id="step_sequence-input">{{ form.step_sequence }}</div>
+                                    {% if form.step_sequence.errors %}
+                                        <div class="alert alert-danger m-2">
+                                            {% for error in form.step_sequence.errors %}
+                                                {{ error }}
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                                <div class="col-8">
+                                    <div id="title-input">{{ form.title }}</div>
+                                    {% if form.title.errors %}
+                                        <div class="alert alert-danger m-2">
+                                            {% for error in form.title.errors %}
+                                                {{ error }}
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div id="photo-input">{{ form.photo }}</div>
+                                    {% if form.photo.errors %}
+                                        <div class="alert alert-danger m-2">
+                                            {% for error in form.photo.errors %}
+                                                {{ error }}
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                                <div class="col-8">
+                                    <div id="description-input">{{ form.description }}</div>
+                                    {% if form.description.errors %}
+                                        <div class="alert alert-danger m-2">
+                                            {% for error in form.description.errors %}
+                                                {{ error }}
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div id="steps-list">
+                    {{ step_formset.management_form }}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
             <button type="submit" class="btn btn-success mt-3">Guardar receta</button>
-        </form>
+        </div>
+    </form>
 
+    <!-- TODO: Que se le pueda agregar una imagen a una receta. -->
 
+    <!-- TODO: Aquí la idea es que también se puedan agregar ingredientes que no estén ya en la lista de ingredientes que se despliega.
+        Para eso se debería poder crear un nuevo ingrediente en el form. 
+    -->
 
-    </div>
+    <!-- TODO: Que el usuario pueda ver los pasos recientemente agregados. -->
 </div>
 
 <script>
-    function saveIngredients() {
-        const ingredientsList = document.getElementById('ingredients-list');
-        const ingredientElements = ingredientsList.getElementsByClassName('ingredient-row');
+    document.getElementById('recipe-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        updateFormsetManagement();
+        event.target.submit();
+    });
 
-        const totalFormInputs = ingredientsList.querySelectorAll('[name$="recipeingredient_set-TOTAL_FORMS"]');
-        totalFormInputs.forEach(input => input.value=ingredientElements.length);
-
-        const initialFormInputs = ingredientsList.querySelectorAll('[name$="recipeingredient_set-INITIAL_FORMS"]');
-        initialFormInputs.forEach(input => input.value=0);
-
-        const minFormInputs = ingredientsList.querySelectorAll('[name$="recipeingredient_set-MIN_NUM_FORMS"]');
-        minFormInputs.forEach(input => input.value=ingredientElements.length);
+    function updateFormsetManagement() {
+        saveItems('ingredients');
+        saveItems('steps');
     }
 
-    function saveSteps() {
-        const stepsList = document.getElementById('steps-list');
-        const stepElements = stepsList.getElementsByClassName('step-row');
+    function saveItems(itemType) {
+        const listName = itemType === 'ingredients' ? 'ingredients-list' : 'steps-list';
+        //const addedListName = itemType === 'ingredients' ? 'added-ingredients-list' : 'added-steps-list';
+        const rowClass = itemType === 'ingredients' ? 'ingredient-row' : 'step-row';
+        const totalFormsName = itemType === 'ingredients' ? 'ingredients-TOTAL_FORMS' : 'steps-TOTAL_FORMS';
+        const initialFormsName = itemType === 'ingredients' ? 'ingredients-INITIAL_FORMS' : 'steps-INITIAL_FORMS';
+        const minFormsName = itemType === 'ingredients' ? 'ingredients-MIN_NUM_FORMS' : 'steps-MIN_NUM_FORMS';
 
-        const totalFormInputs = stepsList.querySelectorAll('[name$="step_set-TOTAL_FORMS"]');
-        totalFormInputs.forEach(input => input.value=stepElements.length);
+        const list = document.getElementById(listName);
+        const itemElements = document.getElementsByClassName(rowClass);
+        const totalItemCount = itemElements.length;
 
-        const initialFormInputs = stepsList.querySelectorAll('[name$="step_set-INITIAL_FORMS"]');
-        initialFormInputs.forEach(input => input.value=0);
+        const totalFormInputs = document.querySelectorAll(`[name$="${totalFormsName}"]`);
+        totalFormInputs.forEach(input => input.value = totalItemCount);
 
-        const minFormInputs = stepsList.querySelectorAll('[name$="step_set-MIN_NUM_FORMS"]');
-        minFormInputs.forEach(input => input.value=stepElements.length);
+        const initialFormInputs = document.querySelectorAll(`[name$="${initialFormsName}"]`);
+        initialFormInputs.forEach(input => input.value = 0);
+
+        const minFormInputs = document.querySelectorAll(`[name$="${minFormsName}"]`);
+        minFormInputs.forEach(input => input.value = totalItemCount);
     }
 </script>
     
