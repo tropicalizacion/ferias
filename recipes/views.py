@@ -49,28 +49,9 @@ def create_recipe(request):
 
             if ingredient_formset.is_valid() and step_formset.is_valid():
                 return redirect("recipe", slug=recipe.slug)
-            else:
-                context = {
-                    "title": "Editar receta",
-                    "recipe": recipe,
-                    "recipe_form": recipe_form,
-                    "ingredient_formset": ingredient_formset,
-                    "next_ingredient": next_ingredient,
-                    "step_formset": step_formset,
-                    "next_step": next_step,
-                    "categories": Category.objects.all(),
-                    "tags": Tag.objects.all(),
-                    "ingredients": Ingredient.objects.all(),
-                }
 
-                return render(request, 'create_recipe.html', context)
-        else:
-            print(recipe_form.errors)
-            print(ingredient_formset.errors)
-            print(step_formset.errors)
-
-    next_ingredient = len(ingredient_formset.forms)
-    next_step = len(step_formset.forms)
+    next_ingredient = 0 if len(ingredient_formset.forms) is None else len(ingredient_formset.forms)
+    next_step = 0 if len(step_formset.forms) is None else len(step_formset.forms)
 
     context = {
         "title": "Crear receta",
@@ -97,41 +78,22 @@ def edit_recipe(request, slug):
     
     if request.method == "POST":
         recipe_form = RecipeForm(request.POST, request.FILES, instance=recipe)
-        ingredient_formset = RecipeIngredientFormSet(request.POST, instance=recipe, prefix="ingredients")
-        step_formset = StepFormSet(request.POST, request.FILES, instance=recipe, prefix="steps")
 
         if recipe_form.is_valid():
             recipe = recipe_form.save()
             recipe.save()
-            
+
+            ingredient_formset = RecipeIngredientFormSet(request.POST, instance=recipe, prefix="ingredients")
+            step_formset = StepFormSet(request.POST, request.FILES, instance=recipe, prefix="steps")
+
             ingredient_formset = save_recipe_ingredients(ingredient_formset)
             step_formset = save_recipe_steps(step_formset)
 
             if ingredient_formset.is_valid() and step_formset.is_valid():
                 return redirect("recipe", slug=recipe.slug)
-            
-            else:
-                context = {
-                    "title": "Editar receta",
-                    "recipe": recipe,
-                    "recipe_form": recipe_form,
-                    "ingredient_formset": ingredient_formset,
-                    "next_ingredient": next_ingredient,
-                    "step_formset": step_formset,
-                    "next_step": next_step,
-                    "categories": Category.objects.all(),
-                    "tags": Tag.objects.all(),
-                    "ingredients": Ingredient.objects.all(),
-                }
 
-                return render(request, 'create_recipe.html', context)
-        else:
-            print(recipe_form.errors)
-            print(ingredient_formset.errors)
-            print(step_formset.errors)
-
-    next_ingredient = len(ingredient_formset.forms)
-    next_step = len(step_formset.forms)
+    next_ingredient = 0 if len(ingredient_formset.forms) is None else len(ingredient_formset.forms)
+    next_step = 0 if len(step_formset.forms) is None else len(step_formset.forms)
 
     context = {
         "title": "Editar receta",
@@ -236,8 +198,8 @@ def save_recipe_ingredients(formset):
             ).exists():
                 recipe_ingredient.save()
             else:
-                form.add_error(None, "Este ingrediente ya está agregado a la receta.")
-
+                form.add_error(None, "Este ingrediente ya está agregado a la receta.") # TODO: Enviar este mensaje a la vista.
+    
     return formset
 
 
@@ -252,6 +214,6 @@ def save_recipe_steps(formset):
             ).exists():
                 recipe_step.save()
             else:
-                form.add_error(None, "Este paso ya está agregado a la receta.")
+                form.add_error(None, "Este paso ya está agregado a la receta.") # TODO: Enviar este mensaje a la vista.
 
     return formset

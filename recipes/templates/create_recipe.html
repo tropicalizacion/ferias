@@ -80,7 +80,7 @@
                 <div class="d-flex justify-content-between">
                     <h3>Ingredientes</h3>
                     <div class="d-flex justify-content-end">
-                        <button type="button" class="btn btn-secondary me-2" hx-get="{% if recipe.slug %}{% url 'edit_recipe_ingredient_form' next_ingredient recipe.slug %}{% else %}{% url 'create_recipe_ingredient_form' next_ingredient %}{% endif %}" hx-target="#ingredients-list" hx-swap="beforeend"><i class="fa fa-plus"></i></button>
+                        <button id="btn-ingredients" onclick="this.style.display='none'" type="button" class="btn btn-secondary me-2" hx-get="{% if recipe.slug %}{% url 'edit_recipe_ingredient_form' next_ingredient recipe.slug %}{% else %}{% url 'create_recipe_ingredient_form' next_ingredient %}{% endif %}" hx-target="#ingredients-list" hx-swap="beforeend"><i class="fa fa-plus"></i></button>
                     </div>
                 </div>
                 <div id="added-ingredients-list">
@@ -118,6 +118,9 @@
                                         </div>
                                     {% endif %}
                                 </div>
+                                <div class="col">
+                                    <div class="d-flex justify-content-end">{{ form.DELETE }}</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -136,7 +139,7 @@
                 <div class="d-flex justify-content-between">
                     <h3>Pasos</h3>
                     <div class="d-flex justify-content-end">
-                        <button type="button" class="btn btn-secondary me-2" hx-get="{% if recipe.slug %}{% url 'edit_recipe_step_form' next_step recipe.slug %}{% else %}{% url 'create_recipe_step_form' next_step %}{% endif %}" hx-target="#steps-list" hx-swap="beforeend"><i class="fa fa-plus"></i></button>
+                        <button id="btn-steps" onclick="this.style.display='none'" type="button" class="btn btn-secondary me-2" hx-get="{% if recipe.slug %}{% url 'edit_recipe_step_form' next_step recipe.slug %}{% else %}{% url 'create_recipe_step_form' next_step %}{% endif %}" hx-target="#steps-list" hx-swap="beforeend"><i class="fa fa-plus"></i></button>
                     </div>
                 </div>
                 <div id="added-steps-list">
@@ -163,6 +166,9 @@
                                             {% endfor %}
                                         </div>
                                     {% endif %}
+                                </div>
+                                <div class="col">
+                                    <div class="d-flex justify-content-end">{{ form.DELETE }}</div>
                                 </div>
                             </div>
                             <div class="row">
@@ -225,7 +231,6 @@
 
     function saveItems(itemType) {
         const listName = itemType === 'ingredients' ? 'ingredients-list' : 'steps-list';
-        //const addedListName = itemType === 'ingredients' ? 'added-ingredients-list' : 'added-steps-list';
         const rowClass = itemType === 'ingredients' ? 'ingredient-row' : 'step-row';
         const totalFormsName = itemType === 'ingredients' ? 'ingredients-TOTAL_FORMS' : 'steps-TOTAL_FORMS';
         const initialFormsName = itemType === 'ingredients' ? 'ingredients-INITIAL_FORMS' : 'steps-INITIAL_FORMS';
