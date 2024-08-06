@@ -35,16 +35,17 @@ def create_recipe(request):
     step_formset = StepFormSet(prefix="steps")
 
     if request.method == "POST":
-        recipe_form = RecipeForm(request.POST, request.FILES) 
-        ingredient_formset = RecipeIngredientFormSet(request.POST, prefix="ingredients")
-        step_formset = StepFormSet(request.POST, request.FILES, prefix="steps")
+        recipe_form = RecipeForm(request.POST, request.FILES)
 
         if recipe_form.is_valid():
             recipe = recipe_form.save()
-            recipe.user = request.user
             recipe.save()
-            save_recipe_ingredients(ingredient_formset, recipe)
-            save_recipe_steps(step_formset, recipe)
+
+            ingredient_formset = RecipeIngredientFormSet(request.POST, instance=recipe, prefix="ingredients")
+            step_formset = StepFormSet(request.POST, request.FILES, instance=recipe, prefix="steps")
+
+            ingredient_formset = save_recipe_ingredients(ingredient_formset)
+            step_formset = save_recipe_steps(step_formset)
 
             if ingredient_formset.is_valid() and step_formset.is_valid():
                 return redirect("recipe", slug=recipe.slug)
@@ -101,13 +102,14 @@ def edit_recipe(request, slug):
 
         if recipe_form.is_valid():
             recipe = recipe_form.save()
-            recipe.user = request.user
             recipe.save()
-            save_recipe_ingredients(ingredient_formset, recipe)
-            save_recipe_steps(step_formset, recipe)
+            
+            ingredient_formset = save_recipe_ingredients(ingredient_formset)
+            step_formset = save_recipe_steps(step_formset)
 
             if ingredient_formset.is_valid() and step_formset.is_valid():
                 return redirect("recipe", slug=recipe.slug)
+            
             else:
                 context = {
                     "title": "Editar receta",
@@ -223,8 +225,7 @@ def edit_recipe_step_form(request, i:int, slug):
     return render(request, "partials/recipe_step_form.html", context)
 
 
-@login_required
-def save_recipe_ingredients(formset, parent):
+def save_recipe_ingredients(formset):
     for form in formset:
         if form.is_valid():
             recipe_ingredient = form.save(commit=False)
@@ -233,14 +234,14 @@ def save_recipe_ingredients(formset, parent):
                 recipe=recipe_ingredient.recipe,
                 ingredient=recipe_ingredient.ingredient
             ).exists():
-                recipe_ingredient.recipe = parent
                 recipe_ingredient.save()
             else:
                 form.add_error(None, "Este ingrediente ya está agregado a la receta.")
 
+    return formset
 
-@login_required
-def save_recipe_steps(formset, parent):
+
+def save_recipe_steps(formset):
     for form in formset:
         if form.is_valid():
             recipe_step = form.save(commit=False)
@@ -249,7 +250,8 @@ def save_recipe_steps(formset, parent):
                 recipe=recipe_step.recipe, 
                 step_sequence=recipe_step.step_sequence
             ).exists():
-                recipe_step.recipe = parent
                 recipe_step.save()
             else:
                 form.add_error(None, "Este paso ya está agregado a la receta.")
+
+    return formset
