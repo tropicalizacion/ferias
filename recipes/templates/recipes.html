@@ -49,7 +49,7 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <a href="{% url 'recipe' recipe.slug %}" class="btn btn-sm btn-danger">Ver receta</a>
                         {% if user.is_staff %}
-                        <div class="d-flex justify-content-end">
+                        <div class="d-flex justify-content-end pt-2">
                             <a href="{% url 'edit_recipe' recipe.slug %}" class="link-warning me-1"><i class="fa-solid fa-pen-to-square"></i></a>
                             <a class="link-warning ms-1" data-bs-toggle="modal" data-bs-target="#deleteModal{{ recipe.slug }}"><i class="fa fa-trash"></i></a>
                         </div>

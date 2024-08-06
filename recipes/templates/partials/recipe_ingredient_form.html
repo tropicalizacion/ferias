@@ -1,5 +1,7 @@
-<div class="ingredient my-3 p-3 background-amarillo rounded">
-    <div class="ingredient-row row mb-3">
+{% block content %}
+
+<div class="ingredient mt-3 p-3 background-amarillo rounded">
+    <div class="ingredient-row row justify-content-between">
         {{ management_form }}
         {{ form.recipe_id }}
         {{ form.id }}
@@ -14,7 +16,7 @@
                 </div>
             {% endif %}
         </div>
-        <div class="col">
+        <div class="col-3">
             <div id="unit-input">{{ form.unit }}</div>
             {% if form.unit.errors %}
                 <div class="alert alert-danger m-2">
@@ -24,7 +26,7 @@
                 </div>
             {% endif %}
         </div>
-        <div class="col">
+        <div class="col-3">
             <div id="quantity-input">{{ form.quantity }}</div>
             {% if form.quantity.errors %}
                 <div class="alert alert-danger m-2">
@@ -34,8 +36,12 @@
                 </div>
             {% endif %}
         </div>
-        <div class="col-2">
-            <button type="button" class="btn btn-secondary" hx-get="{% if recipe.slug %}{% url 'edit_recipe_ingredient_form' next_ingredient recipe.slug %}{% else %}{% url 'create_recipe_ingredient_form' next_ingredient %}{% endif %}" hx-target="#ingredients-list" hx-swap="beforeend"><i class="fa fa-arrow-right"></i></button>
+        <div class="col-1">
+            <div class="d-flex justify-content-end w-10">
+                <button type="button" class="btn btn-secondary" hx-get="{% if recipe.slug %}{% url 'edit_recipe_ingredient_form' next_ingredient recipe.slug %}{% else %}{% url 'create_recipe_ingredient_form' next_ingredient %}{% endif %}" hx-target="#ingredients-list" hx-swap="beforeend"><i class="fa fa-arrow-right"></i></button>
+            </div>
         </div>
     </div>
 </div>
+
+{% endblock %}

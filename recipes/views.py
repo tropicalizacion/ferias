@@ -33,6 +33,7 @@ def create_recipe(request):
     recipe_form = RecipeForm()
     ingredient_formset = RecipeIngredientFormSet(prefix="ingredients")
     step_formset = StepFormSet(prefix="steps")
+    ingredient_form = IngredientForm()
 
     if request.method == "POST":
         recipe_form = RecipeForm(request.POST, request.FILES)
@@ -62,6 +63,7 @@ def create_recipe(request):
         "next_step": next_step,
         "categories": Category.objects.all(),
         "tags": Tag.objects.all(),
+        "ingredient_form": ingredient_form,
         "ingredients": Ingredient.objects.all(),
     }
     
@@ -75,6 +77,7 @@ def edit_recipe(request, slug):
     recipe_form = RecipeForm(instance=recipe)
     ingredient_formset = RecipeIngredientFormSet(instance=recipe, prefix="ingredients")
     step_formset = StepFormSet(instance=recipe, prefix="steps")
+    ingredient_form = IngredientForm()
     
     if request.method == "POST":
         recipe_form = RecipeForm(request.POST, request.FILES, instance=recipe)
@@ -105,6 +108,7 @@ def edit_recipe(request, slug):
         "next_step": next_step,
         "categories": Category.objects.all(),
         "tags": Tag.objects.all(),
+        "ingredient_form": ingredient_form,
         "ingredients": Ingredient.objects.all(),
     }
     

@@ -113,7 +113,7 @@ class RecipeIngredient(models.Model):
         ("ml", "mililitros"),
         ("l", "litros"),
         ("tsp", "cucharadita"),
-        ("tbsp", "cuacharada"),
+        ("tbsp", "cucharada"),
         ("cup", "taza"),
         ("unit", "unidad"),
     ]

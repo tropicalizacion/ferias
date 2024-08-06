@@ -27,10 +27,10 @@ class RecipeForm(forms.ModelForm):
         widgets = {
             "id": forms.HiddenInput(),
             "name": forms.TextInput(
-                attrs={"class": "form-control", "placeholder": "Introduzca un nombre"}
+                attrs={"class": "form-control"}
             ),
             "description": forms.Textarea(attrs={"class": "form-control", "rows": 4}),
-            "category": forms.Select(attrs={"class": "form-control"}),
+            "category": forms.Select(attrs={"class": "form-select"}),
             "tags": forms.SelectMultiple(attrs={"class": "form-control", "size": 5}),
         }
 
@@ -49,12 +49,12 @@ class RecipeIngredientForm(forms.ModelForm):
             "id": forms.HiddenInput(),
             "ingredient": forms.Select(
                 attrs={
-                    "class": "form-control",
+                    "class": "form-select",
                 }
             ),
             "unit": forms.Select(
                 attrs={
-                    "class": "form-control",
+                    "class": "form-select",
                 }
             ),
             "quantity": forms.NumberInput(
@@ -62,6 +62,7 @@ class RecipeIngredientForm(forms.ModelForm):
                     "class": "form-control",
                     "placeholder": "Cantidad",
                     "min": 0,
+                    "step": 0.25
                 }
             ),
         }
@@ -98,19 +99,20 @@ class StepForm(forms.ModelForm):
             "step_sequence": forms.NumberInput(
                 attrs={
                     "class": "form-control",
-                    "placeholder": "Introduzca un número",
+                    "placeholder": "Número",
                     "min": 1,
                 }
             ),
             "title": forms.TextInput(
                 attrs={
                     "class": "form-control",
-                    "placeholder": "Introduzca un título",
+                    "placeholder": "Título",
                 }
             ),
             "description": forms.Textarea(
                 attrs={
                     "class": "form-control",
+                    "placeholder": "Descripción",
                     "rows": 1,
                 }
             ),
@@ -133,6 +135,13 @@ StepFormSet = forms.inlineformset_factory(
 
 
 class IngredientForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # If you want to update attributes for the 'name' field, specify them here.
+        self.fields["name"].widget.attrs.update({
+            "placeholder": "Enter ingredient name",  # Example attribute
+        })
+
     class Meta:
         model = Ingredient
         fields = [
@@ -149,13 +158,15 @@ class IngredientForm(forms.ModelForm):
         widgets = {
             "name": forms.TextInput(
                 attrs={
-                    "class": "form-control"
+                    "class": "form-control",
+                    "placeholder": "Introduzca el nombre del ingrediente",
                 }
             ),
             "description": forms.Textarea(
                 attrs={
                     "class": "form-control",
                     "rows": 3,
+                    "placeholder": "Introduzca una descripción",
                 }
             ),
             "product": forms.Select(
