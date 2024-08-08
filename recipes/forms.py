@@ -31,7 +31,7 @@ class RecipeForm(forms.ModelForm):
             ),
             "description": forms.Textarea(attrs={"class": "form-control", "rows": 4}),
             "category": forms.Select(attrs={"class": "form-select"}),
-            "tags": forms.SelectMultiple(attrs={"class": "form-control", "size": 5}),
+            "tags": forms.SelectMultiple(attrs={"class": "form-check-inline", "size": 5}),
         }
 
 
@@ -137,9 +137,9 @@ StepFormSet = forms.inlineformset_factory(
 class IngredientForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        # If you want to update attributes for the 'name' field, specify them here.
+        
         self.fields["name"].widget.attrs.update({
-            "placeholder": "Enter ingredient name",  # Example attribute
+            "placeholder": "Nombre",
         })
 
     class Meta:
@@ -159,14 +159,14 @@ class IngredientForm(forms.ModelForm):
             "name": forms.TextInput(
                 attrs={
                     "class": "form-control",
-                    "placeholder": "Introduzca el nombre del ingrediente",
+                    "placeholder": "Nombre del ingrediente",
                 }
             ),
             "description": forms.Textarea(
                 attrs={
                     "class": "form-control",
                     "rows": 3,
-                    "placeholder": "Introduzca una descripción",
+                    "placeholder": "Descripción",
                 }
             ),
             "product": forms.Select(

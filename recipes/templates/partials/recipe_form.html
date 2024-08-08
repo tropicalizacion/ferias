@@ -2,67 +2,100 @@
 
 {{ recipe_form.id }}
 
-<div class="col-8">
-
-    <div class="d-flex m-3">
-        <div class="w-75">
-            <label>Nombre de la receta</label>
-            {{ recipe_form.name }}
-            {% if recipe_form.name.errors %}
-                <div class="alert alert-danger m-2">
-                    {% for error in recipe_form.name.errors %}
-                        {{ error }}
-                    {% endfor %}
-                </div>
-            {% endif %}
-        </div>
-
-        <div class="w-50 ms-3">
-            <label>Categoría</label>
-            <div class="category-container">
-                {{ recipe_form.category }}
-                {% if recipe_form.category.errors %}
-                    <div class="alert alert-danger m-2">
-                        {% for error in recipe_form.category.errors %}
-                            {{ error }}
-                        {% endfor %}
-                    </div>
-                {% endif %}
-            </div>
-        </div>
-    </div>
-    
-    <div class="d-flex m-3">
-        <div class="w-75">
-            <label>Descripción</label>
-            {{ recipe_form.description }}
-            {% if recipe_form.description.errors %}
-                <div class="alert alert-danger m-2">
-                    {% for error in recipe_form.description.errors %}
-                        {{ error }}
-                    {% endfor %}
-                </div>
-            {% endif %}
-        </div>
-
-        <div class="w-50 ms-3">
-            <label>Etiquetas</label>
-            <div id="tag-container" class="container rounded p-3 bg-light">
-                {% for tag in recipe_form.tags %}
-                    <div class="form-check form-check-inline">
-                        {{ tag.tag }}
-                        <label class="form-check-label badge rounded-pill background-verde" for="{{ tag.id_for_label }}">{{ tag.choice_label }}</label>
-                    </div>
+<div class="d-flex m-3">
+    <div class="w-75">
+        <label>Nombre de la receta</label>
+        {{ recipe_form.name }}
+        {% if recipe_form.name.errors %}
+            <div class="alert alert-danger m-2">
+                {% for error in recipe_form.name.errors %}
+                    {{ error }}
                 {% endfor %}
             </div>
+        {% endif %}
+    </div>
+
+    <div class="w-50 ms-3">
+        <label>Categoría</label>
+        <div class="category-container">
+            {{ recipe_form.category }}
+            {% if recipe_form.category.errors %}
+                <div class="alert alert-danger m-2">
+                    {% for error in recipe_form.category.errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
         </div>
     </div>
-    
 </div>
-<div class="col">
-    <div class="m-3 p-3 background-verde rounded h-100">
-        <h4 class="text-light">Añadir etiquetas</h4>
+
+<div class="d-flex m-3">
+    <div class="w-75">
+        <label>Descripción</label>
+        {{ recipe_form.description }}
+        {% if recipe_form.description.errors %}
+            <div class="alert alert-danger m-2">
+                {% for error in recipe_form.description.errors %}
+                    {{ error }}
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+
+    <div class="w-50 ms-3">
+        <label>Etiquetas</label>
+        <select name="tags" multiple class="d-none">
+            {% for value, label in recipe_form.tags.field.choices %}
+                <option value="{{ value }}">{{ label }}</option>
+            {% endfor %}
+        </select>
+
+        <div id="tag-container" class="container d-flex flex-wrap rounded p-2 bg-light">
+            {% for value, label in recipe_form.tags.field.choices %}
+                <div class="tag-pill badge rounded-pill background-verde m-1" data-value="{{ value }}" onclick="toggleTag(this)">
+                    {{ label }}
+                </div>
+            {% endfor %}
+        </div>
     </div>
 </div>
+
+<style>
+    .tag-pill.selected {
+        background-color: yellowgreen;
+        color: white;
+    }
+</style>
+
+<script>
+    function toggleTag(tagElement) {
+        // Toggle the selected class
+        tagElement.classList.toggle('selected');
+
+        // Get the value of the tag
+        const value = tagElement.getAttribute('data-value');
+
+        // Get the corresponding option element
+        const option = document.querySelector(`select[name="tags"] option[value="${value}"]`);
+
+        // Toggle the selected state of the option
+        option.selected = !option.selected;
+    }
+
+    function updateSelectedTags(event) {
+        // Get the hidden select element
+        const tagsInput = document.querySelector('select[name="tags"]');
+
+        // Get all the selected option elements
+        const selectedOptions = tagsInput.querySelectorAll('option:checked');
+
+        // Create an array of selected values
+        const selectedValues = Array.from(selectedOptions).map(option => option.value);
+
+        // Update the hidden input's value
+        tagsInput.value = selectedValues.join(',');
+    }
+</script>
 
 {% endblock %}

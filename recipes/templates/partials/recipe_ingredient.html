@@ -1,39 +1,44 @@
 {% block content %}
 
 {% for form in ingredient_formset %}
-<div class="ingredient my-3 p-3 background-amarillo rounded">
-    <div class="ingredient-row">
-        <div class="row">
-            <div class="col">
-                <div id="ingredient-input">{{ form.ingredient }}</div>
-                {% if form.ingredient.errors %}
-                    <div class="alert alert-danger m-2">
-                        {% for error in form.ingredient.errors %}
-                            {{ error }}
-                        {% endfor %}
-                    </div>
-                {% endif %}
-            </div>
-            <div class="col">
-                <div id="unit-input">{{ form.unit }}</div>
-                {% if form.unit.errors %}
-                    <div class="alert alert-danger m-2">
-                        {% for error in form.unit.errors %}
-                            {{ error }}
-                        {% endfor %}
-                    </div>
-                {% endif %}
-            </div>
-            <div class="col">
-                <div id="quantity-input">{{ form.quantity }}</div>
-                {% if form.quantity.errors %}
-                    <div class="alert alert-danger m-2">
-                        {% for error in form.quantity.errors %}
-                            {{ error }}
-                        {% endfor %}
-                    </div>
-                {% endif %}
-            </div>
+<div class="ingredient my-2">
+    <div class="ingredient-row row justify-content-between">
+        {{ management_form }}
+        {{ form.recipe_id }}
+        {{ form.id }}
+
+        <div class="col form-group">
+            <div class="ingredient-input">{{ form.ingredient }}</div>
+            {% if form.ingredient.errors %}
+                <div class="alert alert-danger m-2">
+                    {% for error in form.ingredient.errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="col-3">
+            <div class="unit-input">{{ form.unit }}</div>
+            {% if form.unit.errors %}
+                <div class="alert alert-danger m-2">
+                    {% for error in form.unit.errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="col-3">
+            <div class="quantity-input">{{ form.quantity }}</div>
+            {% if form.quantity.errors %}
+                <div class="alert alert-danger m-2">
+                    {% for error in form.quantity.errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="col-1">
+            
         </div>
     </div>
 </div>

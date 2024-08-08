@@ -1,12 +1,12 @@
 {% block content %}
 
-<div class="step my-3 p-3 background-amarillo rounded">
+<div class="step my-2">
     <div class="step-row">
         {{ management_form }}
         {{ form.recipe_id }}
         {{ form.id }}
 
-        <div class="row mb-3">
+        <div class="row mb-1">
             <div class="col-3">
                 <div id="step_sequence-input">{{ form.step_sequence }}</div>
                 {% if form.step_sequence.errors %}
@@ -28,9 +28,7 @@
                 {% endif %}
             </div>
             <div class="col-1">
-                <div class="d-flex justify-content-end">
-                    <button type="button" class="btn btn-secondary" hx-get="{% if recipe.slug %}{% url 'edit_recipe_step_form' next_step recipe.slug %}{% else %}{% url 'create_recipe_step_form' next_step %}{% endif %}" hx-target="#steps-list" hx-swap="beforeend"><i class="fa fa-arrow-right"></i></button>
-                </div>
+                
             </div>
         </div>
         <div class="row">
@@ -55,7 +53,9 @@
                 {% endif %}
             </div>
             <div class="col-1">
-                
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="btn-add-step btn btn-secondary" onclick="this.style.display='none'" hx-get="{% if recipe.slug %}{% url 'edit_recipe_step_form' next_step recipe.slug %}{% else %}{% url 'create_recipe_step_form' next_step %}{% endif %}" hx-target="#steps-list" hx-swap="beforeend"><i class="fa-solid fa-plus"></i></button>
+                </div>
             </div>
         </div>
     </div>

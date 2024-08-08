@@ -1,10 +1,14 @@
 {% block content %}
 
 {% for form in step_formset %}
-<div class="step my-3 p-3 background-amarillo rounded">
+<div class="step my-2">
     <div class="step-row">
-        <div class="row mb-3">
-            <div class="col">
+        {{ management_form }}
+        {{ form.recipe_id }}
+        {{ form.id }}
+
+        <div class="row mb-1">
+            <div class="col-3">
                 <div id="step_sequence-input">{{ form.step_sequence }}</div>
                 {% if form.step_sequence.errors %}
                     <div class="alert alert-danger m-2">
@@ -14,7 +18,7 @@
                     </div>
                 {% endif %}
             </div>
-            <div class="col-8">
+            <div class="col">
                 <div id="title-input">{{ form.title }}</div>
                 {% if form.title.errors %}
                     <div class="alert alert-danger m-2">
@@ -24,9 +28,12 @@
                     </div>
                 {% endif %}
             </div>
+            <div class="col-1">
+                
+            </div>
         </div>
         <div class="row">
-            <div class="col">
+            <div class="col-3">
                 <div id="photo-input">{{ form.photo }}</div>
                 {% if form.photo.errors %}
                     <div class="alert alert-danger m-2">
@@ -36,7 +43,7 @@
                     </div>
                 {% endif %}
             </div>
-            <div class="col-8">
+            <div class="col">
                 <div id="description-input">{{ form.description }}</div>
                 {% if form.description.errors %}
                     <div class="alert alert-danger m-2">
@@ -45,6 +52,9 @@
                         {% endfor %}
                     </div>
                 {% endif %}
+            </div>
+            <div class="col-1">
+                
             </div>
         </div>
     </div>

@@ -94,6 +94,11 @@ def edit_recipe(request, slug):
 
             if ingredient_formset.is_valid() and step_formset.is_valid():
                 return redirect("recipe", slug=recipe.slug)
+            else:
+                print(ingredient_formset.errors)
+                print(step_formset.errors)
+        else:
+            print(recipe_form.errors)
 
     next_ingredient = 0 if len(ingredient_formset.forms) is None else len(ingredient_formset.forms)
     next_step = 0 if len(step_formset.forms) is None else len(step_formset.forms)
@@ -201,9 +206,7 @@ def save_recipe_ingredients(formset):
                 ingredient=recipe_ingredient.ingredient
             ).exists():
                 recipe_ingredient.save()
-            else:
-                form.add_error(None, "Este ingrediente ya está agregado a la receta.") # TODO: Enviar este mensaje a la vista.
-    
+
     return formset
 
 
@@ -217,7 +220,5 @@ def save_recipe_steps(formset):
                 step_sequence=recipe_step.step_sequence
             ).exists():
                 recipe_step.save()
-            else:
-                form.add_error(None, "Este paso ya está agregado a la receta.") # TODO: Enviar este mensaje a la vista.
 
     return formset

@@ -1,13 +1,13 @@
 {% block content %}
 
-<div class="ingredient mt-3 p-3 background-amarillo rounded">
+<div class="ingredient my-2">
     <div class="ingredient-row row justify-content-between">
         {{ management_form }}
         {{ form.recipe_id }}
         {{ form.id }}
 
-        <div class="col">
-            <div id="ingredient-input">{{ form.ingredient }}</div>
+        <div class="col form-group">
+            <div class="ingredient-input">{{ form.ingredient }}</div>
             {% if form.ingredient.errors %}
                 <div class="alert alert-danger m-2">
                     {% for error in form.ingredient.errors %}
@@ -17,7 +17,7 @@
             {% endif %}
         </div>
         <div class="col-3">
-            <div id="unit-input">{{ form.unit }}</div>
+            <div class="unit-input">{{ form.unit }}</div>
             {% if form.unit.errors %}
                 <div class="alert alert-danger m-2">
                     {% for error in form.unit.errors %}
@@ -27,7 +27,7 @@
             {% endif %}
         </div>
         <div class="col-3">
-            <div id="quantity-input">{{ form.quantity }}</div>
+            <div class="quantity-input">{{ form.quantity }}</div>
             {% if form.quantity.errors %}
                 <div class="alert alert-danger m-2">
                     {% for error in form.quantity.errors %}
@@ -38,7 +38,7 @@
         </div>
         <div class="col-1">
             <div class="d-flex justify-content-end w-10">
-                <button type="button" class="btn btn-secondary" hx-get="{% if recipe.slug %}{% url 'edit_recipe_ingredient_form' next_ingredient recipe.slug %}{% else %}{% url 'create_recipe_ingredient_form' next_ingredient %}{% endif %}" hx-target="#ingredients-list" hx-swap="beforeend"><i class="fa fa-arrow-right"></i></button>
+                <button type="button" class="btn-add-ingredient btn btn-secondary" onclick="this.style.display='none'" hx-get="{% if recipe.slug %}{% url 'edit_recipe_ingredient_form' next_ingredient recipe.slug %}{% else %}{% url 'create_recipe_ingredient_form' next_ingredient %}{% endif %}" hx-target="#ingredients-list" hx-swap="beforeend"><i class="fa-solid fa-plus"></i></button>
             </div>
         </div>
     </div>

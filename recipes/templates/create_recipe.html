@@ -21,87 +21,85 @@
 </div>
 
 <!-- Formulario completo -->
-<div id="recipe-form" class="container my-5">
+<div class="container my-5">
     <h1 class="mb-4">{{ title }}</h1>
 
     <form
         action="{% if recipe.slug %}{% url 'edit_recipe' recipe.slug %}{% else %}{% url 'create_recipe' %}{% endif %}"
         method="POST"
         enctype="multipart/form-data"
-        class="card p-4"
     > <!-- Si la receta tiene un slug, significa que la mandaron por context y debe usarse el form editar. Si no, es el form de crear receta. -->
     
-        {% csrf_token %}
+        <div class="row mb-3">
+            <div id="recipe-form" class="col mb-3">
+                <div class="p-3 bg-white rounded">
 
-        <!-- Formulario de receta -->
-        <div class="row mt-2">
-            {% include 'partials/recipe_form.html' with recipe_form=recipe_form %}
-        </div>
+                    <!-- Formulario de receta -->
 
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        {% include 'partials/recipe_form.html' with recipe_form=recipe_form %}
+                    </div>
 
-        <!-- Formulario de ingredientes -->
-        <div class="row mt-2">
-            <div class="col-8 p-4">
-                <div class="d-flex justify-content-between">
-                    <h4>Ingredientes</h4>
-                    <div class="d-flex justify-content-end">
-                        <button id="btn-ingredients" onclick="this.style.display='none'" type="button" class="btn btn-secondary me-2" hx-get="{% if recipe.slug %}{% url 'edit_recipe_ingredient_form' next_ingredient recipe.slug %}{% else %}{% url 'create_recipe_ingredient_form' next_ingredient %}{% endif %}" hx-target="#ingredients-list" hx-swap="beforeend"><i class="fa fa-plus"></i></button>
+                    <!-- Formulario de ingredientes -->
+                    <div class="m-3">
+                        <div class="p-3 background-amarillo rounded">
+                            <div class="d-flex justify-content-between">
+                                <h4>Ingredientes</h4>
+                                <div class="d-flex justify-content-end">
+                                    <button id="btn-ingredients" onclick="this.style.display='none'" type="button" class="btn btn-secondary" hx-get="{% if recipe.slug %}{% url 'edit_recipe_ingredient_form' next_ingredient recipe.slug %}{% else %}{% url 'create_recipe_ingredient_form' next_ingredient %}{% endif %}" hx-target="#ingredients-list" hx-swap="beforeend"><i class="fa fa-plus"></i></button>
+                                </div>
+                            </div>
+                            
+                            <div id="added-ingredients-list">
+                                {% include 'partials/recipe_ingredient.html' with ingredient_formset=ingredient_formset %}
+                            </div>
+                            <div id="ingredients-list">
+                                {{ ingredient_formset.management_form }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formulario de pasos -->
+                    <div class="m-3">
+                        <div class="p-3 background-amarillo rounded">
+                            <div class="d-flex justify-content-between">
+                                <h4>Pasos</h4>
+                                <div class="d-flex justify-content-end">
+                                    <button id="btn-steps" onclick="this.style.display='none'" type="button" class="btn btn-secondary" hx-get="{% if recipe.slug %}{% url 'edit_recipe_step_form' next_step recipe.slug %}{% else %}{% url 'create_recipe_step_form' next_step %}{% endif %}" hx-target="#steps-list" hx-swap="beforeend"><i class="fa fa-plus"></i></button>
+                                </div>
+                            </div>
+                            
+                            <div id="added-steps-list">
+                                {% include 'partials/recipe_step.html' with step_formset=step_formset %}
+                            </div>
+                            <div id="steps-list">
+                                {{ step_formset.management_form }}
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div id="added-ingredients-list">
-                    {% include 'partials/recipe_ingredient.html' with ingredient_formset=ingredient_formset %}
-                </div>
-                <div id="ingredients-list">
-                    {{ ingredient_formset.management_form }}
-                </div>
             </div>
-            <div class="col">
-                <div class="m-3 p-3 background-verde rounded h-100">
+            <div class="col-lg-3 mb-3">
+                <div class="p-3 background-verde rounded h-100">
+                    <h4 class="text-light">Añadir etiquetas</h4>
                     <h4 class="text-light">Añadir ingredientes</h4>
+                    {% include 'partials/new_ingredient.html' with form=ingredient_form %}
                 </div>
             </div>
         </div>
-
-
-        <!-- Formulario de pasos -->
-        <div class="row mt-2">
-            <div class="col-8 p-4">
-                <div class="d-flex justify-content-between">
-                    <h4>Pasos</h4>
-                    <div class="d-flex justify-content-end">
-                        <button id="btn-steps" onclick="this.style.display='none'" type="button" class="btn btn-secondary me-2" hx-get="{% if recipe.slug %}{% url 'edit_recipe_step_form' next_step recipe.slug %}{% else %}{% url 'create_recipe_step_form' next_step %}{% endif %}" hx-target="#steps-list" hx-swap="beforeend"><i class="fa fa-plus"></i></button>
-                    </div>
-                </div>
-                <div id="added-steps-list">
-                    {% include 'partials/recipe_step.html' with step_formset=step_formset %}
-                </div>
-                <div id="steps-list">
-                    {{ step_formset.management_form }}
-                </div>
+        <div class="row">
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-success w-100">Guardar receta</button>
             </div>
-            <div class="col">
-                <div class="m-3 p-3 background-verde rounded h-100">
-                </div>
-            </div>
-        </div>
-
-        <div class="row mt-3 mx-3">
-            <button type="submit" class="btn btn-success mt-3">Guardar receta</button>
         </div>
     </form>
-
-    <!-- TODO: Que se le pueda agregar una imagen a una receta. -->
-
-    <!-- TODO: Aquí la idea es que también se puedan agregar ingredientes que no estén ya en la lista de ingredientes que se despliega.
-        Para eso se debería poder crear un nuevo ingrediente en el form. 
-    -->
-
-    <!-- TODO: Que el usuario pueda ver los pasos recientemente agregados. -->
 </div>
 
 <script>
     document.getElementById('recipe-form').addEventListener('submit', function(event) {
         event.preventDefault();
+        updateSelectedTags();
         updateFormsetManagement();
         event.target.submit();
     });
