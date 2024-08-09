@@ -43,16 +43,16 @@
                         <div class="p-3 background-amarillo rounded">
                             <div class="d-flex justify-content-between">
                                 <h4>Ingredientes</h4>
-                                <div class="d-flex justify-content-end">
-                                    <button id="btn-ingredients" onclick="this.style.display='none'" type="button" class="btn btn-secondary" hx-get="{% if recipe.slug %}{% url 'edit_recipe_ingredient_form' next_ingredient recipe.slug %}{% else %}{% url 'create_recipe_ingredient_form' next_ingredient %}{% endif %}" hx-target="#ingredients-list" hx-swap="beforeend"><i class="fa fa-plus"></i></button>
-                                </div>
                             </div>
                             
                             <div id="added-ingredients-list">
                                 {% include 'partials/recipe_ingredient.html' with ingredient_formset=ingredient_formset %}
                             </div>
-                            <div id="ingredients-list">
+                            <div id="ingredients-list" class="mt-2">
                                 {{ ingredient_formset.management_form }}
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                <button type="button" onclick="this.style.display='none'" class="btn-add-ingredient btn btn-sm btn-success" hx-get="{% if recipe.slug %}{% url 'edit_recipe_ingredient_form' next_ingredient recipe.slug %}{% else %}{% url 'create_recipe_ingredient_form' next_ingredient %}{% endif %}" hx-target="#ingredients-list" hx-swap="beforeend"><i class="fa fa-plus"></i></button>
                             </div>
                         </div>
                     </div>
@@ -62,16 +62,16 @@
                         <div class="p-3 background-amarillo rounded">
                             <div class="d-flex justify-content-between">
                                 <h4>Pasos</h4>
-                                <div class="d-flex justify-content-end">
-                                    <button id="btn-steps" onclick="this.style.display='none'" type="button" class="btn btn-secondary" hx-get="{% if recipe.slug %}{% url 'edit_recipe_step_form' next_step recipe.slug %}{% else %}{% url 'create_recipe_step_form' next_step %}{% endif %}" hx-target="#steps-list" hx-swap="beforeend"><i class="fa fa-plus"></i></button>
-                                </div>
                             </div>
                             
                             <div id="added-steps-list">
                                 {% include 'partials/recipe_step.html' with step_formset=step_formset %}
                             </div>
-                            <div id="steps-list">
+                            <div id="steps-list" class="mt-2">
                                 {{ step_formset.management_form }}
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                <button  type="button" onclick="this.style.display='none'" class="btn-add-step btn btn-sm btn-success" hx-get="{% if recipe.slug %}{% url 'edit_recipe_step_form' next_step recipe.slug %}{% else %}{% url 'create_recipe_step_form' next_step %}{% endif %}" hx-target="#steps-list" hx-swap="beforeend"><i class="fa fa-plus"></i></button>
                             </div>
                         </div>
                     </div>

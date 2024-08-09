@@ -1,62 +1,66 @@
 {% block content %}
 
 {% for form in step_formset %}
-<div class="step my-2">
+<div class="step mt-2 bg-white rounded p-2" id="step-form-{{ forloop.counter0 }}">
     <div class="step-row">
         {{ management_form }}
         {{ form.recipe_id }}
         {{ form.id }}
 
-        <div class="row mb-1">
-            <div class="col-3">
-                <div id="step_sequence-input">{{ form.step_sequence }}</div>
-                {% if form.step_sequence.errors %}
-                    <div class="alert alert-danger m-2">
-                        {% for error in form.step_sequence.errors %}
-                            {{ error }}
-                        {% endfor %}
-                    </div>
-                {% endif %}
+        <div class="d-flex justify-content-between" style="width: 100%;">
+            <div style="width: 5%;">
+                <div class="d-flex justify-content-start align-content-center h-100">
+                    <button type="button" class="btn-delete-step text-danger bg-transparent border-0" onclick="this.style.display='none'" hx-get="{% if recipe.slug %}{% url 'delete_existing_recipe_step_form' forloop.counter0 recipe.slug %}{% else %}{% url 'delete_recipe_step_form' forloop.counter0 %}{% endif %}" hx-target="#step-form-{{ forloop.counter0 }}" hx-swap="outerHTML"><i class="fa fa-trash"></i></button>
+                </div>
             </div>
-            <div class="col">
-                <div id="title-input">{{ form.title }}</div>
-                {% if form.title.errors %}
-                    <div class="alert alert-danger m-2">
-                        {% for error in form.title.errors %}
-                            {{ error }}
-                        {% endfor %}
+
+            <div style="width: 100%;">
+                <div class="d-flex justify-content-between mb-1" style="width: 100%;"">
+                    <div class="step_sequence-input me-2" style="width: 30%;">{{ form.step_sequence }}
+                        {% if form.step_sequence.errors %}
+                            <div class="alert alert-danger m-2">
+                                {% for error in form.step_sequence.errors %}
+                                    {{ error }}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
                     </div>
-                {% endif %}
-            </div>
-            <div class="col-1">
-                
+    
+                    <div class="title-input w-100" style="width: 60%;">{{ form.title }}
+                        {% if form.title.errors %}
+                            <div class="alert alert-danger m-2">
+                                {% for error in form.title.errors %}
+                                    {{ error }}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            
+                <div class="d-flex justify-content-between" style="width: 100%;">
+                    <div class="photo-input w-100 me-2" style="width: 30%;">{{ form.photo }}
+                        {% if form.photo.errors %}
+                            <div class="alert alert-danger m-2">
+                                {% for error in form.photo.errors %}
+                                    {{ error }}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="description-input w-100" style="width: 60%;">{{ form.description }}
+                        {% if form.description.errors %}
+                            <div class="alert alert-danger m-2">
+                                {% for error in form.description.errors %}
+                                    {{ error }}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-3">
-                <div id="photo-input">{{ form.photo }}</div>
-                {% if form.photo.errors %}
-                    <div class="alert alert-danger m-2">
-                        {% for error in form.photo.errors %}
-                            {{ error }}
-                        {% endfor %}
-                    </div>
-                {% endif %}
-            </div>
-            <div class="col">
-                <div id="description-input">{{ form.description }}</div>
-                {% if form.description.errors %}
-                    <div class="alert alert-danger m-2">
-                        {% for error in form.description.errors %}
-                            {{ error }}
-                        {% endfor %}
-                    </div>
-                {% endif %}
-            </div>
-            <div class="col-1">
-                
-            </div>
-        </div>
+            
     </div>
 </div>
 {% endfor %}
