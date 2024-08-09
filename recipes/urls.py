@@ -13,4 +13,8 @@ urlpatterns = [
     path('<int:i>/crear-pasos', views.create_recipe_step_form, name='create_recipe_step_form'),
     path('<int:i>/<slug:slug>/editar-ingredientes', views.edit_recipe_ingredient_form, name='edit_recipe_ingredient_form'),
     path('<int:i>/<slug:slug>/editar-pasos', views.edit_recipe_step_form, name='edit_recipe_step_form'),
+
+    path('crear-categoria', views.create_category, name='create_category'),
+    path('crear-etiqueta', views.create_tag, name='create_tag'),
+    path('crear-ingrediente', views.create_ingredient, name='create_ingredient'),
 ]

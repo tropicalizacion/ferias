@@ -1,5 +1,6 @@
 from django import forms
-from .models import Recipe, RecipeIngredient, Step, Tag, Ingredient, Variety
+from django.utils.text import slugify
+from .models import Recipe, RecipeIngredient, Step, Tag, Ingredient, Category, Tag, Variety
 
 
 class RecipeForm(forms.ModelForm):
@@ -137,7 +138,7 @@ StepFormSet = forms.inlineformset_factory(
 class IngredientForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        
+        self.fields["product"].empty_label = "Seleccione un producto..."
         self.fields["name"].widget.attrs.update({
             "placeholder": "Nombre",
         })
@@ -165,13 +166,13 @@ class IngredientForm(forms.ModelForm):
             "description": forms.Textarea(
                 attrs={
                     "class": "form-control",
-                    "rows": 3,
+                    "rows": 2,
                     "placeholder": "Descripción",
                 }
             ),
             "product": forms.Select(
                 attrs={
-                    "class": "form-control",
+                    "class": "form-select",
                 }
             ),
             "is_vegetarian": forms.CheckboxInput(
@@ -205,3 +206,92 @@ class IngredientForm(forms.ModelForm):
                 }
             ),
         }
+
+
+class CategoryForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields["category_name"].widget.attrs.update({
+            "placeholder": "Nombre",
+        })
+
+    class Meta:
+        model = Category
+        fields = ['category_name', 'category_description', 'category_slug']
+
+        widgets = {
+            "category_name": forms.TextInput(
+                attrs={
+                    "class": "form-control",
+                    "placeholder": "Nombre",
+                }
+            ),
+            "category_description": forms.Textarea(
+                attrs={
+                    "class": "form-control",
+                    "rows": 2,
+                    "placeholder": "Descripción",
+                }
+            ),
+            "category_slug": forms.TextInput(
+                attrs={
+                    "class": "form-control",
+                    "placeholder": "Slug"
+                }
+            )
+        }
+
+    def clean_slug(self):
+        slug = self.cleaned_data.get('category_slug')
+        if not slug:
+            name = self.cleaned_data.get('category_name')
+            if name:
+                slug = slugify(name)
+        return slug
+
+    def clean_name(self):
+        name = self.cleaned_data.get('category_name')
+        if Category.objects.filter(category_name=name).exists():
+            raise forms.ValidationError("Esta categoría ya existe.")
+        return name
+
+
+class TagForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields["tag_name"].widget.attrs.update({
+            "placeholder": "Nombre",
+        })
+
+    class Meta:
+        model = Tag
+        fields = ['tag_name', 'tag_slug']
+
+        widgets = {
+            "tag_name": forms.TextInput(
+                attrs={
+                    "class": "form-control",
+                    "placeholder": "Nombre",
+                }
+            ),
+            "tag_slug": forms.TextInput(
+                attrs={
+                    "class": "form-control",
+                    "placeholder": "Slug"
+                }
+            )
+        }
+
+    def clean_slug(self):
+        slug = self.cleaned_data.get('tag_slug')
+        if not slug:
+            name = self.cleaned_data.get('tag_name')
+            if name:
+                slug = slugify(name)
+        return slug
+
+    def clean_name(self):
+        name = self.cleaned_data.get('tag_name')
+        if Tag.objects.filter(tag_name=name).exists():
+            raise forms.ValidationError("Esta etiqueta ya existe.")
+        return name

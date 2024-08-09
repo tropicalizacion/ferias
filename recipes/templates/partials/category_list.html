@@ -1,0 +1,15 @@
+{% block content %}
+
+<div id="category-container" class="mb-1">
+    <label>Categoría</label>
+    {{ recipe_form.category }}
+    {% if recipe_form.category.errors %}
+        <div class="alert alert-danger m-2">
+            {% for error in recipe_form.category.errors %}
+                {{ error }}
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+
+{% endblock %}

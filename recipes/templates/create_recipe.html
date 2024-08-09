@@ -32,17 +32,14 @@
     
         <div class="row mb-3">
             <div id="recipe-form" class="col mb-3">
-                <div class="p-3 bg-white rounded">
+                <div class="p-3 h-100 bg-white rounded">
 
                     <!-- Formulario de receta -->
-
                     {% csrf_token %}
-                    <div class="mb-3">
-                        {% include 'partials/recipe_form.html' with recipe_form=recipe_form %}
-                    </div>
+                    {% include 'partials/recipe_form.html' with recipe_form=recipe_form %}
 
                     <!-- Formulario de ingredientes -->
-                    <div class="m-3">
+                    <div class="row m-2">
                         <div class="p-3 background-amarillo rounded">
                             <div class="d-flex justify-content-between">
                                 <h4>Ingredientes</h4>
@@ -61,7 +58,7 @@
                     </div>
 
                     <!-- Formulario de pasos -->
-                    <div class="m-3">
+                    <div class="row m-2">
                         <div class="p-3 background-amarillo rounded">
                             <div class="d-flex justify-content-between">
                                 <h4>Pasos</h4>
@@ -82,9 +79,26 @@
             </div>
             <div class="col-lg-3 mb-3">
                 <div class="p-3 background-verde rounded h-100">
-                    <h4 class="text-light">Añadir etiquetas</h4>
-                    <h4 class="text-light">Añadir ingredientes</h4>
-                    {% include 'partials/new_ingredient.html' with form=ingredient_form %}
+                    <div class="mt-0">
+                        <h4 class="text-light">Crear categoría</h4>
+                        <div id="category-form" class="p-2 bg-white rounded">
+                            {% include 'partials/new_category.html' with category_form=category_form %}
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <h4 class="text-light">Crear etiqueta</h4>
+                        <div id="tag-form" class="p-2 bg-white rounded">
+                            {% include 'partials/new_tag.html' with tag_form=tag_form %}
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <h4 class="text-light">Crear ingrediente</h4>
+                        <div id="new-ingredient-form" class="p-2 bg-white rounded">
+                            {% include 'partials/new_ingredient.html' with ingredient_form=ingredient_form %}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -99,8 +113,29 @@
 <script>
     document.getElementById('recipe-form').addEventListener('submit', function(event) {
         event.preventDefault();
+        event.stopPropagation();
+
         updateSelectedTags();
         updateFormsetManagement();
+
+        event.target.submit();
+    });
+
+    document.getElementById('category-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        event.target.submit();
+    });
+
+    document.getElementById('tag-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        event.target.submit();
+    });
+
+    document.getElementById('new-ingredient-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
         event.target.submit();
     });
 
@@ -128,6 +163,24 @@
 
         const minFormInputs = document.querySelectorAll(`[name$="${minFormsName}"]`);
         minFormInputs.forEach(input => input.value = totalItemCount);
+    }
+
+    function toggleTag(tagElement) {
+        tagElement.classList.toggle('selected');
+
+        const value = tagElement.getAttribute('data-value');
+        const option = document.querySelector(`select[name="tags"] option[value="${value}"]`);
+
+        option.selected = !option.selected;
+    }
+
+    function updateSelectedTags(event) {
+        const tagsInput = document.querySelector('select[name="tags"]');
+
+        const selectedOptions = tagsInput.querySelectorAll('option:checked');
+        const selectedValues = Array.from(selectedOptions).map(option => option.value);
+
+        tagsInput.value = selectedValues.join(',');
     }
 </script>
     

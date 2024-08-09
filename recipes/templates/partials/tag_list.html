@@ -1,0 +1,20 @@
+{% block content %}
+
+<div id="tag-container" class="mb-1">
+    <label>Etiquetas</label>
+    <select name="tags" multiple class="d-none">
+        {% for value, label in recipe_form.tags.field.choices %}
+            <option value="{{ value }}">{{ label }}</option>
+        {% endfor %}
+    </select>
+
+    <div class="container d-flex flex-wrap rounded p-2 bg-light">
+        {% for value, label in recipe_form.tags.field.choices %}
+            <div class="tag-pill badge rounded-pill background-verde m-1" data-value="{{ value }}" onclick="toggleTag(this)">
+                {{ label }}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

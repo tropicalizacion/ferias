@@ -45,17 +45,17 @@ class Category(models.Model):
     Data model: https://schema.org/category
     """
 
-    name = models.CharField(max_length=100, unique=True)
-    description = models.TextField(blank=True, null=True)
-    slug = models.SlugField(max_length=100, unique=True)
+    category_name = models.CharField(max_length=100, unique=True)
+    category_description = models.TextField(blank=True, null=True)
+    category_slug = models.SlugField(max_length=100, unique=True)
 
     def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.name)
+        if not self.category_slug:
+            self.category_slug = slugify(self.category_name)
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return self.name
+        return self.category_name
 
 
 class Tag(models.Model):
@@ -64,16 +64,16 @@ class Tag(models.Model):
     Data model: https://schema.org/DefinedTerm
     """
 
-    name = models.CharField(max_length=50, unique=True)
-    slug = models.SlugField(max_length=50, unique=True)
+    tag_name = models.CharField(max_length=50, unique=True)
+    tag_slug = models.SlugField(max_length=50, unique=True)
 
     def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.name)
+        if not self.tag_slug:
+            self.tag_slug = slugify(self.tag_name)
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return self.name
+        return self.tag_name
 
 
 class Recipe(models.Model):

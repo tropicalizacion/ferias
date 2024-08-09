@@ -1,8 +1,8 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Ingredient, Category, Tag, Recipe, RecipeIngredient, Step
-from .forms import RecipeForm, RecipeIngredientFormSet, StepFormSet, IngredientForm
+from .forms import RecipeForm, RecipeIngredientFormSet, StepFormSet, IngredientForm, CategoryForm, TagForm
 
 
 # Create your views here.
@@ -34,6 +34,8 @@ def create_recipe(request):
     ingredient_formset = RecipeIngredientFormSet(prefix="ingredients")
     step_formset = StepFormSet(prefix="steps")
     ingredient_form = IngredientForm()
+    category_form = CategoryForm()
+    tag_form = TagForm()
 
     if request.method == "POST":
         recipe_form = RecipeForm(request.POST, request.FILES)
@@ -61,9 +63,11 @@ def create_recipe(request):
         "next_ingredient": next_ingredient,
         "step_formset": step_formset,
         "next_step": next_step,
+        "ingredient_form": ingredient_form,
+        "category_form": category_form,
+        "tag_form": tag_form,
         "categories": Category.objects.all(),
         "tags": Tag.objects.all(),
-        "ingredient_form": ingredient_form,
         "ingredients": Ingredient.objects.all(),
     }
     
@@ -78,6 +82,8 @@ def edit_recipe(request, slug):
     ingredient_formset = RecipeIngredientFormSet(instance=recipe, prefix="ingredients")
     step_formset = StepFormSet(instance=recipe, prefix="steps")
     ingredient_form = IngredientForm()
+    category_form = CategoryForm()
+    tag_form = TagForm()
     
     if request.method == "POST":
         recipe_form = RecipeForm(request.POST, request.FILES, instance=recipe)
@@ -94,11 +100,6 @@ def edit_recipe(request, slug):
 
             if ingredient_formset.is_valid() and step_formset.is_valid():
                 return redirect("recipe", slug=recipe.slug)
-            else:
-                print(ingredient_formset.errors)
-                print(step_formset.errors)
-        else:
-            print(recipe_form.errors)
 
     next_ingredient = 0 if len(ingredient_formset.forms) is None else len(ingredient_formset.forms)
     next_step = 0 if len(step_formset.forms) is None else len(step_formset.forms)
@@ -111,9 +112,11 @@ def edit_recipe(request, slug):
         "next_ingredient": next_ingredient,
         "step_formset": step_formset,
         "next_step": next_step,
+        "ingredient_form": ingredient_form,
+        "category_form": category_form,
+        "tag_form": tag_form,
         "categories": Category.objects.all(),
         "tags": Tag.objects.all(),
-        "ingredient_form": ingredient_form,
         "ingredients": Ingredient.objects.all(),
     }
     
@@ -222,3 +225,56 @@ def save_recipe_steps(formset):
                 recipe_step.save()
 
     return formset
+
+
+def create_ingredient(request):
+    form = IngredientForm()
+
+    if request.method == 'POST' and request.htmx:
+        form = IngredientForm(request.POST)
+        if form.is_valid():
+            ingredient = form.save()
+            ingredient.save()
+    
+    context = {
+        "ingredient_form": form,
+        "ingredients": Ingredient.objects.all()
+    }
+
+    return render(request, 'partials/new_ingredient.html', context)
+
+
+def create_category(request):
+    recipe = RecipeForm()
+    form = CategoryForm()
+
+    if request.method == 'POST' and request.htmx:
+        form = CategoryForm(request.POST)
+        if form.is_valid():
+            category = form.save()
+            category.save()
+
+    context = {
+        "recipe_form": recipe,
+        "categories": Category.objects.all(),
+    }
+
+    return render(request, 'partials/category_list.html', context)
+
+
+def create_tag(request):
+    recipe = RecipeForm()
+    form = TagForm()
+
+    if request.method == 'POST' and request.htmx:
+        form = TagForm(request.POST)
+        if form.is_valid():
+            tag = form.save()
+            tag.save()
+
+    context = {
+        "recipe_form": recipe,
+        "tags": Tag.objects.all(),
+    }
+    
+    return render(request, 'partials/tag_list.html', context)
