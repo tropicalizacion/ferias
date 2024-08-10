@@ -282,11 +282,11 @@ def save_recipe_ingredients(formset):
                 ingredient=recipe_ingredient.ingredient
             ).exists():
                 recipe_ingredient.save()
-
+                
     return formset
 
 
-def save_recipe_steps(formset):
+def save_recipe_steps(formset,):
     for form in formset:
         if form.is_valid():
             recipe_step = form.save(commit=False)

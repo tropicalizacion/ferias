@@ -20,10 +20,10 @@ class Ingredient(models.Model):
     Data model: https://schema.org/recipeIngredient
     """
 
-    name = models.CharField(max_length=100, unique=True)
-    description = models.TextField(blank=True, null=True)
+    ingredient_name = models.CharField(max_length=100, unique=True)
+    ingredient_description = models.TextField(blank=True, null=True)
     # TODO: Evaluar cómo vincular con variedades de productos.
-    product = models.ForeignKey(Variety, blank=True, null=True, on_delete=models.SET_NULL)
+    ingredient_product = models.ForeignKey(Variety, blank=True, null=True, on_delete=models.SET_NULL)
     # Si no tenemos algún producto, puede quedar blank. Si sí está, vincular con el existente.
     is_vegetarian = models.BooleanField(default=False)
     is_vegan = models.BooleanField(default=False)
@@ -36,7 +36,7 @@ class Ingredient(models.Model):
     
 
     def __str__(self):
-        return self.name
+        return self.ingredient_name
 
 
 class Category(models.Model):

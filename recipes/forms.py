@@ -43,6 +43,10 @@ class RecipeIngredientForm(forms.ModelForm):
         self.fields["ingredient"].empty_label = "Seleccione un ingrediente..."
         self.fields["unit"].choices = RecipeIngredient.UNIT_CHOICES
 
+        self.fields["ingredient"].required = False
+        self.fields["unit"].required = False
+        self.fields["quantity"].required = False
+
     class Meta:
         model = RecipeIngredient
         fields = ["id", "ingredient", "unit", "quantity"]
@@ -138,17 +142,27 @@ StepFormSet = forms.inlineformset_factory(
 class IngredientForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields["product"].empty_label = "Seleccione un producto..."
-        self.fields["name"].widget.attrs.update({
+        self.fields["ingredient_product"].empty_label = "Seleccione un producto..."
+        self.fields["ingredient_name"].widget.attrs.update({
             "placeholder": "Nombre",
         })
+
+        self.fields["ingredient_name"].required = False
+        self.fields["ingredient_description"].required = False
+        self.fields["ingredient_product"].required = False
+        self.fields["is_vegetarian"].required = False
+        self.fields["is_vegan"].required = False
+        self.fields["is_gluten_free"].required = False
+        self.fields["is_dairy_free"].required = False
+        self.fields["is_nut_free"].required = False
+        self.fields["is_soy_free"].required = False
 
     class Meta:
         model = Ingredient
         fields = [
-            "name",
-            "description",
-            "product",
+            "ingredient_name",
+            "ingredient_description",
+            "ingredient_product",
             "is_vegetarian",
             "is_vegan",
             "is_gluten_free",
@@ -157,20 +171,20 @@ class IngredientForm(forms.ModelForm):
             "is_soy_free",
         ]
         widgets = {
-            "name": forms.TextInput(
+            "ingredient_name": forms.TextInput(
                 attrs={
                     "class": "form-control",
                     "placeholder": "Nombre del ingrediente",
                 }
             ),
-            "description": forms.Textarea(
+            "ingredient_description": forms.Textarea(
                 attrs={
                     "class": "form-control",
                     "rows": 2,
                     "placeholder": "Descripción",
                 }
             ),
-            "product": forms.Select(
+            "ingredient_product": forms.Select(
                 attrs={
                     "class": "form-select",
                 }
@@ -214,6 +228,10 @@ class CategoryForm(forms.ModelForm):
         self.fields["category_name"].widget.attrs.update({
             "placeholder": "Nombre",
         })
+
+        self.fields["category_name"].required = False
+        self.fields["category_description"].required = False
+        self.fields["category_slug"].required = False
 
     class Meta:
         model = Category
@@ -262,6 +280,9 @@ class TagForm(forms.ModelForm):
         self.fields["tag_name"].widget.attrs.update({
             "placeholder": "Nombre",
         })
+
+        self.fields["tag_name"].required = False
+        self.fields["tag_slug"].required = False
 
     class Meta:
         model = Tag
