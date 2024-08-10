@@ -34,10 +34,18 @@
         <div class="col-md-6">
             <div class="d-flex flex-column h-100">
                 <div class="mb-3">
-                    <h1 class="mb-2">{{ recipe.name|capfirst }}</h1>
+                    <div class="d-flex justify-content-between">
+                        <h1 class="mb-2">{{ recipe.name|capfirst }}</h1>
+                        
+                        <div class="d-flex justify-content-end pt-2">
+                            <a href="{% url 'edit_recipe' recipe.slug %}" class="link-warning text-black me-1"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <a class="link-danger text-black ms-1" data-bs-toggle="modal" data-bs-target="#deleteModal{{ recipe.slug }}"><i class="fa fa-trash"></i></a>
+                        </div>
+                    </div>
+                    
                     <div class="d-flex flex-wrap gap-2">
                         {% for tag in recipe.tags.all %}
-                        <span class="badge background-verde">{{ tag.name }}</span>
+                        <span class="badge rounded-pill background-verde">{{ tag.tag_name }}</span>
                         {% endfor %}
                     </div>
                 </div>
@@ -69,6 +77,24 @@
                         {% endfor %}
                     </ol>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="deleteModal{{ recipe.slug }}" tabindex="-1" aria-labelledby="deleteModalLabel{{ recipe.slug }}" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel{{ recipe.slug }}">Eliminar receta</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ¿Está seguro de que desea eliminar "{{ recipe.name }}"?
+            </div>
+            <div class="modal-footer">
+                <a href="{% url 'delete_recipe' recipe.slug %}" class="btn btn-danger">Aceptar</a>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
             </div>
         </div>
     </div>

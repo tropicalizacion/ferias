@@ -277,24 +277,37 @@ def save_recipe_ingredients(formset):
         if form.is_valid():
             recipe_ingredient = form.save(commit=False)
 
-            if not RecipeIngredient.objects.filter(
+            existing_ingredient = RecipeIngredient.objects.filter(
                 recipe=recipe_ingredient.recipe,
                 ingredient=recipe_ingredient.ingredient
-            ).exists():
+            ).first()
+
+            if existing_ingredient:
+                existing_ingredient.unit = recipe_ingredient.unit
+                existing_ingredient.quantity = recipe_ingredient.quantity
+                existing_ingredient.save()
+            else:
                 recipe_ingredient.save()
-                
+
     return formset
 
 
-def save_recipe_steps(formset,):
+def save_recipe_steps(formset):
     for form in formset:
         if form.is_valid():
             recipe_step = form.save(commit=False)
 
-            if not Step.objects.filter(
+            existing_step = Step.objects.filter(
                 recipe=recipe_step.recipe, 
                 step_sequence=recipe_step.step_sequence
-            ).exists():
+            ).first()
+
+            if existing_step:
+                existing_step.title = recipe_step.title
+                existing_step.description = recipe_step.description
+                existing_step.photo = recipe_step.photo
+                existing_step.save()
+            else:
                 recipe_step.save()
 
     return formset

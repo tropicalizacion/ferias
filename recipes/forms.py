@@ -150,12 +150,6 @@ class IngredientForm(forms.ModelForm):
         self.fields["ingredient_name"].required = False
         self.fields["ingredient_description"].required = False
         self.fields["ingredient_product"].required = False
-        self.fields["is_vegetarian"].required = False
-        self.fields["is_vegan"].required = False
-        self.fields["is_gluten_free"].required = False
-        self.fields["is_dairy_free"].required = False
-        self.fields["is_nut_free"].required = False
-        self.fields["is_soy_free"].required = False
 
     class Meta:
         model = Ingredient
