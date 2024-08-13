@@ -4,15 +4,15 @@ from products.models import Variety
 
 
 class AllergyType(models.TextChoices):
-    GLUTEN = "gluten", "Gluten"
-    DAIRY = "dairy", "Lácteos"
-    EGG = "egg", "Huevo"
-    NUTS = "nuts", "Nueces"
+    GLUTEN = "gluten", "gluten"
+    DAIRY = "dairy", "lácteos"
+    EGG = "egg", "huevo"
+    NUTS = "nuts", "nueces"
     SOYA = (
         "soy",
-        "Soya",
+        "soya",
     )
-    FISH = "fish", "Pescado"
+    FISH = "fish", "pescado"
 
 
 class Ingredient(models.Model):
@@ -25,16 +25,8 @@ class Ingredient(models.Model):
     # TODO: Evaluar cómo vincular con variedades de productos.
     ingredient_product = models.ForeignKey(Variety, blank=True, null=True, on_delete=models.SET_NULL)
     # Si no tenemos algún producto, puede quedar blank. Si sí está, vincular con el existente.
-    is_vegetarian = models.BooleanField(default=False)
-    is_vegan = models.BooleanField(default=False)
-    # allergies = models.CharField(max_length=100, blank=True, null=True, choices=AllergyType.choices)
+    allergies = models.CharField(max_length=100, blank=True, null=True, choices=AllergyType.choices)
     
-    is_gluten_free = models.BooleanField(default=False)
-    is_dairy_free = models.BooleanField(default=False)
-    is_nut_free = models.BooleanField(default=False)
-    is_soy_free = models.BooleanField(default=False)
-    
-
     def __str__(self):
         return self.ingredient_name
 
@@ -86,12 +78,24 @@ class Recipe(models.Model):
     category = models.ForeignKey(
         Category, on_delete=models.SET_NULL, null=True, blank=True
     )
-    # TODO: image = models.ImageField(upload_to="recipes/", blank=True, null=True)
+    image = models.ImageField(upload_to="recipes/", blank=True, null=True)
     tags = models.ManyToManyField(Tag, blank=True)
     ingredients = models.ManyToManyField(Ingredient, through="RecipeIngredient")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     slug = models.SlugField(max_length=100, unique=True)
+
+    cook_time = models.DurationField(null=True, blank=True)
+    prep_time = models.DurationField(null=True, blank=True)
+    total_time = models.DurationField(null=True, blank=True)
+    recipe_yield = models.CharField(max_length=50, null=True, blank=True)
+    recipe_cuisine = models.CharField(max_length=100, null=True, blank=True)
+
+    # Nutritional Information
+    calories = models.CharField(max_length=20, null=True, blank=True)
+    fat_content = models.CharField(max_length=20, null=True, blank=True)
+    carbohydrate_content = models.CharField(max_length=20, null=True, blank=True)
+    protein_content = models.CharField(max_length=20, null=True, blank=True)
 
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -146,4 +150,4 @@ class Step(models.Model):
         ordering = ["step_sequence"]
 
     def __str__(self):
-        return f"Step {self.step_sequence} for {self.recipe.name}"
+        return f"Step {self.step_sequence} for {self.recipe.name}: {self.description}"

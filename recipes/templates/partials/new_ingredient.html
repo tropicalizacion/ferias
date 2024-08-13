@@ -10,17 +10,8 @@
 <div class="mb-1">
     {{ ingredient_form.ingredient_product }}
 </div>
-<div class="row">
-    <div class="col">
-        <div class="m-1">{{ ingredient_form.is_vegetarian }} vegetariano</div>
-        <div class="m-1">{{ ingredient_form.is_vegan }} vegano</div>
-        <div class="m-1">{{ ingredient_form.is_gluten_free }} sin gluten</div>
-    </div>
-    <div class="col">
-        <div class="m-1">{{ ingredient_form.is_dairy_free }} sin lácteos</div>
-        <div class="m-1">{{ ingredient_form.is_nut_free }} sin nueces</div>
-        <div class="m-1">{{ ingredient_form.is_soy_free }} sin soya</div>
-    </div>
+<div class="mb-1">
+    {{ ingredient_form.allergies }}
 </div>
 <div class="mt-2">
     <button class="btn btn-sm btn-success w-100" hx-post="{% url 'create_ingredient' %}" hx-target="#new-ingredient-form" hx-swap="innerHTML">Guardar ingrediente</button>

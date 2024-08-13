@@ -4,8 +4,6 @@ from .models import Recipe, RecipeIngredient, Step, Tag, Ingredient, Category, T
 
 
 class RecipeForm(forms.ModelForm):
-    # Esto va a desplegar todas las etiquetas que ya están en la base de datos.
-    # PREGUNTA: ¿El usuario va a poder agregar tags nuevos?
     tags = forms.ModelMultipleChoiceField(
         queryset=Tag.objects.all(),
         widget=forms.CheckboxSelectMultiple,
@@ -15,16 +13,27 @@ class RecipeForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields["category"].empty_label = "Seleccione una categoría..."
+        self.fields["image"].required = False
 
     class Meta:
-        model = Recipe  # El tipo de modelo asociado al formulario.
+        model = Recipe 
         fields = [
             "id",
             "name",
             "description",
             "category",
+            "image",
             "tags",
-        ]  # Estos son los campos que se incluyen en el formulario. No se incluye slug porque ese se crea automáticamente.
+            "cook_time",
+            "prep_time",
+            "total_time",
+            "recipe_yield",
+            "recipe_cuisine",
+            "calories",
+            "fat_content",
+            "carbohydrate_content",
+            "protein_content",
+        ]
         widgets = {
             "id": forms.HiddenInput(),
             "name": forms.TextInput(
@@ -32,8 +41,37 @@ class RecipeForm(forms.ModelForm):
             ),
             "description": forms.Textarea(attrs={"class": "form-control", "rows": 4}),
             "category": forms.Select(attrs={"class": "form-select"}),
-            "tags": forms.SelectMultiple(attrs={"class": "form-check-inline", "size": 5}),
+            "image": forms.ClearableFileInput(attrs={"class": "form-control"}),
+            "tags": forms.CheckboxSelectMultiple(attrs={"class": "form-check-inline"}),
+            "cook_time": forms.TextInput(
+                attrs={"class": "form-control", "placeholder": "ej., PT30M"}
+            ),
+            "prep_time": forms.TextInput(
+                attrs={"class": "form-control", "placeholder": "ej., PT20M"}
+            ),
+            "total_time": forms.TextInput(
+                attrs={"class": "form-control", "placeholder": "ej., PT50M"}
+            ),
+            "recipe_yield": forms.TextInput(
+                attrs={"class": "form-control", "placeholder": "ej., 4 porciones"}
+            ),
+            "recipe_cuisine": forms.TextInput(
+                attrs={"class": "form-control", "placeholder": "ej., Costarricense"}
+            ),
+            "calories": forms.TextInput(
+                attrs={"class": "form-control", "placeholder": "ej., 350 kcal"}
+            ),
+            "fat_content": forms.TextInput(
+                attrs={"class": "form-control", "placeholder": "ej., 10 g"}
+            ),
+            "carbohydrate_content": forms.TextInput(
+                attrs={"class": "form-control", "placeholder": "ej., 60 g"}
+            ),
+            "protein_content": forms.TextInput(
+                attrs={"class": "form-control", "placeholder": "ej., 15 g"}
+            ),
         }
+
 
 
 # TODO: Debe haber un espacio donde el usuario pueda crear un nuevo ingrediente (que no esté en la lista de ingredientes que se despliega).
@@ -143,6 +181,7 @@ class IngredientForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields["ingredient_product"].empty_label = "Seleccione un producto..."
+        self.fields["allergies"].empty_label = "Contiene..."
         self.fields["ingredient_name"].widget.attrs.update({
             "placeholder": "Nombre",
         })
@@ -150,6 +189,7 @@ class IngredientForm(forms.ModelForm):
         self.fields["ingredient_name"].required = False
         self.fields["ingredient_description"].required = False
         self.fields["ingredient_product"].required = False
+        self.fields["allergies"].required = False
 
     class Meta:
         model = Ingredient
@@ -157,18 +197,12 @@ class IngredientForm(forms.ModelForm):
             "ingredient_name",
             "ingredient_description",
             "ingredient_product",
-            "is_vegetarian",
-            "is_vegan",
-            "is_gluten_free",
-            "is_dairy_free",
-            "is_nut_free",
-            "is_soy_free",
+            "allergies",
         ]
         widgets = {
             "ingredient_name": forms.TextInput(
                 attrs={
                     "class": "form-control",
-                    "placeholder": "Nombre del ingrediente",
                 }
             ),
             "ingredient_description": forms.Textarea(
@@ -183,34 +217,9 @@ class IngredientForm(forms.ModelForm):
                     "class": "form-select",
                 }
             ),
-            "is_vegetarian": forms.CheckboxInput(
+            "allergies": forms.SelectMultiple(
                 attrs={
-                    "class": "form-check-input",
-                }
-            ),
-            "is_vegan": forms.CheckboxInput(
-                attrs={
-                    "class": "form-check-input",
-                }
-            ),
-            "is_gluten_free": forms.CheckboxInput(
-                attrs={
-                    "class": "form-check-input",
-                }
-            ),
-            "is_dairy_free": forms.CheckboxInput(
-                attrs={
-                    "class": "form-check-input",
-                }
-            ),
-            "is_nut_free": forms.CheckboxInput(
-                attrs={
-                    "class": "form-check-input",
-                }
-            ),
-            "is_soy_free": forms.CheckboxInput(
-                attrs={
-                    "class": "form-check-input",
+                    "class": "form-select",
                 }
             ),
         }

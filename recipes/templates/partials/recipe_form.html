@@ -7,29 +7,55 @@
         <div class="mb-1">
             <label>Nombre de la receta</label>
             {{ recipe_form.name }}
-            {% if recipe_form.name.errors %}
-                <div class="alert alert-danger m-2">
-                    {% for error in recipe_form.name.errors %}
-                        {{ error }}
-                    {% endfor %}
-                </div>
-            {% endif %}
         </div>
         <div class="mb-1">
             <label>Descripción</label>
             {{ recipe_form.description }}
-            {% if recipe_form.description.errors %}
-                <div class="alert alert-danger m-2">
-                    {% for error in recipe_form.description.errors %}
-                        {{ error }}
-                    {% endfor %}
-                </div>
-            {% endif %}
+        </div>
+        <div class="mb-1">
+            <label>Imagen</label>
+            {{ recipe_form.image }}
+        </div>
+        <div class="row my-3 bg-light rounded p-2">
+            <div class="col">
+                <label>Tiempo de preparación</label>
+                {{ recipe_form.cook_time }}
+            </div>
+            <div class="col">
+                <label>Tiempo de cocción</label>
+                {{ recipe_form.prep_time }}
+            </div>
+            <div class="col">
+                <label>Tiempo total</label>
+                {{ recipe_form.total_time }}
+            </div>
+        </div>
+        <div class="row my-3 bg-light rounded p-2">
+            <div class="col">
+                <label>Porciones</label>
+                {{ recipe_form.recipe_yield }}
+            </div>
+            <div class="col">
+                <label>Tipo de cocina</label>
+                {{ recipe_form.recipe_cuisine }}
+            </div>
         </div>
     </div>
     <div class="col-lg-4">
         {% include 'partials/category_list.html' with category=recipe_form.category %}
         {% include 'partials/tag_list.html' with tags=recipe_form.tags %}
+
+        <div class="container background-amarillo rounded mb-3 p-3">
+            <h5>Información nutricional</h5>
+            <label>Calorías</label>
+                    {{ recipe_form.calories }}
+            <label>Carbohidratos</label>
+                {{ recipe_form.carbohydrate_content }}
+            <label>Grasas</label>
+                {{ recipe_form.fat_content }}
+            <label>Proteína</label>
+                {{ recipe_form.protein_content }}
+        </div>
     </div>
 </div>
 
