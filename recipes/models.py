@@ -91,7 +91,7 @@ class Recipe(models.Model):
     recipe_yield = models.CharField(max_length=50, null=True, blank=True)
     recipe_cuisine = models.CharField(max_length=100, null=True, blank=True)
 
-    # Nutritional Information
+    # Nutrition Information
     calories = models.CharField(max_length=20, null=True, blank=True)
     fat_content = models.CharField(max_length=20, null=True, blank=True)
     carbohydrate_content = models.CharField(max_length=20, null=True, blank=True)
@@ -125,7 +125,6 @@ class RecipeIngredient(models.Model):
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
     ingredient = models.ForeignKey(Ingredient, on_delete=models.CASCADE)
     unit = models.CharField(max_length=50, choices=UNIT_CHOICES, default="unit")
-    # TODO: Que la cantidad mínima sea 0 y no pueda ser negativa.
     quantity = models.DecimalField(max_digits=8, decimal_places=3)
 
     class Meta:
@@ -151,3 +150,13 @@ class Step(models.Model):
 
     def __str__(self):
         return f"Step {self.step_sequence} for {self.recipe.name}: {self.description}"
+    
+    def to_dict(self):
+        return {
+            "@type": "HowToStep",
+            "name": self.title if self.title else f"Step {self.step_sequence}",
+            "text": self.description,
+            "image": self.photo.url if self.photo else None,
+            "position": self.step_sequence
+        }
+    

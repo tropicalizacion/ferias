@@ -4,3 +4,6 @@ psycopg2
 geopy
 osm_opening_hours_humanized
 osm-humanized-opening-hours
+django_htmx
+django-json-ld
+jsonpickle

@@ -7,6 +7,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block page_title %}{% endblock %} | vamos de feria</title>
+
+  <!-- JSON-LD Schema.org -->
+  {% load json_ld %}
+  {% if structured_data %}
+      {% render_json_ld structured_data %}
+  {% endif %}
   
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="{% static 'images/favicon/favicon.png' %}">
@@ -36,8 +42,6 @@
 
     gtag('config', 'G-96HQFNE7QN');
   </script>
-  <!-- JSON-LD Schema.org -->
-  {% block schema %}{% endblock %}
 </head>
 
 <body>

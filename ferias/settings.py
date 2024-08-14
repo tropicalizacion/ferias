@@ -52,7 +52,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.postgres",
     "django.contrib.gis",
-    "django_htmx"
+    "django_htmx",
+    "django_json_ld",
 ]
 
 MIDDLEWARE = [

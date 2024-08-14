@@ -1,6 +1,7 @@
-from django.shortcuts import render, get_object_or_404, redirect, HttpResponse
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+import json
 from .models import Ingredient, Category, Tag, Recipe, RecipeIngredient, Step
 from .forms import RecipeForm, RecipeIngredientFormSet, StepFormSet, IngredientForm, CategoryForm, TagForm
 
@@ -20,10 +21,16 @@ def recipe(request, slug):
     recipe = get_object_or_404(Recipe, slug=slug)
     recipe_ingredients = RecipeIngredient.objects.filter(recipe=recipe)
     recipe_steps = Step.objects.filter(recipe=recipe)
+
+    # JSON-LD Structured Data
+    initial_data = get_structured_data(recipe, recipe_steps)
+    structured_data = json.loads(json.dumps(initial_data))
+
     context = {
         "recipe": recipe,
         "recipe_ingredients": recipe_ingredients,
         "recipe_steps": recipe_steps,
+        "structured_data": structured_data,
     }
     return render(request, "recipe.html", context)
 
@@ -362,3 +369,39 @@ def create_tag(request):
     }
     
     return render(request, 'partials/tag_list.html', context)
+
+
+def get_structured_data(recipe, recipe_steps):
+    structured_data = {
+        "@context": "http://schema.org/",
+        "@type": "Recipe",
+        "name": recipe.name,
+        "description": recipe.description,
+        "image": recipe.image.url if recipe.image else None,
+        "prepTime": format_duration(recipe.prep_time) if recipe.prep_time else None,
+        "cookTime": format_duration(recipe.cook_time) if recipe.cook_time else None,
+        "totalTime": format_duration(recipe.total_time) if recipe.total_time else None,
+        "recipeYield": recipe.recipe_yield,
+        "recipeIngredient": [ingredient.ingredient.ingredient_name for ingredient in recipe.recipeingredient_set.all()],
+        "recipeInstructions": [step.to_dict() for step in recipe_steps],
+        "recipeCategory": recipe.category.category_name if recipe.category else None,
+        "recipeCuisine": recipe.recipe_cuisine if recipe.recipe_cuisine else None,
+        "keywords": list(recipe.tags.values_list('tag_name', flat=True)),
+        "nutrition": {
+            "@type": "NutritionInformation",
+            "calories": recipe.calories if recipe.calories else "No disponible",
+            "fatContent": recipe.fat_content if recipe.fat_content else "No disponible",
+            "carbohydrateContent": recipe.carbohydrate_content if recipe.carbohydrate_content else "No disponible",
+            "proteinContent": recipe.protein_content if recipe.protein_content else "No disponible",
+        }
+    }
+
+    return structured_data
+
+
+def format_duration(duration):
+    total_seconds = int(duration.total_seconds())
+    hours = total_seconds // 3600
+    minutes = (total_seconds % 3600) // 60
+    seconds = total_seconds % 60
+    return f"PT{hours}H{minutes}M{seconds}S"
