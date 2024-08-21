@@ -3,16 +3,20 @@ from django.utils.text import slugify
 from products.models import Variety
 
 
-class AllergyType(models.TextChoices):
-    GLUTEN = "gluten", "gluten"
-    DAIRY = "dairy", "lácteos"
-    EGG = "egg", "huevo"
-    NUTS = "nuts", "nueces"
-    SOYA = (
-        "soy",
-        "soya",
-    )
-    FISH = "fish", "pescado"
+class Allergy(models.Model):
+    ALLERGY_CHOICES = {
+        "gluten": "gluten",
+        "dairy": "lácteos",
+        "egg": "huevo",
+        "nuts": "nueces",
+        "soy": "soya",
+        "fish": "pescado"
+    }
+
+    allergy = models.CharField(max_length=100, blank=True, choices=[(key, value) for key, value in ALLERGY_CHOICES.items()])
+
+    def __str__(self):
+        return self.allergy
 
 
 class Ingredient(models.Model):
@@ -25,7 +29,7 @@ class Ingredient(models.Model):
     # TODO: Evaluar cómo vincular con variedades de productos.
     ingredient_product = models.ForeignKey(Variety, blank=True, null=True, on_delete=models.SET_NULL)
     # Si no tenemos algún producto, puede quedar blank. Si sí está, vincular con el existente.
-    allergies = models.CharField(max_length=100, blank=True, null=True, choices=AllergyType.choices)
+    allergies = models.ManyToManyField(Allergy, blank=True)
     
     def __str__(self):
         return self.ingredient_name
@@ -122,6 +126,8 @@ class RecipeIngredient(models.Model):
         ("unit", "unidad"),
     ]
 
+    UNIT_NAMES = {choice[0]: choice[1] for choice in UNIT_CHOICES}
+
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
     ingredient = models.ForeignKey(Ingredient, on_delete=models.CASCADE)
     unit = models.CharField(max_length=50, choices=UNIT_CHOICES, default="unit")
@@ -131,7 +137,11 @@ class RecipeIngredient(models.Model):
         unique_together = ("recipe", "ingredient")
 
     def __str__(self):
-        return f"{self.quantity} {self.unit} of {self.ingredient.name} for {self.recipe.name}"
+        return f"{self.quantity} {self.UNIT_NAMES[self.unit]} of {self.ingredient.name} for {self.recipe.name}"
+    
+    def get_unit_name(self):
+        """Devuelve el nombre de la unidad en español."""
+        return self.UNIT_NAMES.get(self.unit, self.unit)
 
 
 class Step(models.Model):

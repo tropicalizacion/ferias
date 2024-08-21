@@ -55,7 +55,7 @@
                     <ul class="list-group">
                         {% for recipe_ingredient in recipe.recipeingredient_set.all %}
                         <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <span>{{ recipe_ingredient.quantity }} {{ recipe_ingredient.unit }} de 
+                            <span>{{ recipe_ingredient.quantity }} {{ recipe_ingredient.get_unit_name }} de 
                                 {{ recipe_ingredient.ingredient.ingredient_name }}</span>
                         </li>
                         {% endfor %}

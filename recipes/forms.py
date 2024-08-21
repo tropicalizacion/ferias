@@ -1,6 +1,6 @@
 from django import forms
 from django.utils.text import slugify
-from .models import Recipe, RecipeIngredient, Step, Tag, Ingredient, Category, Tag, Variety
+from .models import Recipe, RecipeIngredient, Step, Tag, Ingredient, Category, Tag, Variety, Allergy
 
 
 class RecipeForm(forms.ModelForm):
@@ -178,10 +178,17 @@ StepFormSet = forms.inlineformset_factory(
 
 
 class IngredientForm(forms.ModelForm):
+    allergies = forms.MultipleChoiceField(
+        choices=[(key, value) for key, value in Allergy.ALLERGY_CHOICES.items()],
+        widget=forms.CheckboxSelectMultiple,
+        required=False,
+        label="allergies"
+    )
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields["ingredient_product"].empty_label = "Seleccione un producto..."
-        self.fields["allergies"].empty_label = "Contiene..."
+        # self.fields["allergies"].choices = [(key, value) for key, value in Allergy.ALLERGY_CHOICES.items()]
         self.fields["ingredient_name"].widget.attrs.update({
             "placeholder": "Nombre",
         })
@@ -189,7 +196,7 @@ class IngredientForm(forms.ModelForm):
         self.fields["ingredient_name"].required = False
         self.fields["ingredient_description"].required = False
         self.fields["ingredient_product"].required = False
-        self.fields["allergies"].required = False
+        # self.fields["allergies"].required = False
 
     class Meta:
         model = Ingredient
@@ -217,11 +224,11 @@ class IngredientForm(forms.ModelForm):
                     "class": "form-select",
                 }
             ),
-            "allergies": forms.SelectMultiple(
-                attrs={
-                    "class": "form-select",
-                }
-            ),
+            # "allergies": forms.SelectMultiple(
+            #     attrs={
+            #         "class": "form-select",
+            #     }
+            # ),
         }
 
 

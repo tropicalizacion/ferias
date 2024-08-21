@@ -211,7 +211,6 @@ def delete_existing_recipe_ingredient_form(request, i: int, slug):
     return render(request, "partials/recipe_ingredient_form.html", context)
 
 
-
 # @login_required
 def create_recipe_step_form(request, i:int):
     step_formset = StepFormSet(prefix="steps")
@@ -325,8 +324,11 @@ def create_ingredient(request):
     if request.method == 'POST' and request.htmx:
         form = IngredientForm(request.POST)
         if form.is_valid():
-            ingredient = form.save()
+            ingredient = form.save(commit=False)
             ingredient.save()
+            
+            form.cleaned_data['allergies'] 
+            ingredient.allergies.set(form.cleaned_data['allergies'])
     
     context = {
         "ingredient_form": form,
