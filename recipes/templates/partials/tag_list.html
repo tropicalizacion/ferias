@@ -1,8 +1,7 @@
 {% block content %}
 
 <!-- Etiquetas -->
-<div id="tag-container" class="rounded p-3 bg-light mb-3">
-    <h5>Etiquetas</h5>
+<div id="tag-container">
     <div class="form-check d-flex flex-wrap">
         {% for value, label in recipe_form.tags.field.choices %}
             <input class="tag-input form-check-input" type="checkbox" id="{{ label }}" name="{{ recipe_form.tags.name }}" value="{{ value }}">

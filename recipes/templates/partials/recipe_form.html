@@ -57,7 +57,11 @@
     </div>
     <div class="col-lg-4">
         {% include 'partials/category_list.html' with category=recipe_form.category %}
-        {% include 'partials/tag_list.html' with tags=recipe_form.tags %}
+        
+        <div class="rounded p-1 bg-light mb-3">
+            <h5 class="px-3 pt-2">Etiquetas</h5>
+            {% include 'partials/tag_list.html' with tags=recipe_form.tags %}
+        </div>
 
         <div class="container background-amarillo rounded mb-3 p-3">
             <h5 class="text-center">Información nutricional</h5>
