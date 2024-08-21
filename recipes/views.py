@@ -35,7 +35,7 @@ def recipe(request, slug):
     return render(request, "recipe.html", context)
 
 
-@login_required
+# @login_required
 def create_recipe(request):
     recipe_form = RecipeForm()
     ingredient_formset = RecipeIngredientFormSet(prefix="ingredients")
@@ -82,7 +82,7 @@ def create_recipe(request):
 
 
 # Este view hace lo mismo que create_recipe, pero en lugar de enviar los formularios vacíos en GET, primero obtiene los datos de la receta de la BD.
-@login_required
+# @login_required
 def edit_recipe(request, slug):
     recipe = get_object_or_404(Recipe, slug=slug)
     recipe_form = RecipeForm(instance=recipe)
@@ -130,21 +130,20 @@ def edit_recipe(request, slug):
     return render(request, 'create_recipe.html', context)
 
 
-@login_required
+# @login_required
 def delete_recipe(request, slug):
     recipe = get_object_or_404(Recipe, slug=slug)
 
-    # Verifica si el usuario tiene el los permisos necesarios
-    if request.user.is_staff:
+    if recipe:
         recipe.delete()
         messages.success(request, "Se eliminó la receta.")
     else:
-        messages.error(request, "No tiene permisos para eliminar esta receta.")
+        messages.error(request, "No se puede eliminar esta receta.")
 
     return redirect("recetas")
 
 
-@login_required
+# @login_required
 def create_recipe_ingredient_form(request, i: int):
     ingredient_formset = RecipeIngredientFormSet(prefix="ingredients")
     ingredient_formset.min_num = i + 1
@@ -160,7 +159,7 @@ def create_recipe_ingredient_form(request, i: int):
     return render(request, "partials/recipe_ingredient_form.html", context)
 
 
-@login_required
+# @login_required
 def edit_recipe_ingredient_form(request, i:int, slug):
     recipe = get_object_or_404(Recipe, slug=slug)
     ingredient_formset = RecipeIngredientFormSet(instance=recipe, prefix="ingredients")
@@ -213,7 +212,7 @@ def delete_existing_recipe_ingredient_form(request, i: int, slug):
 
 
 
-@login_required
+# @login_required
 def create_recipe_step_form(request, i:int):
     step_formset = StepFormSet(prefix="steps")
     step_formset.min_num = i + 1
@@ -228,7 +227,7 @@ def create_recipe_step_form(request, i:int):
     return render(request, "partials/recipe_step_form.html", context)
 
 
-@login_required
+# @login_required
 def edit_recipe_step_form(request, i:int, slug):
     recipe = get_object_or_404(Recipe, slug=slug)
     step_formset = StepFormSet(instance=recipe, prefix="steps")
