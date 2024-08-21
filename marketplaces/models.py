@@ -41,7 +41,12 @@ class Marketplace(models.Model):
     name = models.CharField(max_length=127)
     name_alternate = models.CharField(max_length=127, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
-    opening_hours = models.CharField(max_length=1023, blank=True, null=True)
+    opening_hours = models.CharField(
+        max_length=1023,
+        blank=True,
+        null=True,
+        help_text="Horario de apertura de la feria, con el formato de la especificación de OpenStreetMap para opening_hours",
+    )
     location = models.PointField(blank=True, null=True)
     area = models.PolygonField(blank=True, null=True)
     size = models.CharField(choices=SIZE_CHOICES, max_length=2, blank=True, null=True)
