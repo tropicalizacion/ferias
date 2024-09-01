@@ -13,6 +13,7 @@ from drf_spectacular.utils import (
     extend_schema,
     extend_schema_view,
 )
+from django.conf import settings
 
 # Create your views here.
 
@@ -89,6 +90,12 @@ class MarketplaceViewSet(viewsets.ModelViewSet):
 class GeoMarketplaceViewSet(viewsets.ModelViewSet):
     queryset = Marketplace.objects.all().order_by("name")
     serializer_class = GeoMarketplaceSerializer
+
+def get_schema(request):
+    file_path = settings.BASE_DIR / "api" / "schema.yml"
+    return FileResponse(
+        open(file_path, "rb"), as_attachment=True, filename="schema.yml"
+    )
 
 
 def datos(request):
