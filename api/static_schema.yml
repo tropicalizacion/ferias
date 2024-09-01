@@ -1,0 +1,13 @@
+openapi: 3.0.3
+info:
+  title: API deferia.cr
+  description: "Este es un API para la aplicación deferia.cr, en el cual se pueden obtener y suministrar datos de ferias y productos."
+  version: '1.0'
+  contact:
+    email: tropicalizacion@ucr.ac.cr
+  x-logo:
+    altText: Logo deFeriaVerde
+    url: https://github.com/fabianabarca/ferias/blob/main/static/images/logos/logo_verde.png
+  license:
+    name: MIT
+    url: 'https://opensource.org/license/mit/'
