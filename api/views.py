@@ -36,12 +36,12 @@ from django.conf import settings
     ),
     update=extend_schema(
         summary="Actualizar la información de una feria",
-        description="Este endpoint permite ingresar información más actualizada acerca de una feria específica, dada su URL y su nombre. Este endpoint requiere enviar los datos de todos los atributos de dicha feria.",
+        description="Este endpoint permite ingresar información más actualizada acerca de una feria específica, dada su URL. Este endpoint requiere enviar los datos completos de todos los atributos de dicha feria.",
         responses={200: MarketplaceSerializer},
     ),
     partial_update=extend_schema(
         summary="Actualizar parcialmente la información de una feria",
-        description="Este endpoint permite ingresar información más actualizada acerca de una feria específica dada su URL y su nombre, sin necesidad de enviar los datos de todos los atributos de dicha feria, sino sólo aquellos datos que se vayan a actualizar.",
+        description="Este endpoint permite ingresar información más actualizada acerca de una feria específica, dada su URL, sin necesidad de enviar los datos de todos los atributos de dicha feria, sino sólo aquellos datos que se vayan a actualizar.",
         responses={200: MarketplaceSerializer},
     ),
     destroy=extend_schema(
@@ -63,22 +63,22 @@ class MarketplaceViewSet(viewsets.ModelViewSet):
     ),
     create=extend_schema(
         summary="Crear una nueva ubicación de feria",
-        description="Este endpoint permite crear una nueva ubicaciones de una feria en la plataforma.",
+        description="Este endpoint permite crear una nueva ubicación de una feria en la plataforma.",
         responses={201: MarketplaceSerializer},
     ),
     retrieve=extend_schema(
         summary="Obtener detalles de la ubicación de una feria específica",
-        description="Este endpoint devuelve los detalles ubicación de una feria dada su URL.",
+        description="Este endpoint devuelve los detalles de la ubicación de una feria dada su URL.",
         responses={200: MarketplaceSerializer},
     ),
     update=extend_schema(
         summary="Actualizar la ubicación de una feria",
-        description="Este endpoint permite ingresar información más actualizada acerca de la ubicación una feria específica, dada su URL y su nombre. Este endpoint requiere enviar los datos de todos los atributos de dicha feria.",
+        description="Este endpoint permite ingresar información más actualizada acerca de la ubicación de una feria específica, dada su URL. Este endpoint requiere enviar los datos completos de todos los atributos de dicha ubicación.",
         responses={200: MarketplaceSerializer},
     ),
     partial_update=extend_schema(
-        summary="Actualizar la ubicación de una feria",
-        description="Este endpoint permite ingresar información más actualizada acerca de la ubicación de una feria específica dada su URL y su nombre, sin necesidad de enviar los datos de todos los atributos de dicha feria, sino sólo aquellos datos que se vayan a actualizar.",
+        summary="Actualizar parcialmente la ubicación de una feria",
+        description="Este endpoint permite ingresar información más actualizada acerca de la ubicación de una feria específica, dada su URL, sin necesidad de enviar los datos de todos los atributos de dicha ubicación, sino sólo aquellos datos que se vayan a actualizar.",
         responses={200: MarketplaceSerializer},
     ),
     destroy=extend_schema(
