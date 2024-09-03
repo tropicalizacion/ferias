@@ -637,15 +637,15 @@ info:
   contact:
     email: tropicalizacion@ucr.ac.cr
   description: "Este es un API para la aplicaci\xF3n deferia.cr, en el cual se pueden\
-    \ obtener y suministrar datos de ferias y productos."
+    \ obtener y suministrar datos de ferias y productos.\n\n**TC-691 \"Tropicalizaci\xF3\
+    n de la Tecnolog\xEDa\"**"
   license:
-    name: MIT
-    url: https://opensource.org/license/mit/
+    name: CC BY 4.0
   title: API deferia.cr
   version: '1.0'
   x-logo:
+    altText: Logo deFeriaVerde
     url: https://raw.githubusercontent.com/fabianabarca/ferias/main/static/images/logos/logo_verde.png
-    altText: Logo deFeriaRojo
 openapi: 3.0.3
 paths:
   /datos/api/ferias/:
@@ -1011,3 +1011,11 @@ paths:
       summary: "Actualizar la ubicaci\xF3n de una feria"
       tags:
       - geoferias
+tags:
+- description: "Datos sobre las ferias, como nombre, productos, ubicaci\xF3n, contactos,\
+    \ entre otros."
+  name: ferias
+  x-displayName: Sobre las ferias
+- description: "Datos sobre la ubicaci\xF3n geoespacial de cada feria."
+  name: geoferias
+  x-displayName: "Ubicaci\xF3n de las ferias"
