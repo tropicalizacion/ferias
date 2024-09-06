@@ -5,6 +5,7 @@ from . import views
 router = routers.DefaultRouter()
 router.register(r"ferias", views.MarketplaceViewSet)
 router.register(r"geoferias", views.GeoMarketplaceViewSet, basename="geo_marketplace")
+router.register(r"productos", views.ProductViewSet)
 
 urlpatterns = [
     path("", views.datos, name="datos"),
