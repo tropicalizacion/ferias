@@ -1,5 +1,6 @@
 from marketplaces.models import Marketplace
 from products.models import Product  # TODO: import other classes in the models.py file
+from products.models import Variety
 from rest_framework import serializers
 from rest_framework_gis.serializers import GeoFeatureModelSerializer
 
@@ -62,6 +63,8 @@ class GeoMarketplaceSerializer(GeoFeatureModelSerializer):
 
 
 class ProductSerializer(serializers.ModelSerializer):
+    varieties = serializers.SerializerMethodField()
+
     class Meta:
         model = Product
         fields = [
@@ -80,4 +83,14 @@ class ProductSerializer(serializers.ModelSerializer):
             "preparation_notes",
             "storage",
             "storage_notes",
+            "varieties",
+        ]
+
+    def get_varieties(self, obj):
+        return [
+            {
+                "common_name_variety": variety.common_name_variety,
+                "scientific_name": variety.scientific_name,
+            }
+            for variety in obj.varieties.all()
         ]
