@@ -27,6 +27,7 @@ class GeoMarketplaceViewSet(viewsets.ModelViewSet):
 
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all().order_by("common_name")
+    queryset = Product.objects.prefetch_related("varieties").all()
     serializer_class = ProductSerializer
 
 

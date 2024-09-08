@@ -62,8 +62,18 @@ class GeoMarketplaceSerializer(GeoFeatureModelSerializer):
         )
 
 
+class VarietySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Variety
+        fields = [
+            "scientific_name",
+            "scientific_name_variety",
+            "common_name_variety",
+            "common_name_variety_alternate",
+        ]
+
 class ProductSerializer(serializers.ModelSerializer):
-    varieties = serializers.SerializerMethodField()
+    varieties = VarietySerializer(many=True, read_only=True)
 
     class Meta:
         model = Product
