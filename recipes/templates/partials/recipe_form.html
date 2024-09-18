@@ -5,21 +5,21 @@
 <div class="row p-2">
     <div class="col">
         <div class="mb-1">
-            <label>Nombre de la receta</label>
+            <label><strong>Nombre de la receta:</strong></label>
             {{ recipe_form.name }}
         </div>
         <div class="mb-1">
-            <label>Descripción</label>
+            <label<strong>Descripción:</strong></label>
             {{ recipe_form.description }}
         </div>
         <div class="mb-1">
-            <label>Imagen</label>
+            <label><strong>Imagen:</strong></label>
             {{ recipe_form.image }}
         </div>
         <div class="row my-3 bg-light rounded p-2">
             <div class="col">
                 <div class="d-flex flex-column align-items-start">
-                    <div class="text-center"><label>Tiempo de preparación:</label></div>
+                    <div class="text-center"><label><strong>Tiempo de preparación:</strong></label></div>
                     <div class="d-inline-flex align-items-center justify-content-start">
                         <div class="w-50 me-1">{{ recipe_form.prep_time }}</div><span>min</span>
                     </div>
@@ -27,7 +27,7 @@
             </div>
             <div class="col">
                 <div class="d-flex flex-column align-items-start">
-                    <div class=""><label>Tiempo de cocción:</label></div>
+                    <div class=""><label><strong>Tiempo de cocción:</strong></label></div>
                     <div class="d-inline-flex align-items-center justify-content-start">
                         <div class="w-50 me-1">{{ recipe_form.cook_time }}</div><span>min</span>
                     </div>
@@ -35,7 +35,7 @@
             </div>
             <div class="col">
                 <div class="d-flex flex-column align-items-start">
-                    <div class="text-center"><label>Tiempo total:</label></div>
+                    <div class="text-center"><label><strong>Tiempo total:</strong></label></div>
                     <div class="d-inline-flex align-items-center justify-content-start">
                         <div class="w-50 me-1">{{ recipe_form.total_time }}</div><span>min</span>
                     </div>
@@ -44,13 +44,13 @@
         </div>
         <div class="row my-3 bg-light rounded p-2">
             <div class="col">
-                <label>Porciones</label>
+                <label><strong>Porciones</strong></label>
                 <div class="d-inline-flex align-items-center justify-content-start">
                     <div class="w-25 me-1">{{ recipe_form.recipe_yield }}</div><span>porciones</span>
                 </div>
             </div>
             <div class="col">
-                <label>Tipo de cocina</label>
+                <label><strong>Tipo de cocina:</strong></label>
                 {{ recipe_form.recipe_cuisine }}
             </div>
         </div>
