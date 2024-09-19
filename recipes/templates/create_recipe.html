@@ -22,7 +22,7 @@
 
 <!-- Formulario completo -->
 <div class="container my-5">
-    <h1 class="mb-4">{{ title }}</h1>
+    <h1 class="mb-4"><strong>{{ title }}</strong></h1>
 
     <form
         action="{% if recipe.slug %}{% url 'edit_recipe' recipe.slug %}{% else %}{% url 'create_recipe' %}{% endif %}"
