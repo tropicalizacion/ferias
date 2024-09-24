@@ -138,7 +138,7 @@ def delete_recipe(request, slug):
         recipe.delete()
         messages.success(request, "Se eliminó la receta.")
     else:
-        messages.error(request, "No se puede eliminar esta receta.")
+        messages.error(request, "Error al eliminar la receta.")
 
     return redirect("recetas")
 

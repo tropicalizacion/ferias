@@ -4,124 +4,139 @@
 
 <div class="row p-2">
     <div class="col">
-        <div class="mb-1">
-            <label>Nombre de la receta</label>
-            {{ recipe_form.name }}
-        </div>
-        <div class="mb-1">
-            <label>Descripción</label>
-            {{ recipe_form.description }}
-        </div>
-        <div class="mb-1">
-            <label>Imagen</label>
-            {{ recipe_form.image }}
-        </div>
-        <div class="row my-3 bg-light rounded p-2">
-            <div class="col">
-                <div class="d-flex flex-column align-items-start">
-                    <div class="text-center"><label>Tiempo de preparación</label></div>
-                    <div class="d-inline-flex align-items-center justify-content-start">
-                        <div class="w-50 me-1">{{ recipe_form.prep_time }}</div><span>min</span>
+        <div class="bg-light rounded p-2">
+            <div class="mb-1 mx-2">
+                <label>Nombre de la receta</label>
+                {{ recipe_form.name }}
+            </div>
+            <div class="mb-1 mx-2">
+                <label>Descripción</label>
+                {{ recipe_form.description }}
+            </div>
+            <div class="mb-4 mx-2">
+                <label>Imagen</label>
+                {{ recipe_form.image }}
+            </div>
+            <div class="row mb-4 mx-2 bg-white rounded p-2">
+                <label class="mb-3">Duración (Tiempo en minutos)</label>
+                <div class="col">
+                    <div class="d-flex flex-column align-items-start">
+                        <label class="text-start">Preparación</label>
+                        <div class="d-inline-flex align-items-center justify-content-start">
+                            <div class="w-75 me-1">{{ recipe_form.prep_time }}</div><span>min</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="d-flex flex-column align-items-start">
+                        <label class="text-start">Cocción</label>
+                        <div class="d-inline-flex align-items-center justify-content-start">
+                            <div class="w-75 me-1">{{ recipe_form.cook_time }}</div><span>min</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="d-flex flex-column align-items-start">
+                        <label class="text-start">Total</label>
+                        <div class="d-inline-flex align-items-center justify-content-start">
+                            <div class="w-75 me-1">{{ recipe_form.total_time }}</div><span>min</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="d-flex flex-column align-items-start">
-                    <div class=""><label>Tiempo de cocción</label></div>
+            <div class="row mb-4 mx-2 bg-white rounded p-2">
+                <div class="col">
+                    <label>Porciones</label>
                     <div class="d-inline-flex align-items-center justify-content-start">
-                        <div class="w-50 me-1">{{ recipe_form.cook_time }}</div><span>min</span>
+                        <div class="w-75 me-1">{{ recipe_form.recipe_yield }}</div><span>porciones</span>
                     </div>
                 </div>
-            </div>
-            <div class="col">
-                <div class="d-flex flex-column align-items-start">
-                    <div class="text-center"><label>Tiempo total</label></div>
-                    <div class="d-inline-flex align-items-center justify-content-start">
-                        <div class="w-50 me-1">{{ recipe_form.total_time }}</div><span>min</span>
-                    </div>
+                <div class="col">
+                    <label>Tipo de cocina</label>
+                    {{ recipe_form.recipe_cuisine }}
                 </div>
+                <div class="col-1"></div>
             </div>
-        </div>
-        <div class="row my-3 bg-light rounded p-2">
-            <div class="col">
-                <label>Porciones</label>
-                <div class="d-inline-flex align-items-center justify-content-start">
-                    <div class="w-25 me-1">{{ recipe_form.recipe_yield }}</div><span>porciones</span>
-                </div>
-            </div>
-            <div class="col">
-                <label>Tipo de cocina</label>
-                {{ recipe_form.recipe_cuisine }}
-            </div>
-            <div class="col"></div>
         </div>
     </div>
     <div class="col-lg-4">
-        {% include 'partials/category_list.html' with category=recipe_form.category %}
-        
-        <div class="rounded background-verde mb-3 p-2">
-            <h5 class="text-white px-1">Etiquetas</h5>
-            <div class="rounded p-2 bg-white rounded">
-                
-                <div class="border rounded">
-                    {% include 'partials/tag_list.html' with tags=recipe_form.tags %}
+        <div class="d-flex flex-column justify-content-between">
+            <div class="container rounded background-verde mb-3 p-2">
+                <h5 class="text-white px-1">Categoría</h5>
+                {% include 'partials/category_list.html' with category=recipe_form.category %}
+            </div>
+            
+            <div class="container rounded background-verde mb-3 p-2">
+                <h5 class="text-white px-1">Etiquetas</h5>
+                <div class="p-2 bg-white rounded">
+                    <div class="border rounded">
+                        {% include 'partials/tag_list.html' with tags=recipe_form.tags %}
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="container background-amarillo rounded mb-3 p-2">
-            <div class="bg-black rounded p-1">
-                <div class="background-amarillo rounded p-2">
-                    <h5 class="text-center">Información nutricional</h5>
-                    <hr class="text-black my-2" />
-
-                    <div class="row">
-                        <div class="col-5 text-end align-content-center">
-                            <strong>Calorías</strong>
-                        </div>
-                        <div class="col-6">
-                            <div class="d-inline-flex align-items-center justify-content-start">
-                                <div class="mx-1 w-75">{{ recipe_form.calories }}</div>
-                                <span>kcal</span>
+    
+            <div class="container background-amarillo rounded mb-3 p-2">
+                <div class="bg-black rounded p-1">
+                    <div class="background-amarillo rounded p-2">
+                        <h5 class="text-center">Información nutricional</h5>
+                        <hr class="text-black my-2" />
+    
+                        <div class="row">
+                            <div class="col text-end align-content-center">
+                                <strong>Calorías</strong>
+                            </div>
+                            <div class="col">
+                                <div class="d-inline-flex align-items-center justify-content-start">
+                                    <div class="mx-1 w-75">
+                                        <input type="number" name="calories" class="background-amarillo border border-dark rounded w-100" id="id_calories" min="0">
+                                    </div>
+                                    <span>kcal</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <hr class="text-black my-2" />
-                    
-                    <div class="row">
-                        <div class="col text-end align-content-center">
-                            <strong>Carbohidratos</strong>
-                        </div>
-                        <div class="col">
-                            <div class="d-inline-flex align-items-center justify-content-end">
-                                <div class="mx-1 w-75">{{ recipe_form.carbohydrate_content }}</div>
-                                <span>gramos</span>
+                        <hr class="text-black my-2" />
+                        
+                        <div class="row">
+                            <div class="col text-end align-content-center">
+                                <strong>Carbohidratos</strong>
+                            </div>
+                            <div class="col">
+                                <div class="d-inline-flex align-items-center justify-content-end">
+                                    <div class="mx-1 w-75">
+                                        <input type="number" name="carbohydrate_content" class="background-amarillo border border-dark rounded w-100" id="id_carbohydrate_content" min="0">
+                                    </div>
+                                    <span>gramos</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <hr class="text-black my-2" />
-
-                    <div class="row">
-                        <div class="col text-end align-content-center">
-                            <strong>Grasas</strong>
-                        </div>
-                        <div class="col">
-                            <div class="d-inline-flex align-items-center justify-content-end">
-                                <div class="mx-1 w-75">{{ recipe_form.fat_content }}</div>
-                                <span>gramos</span>
+                        <hr class="text-black my-2" />
+    
+                        <div class="row">
+                            <div class="col text-end align-content-center">
+                                <strong>Grasas</strong>
+                            </div>
+                            <div class="col">
+                                <div class="d-inline-flex align-items-center justify-content-end">
+                                    <div class="mx-1 w-75 background-amarillo">
+                                        <input type="number" name="fat_content" class="background-amarillo border border-dark rounded w-100" id="id_fat_content" min="0">
+                                    </div>
+                                    <span>gramos</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <hr class="text-black my-2" />
-
-                    <div class="row">
-                        <div class="col text-end align-content-center">
-                            <strong>Proteína</strong>
-                        </div>
-                        <div class="col">
-                            <div class="d-inline-flex align-items-center justify-content-end">
-                                <div class="mx-1 w-75">{{ recipe_form.protein_content }}</div>
-                                <span>gramos</span>
+                        <hr class="text-black my-2" />
+    
+                        <div class="row">
+                            <div class="col text-end align-content-center">
+                                <strong>Proteína</strong>
+                            </div>
+                            <div class="col">
+                                <div class="d-inline-flex align-items-center justify-content-end">
+                                    <div class="mx-1 w-75">
+                                        <input type="number" name="protein_content" class="background-amarillo border border-dark rounded w-100" id="id_protein_content" min="0">
+                                    </div>
+                                    <span>gramos</span>
+                                </div>
                             </div>
                         </div>
                     </div>
