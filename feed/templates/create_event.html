@@ -14,7 +14,7 @@
 
     <h1 class="hero-deferia rojo align-self-center fw-bold m-3">Crear evento para la feria de {{marketplace_admin.marketplace}}</h1>
 
-    <div class="container-form-avisos text-white align-self-center">
+    <div class="container-form-avisos fw-bold align-self-center shadow">
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="form-group m-2">
@@ -45,7 +45,9 @@
                 <label for="image">Imagen:</label>
                 <input type="file" class="form-control-file" id="image" name="image">
             </div>
-            <button type="submit" class="btn btn-primary m-2">Crear Evento</button>
+            <div class="w-100 d-flex justify-content-end">
+                <button type="submit" class="btn btn-primary m-2">Crear Evento</button>
+            </div>
         </form>
     </div>
 </div>

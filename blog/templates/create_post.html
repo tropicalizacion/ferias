@@ -12,7 +12,7 @@
 
 <div class="d-flex flex-column w-100 justify-content-center pt-4">
 
-    <div class="container-form-avisos text-white align-self-center">
+    <div class="container-form-avisos fw-bold align-self-center shadow">
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="form-group m-2">
@@ -43,7 +43,9 @@
                 <label for="read_time">Tiempo de lectura:</label>
                 <input type="number" class="form-control-file" id="read_time" name="read_time">
             </div>
-            <button type="submit" class="btn btn-primary m-2">Crear Blog</button>
+            <div class="w-100 d-flex justify-content-end">
+                <button type="submit" class="btn btn-primary m-2">Crear Blog</button>
+            </div>
         </form>
     </div>
 </div>

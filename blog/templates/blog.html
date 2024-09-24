@@ -8,26 +8,32 @@
 {% block main %}
 
 <div class="container mt-5 position-relative">
-    <div class="card border-0 m-auto shadow mb-5 w-25">
-        <a href="{% url 'create_post' %}" class="btn background-verde text-white fw-bold btn-crear-aviso">Crear post</a>
-    </div>
-    
-    <form method="GET" action="{% url 'blog' %}" class="mb-3">
-        <div class="form-group w-25 position-absolute tags_filter">
-            <label for="tag">Filtrar por categoría:</label>
-            <select name="tag" id="tag" class="form-control" onchange="this.form.submit()">
-                <option value="">Todas</option>
-                {% for tag in tags %}
-                    <option value="{{ tag.id }}" {% if tag.id|stringformat:"d" == selected_tag_id %}selected{% endif %}>
-                        {{ tag.name }}
-                    </option>
-                {% endfor %}
-            </select>
-        </div>
-    </form>
 
-    <div class="row">
+    <div class="row">    
         <div class="col-md-8 offset-md-2">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <form method="GET" action="{% url 'blog' %}" class="mb-3">
+                        <div class="form-group">
+                            <label class="fw-bold" for="tag">Filtrar por categoría:</label>
+                            <select name="tag" id="tag" class="form-select" onchange="this.form.submit()">
+                                <option value="">Todas</option>
+                                {% for tag in tags %}
+                                    <option value="{{ tag.id }}" {% if tag.id|stringformat:"d" == selected_tag_id %}selected{% endif %}>
+                                        {{ tag.name }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                {% if is_author %}
+                <div class="shadow">
+                    <a href="{% url 'create_post' %}" class="btn background-verde text-white fw-bold btn-crear-aviso">Crear post</a>
+                </div>
+                {% endif %} 
+        
+            </div>
             {% for post in blog_posts %}
                 <div class="blog-post">
                     <div class="d-flex justify-content-between">
@@ -40,7 +46,7 @@
                                 {{ post.author }} - {{ post.publication_date|date:"F j, Y" }}
                             </p>
                             <p class="mb-0">{{ post.description|truncatewords:40 }}</p>
-                            <a class="text-secondary text-decoration-none" href="{% url 'post' post.slug %}">Ver más...</a>
+                            <a class="text-secondary" href="{% url 'post' post.slug %}">Ver más...</a>
                             <div class="meta-info mt-2">
                                 <span>{{ post.read_time }} min de lectura</span>
                             </div>

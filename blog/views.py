@@ -4,15 +4,32 @@ from users.models import Author
 from django.contrib.auth.decorators import login_required
 
 def blog(request):
+    
+    user = request.user
+    is_author = False
     selected_tag_id = request.GET.get('tag')
     tags = Tag.objects.all()
+
+    if user.is_authenticated:
+        try:
+            user_author = Author.objects.get(user=request.user)
+            is_author = True
+        except Author.DoesNotExist:
+            is_author = False
     
     if selected_tag_id:
         blog_posts = BlogPost.objects.filter(tags__id=selected_tag_id)
     else:
         blog_posts = BlogPost.objects.all()
+
+    context = {
+        "is_author": is_author,
+        "blog_posts": blog_posts,
+        "tags": tags,
+        "selected_tag_id": selected_tag_id
+    }
         
-    return render(request, 'blog.html', {'blog_posts': blog_posts, 'tags': tags, 'selected_tag_id': selected_tag_id})
+    return render(request, 'blog.html', context=context)
 
 
 @login_required
@@ -48,9 +65,19 @@ def create_post(request):
 
 
 def post(request, slug):
+    user = request.user
+    is_author = False
     blog_post = get_object_or_404(BlogPost, slug=slug)
+
+    if user.is_authenticated:
+        try:
+            user_author = Author.objects.get(user=request.user)
+            if blog_post.author == user_author:
+                is_author = True
+        except Author.DoesNotExist:
+            is_author = False
     
-    return render(request, 'post.html', {'post': blog_post})
+    return render(request, 'post.html', {'post': blog_post, 'is_author': is_author})
 
 
 @login_required

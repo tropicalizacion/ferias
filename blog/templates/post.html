@@ -13,7 +13,7 @@
                         <div>
                             <div class="d-flex">
                                 <h2>{{ post.title }}</h2>
-                                {% if user.is_authenticated %}
+                                {% if is_author %}
                                     <a class="nav-link mx-2" href="{% url 'edit_post' post.slug %}">
                                         <i class="fa-solid fa-pen-to-square"></i>
                                     </a>
@@ -28,7 +28,9 @@
                             </div>
                         </div>
                         {% if post.image %}
+                        <div class="d-none d-sm-block">
                             <img src="{{ post.image.url }}" alt="Blog Image" class="img-fluid blog-image">
+                        </div>
                         {% endif %}
                     </div>
                 </div>
