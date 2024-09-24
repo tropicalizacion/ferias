@@ -8,6 +8,10 @@ router.register(r"ferias", views.MarketplaceViewSet)
 router.register(r"geoferias", views.GeoMarketplaceViewSet, basename="geo_marketplace")
 router.register(r"productos", views.ProductViewSet)
 
+# To see the api documentation, go to /api/docs/. 
+# If you are creating a new API or endpoint, in order for the documentation to 
+# be generated, read the instrucctions in the `comb_schema_script.py` file.
+
 urlpatterns = [
     path("", views.datos, name="datos"),
     path("ferias", views.ferias, name="datos-ferias"),
