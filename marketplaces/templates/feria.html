@@ -19,8 +19,10 @@
     <h1 class="text-white fw-bold">
         {% if marketplace.type == 'feria' %}
         Feria del agricultor de
-        {% else %}
+        {% elif marketplace.type == 'mercado' %}
         Mercado libre de
+        {% else %}
+        Mercado agrícola local de
         {% endif %}
     </h1>
     <h1 class="display-1 text-white display-deferia">{{ marketplace.name }}</h1>

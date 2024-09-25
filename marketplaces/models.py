@@ -30,7 +30,7 @@ class Marketplace(models.Model):
         ("street_side", "al lado de la calle en espacio dedicado"),
         ("surface", "un un espacio amplio de parqueo"),
     ]
-    MARKETPLACE_TYPE_CHOICES = [
+    TYPE_CHOICES = [
         ("feria", "Feria del Agricultor"),
         ("mercado", "Mercado Libre"),
         ("otro", "Otro tipo de feria"),
@@ -50,7 +50,7 @@ class Marketplace(models.Model):
     district = models.CharField(max_length=31)
     postal_code = models.IntegerField(blank=True, null=True)
     address = models.TextField(blank=True, null=True)
-    phone = models.IntegerField(blank=True, null=True)
+    phone = models.CharField(max_length=127, blank=True, null=True)
     email = models.EmailField(max_length=127, blank=True, null=True)
     website = models.URLField(max_length=255, blank=True, null=True)
     facebook = models.URLField(max_length=255, blank=True, null=True)
@@ -60,8 +60,8 @@ class Marketplace(models.Model):
     branch = models.CharField(
         choices=BRANCH_CHOICES, max_length=63, blank=True, null=True
     )
-    marketplace_type = models.CharField(
-        max_length=31, choices=MARKETPLACE_TYPE_CHOICES, blank=True, null=True
+    type = models.CharField(
+        max_length=31, choices=TYPE_CHOICES, blank=True, null=True
     )
     # Infrastructure
     parking = models.CharField(
