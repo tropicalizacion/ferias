@@ -454,7 +454,7 @@
 <!-- Leaflet Map -->
 <script>
 
-    const map = L.map('map').setView([{{ marketplace.location.y | unlocalize }}, { { marketplace.location.x | unlocalize } }], 15);
+    const map = L.map('map').setView([{{ marketplace.location.y | unlocalize }}, {{ marketplace.location.x | unlocalize }}], 15);
 
     const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
@@ -462,7 +462,7 @@
     }).addTo(map);
 
     const popup = L.popup()
-        .setLatLng([{{ marketplace.location.y | unlocalize }}, { { marketplace.location.x | unlocalize } }])
+        .setLatLng([{{ marketplace.location.y | unlocalize }}, {{ marketplace.location.x | unlocalize }}])
         .setContent("Feria de {{ marketplace.name }}")
         .openOn(map);
 
