@@ -13,27 +13,86 @@
     <div class="card col-lg-8 mx-auto bg-transparent border-0">
         <h1 class="display-1 mt-5 text-white hero-deferia">{{ texts.hero.content }}</h1>
         <div class="card col-lg-6 mx-auto bg-transparent border-0 mt-5">
-            <h3 class="title-deferia text-white">
-                Este es un proyecto del trabajo comunal universitario TC&#8209;691 <em>Tropicalización de la tecnología</em> de la Escuela de Ingeniería Eléctrica de la Universidad de Costa Rica
-                <br>
-                <img src="{% static 'images/logos/ucr_logo.png' %}" height="40px" alt="">
-                <img src="{% static 'images/logos/tcu_logo.png' %}" height="40px" alt="" class="mx-3 my-5">
-                <img src="{% static 'images/logos/eie_logo.png' %}" height="40px" alt="">
-            </h3>
+            <h2 class="text-center title-deferia text-white">{{ texts.hero_desc.content }}</h2>
         </div>
     </div>
 </div>
 
 <!-- Presentación -->
 <div class="container mt-5">
-
-    <h2 class="text-center title-deferia verde">{{ texts.hero_desc.content }}</h2>
+    <!--
+    <h3 class="title-deferia verde">
+        Este es un proyecto del trabajo comunal universitario TC&#8209;691 <em>Tropicalización de la tecnología</em> de la Escuela de Ingeniería Eléctrica de la Universidad de Costa Rica
+        <br>
+        <img src="{% static 'images/logos/ucr_logo.png' %}" height="40px" alt="">
+        <img src="{% static 'images/logos/tcu_logo.png' %}" height="40px" alt="" class="mx-3 my-5">
+        <img src="{% static 'images/logos/eie_logo.png' %}" height="40px" alt="">
+    </h3>
+    
 
     <p class="lead text-center">Contacto: <a href="mailto:tropicalizacion@ucr.ac.cr" target="_blank">tropicalizacion@ucr.ac.cr</a></p>
+    -->
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="card h-100 border-0 bg-transparent">
+                <div class="card-body">
+                    <h5 class="card-title">Una producción de</h5>
+                    <div class="text-center my-4">
+                        <img src="{% static 'logos/tropicalizacion_logo.png' %}" height="50px" alt="">  
+                    </div>
+                    <p class="card-text">Proyecto TC-691 de la Vicerrectoría de Acción Social de la Universidad de Costa Rica</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 border-0 bg-transparent">
+                <div class="card-body">
+                    <h5 class="card-title">Con el auspicio y apoyo técnico de</h5>
+                    <div class="text-center my-4">
+                        <img src="{% static 'logos/fao_logo.svg' %}" height="50px" alt="">  
+                    </div>
+                    <p class="card-text">Oficinas de las representaciones nacionales de Costa Rica y Chile</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 border-0 bg-transparent">
+                <div class="card-body">
+                    <h5 class="card-title">Con el aval y colaboración de</h5>
+                    <p>
+                        <h1 class="display-4 text-center">CNP | JNFA</h1>
+                    </p>
+                    <p class="card-text">Consejo Nacional de Producción y Junta Nacional de Ferias del Agricultor</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 border-0 bg-transparent">
+                <div class="card-body">
+                    <h5 class="card-title">Con la colaboración de</h5>
+                    <p>
+                        <h1 class="display-4 text-center">EIE</h1>
+                    </p>
+                    <p class="card-text">Escuela de Ingeniería Eléctrica de la Universidad de Costa Rica</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 border-0 bg-transparent">
+                <div class="card-body">
+                    <h5 class="card-title">Con la colaboración de</h5>
+                    <p>
+                        <h1 class="display-4 text-center">ENu</h1>
+                    </p>
+                    <p class="card-text">Escuela de Nutrición de la Universidad de Costa Rica</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <hr>
 
-    <h4>Dirección</h4>
+    <h4>Dirección del proyecto</h4>
     <p class="lead">
         <span class="fw-bold">Fabián Abarca Calderón</span> <br>
         <em>Escuela de Ingeniería Eléctrica</em> <br>
@@ -41,7 +100,7 @@
         <span class="small"><a href="mailto:fabian.abarca@ucr.ac.cr" target="_blank">fabian.abarca@ucr.ac.cr</a></span>
     </p>
 
-    <h4>Estudiantes</h4>
+    <h4><i class="fa-solid fa-star text-warning"></i> Estudiantes de TCU</h4>
 
     <dl>
         {% for student in students %}
@@ -60,6 +119,18 @@
         <li>Sofía Abarca y Pablo Berthely</li>
     </ul>
 
+    <h4>Desarrollo del sitio web</h4>
+
+    <p>
+        Este es un proyecto de código abierto con licencia MIT, disponible en GitHub.
+    </p>
+    <p class="lead">
+        <i class="fa-brands fa-github"></i>
+        <a href="https://github.com/fabianabarca/ferias" target="_blank" class="text-decoration-none">https://github.com/fabianabarca/ferias</a>
+    </p>
+    <p>
+        El proyecto utiliza Django, una plataforma de desarrollo web en Python, y Bootstrap, una librería de diseño web.
+    </p>
 </div>
 
 {% endblock %}

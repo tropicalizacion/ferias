@@ -1,7 +1,15 @@
 django
 python-decouple
-psycopg2
+djangorestframework
+djangorestframework-gis
+drf-spectacular
+psycopg2-binary
 geopy
+pandas
+geopandas
+pillow
+openpyxl
 osm_opening_hours_humanized
 osm-humanized-opening-hours
 django-tinymce
+gunicorn

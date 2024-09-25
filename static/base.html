@@ -227,47 +227,24 @@
             </li>
             <!-- Sin blog
           <li class="nav-item mb-2"><a href="{% url 'consejos' %}" class="nav-link p-0 text-body-secondary">Nuestros consejos</a></li> -->
-          </ul>
-        </div>
-
-        <div class="col mb-3">
-          <h5>deferia.cr</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2">
-              <a
-                href="{% url 'sobre-ferias' %}"
-                class="nav-link p-0 text-body-secondary"
-                >Sobre las ferias</a
-              >
-            </li>
-            <li class="nav-item mb-2">
-              <a
-                href="{% url 'sobre' %}"
-                class="nav-link p-0 text-body-secondary"
-                >Sobre el proyecto</a
-              >
-            </li>
-            <li class="nav-item mb-2">
-              <a
-                href="{% url 'ingresar' %}"
-                class="nav-link p-0 text-body-secondary"
-                >Ingresar a cuenta</a
-              >
-            </li>
-            {% if user.is_authenticated %}
-            <li class="nav-item mb-2">
-              <a
-                href="{% url 'salir' %}"
-                class="nav-link p-0 text-body-secondary"
-                >Cerrar sesión
-                <span class="small">({{ user.first_name }})</span></a
-              >
-            </li>
-            {% endif %}
-          </ul>
-        </div>
-      </footer>
-    </div>
+        </ul>
+      </div>
+  
+      <div class="col mb-3">
+        <h5>deferia.cr</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="{% url 'datos' %}" class="nav-link p-0 text-body-secondary">Datos | API</a></li>
+          <li class="nav-item mb-2"><a href="{% url 'sobre-ferias' %}" class="nav-link p-0 text-body-secondary">¿Qué son las ferias?</a></li>
+          <li class="nav-item mb-2"><a href="{% url 'sobre' %}" class="nav-link p-0 text-body-secondary">Sobre este proyecto</a></li>
+          {% if user.is_authenticated %}
+          <li class="nav-item mb-2"><a href="{% url 'salir' %}" class="nav-link p-0 text-body-secondary">Cerrar sesión <span class="small">({{ user.first_name }})</span></a></li>
+          {% else %}
+          <li class="nav-item mb-2"><a href="{% url 'ingresar' %}" class="nav-link p-0 text-body-secondary">Ingresar a cuenta</a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </footer>
+  </div>
 
     <!-- Bootstrap JS -->
     <script

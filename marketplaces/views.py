@@ -12,6 +12,7 @@ from django.contrib.gis.geos import Point
 import math
 import json
 from datetime import datetime
+from decouple import config
 
 # Create your views here.
 
@@ -78,6 +79,7 @@ def ferias(request):
     
     context = {
         "texts": texts,
+        "google_maps_api_key": config("GOOGLE_MAPS_API_KEY"),
         "marketplaces": marketplaces,
         "marketplaces_map": marketplaces_map,
         "total_marketplaces": total_marketplaces,

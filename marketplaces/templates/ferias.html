@@ -94,8 +94,6 @@
 
 <script src="{% static 'js/marketplaces.js' %}" data-n-days="{{ n_days }}" data-n-provinces="{{ n_provinces }}" data-n-infrastructure="{{ n_infrastructure }}" data-n-amenities="{{ n_amenities }}"></script>
 
-<script src="{% static 'js/search.js' %}"></script>
-
 <!-- TypeIt JS -->
 <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
 <script>
@@ -115,8 +113,5 @@
         .type("saludar a la gente", { delay: 1500 })
         .go();
 </script>
-
-<!-- Google Maps API and Keys -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2WP2FoMe4DRz20FsGGi51opPlfjcm4KM&libraries=places"></script>
 
 {% endblock %}
