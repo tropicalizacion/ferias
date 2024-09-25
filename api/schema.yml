@@ -657,53 +657,70 @@ components:
     PatchedProduct:
       properties:
         category:
-          $ref: '#/components/schemas/CategoryEnum'
+          allOf:
+          - $ref: '#/components/schemas/CategoryEnum'
+          description: "Categor\xEDa del producto\n\n* `verdura` - Verdura u hortaliza\n\
+            * `fruta` - Fruta\n* `cereal` - Cereal o grano\n* `legumbre` - Legumbre\
+            \ o leguminosa\n* `raiz` - Tub\xE9rculo o ra\xEDz\n* `condimento` - Condimento\
+            \ o especia\n* `hierba` - Hierba arom\xE1tica\n* `otro` - Otra categor\xED\
+            a"
         center_origin:
+          description: "Regi\xF3n de origen del producto"
           items:
-            description: "Definici\xF3n seg\xFAn 'From Vavilov to the Present: A Review'\
-              \ C. Earle Smith, Jr., Economic Botany, Vol. 23, No. 1 (Jan. - Mar.,\
-              \ 1969), que va desde I hasta VIII."
             type: string
           type: array
         center_origin_notes:
+          description: "Notas sobre la regi\xF3n originaria del producto"
           nullable: true
           type: string
         common_name:
+          description: "Nombre com\xFAn del producto"
           maxLength: 63
           type: string
         common_name_alternate:
+          description: "Nombre com\xFAn alternativo del producto"
           nullable: true
           type: string
         description:
+          description: "Descripci\xF3n del producto"
           nullable: true
           type: string
         food_basket:
+          description: "\xBFEs parte de la canasta b\xE1sica de alimentos?"
           type: boolean
         icon:
+          description: Icono utilizado para ilustrar el producto
           format: uri
           nullable: true
           type: string
         name_origin:
+          description: "Origen del nombre com\xFAn"
           nullable: true
           type: string
         nutrition_notes:
+          description: Notas sobre los datos nutricionales del producto
           nullable: true
           type: string
         preparation:
+          description: "M\xE9todos de preparaci\xF3n"
           items:
             type: string
           type: array
         preparation_notes:
+          description: "Notas sobre los m\xE9todos de preparaci\xF3n"
           nullable: true
           type: string
         product_url:
+          description: URL del producto
           maxLength: 63
           type: string
         storage:
+          description: Tipo de almacenamiento
           items:
             type: string
           type: array
         storage_notes:
+          description: Notas sobre el almacenamiento del producto
           nullable: true
           type: string
         varieties:
@@ -715,53 +732,70 @@ components:
     Product:
       properties:
         category:
-          $ref: '#/components/schemas/CategoryEnum'
+          allOf:
+          - $ref: '#/components/schemas/CategoryEnum'
+          description: "Categor\xEDa del producto\n\n* `verdura` - Verdura u hortaliza\n\
+            * `fruta` - Fruta\n* `cereal` - Cereal o grano\n* `legumbre` - Legumbre\
+            \ o leguminosa\n* `raiz` - Tub\xE9rculo o ra\xEDz\n* `condimento` - Condimento\
+            \ o especia\n* `hierba` - Hierba arom\xE1tica\n* `otro` - Otra categor\xED\
+            a"
         center_origin:
+          description: "Regi\xF3n de origen del producto"
           items:
-            description: "Definici\xF3n seg\xFAn 'From Vavilov to the Present: A Review'\
-              \ C. Earle Smith, Jr., Economic Botany, Vol. 23, No. 1 (Jan. - Mar.,\
-              \ 1969), que va desde I hasta VIII."
             type: string
           type: array
         center_origin_notes:
+          description: "Notas sobre la regi\xF3n originaria del producto"
           nullable: true
           type: string
         common_name:
+          description: "Nombre com\xFAn del producto"
           maxLength: 63
           type: string
         common_name_alternate:
+          description: "Nombre com\xFAn alternativo del producto"
           nullable: true
           type: string
         description:
+          description: "Descripci\xF3n del producto"
           nullable: true
           type: string
         food_basket:
+          description: "\xBFEs parte de la canasta b\xE1sica de alimentos?"
           type: boolean
         icon:
+          description: Icono utilizado para ilustrar el producto
           format: uri
           nullable: true
           type: string
         name_origin:
+          description: "Origen del nombre com\xFAn"
           nullable: true
           type: string
         nutrition_notes:
+          description: Notas sobre los datos nutricionales del producto
           nullable: true
           type: string
         preparation:
+          description: "M\xE9todos de preparaci\xF3n"
           items:
             type: string
           type: array
         preparation_notes:
+          description: "Notas sobre los m\xE9todos de preparaci\xF3n"
           nullable: true
           type: string
         product_url:
+          description: URL del producto
           maxLength: 63
           type: string
         storage:
+          description: Tipo de almacenamiento
           items:
             type: string
           type: array
         storage_notes:
+          description: Notas sobre el almacenamiento del producto
           nullable: true
           type: string
         varieties:
@@ -1251,11 +1285,11 @@ paths:
       description: Este endpoint permite eliminar un producto dado su URL.
       operationId: productos_destroy
       parameters:
-      - description: A unique value identifying this product.
-        in: path
+      - in: path
         name: product_url
         required: true
         schema:
+          description: URL del producto
           type: string
       responses:
         '204':
@@ -1275,11 +1309,11 @@ paths:
       description: Este endpoint devuelve los detalles de un producto dada su URL.
       operationId: productos_retrieve
       parameters:
-      - description: A unique value identifying this product.
-        in: path
+      - in: path
         name: product_url
         required: true
         schema:
+          description: URL del producto
           type: string
       responses:
         '200':
@@ -1302,11 +1336,11 @@ paths:
         \ vayan a actualizar."
       operationId: productos_partial_update
       parameters:
-      - description: A unique value identifying this product.
-        in: path
+      - in: path
         name: product_url
         required: true
         schema:
+          description: URL del producto
           type: string
       requestBody:
         content:
@@ -1339,11 +1373,11 @@ paths:
         \ completos de todos los atributos de dicho producto."
       operationId: productos_update
       parameters:
-      - description: A unique value identifying this product.
-        in: path
+      - in: path
         name: product_url
         required: true
         schema:
+          description: URL del producto
           type: string
       requestBody:
         content:
