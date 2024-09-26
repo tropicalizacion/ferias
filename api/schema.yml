@@ -191,21 +191,6 @@ components:
               - Point
               type: string
           type: object
-        marketplace_type:
-          description: 'Tipo de feria, puede ser uno de los tres tipos: feria, mercado
-            u otro
-
-
-            * `feria` - Feria del Agricultor
-
-            * `mercado` - Mercado Libre
-
-            * `otro` - Otro tipo de feria'
-          nullable: true
-          oneOf:
-          - $ref: '#/components/schemas/MarketplaceTypeEnum'
-          - $ref: '#/components/schemas/BlankEnum'
-          - $ref: '#/components/schemas/NullEnum'
         name:
           description: Nombre de la feria
           maxLength: 127
@@ -283,6 +268,21 @@ components:
           description: "Ba\xF1os disponibles en la feria"
           nullable: true
           type: boolean
+        type:
+          description: 'Tipo de feria, puede ser uno de los tres tipos: feria, mercado
+            u otro
+
+
+            * `feria` - Feria del Agricultor
+
+            * `mercado` - Mercado Libre
+
+            * `otro` - Otro tipo de feria'
+          nullable: true
+          oneOf:
+          - $ref: '#/components/schemas/MarketplaceTypeEnum'
+          - $ref: '#/components/schemas/BlankEnum'
+          - $ref: '#/components/schemas/NullEnum'
         url:
           format: uri
           readOnly: true
@@ -513,21 +513,6 @@ components:
               - Point
               type: string
           type: object
-        marketplace_type:
-          description: 'Tipo de feria, puede ser uno de los tres tipos: feria, mercado
-            u otro
-
-
-            * `feria` - Feria del Agricultor
-
-            * `mercado` - Mercado Libre
-
-            * `otro` - Otro tipo de feria'
-          nullable: true
-          oneOf:
-          - $ref: '#/components/schemas/MarketplaceTypeEnum'
-          - $ref: '#/components/schemas/BlankEnum'
-          - $ref: '#/components/schemas/NullEnum'
         name:
           description: Nombre de la feria
           maxLength: 127
@@ -605,6 +590,21 @@ components:
           description: "Ba\xF1os disponibles en la feria"
           nullable: true
           type: boolean
+        type:
+          description: 'Tipo de feria, puede ser uno de los tres tipos: feria, mercado
+            u otro
+
+
+            * `feria` - Feria del Agricultor
+
+            * `mercado` - Mercado Libre
+
+            * `otro` - Otro tipo de feria'
+          nullable: true
+          oneOf:
+          - $ref: '#/components/schemas/MarketplaceTypeEnum'
+          - $ref: '#/components/schemas/BlankEnum'
+          - $ref: '#/components/schemas/NullEnum'
         url:
           format: uri
           readOnly: true
@@ -636,12 +636,12 @@ components:
 info:
   contact:
     email: tropicalizacion@ucr.ac.cr
-  description: "Este es un API para la aplicaci\xF3n deferia.cr, en el cual se pueden\
-    \ obtener y suministrar datos de ferias y productos.\n\n**TC-691 \"Tropicalizaci\xF3\
-    n de la Tecnolog\xEDa\"**"
+  description: "Este es el API para la aplicaci\xF3n **deferia.cr**, en el cual se\
+    \ pueden obtener y suministrar datos detallados de ferias y productos.\n\n**TC-691\
+    \ \"Tropicalizaci\xF3n de la Tecnolog\xEDa\"**"
   license:
     name: CC BY 4.0
-  title: API deferia.cr
+  title: API de **deferia.cr**
   version: '1.0'
   x-logo:
     altText: Logo deFeriaVerde
@@ -755,9 +755,9 @@ paths:
       - ferias
     patch:
       description: "Este endpoint permite ingresar informaci\xF3n m\xE1s actualizada\
-        \ acerca de una feria espec\xEDfica dada su URL y su nombre, sin necesidad\
-        \ de enviar los datos de todos los atributos de dicha feria, sino s\xF3lo\
-        \ aquellos datos que se vayan a actualizar."
+        \ acerca de una feria espec\xEDfica, dada su URL, sin necesidad de enviar\
+        \ los datos de todos los atributos de dicha feria, sino s\xF3lo aquellos datos\
+        \ que se vayan a actualizar."
       operationId: ferias_partial_update
       parameters:
       - in: path
@@ -793,8 +793,8 @@ paths:
       - ferias
     put:
       description: "Este endpoint permite ingresar informaci\xF3n m\xE1s actualizada\
-        \ acerca de una feria espec\xEDfica, dada su URL y su nombre. Este endpoint\
-        \ requiere enviar los datos de todos los atributos de dicha feria."
+        \ acerca de una feria espec\xEDfica, dada su URL. Este endpoint requiere enviar\
+        \ los datos completos de todos los atributos de dicha feria."
       operationId: ferias_update
       parameters:
       - in: path
@@ -856,8 +856,8 @@ paths:
       tags:
       - geoferias
     post:
-      description: Este endpoint permite crear una nueva ubicaciones de una feria
-        en la plataforma.
+      description: "Este endpoint permite crear una nueva ubicaci\xF3n de una feria\
+        \ en la plataforma."
       operationId: geoferias_create
       requestBody:
         content:
@@ -911,8 +911,8 @@ paths:
       tags:
       - geoferias
     get:
-      description: "Este endpoint devuelve los detalles ubicaci\xF3n de una feria\
-        \ dada su URL."
+      description: "Este endpoint devuelve los detalles de la ubicaci\xF3n de una\
+        \ feria dada su URL."
       operationId: geoferias_retrieve
       parameters:
       - in: path
@@ -937,9 +937,9 @@ paths:
       - geoferias
     patch:
       description: "Este endpoint permite ingresar informaci\xF3n m\xE1s actualizada\
-        \ acerca de la ubicaci\xF3n de una feria espec\xEDfica dada su URL y su nombre,\
-        \ sin necesidad de enviar los datos de todos los atributos de dicha feria,\
-        \ sino s\xF3lo aquellos datos que se vayan a actualizar."
+        \ acerca de la ubicaci\xF3n de una feria espec\xEDfica, dada su URL, sin necesidad\
+        \ de enviar los datos de todos los atributos de dicha ubicaci\xF3n, sino s\xF3\
+        lo aquellos datos que se vayan a actualizar."
       operationId: geoferias_partial_update
       parameters:
       - in: path
@@ -970,14 +970,14 @@ paths:
       - cookieAuth: []
       - basicAuth: []
       - {}
-      summary: "Actualizar la ubicaci\xF3n de una feria"
+      summary: "Actualizar parcialmente la ubicaci\xF3n de una feria"
       tags:
       - geoferias
     put:
       description: "Este endpoint permite ingresar informaci\xF3n m\xE1s actualizada\
-        \ acerca de la ubicaci\xF3n una feria espec\xEDfica, dada su URL y su nombre.\
-        \ Este endpoint requiere enviar los datos de todos los atributos de dicha\
-        \ feria."
+        \ acerca de la ubicaci\xF3n de una feria espec\xEDfica, dada su URL. Este\
+        \ endpoint requiere enviar los datos completos de todos los atributos de dicha\
+        \ ubicaci\xF3n."
       operationId: geoferias_update
       parameters:
       - in: path
@@ -1012,8 +1012,8 @@ paths:
       tags:
       - geoferias
 tags:
-- description: "Datos sobre las ferias, como nombre, productos, ubicaci\xF3n, contactos,\
-    \ entre otros."
+- description: "Datos sobre las ferias, incluyendo informaci\xF3n general como nombre,\
+    \ productos, ubicaci\xF3n, contactos, entre otros."
   name: ferias
   x-displayName: Sobre las ferias
 - description: "Datos sobre la ubicaci\xF3n geoespacial de cada feria."
