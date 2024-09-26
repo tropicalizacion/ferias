@@ -7,7 +7,7 @@ from django.contrib.gis.db.models.functions import Distance
 from django.contrib.gis.geos import Point
 from marketplaces.views import search_marketplaces
 from django.contrib.auth import login, authenticate, logout
-
+from decouple import config
 
 def cover(request):
     return render(request, "cover.html")
@@ -34,6 +34,7 @@ def index(request):
         ) = search_marketplaces(request.POST)
         context = {
             "texts": texts,
+            "google_maps_api_key": config("GOOGLE_MAPS_API_KEY"),
             "show_results": True,
             "query_text": query_text,
             "by_location": by_location,
@@ -46,6 +47,7 @@ def index(request):
     else:
         context = {
             "texts": texts,
+            "google_maps_api_key": config("GOOGLE_MAPS_API_KEY"),
         }
         return render(request, "index.html", context)
 

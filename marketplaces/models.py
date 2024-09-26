@@ -30,7 +30,7 @@ class Marketplace(models.Model):
         ("street_side", "al lado de la calle en espacio dedicado"),
         ("surface", "un un espacio amplio de parqueo"),
     ]
-    MARKETPLACE_TYPE_CHOICES = [
+    TYPE_CHOICES = [
         ("feria", "Feria del Agricultor"),
         ("mercado", "Mercado Libre"),
         ("otro", "Otro tipo de feria"),
@@ -124,9 +124,9 @@ class Marketplace(models.Model):
         null=True,
         help_text="Comité regional al que pertenece la feria",
     )
-    marketplace_type = models.CharField(
+    type = models.CharField(
         max_length=31,
-        choices=MARKETPLACE_TYPE_CHOICES,
+        choices=TYPE_CHOICES,
         blank=True,
         null=True,
         help_text="Tipo de feria, puede ser uno de los tres tipos: feria, mercado u otro",
