@@ -77,12 +77,14 @@
     <div class="row mt-4">
         <div class="col">
             <div class="mt-auto">
-                <h2 class="mb-3">Ingredientes</h2>
+                <h3 class="mb-3"><strong>Ingredientes</strong></h3>
                 <ul class="list-group">
                     {% for recipe_ingredient in recipe.recipeingredient_set.all %}
                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <span>{{ recipe_ingredient.quantity }} {{ recipe_ingredient.get_unit_name }} de 
-                            {{ recipe_ingredient.ingredient.ingredient_name }}</span>
+                        <div class="p-2 w-100"><span class="pill rounded background-verde p-2 text-white"><strong>{{ recipe_ingredient.quantity }}</strong></span></div>
+                        <div class="p-2 w-100"><strong>{{ recipe_ingredient.get_unit_name }}</strong></div>
+                        <div class="p-2 w-50">de</div>
+                        <div class="p-2 w-100"><span class="pill rounded background-amarillo p-2"><strong>{{ recipe_ingredient.ingredient.ingredient_name }}</strong></span></div>
                     </li>
                     {% endfor %}
                 </ul>
@@ -90,7 +92,7 @@
         </div>
         <div class="col">
             <div class="mt-auto">
-                <h2 class="mb-3">Pasos</h2>
+                <h3 class="mb-3"><strong>Pasos</strong></h3>
                 <ol class="list-group">
                     {% for step in recipe.step_set.all %}
                     <li class="list-group-item">
