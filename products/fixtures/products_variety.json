@@ -1,7 +1,7 @@
 [
     {
         "model": "products.variety",
-        "variety_id": "acelga",
+        "pk": "acelga",
         "fields": {
             "product_url": "acelga",
             "scientific_name": "Beta vulgaris",
@@ -26,7 +26,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "aguacate_Hass",
+        "pk": "aguacate_Hass",
         "fields": {
             "product_url": "aguacate",
             "scientific_name": "Persea americana",
@@ -51,7 +51,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "aguacate_criollo",
+        "pk": "aguacate_criollo",
         "fields": {
             "product_url": "aguacate",
             "scientific_name": "Persea americana",
@@ -76,7 +76,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "ajo",
+        "pk": "ajo",
         "fields": {
             "product_url": "ajo",
             "scientific_name": "Allium sativum",
@@ -101,7 +101,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "albahaca",
+        "pk": "albahaca",
         "fields": {
             "product_url": "albahaca",
             "scientific_name": "Ocimum basilicum",
@@ -126,7 +126,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "alfalfa",
+        "pk": "alfalfa",
         "fields": {
             "product_url": "alfalfa",
             "scientific_name": "Medicago sativa",
@@ -151,7 +151,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "anona",
+        "pk": "anona",
         "fields": {
             "product_url": "anona",
             "scientific_name": "Annona squamosa",
@@ -176,7 +176,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "apazote",
+        "pk": "apazote",
         "fields": {
             "product_url": "apazote",
             "scientific_name": "Dysphania ambrosioides",
@@ -201,7 +201,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "apio_verde",
+        "pk": "apio_verde",
         "fields": {
             "product_url": "apio",
             "scientific_name": "Apium graveolens",
@@ -226,7 +226,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "arandano",
+        "pk": "arandano",
         "fields": {
             "product_url": "arandano",
             "scientific_name": "Vaccinium corymbosum",
@@ -251,7 +251,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "arracache",
+        "pk": "arracache",
         "fields": {
             "product_url": "arracache",
             "scientific_name": "Arracacia xanthorrhiza",
@@ -276,7 +276,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "arugula",
+        "pk": "arugula",
         "fields": {
             "product_url": "arugula",
             "scientific_name": "Eruca vesicaria",
@@ -301,7 +301,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "guisante",
+        "pk": "guisante",
         "fields": {
             "product_url": "guisante",
             "scientific_name": "Pisum sativum",
@@ -326,7 +326,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "ayote_tierno",
+        "pk": "ayote_tierno",
         "fields": {
             "product_url": "ayote",
             "scientific_name": "Cucurbita argyrosperma",
@@ -351,7 +351,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "ayote_sazon_mantequilla",
+        "pk": "ayote_sazon_mantequilla",
         "fields": {
             "product_url": "ayote",
             "scientific_name": "Cucurbita argyrosperma",
@@ -376,7 +376,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "ayote_sazon_seco",
+        "pk": "ayote_sazon_seco",
         "fields": {
             "product_url": "ayote",
             "scientific_name": "Cucurbita argyrosperma",
@@ -401,7 +401,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "ayote_pipian_tierno",
+        "pk": "ayote_pipian_tierno",
         "fields": {
             "product_url": "ayote",
             "scientific_name": "Cucurbita argyrosperma",
@@ -426,7 +426,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "banano_datil",
+        "pk": "banano_datil",
         "fields": {
             "product_url": "banano",
             "scientific_name": "Musa paradisiaca",
@@ -451,7 +451,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "banano_guineo_cuadrado",
+        "pk": "banano_guineo_cuadrado",
         "fields": {
             "product_url": "banano",
             "scientific_name": "Musa paradisiaca",
@@ -476,7 +476,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "banano_guineo_negro",
+        "pk": "banano_guineo_negro",
         "fields": {
             "product_url": "banano",
             "scientific_name": "Musa paradisiaca",
@@ -501,7 +501,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "banano_criollo",
+        "pk": "banano_criollo",
         "fields": {
             "product_url": "banano",
             "scientific_name": "Musa paradisiaca",
@@ -526,7 +526,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "banano_maduro",
+        "pk": "banano_maduro",
         "fields": {
             "product_url": "banano",
             "scientific_name": "Musa paradisiaca",
@@ -551,7 +551,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "banano_pinton",
+        "pk": "banano_pinton",
         "fields": {
             "product_url": "banano",
             "scientific_name": "Musa paradisiaca",
@@ -576,7 +576,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "banano_verde",
+        "pk": "banano_verde",
         "fields": {
             "product_url": "banano",
             "scientific_name": "Musa paradisiaca",
@@ -601,7 +601,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "berenjena",
+        "pk": "berenjena",
         "fields": {
             "product_url": "berenjena",
             "scientific_name": "Solanum melongena",
@@ -626,7 +626,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "berro_chino",
+        "pk": "berro_chino",
         "fields": {
             "product_url": "berro",
             "scientific_name": "Ipomoea aquatica",
@@ -651,7 +651,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "berro_nacional",
+        "pk": "berro_nacional",
         "fields": {
             "product_url": "berro",
             "scientific_name": "Nasturtium officinale",
@@ -676,7 +676,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "bokchoy",
+        "pk": "bokchoy",
         "fields": {
             "product_url": "bokchoy",
             "scientific_name": "Brassica rapa",
@@ -701,7 +701,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "brocoli",
+        "pk": "brocoli",
         "fields": {
             "product_url": "brocoli",
             "scientific_name": "Brassica oleracea",
@@ -726,7 +726,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "camote",
+        "pk": "camote",
         "fields": {
             "product_url": "camote",
             "scientific_name": "Ipomoea batatas",
@@ -751,7 +751,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "carambola",
+        "pk": "carambola",
         "fields": {
             "product_url": "carambola",
             "scientific_name": "Averrhoa carambola",
@@ -776,7 +776,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "cas",
+        "pk": "cas",
         "fields": {
             "product_url": "cas",
             "scientific_name": "Psidium friedrichsthalianum",
@@ -801,7 +801,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "cebolla_blanca",
+        "pk": "cebolla_blanca",
         "fields": {
             "product_url": "cebolla",
             "scientific_name": "Allium cepa",
@@ -826,7 +826,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "cebolla_morada",
+        "pk": "cebolla_morada",
         "fields": {
             "product_url": "cebolla",
             "scientific_name": "Allium cepa",
@@ -851,7 +851,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "cebollino_fino",
+        "pk": "cebollino_fino",
         "fields": {
             "product_url": "cebollino",
             "scientific_name": "Allium fistulosum",
@@ -876,7 +876,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "cebollino_grande",
+        "pk": "cebollino_grande",
         "fields": {
             "product_url": "cebollino",
             "scientific_name": "Allium schoenoprasum",
@@ -901,7 +901,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "chan",
+        "pk": "chan",
         "fields": {
             "product_url": "chan",
             "scientific_name": "Hyptis suaveolens",
@@ -926,7 +926,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "chayote_cocoro",
+        "pk": "chayote_cocoro",
         "fields": {
             "product_url": "chayote",
             "scientific_name": "Sechium edule",
@@ -951,7 +951,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "chayote_tierno",
+        "pk": "chayote_tierno",
         "fields": {
             "product_url": "chayote",
             "scientific_name": "Sechium edule",
@@ -976,7 +976,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "chayote_tierno",
+        "pk": "chayote_tierno",
         "fields": {
             "product_url": "chayote",
             "scientific_name": "Sechium edule ",
@@ -1001,7 +1001,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "chayote_sazon",
+        "pk": "chayote_sazon",
         "fields": {
             "product_url": "chayote",
             "scientific_name": "Sechium edule ",
@@ -1026,7 +1026,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "chiledulce_color_mundial",
+        "pk": "chiledulce_color_mundial",
         "fields": {
             "product_url": "chiledulce",
             "scientific_name": "Capsicum annuum",
@@ -1051,7 +1051,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "chiledulce",
+        "pk": "chiledulce",
         "fields": {
             "product_url": "chiledulce",
             "scientific_name": "Capsicum annuum",
@@ -1076,7 +1076,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "chilepicante_jalapeno",
+        "pk": "chilepicante_jalapeno",
         "fields": {
             "product_url": "chilepicante",
             "scientific_name": "Capsicum annuum",
@@ -1101,7 +1101,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "chilepicante_aji_peruano",
+        "pk": "chilepicante_aji_peruano",
         "fields": {
             "product_url": "chilepicante",
             "scientific_name": "Capsicum baccatum",
@@ -1126,7 +1126,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "chilepicante_panameno",
+        "pk": "chilepicante_panameno",
         "fields": {
             "product_url": "chilepicante",
             "scientific_name": "Capsicum chinense",
@@ -1151,7 +1151,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "chilepicante_cayena",
+        "pk": "chilepicante_cayena",
         "fields": {
             "product_url": "chilepicante",
             "scientific_name": "Capsicum frutescens",
@@ -1176,7 +1176,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "chilepicante_rocoto",
+        "pk": "chilepicante_rocoto",
         "fields": {
             "product_url": "chilepicante",
             "scientific_name": "Capsicum pubescens",
@@ -1201,7 +1201,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "chilepicante_fantasma",
+        "pk": "chilepicante_fantasma",
         "fields": {
             "product_url": "chilepicante",
             "scientific_name": "Naga jolokia",
@@ -1226,7 +1226,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "chilote",
+        "pk": "chilote",
         "fields": {
             "product_url": "chilote",
             "scientific_name": "Stigma maydis",
@@ -1251,7 +1251,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "ciruela_americana",
+        "pk": "ciruela_americana",
         "fields": {
             "product_url": "ciruela",
             "scientific_name": "Prunus domestica",
@@ -1276,7 +1276,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "ciruela",
+        "pk": "ciruela",
         "fields": {
             "product_url": "ciruela",
             "scientific_name": "Prunus domestica",
@@ -1301,7 +1301,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "coco",
+        "pk": "coco",
         "fields": {
             "product_url": "coco",
             "scientific_name": "Cocos nucifera",
@@ -1326,7 +1326,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "coldebruselas",
+        "pk": "coldebruselas",
         "fields": {
             "product_url": "coldebruselas",
             "scientific_name": "Brassica oleracea",
@@ -1351,7 +1351,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "coladecaballo",
+        "pk": "coladecaballo",
         "fields": {
             "product_url": "coladecaballo",
             "scientific_name": "Equisetum arvense",
@@ -1376,7 +1376,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "coliflor",
+        "pk": "coliflor",
         "fields": {
             "product_url": "coliflor",
             "scientific_name": "Brassica oleracea",
@@ -1401,7 +1401,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "cubaces_secos",
+        "pk": "cubaces_secos",
         "fields": {
             "product_url": "cubaces",
             "scientific_name": "Phaseolus coccineus",
@@ -1426,7 +1426,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "cubaces_tiernos",
+        "pk": "cubaces_tiernos",
         "fields": {
             "product_url": "cubaces",
             "scientific_name": "Phaseolus coccineus",
@@ -1451,7 +1451,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "culantro_castilla",
+        "pk": "culantro_castilla",
         "fields": {
             "product_url": "culantro",
             "scientific_name": "Coriandrum sativum",
@@ -1476,7 +1476,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "culantrocoyote",
+        "pk": "culantrocoyote",
         "fields": {
             "product_url": "culantrocoyote",
             "scientific_name": "Eryngium foetidum",
@@ -1501,7 +1501,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "curcuma",
+        "pk": "curcuma",
         "fields": {
             "product_url": "curcuma",
             "scientific_name": "Curcuma longa",
@@ -1526,7 +1526,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "eneldo",
+        "pk": "eneldo",
         "fields": {
             "product_url": "eneldo",
             "scientific_name": "Anethum graveolens",
@@ -1551,7 +1551,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "esparrago",
+        "pk": "esparrago",
         "fields": {
             "product_url": "esparrago",
             "scientific_name": "Asparagus officinalis",
@@ -1576,7 +1576,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "espinaca",
+        "pk": "espinaca",
         "fields": {
             "product_url": "espinaca",
             "scientific_name": "Spinacia oleracea",
@@ -1601,7 +1601,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "estragon",
+        "pk": "estragon",
         "fields": {
             "product_url": "estragon",
             "scientific_name": "Artemisia dracunculus",
@@ -1626,7 +1626,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "fresa",
+        "pk": "fresa",
         "fields": {
             "product_url": "fresa",
             "scientific_name": "Fragaria \u00d7 ananassa",
@@ -1651,7 +1651,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "frijol_blanco",
+        "pk": "frijol_blanco",
         "fields": {
             "product_url": "frijol",
             "scientific_name": "Phaseolus vulgaris",
@@ -1676,7 +1676,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "frijol_calima",
+        "pk": "frijol_calima",
         "fields": {
             "product_url": "frijol",
             "scientific_name": "Phaseolus vulgaris",
@@ -1701,7 +1701,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "frijol_negro",
+        "pk": "frijol_negro",
         "fields": {
             "product_url": "frijol",
             "scientific_name": "Phaseolus vulgaris",
@@ -1726,7 +1726,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "frijol_rojo",
+        "pk": "frijol_rojo",
         "fields": {
             "product_url": "frijol",
             "scientific_name": "Phaseolus vulgaris",
@@ -1751,7 +1751,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "garbanzo",
+        "pk": "garbanzo",
         "fields": {
             "product_url": "garbanzo",
             "scientific_name": "Cicer arietinum",
@@ -1776,7 +1776,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "granadilla",
+        "pk": "granadilla",
         "fields": {
             "product_url": "granadilla",
             "scientific_name": "Passiflora ligularis",
@@ -1801,7 +1801,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "guanabana",
+        "pk": "guanabana",
         "fields": {
             "product_url": "guanabana",
             "scientific_name": "Annona muricata",
@@ -1826,7 +1826,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "guayaba",
+        "pk": "guayaba",
         "fields": {
             "product_url": "guayaba",
             "scientific_name": "Psidium guajava",
@@ -1851,7 +1851,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "hierbabuena",
+        "pk": "hierbabuena",
         "fields": {
             "product_url": "hierbabuena",
             "scientific_name": "Mentha spicata",
@@ -1876,7 +1876,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "hinojo",
+        "pk": "hinojo",
         "fields": {
             "product_url": "hinojo",
             "scientific_name": "Foeniculum vulgare",
@@ -1901,7 +1901,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "hongo_crimini",
+        "pk": "hongo_crimini",
         "fields": {
             "product_url": "hongo",
             "scientific_name": "Agaricus bisporus",
@@ -1926,7 +1926,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "hongo_portobello",
+        "pk": "hongo_portobello",
         "fields": {
             "product_url": "hongo",
             "scientific_name": "Agaricus bisporus",
@@ -1951,7 +1951,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "hongo_blanco_champinon",
+        "pk": "hongo_blanco_champinon",
         "fields": {
             "product_url": "hongo",
             "scientific_name": "Boletus edulis",
@@ -1976,7 +1976,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "hongo_ostra",
+        "pk": "hongo_ostra",
         "fields": {
             "product_url": "hongo",
             "scientific_name": "Pleurotus ostreatus",
@@ -2001,7 +2001,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "jengibre",
+        "pk": "jengibre",
         "fields": {
             "product_url": "jengibre",
             "scientific_name": "Zingiber officinale",
@@ -2026,7 +2026,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "jocote_tronador",
+        "pk": "jocote_tronador",
         "fields": {
             "product_url": "jocote",
             "scientific_name": "Spondias purpurea",
@@ -2051,7 +2051,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "kale_verde",
+        "pk": "kale_verde",
         "fields": {
             "product_url": "kale",
             "scientific_name": "Brassica oleracea",
@@ -2076,7 +2076,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "kiwi",
+        "pk": "kiwi",
         "fields": {
             "product_url": "kiwi",
             "scientific_name": "Actinidia deliciosa",
@@ -2101,7 +2101,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "lechuga_escarola",
+        "pk": "lechuga_escarola",
         "fields": {
             "product_url": "lechuga",
             "scientific_name": "Cichorium endivia",
@@ -2126,7 +2126,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "lechuga_lollo_rosa",
+        "pk": "lechuga_lollo_rosa",
         "fields": {
             "product_url": "lechuga",
             "scientific_name": "Lactuca sativa",
@@ -2151,7 +2151,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "lechuga_romana",
+        "pk": "lechuga_romana",
         "fields": {
             "product_url": "lechuga",
             "scientific_name": "Lactuca sativa",
@@ -2176,7 +2176,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "lechuga_veronica",
+        "pk": "lechuga_veronica",
         "fields": {
             "product_url": "lechuga",
             "scientific_name": "Lactuca sativa",
@@ -2201,7 +2201,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "lechuga_americana_arrepollada",
+        "pk": "lechuga_americana_arrepollada",
         "fields": {
             "product_url": "lechuga",
             "scientific_name": "Lactuca sativa ",
@@ -2226,7 +2226,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "lechuga_BG_crepa",
+        "pk": "lechuga_BG_crepa",
         "fields": {
             "product_url": "lechuga",
             "scientific_name": "Lactuca sativa ",
@@ -2251,7 +2251,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "lechuga_blanca_criolla",
+        "pk": "lechuga_blanca_criolla",
         "fields": {
             "product_url": "lechuga",
             "scientific_name": "Lactuca sativa ",
@@ -2276,7 +2276,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "lenteja",
+        "pk": "lenteja",
         "fields": {
             "product_url": "lenteja",
             "scientific_name": "Lens culinaris",
@@ -2301,7 +2301,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "limon_criollo",
+        "pk": "limon_criollo",
         "fields": {
             "product_url": "limon",
             "scientific_name": "Citrus \u00d7 aurantifolia",
@@ -2326,7 +2326,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "limon_mandarino",
+        "pk": "limon_mandarino",
         "fields": {
             "product_url": "limon",
             "scientific_name": "Citrus \u00d7 limonia",
@@ -2351,7 +2351,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "limon_mecino",
+        "pk": "limon_mecino",
         "fields": {
             "product_url": "limon",
             "scientific_name": "Citrus aurantifolia",
@@ -2376,7 +2376,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "limon_dulce",
+        "pk": "limon_dulce",
         "fields": {
             "product_url": "limon",
             "scientific_name": "Citrus limetta",
@@ -2401,7 +2401,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "linaza",
+        "pk": "linaza",
         "fields": {
             "product_url": "linaza",
             "scientific_name": "Linum usitatissimum",
@@ -2426,7 +2426,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "maiz_elote_dulce_amarillo",
+        "pk": "maiz_elote_dulce_amarillo",
         "fields": {
             "product_url": "maiz",
             "scientific_name": "Zea mays",
@@ -2451,7 +2451,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "maiz_elote_tierno",
+        "pk": "maiz_elote_tierno",
         "fields": {
             "product_url": "maiz",
             "scientific_name": "Zea mays",
@@ -2476,7 +2476,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "maiz_cascado",
+        "pk": "maiz_cascado",
         "fields": {
             "product_url": "maiz",
             "scientific_name": "Zea mays",
@@ -2501,7 +2501,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "malanga",
+        "pk": "malanga",
         "fields": {
             "product_url": "malanga",
             "scientific_name": "Colocasia esculenta",
@@ -2526,7 +2526,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "mandarina",
+        "pk": "mandarina",
         "fields": {
             "product_url": "mandarina",
             "scientific_name": "Citrus reticulata",
@@ -2551,7 +2551,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "mandarina_nacional",
+        "pk": "mandarina_nacional",
         "fields": {
             "product_url": "mandarina",
             "scientific_name": "Citrus reticulata",
@@ -2576,7 +2576,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "mango",
+        "pk": "mango",
         "fields": {
             "product_url": "mango",
             "scientific_name": "Mangifera indica",
@@ -2601,7 +2601,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "manzana_gala",
+        "pk": "manzana_gala",
         "fields": {
             "product_url": "manzana",
             "scientific_name": "Malus domestica",
@@ -2626,7 +2626,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "manzana_granny",
+        "pk": "manzana_granny",
         "fields": {
             "product_url": "manzana",
             "scientific_name": "Malus domestica",
@@ -2651,7 +2651,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "manzana_washinton",
+        "pk": "manzana_washinton",
         "fields": {
             "product_url": "manzana",
             "scientific_name": "Malus domestica ",
@@ -2676,7 +2676,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "manzanadeagua",
+        "pk": "manzanadeagua",
         "fields": {
             "product_url": "manzanadeagua",
             "scientific_name": "Syzygium malaccense",
@@ -2701,7 +2701,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "manzanilla",
+        "pk": "manzanilla",
         "fields": {
             "product_url": "manzanilla",
             "scientific_name": "Chamaemelum nobile",
@@ -2726,7 +2726,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "maracuya",
+        "pk": "maracuya",
         "fields": {
             "product_url": "maracuya",
             "scientific_name": "Passiflora edulis",
@@ -2751,7 +2751,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "melocoton",
+        "pk": "melocoton",
         "fields": {
             "product_url": "melocoton",
             "scientific_name": "Prunus persica",
@@ -2776,7 +2776,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "melon",
+        "pk": "melon",
         "fields": {
             "product_url": "melon",
             "scientific_name": "Cucumis melo",
@@ -2801,7 +2801,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "menta",
+        "pk": "menta",
         "fields": {
             "product_url": "menta",
             "scientific_name": "Mentha \u00d7 piperita",
@@ -2826,7 +2826,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "mora",
+        "pk": "mora",
         "fields": {
             "product_url": "mora",
             "scientific_name": "Rubus ulmifolius",
@@ -2851,7 +2851,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "mostazachina",
+        "pk": "mostazachina",
         "fields": {
             "product_url": "mostazachina",
             "scientific_name": "Brassica juncea",
@@ -2876,7 +2876,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "mozote",
+        "pk": "mozote",
         "fields": {
             "product_url": "mozote",
             "scientific_name": "Bidens pilosa",
@@ -2901,7 +2901,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "name",
+        "pk": "name",
         "fields": {
             "product_url": "name",
             "scientific_name": "Dioscorea alata",
@@ -2926,7 +2926,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "nampi",
+        "pk": "nampi",
         "fields": {
             "product_url": "nampi",
             "scientific_name": "Dioscorea trifida",
@@ -2951,7 +2951,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "naranja_agria",
+        "pk": "naranja_agria",
         "fields": {
             "product_url": "naranja",
             "scientific_name": "Citrus \u00d7 aurantium",
@@ -2976,7 +2976,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "naranja",
+        "pk": "naranja",
         "fields": {
             "product_url": "naranja",
             "scientific_name": "Citrus \u00d7 sinensis",
@@ -3001,7 +3001,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "naranja_washinton",
+        "pk": "naranja_washinton",
         "fields": {
             "product_url": "naranja",
             "scientific_name": "Citrus \u00d7 sinensis",
@@ -3026,7 +3026,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "oregano",
+        "pk": "oregano",
         "fields": {
             "product_url": "oregano",
             "scientific_name": "Origanum vulgare",
@@ -3051,7 +3051,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "palmito_tierno",
+        "pk": "palmito_tierno",
         "fields": {
             "product_url": "palmito",
             "scientific_name": "Chamaerops humilis",
@@ -3076,7 +3076,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "papa_amarilla",
+        "pk": "papa_amarilla",
         "fields": {
             "product_url": "papa",
             "scientific_name": "Solanum tuberosum",
@@ -3101,7 +3101,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "papa_blanca",
+        "pk": "papa_blanca",
         "fields": {
             "product_url": "papa",
             "scientific_name": "Solanum tuberosum",
@@ -3126,7 +3126,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "papa_burra",
+        "pk": "papa_burra",
         "fields": {
             "product_url": "papa",
             "scientific_name": "Solanum tuberosum",
@@ -3151,7 +3151,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "papa_mini",
+        "pk": "papa_mini",
         "fields": {
             "product_url": "papa",
             "scientific_name": "Solanum tuberosum",
@@ -3176,7 +3176,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "papaya",
+        "pk": "papaya",
         "fields": {
             "product_url": "papaya",
             "scientific_name": "Carica papaya",
@@ -3201,7 +3201,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "pejibaye",
+        "pk": "pejibaye",
         "fields": {
             "product_url": "pejibaye",
             "scientific_name": "Bactris gasipaes",
@@ -3226,7 +3226,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "pepino",
+        "pk": "pepino",
         "fields": {
             "product_url": "pepino",
             "scientific_name": "Cucumis sativus",
@@ -3251,7 +3251,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "pera",
+        "pk": "pera",
         "fields": {
             "product_url": "pera",
             "scientific_name": "Pyrus communis",
@@ -3276,7 +3276,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "perejil_italiano",
+        "pk": "perejil_italiano",
         "fields": {
             "product_url": "perejil",
             "scientific_name": "Petroselinum crispum",
@@ -3301,7 +3301,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "perejil",
+        "pk": "perejil",
         "fields": {
             "product_url": "perejil",
             "scientific_name": "Petroselinum crispum",
@@ -3326,7 +3326,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "pina",
+        "pk": "pina",
         "fields": {
             "product_url": "pina",
             "scientific_name": "Ananas comosus",
@@ -3351,7 +3351,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "pitahaya",
+        "pk": "pitahaya",
         "fields": {
             "product_url": "pitahaya",
             "scientific_name": "Selenicereus undatus",
@@ -3376,7 +3376,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "platano_maduro",
+        "pk": "platano_maduro",
         "fields": {
             "product_url": "platano",
             "scientific_name": "Musa balbisiana",
@@ -3401,7 +3401,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "platano_verde",
+        "pk": "platano_verde",
         "fields": {
             "product_url": "platano",
             "scientific_name": "Musa balbisiana",
@@ -3426,7 +3426,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "puerro",
+        "pk": "puerro",
         "fields": {
             "product_url": "puerro",
             "scientific_name": "Allium ampeloprasum",
@@ -3451,7 +3451,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "rabano_rabanito",
+        "pk": "rabano_rabanito",
         "fields": {
             "product_url": "rabano",
             "scientific_name": "Raphanus sativus",
@@ -3476,7 +3476,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "rabano_blanco",
+        "pk": "rabano_blanco",
         "fields": {
             "product_url": "rabano",
             "scientific_name": "Raphanus sativus",
@@ -3501,7 +3501,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "remolacha",
+        "pk": "remolacha",
         "fields": {
             "product_url": "remolacha",
             "scientific_name": "Beta vulgari",
@@ -3526,7 +3526,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "repollo_morado",
+        "pk": "repollo_morado",
         "fields": {
             "product_url": "repollo",
             "scientific_name": "Brassica oleracea",
@@ -3551,7 +3551,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "repollo_verde",
+        "pk": "repollo_verde",
         "fields": {
             "product_url": "repollo",
             "scientific_name": "Brassica oleracea",
@@ -3576,7 +3576,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "romero",
+        "pk": "romero",
         "fields": {
             "product_url": "romero",
             "scientific_name": "Salvia rosmarinus",
@@ -3601,7 +3601,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "ruda",
+        "pk": "ruda",
         "fields": {
             "product_url": "ruda",
             "scientific_name": "Ruda graveolens",
@@ -3626,7 +3626,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "sabila",
+        "pk": "sabila",
         "fields": {
             "product_url": "sabila",
             "scientific_name": "Aloe vera",
@@ -3651,7 +3651,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "salvia",
+        "pk": "salvia",
         "fields": {
             "product_url": "salvia",
             "scientific_name": "Salvia officinalis",
@@ -3676,7 +3676,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "sandia",
+        "pk": "sandia",
         "fields": {
             "product_url": "sandia",
             "scientific_name": "Citrullus lanatus",
@@ -3701,7 +3701,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "tacaco",
+        "pk": "tacaco",
         "fields": {
             "product_url": "tacaco",
             "scientific_name": "Sechium tacaco",
@@ -3726,7 +3726,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "tamarindo",
+        "pk": "tamarindo",
         "fields": {
             "product_url": "tamarindo",
             "scientific_name": "Tamarindus indica",
@@ -3751,7 +3751,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "tiquisque",
+        "pk": "tiquisque",
         "fields": {
             "product_url": "tiquisque",
             "scientific_name": "Xanthosoma sagittifolium",
@@ -3776,7 +3776,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "tomate_pera",
+        "pk": "tomate_pera",
         "fields": {
             "product_url": "tomate",
             "scientific_name": "Lycopersicon esculentum",
@@ -3801,7 +3801,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "tomate_verde_mexicano",
+        "pk": "tomate_verde_mexicano",
         "fields": {
             "product_url": "tomate",
             "scientific_name": "Physalis ixocarpa",
@@ -3826,7 +3826,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "tomate_cherry",
+        "pk": "tomate_cherry",
         "fields": {
             "product_url": "tomate",
             "scientific_name": "Solanum lycopersicum",
@@ -3851,7 +3851,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "tomate_mesa",
+        "pk": "tomate_mesa",
         "fields": {
             "product_url": "tomate",
             "scientific_name": "Solanum lycopersicum",
@@ -3876,7 +3876,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "tomillo",
+        "pk": "tomillo",
         "fields": {
             "product_url": "tomillo",
             "scientific_name": "Thymus vulgaris",
@@ -3901,7 +3901,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "toronja",
+        "pk": "toronja",
         "fields": {
             "product_url": "toronja",
             "scientific_name": "Citrus \u00d7 paradisi",
@@ -3926,7 +3926,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "uchuva",
+        "pk": "uchuva",
         "fields": {
             "product_url": "uchuva",
             "scientific_name": "Physalis peruviana",
@@ -3951,7 +3951,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "uva_roja",
+        "pk": "uva_roja",
         "fields": {
             "product_url": "uva",
             "scientific_name": "Vitis vinifera ",
@@ -3976,7 +3976,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "uva_verde",
+        "pk": "uva_verde",
         "fields": {
             "product_url": "uva",
             "scientific_name": "Vitis vinifera ",
@@ -4001,7 +4001,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "vainica_tierna",
+        "pk": "vainica_tierna",
         "fields": {
             "product_url": "vainica",
             "scientific_name": "Phaseolus vulgaris",
@@ -4026,7 +4026,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "yuca",
+        "pk": "yuca",
         "fields": {
             "product_url": "yuca",
             "scientific_name": "Manihot esculenta",
@@ -4051,7 +4051,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "zacatelimon",
+        "pk": "zacatelimon",
         "fields": {
             "product_url": "zacatelimon",
             "scientific_name": "Cymbopogon citratus",
@@ -4076,7 +4076,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "zanahoria",
+        "pk": "zanahoria",
         "fields": {
             "product_url": "zanahoria",
             "scientific_name": "Daucus carota",
@@ -4101,7 +4101,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "zapallo_esmeralda",
+        "pk": "zapallo_esmeralda",
         "fields": {
             "product_url": "zapallo",
             "scientific_name": "Cucurbita moschata",
@@ -4126,7 +4126,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "zapallo",
+        "pk": "zapallo",
         "fields": {
             "product_url": "zapallo",
             "scientific_name": "Cucurbita moschata",
@@ -4151,7 +4151,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "zucchini_escalopin_colores",
+        "pk": "zucchini_escalopin_colores",
         "fields": {
             "product_url": "zucchini",
             "scientific_name": "Cucurbita pepo",
@@ -4176,7 +4176,7 @@
     },
     {
         "model": "products.variety",
-        "variety_id": "zucchini",
+        "pk": "zucchini",
         "fields": {
             "product_url": "zucchini",
             "scientific_name": "Cucurbita pepo",
