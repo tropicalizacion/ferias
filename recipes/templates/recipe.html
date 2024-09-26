@@ -56,16 +56,16 @@
                 <p class="mb-4">{{ recipe.description }}</p>
 
                 <div class="d-flex justify-content-between">
-                    <div class="bg-white rounded p-2 border m-2 w-100">
+                    <div class="bg-white rounded p-2 border me-1 mb-2 w-100">
                         <p class="m-1"><i class="fa-solid fa-bowl-food"></i></p>
                         <p class="m-1"><strong>Porciones:</strong> {{ recipe.recipe_yield }}</p>
                     </div>
-                    <div class="bg-white rounded p-2 border m-2 w-100">
+                    <div class="bg-white rounded p-2 border ms-1 mb-2 w-100">
                         <p class="m-1"><i class="fa-solid fa-stroopwafel"></i></p>
                         <p class="m-1"><strong>Tipo de cocina:</strong> {{ recipe.recipe_cuisine }}</p>
                     </div>
                 </div>
-                <div class="bg-white rounded p-2 border m-2">
+                <div class="bg-white rounded p-2 border">
                     <p class="m-1"><i class="fa-solid fa-clock"></i></p>
                     <p class="m-1"><strong>Preparación:</strong> {{ recipe.prep_time|format_timedelta }}</p>
                     <p class="m-1"><strong>Cocción:</strong> {{ recipe.cook_time|format_timedelta }}</p>

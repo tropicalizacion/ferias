@@ -1,0 +1,170 @@
+[
+    {
+        "model": "recipes.ingredient",
+        "pk": 1,
+        "fields": {
+            "ingredient_name": "ingrediente",
+            "ingredient_description": "inggg",
+            "ingredient_product": 6,
+            "allergies": []
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 2,
+        "fields": {
+            "ingredient_name": "ingre",
+            "ingredient_description": "ingre",
+            "ingredient_product": 15,
+            "allergies": []
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 3,
+        "fields": {
+            "ingredient_name": "ingre2",
+            "ingredient_description": "ingre2",
+            "ingredient_product": 15,
+            "allergies": []
+        }
+    },
+    {
+        "model": "recipes.category",
+        "pk": 1,
+        "fields": {
+            "category_name": "categoria",
+            "category_description": "prueba",
+            "category_slug": "categoria"
+        }
+    },
+    {
+        "model": "recipes.category",
+        "pk": 2,
+        "fields": {
+            "category_name": "Almuerzo",
+            "category_description": "Comidas de almuerzo",
+            "category_slug": "almuerzo"
+        }
+    },
+    {
+        "model": "recipes.tag",
+        "pk": 1,
+        "fields": {
+            "tag_name": "etiqueta",
+            "tag_slug": "etiqueta"
+        }
+    },
+    {
+        "model": "recipes.tag",
+        "pk": 2,
+        "fields": {
+            "tag_name": "nueva etiquera",
+            "tag_slug": "ss"
+        }
+    },
+    {
+        "model": "recipes.tag",
+        "pk": 3,
+        "fields": {
+            "tag_name": "ss",
+            "tag_slug": "ddd"
+        }
+    },
+    {
+        "model": "recipes.tag",
+        "pk": 4,
+        "fields": {
+            "tag_name": "ssd",
+            "tag_slug": "dddc"
+        }
+    },
+    {
+        "model": "recipes.tag",
+        "pk": 5,
+        "fields": {
+            "tag_name": "ssdee",
+            "tag_slug": "dddcd"
+        }
+    },
+    {
+        "model": "recipes.tag",
+        "pk": 6,
+        "fields": {
+            "tag_name": "dfhf",
+            "tag_slug": "dfh"
+        }
+    },
+    {
+        "model": "recipes.tag",
+        "pk": 7,
+        "fields": {
+            "tag_name": "dfhff",
+            "tag_slug": "dfhf"
+        }
+    },
+    {
+        "model": "recipes.tag",
+        "pk": 8,
+        "fields": {
+            "tag_name": "dfhffdfg",
+            "tag_slug": "dfhfdf"
+        }
+    },
+    {
+        "model": "recipes.recipe",
+        "pk": 2,
+        "fields": {
+            "name": "Receta de prueba",
+            "description": "Receta de pruebaReceta de pruebaReceta de pruebaReceta de pruebaReceta de pruebaReceta de pruebaReceta de pruebaReceta de pruebaReceta de pruebaReceta de pruebaReceta de pruebaReceta de pruebaReceta de pruebaReceta de pruebaReceta de pruebaReceta de pruebaReceta de pruebaReceta de pruebaReceta de pruebaReceta de pruebaReceta de prueba",
+            "category": 1,
+            "image": "",
+            "created_at": "2024-08-21T17:25:07.343Z",
+            "updated_at": "2024-09-24T23:27:40.221Z",
+            "slug": "recetaa",
+            "cook_time": "00:00:06",
+            "prep_time": "00:00:05",
+            "total_time": "00:00:07",
+            "recipe_yield": "4",
+            "recipe_cuisine": "Costarricense",
+            "calories": null,
+            "fat_content": null,
+            "carbohydrate_content": null,
+            "protein_content": null,
+            "tags": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "recipes.recipeingredient",
+        "pk": 1,
+        "fields": {
+            "recipe": 2,
+            "ingredient": 3,
+            "unit": "ml",
+            "quantity": "0.750"
+        }
+    },
+    {
+        "model": "recipes.recipeingredient",
+        "pk": 2,
+        "fields": {
+            "recipe": 2,
+            "ingredient": 1,
+            "unit": "cup",
+            "quantity": "0.250"
+        }
+    },
+    {
+        "model": "recipes.step",
+        "pk": 3,
+        "fields": {
+            "recipe": 2,
+            "step_sequence": 1,
+            "title": "Paso número 1",
+            "description": "Primer paso",
+            "photo": ""
+        }
+    }
+]
