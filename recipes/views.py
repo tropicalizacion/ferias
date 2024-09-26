@@ -4,6 +4,7 @@ from django.contrib import messages
 import json
 from .models import Ingredient, Category, Tag, Recipe, RecipeIngredient, Step
 from .forms import RecipeForm, RecipeIngredientFormSet, StepFormSet, IngredientForm, CategoryForm, TagForm
+from datetime import timedelta
 
 
 # Create your views here.
@@ -401,8 +402,14 @@ def get_structured_data(recipe, recipe_steps):
 
 
 def format_duration(duration):
-    total_seconds = int(duration.total_seconds())
+    if isinstance(duration, timedelta):
+        total_seconds = int(duration.total_seconds())
+    else:
+        raise ValueError("Expected a timedelta object")
+
+    total_seconds = total_seconds * 60
     hours = total_seconds // 3600
     minutes = (total_seconds % 3600) // 60
     seconds = total_seconds % 60
+
     return f"PT{hours}H{minutes}M{seconds}S"

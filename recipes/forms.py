@@ -44,30 +44,30 @@ class RecipeForm(forms.ModelForm):
             "image": forms.ClearableFileInput(attrs={"class": "form-control"}),
             "tags": forms.CheckboxSelectMultiple(attrs={"class": "form-check-inline"}),
             "cook_time": forms.TextInput(
-                attrs={"class": "form-control"}
+                attrs={"class": "form-control", "placeholder": "hh:mm:ss"}
             ),
             "prep_time": forms.TextInput(
-                attrs={"class": "form-control"}
+                attrs={"class": "form-control", "placeholder": "hh:mm:ss"}
             ),
             "total_time": forms.TextInput(
-                attrs={"class": "form-control"}
+                attrs={"class": "form-control", "placeholder": "hh:mm:ss"}
             ),
-            "recipe_yield": forms.TextInput(
+            "recipe_yield": forms.NumberInput(
                 attrs={"class": "form-control"}
             ),
             "recipe_cuisine": forms.TextInput(
                 attrs={"class": "form-control", "placeholder": "ej., Costarricense"}
             ),
-            "calories": forms.TextInput(
+            "calories": forms.NumberInput(
                 attrs={"class": "form-control"}
             ),
-            "fat_content": forms.TextInput(
+            "fat_content": forms.NumberInput(
                 attrs={"class": "form-control"}
             ),
-            "carbohydrate_content": forms.TextInput(
+            "carbohydrate_content": forms.NumberInput(
                 attrs={"class": "form-control"}
             ),
-            "protein_content": forms.TextInput(
+            "protein_content": forms.NumberInput(
                 attrs={"class": "form-control"}
             ),
         }

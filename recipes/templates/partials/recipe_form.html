@@ -18,12 +18,12 @@
                 {{ recipe_form.image }}
             </div>
             <div class="row mb-4 mx-2 bg-white rounded p-2">
-                <label class="mb-3">Tiempo (en minutos)</label>
+                <label class="mb-3">Tiempo <small class="text-secondary">(hh:mm:ss)</small></label>
                 <div class="col">
                     <div class="d-flex flex-column align-items-start">
                         <label class="text-start">Preparación</label>
                         <div class="d-inline-flex align-items-center justify-content-start">
-                            <div class="w-75 me-1">{{ recipe_form.prep_time }}</div><span>min</span>
+                            <div class="w-75 me-1">{{ recipe_form.prep_time }}</div>
                         </div>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                     <div class="d-flex flex-column align-items-start">
                         <label class="text-start">Cocción</label>
                         <div class="d-inline-flex align-items-center justify-content-start">
-                            <div class="w-75 me-1">{{ recipe_form.cook_time }}</div><span>min</span>
+                            <div class="w-75 me-1">{{ recipe_form.cook_time }}</div>
                         </div>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                     <div class="d-flex flex-column align-items-start">
                         <label class="text-start">Total</label>
                         <div class="d-inline-flex align-items-center justify-content-start">
-                            <div class="w-75 me-1">{{ recipe_form.total_time }}</div><span>min</span>
+                            <div class="w-75 me-1">{{ recipe_form.total_time }}</div>
                         </div>
                     </div>
                 </div>
@@ -48,7 +48,7 @@
                 <div class="col">
                     <label>Porciones</label>
                     <div class="d-inline-flex align-items-center justify-content-start">
-                        <div class="w-75 me-1">{{ recipe_form.recipe_yield }}</div><span>porciones</span>
+                        <div class="w-50 me-1">{{ recipe_form.recipe_yield }}</div><span>porciones</span>
                     </div>
                 </div>
                 <div class="col">
