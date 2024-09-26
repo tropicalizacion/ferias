@@ -35,7 +35,7 @@
                                 <div class="card-body feed-card">
                                     <span class="badge background-azul">Noticia <i class="fa-solid fa-bullhorn"></i></span>
                                     <h5 class="card-title mt-2">{{ element.name }}</h5>
-                                  <p class="card-text">{{ element.description }}</p>
+                                  <p class="card-text">{{ element.description|truncatewords:20 }}</p>
                                   <a href="{% url 'news' element.id %}" class="text-decoration-none"> 
                                       <span class="mt-2 fw-bold me-1">Ver más</span>
                                       <i class="fa-solid fa-arrow-right"></i>
@@ -53,7 +53,7 @@
                                 <div class="card-body feed-card">
                                     <span class="badge background-rojo">Alerta <i class="fa-solid fa-triangle-exclamation"></i></span>
                                     <h5 class="card-title mt-2">{{ element.name }}</h5>
-                                  <p class="card-text">{{ element.description }}</p>
+                                  <p class="card-text">{{ element.description|truncatewords:20 }}</p>
                                   <a href="{% url 'alert' element.id %}" class="text-decoration-none"> 
                                       <span class="mt-2 fw-bold me-1">Ver más</span>
                                       <i class="fa-solid fa-arrow-right"></i>
@@ -70,7 +70,7 @@
                                 <div class="card-body feed-card">
                                     <span class="badge background-verde">Evento <i class="fa-solid fa-calendar-days"></i></span>
                                     <h5 class="card-title mt-2">{{ element.name }}</h5>
-                                  <p class="card-text">{{ element.description }}</p>
+                                  <p class="card-text">{{ element.description|truncatewords:20 }}</p>
                                   <a href="{% url 'event' element.id %}" class="text-decoration-none"> 
                                       <span class="mt-2 fw-bold me-1">Ver más</span>
                                       <i class="fa-solid fa-arrow-right"></i>

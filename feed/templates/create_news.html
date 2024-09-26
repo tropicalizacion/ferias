@@ -15,30 +15,37 @@
 
     <div class="w-md-50 pt-4">
 
-        <h1 class="hero-deferia rojo align-self-center fw-bold m-3">Crear noticia para la feria de {{marketplace_admin.marketplace}}</h1>
-
         <div class="container-form-avisos fw-bold align-self-center shadow">
+            <h4 class="fw-bold mx-2 mt-3">Crear Noticia para 
+                {% if marketplace_admin.marketplace.type == 'feria' %}
+                Feria del agricultor
+                {% elif marketplace_admin.marketplace.type == 'mercado' %}
+                Mercado libre
+                {% else %}
+                Mercado agrícola local
+                {% endif %}
+                de {{marketplace_admin.marketplace}}</h4>
+            <hr class="mb-4 mx-2">
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="form-group m-2">
                     <label for="name">Título de la noticia:</label>
-                    <input type="text" class="form-control" id="name" name="name">
+                    <input type="text" class="form-control" id="name" name="name" required>
                 </div>
                 <div class="form-group m-2">
                     <label for="description">Descripción:</label>
-                    <textarea class="form-control" id="description" name="description" rows="1"></textarea>
+                    <textarea class="form-control" id="description" name="description" rows="1" required></textarea>
                 </div>
                 <div class="form-group m-2">
                     <label for="content">Contenido:</label>
                     <textarea class="form-control" id="newsContent" name="content" rows="5"></textarea>
                 </div>
-                <div class="form-group m-3">
-                    <label for="image">Imagen de vista previa:</label>
-                    </br>
-                    <input type="file" class="form-control-file" id="image" name="image">
+                <div class="form-group m-2">
+                    <label for="image">Imagen:</label>
+                    <input type="file" class="form-control" id="image" name="image">
                 </div>
-                <div class="w-100 d-flex justify-content-end">
-                    <button type="submit" class="btn btn-primary m-2">Crear Noticia</button>
+                <div class="w-100 d-flex justify-content-center">
+                    <button type="submit" class="btn btn-secondary m-2 fw-bold background-verde">Crear Noticia</button>
                 </div>
             </form>
         </div>

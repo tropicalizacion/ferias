@@ -335,9 +335,9 @@ h6 {
 }
 
 .feed-card {
+  height: 240px;
   transition-property: transform;
   transition-duration: 0.1s;
-  cursor: pointer;
   padding-top: 5px;
 }
 
