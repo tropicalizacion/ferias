@@ -27,7 +27,7 @@ class MarketplaceSerializer(serializers.ModelSerializer):
             "opening_date",
             "operator",
             "branch",
-            "marketplace_type",
+            "type",
             "parking",
             "bicycle_parking",
             "fairground",
@@ -66,11 +66,24 @@ class VarietySerializer(serializers.ModelSerializer):
     class Meta:
         model = Variety
         fields = [
+            "common_name_variety",
             "scientific_name",
             "scientific_name_variety",
-            "common_name_variety",
             "common_name_variety_alternate",
+            "jan",
+            "feb",
+            "mar",
+            "apr",
+            "may",
+            "jun",
+            "jul",
+            "aug",
+            "sep",
+            "oct",
+            "nov",
+            "dec",
         ]
+
 
 class ProductSerializer(serializers.ModelSerializer):
     varieties = VarietySerializer(many=True, read_only=True)
@@ -83,7 +96,6 @@ class ProductSerializer(serializers.ModelSerializer):
             "common_name",
             "common_name_alternate",
             "description",
-            "icon",
             "name_origin",
             "center_origin",
             "center_origin_notes",
