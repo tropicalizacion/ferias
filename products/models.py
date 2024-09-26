@@ -47,8 +47,8 @@ class Variety(models.Model):
         (3, "Temporada alta"),
     ]
 
-    variety_id = models.AutoField(primary_key=True)
-    product_url = models.ForeignKey("Product", on_delete=models.SET_NULL, null=True)
+    variety_id = models.CharField(max_length=127, primary_key=True)
+    product_url = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
     scientific_name = models.CharField(max_length=63, blank=False, null=False)
     scientific_name_variety = models.CharField(max_length=63, blank=True, null=True)
     common_name_variety = models.CharField(max_length=63, blank=True, null=True)
@@ -83,11 +83,20 @@ class Price(models.Model):
     UNIT_CHOICES = [
         ("kg", "Kilogramo"),
         ("u", "Unidad"),
+        ("rollo", "Rollo"),
+        ("mata", "Mata"),
+    ]
+    QUALITY_CHOICES = [
+        ("primera", "Primera calidad"),
+        ("segunda", "Segunda calidad"),
     ]
 
     price_id = models.AutoField(primary_key=True)
     variety = models.ForeignKey(Variety, on_delete=models.SET_NULL, null=True)
-    unit = models.CharField(choices=UNIT_CHOICES, max_length=3)
+    quality = models.CharField(
+        max_length=63, choices=QUALITY_CHOICES, blank=True, null=True
+    )
+    unit = models.CharField(choices=UNIT_CHOICES, max_length=10)
     price = models.IntegerField()
     publication_date = models.DateField()
     year = models.IntegerField(blank=True, null=True)
