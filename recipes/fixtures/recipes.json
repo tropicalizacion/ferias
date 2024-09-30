@@ -1,169 +1,420 @@
 [
     {
         "model": "recipes.ingredient",
-        "pk": 1,
-        "fields": {
-            "ingredient_name": "ingrediente",
-            "ingredient_description": "inggg",
-            "ingredient_product": 6,
-            "allergies": []
-        }
-    },
-    {
-        "model": "recipes.ingredient",
-        "pk": 2,
-        "fields": {
-            "ingredient_name": "ingre",
-            "ingredient_description": "ingre",
-            "ingredient_product": 15,
-            "allergies": []
-        }
-    },
-    {
-        "model": "recipes.ingredient",
-        "pk": 3,
-        "fields": {
-            "ingredient_name": "ingre2",
-            "ingredient_description": "ingre2",
-            "ingredient_product": 15,
-            "allergies": []
-        }
-    },
-    {
-        "model": "recipes.category",
-        "pk": 1,
-        "fields": {
-            "category_name": "categoria",
-            "category_description": "prueba",
-            "category_slug": "categoria"
-        }
-    },
-    {
-        "model": "recipes.category",
-        "pk": 2,
-        "fields": {
-            "category_name": "Almuerzo",
-            "category_description": "Comidas de almuerzo",
-            "category_slug": "almuerzo"
-        }
-    },
-    {
-        "model": "recipes.tag",
-        "pk": 1,
-        "fields": {
-            "tag_name": "etiqueta",
-            "tag_slug": "etiqueta"
-        }
-    },
-    {
-        "model": "recipes.tag",
-        "pk": 2,
-        "fields": {
-            "tag_name": "nueva etiquera",
-            "tag_slug": "ss"
-        }
-    },
-    {
-        "model": "recipes.tag",
-        "pk": 3,
-        "fields": {
-            "tag_name": "ss",
-            "tag_slug": "ddd"
-        }
-    },
-    {
-        "model": "recipes.tag",
-        "pk": 4,
-        "fields": {
-            "tag_name": "ssd",
-            "tag_slug": "dddc"
-        }
-    },
-    {
-        "model": "recipes.tag",
-        "pk": 5,
-        "fields": {
-            "tag_name": "ssdee",
-            "tag_slug": "dddcd"
-        }
-    },
-    {
-        "model": "recipes.tag",
         "pk": 6,
         "fields": {
-            "tag_name": "dfhf",
-            "tag_slug": "dfh"
+            "ingredient_name": "aguacate maduro",
+            "ingredient_description": "",
+            "ingredient_product": 3,
+            "allergies": []
         }
     },
     {
-        "model": "recipes.tag",
+        "model": "recipes.ingredient",
         "pk": 7,
         "fields": {
-            "tag_name": "dfhff",
-            "tag_slug": "dfhf"
+            "ingredient_name": "cebolla morada en rodajitas delgadas",
+            "ingredient_description": "",
+            "ingredient_product": 35,
+            "allergies": []
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 8,
+        "fields": {
+            "ingredient_name": "jugo de limón mecino",
+            "ingredient_description": "",
+            "ingredient_product": 96,
+            "allergies": []
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 9,
+        "fields": {
+            "ingredient_name": "sal",
+            "ingredient_description": "",
+            "ingredient_product": null,
+            "allergies": []
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 11,
+        "fields": {
+            "ingredient_name": "pejibayes pelados y cortados en trozos",
+            "ingredient_description": "",
+            "ingredient_product": 130,
+            "allergies": []
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 12,
+        "fields": {
+            "ingredient_name": "caldo de pollo o vegetales",
+            "ingredient_description": "",
+            "ingredient_product": null,
+            "allergies": []
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 13,
+        "fields": {
+            "ingredient_name": "pechuga deshuesada",
+            "ingredient_description": "",
+            "ingredient_product": null,
+            "allergies": []
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 14,
+        "fields": {
+            "ingredient_name": "cebolla cortada en trozos",
+            "ingredient_description": "",
+            "ingredient_product": 34,
+            "allergies": []
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 15,
+        "fields": {
+            "ingredient_name": "chile dulce cortado en trozos",
+            "ingredient_description": "",
+            "ingredient_product": 44,
+            "allergies": []
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 16,
+        "fields": {
+            "ingredient_name": "dientes de ajo majados",
+            "ingredient_description": "",
+            "ingredient_product": 5,
+            "allergies": []
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 17,
+        "fields": {
+            "ingredient_name": "mantequilla",
+            "ingredient_description": "",
+            "ingredient_product": null,
+            "allergies": []
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 18,
+        "fields": {
+            "ingredient_name": "achiote",
+            "ingredient_description": "",
+            "ingredient_product": null,
+            "allergies": []
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 19,
+        "fields": {
+            "ingredient_name": "sal y pimienta al gusto",
+            "ingredient_description": "",
+            "ingredient_product": null,
+            "allergies": []
         }
     },
     {
         "model": "recipes.tag",
-        "pk": 8,
+        "pk": 9,
         "fields": {
-            "tag_name": "dfhffdfg",
-            "tag_slug": "dfhfdf"
+            "tag_name": "vegano",
+            "tag_slug": "vegano"
+        }
+    },
+    {
+        "model": "recipes.tag",
+        "pk": 10,
+        "fields": {
+            "tag_name": "vegetariano",
+            "tag_slug": "vegetariano"
+        }
+    },
+    {
+        "model": "recipes.tag",
+        "pk": 11,
+        "fields": {
+            "tag_name": "sin gluten",
+            "tag_slug": "sin-gluten"
         }
     },
     {
         "model": "recipes.recipe",
-        "pk": 2,
+        "pk": 6,
         "fields": {
-            "name": "Receta de prueba",
-            "description": "Receta de pruebaReceta de pruebaReceta de pruebaReceta de pruebaReceta de pruebaReceta de pruebaReceta de pruebaReceta de pruebaReceta de pruebaReceta de pruebaReceta de pruebaReceta de pruebaReceta de pruebaReceta de pruebaReceta de pruebaReceta de pruebaReceta de pruebaReceta de pruebaReceta de pruebaReceta de pruebaReceta de prueba",
-            "category": 1,
+            "name": "Guacamole con cebolla morada",
+            "description": "",
+            "category": null,
             "image": "",
-            "created_at": "2024-08-21T17:25:07.343Z",
-            "updated_at": "2024-09-24T23:27:40.221Z",
-            "slug": "recetaa",
-            "cook_time": "00:00:06",
-            "prep_time": "00:00:05",
-            "total_time": "00:00:07",
-            "recipe_yield": "4",
-            "recipe_cuisine": "Costarricense",
+            "created_at": "2024-09-30T20:14:40.338Z",
+            "updated_at": "2024-09-30T21:53:51.767Z",
+            "slug": "guacamole-con-cebolla-morada",
+            "cook_time": null,
+            "prep_time": null,
+            "total_time": null,
+            "recipe_yield": "3",
+            "recipe_cuisine": null,
+            "storage": "En un lugar fresco y seco si está maduro o cerca de la maduración y se quiere madurar más rápidamente, se debe colocar cerca de los bananos.",
+            "origin": null,
+            "references": "",
+            "nutritional_value": "El aguacate contribuye a reducir los niveles de colesterol malo en sangre gracias a su aporte de grasas saludables.",
             "calories": null,
             "fat_content": null,
             "carbohydrate_content": null,
             "protein_content": null,
             "tags": [
-                1
+                9,
+                10,
+                11
             ]
         }
     },
     {
-        "model": "recipes.recipeingredient",
-        "pk": 1,
+        "model": "recipes.recipe",
+        "pk": 7,
         "fields": {
-            "recipe": 2,
-            "ingredient": 3,
-            "unit": "ml",
-            "quantity": "0.750"
+            "name": "Crema de pejibaye con pollo",
+            "description": "",
+            "category": null,
+            "image": "",
+            "created_at": "2024-09-30T21:45:25.308Z",
+            "updated_at": "2024-09-30T21:51:50.058Z",
+            "slug": "crema-de-pejibaye-con-pollo",
+            "cook_time": null,
+            "prep_time": null,
+            "total_time": null,
+            "recipe_yield": "6",
+            "recipe_cuisine": null,
+            "storage": "Cocinados, en la refrigeradora.\r\nCrudos, en un lugar fresco y seco.",
+            "origin": null,
+            "references": "",
+            "nutritional_value": "El pejibaye contiene muchísima vitamina A,  necesaria para la buena salud de la piel, la visión y la salud de los dientes y encías.",
+            "calories": null,
+            "fat_content": null,
+            "carbohydrate_content": null,
+            "protein_content": null,
+            "tags": []
         }
     },
     {
         "model": "recipes.recipeingredient",
-        "pk": 2,
+        "pk": 4,
         "fields": {
-            "recipe": 2,
-            "ingredient": 1,
+            "recipe": 6,
+            "ingredient": 6,
+            "unit": "unit",
+            "quantity": "1.000"
+        }
+    },
+    {
+        "model": "recipes.recipeingredient",
+        "pk": 5,
+        "fields": {
+            "recipe": 6,
+            "ingredient": 7,
             "unit": "cup",
-            "quantity": "0.250"
+            "quantity": "0.500"
+        }
+    },
+    {
+        "model": "recipes.recipeingredient",
+        "pk": 6,
+        "fields": {
+            "recipe": 6,
+            "ingredient": 8,
+            "unit": "tbsp",
+            "quantity": "2.000"
+        }
+    },
+    {
+        "model": "recipes.recipeingredient",
+        "pk": 7,
+        "fields": {
+            "recipe": 6,
+            "ingredient": 9,
+            "unit": "pinch",
+            "quantity": "1.000"
+        }
+    },
+    {
+        "model": "recipes.recipeingredient",
+        "pk": 8,
+        "fields": {
+            "recipe": 7,
+            "ingredient": 11,
+            "unit": "unit",
+            "quantity": "10.000"
+        }
+    },
+    {
+        "model": "recipes.recipeingredient",
+        "pk": 9,
+        "fields": {
+            "recipe": 7,
+            "ingredient": 12,
+            "unit": "l",
+            "quantity": "1.000"
+        }
+    },
+    {
+        "model": "recipes.recipeingredient",
+        "pk": 10,
+        "fields": {
+            "recipe": 7,
+            "ingredient": 13,
+            "unit": "unit",
+            "quantity": "1.000"
+        }
+    },
+    {
+        "model": "recipes.recipeingredient",
+        "pk": 11,
+        "fields": {
+            "recipe": 7,
+            "ingredient": 14,
+            "unit": "unit",
+            "quantity": "1.000"
+        }
+    },
+    {
+        "model": "recipes.recipeingredient",
+        "pk": 12,
+        "fields": {
+            "recipe": 7,
+            "ingredient": 15,
+            "unit": "unit",
+            "quantity": "0.500"
+        }
+    },
+    {
+        "model": "recipes.recipeingredient",
+        "pk": 13,
+        "fields": {
+            "recipe": 7,
+            "ingredient": 16,
+            "unit": "unit",
+            "quantity": "4.000"
+        }
+    },
+    {
+        "model": "recipes.recipeingredient",
+        "pk": 14,
+        "fields": {
+            "recipe": 7,
+            "ingredient": 17,
+            "unit": "tbsp",
+            "quantity": "3.000"
+        }
+    },
+    {
+        "model": "recipes.recipeingredient",
+        "pk": 15,
+        "fields": {
+            "recipe": 7,
+            "ingredient": 18,
+            "unit": "tbsp",
+            "quantity": "1.000"
+        }
+    },
+    {
+        "model": "recipes.recipeingredient",
+        "pk": 16,
+        "fields": {
+            "recipe": 7,
+            "ingredient": 19,
+            "unit": "pinch",
+            "quantity": "1.000"
         }
     },
     {
         "model": "recipes.step",
-        "pk": 3,
+        "pk": 5,
         "fields": {
-            "recipe": 2,
+            "recipe": 6,
             "step_sequence": 1,
-            "title": "Paso número 1",
-            "description": "Primer paso",
+            "title": null,
+            "description": "En un tazón majar el aguacate y revolver con las rodajitas de cebolla morada, limón y sal.",
+            "photo": ""
+        }
+    },
+    {
+        "model": "recipes.step",
+        "pk": 7,
+        "fields": {
+            "recipe": 7,
+            "step_sequence": 1,
+            "title": null,
+            "description": "Lavarse las manos con agua y jabón.",
+            "photo": ""
+        }
+    },
+    {
+        "model": "recipes.step",
+        "pk": 8,
+        "fields": {
+            "recipe": 7,
+            "step_sequence": 2,
+            "title": null,
+            "description": "En una olla mediana a temperatura media derretir la mantequilla con el achiote y sofreír la cebolla y el chile dulce hasta que empiece a cristalizar, seguido añadir el ajo, los pejibayes, sal y pimienta al gusto.",
+            "photo": ""
+        }
+    },
+    {
+        "model": "recipes.step",
+        "pk": 9,
+        "fields": {
+            "recipe": 7,
+            "step_sequence": 3,
+            "title": null,
+            "description": "Hervir la pechuga de pollo con olores (apio, cebolla, chile, sal, pimienta).",
+            "photo": ""
+        }
+    },
+    {
+        "model": "recipes.step",
+        "pk": 10,
+        "fields": {
+            "recipe": 7,
+            "step_sequence": 4,
+            "title": null,
+            "description": "Agregar el caldo y dejar hervir por 15 minutos.",
+            "photo": ""
+        }
+    },
+    {
+        "model": "recipes.step",
+        "pk": 11,
+        "fields": {
+            "recipe": 7,
+            "step_sequence": 5,
+            "title": null,
+            "description": "Pasar la mezcla a una licuadora y mezclar hasta que se licue lo suficiente.",
+            "photo": ""
+        }
+    },
+    {
+        "model": "recipes.step",
+        "pk": 12,
+        "fields": {
+            "recipe": 7,
+            "step_sequence": 6,
+            "title": null,
+            "description": "Devolver la mezcla a la olla e incorporar la crema dulce, sal y pimienta, mezclar y dejar hervir unos minutos más hasta que se espese lo suficiente.",
             "photo": ""
         }
     }
