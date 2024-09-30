@@ -77,8 +77,8 @@ class Recipe(models.Model):
     Data model: https://schema.org/Recipe
     """
 
-    name = models.CharField(max_length=100)
-    description = models.TextField()
+    name = models.CharField(max_length=512)
+    description = models.TextField(null=True, blank=True)
     category = models.ForeignKey(
         Category, on_delete=models.SET_NULL, null=True, blank=True
     )
@@ -95,7 +95,12 @@ class Recipe(models.Model):
     recipe_yield = models.CharField(max_length=50, null=True, blank=True)
     recipe_cuisine = models.CharField(max_length=100, null=True, blank=True)
 
+    storage = models.TextField(null=True, blank=True)
+    origin = models.TextField(null=True, blank=True)
+    references = models.TextField(null=True, blank=True)
+
     # Nutrition Information
+    nutritional_value = models.TextField(null=True, blank=True)
     calories = models.CharField(max_length=20, null=True, blank=True)
     fat_content = models.CharField(max_length=20, null=True, blank=True)
     carbohydrate_content = models.CharField(max_length=20, null=True, blank=True)
@@ -124,6 +129,7 @@ class RecipeIngredient(models.Model):
         ("tbsp", "cucharada"),
         ("cup", "taza"),
         ("unit", "unidad"),
+        ("pinch", "pizca")
     ]
 
     UNIT_NAMES = {choice[0]: choice[1] for choice in UNIT_CHOICES}
@@ -137,7 +143,7 @@ class RecipeIngredient(models.Model):
         unique_together = ("recipe", "ingredient")
 
     def __str__(self):
-        return f"{self.quantity} {self.UNIT_NAMES[self.unit]} of {self.ingredient.name} for {self.recipe.name}"
+        return f"{self.quantity} {self.UNIT_NAMES[self.unit]} of {self.ingredient.ingredient_name} for {self.recipe.name}"
     
     def get_unit_name(self):
         """Devuelve el nombre de la unidad en español."""

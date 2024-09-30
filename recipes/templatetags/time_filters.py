@@ -1,11 +1,12 @@
 from django import template
+from datetime import timedelta
 
 register = template.Library()
 
 @register.filter
 def format_timedelta(duration):
-    if isinstance(duration, (tuple, list)):
-        return "0 minutos"
+    if not isinstance(duration, timedelta):
+        return "No disponible"
     
     total_seconds = int(duration.total_seconds())
     hours = total_seconds // 3600

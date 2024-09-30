@@ -19,47 +19,13 @@
 
                 <div style="width: 100%;">
                     <div class="d-flex justify-content-between mb-1" style="width: 100%;">
-                        <div class="step_sequence-input me-2" style="width: 30%;">{{ form.step_sequence }}
-                            {% if form.step_sequence.errors %}
-                                <div class="alert alert-danger m-2">
-                                    {% for error in form.step_sequence.errors %}
-                                        {{ error }}
-                                    {% endfor %}
-                                </div>
-                            {% endif %}
-                        </div>
+                        <div class="step_sequence-input w-25 me-2">{{ form.step_sequence }}</div>
         
-                        <div class="title-input w-100" style="width: 60%;">{{ form.title }}
-                            {% if form.title.errors %}
-                                <div class="alert alert-danger m-2">
-                                    {% for error in form.title.errors %}
-                                        {{ error }}
-                                    {% endfor %}
-                                </div>
-                            {% endif %}
-                        </div>
+                        <div class="photo-input w-100">{{ form.photo }}</div>
                     </div>
                 
                     <div class="d-flex justify-content-between" style="width: 100%;">
-                        <div class="photo-input w-100 me-2" style="width: 30%;">{{ form.photo }}
-                            {% if form.photo.errors %}
-                                <div class="alert alert-danger m-2">
-                                    {% for error in form.photo.errors %}
-                                        {{ error }}
-                                    {% endfor %}
-                                </div>
-                            {% endif %}
-                        </div>
-                        
-                        <div class="description-input w-100" style="width: 60%;">{{ form.description }}
-                            {% if form.description.errors %}
-                                <div class="alert alert-danger m-2">
-                                    {% for error in form.description.errors %}
-                                        {{ error }}
-                                    {% endfor %}
-                                </div>
-                            {% endif %}
-                        </div>
+                        <div class="description-input w-100">{{ form.description }}</div>
                     </div>
                 </div>
             </div>

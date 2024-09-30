@@ -29,6 +29,9 @@ class RecipeForm(forms.ModelForm):
             "total_time",
             "recipe_yield",
             "recipe_cuisine",
+            "storage",
+            "references",
+            "nutritional_value",
             "calories",
             "fat_content",
             "carbohydrate_content",
@@ -40,6 +43,9 @@ class RecipeForm(forms.ModelForm):
                 attrs={"class": "form-control"}
             ),
             "description": forms.Textarea(attrs={"class": "form-control", "rows": 4}),
+            "storage": forms.Textarea(attrs={"class": "form-control", "rows": 2}),
+            "nutritional_value": forms.Textarea(attrs={"class": "form-control", "rows": 6}),
+            "references": forms.Textarea(attrs={"class": "form-control", "rows": 4}),
             "category": forms.Select(attrs={"class": "form-select"}),
             "image": forms.ClearableFileInput(attrs={"class": "form-control"}),
             "tags": forms.CheckboxSelectMultiple(attrs={"class": "form-check-inline"}),
@@ -154,7 +160,7 @@ class StepForm(forms.ModelForm):
                 attrs={
                     "class": "form-control",
                     "placeholder": "Descripción",
-                    "rows": 1,
+                    "rows": 3,
                 }
             ),
             "photo": forms.ClearableFileInput(

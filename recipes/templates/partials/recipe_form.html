@@ -5,18 +5,27 @@
 <div class="row p-2">
     <div class="col">
         <div class="bg-light rounded p-2 mb-3">
-            <div class="mb-1 mx-2">
+            <div class="mb-2 mx-2">
                 <label>Nombre de la receta</label>
                 {{ recipe_form.name }}
             </div>
-            <div class="mb-1 mx-2">
+            <div class="mb-2 mx-2">
                 <label>Descripción</label>
                 {{ recipe_form.description }}
             </div>
-            <div class="mb-4 mx-2">
+            <div class="mb-2 mx-2">
+                <label>Forma de almacenamiento</label>
+                {{ recipe_form.storage }}
+            </div>
+            <div class="mb-2 mx-2">
                 <label>Imagen</label>
                 {{ recipe_form.image }}
             </div>
+            <div class="mb-4 mx-2">
+                <label>Referencias</label>
+                {{ recipe_form.references }}
+            </div>
+
             <div class="row mb-4 mx-2 bg-white rounded p-2">
                 <label class="mb-3">Tiempo <small class="text-secondary">(hh:mm:ss)</small></label>
                 <div class="col">
@@ -74,11 +83,15 @@
                     </div>
                 </div>
             </div>
-    
+
             <div class="container background-amarillo rounded mb-3 p-2">
                 <div class="bg-black rounded p-1">
                     <div class="background-amarillo rounded p-2">
                         <h5 class="text-center">Información nutricional</h5>
+                        <div class="border border-dark rounded mb-3">
+                            {{ recipe_form.nutritional_value }}
+                        </div>
+
                         <hr class="text-black my-2" />
     
                         <div class="row">
