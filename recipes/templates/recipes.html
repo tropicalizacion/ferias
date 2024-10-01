@@ -31,8 +31,8 @@
         {% for recipe in recipes %}
         <div class="col">
             <div class="card h-100 border-0 bg-white shadow-sm rounded">
-                <div class="card-header h-100 border-0 bg-white pt-3">
-                    <div class="d-flex flex-wrap gap-2">
+                <div class="card-header border-0 bg-white" style="max-height: 1rem;">
+                    <div class="d-flex flex-wrap gap-2" style="max-height: 1rem;">
                         {% for tag in recipe.tags.all %}
                         <span class="badge rounded-pill background-verde">{{ tag.tag_name }}</span>
                         {% endfor %}
@@ -40,14 +40,17 @@
                 </div>
                 <div class="card-body h-100">
                     {% if recipe.image %}
-                    <img src="{{ recipe.image.url }}" class="card-img-top" alt="{{ recipe.name }}">
+                    <img src="{{ recipe.image.url }}" class="card-img-bottom mt-2 mb-3 rounded w-100" alt="{{ recipe.name }}">
                     {% else %}
-                    <img src="{% static 'recipes/default_recipe_image.jpg' %}" class="card-img-top" alt="{{ recipe.name }}">
+                    <img src="{% static 'recipes/default_recipe_image.jpg' %}" class="card-img-bottom mt-2 mb-3 rounded w-100" alt="{{ recipe.name }}">
                     {% endif %}
-                    <h5 class="card-title mt-3">{{ recipe.name|capfirst }}</h5>
+
+                    <h5 class="card-title">{{ recipe.name|capfirst }}</h5>
                     <p class="card-text">{{ recipe.description|truncatewords:15 }}</p>
+
                     <div class="d-flex justify-content-between align-items-center">
-                        <a href="{% url 'recipe' recipe.slug %}" class="link-danger"><strong><i class="fa-solid fa-chevron-down me-2"></i>Ver receta</strong></a>
+                        <a href="{% url 'recipe' recipe.slug %}" class="btn btn-sm btn-danger"><strong><i class="fa-solid fa-chevron-down me-2"></i>Ver receta</strong></a>
+                        
                         {% if user.is_staff %}
                         <div class="d-flex justify-content-end pt-2">
                             <a href="{% url 'edit_recipe' recipe.slug %}" class="link-warning me-1"><i class="fa-solid fa-pen-to-square"></i></a>
@@ -72,6 +75,7 @@
                             </div>
                         </div>
                         {% endif %}
+
                     </div>
                 </div>
                 <div class="card-footer h-100 border-0 bg-white"></div>
