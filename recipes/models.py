@@ -135,7 +135,7 @@ class RecipeIngredient(models.Model):
     UNIT_NAMES = {choice[0]: choice[1] for choice in UNIT_CHOICES}
 
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
-    ingredient = models.ForeignKey(Ingredient, on_delete=models.CASCADE)
+    ingredient = models.ForeignKey(Ingredient, null=True, blank=True, on_delete=models.SET_NULL)
     unit = models.CharField(max_length=50, choices=UNIT_CHOICES, default="unit")
     quantity = models.DecimalField(max_digits=8, decimal_places=3)
 
