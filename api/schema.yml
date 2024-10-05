@@ -206,21 +206,6 @@ components:
               - Point
               type: string
           type: object
-        marketplace_type:
-          description: 'Tipo de feria, puede ser uno de los tres tipos: feria, mercado
-            u otro
-
-
-            * `feria` - Feria del Agricultor
-
-            * `mercado` - Mercado Libre
-
-            * `otro` - Otro tipo de feria'
-          nullable: true
-          oneOf:
-          - $ref: '#/components/schemas/MarketplaceTypeEnum'
-          - $ref: '#/components/schemas/BlankEnum'
-          - $ref: '#/components/schemas/NullEnum'
         name:
           description: Nombre de la feria
           maxLength: 127
@@ -298,6 +283,21 @@ components:
           description: "Ba\xF1os disponibles en la feria"
           nullable: true
           type: boolean
+        type:
+          description: 'Tipo de feria, puede ser uno de los tres tipos: feria, mercado
+            u otro
+
+
+            * `feria` - Feria del Agricultor
+
+            * `mercado` - Mercado Libre
+
+            * `otro` - Otro tipo de feria'
+          nullable: true
+          oneOf:
+          - $ref: '#/components/schemas/MarketplaceTypeEnum'
+          - $ref: '#/components/schemas/BlankEnum'
+          - $ref: '#/components/schemas/NullEnum'
         url:
           format: uri
           readOnly: true
@@ -551,21 +551,6 @@ components:
               - Point
               type: string
           type: object
-        marketplace_type:
-          description: 'Tipo de feria, puede ser uno de los tres tipos: feria, mercado
-            u otro
-
-
-            * `feria` - Feria del Agricultor
-
-            * `mercado` - Mercado Libre
-
-            * `otro` - Otro tipo de feria'
-          nullable: true
-          oneOf:
-          - $ref: '#/components/schemas/MarketplaceTypeEnum'
-          - $ref: '#/components/schemas/BlankEnum'
-          - $ref: '#/components/schemas/NullEnum'
         name:
           description: Nombre de la feria
           maxLength: 127
@@ -643,6 +628,21 @@ components:
           description: "Ba\xF1os disponibles en la feria"
           nullable: true
           type: boolean
+        type:
+          description: 'Tipo de feria, puede ser uno de los tres tipos: feria, mercado
+            u otro
+
+
+            * `feria` - Feria del Agricultor
+
+            * `mercado` - Mercado Libre
+
+            * `otro` - Otro tipo de feria'
+          nullable: true
+          oneOf:
+          - $ref: '#/components/schemas/MarketplaceTypeEnum'
+          - $ref: '#/components/schemas/BlankEnum'
+          - $ref: '#/components/schemas/NullEnum'
         url:
           format: uri
           readOnly: true
