@@ -7,6 +7,8 @@ from .serializers import GeoMarketplaceSerializer
 from website.models import Text
 
 import pandas as pd
+import geopandas as gpd
+from shapely import Point
 from django.http import FileResponse
 import io
 from drf_spectacular.utils import (
@@ -123,6 +125,21 @@ def ferias(request):
             df.to_excel("ferias.xlsx", index=False)
             return FileResponse(
                 open("ferias.xlsx", "rb"), as_attachment=True, filename="ferias.xlsx"
+            )
+        elif request.GET["formato"] == "geojson":
+            def format_points(value):
+                return Point(value)
+
+            df['geometry'] = df['location'].apply(format_points)
+
+            gdf = gpd.GeoDataFrame(
+                df[["name", "province", "canton", "district", "postal_code", "address"]],
+                geometry=df['geometry'],
+                crs="EPSG:4326"
+            )
+            gdf.to_file("ferias.geojson", driver="GeoJSON")
+            return FileResponse(
+                open("ferias.geojson", "rb"), as_attachment=True, filename="ferias.geojson"
             )
 
 
