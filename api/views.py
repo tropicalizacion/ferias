@@ -3,6 +3,7 @@ from django.http import FileResponse
 from rest_framework import viewsets
 from marketplaces.models import Marketplace
 from products.models import Product
+from products.models import Variety
 from .serializers import MarketplaceSerializer
 from .serializers import GeoMarketplaceSerializer
 from .serializers import ProductSerializer
@@ -19,6 +20,8 @@ from drf_spectacular.utils import (
     extend_schema_view,
 )
 from django.conf import settings
+from io import BytesIO
+from zipfile import ZipFile
 
 # Create your views here.
 
@@ -188,4 +191,42 @@ def ferias(request):
 
 
 def productos(request):
-    return FileResponse(open("productos.csv", "rb"))
+    productos = Product.objects.all().order_by("common_name")
+    df = pd.DataFrame.from_records(productos.values())
+    df.drop('icon', axis=1, inplace=True)
+    if "formato" in request.GET:
+        if request.GET["formato"] == "csv":
+
+            variedades = Variety.objects.all().order_by("variety_id")
+            df2 = pd.DataFrame.from_records(variedades.values())
+            df2.drop('image', axis=1, inplace=True)
+
+            # df.to_csv("productos.csv", index=False)
+            # df2.to_csv("variedades.csv", index=False)
+
+            # Create a zip file response
+            zip_buffer = BytesIO()
+            with ZipFile(zip_buffer, 'w') as zip_file:
+                # Safe productos csv in the zip file
+                csv_buffer1 = BytesIO()
+                df.to_csv(csv_buffer1, index=False)
+                zip_file.writestr("productos.csv", csv_buffer1.getvalue())
+
+                # GSafe variedades csv in the zip file
+                csv_buffer2 = BytesIO()
+                df2.to_csv(csv_buffer2, index=False)
+                zip_file.writestr("variedades.csv", csv_buffer2.getvalue())
+
+            zip_buffer.seek(0)
+            return FileResponse(zip_buffer, as_attachment=True, filename='productos.zip')
+            
+        elif request.GET["formato"] == "excel":
+            df.to_excel("productos.xlsx", index=False)
+            return FileResponse(
+                open("productos.xlsx", "rb"), as_attachment=True, filename="productos.xlsx"
+            )
+        elif request.GET["formato"] == "json":
+            df.to_json("productos.json", index=False)
+            return FileResponse(
+                open("productos.json", "rb"), as_attachment=True, filename="productos.json"
+            )
