@@ -22,6 +22,7 @@ from drf_spectacular.utils import (
 from django.conf import settings
 from io import BytesIO
 from zipfile import ZipFile
+from rest_framework.renderers import JSONRenderer
 
 # Create your views here.
 
@@ -226,7 +227,14 @@ def productos(request):
                 open("productos.xlsx", "rb"), as_attachment=True, filename="productos.xlsx"
             )
         elif request.GET["formato"] == "json":
-            df.to_json("productos.json", index=False)
+            productos = Product.objects.all().order_by("common_name")
+            serializer = ProductSerializer(productos, many=True)
+            json_data = JSONRenderer().render(serializer.data, renderer_context={'indent': 4})  # Genera el JSON utilizando el serializador
+
+            # Guardar el JSON formateado en un archivo
+            with open("productos.json", "wb") as json_file:
+                json_file.write(json_data)
+            
             return FileResponse(
                 open("productos.json", "rb"), as_attachment=True, filename="productos.json"
             )
