@@ -87,7 +87,7 @@ def ferias(request):
         "n_amenities": n_amenities,
     }
 
-    if request.method == "POST":
+    if request.method == "POST" and request.htmx:
         marketplaces_match, marketplaces_others, marketplaces_keyword, keyword, query_text, by_location = search_marketplaces(request.POST)
         context["show_results"] = True
         context["query_text"] = query_text
@@ -95,9 +95,11 @@ def ferias(request):
         context["keyword"] = keyword
         context["marketplaces_match"] = marketplaces_match
         context["marketplaces_others"] = marketplaces_others
-        context["marketplaces_keyword"] = marketplaces_keyword  
-    
-    return render(request, "ferias.html", context)
+        context["marketplaces_keyword"] = marketplaces_keyword
+
+        return render(request, "partials/result.html", context)
+    else:
+        return render(request, "ferias.html", context)
 
 
 def feria(request, marketplace_url):
@@ -190,8 +192,8 @@ def edit(request, marketplace_url):
 
 def results(request):
     marketplaces = Marketplace.objects.all().order_by("name")
-    if request.method == "POST":            
-            marketplaces_match, marketplaces_others, marketplaces_keyword, keyword, query_text = search_marketplaces(request.POST)   
+    if request.method == "POST" and request.htmx:            
+            marketplaces_match, marketplaces_others, marketplaces_keyword, keyword, query_text, by_location = search_marketplaces(request.POST)   
             context = {
                 "show_results": True,
                 "marketplaces": marketplaces,
@@ -200,8 +202,9 @@ def results(request):
                 "marketplaces_keyword": marketplaces_keyword,
                 "query_text": query_text,
                 "keyword": keyword,
+                "by_location": by_location,
             }
-            return render(request, "results.html", context)
+            return render(request, "partials/result.html", context)
     else:
         return render(request, "results.html")
 
