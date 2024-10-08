@@ -84,7 +84,7 @@ class Marketplace(models.Model):
     address = models.TextField(
         blank=True, null=True, help_text="Dirección exacta de la feria"
     )
-    phone = models.IntegerField(
+    phone = models.CharField(max_length=127,
         blank=True, null=True, help_text="Número telefónico de contacto de la feria"
     )
     email = models.EmailField(
