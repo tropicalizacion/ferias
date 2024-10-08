@@ -25,7 +25,7 @@ class MarketplaceSerializer(serializers.ModelSerializer):
             "opening_date",
             "operator",
             "branch",
-            "marketplace_type",
+            "type",
             "parking",
             "bicycle_parking",
             "fairground",

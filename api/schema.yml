@@ -1,0 +1,1021 @@
+components:
+  schemas:
+    BlankEnum:
+      enum:
+      - ''
+    BranchEnum:
+      description: "* `Atl\xE1ntico` - Comit\xE9 Regional Atl\xE1ntico\n* `Brunca`\
+        \ - Comit\xE9 Regional Brunca\n* `Central Central` - Comit\xE9 Regional Central\
+        \ Central\n* `Central Occidental Este` - Comit\xE9 Regional Central Occidental\
+        \ Este\n* `Central Occidental Oeste` - Comit\xE9 Regional Central Occidental\
+        \ Oeste\n* `Central Oriental` - Comit\xE9 Regional Central Oriental\n* `Chorotega`\
+        \ - Comit\xE9 Regional Chorotega\n* `Huetar Norte` - Comit\xE9 Regional Huetar\
+        \ Norte\n* `Pac\xEDfico Central` - Comit\xE9 Regional Pac\xEDfico Central"
+      enum:
+      - "Atl\xE1ntico"
+      - Brunca
+      - Central Central
+      - Central Occidental Este
+      - Central Occidental Oeste
+      - Central Oriental
+      - Chorotega
+      - Huetar Norte
+      - "Pac\xEDfico Central"
+      type: string
+    GeoMarketplace:
+      properties:
+        geometry:
+          properties:
+            coordinates:
+              example:
+              - 12.9721
+              - 77.5933
+              items:
+                format: float
+                type: number
+              maxItems: 3
+              minItems: 2
+              type: array
+            type:
+              enum:
+              - Point
+              type: string
+          type: object
+        properties:
+          properties:
+            address:
+              description: "Direcci\xF3n exacta de la feria"
+              nullable: true
+              type: string
+            canton:
+              description: "Cant\xF3n en que se encuentra la feria"
+              maxLength: 31
+              type: string
+            district:
+              description: Distrito en que se encuentra la feria
+              maxLength: 31
+              type: string
+            name:
+              description: Nombre de la feria
+              maxLength: 127
+              type: string
+            postal_code:
+              description: "C\xF3digo postal de la feria"
+              maximum: 2147483647
+              minimum: -2147483648
+              nullable: true
+              type: integer
+            province:
+              description: Provincia en que se encuentra la feria
+              maxLength: 31
+              type: string
+          type: object
+        type:
+          $ref: '#/components/schemas/GisFeatureEnum'
+      type: object
+    GisFeatureEnum:
+      enum:
+      - Feature
+      type: string
+    Marketplace:
+      properties:
+        address:
+          description: "Direcci\xF3n exacta de la feria"
+          nullable: true
+          type: string
+        bicycle_parking:
+          description: Parqueo para bicicletas disponible en la feria
+          nullable: true
+          type: boolean
+        branch:
+          description: "Comit\xE9 regional al que pertenece la feria\n\n* `Atl\xE1\
+            ntico` - Comit\xE9 Regional Atl\xE1ntico\n* `Brunca` - Comit\xE9 Regional\
+            \ Brunca\n* `Central Central` - Comit\xE9 Regional Central Central\n*\
+            \ `Central Occidental Este` - Comit\xE9 Regional Central Occidental Este\n\
+            * `Central Occidental Oeste` - Comit\xE9 Regional Central Occidental Oeste\n\
+            * `Central Oriental` - Comit\xE9 Regional Central Oriental\n* `Chorotega`\
+            \ - Comit\xE9 Regional Chorotega\n* `Huetar Norte` - Comit\xE9 Regional\
+            \ Huetar Norte\n* `Pac\xEDfico Central` - Comit\xE9 Regional Pac\xEDfico\
+            \ Central"
+          nullable: true
+          oneOf:
+          - $ref: '#/components/schemas/BranchEnum'
+          - $ref: '#/components/schemas/BlankEnum'
+          - $ref: '#/components/schemas/NullEnum'
+        butcher:
+          description: Venta de carnes en la feria
+          nullable: true
+          type: boolean
+        canton:
+          description: "Cant\xF3n en que se encuentra la feria"
+          maxLength: 31
+          type: string
+        dairy:
+          description: "Venta de l\xE1cteos en la feria"
+          nullable: true
+          type: boolean
+        district:
+          description: Distrito en que se encuentra la feria
+          maxLength: 31
+          type: string
+        drinking_water:
+          description: Agua potable disponible en la feria
+          nullable: true
+          type: boolean
+        drinks:
+          description: Venta de bebidas en la feria
+          nullable: true
+          type: boolean
+        email:
+          description: "Correo electr\xF3nico de la feria"
+          format: email
+          maxLength: 127
+          nullable: true
+          type: string
+        facebook:
+          description: "P\xE1gina de Facebook de la feria"
+          format: uri
+          maxLength: 255
+          nullable: true
+          type: string
+        fairground:
+          description: Plaza ferial disponible para la feria
+          nullable: true
+          type: boolean
+        florist:
+          description: Venta de flores en la feria
+          nullable: true
+          type: boolean
+        food:
+          description: Venta de alimentos en la feria
+          nullable: true
+          type: boolean
+        garden_centre:
+          description: Venta de plantas en la feria
+          nullable: true
+          type: boolean
+        handicrafts:
+          description: "Venta de artesan\xEDas en la feria"
+          nullable: true
+          type: boolean
+        handwashing:
+          description: Lavamanos disponibles en la feria
+          nullable: true
+          type: boolean
+        indoor:
+          description: Espacio techado disponible en la feria
+          nullable: true
+          type: boolean
+        instagram:
+          description: Perfil de Instagram de la feria
+          format: uri
+          maxLength: 255
+          nullable: true
+          type: string
+        location:
+          description: "Ubicaci\xF3n exacta de la feria"
+          nullable: true
+          properties:
+            coordinates:
+              example:
+              - 12.9721
+              - 77.5933
+              items:
+                format: float
+                type: number
+              maxItems: 3
+              minItems: 2
+              type: array
+            type:
+              enum:
+              - Point
+              type: string
+          type: object
+        name:
+          description: Nombre de la feria
+          maxLength: 127
+          type: string
+        opening_date:
+          description: Fecha de apertura de la feria
+          format: date
+          nullable: true
+          type: string
+        opening_hours:
+          description: "Horario de apertura de la feria, con el formato de la especificaci\xF3\
+            n de OpenStreetMap para opening_hours"
+          maxLength: 1023
+          nullable: true
+          type: string
+        operator:
+          description: Operador u organizador de la feria
+          maxLength: 255
+          nullable: true
+          type: string
+        other_services:
+          description: Otros servicios disponibles en la feria
+          maxLength: 255
+          nullable: true
+          type: string
+        parking:
+          description: 'Tipo de parqueo disponible en la feria, puede ser uno de los
+            tres tipos: lane, street_side o surface
+
+
+            * `lane` - en la calle
+
+            * `street_side` - al lado de la calle en espacio dedicado
+
+            * `surface` - un un espacio amplio de parqueo'
+          nullable: true
+          oneOf:
+          - $ref: '#/components/schemas/ParkingEnum'
+          - $ref: '#/components/schemas/BlankEnum'
+          - $ref: '#/components/schemas/NullEnum'
+        phone:
+          description: "N\xFAmero telef\xF3nico de contacto de la feria"
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+          type: integer
+        postal_code:
+          description: "C\xF3digo postal de la feria"
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+          type: integer
+        province:
+          description: Provincia en que se encuentra la feria
+          maxLength: 31
+          type: string
+        seafood:
+          description: Venta de mariscos en la feria
+          nullable: true
+          type: boolean
+        size:
+          description: "Tama\xF1o de la feria, puede ser una de las cuatro opciones:\
+            \ S, M, L o XL\n\n* `S` - Peque\xF1a\n* `M` - Mediana\n* `L` - Grande\n\
+            * `XL` - Muy grande"
+          nullable: true
+          oneOf:
+          - $ref: '#/components/schemas/SizeEnum'
+          - $ref: '#/components/schemas/BlankEnum'
+          - $ref: '#/components/schemas/NullEnum'
+        spices:
+          description: Venta de especias en la feria
+          nullable: true
+          type: boolean
+        toilets:
+          description: "Ba\xF1os disponibles en la feria"
+          nullable: true
+          type: boolean
+        type:
+          description: 'Tipo de feria, puede ser uno de los tres tipos: feria, mercado
+            u otro
+
+
+            * `feria` - Feria del Agricultor
+
+            * `mercado` - Mercado Libre
+
+            * `otro` - Otro tipo de feria'
+          nullable: true
+          oneOf:
+          - $ref: '#/components/schemas/MarketplaceTypeEnum'
+          - $ref: '#/components/schemas/BlankEnum'
+          - $ref: '#/components/schemas/NullEnum'
+        url:
+          format: uri
+          readOnly: true
+          type: string
+        website:
+          description: Sitio web de la feria
+          format: uri
+          maxLength: 255
+          nullable: true
+          type: string
+      required:
+      - canton
+      - district
+      - name
+      - province
+      - url
+      type: object
+    MarketplaceTypeEnum:
+      description: '* `feria` - Feria del Agricultor
+
+        * `mercado` - Mercado Libre
+
+        * `otro` - Otro tipo de feria'
+      enum:
+      - feria
+      - mercado
+      - otro
+      type: string
+    NullEnum:
+      enum:
+      - null
+    PaginatedMarketplaceList:
+      properties:
+        count:
+          example: 123
+          type: integer
+        next:
+          example: http://api.example.org/accounts/?page=4
+          format: uri
+          nullable: true
+          type: string
+        previous:
+          example: http://api.example.org/accounts/?page=2
+          format: uri
+          nullable: true
+          type: string
+        results:
+          items:
+            $ref: '#/components/schemas/Marketplace'
+          type: array
+      required:
+      - count
+      - results
+      type: object
+    ParkingEnum:
+      description: '* `lane` - en la calle
+
+        * `street_side` - al lado de la calle en espacio dedicado
+
+        * `surface` - un un espacio amplio de parqueo'
+      enum:
+      - lane
+      - street_side
+      - surface
+      type: string
+    PatchedGeoMarketplace:
+      properties:
+        geometry:
+          properties:
+            coordinates:
+              example:
+              - 12.9721
+              - 77.5933
+              items:
+                format: float
+                type: number
+              maxItems: 3
+              minItems: 2
+              type: array
+            type:
+              enum:
+              - Point
+              type: string
+          type: object
+        properties:
+          properties:
+            address:
+              description: "Direcci\xF3n exacta de la feria"
+              nullable: true
+              type: string
+            canton:
+              description: "Cant\xF3n en que se encuentra la feria"
+              maxLength: 31
+              type: string
+            district:
+              description: Distrito en que se encuentra la feria
+              maxLength: 31
+              type: string
+            name:
+              description: Nombre de la feria
+              maxLength: 127
+              type: string
+            postal_code:
+              description: "C\xF3digo postal de la feria"
+              maximum: 2147483647
+              minimum: -2147483648
+              nullable: true
+              type: integer
+            province:
+              description: Provincia en que se encuentra la feria
+              maxLength: 31
+              type: string
+          type: object
+        type:
+          $ref: '#/components/schemas/GisFeatureEnum'
+      type: object
+    PatchedMarketplace:
+      properties:
+        address:
+          description: "Direcci\xF3n exacta de la feria"
+          nullable: true
+          type: string
+        bicycle_parking:
+          description: Parqueo para bicicletas disponible en la feria
+          nullable: true
+          type: boolean
+        branch:
+          description: "Comit\xE9 regional al que pertenece la feria\n\n* `Atl\xE1\
+            ntico` - Comit\xE9 Regional Atl\xE1ntico\n* `Brunca` - Comit\xE9 Regional\
+            \ Brunca\n* `Central Central` - Comit\xE9 Regional Central Central\n*\
+            \ `Central Occidental Este` - Comit\xE9 Regional Central Occidental Este\n\
+            * `Central Occidental Oeste` - Comit\xE9 Regional Central Occidental Oeste\n\
+            * `Central Oriental` - Comit\xE9 Regional Central Oriental\n* `Chorotega`\
+            \ - Comit\xE9 Regional Chorotega\n* `Huetar Norte` - Comit\xE9 Regional\
+            \ Huetar Norte\n* `Pac\xEDfico Central` - Comit\xE9 Regional Pac\xEDfico\
+            \ Central"
+          nullable: true
+          oneOf:
+          - $ref: '#/components/schemas/BranchEnum'
+          - $ref: '#/components/schemas/BlankEnum'
+          - $ref: '#/components/schemas/NullEnum'
+        butcher:
+          description: Venta de carnes en la feria
+          nullable: true
+          type: boolean
+        canton:
+          description: "Cant\xF3n en que se encuentra la feria"
+          maxLength: 31
+          type: string
+        dairy:
+          description: "Venta de l\xE1cteos en la feria"
+          nullable: true
+          type: boolean
+        district:
+          description: Distrito en que se encuentra la feria
+          maxLength: 31
+          type: string
+        drinking_water:
+          description: Agua potable disponible en la feria
+          nullable: true
+          type: boolean
+        drinks:
+          description: Venta de bebidas en la feria
+          nullable: true
+          type: boolean
+        email:
+          description: "Correo electr\xF3nico de la feria"
+          format: email
+          maxLength: 127
+          nullable: true
+          type: string
+        facebook:
+          description: "P\xE1gina de Facebook de la feria"
+          format: uri
+          maxLength: 255
+          nullable: true
+          type: string
+        fairground:
+          description: Plaza ferial disponible para la feria
+          nullable: true
+          type: boolean
+        florist:
+          description: Venta de flores en la feria
+          nullable: true
+          type: boolean
+        food:
+          description: Venta de alimentos en la feria
+          nullable: true
+          type: boolean
+        garden_centre:
+          description: Venta de plantas en la feria
+          nullable: true
+          type: boolean
+        handicrafts:
+          description: "Venta de artesan\xEDas en la feria"
+          nullable: true
+          type: boolean
+        handwashing:
+          description: Lavamanos disponibles en la feria
+          nullable: true
+          type: boolean
+        indoor:
+          description: Espacio techado disponible en la feria
+          nullable: true
+          type: boolean
+        instagram:
+          description: Perfil de Instagram de la feria
+          format: uri
+          maxLength: 255
+          nullable: true
+          type: string
+        location:
+          description: "Ubicaci\xF3n exacta de la feria"
+          nullable: true
+          properties:
+            coordinates:
+              example:
+              - 12.9721
+              - 77.5933
+              items:
+                format: float
+                type: number
+              maxItems: 3
+              minItems: 2
+              type: array
+            type:
+              enum:
+              - Point
+              type: string
+          type: object
+        name:
+          description: Nombre de la feria
+          maxLength: 127
+          type: string
+        opening_date:
+          description: Fecha de apertura de la feria
+          format: date
+          nullable: true
+          type: string
+        opening_hours:
+          description: "Horario de apertura de la feria, con el formato de la especificaci\xF3\
+            n de OpenStreetMap para opening_hours"
+          maxLength: 1023
+          nullable: true
+          type: string
+        operator:
+          description: Operador u organizador de la feria
+          maxLength: 255
+          nullable: true
+          type: string
+        other_services:
+          description: Otros servicios disponibles en la feria
+          maxLength: 255
+          nullable: true
+          type: string
+        parking:
+          description: 'Tipo de parqueo disponible en la feria, puede ser uno de los
+            tres tipos: lane, street_side o surface
+
+
+            * `lane` - en la calle
+
+            * `street_side` - al lado de la calle en espacio dedicado
+
+            * `surface` - un un espacio amplio de parqueo'
+          nullable: true
+          oneOf:
+          - $ref: '#/components/schemas/ParkingEnum'
+          - $ref: '#/components/schemas/BlankEnum'
+          - $ref: '#/components/schemas/NullEnum'
+        phone:
+          description: "N\xFAmero telef\xF3nico de contacto de la feria"
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+          type: integer
+        postal_code:
+          description: "C\xF3digo postal de la feria"
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+          type: integer
+        province:
+          description: Provincia en que se encuentra la feria
+          maxLength: 31
+          type: string
+        seafood:
+          description: Venta de mariscos en la feria
+          nullable: true
+          type: boolean
+        size:
+          description: "Tama\xF1o de la feria, puede ser una de las cuatro opciones:\
+            \ S, M, L o XL\n\n* `S` - Peque\xF1a\n* `M` - Mediana\n* `L` - Grande\n\
+            * `XL` - Muy grande"
+          nullable: true
+          oneOf:
+          - $ref: '#/components/schemas/SizeEnum'
+          - $ref: '#/components/schemas/BlankEnum'
+          - $ref: '#/components/schemas/NullEnum'
+        spices:
+          description: Venta de especias en la feria
+          nullable: true
+          type: boolean
+        toilets:
+          description: "Ba\xF1os disponibles en la feria"
+          nullable: true
+          type: boolean
+        type:
+          description: 'Tipo de feria, puede ser uno de los tres tipos: feria, mercado
+            u otro
+
+
+            * `feria` - Feria del Agricultor
+
+            * `mercado` - Mercado Libre
+
+            * `otro` - Otro tipo de feria'
+          nullable: true
+          oneOf:
+          - $ref: '#/components/schemas/MarketplaceTypeEnum'
+          - $ref: '#/components/schemas/BlankEnum'
+          - $ref: '#/components/schemas/NullEnum'
+        url:
+          format: uri
+          readOnly: true
+          type: string
+        website:
+          description: Sitio web de la feria
+          format: uri
+          maxLength: 255
+          nullable: true
+          type: string
+      type: object
+    SizeEnum:
+      description: "* `S` - Peque\xF1a\n* `M` - Mediana\n* `L` - Grande\n* `XL` -\
+        \ Muy grande"
+      enum:
+      - S
+      - M
+      - L
+      - XL
+      type: string
+  securitySchemes:
+    basicAuth:
+      scheme: basic
+      type: http
+    cookieAuth:
+      in: cookie
+      name: sessionid
+      type: apiKey
+info:
+  contact:
+    email: tropicalizacion@ucr.ac.cr
+  description: "Este es el API para la aplicaci\xF3n **deferia.cr**, en el cual se\
+    \ pueden obtener y suministrar datos detallados de ferias y productos.\n\n**TC-691\
+    \ \"Tropicalizaci\xF3n de la Tecnolog\xEDa\"**"
+  license:
+    name: CC BY 4.0
+  title: API de **deferia.cr**
+  version: '1.0'
+  x-logo:
+    altText: Logo deFeriaVerde
+    url: https://raw.githubusercontent.com/fabianabarca/ferias/main/static/images/logos/logo_verde.png
+openapi: 3.0.3
+paths:
+  /datos/api/ferias/:
+    get:
+      description: Este endpoint devuelve una lista de todas las ferias disponibles
+        en la plataforma.
+      operationId: ferias_list
+      parameters:
+      - description: A page number within the paginated result set.
+        in: query
+        name: page
+        required: false
+        schema:
+          type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedMarketplaceList'
+          description: ''
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      summary: Listar todas las ferias
+      tags:
+      - ferias
+    post:
+      description: Este endpoint permite crear una nueva feria en la plataforma.
+      operationId: ferias_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Marketplace'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Marketplace'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Marketplace'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Marketplace'
+          description: ''
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      summary: Crear una nueva feria
+      tags:
+      - ferias
+  /datos/api/ferias/{marketplace_url}/:
+    delete:
+      description: "Este endpoint permite eliminar la informaci\xF3n de una feria\
+        \ dada su URL."
+      operationId: ferias_destroy
+      parameters:
+      - in: path
+        name: marketplace_url
+        required: true
+        schema:
+          description: URL utilizada para la feria
+          type: string
+      responses:
+        '204':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Marketplace'
+          description: ''
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      summary: "Eliminar una feria espec\xEDfica"
+      tags:
+      - ferias
+    get:
+      description: Este endpoint devuelve los detalles de una feria dada su URL.
+      operationId: ferias_retrieve
+      parameters:
+      - in: path
+        name: marketplace_url
+        required: true
+        schema:
+          description: URL utilizada para la feria
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Marketplace'
+          description: ''
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      summary: "Obtener detalles de una feria espec\xEDfica"
+      tags:
+      - ferias
+    patch:
+      description: "Este endpoint permite ingresar informaci\xF3n m\xE1s actualizada\
+        \ acerca de una feria espec\xEDfica, dada su URL, sin necesidad de enviar\
+        \ los datos de todos los atributos de dicha feria, sino s\xF3lo aquellos datos\
+        \ que se vayan a actualizar."
+      operationId: ferias_partial_update
+      parameters:
+      - in: path
+        name: marketplace_url
+        required: true
+        schema:
+          description: URL utilizada para la feria
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedMarketplace'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedMarketplace'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedMarketplace'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Marketplace'
+          description: ''
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      summary: "Actualizar parcialmente la informaci\xF3n de una feria"
+      tags:
+      - ferias
+    put:
+      description: "Este endpoint permite ingresar informaci\xF3n m\xE1s actualizada\
+        \ acerca de una feria espec\xEDfica, dada su URL. Este endpoint requiere enviar\
+        \ los datos completos de todos los atributos de dicha feria."
+      operationId: ferias_update
+      parameters:
+      - in: path
+        name: marketplace_url
+        required: true
+        schema:
+          description: URL utilizada para la feria
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Marketplace'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Marketplace'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Marketplace'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Marketplace'
+          description: ''
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      summary: "Actualizar la informaci\xF3n de una feria"
+      tags:
+      - ferias
+  /datos/api/geoferias/:
+    get:
+      description: Este endpoint devuelve una lista de todas las ubicaciones de las
+        ferias disponibles en la plataforma.
+      operationId: geoferias_list
+      parameters:
+      - description: A page number within the paginated result set.
+        in: query
+        name: page
+        required: false
+        schema:
+          type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedMarketplaceList'
+          description: ''
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      summary: Listar todas las ubicaciones de las ferias
+      tags:
+      - geoferias
+    post:
+      description: "Este endpoint permite crear una nueva ubicaci\xF3n de una feria\
+        \ en la plataforma."
+      operationId: geoferias_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GeoMarketplace'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GeoMarketplace'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/GeoMarketplace'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Marketplace'
+          description: ''
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      summary: "Crear una nueva ubicaci\xF3n de feria"
+      tags:
+      - geoferias
+  /datos/api/geoferias/{marketplace_url}/:
+    delete:
+      description: "Este endpoint permite eliminar la ubicaci\xF3n de una feria dada\
+        \ su URL."
+      operationId: geoferias_destroy
+      parameters:
+      - in: path
+        name: marketplace_url
+        required: true
+        schema:
+          description: URL utilizada para la feria
+          type: string
+      responses:
+        '204':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Marketplace'
+          description: ''
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      summary: "Eliminar la ubicaci\xF3n de una feria espec\xEDfica"
+      tags:
+      - geoferias
+    get:
+      description: "Este endpoint devuelve los detalles de la ubicaci\xF3n de una\
+        \ feria dada su URL."
+      operationId: geoferias_retrieve
+      parameters:
+      - in: path
+        name: marketplace_url
+        required: true
+        schema:
+          description: URL utilizada para la feria
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Marketplace'
+          description: ''
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      summary: "Obtener detalles de la ubicaci\xF3n de una feria espec\xEDfica"
+      tags:
+      - geoferias
+    patch:
+      description: "Este endpoint permite ingresar informaci\xF3n m\xE1s actualizada\
+        \ acerca de la ubicaci\xF3n de una feria espec\xEDfica, dada su URL, sin necesidad\
+        \ de enviar los datos de todos los atributos de dicha ubicaci\xF3n, sino s\xF3\
+        lo aquellos datos que se vayan a actualizar."
+      operationId: geoferias_partial_update
+      parameters:
+      - in: path
+        name: marketplace_url
+        required: true
+        schema:
+          description: URL utilizada para la feria
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedGeoMarketplace'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedGeoMarketplace'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedGeoMarketplace'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Marketplace'
+          description: ''
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      summary: "Actualizar parcialmente la ubicaci\xF3n de una feria"
+      tags:
+      - geoferias
+    put:
+      description: "Este endpoint permite ingresar informaci\xF3n m\xE1s actualizada\
+        \ acerca de la ubicaci\xF3n de una feria espec\xEDfica, dada su URL. Este\
+        \ endpoint requiere enviar los datos completos de todos los atributos de dicha\
+        \ ubicaci\xF3n."
+      operationId: geoferias_update
+      parameters:
+      - in: path
+        name: marketplace_url
+        required: true
+        schema:
+          description: URL utilizada para la feria
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GeoMarketplace'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GeoMarketplace'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/GeoMarketplace'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Marketplace'
+          description: ''
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      summary: "Actualizar la ubicaci\xF3n de una feria"
+      tags:
+      - geoferias
+tags:
+- description: "Datos sobre las ferias, incluyendo informaci\xF3n general como nombre,\
+    \ productos, ubicaci\xF3n, contactos, entre otros."
+  name: ferias
+  x-displayName: Sobre las ferias
+- description: "Datos sobre la ubicaci\xF3n geoespacial de cada feria."
+  name: geoferias
+  x-displayName: "Ubicaci\xF3n de las ferias"
