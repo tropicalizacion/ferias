@@ -22,6 +22,21 @@ components:
       - Huetar Norte
       - "Pac\xEDfico Central"
       type: string
+    CategoryEnum:
+      description: "* `verdura` - Verdura u hortaliza\n* `fruta` - Fruta\n* `cereal`\
+        \ - Cereal o grano\n* `legumbre` - Legumbre o leguminosa\n* `raiz` - Tub\xE9\
+        rculo o ra\xEDz\n* `condimento` - Condimento o especia\n* `hierba` - Hierba\
+        \ arom\xE1tica\n* `otro` - Otra categor\xEDa"
+      enum:
+      - verdura
+      - fruta
+      - cereal
+      - legumbre
+      - raiz
+      - condimento
+      - hierba
+      - otro
+      type: string
     GeoMarketplace:
       properties:
         geometry:
@@ -337,6 +352,29 @@ components:
       - count
       - results
       type: object
+    PaginatedProductList:
+      properties:
+        count:
+          example: 123
+          type: integer
+        next:
+          example: http://api.example.org/accounts/?page=4
+          format: uri
+          nullable: true
+          type: string
+        previous:
+          example: http://api.example.org/accounts/?page=2
+          format: uri
+          nullable: true
+          type: string
+        results:
+          items:
+            $ref: '#/components/schemas/Product'
+          type: array
+      required:
+      - count
+      - results
+      type: object
     ParkingEnum:
       description: '* `lane` - en la calle
 
@@ -616,6 +654,161 @@ components:
           nullable: true
           type: string
       type: object
+    PatchedProduct:
+      properties:
+        category:
+          allOf:
+          - $ref: '#/components/schemas/CategoryEnum'
+          description: "Categor\xEDa del producto\n\n* `verdura` - Verdura u hortaliza\n\
+            * `fruta` - Fruta\n* `cereal` - Cereal o grano\n* `legumbre` - Legumbre\
+            \ o leguminosa\n* `raiz` - Tub\xE9rculo o ra\xEDz\n* `condimento` - Condimento\
+            \ o especia\n* `hierba` - Hierba arom\xE1tica\n* `otro` - Otra categor\xED\
+            a"
+        center_origin:
+          description: "Regi\xF3n de origen del producto"
+          items:
+            type: string
+          type: array
+        center_origin_notes:
+          description: "Notas sobre la regi\xF3n originaria del producto"
+          nullable: true
+          type: string
+        common_name:
+          description: "Nombre com\xFAn del producto"
+          maxLength: 63
+          type: string
+        common_name_alternate:
+          description: "Nombre com\xFAn alternativo del producto"
+          nullable: true
+          type: string
+        description:
+          description: "Descripci\xF3n del producto"
+          nullable: true
+          type: string
+        food_basket:
+          description: "\xBFEs parte de la canasta b\xE1sica de alimentos?"
+          type: boolean
+        icon:
+          description: Icono utilizado para ilustrar el producto
+          format: uri
+          nullable: true
+          type: string
+        name_origin:
+          description: "Origen del nombre com\xFAn"
+          nullable: true
+          type: string
+        nutrition_notes:
+          description: Notas sobre los datos nutricionales del producto
+          nullable: true
+          type: string
+        preparation:
+          description: "M\xE9todos de preparaci\xF3n"
+          items:
+            type: string
+          type: array
+        preparation_notes:
+          description: "Notas sobre los m\xE9todos de preparaci\xF3n"
+          nullable: true
+          type: string
+        product_url:
+          description: URL del producto
+          maxLength: 63
+          type: string
+        storage:
+          description: Tipo de almacenamiento
+          items:
+            type: string
+          type: array
+        storage_notes:
+          description: Notas sobre el almacenamiento del producto
+          nullable: true
+          type: string
+        varieties:
+          items:
+            $ref: '#/components/schemas/Variety'
+          readOnly: true
+          type: array
+      type: object
+    Product:
+      properties:
+        category:
+          allOf:
+          - $ref: '#/components/schemas/CategoryEnum'
+          description: "Categor\xEDa del producto\n\n* `verdura` - Verdura u hortaliza\n\
+            * `fruta` - Fruta\n* `cereal` - Cereal o grano\n* `legumbre` - Legumbre\
+            \ o leguminosa\n* `raiz` - Tub\xE9rculo o ra\xEDz\n* `condimento` - Condimento\
+            \ o especia\n* `hierba` - Hierba arom\xE1tica\n* `otro` - Otra categor\xED\
+            a"
+        center_origin:
+          description: "Regi\xF3n de origen del producto"
+          items:
+            type: string
+          type: array
+        center_origin_notes:
+          description: "Notas sobre la regi\xF3n originaria del producto"
+          nullable: true
+          type: string
+        common_name:
+          description: "Nombre com\xFAn del producto"
+          maxLength: 63
+          type: string
+        common_name_alternate:
+          description: "Nombre com\xFAn alternativo del producto"
+          nullable: true
+          type: string
+        description:
+          description: "Descripci\xF3n del producto"
+          nullable: true
+          type: string
+        food_basket:
+          description: "\xBFEs parte de la canasta b\xE1sica de alimentos?"
+          type: boolean
+        icon:
+          description: Icono utilizado para ilustrar el producto
+          format: uri
+          nullable: true
+          type: string
+        name_origin:
+          description: "Origen del nombre com\xFAn"
+          nullable: true
+          type: string
+        nutrition_notes:
+          description: Notas sobre los datos nutricionales del producto
+          nullable: true
+          type: string
+        preparation:
+          description: "M\xE9todos de preparaci\xF3n"
+          items:
+            type: string
+          type: array
+        preparation_notes:
+          description: "Notas sobre los m\xE9todos de preparaci\xF3n"
+          nullable: true
+          type: string
+        product_url:
+          description: URL del producto
+          maxLength: 63
+          type: string
+        storage:
+          description: Tipo de almacenamiento
+          items:
+            type: string
+          type: array
+        storage_notes:
+          description: Notas sobre el almacenamiento del producto
+          nullable: true
+          type: string
+        varieties:
+          items:
+            $ref: '#/components/schemas/Variety'
+          readOnly: true
+          type: array
+      required:
+      - category
+      - common_name
+      - product_url
+      - varieties
+      type: object
     SizeEnum:
       description: "* `S` - Peque\xF1a\n* `M` - Mediana\n* `L` - Grande\n* `XL` -\
         \ Muy grande"
@@ -625,6 +818,26 @@ components:
       - L
       - XL
       type: string
+    Variety:
+      properties:
+        common_name_variety:
+          maxLength: 63
+          nullable: true
+          type: string
+        common_name_variety_alternate:
+          maxLength: 127
+          nullable: true
+          type: string
+        scientific_name:
+          maxLength: 63
+          type: string
+        scientific_name_variety:
+          maxLength: 63
+          nullable: true
+          type: string
+      required:
+      - scientific_name
+      type: object
   securitySchemes:
     basicAuth:
       scheme: basic
@@ -641,7 +854,7 @@ info:
     \ \"Tropicalizaci\xF3n de la Tecnolog\xEDa\"**"
   license:
     name: CC BY 4.0
-  title: API de **deferia.cr**
+  title: API de deferia.cr
   version: '1.0'
   x-logo:
     altText: Logo deFeriaVerde
@@ -1011,6 +1224,187 @@ paths:
       summary: "Actualizar la ubicaci\xF3n de una feria"
       tags:
       - geoferias
+  /datos/api/productos/:
+    get:
+      description: Este endpoint devuelve una lista de todos los productos disponibles
+        de las ferias.
+      operationId: productos_list
+      parameters:
+      - description: A page number within the paginated result set.
+        in: query
+        name: page
+        required: false
+        schema:
+          type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedProductList'
+          description: ''
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      summary: Listar todos los productos de las ferias
+      tags:
+      - productos
+    post:
+      description: Este endpoint permite crear un nuevo producto de una feria en la
+        plataforma.
+      operationId: productos_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Product'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Product'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+          description: ''
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      summary: Crear un nuevo producto
+      tags:
+      - productos
+  /datos/api/productos/{product_url}/:
+    delete:
+      description: Este endpoint permite eliminar un producto dado su URL.
+      operationId: productos_destroy
+      parameters:
+      - in: path
+        name: product_url
+        required: true
+        schema:
+          description: URL del producto
+          type: string
+      responses:
+        '204':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+          description: ''
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      summary: "Eliminar un producto espec\xEDfico"
+      tags:
+      - productos
+    get:
+      description: Este endpoint devuelve los detalles de un producto dada su URL.
+      operationId: productos_retrieve
+      parameters:
+      - in: path
+        name: product_url
+        required: true
+        schema:
+          description: URL del producto
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+          description: ''
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      summary: "Obtener detalles de un producto espec\xEDfico"
+      tags:
+      - productos
+    patch:
+      description: "Este endpoint permite ingresar informaci\xF3n m\xE1s actualizada\
+        \ acerca de un producto, dada su URL, sin necesidad de enviar los datos de\
+        \ todos los atributos de dicho producto, sino s\xF3lo aquellos datos que se\
+        \ vayan a actualizar."
+      operationId: productos_partial_update
+      parameters:
+      - in: path
+        name: product_url
+        required: true
+        schema:
+          description: URL del producto
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedProduct'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedProduct'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedProduct'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+          description: ''
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      summary: Actualizar parcialmente el producto de una feria
+      tags:
+      - productos
+    put:
+      description: "Este endpoint permite ingresar informaci\xF3n m\xE1s actualizada\
+        \ acerca de un producto, dada su URL. Este endpoint requiere enviar los datos\
+        \ completos de todos los atributos de dicho producto."
+      operationId: productos_update
+      parameters:
+      - in: path
+        name: product_url
+        required: true
+        schema:
+          description: URL del producto
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Product'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Product'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+          description: ''
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      summary: Actualizar el producto de una feria
+      tags:
+      - productos
 tags:
 - description: "Datos sobre las ferias, incluyendo informaci\xF3n general como nombre,\
     \ productos, ubicaci\xF3n, contactos, entre otros."
@@ -1019,3 +1413,6 @@ tags:
 - description: "Datos sobre la ubicaci\xF3n geoespacial de cada feria."
   name: geoferias
   x-displayName: "Ubicaci\xF3n de las ferias"
+- description: Datos sobre los productos que se llegan a ofrecer en las ferias.
+  name: productos
+  x-displayName: Productos ofrecidos en las ferias

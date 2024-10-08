@@ -2,8 +2,12 @@ from django.shortcuts import render
 from django.http import FileResponse
 from rest_framework import viewsets
 from marketplaces.models import Marketplace
+from products.models import Product
+from products.models import Variety
 from .serializers import MarketplaceSerializer
 from .serializers import GeoMarketplaceSerializer
+from .serializers import ProductSerializer
+from .serializers import VarietySerializer
 from website.models import Text
 
 import pandas as pd
@@ -16,6 +20,9 @@ from drf_spectacular.utils import (
     extend_schema_view,
 )
 from django.conf import settings
+from io import BytesIO
+from zipfile import ZipFile
+from rest_framework.renderers import JSONRenderer
 
 # Create your views here.
 
@@ -93,11 +100,54 @@ class GeoMarketplaceViewSet(viewsets.ModelViewSet):
     queryset = Marketplace.objects.all().order_by("name")
     serializer_class = GeoMarketplaceSerializer
 
+
+@extend_schema_view(
+    list=extend_schema(
+        summary="Listar todos los productos de las ferias",
+        description="Este endpoint devuelve una lista de todos los productos disponibles de las ferias.",
+        responses={200: ProductSerializer(many=True)},
+    ),
+    create=extend_schema(
+        summary="Crear un nuevo producto",
+        description="Este endpoint permite crear un nuevo producto de una feria en la plataforma.",
+        responses={201: ProductSerializer},
+    ),
+    retrieve=extend_schema(
+        summary="Obtener detalles de un producto específico",
+        description="Este endpoint devuelve los detalles de un producto dada su URL.",
+        responses={200: ProductSerializer},
+    ),
+    update=extend_schema(
+        summary="Actualizar el producto de una feria",
+        description="Este endpoint permite ingresar información más actualizada acerca de un producto, dada su URL. Este endpoint requiere enviar los datos completos de todos los atributos de dicho producto.",
+        responses={200: ProductSerializer},
+    ),
+    partial_update=extend_schema(
+        summary="Actualizar parcialmente el producto de una feria",
+        description="Este endpoint permite ingresar información más actualizada acerca de un producto, dada su URL, sin necesidad de enviar los datos de todos los atributos de dicho producto, sino sólo aquellos datos que se vayan a actualizar.",
+        responses={200: ProductSerializer},
+    ),
+    destroy=extend_schema(
+        summary="Eliminar un producto específico",
+        description="Este endpoint permite eliminar un producto dado su URL.",
+        responses={204: ProductSerializer},
+    ),
+)
+class ProductViewSet(viewsets.ModelViewSet):
+    queryset = Product.objects.prefetch_related("varieties").all()
+    serializer_class = ProductSerializer
+
+
 def get_schema(request):
     file_path = settings.BASE_DIR / "api" / "schema.yml"
     return FileResponse(
         open(file_path, "rb"), as_attachment=True, filename="schema.yml"
     )
+
+
+# class VarietyViewSet(viewsets.ModelViewSet):
+#     queryset = Variety.objects.all().order_by("scientific_name")
+#     serializer_class = VarietySerializer
 
 
 def datos(request):
@@ -127,21 +177,94 @@ def ferias(request):
                 open("ferias.xlsx", "rb"), as_attachment=True, filename="ferias.xlsx"
             )
         elif request.GET["formato"] == "geojson":
+
             def format_points(value):
                 return Point(value)
 
-            df['geometry'] = df['location'].apply(format_points)
+            df["geometry"] = df["location"].apply(format_points)
 
             gdf = gpd.GeoDataFrame(
-                df[["name", "province", "canton", "district", "postal_code", "address"]],
-                geometry=df['geometry'],
-                crs="EPSG:4326"
+                df[
+                    ["name", "province", "canton", "district", "postal_code", "address"]
+                ],
+                geometry=df["geometry"],
+                crs="EPSG:4326",
             )
             gdf.to_file("ferias.geojson", driver="GeoJSON")
             return FileResponse(
-                open("ferias.geojson", "rb"), as_attachment=True, filename="ferias.geojson"
+                open("ferias.geojson", "rb"),
+                as_attachment=True,
+                filename="ferias.geojson",
             )
 
 
 def productos(request):
-    return FileResponse(open("productos.csv", "rb"))
+    # Create dataframe for productos
+    productos = Product.objects.all().order_by("common_name")
+    productos_df = pd.DataFrame.from_records(productos.values())
+    productos_df.drop("icon", axis=1, inplace=True)
+
+    # Create dataframe for variedades
+    variedades = Variety.objects.all().order_by("variety_id")
+    variedades_df = pd.DataFrame.from_records(variedades.values())
+    variedades_df.drop("image", axis=1, inplace=True)
+
+    if "formato" in request.GET:
+        if request.GET["formato"] == "csv":
+            # productos_df.to_csv("productos.csv", index=False)
+            # variedades_df.to_csv("variedades.csv", index=False)
+
+            # Create a zip file response
+            zip_buffer = BytesIO()
+            with ZipFile(zip_buffer, "w") as zip_file:
+                # Safe productos csv in the zip file
+                csv_buffer1 = BytesIO()
+                productos_df.to_csv(csv_buffer1, index=False)
+                zip_file.writestr("productos.csv", csv_buffer1.getvalue())
+
+                # GSafe variedades csv in the zip file
+                csv_buffer2 = BytesIO()
+                variedades_df.to_csv(csv_buffer2, index=False)
+                zip_file.writestr("variedades.csv", csv_buffer2.getvalue())
+
+            zip_buffer.seek(0)
+            return FileResponse(
+                zip_buffer, as_attachment=True, filename="productos.zip"
+            )
+
+        elif request.GET["formato"] == "excel":
+            excel_buffer = BytesIO()
+            # to save the file locally
+            file_path = "productos.xlsx"
+
+            # Save dataframes in the same excel file
+            # replace excel_buffer with file_path to save the file locally
+            with pd.ExcelWriter(excel_buffer, engine="openpyxl") as writer:
+                productos_df.to_excel(writer, sheet_name="Productos", index=False)
+                variedades_df.to_excel(writer, sheet_name="Variedades", index=False)
+
+            excel_buffer.seek(0)
+
+            # return FileResponse(
+            #     open(file_path, "rb"), as_attachment=True, filename="productos.xlsx"
+            # )
+            return FileResponse(
+                excel_buffer, as_attachment=True, filename="Productos.xlsx"
+            )
+        elif request.GET["formato"] == "json":
+            # use the serializer to create the json file
+            productos = Product.objects.all().order_by("common_name")
+            serializer = ProductSerializer(productos, many=True)
+            json_data = JSONRenderer().render(
+                serializer.data, renderer_context={"indent": 4}
+            )
+
+            # save the json file locally
+            with open("productos.json", "wb") as json_file:
+                json_file.write(json_data)
+
+            return FileResponse(
+                open("productos.json", "rb"),
+                as_attachment=True,
+                filename="productos.json",
+            )

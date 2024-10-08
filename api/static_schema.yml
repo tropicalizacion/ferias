@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: API de **deferia.cr**
+  title: API de deferia.cr
   description: "Este es el API para la aplicación **deferia.cr**, en el cual se pueden obtener y suministrar datos detallados de ferias y productos.\n\n**TC-691 \"Tropicalización de la Tecnología\"**"
   version: '1.0'
   contact:
@@ -18,3 +18,6 @@ tags:
   - name: geoferias
     x-displayName: Ubicación de las ferias
     description: Datos sobre la ubicación geoespacial de cada feria.
+  - name: productos
+    x-displayName: Productos ofrecidos en las ferias
+    description: Datos sobre los productos que se llegan a ofrecer en las ferias.
