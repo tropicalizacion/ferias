@@ -1,1 +1,62 @@
-Nuevo evento aquí
+{% extends 'base.html' %}
+{% block page_title %} Crear evento {% endblock %}
+
+{% block bg-navbar %} background-azul {% endblock %}
+{% load static %}
+
+{% block main %}
+
+<script>
+    initializeTinyMCE('#eventContent');
+</script>
+
+<div class="d-flex flex-column w-100 justify-content-center pt-4">
+    <div class="container-form-avisos fw-bold align-self-center shadow">
+        <h4 class="fw-bold mx-2 mt-3">Crear Evento para 
+            {% if marketplace_admin.marketplace.type == 'feria' %}
+            Feria del agricultor
+            {% elif marketplace_admin.marketplace.type == 'mercado' %}
+            Mercado libre
+            {% else %}
+            Mercado agrícola local
+            {% endif %}
+            de {{marketplace_admin.marketplace}}</h4>
+        <hr class="mb-4 mx-2">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group m-2">
+                <label for="name">Nombre del Evento:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group m-2">
+                <label for="description">Descripción:</label>
+                <textarea class="form-control" id="description" name="description"></textarea>
+            </div>
+            <div class="form-group m-2">
+                <label for="content">Contenido:</label>
+                <textarea class="form-control" id="eventContent" name="content" rows="5"></textarea>
+            </div>
+            <div class="form-group m-2">
+                <label for="location">Ubicación:</label>
+                <input type="text" class="form-control" id="location" name="location" value="{{marketplace_admin.marketplace}}">
+            </div>
+            <div class="form-group m-2 w-50">
+                <label for="image">Imagen:</label>
+                <input type="file" class="form-control" id="image" name="image">
+            </div>
+            <div class="form-group m-2 w-25">
+                <label for="start_date">Fecha de Inicio:</label>
+                <input type="datetime-local" class="form-control" id="start_date" name="start_date" required>
+            </div>
+            <div class="form-group m-2 w-25">
+                <label for="end_date">Fecha de Fin:</label>
+                <input type="datetime-local" class="form-control" id="end_date" name="end_date" required>
+            </div>
+            <div class="w-100 d-flex justify-content-center">
+                <button type="submit" class="btn btn-secondary m-2 fw-bold background-verde">Crear Evento</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

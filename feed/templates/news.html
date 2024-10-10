@@ -1,1 +1,25 @@
-Esta es una noticia
+{% extends 'base.html' %}
+{% block page_title %} Avisos {% endblock %}
+
+{% block bg-navbar %} background-azul {% endblock %}
+{% load static %}
+
+{% block main %}
+    <div class="container pt-3">
+        <div class="row">
+            <div class="col">
+                <h1 class="hero-deferia verde fw-bold">{{ news_item.name }}</h1>
+                <p class="">{{ news_item.description }}</p>
+                {{ news_item.text|safe }}
+                <p>Creada el: {{ news_item.created_at }}</p>
+                <p>Última actualización: {{ news_item.updated_at }}</p>
+                <h2>Ferias:</h2>
+                <ul>
+                    {% for marketplace in news_item.marketplaces.all %}
+                        <li>{{ marketplace.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

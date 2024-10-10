@@ -1,11 +1,69 @@
 {% extends 'base.html' %}
+{% block page_title %} Blog {% endblock %}
+
+{% block bg-navbar %} background-azul {% endblock %}
 
 {% load static %}
 
 {% block main %}
 
-<h1>Blog</h1>
+<div class="container mt-5 position-relative">
 
-<p>En un lugar de La Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un caballeros de los adarga antigua, rocín flaco, lanza en astillero y galgo corredor.</p>
+    <div class="row">    
+        <div class="col-md-8 offset-md-2">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <form method="GET" action="{% url 'blog' %}" class="mb-3">
+                        <div class="form-group">
+                            <label class="fw-bold" for="tag">Filtrar por categoría:</label>
+                            <select name="tag" id="tag" class="form-select" onchange="this.form.submit()">
+                                <option value="">Todas</option>
+                                {% for tag in tags %}
+                                    <option value="{{ tag.id }}" {% if tag.id|stringformat:"d" == selected_tag_id %}selected{% endif %}>
+                                        {{ tag.name }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                {% if is_author %}
+                <div class="shadow">
+                    <a href="{% url 'create_post' %}" class="btn background-verde text-white fw-bold btn-crear-aviso">Crear post</a>
+                </div>
+                {% endif %} 
+        
+            </div>
+            {% for post in blog_posts %}
+                <div class="blog-post">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h2><a class="text-black text-decoration-none" href="{% url 'post' post.slug %}">{{ post.title }}</a></h2>
+                            {% if post.author.image %}
+                                <img src="{{ post.author.image.url }}" alt="Blog Image" class="img-fluid blog-image m-3">
+                            {% endif %}
+                            <p class="meta-info">
+                                {{ post.author }} - {{ post.publication_date|date:"F j, Y" }}
+                            </p>
+                            <p class="mb-0">{{ post.description|truncatewords:40 }}</p>
+                            <a class="text-secondary" href="{% url 'post' post.slug %}">Ver más...</a>
+                            <div class="meta-info mt-2">
+                                <span>{{ post.read_time }} min de lectura</span>
+                            </div>
+                            <div class="tags">
+                                {% for tag in post.tags.all %}
+                                    <span class="badge background-verde">{{ tag.name }}</span>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% if post.image %}
+                            <img src="{{ post.image.url }}" alt="Blog Image" class="img-fluid blog-image m-3">
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 
 {% endblock %}

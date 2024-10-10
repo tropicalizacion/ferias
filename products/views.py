@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Product, Variety
+from .models import Product, Variety, Price
 from website.models import Text
 import datetime
 
@@ -16,14 +16,14 @@ def products(request):
     varieties_verduras = varieties.filter(product_url__category="verdura")
     varieties_legumbres = varieties.filter(product_url__category="legumbre")
     varieties_tuberculos = varieties.filter(product_url__category="tubérculo")
-    
+
     text = Text.objects.filter(page="/productos")
     texts = {}
     texts["hero"] = text.filter(section="hero").first()
     texts["hero_parentesis"] = text.filter(section="hero_parentesis").first()
     texts["lista"] = text.filter(section="lista").first()
     texts["lista_descripcion"] = text.filter(section="lista_descripcion").first()
-    
+
     context = {
         "month": month,
         "varieties_otros": varieties_otros,
@@ -32,7 +32,7 @@ def products(request):
         "varieties_verduras": varieties_verduras,
         "varieties_legumbres": varieties_legumbres,
         "varieties_tuberculos": varieties_tuberculos,
-        "texts": texts
+        "texts": texts,
     }
     return render(request, "products.html", context)
 
@@ -48,3 +48,16 @@ def product(request, product_url):
     }
 
     return render(request, "product.html", context)
+
+
+def prices(request):
+    prices = Price.objects.all()
+    this_year = datetime.datetime.now().isocalendar()[0]
+    this_week = datetime.datetime.now().isocalendar()[1]
+    this_week_prices = prices.filter(year=this_year, week=this_week)
+
+    context = {
+        "prices": prices,
+        "this_week_prices": this_week_prices,
+    }
+    return render(request, "prices.html", context)

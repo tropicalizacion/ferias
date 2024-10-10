@@ -27,7 +27,7 @@ urlpatterns = [
     path('avisos/', include('feed.urls'), name='avisos'),
     path('blog/', include('blog.urls'), name='blog'),
     path('sugerencias/', include('crowdsourcing.urls'), name='sugerencias'),
-    path('api/', include('api.urls'), name='api'),
+    path('datos/', include('api.urls'), name='api'),
     path('usuarios/', include('users.urls'), name='usuarios'),
     path('recetas/', include('recipes.urls'), name='recetas'),
 ]

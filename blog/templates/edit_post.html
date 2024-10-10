@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block page_title %} Editar post {% endblock %}
+
+{% block bg-navbar %} background-azul {% endblock %}
+{% load static %}
+
+{% block main %}
+
+<script>
+    initializeTinyMCE('#blogContent');
+</script>
+
+<div class="d-flex flex-column w-100 justify-content-center pt-4">
+
+    <div class="container-form-avisos fw-bold align-self-center shadow">
+        <!-- Formulario para guardar cambios -->
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group m-2">
+                <label for="title">Titulo del post:</label>
+                <input type="text" class="form-control" id="title" name="title" value="{{blog_post.title}}">
+            </div>
+            <div class="form-group m-2">
+                <label for="description">Descripción:</label>
+                <textarea class="form-control" id="description" name="description">{{blog_post.description}}</textarea>
+            </div>
+            <div class="form-group m-2">
+                <label for="content">Contenido:</label>
+                <textarea class="form-control" id="blogContent" name="content" rows="5">{{blog_post.content}}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="tags">Tags:</label>
+                <select multiple class="form-control select-multiple" id="tags" name="tags">
+                    {% for tag in tags %}
+                        <option value="{{ tag.id }}" {% if tag in blog_post.tags.all %}selected{% endif %}>
+                            {{ tag.name }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group m-3">
+                <label for="image">Imagen:</label>
+                <input type="file" class="form-control-file" id="image" name="image" value="{{blog_post.image}}">
+            </div>
+            <div class="form-group m-3">
+                <label for="read_time">Tiempo de lectura:</label>
+                <input type="number" class="form-control-file" id="read_time" name="read_time" value="{{blog_post.read_time}}">
+            </div>
+            <div class="w-100 d-flex justify-content-end">
+                <button type="submit" class="btn btn-primary m-2">Guardar cambios</button>
+            </div>
+        </form>
+
+        <!-- Formulario para eliminar post -->
+        <form method="post" action="{% url 'delete_post' blog_post.id %}">
+            {% csrf_token %}
+            <div class="w-100 d-flex justify-content-end">
+                <button type="submit" class="btn btn-danger m-2" onclick="return confirm('¿Estás seguro de que deseas eliminar este post?')">Eliminar Post</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

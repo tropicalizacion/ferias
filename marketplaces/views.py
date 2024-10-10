@@ -1,4 +1,6 @@
 from django.shortcuts import render, get_object_or_404
+
+from users.models import MarketplaceAdmin
 from .models import Marketplace
 from website.models import Announcement, Text
 from feed.models import Event
@@ -10,6 +12,7 @@ from django.contrib.gis.geos import Point
 import math
 import json
 from datetime import datetime
+from decouple import config
 
 # Create your views here.
 
@@ -76,6 +79,7 @@ def ferias(request):
     
     context = {
         "texts": texts,
+        "google_maps_api_key": config("GOOGLE_MAPS_API_KEY"),
         "marketplaces": marketplaces,
         "marketplaces_map": marketplaces_map,
         "total_marketplaces": total_marketplaces,
@@ -85,7 +89,7 @@ def ferias(request):
         "n_amenities": n_amenities,
     }
 
-    if request.method == "POST":
+    if request.method == "POST" and request.htmx:
         marketplaces_match, marketplaces_others, marketplaces_keyword, keyword, query_text, by_location = search_marketplaces(request.POST)
         context["show_results"] = True
         context["query_text"] = query_text
@@ -93,9 +97,11 @@ def ferias(request):
         context["keyword"] = keyword
         context["marketplaces_match"] = marketplaces_match
         context["marketplaces_others"] = marketplaces_others
-        context["marketplaces_keyword"] = marketplaces_keyword  
-    
-    return render(request, "ferias.html", context)
+        context["marketplaces_keyword"] = marketplaces_keyword
+
+        return render(request, "partials/result.html", context)
+    else:
+        return render(request, "ferias.html", context)
 
 
 def feria(request, marketplace_url):
@@ -104,6 +110,19 @@ def feria(request, marketplace_url):
     today = datetime.today()
 
     marketplace = get_object_or_404(Marketplace, pk=marketplace_url)
+    
+    is_marketplace_admin = False
+    user = request.user
+    
+    if user.is_authenticated:
+        try:
+            marketplace_admin = MarketplaceAdmin.objects.get(user=request.user)
+            is_marketplace_admin = marketplace_admin.marketplace == marketplace
+            
+        except MarketplaceAdmin.DoesNotExist:
+            is_marketplace_admin = False
+    
+    
     closest_marketplaces = (
         Marketplace.objects.annotate(
             distance=Distance("location", marketplace.location)
@@ -176,7 +195,8 @@ def feria(request, marketplace_url):
         "services": services,
         "announcements": announcements,
         "events": events,
-        "texts": texts
+        "texts": texts,
+        "is_marketplace_admin": is_marketplace_admin
     }
 
     return render(request, "feria.html", context)
@@ -188,8 +208,8 @@ def edit(request, marketplace_url):
 
 def results(request):
     marketplaces = Marketplace.objects.all().order_by("name")
-    if request.method == "POST":            
-            marketplaces_match, marketplaces_others, marketplaces_keyword, keyword, query_text = search_marketplaces(request.POST)   
+    if request.method == "POST" and request.htmx:            
+            marketplaces_match, marketplaces_others, marketplaces_keyword, keyword, query_text, by_location = search_marketplaces(request.POST)   
             context = {
                 "show_results": True,
                 "marketplaces": marketplaces,
@@ -198,8 +218,9 @@ def results(request):
                 "marketplaces_keyword": marketplaces_keyword,
                 "query_text": query_text,
                 "keyword": keyword,
+                "by_location": by_location,
             }
-            return render(request, "results.html", context)
+            return render(request, "partials/result.html", context)
     else:
         return render(request, "results.html")
 

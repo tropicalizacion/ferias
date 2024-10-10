@@ -16,7 +16,15 @@
 
 <!-- Portada -->
 <div class="px-4 pt-3 pb-4 text-center background-azul">
-    <h1 class="text-white fw-bold">Feria del agricultor de</h1>
+    <h1 class="text-white fw-bold">
+        {% if marketplace.type == 'feria' %}
+        Feria del agricultor de
+        {% elif marketplace.type == 'mercado' %}
+        Mercado libre de
+        {% else %}
+        Mercado agrícola local de
+        {% endif %}
+    </h1>
     <h1 class="display-1 text-white display-deferia">{{ marketplace.name }}</h1>
 
     {% if marketplace.opening_date %}
@@ -61,6 +69,12 @@
         </a>
         {% endif %}
     </div>
+</div>
+
+<div class="d-flex flex-column justify-content-center">
+    {% if is_marketplace_admin %}
+        {% include 'addFeed.html' %}
+    {% endif %}
 </div>
 
 <!-- Eventos -->
@@ -446,7 +460,7 @@
 <!-- Leaflet Map -->
 <script>
 
-    const map = L.map('map').setView([{{ marketplace.location.y | unlocalize }}, { { marketplace.location.x | unlocalize } }], 15);
+    const map = L.map('map').setView([{{ marketplace.location.y | unlocalize }}, {{ marketplace.location.x | unlocalize }}], 15);
 
     const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
@@ -454,7 +468,7 @@
     }).addTo(map);
 
     const popup = L.popup()
-        .setLatLng([{{ marketplace.location.y | unlocalize }}, { { marketplace.location.x | unlocalize } }])
+        .setLatLng([{{ marketplace.location.y | unlocalize }}, {{ marketplace.location.x | unlocalize }}])
         .setContent("Feria de {{ marketplace.name }}")
         .openOn(map);
 
