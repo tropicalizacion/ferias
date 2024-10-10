@@ -1,0 +1,27 @@
+<div class="align-self-center">
+    <div class="d-flex flex-column flex-md-row justify-content-between">
+        <div class="card border-0 shadow m-3">
+            <div class="card-body background-azul text-white rounded">
+            <h5 class="card-title">Crear evento</h5>
+            <p class="card-text">Haz clic para crear un nuevo evento.</p>
+            <a href="{% url 'create_event' %}" class="btn background-verde text-white fw-bold btn-crear-aviso">Ir a Crear evento</a>
+            </div>
+        </div>
+        
+        <div class="card border-0 shadow m-3">
+            <div class="card-body background-amarillo rounded">
+            <h5 class="card-title">Crear noticia</h5>
+            <p class="card-text">Haz clic para crear una nueva noticia.</p>
+            <a href="{% url 'create_news' %}" class="btn background-verde text-white fw-bold btn-crear-aviso">Ir a Crear noticia</a>
+            </div>
+        </div>
+        
+        <div class="card border-0 shadow m-3">
+            <div class="card-body background-rojo text-white rounded">
+            <h5 class="card-title">Crear alerta</h5>
+            <p class="card-text">Haz clic para crear una nueva alerta.</p>
+            <a href="{% url 'create_alert' %}" class="btn background-verde text-white fw-bold btn-crear-aviso ">Ir a Crear alerta</a>
+            </div>
+        </div>
+    </div>
+</div>

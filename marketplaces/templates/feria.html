@@ -71,6 +71,12 @@
     </div>
 </div>
 
+<div class="d-flex flex-column justify-content-center">
+    {% if is_marketplace_admin %}
+        {% include 'addFeed.html' %}
+    {% endif %}
+</div>
+
 <!-- Eventos -->
 {% if events %}
 <div class="container my-4">

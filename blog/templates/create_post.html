@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block page_title %} Crear post {% endblock %}
+
+{% block bg-navbar %} background-azul {% endblock %}
+{% load static %}
+
+{% block main %}
+
+<script>
+    initializeTinyMCE('#blogContent');
+</script>
+
+<div class="d-flex flex-column w-100 justify-content-center pt-4">
+
+    <div class="container-form-avisos fw-bold align-self-center shadow">
+        <h4 class="fw-bold mx-2 mt-3">Crear Post para Blog de deferia.cr</h4>
+        <hr class="mb-4 mx-2">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group m-2">
+                <label for="title">Titulo del post:</label>
+                <input type="text" class="form-control" id="title" name="title" required>
+            </div>
+            <div class="form-group m-2">
+                <label for="description">Descripción:</label>
+                <textarea class="form-control" id="description" name="description" required></textarea>
+            </div>
+            <div class="form-group m-2">
+                <label for="content">Contenido:</label>
+                <textarea class="form-control" id="blogContent" name="content" rows="5"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="tags">Tags:</label>
+                <select multiple class="form-control select-multiple" id="tags" name="tags">
+                    {% for tag in tags %}
+                        <option value="{{ tag.id }}">{{ tag.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group m-2 w-50">
+                <label for="image">Imagen:</label>
+                <input type="file" class="form-control" id="image" name="image">
+            </div>
+            <div class="form-group m-2 w-25">
+                <label for="read_time">Tiempo de lectura:</label>
+                <input type="number" class="form-control" id="read_time" name="read_time">
+            </div>
+            <div class="w-100 d-flex justify-content-center">
+                <button type="submit" class="btn btn-secondary m-2 fw-bold background-verde">Crear Post</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,117 +1,231 @@
 {% load static %}
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block page_title %}{% endblock %} | vamos de feria</title>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% block page_title %}{% endblock %} | vamos de feria</title>
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="{% static 'images/favicon/favicon.png' %}">
-  <!-- Bootstrap core CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  <!-- De Feria CSS -->
-  <link rel="stylesheet" href="{% static 'css/deferia.css' %}">
-  <!-- Typography -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wdth,wght,YTLC@0,6..12,75..125,200..1000,440..540;1,6..12,75..125,200..1000,440..540&family=Petrona:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <!-- Leaflet CSS and JS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
-  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
-  <!-- FontAwesome -->
-  <script src="https://kit.fontawesome.com/1ae7c4e024.js" crossorigin="anonymous"></script>
-  <!-- jQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-  <!-- Google Analytics tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-96HQFNE7QN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{% static 'images/favicon/favicon.png' %}"
+    />
 
-    gtag('config', 'G-96HQFNE7QN');
-  </script>
-  <!-- JSON-LD Schema.org -->
-  {% block schema %}{% endblock %}
-</head>
+    <!-- Bootstrap core CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <!-- De Feria CSS -->
+    <link rel="stylesheet" href="{% static 'css/deferia.css' %}" />
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wdth,wght,YTLC@0,6..12,75..125,200..1000,440..540;1,6..12,75..125,200..1000,440..540&family=Petrona:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Leaflet CSS and JS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
+    />
 
-<body>
+    <script
+      src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+      crossorigin=""
+    ></script>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg sticky-top {% block bg-navbar %}{% endblock %}">
-    <div class="container-lg">
-      <a class="navbar-brand" href="{% url 'inicio' %}">
-        <img src="{% static 'images/logos/logo_blanco.png' %}" width="90px" alt="Logo de feria">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav ms-auto">
-          <a class="nav-link nav-link-deferia" href="{% url 'inicio' %}">
-            <i class="fa-solid fa-seedling"></i> Inicio
-          </a>
-          <a class="nav-link nav-link-deferia" href="{% url 'ferias' %}">
-            <i class="fa-solid fa-store"></i> Ferias
-          </a>
-          <a class="nav-link nav-link-deferia" href="{% url 'productos' %}">
-            <i class="fa-solid fa-carrot"></i> Productos
-          </a>
-          <!-- Versión sin blog
+    <!-- TinyMCE -->
+    <script
+      src="https://cdn.tiny.cloud/1/9i2bxwc2q9gvpb0du1zl98siegvzh9af3esmiegghx9m2foi/tinymce/7/tinymce.min.js"
+      referrerpolicy="origin"
+    ></script>
+
+    <!-- FontAwesome -->
+    <script
+      src="https://kit.fontawesome.com/1ae7c4e024.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <!-- Google Analytics tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-96HQFNE7QN"
+    ></script>
+
+    <!-- TinyMCE initialization -->
+    <script src="{% static 'js/tinymce_init.js' %}"></script>
+
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-96HQFNE7QN");
+    </script>
+    <!-- JSON-LD Schema.org -->
+    {% block schema %}{% endblock %}
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg sticky-top {% block bg-navbar %}{% endblock %}"
+    >
+      <div class="container-lg">
+        <a class="navbar-brand" href="{% url 'inicio' %}">
+          <img
+            src="{% static 'images/logos/logo_blanco.png' %}"
+            width="90px"
+            alt="Logo de feria"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link nav-link-deferia" href="{% url 'inicio' %}">
+              <i class="fa-solid fa-seedling"></i> Inicio
+            </a>
+            <a class="nav-link nav-link-deferia" href="{% url 'ferias' %}">
+              <i class="fa-solid fa-store"></i> Ferias
+            </a>
+            <a class="nav-link nav-link-deferia" href="{% url 'productos' %}">
+              <i class="fa-solid fa-carrot"></i> Productos
+            </a>
+            <a class="nav-link nav-link-deferia" href="{% url 'feed' %}">
+              <i class="fa-solid fa-bell"></i> Avisos
+            </a>
+            <a class="nav-link nav-link-deferia" href="{% url 'blog' %}">
+              <i class="fa-solid fa-blog"></i> Blog
+            </a>
+            <!-- Versión sin blog
           <a class="nav-link nav-link-deferia" href="{% url 'consejos' %}">
             Consejos
           </a> -->
-          <a class="nav-link nav-link-deferia" href="{% url 'sugerencias' %}">
-            <i class="fa-solid fa-comment-dots"></i> Aportar datos
-          </a>
+            <a class="nav-link nav-link-deferia" href="{% url 'sugerencias' %}">
+              <i class="fa-solid fa-comment-dots"></i> Aportar datos
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  {% block main %}
+    {% block main %} {% endblock %}
 
-  {% endblock %}
+    <!-- Pie de página -->
 
-  <!-- Pie de página -->
+    <div class="container">
+      <footer
+        class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top"
+      >
+        <div class="col mb-3">
+          <a
+            href="/"
+            class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none"
+          >
+            <img
+              src="{% static 'images/logos/logo_verde.png' %}"
+              width="70px"
+              alt="Logo de feria"
+            />
+          </a>
+          <p class="small text-body-secondary">
+            Un proyecto del trabajo comunal universitario "Tropicalización de la
+            tecnología" de la Universidad de Costa Rica.
+          </p>
+          <p class="rojo display-deferia">
+            <a href="{% url 'sobre' %}" class="nav-link p-0">
+              <i class="fa-solid fa-circle-plus"></i> Sobre el proyecto
+            </a>
+          </p>
+        </div>
 
-  <div class="container">
-    <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
-      <div class="col mb-3">
-        <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
-          <img src="{% static 'images/logos/logo_verde.png' %}" width="70px" alt="Logo de feria">
-        </a>
-        <p class="small text-body-secondary">Un proyecto del trabajo comunal universitario "Tropicalización de la tecnología" de la Universidad de Costa Rica.</p>
-        <p class="rojo display-deferia"><a href="{% url 'sobre' %}" class="nav-link p-0">
-          <i class="fa-solid fa-circle-plus"></i> Sobre el proyecto 
-        </a></p>
-      </div>
-  
-      <div class="col mb-3">
-  
-      </div>
+        <div class="col mb-3"></div>
 
-      <div class="col mb-3">
-        <h5>Redes sociales</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a target="_blank" href="https://www.facebook.com/deferia.costarica" class="nav-link p-0 text-body-secondary"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
-          <li class="nav-item mb-2"><a target="_blank" href="https://www.instagram.com/deferia.cr/" class="nav-link p-0 text-body-secondary"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
-          <li class="nav-item mb-2"><a target="_blank" href="https://www.tiktok.com/@deferia.cr" class="nav-link p-0 text-body-secondary"><i class="fa-brands fa-tiktok"></i> TikTok</a></li>
-        </ul>
-      </div>
-  
-      <div class="col mb-3">
-        <h5>Menú del sitio</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="{% url 'inicio' %}" class="nav-link p-0 text-body-secondary">Página de inicio</a></li>
-          <li class="nav-item mb-2"><a href="{% url 'ferias' %}" class="nav-link p-0 text-body-secondary">Todas las ferias</a></li>
-          <li class="nav-item mb-2"><a href="{% url 'productos' %}" class="nav-link p-0 text-body-secondary">Todos los productos</a></li>
-          <li class="nav-item mb-2"><a href="{% url 'sugerencias' %}" class="nav-link p-0 text-body-secondary">¡Aportar datos!</a></li>
-          <!-- Sin blog
+        <div class="col mb-3">
+          <h5>Redes sociales</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2">
+              <a
+                target="_blank"
+                href="https://www.facebook.com/deferia.costarica"
+                class="nav-link p-0 text-body-secondary"
+                ><i class="fa-brands fa-facebook"></i> Facebook</a
+              >
+            </li>
+            <li class="nav-item mb-2">
+              <a
+                target="_blank"
+                href="https://www.instagram.com/deferia.cr/"
+                class="nav-link p-0 text-body-secondary"
+                ><i class="fa-brands fa-instagram"></i> Instagram</a
+              >
+            </li>
+            <li class="nav-item mb-2">
+              <a
+                target="_blank"
+                href="https://www.tiktok.com/@deferia.cr"
+                class="nav-link p-0 text-body-secondary"
+                ><i class="fa-brands fa-tiktok"></i> TikTok</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="col mb-3">
+          <h5>Menú del sitio</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2">
+              <a
+                href="{% url 'inicio' %}"
+                class="nav-link p-0 text-body-secondary"
+                >Página de inicio</a
+              >
+            </li>
+            <li class="nav-item mb-2">
+              <a
+                href="{% url 'ferias' %}"
+                class="nav-link p-0 text-body-secondary"
+                >Todas las ferias</a
+              >
+            </li>
+            <li class="nav-item mb-2">
+              <a
+                href="{% url 'productos' %}"
+                class="nav-link p-0 text-body-secondary"
+                >Todos los productos</a
+              >
+            </li>
+            <li class="nav-item mb-2">
+              <a
+                href="{% url 'sugerencias' %}"
+                class="nav-link p-0 text-body-secondary"
+                >¡Aportar datos!</a
+              >
+            </li>
+            <!-- Sin blog
           <li class="nav-item mb-2"><a href="{% url 'consejos' %}" class="nav-link p-0 text-body-secondary">Nuestros consejos</a></li> -->
         </ul>
       </div>
@@ -132,22 +246,33 @@
     </footer>
   </div>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
 
-  <!-- Activate tooltips and popovers -->
-  <script>
-    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))  
-    
-    const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
-    const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+    <!-- Activate tooltips and popovers -->
+    <script>
+      const tooltipTriggerList = document.querySelectorAll(
+        '[data-bs-toggle="tooltip"]'
+      );
+      const tooltipList = [...tooltipTriggerList].map(
+        (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+      );
 
-    const popover = new bootstrap.Popover('.popover-dismiss', {
-      trigger: 'focus'
-    })
-  </script>
+      const popoverTriggerList = document.querySelectorAll(
+        '[data-bs-toggle="popover"]'
+      );
+      const popoverList = [...popoverTriggerList].map(
+        (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl)
+      );
 
-</body>
+      const popover = new bootstrap.Popover(".popover-dismiss", {
+        trigger: "focus",
+      });
+    </script>
 
+  </body>
 </html>

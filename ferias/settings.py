@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     "django.contrib.postgres",
     "django.contrib.gis",
     "django_htmx",
+    "tinymce"
 ]
 
 MIDDLEWARE = [
