@@ -324,8 +324,15 @@ h6 {
 }
 
 .container-form-avisos {
+  /* min-width: 760px; */
   background-color: #f1f1f1;
   padding: 20px;
+  border-radius: 20px;
+}
+
+.container-add-tag {
+  /* min-width: 250px; */
+  padding: 10px;
   border-radius: 20px;
 }
 
@@ -337,8 +344,24 @@ h6 {
 .feed-card {
   height: 240px;
   transition-property: transform;
-  transition-duration: 0.1s;
+  transition-duration: 0.2s;
   padding-top: 5px;
+  position: relative;
+}
+
+.grow-card {
+  min-width: 300px;
+}
+
+.grow-card:hover {
+  transition-duration: 0.2s;
+  transform: scale(1.03);
+}
+
+.see-more-feed {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
 }
 
 .card-img-top {

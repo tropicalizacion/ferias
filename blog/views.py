@@ -63,6 +63,16 @@ def create_post(request):
         tags = Tag.objects.all()
         return render(request, "create_post.html", {'tags': tags})
 
+@login_required
+def delete_post(request, post_id):
+    user = request.user
+    if user.is_authenticated:
+        post = get_object_or_404(BlogPost, id=post_id)
+        if post.author.user == user:
+            print("delete")
+            post.delete()
+    print("redirect")
+    return redirect('blog')
 
 def post(request, slug):
     user = request.user

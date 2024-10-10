@@ -43,27 +43,27 @@ def feed(request):
     return render(request, "feed.html", context)
 
 
-def event(request, event_slug):
+def event(request, event_slug, id):
     
-    event = get_object_or_404(Event, id=event_slug)
+    event = get_object_or_404(Event, id=id)
     
     return render(request, "event.html", {'event': event})
 
 def events(request):
     return redirect('feed')
 
-def news(request, news_slug):
+def news(request, news_slug, id):
     
-    news_item = get_object_or_404(News, id=news_slug)
+    news_item = get_object_or_404(News, id=id)
     
     return render(request, "news.html", {'news_item': news_item})
 
 def newss(request):
     return redirect('feed')
 
-def alert(request, alert_slug):
+def alert(request, alert_slug, id):
     
-    alert = get_object_or_404(Alert, id=alert_slug)
+    alert = get_object_or_404(Alert, id=id)
     
     return render(request, "alert.html", {'alert': alert})
 

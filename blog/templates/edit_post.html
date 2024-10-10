@@ -13,6 +13,7 @@
 <div class="d-flex flex-column w-100 justify-content-center pt-4">
 
     <div class="container-form-avisos fw-bold align-self-center shadow">
+        <!-- Formulario para guardar cambios -->
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="form-group m-2">
@@ -47,6 +48,14 @@
             </div>
             <div class="w-100 d-flex justify-content-end">
                 <button type="submit" class="btn btn-primary m-2">Guardar cambios</button>
+            </div>
+        </form>
+
+        <!-- Formulario para eliminar post -->
+        <form method="post" action="{% url 'delete_post' blog_post.id %}">
+            {% csrf_token %}
+            <div class="w-100 d-flex justify-content-end">
+                <button type="submit" class="btn btn-danger m-2" onclick="return confirm('¿Estás seguro de que deseas eliminar este post?')">Eliminar Post</button>
             </div>
         </form>
     </div>

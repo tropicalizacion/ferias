@@ -21,62 +21,73 @@
         {% endif %}
 
         {% if feed_list %}
-            <div class="container d-flex my-4 w-75">
+            <div class="container d-flex my-4 justify-content-center">
                 <div class="row w-100">
                     {% for element in feed_list %}
                         <div class="col-lg-4 col-md-6 mb-4">
                             {% if element.type_ == "News" %}
-                            <div class="card border-0 shadow">
+                            <a href="{% url 'news' element.news_slug element.id %}" class="text-decoration-none"> 
+                                <div class="card border-0 shadow grow-card">
                                 {% if element.image %}
                                     <img src="{{ element.image.url }}" class="card-img-top img-fluid" alt="...">
                                 {% else %}
                                     <img src="../../media/default_feed_images/default_news.jpg" class="card-img-top" alt="...">
                                 {% endif %}
                                 <div class="card-body feed-card">
+                                    <span class="badge background-amarillo text-black"> {{ element.marketplaces.first }} <i class="fa-solid fa-store"></i></span>
                                     <span class="badge background-azul">Noticia <i class="fa-solid fa-bullhorn"></i></span>
                                     <h5 class="card-title mt-2">{{ element.name }}</h5>
                                   <p class="card-text">{{ element.description|truncatewords:20 }}</p>
-                                  <a href="{% url 'news' element.id %}" class="text-decoration-none"> 
-                                      <span class="mt-2 fw-bold me-1">Ver más</span>
-                                      <i class="fa-solid fa-arrow-right"></i>
-                                  </a>
+                                  <div class="fw-bold text-secondary see-more-feed">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                    <span class="text-decoration-underline">Ver más</span> 
                                 </div>
-                            </div>
+                                      
+                                    </div>
+                                </div>
+                            </a>
         
                             {% elif element.type_ == "Alert" %}
-                            <div class="card border-0 shadow">
+                            <a href="{% url 'alert' element.alert_slug element.id %}" class="text-decoration-none"> 
+                                <div class="card border-0 shadow grow-card">
                                 {% if element.image %}
                                     <img src="{{ element.image.url }}" class="card-img-top img-fluid" alt="...">
                                 {% else %}
                                     <img src="../../media/default_feed_images/default_alert.jpg" class="card-img-top img-fluid" alt="...">
                                 {% endif %}
-                                <div class="card-body feed-card">
-                                    <span class="badge background-rojo">Alerta <i class="fa-solid fa-triangle-exclamation"></i></span>
-                                    <h5 class="card-title mt-2">{{ element.name }}</h5>
-                                  <p class="card-text">{{ element.description|truncatewords:20 }}</p>
-                                  <a href="{% url 'alert' element.id %}" class="text-decoration-none"> 
-                                      <span class="mt-2 fw-bold me-1">Ver más</span>
-                                      <i class="fa-solid fa-arrow-right"></i>
-                                  </a>
+                                    <div class="card-body feed-card">
+                                        <span class="badge background-amarillo text-black"> {{ element.marketplaces.first }} <i class="fa-solid fa-store"></i></span>
+                                        <span class="badge background-rojo">Alerta <i class="fa-solid fa-triangle-exclamation"></i></span>
+                                        <h5 class="card-title mt-2">{{ element.name }}</h5>
+                                    <p class="card-text">{{ element.description|truncatewords:20 }}</p>
+                                    <div class="fw-bold text-secondary see-more-feed">
+                                        <i class="fa-solid fa-chevron-down"></i>
+                                        <span class="text-decoration-underline">Ver más</span> 
+                                    </div>
+                                        
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                             {% else %}
-                            <div class="card border-0 shadow">
+                            <a href="{% url 'event' element.event_slug element.id %}" class="text-decoration-none"> 
+                            <div class="card border-0 shadow grow-card">
                                 {% if element.image %}
                                     <img src="{{ element.image.url }}" class="card-img-top img-fluid" alt="...">
                                 {% else %}
                                     <img src="../../media/default_feed_images/default_event.jpg" class="card-img-top" alt="...">
                                 {% endif %}
                                 <div class="card-body feed-card">
+                                    <span class="badge background-amarillo text-black"> {{ element.marketplace }} <i class="fa-solid fa-store"></i></span>
                                     <span class="badge background-verde">Evento <i class="fa-solid fa-calendar-days"></i></span>
                                     <h5 class="card-title mt-2">{{ element.name }}</h5>
                                   <p class="card-text">{{ element.description|truncatewords:20 }}</p>
-                                  <a href="{% url 'event' element.id %}" class="text-decoration-none"> 
-                                      <span class="mt-2 fw-bold me-1">Ver más</span>
-                                      <i class="fa-solid fa-arrow-right"></i>
-                                  </a>
+                                  <div class="fw-bold text-secondary see-more-feed">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                    <span class="text-decoration-underline">Ver más</span> 
                                 </div>
-                            </div>
+                                    </div>
+                                </div>
+                            </a>
                             {% endif %}
                         </div>
                     {% endfor %}
