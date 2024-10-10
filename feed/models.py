@@ -14,13 +14,13 @@ class Event(models.Model):
 
     event_slug = models.SlugField(max_length=200, blank=True, null=True)
     marketplace = models.ForeignKey(Marketplace, on_delete=models.CASCADE)
-    name = models.CharField(max_length=200)
-    description = models.TextField()
-    text = HTMLField()
+    name = models.CharField(max_length=200, blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    text = HTMLField(blank=True, null=True)
     start_date = models.DateTimeField()
     end_date = models.DateTimeField()
     location = models.CharField(max_length=200)
-    image = models.ImageField(upload_to="events/")
+    image = models.ImageField(upload_to="events/", blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -39,11 +39,11 @@ class News(models.Model):
     """
 
     news_slug = models.SlugField(max_length=200, blank=True, null=True)
-    marketplaces = models.ManyToManyField(Marketplace, blank=True)
-    name = models.CharField(max_length=200)
-    description = models.TextField()
-    text = HTMLField()
-    image = models.ImageField(upload_to="news/")
+    marketplaces = models.ManyToManyField(Marketplace, blank=True, null=True)
+    name = models.CharField(max_length=200, blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    text = HTMLField(blank=True, null=True)
+    image = models.ImageField(upload_to="news/", blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -62,10 +62,10 @@ class Alert(models.Model):
     """
 
     alert_slug = models.SlugField(max_length=200, blank=True, null=True)
-    marketplaces = models.ManyToManyField(Marketplace, blank=True)
-    name = models.CharField(max_length=200)
-    description = models.TextField()
-    text = HTMLField()
+    marketplaces = models.ManyToManyField(Marketplace, blank=True, null=True)
+    name = models.CharField(max_length=200, blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    text = HTMLField(blank=True, null=True)
     start_date = models.DateTimeField(default=datetime.now, blank=True, null=True)
     end_date = models.DateTimeField(blank=True, null=True)
     image = models.ImageField(upload_to="alerts/", blank=True, null=True)
