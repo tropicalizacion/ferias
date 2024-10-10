@@ -35,10 +35,12 @@
                 {% endfor %}
             </div>
         </div>
+        {% if user.is_staff %}
         <div class="d-flex justify-content-end pt-2">
             <a href="{% url 'edit_recipe' recipe.slug %}" class="link-warning text-black me-1"><i class="fa-solid fa-pen-to-square"></i></a>
             <a class="link-danger text-black ms-1" data-bs-toggle="modal" data-bs-target="#deleteModal{{ recipe.slug }}"><i class="fa fa-trash"></i></a>
         </div>
+        {% endif %}
     </div>
     <div class="row">
         <div class="col">
@@ -125,6 +127,7 @@
     </div>
 </div>
 
+{% if user.is_staff %}
 <div class="modal fade" id="deleteModal{{ recipe.slug }}" tabindex="-1" aria-labelledby="deleteModalLabel{{ recipe.slug }}" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -142,5 +145,6 @@
         </div>
     </div>
 </div>
+{% endif %}
 
 {% endblock %}

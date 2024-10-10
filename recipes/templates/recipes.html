@@ -53,8 +53,8 @@
                         
                         {% if user.is_staff %}
                         <div class="d-flex justify-content-end pt-2">
-                            <a href="{% url 'edit_recipe' recipe.slug %}" class="link-warning me-1"><i class="fa-solid fa-pen-to-square"></i></a>
-                            <a class="link-warning ms-1" data-bs-toggle="modal" data-bs-target="#deleteModal{{ recipe.slug }}"><i class="fa fa-trash"></i></a>
+                            <a href="{% url 'edit_recipe' recipe.slug %}" class="link-warning text-dark me-1"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <a class="link-danger text-dark ms-1" data-bs-toggle="modal" data-bs-target="#deleteModal{{ recipe.slug }}"><i class="fa fa-trash"></i></a>
                         </div>
                         
                         <div class="modal fade" id="deleteModal{{ recipe.slug }}" tabindex="-1" aria-labelledby="deleteModalLabel{{ recipe.slug }}" aria-hidden="true">
