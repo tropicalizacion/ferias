@@ -17,21 +17,54 @@ class Product(models.Model):
         ("otro", "Otra categoría"),
     ]
 
-    product_url = models.CharField(primary_key=True, max_length=63)
-    category = models.CharField(choices=CATEGORY_CHOICES, max_length=15)
-    common_name = models.CharField(max_length=63)
-    common_name_alternate = models.TextField(blank=True, null=True)
-    description = models.TextField(blank=True, null=True)
-    icon = models.ImageField(upload_to="images/icons", blank=True, null=True)
-    name_origin = models.TextField(blank=True, null=True)
-    center_origin = models.ManyToManyField("Origin", blank=True)
-    center_origin_notes = models.TextField(blank=True, null=True)
-    food_basket = models.BooleanField(default=False)
-    nutrition_notes = models.TextField(blank=True, null=True)
-    preparation = models.ManyToManyField("Preparation", blank=True)
-    preparation_notes = models.TextField(blank=True, null=True)
-    storage = models.ManyToManyField("Storage", blank=True)
-    storage_notes = models.TextField(blank=True, null=True)
+    product_url = models.CharField(
+        primary_key=True, max_length=63, help_text="URL del producto"
+    )
+    category = models.CharField(
+        choices=CATEGORY_CHOICES, max_length=15, help_text="Categoría del producto"
+    )
+    common_name = models.CharField(max_length=63, help_text="Nombre común del producto")
+    common_name_alternate = models.TextField(
+        blank=True, null=True, help_text="Nombre común alternativo del producto"
+    )
+    description = models.TextField(
+        blank=True, null=True, help_text="Descripción del producto"
+    )
+    icon = models.ImageField(
+        upload_to="images/icons",
+        blank=True,
+        null=True,
+        help_text="Icono utilizado para ilustrar el producto",
+    )
+    name_origin = models.TextField(
+        blank=True, null=True, help_text="Origen del nombre común"
+    )
+    center_origin = models.ManyToManyField(
+        "Origin", blank=True, help_text="Región de origen del producto"
+    )  # TODO: Confirmar si es correcto
+    center_origin_notes = models.TextField(
+        blank=True, null=True, help_text="Notas sobre la región originaria del producto"
+    )
+    food_basket = models.BooleanField(
+        default=False, help_text="¿Es parte de la canasta básica de alimentos?"
+    )
+    nutrition_notes = models.TextField(
+        blank=True,
+        null=True,
+        help_text="Notas sobre los datos nutricionales del producto",
+    )
+    preparation = models.ManyToManyField(
+        "Preparation", blank=True, help_text="Métodos de preparación"
+    )
+    preparation_notes = models.TextField(
+        blank=True, null=True, help_text="Notas sobre los métodos de preparación"
+    )
+    storage = models.ManyToManyField(
+        "Storage", blank=True, help_text="Tipo de almacenamiento"
+    )
+    storage_notes = models.TextField(
+        blank=True, null=True, help_text="Notas sobre el almacenamiento del producto"
+    )
 
     def __str__(self):
         return self.common_name
@@ -48,7 +81,9 @@ class Variety(models.Model):
     ]
 
     variety_id = models.AutoField(primary_key=True)
-    product_url = models.ForeignKey("Product", on_delete=models.SET_NULL, null=True)
+    product_url = models.ForeignKey(
+        "Product", on_delete=models.SET_NULL, null=True, related_name="varieties"
+    )
     scientific_name = models.CharField(max_length=63, blank=False, null=False)
     scientific_name_variety = models.CharField(max_length=63, blank=True, null=True)
     common_name_variety = models.CharField(max_length=63, blank=True, null=True)

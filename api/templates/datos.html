@@ -28,27 +28,63 @@
         <div class="col-lg-8 mx-auto">
             <h2>Datos abiertos</h2>
             <p>
-                Los datos en <strong>deferia.cr</strong> son abiertos y están disponibles para su uso y reutilización. Fueron recopilados por estudiantes de trabajo comunal universitario desde el Consejo Nacional de Producción, la Junta Nacional de Ferias del Agricultor, municipalidades, formularios para el público en general y visitas a las mismas, entre otras fuentes.
+                Los datos en <strong>deferia.cr</strong> son abiertos y están disponibles para su uso y reutilización.
             </p>
-            <h4>Sobre las ferias</h4>
+            <h5>Fuentes</h5>
+
+            <ul>
+                <li>Recopilación por estudiantes de trabajo comunal universitario</li>
+                <li>Consejo Nacional de Producción</li>
+                <li>Junta Nacional de Ferias del Agricultor</li>
+                <li>Visitas a las ferias</li>
+                <li>Formularios para visitantes de las ferias</li>
+                <li>Otros</li>
+            </ul>
+            <h4>Datos sobre las ferias</h4>
             <p>
                 Los datos de las ferias incluyen información sobre su ubicación, horarios de apertura, servicios y otros. La información de las ferias es revisada periódicamente.
             </p>
             <p>
                 <a type="button" class="btn btn-outline-secondary" href="ferias?formato=excel"><i class="fa-solid fa-file-arrow-down"></i> Excel</a>
                 <a type="button" class="btn btn-outline-secondary" href="ferias?formato=csv"><i class="fa-solid fa-file-arrow-down"></i> CSV</a>
+                <a type="button" class="btn btn-outline-secondary" href="ferias?formato=geojson"><i class="fa-solid fa-file-arrow-down"></i> GeoJSON</a>
             </p>
 
-            <h2>API</h2>
+            <h4>Datos sobre los productos</h4>
             <p>
-                <strong>deferia.cr</strong> ofrece un RESTful API para acceder a los datos de las ferias. 
+                Los datos de los productos incluyen información sobre cada producto vendido en las ferias del agricultor, como nombre, preparación, almacenamiento, entre otros.
             </p>
+            <p>
+                <a type="button" class="btn btn-outline-secondary" href="productos?formato=excel"><i class="fa-solid fa-file-arrow-down"></i> Excel</a>
+                <a type="button" class="btn btn-outline-secondary" href="productos?formato=csv"><i class="fa-solid fa-file-arrow-down"></i> CSV</a>
+                <a type="button" class="btn btn-outline-secondary" href="productos?formato=json"><i class="fa-solid fa-file-arrow-down"></i> JSON</a>
+
+            </p>
+
+            <h2>API deferia.cr</h2>
+            <p>
+                <strong>deferia.cr</strong> ofrece un RESTful API para acceder a los datos de las ferias.
+            </p>
+            <p>
+                <a href="api" target="_blank" class="text-decoration-none"><i class="fa-solid fa-file-lines"></i> Raíz del API del REST Framework de Django</a> 
+            </p>
+            <p>
+                <a href="{% url 'docs' %}" target="_blank" class="text-decoration-none"><i class="fa-solid fa-file-lines"></i> Documentación completa del API</a> 
+            </p>
+            
+            <h6>Ejemplos</h6>
             <dl>
                 <dt><code>GET deferia.cr/datos/api/ferias</code></dt>
                 <dd>Lista de todas las ferias en la base de datos.</dd>
 
+                <dt><code>GET deferia.cr/datos/api/geoferias</code></dt>
+                <dd>Lista de todas las ferias en la base de datos en formato GeoJSON.</dd>
+
                 <dt><code>GET deferia.cr/datos/api/ferias/{feria_url}</code></dt>
                 <dd>Información de una feria específica.</dd>
+
+                <dt><code>GET deferia.cr/datos/api/productos</code></dt>
+                <dd>Lista de todos los productos y sus variedades en la base de datos.</dd>
             </dl>
 
             <h2>Licencia de uso</h2>

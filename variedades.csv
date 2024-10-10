@@ -1,0 +1,169 @@
+variety_id,product_url_id,scientific_name,scientific_name_variety,common_name_variety,common_name_variety_alternate,description,jan,feb,mar,apr,may,jun,jul,aug,sep,oct,nov,dec
+2,acelga,Beta vulgaris,cicla,,,,3.0,3.0,3.0,2.0,2.0,2.0,2.0,1.0,1.0,2.0,2.0,2.0
+3,aguacate,Persea americana,Hass,Hass,,,3.0,3.0,2.0,1.0,1.0,1.0,1.0,2.0,2.0,3.0,3.0,3.0
+4,aguacate,Persea americana,drymifolia,criollo,,,1.0,3.0,2.0,2.0,2.0,2.0,2.0,1.0,1.0,1.0,1.0,1.0
+5,ajo,Allium sativum,,,,,3.0,3.0,2.0,1.0,1.0,2.0,2.0,2.0,2.0,3.0,3.0,3.0
+6,albahaca,Ocimum basilicum,,,,,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0
+7,alfalfa,Medicago sativa,,,,,3.0,3.0,2.0,1.0,1.0,1.0,1.0,3.0,3.0,2.0,1.0,3.0
+8,anona,Annona squamosa,,,,,1.0,3.0,3.0,3.0,3.0,2.0,2.0,1.0,1.0,1.0,1.0,1.0
+9,apazote,Dysphania ambrosioides,,,epazote o paico,,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0
+10,apio,Apium graveolens,,verde,,,3.0,2.0,3.0,3.0,3.0,2.0,1.0,1.0,2.0,2.0,3.0,3.0
+11,arandano,Vaccinium corymbosum,,,,,1.0,3.0,3.0,3.0,3.0,2.0,2.0,1.0,1.0,1.0,1.0,1.0
+12,arracache,Arracacia xanthorrhiza,,,,,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0
+13,arugula,Eruca vesicaria,,,rúgula o rúcula,,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+14,guisante,Pisum sativum,,,petit pois o arveja,,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+15,ayote,Cucurbita argyrosperma,,tierno,,,1.0,1.0,1.0,3.0,3.0,3.0,2.0,3.0,3.0,3.0,3.0,1.0
+16,ayote,Cucurbita argyrosperma,,sazón mantequilla,,,2.0,2.0,2.0,2.0,2.0,2.0,2.0,1.0,3.0,3.0,1.0,1.0
+17,ayote,Cucurbita argyrosperma,,sazón seco,,,2.0,2.0,2.0,2.0,2.0,2.0,2.0,1.0,3.0,3.0,1.0,1.0
+18,ayote,Cucurbita argyrosperma,,pipián tierno,,,2.0,1.0,1.0,1.0,1.0,1.0,1.0,3.0,3.0,3.0,3.0,2.0
+19,banano,Musa paradisiaca,,dátil,,,3.0,3.0,2.0,3.0,2.0,2.0,2.0,1.0,1.0,1.0,2.0,2.0
+20,banano,Musa paradisiaca,,guineo cuadrado,guineo chino,,3.0,3.0,3.0,3.0,3.0,3.0,2.0,1.0,1.0,1.0,1.0,1.0
+21,banano,Musa paradisiaca,,guineo negro,,,3.0,3.0,3.0,3.0,3.0,3.0,2.0,1.0,1.0,1.0,1.0,1.0
+22,banano,Musa paradisiaca,,criollo,,,3.0,3.0,3.0,3.0,3.0,3.0,2.0,1.0,1.0,1.0,1.0,1.0
+23,banano,Musa paradisiaca,,maduro,,,3.0,3.0,2.0,3.0,2.0,2.0,2.0,1.0,1.0,1.0,2.0,2.0
+24,banano,Musa paradisiaca,,pintón,,,3.0,3.0,2.0,3.0,2.0,2.0,2.0,1.0,1.0,1.0,2.0,2.0
+25,banano,Musa paradisiaca,,verde,,,3.0,3.0,2.0,3.0,2.0,2.0,2.0,1.0,1.0,1.0,2.0,2.0
+26,berenjena,Solanum melongena,,,,,1.0,1.0,1.0,2.0,2.0,2.0,3.0,3.0,3.0,3.0,3.0,1.0
+27,berro,Ipomoea aquatica,,chino,,,2.0,1.0,1.0,2.0,2.0,2.0,3.0,3.0,3.0,3.0,3.0,1.0
+28,berro,Nasturtium officinale,,nacional,,,1.0,1.0,1.0,2.0,2.0,2.0,3.0,3.0,3.0,3.0,3.0,1.0
+29,bokchoy,Brassica rapa,chinensis,,pak choi,,1.0,1.0,1.0,2.0,2.0,2.0,3.0,3.0,3.0,3.0,3.0,1.0
+30,brocoli,Brassica oleracea,italica,,,,1.0,1.0,2.0,3.0,3.0,2.0,1.0,3.0,3.0,1.0,2.0,1.0
+31,camote,Ipomoea batatas,,,,,1.0,2.0,2.0,3.0,3.0,3.0,3.0,2.0,2.0,2.0,1.0,1.0
+32,carambola,Averrhoa carambola,,,,,3.0,3.0,1.0,1.0,1.0,2.0,3.0,3.0,3.0,2.0,2.0,2.0
+33,cas,Psidium friedrichsthalianum,,,,,2.0,1.0,1.0,1.0,1.0,2.0,3.0,3.0,3.0,3.0,2.0,2.0
+34,cebolla,Allium cepa,,blanca,,,1.0,1.0,3.0,3.0,3.0,1.0,1.0,1.0,3.0,3.0,3.0,1.0
+35,cebolla,Allium cepa,,morada,,,1.0,1.0,2.0,3.0,3.0,3.0,2.0,1.0,1.0,3.0,3.0,1.0
+36,cebollino,Allium fistulosum,,fino,,,1.0,2.0,2.0,3.0,3.0,3.0,3.0,3.0,3.0,2.0,2.0,1.0
+37,cebollino,Allium schoenoprasum,,grande,,,1.0,2.0,2.0,3.0,3.0,3.0,3.0,3.0,3.0,2.0,2.0,1.0
+38,chan,Hyptis suaveolens,,,,,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0
+39,chayote,Sechium edule,,cocoro,,,3.0,1.0,1.0,2.0,2.0,2.0,2.0,1.0,1.0,2.0,3.0,3.0
+40,chayote,Sechium edule,,tierno,chayote quelite,,3.0,1.0,1.0,2.0,2.0,2.0,2.0,2.0,2.0,3.0,3.0,3.0
+41,chayote,Sechium edule ,,tierno,,,3.0,1.0,1.0,2.0,2.0,2.0,2.0,1.0,1.0,2.0,3.0,3.0
+42,chayote,Sechium edule ,,sazón,,,3.0,1.0,1.0,2.0,2.0,2.0,2.0,1.0,1.0,2.0,3.0,3.0
+43,chiledulce,Capsicum annuum,,color mundial,,,1.0,2.0,2.0,2.0,3.0,3.0,2.0,2.0,3.0,2.0,1.0,1.0
+44,chiledulce,Capsicum annuum,,,,,1.0,2.0,2.0,2.0,3.0,3.0,2.0,2.0,3.0,2.0,1.0,1.0
+45,chilepicante,Capsicum annuum,,jalapeño,,,1.0,2.0,2.0,2.0,3.0,3.0,2.0,2.0,3.0,2.0,1.0,1.0
+46,chilepicante,Capsicum baccatum,,ají peruano,,,1.0,2.0,2.0,2.0,3.0,3.0,2.0,2.0,3.0,2.0,1.0,1.0
+47,chilepicante,Capsicum chinense,,panameño,,,1.0,2.0,2.0,2.0,3.0,3.0,2.0,2.0,3.0,2.0,1.0,1.0
+48,chilepicante,Capsicum frutescens,,cayena,,,1.0,2.0,2.0,2.0,3.0,3.0,2.0,2.0,3.0,2.0,1.0,1.0
+49,chilepicante,Capsicum pubescens,,rocoto,,,1.0,2.0,2.0,2.0,3.0,3.0,2.0,2.0,3.0,2.0,1.0,1.0
+50,chilepicante,Naga jolokia,,fantasma,,,1.0,2.0,2.0,2.0,3.0,3.0,2.0,2.0,3.0,2.0,1.0,1.0
+51,chilote,Stigma maydis,,,,,1.0,2.0,2.0,2.0,3.0,3.0,2.0,2.0,3.0,2.0,1.0,1.0
+52,ciruela,Prunus domestica,americana,americana,,,2.0,3.0,2.0,2.0,3.0,3.0,3.0,3.0,3.0,3.0,1.0,1.0
+53,ciruela,Prunus domestica,,,,,2.0,3.0,2.0,2.0,3.0,3.0,3.0,3.0,3.0,3.0,1.0,1.0
+54,coco,Cocos nucifera,,,pipa,,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0
+55,coldebruselas,Brassica oleracea,gemmifera,,,,2.0,2.0,2.0,2.0,2.0,1.0,1.0,2.0,2.0,3.0,3.0,3.0
+56,coladecaballo,Equisetum arvense,,,,,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0
+57,coliflor,Brassica oleracea,botrytis,,,,2.0,2.0,2.0,2.0,2.0,1.0,1.0,2.0,2.0,3.0,3.0,3.0
+58,cubaces,Phaseolus coccineus,,secos,,,1.0,3.0,2.0,1.0,1.0,3.0,3.0,2.0,2.0,3.0,3.0,1.0
+59,cubaces,Phaseolus coccineus,,tiernos,,,1.0,3.0,2.0,1.0,1.0,3.0,3.0,2.0,2.0,3.0,3.0,1.0
+60,culantro,Coriandrum sativum,,castilla,cilantro,,3.0,3.0,2.0,3.0,1.0,1.0,3.0,3.0,2.0,1.0,2.0,2.0
+61,culantrocoyote,Eryngium foetidum,,,,,3.0,3.0,3.0,3.0,3.0,3.0,3.0,1.0,1.0,1.0,1.0,1.0
+62,curcuma,Curcuma longa,,,,,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0
+63,eneldo,Anethum graveolens,,,abesón,,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0
+64,esparrago,Asparagus officinalis,,,,,2.0,2.0,3.0,3.0,3.0,3.0,2.0,2.0,2.0,3.0,3.0,3.0
+65,espinaca,Spinacia oleracea,,,,,1.0,1.0,2.0,3.0,3.0,3.0,2.0,3.0,3.0,1.0,1.0,1.0
+66,estragon,Artemisia dracunculus,,,,,2.0,2.0,3.0,3.0,3.0,3.0,2.0,2.0,2.0,3.0,3.0,3.0
+67,fresa,Fragaria × ananassa,,,,,1.0,2.0,3.0,3.0,3.0,3.0,2.0,3.0,2.0,1.0,1.0,1.0
+68,frijol,Phaseolus vulgaris,,blanco,,,1.0,3.0,2.0,1.0,1.0,3.0,3.0,2.0,2.0,3.0,3.0,1.0
+69,frijol,Phaseolus vulgaris,,calima,,,1.0,3.0,2.0,1.0,1.0,3.0,3.0,2.0,2.0,3.0,3.0,1.0
+70,frijol,Phaseolus vulgaris,,negro,,,1.0,3.0,2.0,1.0,1.0,3.0,3.0,2.0,2.0,3.0,3.0,1.0
+71,frijol,Phaseolus vulgaris,,rojo,,,1.0,3.0,2.0,1.0,1.0,3.0,3.0,2.0,2.0,3.0,3.0,1.0
+72,garbanzo,Cicer arietinum,,,,,1.0,3.0,2.0,1.0,1.0,3.0,3.0,2.0,2.0,3.0,3.0,1.0
+73,granadilla,Passiflora ligularis,,,,,3.0,3.0,3.0,3.0,3.0,2.0,1.0,1.0,1.0,2.0,2.0,2.0
+74,guanabana,Annona muricata,,,,,3.0,3.0,3.0,2.0,3.0,3.0,2.0,1.0,1.0,1.0,1.0,1.0
+75,guayaba,Psidium guajava,,,,,3.0,3.0,2.0,2.0,2.0,2.0,2.0,3.0,3.0,3.0,1.0,1.0
+76,hierbabuena,Mentha spicata,,,yerbabuena o menta de jardín,,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0
+77,hinojo,Foeniculum vulgare,,,,,0.0,0.0,0.0,1.0,2.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0
+78,hongo,Agaricus bisporus,,crimini,,,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0
+79,hongo,Agaricus bisporus,,portobello,,,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0
+80,hongo,Boletus edulis,,blanco champiñon,,,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0
+81,hongo,Pleurotus ostreatus,,ostra,,,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0
+82,jengibre,Zingiber officinale,,,,,3.0,3.0,3.0,2.0,2.0,1.0,1.0,1.0,2.0,3.0,3.0,3.0
+83,jocote,Spondias purpurea,,tronador,jocote tronador,,0.0,0.0,0.0,0.0,0.0,2.0,3.0,3.0,2.0,0.0,0.0,0.0
+84,kale,Brassica oleracea,sabellica,verde,col rizada o  brócoli chino,,2.0,2.0,2.0,3.0,3.0,3.0,3.0,3.0,2.0,1.0,2.0,2.0
+85,kiwi,Actinidia deliciosa,,,,,3.0,3.0,3.0,3.0,3.0,3.0,2.0,2.0,2.0,3.0,3.0,3.0
+86,lechuga,Cichorium endivia,,escarola,,,2.0,3.0,3.0,3.0,3.0,2.0,2.0,1.0,1.0,3.0,3.0,3.0
+87,lechuga,Lactuca sativa,acephala,lollo rosa,,,2.0,3.0,3.0,3.0,3.0,2.0,2.0,1.0,1.0,3.0,3.0,3.0
+88,lechuga,Lactuca sativa,longifolia,romana,,,2.0,3.0,3.0,3.0,3.0,2.0,2.0,1.0,1.0,3.0,3.0,3.0
+89,lechuga,Lactuca sativa,,verónica,,,2.0,3.0,3.0,3.0,3.0,2.0,2.0,1.0,1.0,3.0,3.0,3.0
+90,lechuga,Lactuca sativa ,,americana arrepollada,,,2.0,3.0,3.0,3.0,3.0,2.0,2.0,1.0,1.0,3.0,3.0,3.0
+91,lechuga,Lactuca sativa ,,BG crepa,,,2.0,3.0,3.0,3.0,3.0,2.0,2.0,1.0,1.0,3.0,3.0,3.0
+92,lechuga,Lactuca sativa ,,blanca criolla,,,2.0,3.0,3.0,3.0,3.0,2.0,2.0,1.0,1.0,3.0,3.0,3.0
+93,lenteja,Lens culinaris,,,,,1.0,3.0,2.0,1.0,1.0,3.0,3.0,2.0,2.0,3.0,3.0,1.0
+94,limon,Citrus × aurantifolia,,criollo,,,3.0,2.0,1.0,1.0,1.0,1.0,2.0,3.0,3.0,3.0,3.0,3.0
+95,limon,Citrus × limonia,,mandarino,,,3.0,2.0,1.0,1.0,1.0,1.0,2.0,3.0,3.0,3.0,3.0,3.0
+96,limon,Citrus aurantifolia,,mecino,,,1.0,1.0,1.0,1.0,2.0,3.0,3.0,3.0,3.0,3.0,3.0,2.0
+97,limon,Citrus limetta,,dulce,,,1.0,1.0,1.0,1.0,1.0,1.0,1.0,3.0,3.0,3.0,3.0,2.0
+98,linaza,Linum usitatissimum,,,,,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0
+99,maiz,Zea mays,,elote dulce amarillo,,,1.0,2.0,1.0,2.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,2.0
+100,maiz,Zea mays,,elote tierno,,,1.0,2.0,1.0,2.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,2.0
+101,maiz,Zea mays,,cascado,,,1.0,2.0,1.0,2.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,2.0
+102,malanga,Colocasia esculenta,,,big taro,,1.0,2.0,2.0,3.0,3.0,3.0,3.0,2.0,2.0,2.0,1.0,1.0
+103,mandarina,Citrus reticulata,,,,,3.0,3.0,3.0,2.0,0.0,0.0,0.0,0.0,1.0,1.0,1.0,1.0
+104,mandarina,Citrus reticulata,,nacional,,,3.0,3.0,3.0,2.0,0.0,0.0,0.0,0.0,1.0,1.0,1.0,1.0
+105,mango,Mangifera indica,,,,,2.0,2.0,3.0,3.0,3.0,3.0,3.0,3.0,1.0,1.0,1.0,1.0
+106,manzana,Malus domestica,gala,gala,,,3.0,2.0,1.0,2.0,3.0,3.0,3.0,3.0,2.0,2.0,1.0,1.0
+107,manzana,Malus domestica,× M. sylvestris,granny,,,3.0,2.0,1.0,2.0,3.0,3.0,3.0,3.0,2.0,2.0,1.0,1.0
+108,manzana,Malus domestica ,,washinton,,,3.0,2.0,1.0,2.0,3.0,3.0,3.0,3.0,2.0,2.0,1.0,1.0
+109,manzanadeagua,Syzygium malaccense,,,,,3.0,2.0,1.0,2.0,3.0,3.0,3.0,3.0,2.0,2.0,1.0,1.0
+110,manzanilla,Chamaemelum nobile,,,,,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0
+111,maracuya,Passiflora edulis,,,,,3.0,1.0,1.0,3.0,3.0,2.0,2.0,2.0,2.0,2.0,3.0,3.0
+112,melocoton,Prunus persica,,,,,1.0,1.0,1.0,1.0,1.0,2.0,3.0,3.0,3.0,2.0,1.0,1.0
+113,melon,Cucumis melo,,,,,3.0,3.0,3.0,3.0,3.0,2.0,1.0,1.0,1.0,1.0,1.0,1.0
+114,menta,Mentha × piperita,,,,,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0
+115,mora,Rubus ulmifolius,,,,,3.0,3.0,3.0,2.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,3.0
+116,mostazachina,Brassica juncea,,,,,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0
+117,mozote,Bidens pilosa,,,,,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0
+118,name,Dioscorea alata,,,,,3.0,3.0,3.0,2.0,1.0,1.0,1.0,1.0,2.0,3.0,3.0,3.0
+119,nampi,Dioscorea trifida,,,,,3.0,3.0,3.0,2.0,1.0,1.0,1.0,1.0,2.0,3.0,3.0,3.0
+120,naranja,Citrus × aurantium,,agria,,,3.0,2.0,2.0,2.0,2.0,3.0,3.0,2.0,2.0,2.0,2.0,2.0
+121,naranja,Citrus × sinensis,,,,,3.0,3.0,3.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,3.0
+122,naranja,Citrus × sinensis,washinton navel,washinton,,,3.0,3.0,3.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,3.0
+123,oregano,Origanum vulgare,,,,,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0
+124,palmito,Chamaerops humilis,,tierno,,,2.0,2.0,3.0,3.0,3.0,2.0,1.0,1.0,1.0,1.0,2.0,3.0
+125,papa,Solanum tuberosum,,amarilla,,,2.0,2.0,2.0,2.0,2.0,2.0,1.0,3.0,3.0,3.0,2.0,2.0
+126,papa,Solanum tuberosum,kennebec,blanca,,,1.0,1.0,2.0,2.0,2.0,2.0,1.0,3.0,3.0,3.0,2.0,2.0
+127,papa,Solanum tuberosum,,burra,,,2.0,2.0,2.0,2.0,2.0,2.0,1.0,3.0,3.0,3.0,2.0,2.0
+128,papa,Solanum tuberosum,,mini,,,2.0,2.0,2.0,2.0,2.0,2.0,1.0,3.0,3.0,3.0,2.0,2.0
+129,papaya,Carica papaya,,,,,1.0,3.0,3.0,3.0,3.0,2.0,3.0,1.0,1.0,2.0,2.0,1.0
+130,pejibaye,Bactris gasipaes,,,,,2.0,2.0,3.0,3.0,3.0,2.0,1.0,1.0,1.0,1.0,2.0,3.0
+131,pepino,Cucumis sativus,,,,,1.0,1.0,1.0,3.0,3.0,3.0,3.0,3.0,3.0,2.0,1.0,1.0
+132,pera,Pyrus communis,,,,,2.0,2.0,2.0,2.0,2.0,2.0,2.0,3.0,3.0,3.0,2.0,2.0
+133,perejil,Petroselinum crispum,neapolitanum,italiano,,,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0
+134,perejil,Petroselinum crispum,,,,,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0
+135,pina,Ananas comosus,,,,,2.0,2.0,2.0,3.0,3.0,3.0,1.0,1.0,1.0,2.0,2.0,1.0
+136,pitahaya,Selenicereus undatus,,,,,0.0,0.0,0.0,0.0,2.0,3.0,3.0,3.0,3.0,2.0,1.0,0.0
+137,platano,Musa balbisiana,,maduro,,,1.0,1.0,2.0,3.0,3.0,3.0,3.0,2.0,2.0,2.0,1.0,1.0
+138,platano,Musa balbisiana,,verde,,,1.0,1.0,2.0,3.0,3.0,3.0,2.0,2.0,2.0,2.0,1.0,1.0
+139,puerro,Allium ampeloprasum,porrum,,,,2.0,2.0,2.0,2.0,3.0,3.0,2.0,2.0,2.0,3.0,3.0,2.0
+140,rabano,Raphanus sativus,,rabanito,,,2.0,2.0,3.0,3.0,3.0,3.0,2.0,2.0,3.0,3.0,3.0,2.0
+141,rabano,Raphanus sativus,,blanco,,,2.0,2.0,3.0,3.0,3.0,3.0,2.0,2.0,3.0,3.0,3.0,2.0
+142,remolacha,Beta vulgari,,,,,1.0,1.0,2.0,3.0,3.0,3.0,3.0,2.0,2.0,2.0,1.0,1.0
+143,repollo,Brassica oleracea,capita f. rubra,morado,,,1.0,1.0,1.0,2.0,3.0,3.0,3.0,2.0,2.0,3.0,2.0,2.0
+144,repollo,Brassica oleracea,capita,verde,,,1.0,1.0,1.0,2.0,3.0,3.0,3.0,2.0,2.0,3.0,2.0,2.0
+145,romero,Salvia rosmarinus,,,,,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0
+146,ruda,Ruda graveolens,,,,,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0
+147,sabila,Aloe vera,,,,,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0
+148,salvia,Salvia officinalis,,,,,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0
+149,sandia,Citrullus lanatus,,,,,2.0,3.0,3.0,3.0,3.0,2.0,2.0,2.0,2.0,2.0,1.0,1.0
+150,tacaco,Sechium tacaco,,,,,2.0,2.0,2.0,1.0,1.0,1.0,1.0,3.0,3.0,3.0,3.0,3.0
+151,tamarindo,Tamarindus indica,,,,,2.0,3.0,3.0,2.0,2.0,2.0,2.0,2.0,2.0,1.0,1.0,1.0
+152,tiquisque,Xanthosoma sagittifolium,Schott,,,,2.0,3.0,3.0,3.0,3.0,3.0,2.0,1.0,1.0,1.0,1.0,2.0
+153,tomate,Lycopersicon esculentum,,pera,,,1.0,2.0,3.0,3.0,3.0,3.0,1.0,1.0,3.0,3.0,1.0,1.0
+154,tomate,Physalis ixocarpa,,verde mexicano,,,1.0,2.0,3.0,3.0,3.0,3.0,1.0,1.0,3.0,3.0,1.0,1.0
+155,tomate,Solanum lycopersicum,cerasiforme,cherry,,,1.0,2.0,3.0,3.0,3.0,3.0,1.0,1.0,3.0,3.0,1.0,1.0
+156,tomate,Solanum lycopersicum,,mesa,,,1.0,2.0,3.0,3.0,3.0,3.0,1.0,1.0,3.0,3.0,1.0,1.0
+157,tomillo,Thymus vulgaris,,,,,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0
+158,toronja,Citrus × paradisi,,,grape fruit toronja,,1.0,2.0,3.0,3.0,3.0,3.0,2.0,1.0,1.0,1.0,1.0,1.0
+159,uchuva,Physalis peruviana,,,,,1.0,3.0,3.0,3.0,2.0,1.0,1.0,3.0,3.0,3.0,3.0,2.0
+160,uva,Vitis vinifera ,,roja,,,1.0,3.0,3.0,3.0,2.0,1.0,1.0,3.0,3.0,3.0,3.0,2.0
+161,uva,Vitis vinifera ,,verde,,,1.0,3.0,3.0,3.0,2.0,1.0,1.0,3.0,3.0,3.0,3.0,2.0
+162,vainica,Phaseolus vulgaris,in situ,tierna,,,1.0,1.0,2.0,3.0,2.0,2.0,3.0,2.0,2.0,2.0,2.0,2.0
+163,yuca,Manihot esculenta,,,,,1.0,3.0,3.0,3.0,2.0,2.0,1.0,1.0,2.0,3.0,3.0,2.0
+164,zacatelimon,Cymbopogon citratus,,,,,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0
+165,zanahoria,Daucus carota,,,,,2.0,3.0,2.0,2.0,3.0,2.0,1.0,1.0,2.0,3.0,3.0,3.0
+166,zapallo,Cucurbita moschata,,esmeralda,,,1.0,1.0,1.0,3.0,3.0,2.0,3.0,3.0,3.0,3.0,2.0,1.0
+167,zapallo,Cucurbita moschata,,,,,1.0,1.0,1.0,3.0,3.0,2.0,3.0,3.0,3.0,3.0,2.0,1.0
+168,zucchini,Cucurbita pepo,sunburst,escalopín colores,,,,,,,,,,,,,,
+169,zucchini,Cucurbita pepo,,,calabacín,,1.0,1.0,1.0,3.0,3.0,2.0,3.0,3.0,3.0,3.0,2.0,1.0
