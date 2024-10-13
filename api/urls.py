@@ -1,8 +1,16 @@
+# Django imports
 from django.urls import path, include
+
+# DRF imports
 from rest_framework import routers
-from . import views
-from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView
 from rest_framework.permissions import IsAdminUser, BasePermission, SAFE_METHODS
+
+# DRF Spectacular imports
+from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView
+
+# local imports
+from . import views
+
 
 class ReadOnly(BasePermission):
     def has_permission(self, request, view):

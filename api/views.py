@@ -1,29 +1,41 @@
-from django.shortcuts import render
-from django.http import FileResponse
-from rest_framework import viewsets
-from marketplaces.models import Marketplace
-from products.models import Product
-from products.models import Variety
-from .serializers import MarketplaceSerializer
-from .serializers import GeoMarketplaceSerializer
-from .serializers import ProductSerializer
-from .serializers import VarietySerializer
-from website.models import Text
+# Standart library imports
+from io import BytesIO
+from zipfile import ZipFile
 
+# Third party imports
 import pandas as pd
 import geopandas as gpd
 from shapely import Point
+
+# Django imports
+from django.shortcuts import render
 from django.http import FileResponse
-import io
+from django.conf import settings
+
+# DRF imports
+from rest_framework import viewsets
+from rest_framework.renderers import JSONRenderer
+from rest_framework.permissions import SAFE_METHODS, IsAdminUser, BasePermission
+
+# drf_spectacular imports
 from drf_spectacular.utils import (
     extend_schema,
     extend_schema_view,
 )
-from django.conf import settings
-from io import BytesIO
-from zipfile import ZipFile
-from rest_framework.renderers import JSONRenderer
-from rest_framework.permissions import SAFE_METHODS, IsAdminUser, BasePermission
+
+# Models imports
+from marketplaces.models import Marketplace
+from products.models import Product, Variety
+from website.models import Text
+
+# Serializers imports
+from .serializers import (
+    MarketplaceSerializer,
+    GeoMarketplaceSerializer,
+    ProductSerializer,
+    VarietySerializer,
+)
+
 
 
 # Create your views here.
