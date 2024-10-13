@@ -2,6 +2,11 @@ from django.urls import path, include
 from rest_framework import routers
 from . import views
 from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView
+from rest_framework.permissions import IsAdminUser, BasePermission, SAFE_METHODS
+
+class ReadOnly(BasePermission):
+    def has_permission(self, request, view):
+        return request.method in SAFE_METHODS
 
 router = routers.DefaultRouter()
 router.register(r"ferias", views.MarketplaceViewSet)
@@ -17,6 +22,8 @@ urlpatterns = [
     path("ferias", views.ferias, name="datos-ferias"),
     path("productos", views.productos, name="datos-productos"),
     path("api/docs/schema/", views.get_schema, name="schema"),
-    path("api/docs/", SpectacularRedocView.as_view(url_name='schema'), name="docs"),
+    path("api/docs/", SpectacularRedocView.as_view(url_name='schema' , 
+                                                   permission_classes=[IsAdminUser | ReadOnly]), 
+                                                   name="docs"),
     path("api/", include(router.urls)),
 ]

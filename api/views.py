@@ -23,8 +23,13 @@ from django.conf import settings
 from io import BytesIO
 from zipfile import ZipFile
 from rest_framework.renderers import JSONRenderer
+from rest_framework.permissions import SAFE_METHODS, IsAdminUser, BasePermission
+
 
 # Create your views here.
+class ReadOnly(BasePermission):
+    def has_permission(self, request, view):
+        return request.method in SAFE_METHODS
 
 
 @extend_schema_view(
@@ -62,6 +67,7 @@ from rest_framework.renderers import JSONRenderer
 class MarketplaceViewSet(viewsets.ModelViewSet):
     queryset = Marketplace.objects.all().order_by("name")
     serializer_class = MarketplaceSerializer
+    permission_classes = [IsAdminUser | ReadOnly]
 
 
 @extend_schema_view(
@@ -99,6 +105,7 @@ class MarketplaceViewSet(viewsets.ModelViewSet):
 class GeoMarketplaceViewSet(viewsets.ModelViewSet):
     queryset = Marketplace.objects.all().order_by("name")
     serializer_class = GeoMarketplaceSerializer
+    permission_classes = [IsAdminUser | ReadOnly]
 
 
 @extend_schema_view(
@@ -136,6 +143,7 @@ class GeoMarketplaceViewSet(viewsets.ModelViewSet):
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.prefetch_related("varieties").all()
     serializer_class = ProductSerializer
+    permission_classes = [IsAdminUser | ReadOnly]
 
 
 def get_schema(request):
