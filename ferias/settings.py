@@ -56,8 +56,7 @@ INSTALLED_APPS = [
     "django.contrib.postgres",
     "django.contrib.gis",
     "django_htmx",
-    "tinymce"
-    "django_htmx",
+    "tinymce",
     "django_json_ld",
 ]
 
