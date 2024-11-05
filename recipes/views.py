@@ -2,8 +2,16 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 import json
+from website.models import Text
 from .models import Ingredient, Category, Tag, Recipe, RecipeIngredient, Step
-from .forms import RecipeForm, RecipeIngredientFormSet, StepFormSet, IngredientForm, CategoryForm, TagForm
+from .forms import (
+    RecipeForm,
+    RecipeIngredientFormSet,
+    StepFormSet,
+    IngredientForm,
+    CategoryForm,
+    TagForm,
+)
 from datetime import timedelta
 
 
@@ -14,7 +22,12 @@ from datetime import timedelta
 # TODO: Mostrar un mensaje de receta eliminada.
 def recipes(request):
     recipes = Recipe.objects.all()
-    context = {"recipes": recipes}
+    text = Text.objects.filter(page="/recetas")
+    texts = {}
+    texts["hero"] = text.filter(section="hero").first()
+    texts["hero_desc"] = text.filter(section="hero_desc").first()
+
+    context = {"recipes": recipes, "texts": texts}
     return render(request, "recipes.html", context)
 
 
@@ -51,8 +64,12 @@ def create_recipe(request):
             recipe = recipe_form.save()
             recipe.save()
 
-            ingredient_formset = RecipeIngredientFormSet(request.POST, instance=recipe, prefix="ingredients")
-            step_formset = StepFormSet(request.POST, request.FILES, instance=recipe, prefix="steps")
+            ingredient_formset = RecipeIngredientFormSet(
+                request.POST, instance=recipe, prefix="ingredients"
+            )
+            step_formset = StepFormSet(
+                request.POST, request.FILES, instance=recipe, prefix="steps"
+            )
 
             ingredient_formset = save_recipe_ingredients(ingredient_formset)
             step_formset = save_recipe_steps(step_formset)
@@ -60,7 +77,9 @@ def create_recipe(request):
             if ingredient_formset.is_valid() and step_formset.is_valid():
                 return redirect("recipe", slug=recipe.slug)
 
-    next_ingredient = 0 if len(ingredient_formset.forms) is None else len(ingredient_formset.forms)
+    next_ingredient = (
+        0 if len(ingredient_formset.forms) is None else len(ingredient_formset.forms)
+    )
     next_step = 0 if len(step_formset.forms) is None else len(step_formset.forms)
 
     context = {
@@ -77,7 +96,7 @@ def create_recipe(request):
         "tags": Tag.objects.all(),
         "ingredients": Ingredient.objects.all(),
     }
-    
+
     return render(request, "create_recipe.html", context)
 
 
@@ -90,7 +109,7 @@ def edit_recipe(request, slug):
     ingredient_form = IngredientForm()
     category_form = CategoryForm()
     tag_form = TagForm()
-    
+
     if request.method == "POST":
         recipe_form = RecipeForm(request.POST, request.FILES, instance=recipe)
 
@@ -98,8 +117,12 @@ def edit_recipe(request, slug):
             recipe = recipe_form.save()
             recipe.save()
 
-            ingredient_formset = RecipeIngredientFormSet(request.POST, instance=recipe, prefix="ingredients")
-            step_formset = StepFormSet(request.POST, request.FILES, instance=recipe, prefix="steps")
+            ingredient_formset = RecipeIngredientFormSet(
+                request.POST, instance=recipe, prefix="ingredients"
+            )
+            step_formset = StepFormSet(
+                request.POST, request.FILES, instance=recipe, prefix="steps"
+            )
 
             ingredient_formset = save_recipe_ingredients(ingredient_formset)
             step_formset = save_recipe_steps(step_formset)
@@ -107,7 +130,9 @@ def edit_recipe(request, slug):
             if ingredient_formset.is_valid() and step_formset.is_valid():
                 return redirect("recipe", slug=recipe.slug)
 
-    next_ingredient = 0 if len(ingredient_formset.forms) is None else len(ingredient_formset.forms)
+    next_ingredient = (
+        0 if len(ingredient_formset.forms) is None else len(ingredient_formset.forms)
+    )
     next_step = 0 if len(step_formset.forms) is None else len(step_formset.forms)
 
     context = {
@@ -125,8 +150,8 @@ def edit_recipe(request, slug):
         "tags": Tag.objects.all(),
         "ingredients": Ingredient.objects.all(),
     }
-    
-    return render(request, 'create_recipe.html', context)
+
+    return render(request, "create_recipe.html", context)
 
 
 def delete_recipe(request, slug):
@@ -150,13 +175,13 @@ def create_recipe_ingredient_form(request, i: int):
         "next_ingredient": i + 1,
         "recipe": recipe,
         "form": ingredient_formset.forms[i],
-        "management_form": ingredient_formset.management_form
+        "management_form": ingredient_formset.management_form,
     }
 
     return render(request, "partials/recipe_ingredient_form.html", context)
 
 
-def edit_recipe_ingredient_form(request, i:int, slug):
+def edit_recipe_ingredient_form(request, i: int, slug):
     recipe = get_object_or_404(Recipe, slug=slug)
     ingredient_formset = RecipeIngredientFormSet(instance=recipe, prefix="ingredients")
     ingredient_formset.min_num = i + 1
@@ -166,7 +191,7 @@ def edit_recipe_ingredient_form(request, i:int, slug):
         "next_ingredient": i + 1,
         "recipe": recipe,
         "form": ingredient_formset.forms[i],
-        "management_form": ingredient_formset.management_form
+        "management_form": ingredient_formset.management_form,
     }
 
     return render(request, "partials/recipe_ingredient_form.html", context)
@@ -183,31 +208,31 @@ def delete_recipe_ingredient_form(request, i: int):
         "next_ingredient": i,
         "recipe": recipe,
         "form": None,
-        "management_form": ingredient_formset.management_form
+        "management_form": ingredient_formset.management_form,
     }
 
     return render(request, "partials/recipe_ingredient_form.html", context)
 
 
-def delete_existing_recipe_ingredient_form(request, i: int, slug):   
+def delete_existing_recipe_ingredient_form(request, i: int, slug):
     recipe = get_object_or_404(Recipe, slug=slug)
     ingredient_formset = RecipeIngredientFormSet(instance=recipe, prefix="ingredients")
-    
+
     if i <= len(ingredient_formset.forms):
         ingredient_formset.forms.pop(i)
-    
+
     context = {
         "current_ingredient": i - 1,
         "next_ingredient": i - 1,
         "recipe": recipe,
         "form": None,
-        "management_form": ingredient_formset.management_form
+        "management_form": ingredient_formset.management_form,
     }
 
     return render(request, "partials/recipe_ingredient_form.html", context)
 
 
-def create_recipe_step_form(request, i:int):
+def create_recipe_step_form(request, i: int):
     step_formset = StepFormSet(prefix="steps")
     step_formset.min_num = i + 1
 
@@ -215,13 +240,13 @@ def create_recipe_step_form(request, i:int):
         "next_step": i + 1,
         "recipe": recipe,
         "form": step_formset.forms[i],
-        "management_form": step_formset.management_form
+        "management_form": step_formset.management_form,
     }
 
     return render(request, "partials/recipe_step_form.html", context)
 
 
-def edit_recipe_step_form(request, i:int, slug):
+def edit_recipe_step_form(request, i: int, slug):
     recipe = get_object_or_404(Recipe, slug=slug)
     step_formset = StepFormSet(instance=recipe, prefix="steps")
     step_formset.min_num = i + 1
@@ -230,7 +255,7 @@ def edit_recipe_step_form(request, i:int, slug):
         "next_step": i + 1,
         "recipe": recipe,
         "form": step_formset.forms[i],
-        "management_form": step_formset.management_form
+        "management_form": step_formset.management_form,
     }
 
     return render(request, "partials/recipe_step_form.html", context)
@@ -238,16 +263,16 @@ def edit_recipe_step_form(request, i:int, slug):
 
 def delete_recipe_step_form(request, i: int):
     step_formset = StepFormSet(prefix="steps")
-    
+
     if i <= len(step_formset.forms):
         step_formset.forms.pop(i)
-        
+
     context = {
         "current_step": i - 1,
         "next_step": i,
         "recipe": recipe,
         "form": None,
-        "management_form": step_formset.management_form
+        "management_form": step_formset.management_form,
     }
 
     return render(request, "partials/recipe_step_form.html", context)
@@ -256,16 +281,16 @@ def delete_recipe_step_form(request, i: int):
 def delete_existing_recipe_step_form(request, i: int, slug):
     recipe = get_object_or_404(Recipe, slug=slug)
     step_formset = StepFormSet(instance=recipe, prefix="steps")
-    
+
     if i <= len(step_formset.forms):
         step_formset.forms.pop(i)
-    
+
     context = {
         "current_step": i - 1,
         "next_step": i - 1,
         "recipe": recipe,
         "form": None,
-        "management_form": step_formset.management_form
+        "management_form": step_formset.management_form,
     }
 
     return render(request, "partials/recipe_step_form.html", context)
@@ -277,8 +302,7 @@ def save_recipe_ingredients(formset):
             recipe_ingredient = form.save(commit=False)
 
             existing_ingredient = RecipeIngredient.objects.filter(
-                recipe=recipe_ingredient.recipe,
-                ingredient=recipe_ingredient.ingredient
+                recipe=recipe_ingredient.recipe, ingredient=recipe_ingredient.ingredient
             ).first()
 
             if existing_ingredient:
@@ -297,8 +321,7 @@ def save_recipe_steps(formset):
             recipe_step = form.save(commit=False)
 
             existing_step = Step.objects.filter(
-                recipe=recipe_step.recipe, 
-                step_sequence=recipe_step.step_sequence
+                recipe=recipe_step.recipe, step_sequence=recipe_step.step_sequence
             ).first()
 
             if existing_step:
@@ -315,27 +338,24 @@ def save_recipe_steps(formset):
 def create_ingredient(request):
     form = IngredientForm()
 
-    if request.method == 'POST' and request.htmx:
+    if request.method == "POST" and request.htmx:
         form = IngredientForm(request.POST)
         if form.is_valid():
             ingredient = form.save(commit=False)
             ingredient.save()
-            
-            form.cleaned_data['allergies'] 
-            ingredient.allergies.set(form.cleaned_data['allergies'])
-    
-    context = {
-        "ingredient_form": form,
-        "ingredients": Ingredient.objects.all()
-    }
 
-    return render(request, 'partials/new_ingredient.html', context)
+            form.cleaned_data["allergies"]
+            ingredient.allergies.set(form.cleaned_data["allergies"])
+
+    context = {"ingredient_form": form, "ingredients": Ingredient.objects.all()}
+
+    return render(request, "partials/new_ingredient.html", context)
 
 
 def create_category(request):
     recipe = RecipeForm()
 
-    if request.method == 'POST' and request.htmx:
+    if request.method == "POST" and request.htmx:
         form = CategoryForm(request.POST)
         if form.is_valid():
             category = form.save()
@@ -346,13 +366,13 @@ def create_category(request):
         "categories": Category.objects.all(),
     }
 
-    return render(request, 'partials/category_list.html', context)
+    return render(request, "partials/category_list.html", context)
 
 
 def create_tag(request):
     recipe = RecipeForm()
 
-    if request.method == 'POST' and request.htmx:
+    if request.method == "POST" and request.htmx:
         form = TagForm(request.POST)
         if form.is_valid():
             tag = form.save()
@@ -362,8 +382,8 @@ def create_tag(request):
         "recipe_form": recipe,
         "tags": Tag.objects.all(),
     }
-    
-    return render(request, 'partials/tag_list.html', context)
+
+    return render(request, "partials/tag_list.html", context)
 
 
 def get_structured_data(recipe, recipe_steps):
@@ -377,18 +397,27 @@ def get_structured_data(recipe, recipe_steps):
         "cookTime": format_duration(recipe.cook_time) if recipe.cook_time else None,
         "totalTime": format_duration(recipe.total_time) if recipe.total_time else None,
         "recipeYield": recipe.recipe_yield,
-        "recipeIngredient": [ingredient.ingredient.ingredient_name for ingredient in recipe.recipeingredient_set.all()],
+        "recipeIngredient": [
+            ingredient.ingredient.ingredient_name
+            for ingredient in recipe.recipeingredient_set.all()
+        ],
         "recipeInstructions": [step.to_dict() for step in recipe_steps],
         "recipeCategory": recipe.category.category_name if recipe.category else None,
         "recipeCuisine": recipe.recipe_cuisine if recipe.recipe_cuisine else None,
-        "keywords": list(recipe.tags.values_list('tag_name', flat=True)),
+        "keywords": list(recipe.tags.values_list("tag_name", flat=True)),
         "nutrition": {
             "@type": "NutritionInformation",
             "calories": recipe.calories if recipe.calories else "No disponible",
             "fatContent": recipe.fat_content if recipe.fat_content else "No disponible",
-            "carbohydrateContent": recipe.carbohydrate_content if recipe.carbohydrate_content else "No disponible",
-            "proteinContent": recipe.protein_content if recipe.protein_content else "No disponible",
-        }
+            "carbohydrateContent": (
+                recipe.carbohydrate_content
+                if recipe.carbohydrate_content
+                else "No disponible"
+            ),
+            "proteinContent": (
+                recipe.protein_content if recipe.protein_content else "No disponible"
+            ),
+        },
     }
 
     return structured_data

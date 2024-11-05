@@ -91,6 +91,7 @@ class Variety(models.Model):
         max_length=127, blank=True, null=True
     )
     description = models.TextField(blank=True, null=True)
+    has_price = models.BooleanField(default=False)
     image = models.ImageField(upload_to="products", blank=True, null=True)
     jan = models.IntegerField(choices=SEASON_CHOICES, blank=True, null=True)
     feb = models.IntegerField(choices=SEASON_CHOICES, blank=True, null=True)

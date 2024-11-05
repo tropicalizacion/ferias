@@ -12,8 +12,9 @@
 <div class="px-4 pt-3 pb-5 text-center background-amarillo">
     <div class="card col-lg-8 mx-auto bg-transparent border-0">
         <h1 class="display-3 my-5 text-white hero-deferia">{{texts.hero.content}}</h1>
-        <h3 class="title-deferia text-white">¡Explorá nuestras recetas tradicionales,<br>desde el arroz con pollo hasta
-            el gallo pinto!</h3>
+        <div class="card col-lg-6 mx-auto bg-transparent border-0">
+            <h3 class="title-deferia text-white">{{ texts.hero_desc.content }}</h3>
+        </div>
         <img src="{% static 'images/stickers/ajo.svg' %}" width="75px" class="index-sticker-1">
         <img src="{% static 'images/stickers/acelga.svg' %}" width="75px" class="index-sticker-2">
         <img src="{% static 'images/stickers/naranja.svg' %}" width="75px" class="index-sticker-3">
