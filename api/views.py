@@ -1,30 +1,47 @@
-from django.shortcuts import render
-from django.http import FileResponse
-from rest_framework import viewsets
-from marketplaces.models import Marketplace
-from products.models import Product
-from products.models import Variety
-from .serializers import MarketplaceSerializer
-from .serializers import GeoMarketplaceSerializer
-from .serializers import ProductSerializer
-from .serializers import VarietySerializer
-from website.models import Text
+# Standart library imports
+from io import BytesIO
+from zipfile import ZipFile
 
+# Third party imports
 import pandas as pd
 import geopandas as gpd
 from shapely import Point
+
+# Django imports
+from django.shortcuts import render
 from django.http import FileResponse
-import io
+from django.conf import settings
+
+# DRF imports
+from rest_framework import viewsets
+from rest_framework.renderers import JSONRenderer
+from rest_framework.permissions import SAFE_METHODS, IsAdminUser, BasePermission
+
+# drf_spectacular imports
 from drf_spectacular.utils import (
     extend_schema,
     extend_schema_view,
 )
-from django.conf import settings
-from io import BytesIO
-from zipfile import ZipFile
-from rest_framework.renderers import JSONRenderer
+
+# Models imports
+from marketplaces.models import Marketplace
+from products.models import Product, Variety
+from website.models import Text
+
+# Serializers imports
+from .serializers import (
+    MarketplaceSerializer,
+    GeoMarketplaceSerializer,
+    ProductSerializer,
+    VarietySerializer,
+)
+
+
 
 # Create your views here.
+class ReadOnly(BasePermission):
+    def has_permission(self, request, view):
+        return request.method in SAFE_METHODS
 
 
 @extend_schema_view(
@@ -62,6 +79,7 @@ from rest_framework.renderers import JSONRenderer
 class MarketplaceViewSet(viewsets.ModelViewSet):
     queryset = Marketplace.objects.all().order_by("name")
     serializer_class = MarketplaceSerializer
+    permission_classes = [IsAdminUser | ReadOnly]
 
 
 @extend_schema_view(
@@ -99,6 +117,7 @@ class MarketplaceViewSet(viewsets.ModelViewSet):
 class GeoMarketplaceViewSet(viewsets.ModelViewSet):
     queryset = Marketplace.objects.all().order_by("name")
     serializer_class = GeoMarketplaceSerializer
+    permission_classes = [IsAdminUser | ReadOnly]
 
 
 @extend_schema_view(
@@ -136,6 +155,7 @@ class GeoMarketplaceViewSet(viewsets.ModelViewSet):
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.prefetch_related("varieties").all()
     serializer_class = ProductSerializer
+    permission_classes = [IsAdminUser | ReadOnly]
 
 
 def get_schema(request):
