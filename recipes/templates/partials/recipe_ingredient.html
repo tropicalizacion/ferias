@@ -1,0 +1,50 @@
+{% block content %}
+
+{% for form in ingredient_formset %}
+<div class="ingredient mt-2 bg-white rounded p-2" id="ingredient-form-{{ forloop.counter0 }}">
+    <div class="ingredient-row d-inline-flex justify-content-between" style="width: 100%;">
+        {{ management_form }}
+        {{ form.recipe_id }}
+        {{ form.id }}
+
+        <div class="d-inline-flex justify-content-between" style="width: 100%;">
+            <div style="width: 10%;">
+                <div class="d-flex justify-content-start align-content-center h-100">
+                    <button type="button" class="btn-delete-ingredient text-danger bg-transparent border-0" onclick="this.style.display='none'" hx-get="{% if recipe.slug %}{% url 'delete_existing_recipe_ingredient_form' forloop.counter0 recipe.slug %}{% else %}{% url 'delete_recipe_ingredient_form' forloop.counter0 %}{% endif %}" hx-target="#ingredient-form-{{ forloop.counter0 }}" hx-swap="outerHTML"><i class="fa fa-trash"></i></button>
+                </div>
+            </div>
+            <div class="ingredient-input me-2 w-100">{{ form.ingredient }}
+                {% if form.ingredient.errors %}
+                    <div class="alert alert-danger m-2">
+                        {% for error in form.ingredient.errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="unit-input me-2 w-50">{{ form.unit }}
+                {% if form.unit.errors %}
+                    <div class="alert alert-danger m-2">
+                        {% for error in form.unit.errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="quantity-input w-50">{{ form.quantity }}
+                {% if form.quantity.errors %}
+                    <div class="alert alert-danger m-2">
+                        {% for error in form.quantity.errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}

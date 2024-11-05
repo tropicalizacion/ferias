@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block page_title %} Todas las recetas {% endblock %}
+
+{% block bg-navbar %} background-amarillo {% endblock %}
+
+{% block main %}
+
+<!-- Hero -->
+<div class="px-4 pt-3 pb-5 text-center background-amarillo">
+    <div class="card col-lg-8 mx-auto bg-transparent border-0">
+        <h1 class="display-3 my-5 text-white hero-deferia">{{texts.hero.content}}</h1>
+        <div class="card col-lg-6 mx-auto bg-transparent border-0">
+            <h3 class="title-deferia text-white">{{ texts.hero_desc.content }}</h3>
+        </div>
+        <img src="{% static 'images/stickers/ajo.svg' %}" width="75px" class="index-sticker-1">
+        <img src="{% static 'images/stickers/acelga.svg' %}" width="75px" class="index-sticker-2">
+        <img src="{% static 'images/stickers/naranja.svg' %}" width="75px" class="index-sticker-3">
+    </div>
+</div>
+
+<!-- Lista de las recetas -->
+<div class="container my-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1><strong>Todas las recetas</strong></h1>
+        <a href="{% url 'create_recipe' %}" class="btn btn-warning"><i class="fa-solid fa-plus me-2"></i><strong>Nueva receta</strong></a>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        {% for recipe in recipes %}
+        <div class="col">
+            <div class="card h-100 border-0 bg-white shadow-sm rounded">
+                <div class="card-header border-0 bg-white" style="max-height: 1rem;">
+                    <div class="d-flex flex-wrap gap-2" style="max-height: 1rem;">
+                        {% for tag in recipe.tags.all %}
+                        <span class="badge rounded-pill background-verde">{{ tag.tag_name }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="card-body h-100">
+                    {% if recipe.image %}
+                    <img src="{{ recipe.image.url }}" class="card-img-bottom mt-2 mb-3 rounded w-100" alt="{{ recipe.name }}">
+                    {% else %}
+                    <img src="{% static 'recipes/default_recipe_image.jpg' %}" class="card-img-bottom mt-2 mb-3 rounded w-100" alt="{{ recipe.name }}">
+                    {% endif %}
+
+                    <h5 class="card-title">{{ recipe.name|capfirst }}</h5>
+                    <p class="card-text">{{ recipe.description|truncatewords:15 }}</p>
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <a href="{% url 'recipe' recipe.slug %}" class="btn btn-sm btn-danger"><strong><i class="fa-solid fa-chevron-down me-2"></i>Ver receta</strong></a>
+                        
+                        {% if user.is_staff %}
+                        <div class="d-flex justify-content-end pt-2">
+                            <a href="{% url 'edit_recipe' recipe.slug %}" class="link-warning text-dark me-1"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <a class="link-danger text-dark ms-1" data-bs-toggle="modal" data-bs-target="#deleteModal{{ recipe.slug }}"><i class="fa fa-trash"></i></a>
+                        </div>
+                        
+                        <div class="modal fade" id="deleteModal{{ recipe.slug }}" tabindex="-1" aria-labelledby="deleteModalLabel{{ recipe.slug }}" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="deleteModalLabel{{ recipe.slug }}">Eliminar receta</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        ¿Está seguro de que desea eliminar "{{ recipe.name }}"?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="{% url 'delete_recipe' recipe.slug %}" class="btn btn-danger">Aceptar</a>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                    </div>
+                </div>
+                <div class="card-footer h-100 border-0 bg-white"></div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

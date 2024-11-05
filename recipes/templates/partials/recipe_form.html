@@ -1,0 +1,160 @@
+{% block content %}
+
+{{ recipe_form.id }}
+
+<div class="row p-2">
+    <div class="col">
+        <div class="bg-light rounded p-2 mb-3">
+            <div class="mb-2 mx-2">
+                <label>Nombre de la receta</label>
+                {{ recipe_form.name }}
+            </div>
+            <div class="mb-2 mx-2">
+                <label>Descripción</label>
+                {{ recipe_form.description }}
+            </div>
+            <div class="mb-2 mx-2">
+                <label>Forma de almacenamiento</label>
+                {{ recipe_form.storage }}
+            </div>
+            <div class="mb-2 mx-2">
+                <label>Imagen</label>
+                {{ recipe_form.image }}
+            </div>
+            <div class="mb-4 mx-2">
+                <label>Referencias</label>
+                {{ recipe_form.references }}
+            </div>
+
+            <div class="row mb-4 mx-2 bg-white rounded p-2">
+                <label class="mb-3">Tiempo <small class="text-secondary">(hh:mm:ss)</small></label>
+                <div class="col">
+                    <div class="d-flex flex-column align-items-start">
+                        <label class="text-start">Preparación</label>
+                        <div class="d-inline-flex align-items-center justify-content-start">
+                            <div class="w-100">{{ recipe_form.prep_time }}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="d-flex flex-column align-items-start">
+                        <label class="text-start">Cocción</label>
+                        <div class="d-inline-flex align-items-center justify-content-start">
+                            <div class="w-100">{{ recipe_form.cook_time }}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="d-flex flex-column align-items-start">
+                        <label class="text-start">Total</label>
+                        <div class="d-inline-flex align-items-center justify-content-start">
+                            <div class="w-100">{{ recipe_form.total_time }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-4 mx-2 bg-white rounded p-2">
+                <div class="col">
+                    <label>Porciones</label>
+                    {{ recipe_form.recipe_yield }}
+                </div>
+                <div class="col">
+                    <label>Tipo de cocina</label>
+                    {{ recipe_form.recipe_cuisine }}
+                </div>
+                <div class="col"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="d-flex flex-column justify-content-between">
+            <div class="container rounded background-verde mb-3 p-2">
+                <h5 class="text-white px-1">Categoría</h5>
+                {% include 'partials/category_list.html' with category=recipe_form.category %}
+            </div>
+            
+            <div class="container rounded background-verde mb-3 p-2">
+                <h5 class="text-white px-1">Etiquetas</h5>
+                <div class="p-2 bg-white rounded">
+                    <div class="border rounded">
+                        {% include 'partials/tag_list.html' with tags=recipe_form.tags %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="background-amarillo rounded p-1">
+                <div class="container border border-3 border-black rounded p-0">
+                    <div class="background-amarillo text-dark rounded p-2">
+                        <h5 class="text-center my-2">Información nutricional</h5>
+                        <div class="border border-3 border-black rounded mb-4">
+                            {{ recipe_form.nutritional_value }}
+                        </div>
+                
+                        <div class="nutrition-item">
+                            <div class="row align-items-center px-1">
+                                <div class="col text-end">
+                                    <strong>Calorías</strong><br /><small>(kcal)</small>
+                                </div>
+                                <div class="col">
+                                    <div class="d-inline-flex align-items-center justify-content-start border border-3 border-black rounded">
+                                        <input type="number" name="calories" class="form-control" id="id_calories" min="0" placeholder="0">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <hr class="my-2" />
+                
+                        <div class="nutrition-item">
+                            <div class="row align-items-center px-1">
+                                <div class="col text-end">
+                                    <strong>Carbohidratos</strong><br /><small>(gramos)</small>
+                                </div>
+                                <div class="col">
+                                    <div class="d-inline-flex align-items-center justify-content-start border border-3 border-black rounded">
+                                        <input type="number" name="carbohydrate_content" class="form-control" id="id_carbohydrate_content" min="0" placeholder="0">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                            
+                
+                        <hr class="my-2" />
+                
+                        <div class="nutrition-item mb-3">
+                            <div class="row align-items-center px-1">
+                                <div class="col text-end">
+                                    <strong>Grasas</strong><br /><small>(gramos)</small>
+                                </div>
+                                <div class="col">
+                                    <div class="d-inline-flex align-items-center justify-content-start border border-3 border-black rounded">
+                                        <input type="number" name="fat_content" class="form-control" id="id_fat_content" min="0" placeholder="0">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <hr class="my-2" />
+                
+                        <div class="nutrition-item mb-2">
+                            <div class="row align-items-center px-1">
+                                <div class="col text-end">
+                                    <strong>Proteína</strong><br /><small>(gramos)</small>
+                                </div>
+                                <div class="col">
+                                    <div class="d-inline-flex align-items-center justify-content-start border border-3 border-black rounded">
+                                        <input type="number" name="protein_content" class="form-control" id="id_protein_content" min="0" placeholder="0">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

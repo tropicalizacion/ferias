@@ -1,0 +1,48 @@
+{% block content %}
+
+<!-- Etiquetas -->
+<div id="tag-container">
+    <div class="form-check d-flex flex-wrap">
+        {% for value, label in recipe_form.tags.field.choices %}
+            <input class="tag-input form-check-input" type="checkbox" id="{{ label }}" name="{{ recipe_form.tags.name }}" value="{{ value }}">
+            <label class="tag-label form-check-label" for="{{ label }}">{{ label }}</label>
+        {% endfor %} 
+    </div> 
+</div>
+
+<style>
+    .tag-input {
+        position: absolute;
+        clip: rect(0,0,0,0);
+        pointer-events: none;
+    }
+
+    .tag-label:hover {
+        border-color: yellowgreen;
+        background-color: yellowgreen;
+    }
+
+    .tag-label {
+        display: inline-block;
+        padding: 0.25em 0.4em;
+        font-size: 75%;
+        font-weight: 700;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: 1rem;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        cursor: pointer;
+        background-color: green;
+        color: white;
+        margin: 0.25rem;
+    }
+
+    .tag-input:checked + .tag-label {
+        border-color: yellowgreen;
+        background-color: yellowgreen;
+    }
+</style>
+
+{% endblock %}

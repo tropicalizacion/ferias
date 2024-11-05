@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load time_filters %}
+
+{% block page_title %} {{ recipe.name|capfirst }} {% endblock %}
+
+{% block bg-navbar %} background-amarillo {% endblock %}
+
+{% block main %}
+
+<!-- Hero -->
+<div class="px-4 pt-3 pb-5 text-center background-amarillo">
+    <div class="card col-lg-8 mx-auto bg-transparent border-0">
+        <h1 class="display-3 my-5 text-white hero-deferia">Recetas de feria</h1>
+        <img src="{% static 'images/stickers/ajo.svg' %}" width="75px" class="index-sticker-1">
+        <img src="{% static 'images/stickers/acelga.svg' %}" width="75px" class="index-sticker-2">
+        <img src="{% static 'images/stickers/naranja.svg' %}" width="75px" class="index-sticker-3">
+    </div>
+</div>
+
+<!-- Una receta -->
+<div class="card container mt-5 w-75 border-0 p-4">
+    <div class="d-flex justify-content-between m-2">
+        <div>
+            <h1 class="mb-2"><strong>{{ recipe.name|capfirst }}</strong></h1>
+
+            <!-- Etiquetas -->
+            <div class="d-flex flex-wrap gap-2">
+                {% for tag in recipe.tags.all %}
+                <span class="badge rounded-pill background-verde">{{ tag.tag_name }}</span>
+                {% endfor %}
+            </div>
+        </div>
+        {% if user.is_staff %}
+        <div class="d-flex justify-content-end pt-2">
+            <a href="{% url 'edit_recipe' recipe.slug %}" class="link-warning text-black me-1"><i class="fa-solid fa-pen-to-square"></i></a>
+            <a class="link-danger text-black ms-1" data-bs-toggle="modal" data-bs-target="#deleteModal{{ recipe.slug }}"><i class="fa fa-trash"></i></a>
+        </div>
+        {% endif %}
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="align-items-start m-2">
+                {% if recipe.image %}
+                <img src="{{ recipe.image.url }}" class="img-fluid rounded" alt="{{ recipe.name }}">
+                {% else %}
+                <img src="{% static 'recipes/default_recipe_image.jpg' %}" class="img-fluid rounded"
+                    alt="{{ recipe.name }}">
+                {% endif %}
+            </div>
+
+            <!-- Ingredientes -->
+            <div class="mt-4 m-2">
+                <h3 class="mb-3 text-start"><strong>Ingredientes</strong></h3>
+                <ul class="list-group">
+                    {% for recipe_ingredient in recipe.recipeingredient_set.all %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div class="p-2 w-25 pill rounded background-verde p-2 text-white text-center m-1"><strong>{{ recipe_ingredient.quantity }}</strong></div>
+                        <div class="p-2 w-25 pill rounded background-naranja p-2 text-white text-center m-1"><strong>{{ recipe_ingredient.get_unit_name }}</strong></div>
+                        <div class="p-2"><strong>de</strong></div>
+                        <div class="p-2 w-50 pill rounded background-amarillo p-2 text-center m-1"><strong>{{ recipe_ingredient.ingredient.ingredient_name }}</strong></div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+        </div>
+        <div class="col">
+            <!-- Información de la receta -->
+            <div class="m-2">
+                {% if recipe.description %}
+                <p class="mb-4">{{ recipe.description }}</p>
+                {% endif %}
+
+                {% if recipe.nutritional_value %}
+                <p class="mb-4">{{ recipe.nutritional_value }}</p>
+                {% endif %}
+
+                {% if recipe.recipe_yield %}
+                <div class="bg-white rounded p-2 border me-1 mb-2 w-100">
+                    <p class="m-1"><i class="fa-solid fa-bowl-food"></i></p>
+                    <p class="m-1"><strong>Porciones:</strong> {{ recipe.recipe_yield }}</p>
+                </div>
+                {% endif %}
+                {% if recipe.recipe_cuisine %}
+                <div class="bg-white rounded p-2 border ms-1 mb-2 w-100">
+                    <p class="m-1"><i class="fa-solid fa-stroopwafel"></i></p>
+                    <p class="m-1"><strong>Tipo de cocina:</strong> {{ recipe.recipe_cuisine }}</p>
+                </div>
+                {% endif %}
+    
+                <div class="bg-white rounded p-2 border">
+                    <p class="m-1"><i class="fa-solid fa-clock"></i></p>
+                    <p class="m-1"><strong>Preparación:</strong> {{ recipe.prep_time|format_timedelta }}</p>
+                    <p class="m-1"><strong>Cocción:</strong> {{ recipe.cook_time|format_timedelta }}</p>
+                    <p class="m-1"><strong>Total:</strong> {{ recipe.total_time|format_timedelta }}</p>
+                </div>
+            </div>
+
+            <!-- Preparación -->
+            <div class="mt-4 m-2">
+                <h3 class="mb-3 text-start"><strong>Preparación</strong></h3>
+                <ol class="list-group">
+                    {% for step in recipe.step_set.all %}
+                    <li class="list-group-item">
+                        <h5>{{ step.step_sequence }}. {% if step.title %}{{ step.title }}{% endif %}</h5>
+                        {{ step.description }}
+                        {% if step.photo %}
+                        <img src="{{ step.photo.url }}" class="img-fluid mt-2 rounded" alt="{{ step.title }}">
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ol>
+            </div>
+
+            {% if recipe.storage %}
+            <div class="mt-4 m-2">
+                <h3 class="mb-3 text-start"><strong>Forma de almacenamiento</strong></h3>
+                <p class="mb-4">{{ recipe.storage }}</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% if user.is_staff %}
+<div class="modal fade" id="deleteModal{{ recipe.slug }}" tabindex="-1" aria-labelledby="deleteModalLabel{{ recipe.slug }}" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel{{ recipe.slug }}">Eliminar receta</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ¿Está seguro de que desea eliminar "{{ recipe.name }}"?
+            </div>
+            <div class="modal-footer">
+                <a href="{% url 'delete_recipe' recipe.slug %}" class="btn btn-danger">Aceptar</a>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}

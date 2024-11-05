@@ -22,6 +22,7 @@ blog/migrations/
 content/migrations/
 api/migrations/
 feed/migrations/
+recipes/migrations/
 __init__.py
 
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/

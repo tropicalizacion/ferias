@@ -1,0 +1,17 @@
+{% block content %}
+
+{% csrf_token %}
+<div class="mb-1">
+    {{ category_form.category_name }}
+</div>
+<div class="mb-1">
+    {{ category_form.category_description }}
+</div>
+<div class="mb-1">
+    {{ category_form.category_slug }}
+</div>
+<div class="mt-2">
+    <button type="button" class="btn btn-sm btn-success w-100" hx-post="{% url 'create_category' %}" hx-target="#category-container" hx-swap="innerHTML">Guardar categoría</button>
+</div>
+
+{% endblock %}

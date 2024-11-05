@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "rest_framework",
     'rest_framework_gis',
     "drf_spectacular",
+    "recipes.apps.RecipesConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -54,8 +55,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.postgres",
     "django.contrib.gis",
+    "tinymce",
     "django_htmx",
-    "tinymce"
+    "django_json_ld",
 ]
 
 MIDDLEWARE = [

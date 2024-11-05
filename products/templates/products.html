@@ -65,35 +65,56 @@
             </div>
         </div>
     </div>
-    
+
+    <div class="d-flex justify-content-center mb-3">
+        <div class="card col-lg-6 background-rojo rounded-5 border-0">
+            <div class="card-body small">
+                <div class="row d-flex align-items-center">
+                    <div class="col-1">
+                        <i class="fa-solid fa-colon-sign text-white"></i>
+                    </div>
+                    <div class="col-11 text-white">
+                        Registro histórico de precios de referencia del Consejo Nacional de Producción
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Frutas -->
     <div class="table-responsive">
         <table class="custom-table">
             <thead class="text-center">
                 <tr>
+                    <th></th>
                     <th scope="col" class="text-start pe-5"><span class="display-deferia fs-2 rojo">Frutas</span></th>
                     <th scope="col"><i class="fa-solid fa-basket-shopping"></i></th>
-                    <th scope="col">E</th>
-                    <th scope="col">F</th>
-                    <th scope="col">M</th>
-                    <th scope="col">A</th>
-                    <th scope="col">M</th>
-                    <th scope="col">J</th>
-                    <th scope="col">J</th>
-                    <th scope="col">A</th>
-                    <th scope="col">S</th>
-                    <th scope="col">O</th>
-                    <th scope="col">N</th>
-                    <th scope="col">D</th>
+                    <th scope="col"><i class="fa-solid fa-chart-line"></i></th>
+                    <th scope="col">Ene</th>
+                    <th scope="col">Feb</th>
+                    <th scope="col">Mar</th>
+                    <th scope="col">Abr</th>
+                    <th scope="col">May</th>
+                    <th scope="col">Jun</th>
+                    <th scope="col">Jul</th>
+                    <th scope="col">Ago</th>
+                    <th scope="col">Sep</th>
+                    <th scope="col">Oct</th>
+                    <th scope="col">Nov</th>
+                    <th scope="col">Dic</th>
                 </tr>
             </thead>
             <tbody>
                 {% for variety in varieties_frutas %}
                 <tr>
+                    <td><img src="{{ variety.product_url.icon.url }}" height="24px"></td>
+                    <!-- Nombre común -->
                     <td><a class="link-dark link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" style="font-weight: 800;" href="/productos/{{ variety.product_url.product_url }}">{{ variety.product_url.common_name|capfirst }} {% if variety.common_name_variety %}{{ variety.common_name_variety }}{% endif %}</a></td>
                     <!-- Canasta básica -->
                     <td>{% if variety.product_url.food_basket %}<i class="small amarillo fa-solid fa-star-of-life"></i>{% endif %}</td>
+                    <!-- Precio de referencia -->
+                    <td>{% if variety.has_price %}<i class="small rojo fa-solid fa-colon-sign"></i>{% endif %}</td>
                     <!-- Estacionalidad por meses -->
                     <td {% if month == 1 %}class="background-amarillo"{% endif %}>
                         <div class="season-{{ variety.jan }}"></div>
@@ -142,28 +163,34 @@
         <table class="custom-table">
             <thead class="text-center">
                 <tr>
+                    <th></th>
                     <th scope="col" class="text-start pe-5"><span class="display-deferia fs-2 verde">Verduras</span></th>
                     <th scope="col"><i class="fa-solid fa-basket-shopping"></i></th>
-                    <th scope="col">E</th>
-                    <th scope="col">F</th>
-                    <th scope="col">M</th>
-                    <th scope="col">A</th>
-                    <th scope="col">M</th>
-                    <th scope="col">J</th>
-                    <th scope="col">J</th>
-                    <th scope="col">A</th>
-                    <th scope="col">S</th>
-                    <th scope="col">O</th>
-                    <th scope="col">N</th>
-                    <th scope="col">D</th>
+                    <th scope="col"><i class="fa-solid fa-chart-line"></i></th>
+                    <th scope="col">Ene</th>
+                    <th scope="col">Feb</th>
+                    <th scope="col">Mar</th>
+                    <th scope="col">Abr</th>
+                    <th scope="col">May</th>
+                    <th scope="col">Jun</th>
+                    <th scope="col">Jul</th>
+                    <th scope="col">Ago</th>
+                    <th scope="col">Sep</th>
+                    <th scope="col">Oct</th>
+                    <th scope="col">Nov</th>
+                    <th scope="col">Dic</th>
                 </tr>
             </thead>
             <tbody>
                 {% for variety in varieties_verduras %}
                 <tr>
+                    <td><img src="{{ variety.product_url.icon.url }}" height="24px"></td>
+                    <!-- Nombre común -->
                     <td><a class="link-dark link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" style="font-weight: 800;" href="/productos/{{ variety.product_url.product_url }}">{{ variety.product_url.common_name|capfirst }} {% if variety.common_name_variety %}{{ variety.common_name_variety }}{% endif %}</a></td>
                     <!-- Canasta básica -->
                     <td>{% if variety.product_url.food_basket %}<i class="small amarillo fa-solid fa-star-of-life"></i>{% endif %}</td>
+                    <!-- Precio de referencia -->
+                    <td>{% if variety.has_price %}<i class="small rojo fa-solid fa-colon-sign"></i>{% endif %}</td>
                     <!-- Estacionalidad por meses -->
                     <td {% if month == 1 %}class="background-amarillo"{% endif %}>
                         <div class="season-{{ variety.jan }}"></div>
@@ -212,28 +239,34 @@
         <table class="custom-table">
             <thead class="text-center">
                 <tr>
+                    <th></th>
                     <th scope="col" class="text-start pe-5"><span class="display-deferia fs-2 amarillo">Tubérculos, raíces</span></th>
                     <th scope="col"><i class="fa-solid fa-basket-shopping"></i></th>
-                    <th scope="col">E</th>
-                    <th scope="col">F</th>
-                    <th scope="col">M</th>
-                    <th scope="col">A</th>
-                    <th scope="col">M</th>
-                    <th scope="col">J</th>
-                    <th scope="col">J</th>
-                    <th scope="col">A</th>
-                    <th scope="col">S</th>
-                    <th scope="col">O</th>
-                    <th scope="col">N</th>
-                    <th scope="col">D</th>
+                    <th scope="col"><i class="fa-solid fa-chart-line"></i></th>
+                    <th scope="col">Ene</th>
+                    <th scope="col">Feb</th>
+                    <th scope="col">Mar</th>
+                    <th scope="col">Abr</th>
+                    <th scope="col">May</th>
+                    <th scope="col">Jun</th>
+                    <th scope="col">Jul</th>
+                    <th scope="col">Ago</th>
+                    <th scope="col">Sep</th>
+                    <th scope="col">Oct</th>
+                    <th scope="col">Nov</th>
+                    <th scope="col">Dic</th>
                 </tr>
             </thead>
             <tbody>
                 {% for variety in varieties_tuberculos %}
                 <tr>
+                    <td><img src="{{ variety.product_url.icon.url }}" height="24px"></td>
+                    <!-- Nombre común -->
                     <td><a class="link-dark link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" style="font-weight: 800;" href="/productos/{{ variety.product_url.product_url }}">{{ variety.product_url.common_name|capfirst }} {% if variety.common_name_variety %}{{ variety.common_name_variety }}{% endif %}</a></td>
                     <!-- Canasta básica -->
                     <td>{% if variety.product_url.food_basket %}<i class="small amarillo fa-solid fa-star-of-life"></i>{% endif %}</td>
+                    <!-- Precio de referencia -->
+                    <td>{% if variety.has_price %}<i class="small rojo fa-solid fa-colon-sign"></i>{% endif %}</td>
                     <!-- Estacionalidad por meses -->
                     <td {% if month == 1 %}class="background-amarillo"{% endif %}>
                         <div class="season-{{ variety.jan }}"></div>
@@ -282,28 +315,34 @@
         <table class="custom-table">
             <thead class="text-center">
                 <tr>
+                    <th></th>
                     <th scope="col" class="text-start pe-5"><span class="display-deferia fs-2 cafe">Legumbres</span></th>
                     <th scope="col"><i class="fa-solid fa-basket-shopping"></i></th>
-                    <th scope="col">E</th>
-                    <th scope="col">F</th>
-                    <th scope="col">M</th>
-                    <th scope="col">A</th>
-                    <th scope="col">M</th>
-                    <th scope="col">J</th>
-                    <th scope="col">J</th>
-                    <th scope="col">A</th>
-                    <th scope="col">S</th>
-                    <th scope="col">O</th>
-                    <th scope="col">N</th>
-                    <th scope="col">D</th>
+                    <th scope="col"><i class="fa-solid fa-chart-line"></i></th>
+                    <th scope="col">Ene</th>
+                    <th scope="col">Feb</th>
+                    <th scope="col">Mar</th>
+                    <th scope="col">Abr</th>
+                    <th scope="col">May</th>
+                    <th scope="col">Jun</th>
+                    <th scope="col">Jul</th>
+                    <th scope="col">Ago</th>
+                    <th scope="col">Sep</th>
+                    <th scope="col">Oct</th>
+                    <th scope="col">Nov</th>
+                    <th scope="col">Dic</th>
                 </tr>
             </thead>
             <tbody>
                 {% for variety in varieties_legumbres %}
                 <tr>
+                    <td><img src="{{ variety.product_url.icon.url }}" height="24px"></td>
+                    <!-- Nombre común -->
                     <td><a class="link-dark link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" style="font-weight: 800;" href="/productos/{{ variety.product_url.product_url }}">{{ variety.product_url.common_name|capfirst }} {% if variety.common_name_variety %}{{ variety.common_name_variety }}{% endif %}</a></td>
                     <!-- Canasta básica -->
                     <td>{% if variety.product_url.food_basket %}<i class="small amarillo fa-solid fa-star-of-life"></i>{% endif %}</td>
+                    <!-- Precio de referencia -->
+                    <td>{% if variety.has_price %}<i class="small rojo fa-solid fa-colon-sign"></i>{% endif %}</td>
                     <!-- Estacionalidad por meses -->
                     <td {% if month == 1 %}class="background-amarillo"{% endif %}>
                         <div class="season-{{ variety.jan }}"></div>
@@ -352,28 +391,34 @@
         <table class="custom-table">
             <thead class="text-center">
                 <tr>
+                    <th></th>
                     <th scope="col" class="text-start pe-5"><span class="display-deferia fs-2 azul">Hierbas</span></th>
                     <th scope="col"><i class="fa-solid fa-basket-shopping"></i></th>
-                    <th scope="col">E</th>
-                    <th scope="col">F</th>
-                    <th scope="col">M</th>
-                    <th scope="col">A</th>
-                    <th scope="col">M</th>
-                    <th scope="col">J</th>
-                    <th scope="col">J</th>
-                    <th scope="col">A</th>
-                    <th scope="col">S</th>
-                    <th scope="col">O</th>
-                    <th scope="col">N</th>
-                    <th scope="col">D</th>
+                    <th scope="col"><i class="fa-solid fa-chart-line"></i></th>
+                    <th scope="col">Ene</th>
+                    <th scope="col">Feb</th>
+                    <th scope="col">Mar</th>
+                    <th scope="col">Abr</th>
+                    <th scope="col">May</th>
+                    <th scope="col">Jun</th>
+                    <th scope="col">Jul</th>
+                    <th scope="col">Ago</th>
+                    <th scope="col">Sep</th>
+                    <th scope="col">Oct</th>
+                    <th scope="col">Nov</th>
+                    <th scope="col">Dic</th>
                 </tr>
             </thead>
             <tbody>
                 {% for variety in varieties_hierbas %}
                 <tr>
+                    <td><img src="{{ variety.product_url.icon.url }}" height="24px"></td>
+                    <!-- Nombre común -->
                     <td><a class="link-dark link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" style="font-weight: 800;" href="/productos/{{ variety.product_url.product_url }}">{{ variety.product_url.common_name|capfirst }} {% if variety.common_name_variety %}{{ variety.common_name_variety }}{% endif %}</a></td>
                     <!-- Canasta básica -->
                     <td>{% if variety.product_url.food_basket %}<i class="small amarillo fa-solid fa-star-of-life"></i>{% endif %}</td>
+                    <!-- Precio de referencia -->
+                    <td>{% if variety.has_price %}<i class="small rojo fa-solid fa-colon-sign"></i>{% endif %}</td>
                     <!-- Estacionalidad por meses -->
                     <td {% if month == 1 %}class="background-amarillo"{% endif %}>
                         <div class="season-{{ variety.jan }}"></div>

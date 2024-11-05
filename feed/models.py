@@ -39,7 +39,7 @@ class News(models.Model):
     """
 
     news_slug = models.SlugField(max_length=200, blank=True, null=True)
-    marketplaces = models.ManyToManyField(Marketplace, blank=True, null=True)
+    marketplaces = models.ManyToManyField(Marketplace)
     name = models.CharField(max_length=200, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
     text = HTMLField(blank=True, null=True)
@@ -62,7 +62,7 @@ class Alert(models.Model):
     """
 
     alert_slug = models.SlugField(max_length=200, blank=True, null=True)
-    marketplaces = models.ManyToManyField(Marketplace, blank=True, null=True)
+    marketplaces = models.ManyToManyField(Marketplace)
     name = models.CharField(max_length=200, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
     text = HTMLField(blank=True, null=True)

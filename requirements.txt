@@ -14,3 +14,5 @@ osm_opening_hours_humanized
 osm-humanized-opening-hours
 django-tinymce
 gunicorn
+django-json-ld
+jsonpickle

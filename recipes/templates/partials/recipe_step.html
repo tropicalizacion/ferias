@@ -1,0 +1,34 @@
+{% block content %}
+
+{% for form in step_formset %}
+<div class="step mt-2 bg-white rounded p-2" id="step-form-{{ forloop.counter0 }}">
+    <div class="step-row">
+        {{ management_form }}
+        {{ form.recipe_id }}
+        {{ form.id }}
+
+        <div class="d-flex justify-content-between" style="width: 100%;">
+            <div style="width: 5%;">
+                <div class="d-flex justify-content-start align-content-center h-100">
+                    <button type="button" class="btn-delete-step text-danger bg-transparent border-0" onclick="this.style.display='none'" hx-get="{% if recipe.slug %}{% url 'delete_existing_recipe_step_form' forloop.counter0 recipe.slug %}{% else %}{% url 'delete_recipe_step_form' forloop.counter0 %}{% endif %}" hx-target="#step-form-{{ forloop.counter0 }}" hx-swap="outerHTML"><i class="fa fa-trash"></i></button>
+                </div>
+            </div>
+
+            <div style="width: 100%;">
+                <div class="d-flex justify-content-between mb-1" style="width: 100%;">
+                    <div class="step_sequence-input w-25 me-2">{{ form.step_sequence }}</div>
+    
+                    <div class="photo-input w-100">{{ form.photo }}</div>
+                </div>
+            
+                <div class="d-flex justify-content-between" style="width: 100%;">
+                    <div class="description-input w-100">{{ form.description }}</div>
+                </div>
+            </div>
+        </div>
+            
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}

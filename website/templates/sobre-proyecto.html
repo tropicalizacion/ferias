@@ -32,37 +32,38 @@
 
     <p class="lead text-center">Contacto: <a href="mailto:tropicalizacion@ucr.ac.cr" target="_blank">tropicalizacion@ucr.ac.cr</a></p>
     -->
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
         <div class="col">
             <div class="card h-100 border-0 bg-transparent">
                 <div class="card-body">
-                    <h5 class="card-title">Una producción de</h5>
+                    <h5 class="card-title">Un proyecto de</h5>
                     <div class="text-center my-4">
-                        <img src="{% static 'logos/tropicalizacion_logo.png' %}" height="50px" alt="">  
+                        <img src="{% static 'logos/tropicalizacion_logo.png' %}" height="50px" alt="">
                     </div>
-                    <p class="card-text">Proyecto TC-691 de la Vicerrectoría de Acción Social de la Universidad de Costa Rica</p>
+                    <p class="card-text">Proyecto TC-691 de la Vicerrectoría de Acción Social de la UCR</p>
                 </div>
             </div>
         </div>
         <div class="col">
             <div class="card h-100 border-0 bg-transparent">
                 <div class="card-body">
-                    <h5 class="card-title">Con el auspicio y apoyo técnico de</h5>
+                    <h5 class="card-title">En alianza con</h5>
                     <div class="text-center my-4">
-                        <img src="{% static 'logos/fao_logo.svg' %}" height="50px" alt="">  
+                        <img src="{% static 'logos/fao_logo.svg' %}" height="50px" alt="">
                     </div>
-                    <p class="card-text">Oficinas de las representaciones nacionales de Costa Rica y Chile</p>
+                    <p class="card-text">Oficinas de las representaciones nacionales de FAO en Costa Rica y Chile</p>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
         <div class="col">
             <div class="card h-100 border-0 bg-transparent">
                 <div class="card-body">
-                    <h5 class="card-title">Con el aval y colaboración de</h5>
-                    <p>
-                        <h1 class="display-4 text-center">CNP | JNFA</h1>
-                    </p>
-                    <p class="card-text">Consejo Nacional de Producción y Junta Nacional de Ferias del Agricultor</p>
+                    <h5 class="card-title">Con el apoyo y asesoría de</h5>
+                    <div class="text-center my-4">
+                        <img src="{% static 'logos/enu_logo.png' %}" height="80px" alt="Escuela de Nutrición">
+                    </div>
                 </div>
             </div>
         </div>
@@ -70,21 +71,29 @@
             <div class="card h-100 border-0 bg-transparent">
                 <div class="card-body">
                     <h5 class="card-title">Con la colaboración de</h5>
-                    <p>
-                        <h1 class="display-4 text-center">EIE</h1>
-                    </p>
-                    <p class="card-text">Escuela de Ingeniería Eléctrica de la Universidad de Costa Rica</p>
+                    <div class="text-center my-4">
+                        <img src="{% static 'logos/eie_logo.png' %}" height="80px" alt="Escuela de Ingeniería Eléctrica">
+                    </div>
                 </div>
             </div>
         </div>
         <div class="col">
             <div class="card h-100 border-0 bg-transparent">
                 <div class="card-body">
-                    <h5 class="card-title">Con la colaboración de</h5>
-                    <p>
-                        <h1 class="display-4 text-center">ENu</h1>
-                    </p>
-                    <p class="card-text">Escuela de Nutrición de la Universidad de Costa Rica</p>
+                    <h5 class="card-title">Con el apoyo técnico de</h5>
+                    <div class="text-center my-4">
+                        <img src="{% static 'logos/cisan_logo.png' %}" height="80px" alt="Comisión Institucional de Seguridad Alimentaria y Nutricional">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 border-0 bg-transparent">
+                <div class="card-body">
+                    <h5 class="card-title">Con el auspicio de</h5>
+                    <div class="text-center my-4">
+                        <img src="{% static 'logos/vas_logo.png' %}" height="80px" alt="Vicerrectoría de Acción Social">
+                    </div>
                 </div>
             </div>
         </div>
@@ -109,15 +118,45 @@
         {% endfor %}
     </dl>
 
+    <h4>Por la Escuela de Ingeniería Eléctrica</h4>
+
+    <ul>
+        <li><strong>José David Rojas</strong>, director Escuela de Ingeniería Eléctrica</li>
+        <li><strong>Helber Meneses</strong>, coordinador TC-691 "Tropicalización de la tecnología"</li>
+    </ul>
+
+
+    <h4>Por FAO Costa Rica</h4>
+
+    <ul>
+        <li><strong>Andrea Padilla</strong>, representante asistente de programas</li>
+        <li><strong>Rebeca León</strong>, especialista en comunicación</li>
+        <li><strong>Valeria Navas</strong>, asistente de comunicación</li>
+        <li><strong>Gloriana Álvarez</strong>, asistente administrativa y recursos humanos</li>
+        <li><strong>Fiorella Piedra</strong>, especialista en guías alimentarias</li>
+    </ul>
+
+    <h4>Por la Escuela de Nutrición</h4>
+
+    <ul>
+        <li><strong>Marianela Zúñiga</strong>, coordinadora Comisión Institucional de Seeguridad Alimentaria y Nutricional (CISAN)</li>
+        <li><strong>Kattia Jiménez</strong>, profesora</li>
+        <li><strong>Laura Andrade</strong>, coordinadora Programas de Educación Continua</li>
+        <li><strong>Marcela Dumani</strong>, profesora</li>
+    </ul>
+
+
     <h4>Amigas y amigos del TCU</h4>
 
-    <p>¡Gracias a las siguientes personas que nos ayudaron a financiar el sitio web!</p>
+    <p>¡Gracias a las siguientes personas que nos ayudaron a financiar el sitio web al principio!</p>
 
     <ul>
         <li>Tamires Santana y Gustavo Núñez</li>
         <li>Chloe Lohmeyer y Cris Montoya</li>
         <li>Sofía Abarca y Pablo Berthely</li>
     </ul>
+
+    <p>También a doña Vera Sánchez Garita, por las productivas conversaciones iniciales sobre los centros de origen y la estacionalidad de los productos.</p>
 
     <h4>Desarrollo del sitio web</h4>
 

@@ -1,0 +1,39 @@
+{% block content %}
+
+{% if form %}
+    <div class="step bg-white rounded p-2 mb-2" id="step-form-{{ current_step }}">
+        <div class="step-row">
+            {% csrf_token %}
+
+            {{ management_form }}
+            {{ form.recipe_id }}
+            {{ form.id }}
+
+            
+            <div class="d-flex justify-content-between" style="width: 100%;">
+                <div style="width: 5%;">
+                    <div class="d-flex justify-content-start align-content-center h-100">
+                        <button type="button" class="btn-delete-step text-danger bg-transparent border-0" hx-get="{% if recipe.slug %}{% url 'delete_existing_recipe_step_form' next_step recipe.slug %}{% else %}{% url 'delete_recipe_step_form' next_step %}{% endif %}" hx-target="#step-form-{{ current_step }}" hx-swap="outerHTML"><i class="fa fa-trash"></i></button>
+                    </div>
+                </div>
+
+                <div style="width: 100%;">
+                    <div class="d-flex justify-content-between mb-1" style="width: 100%;">
+                        <div class="step_sequence-input w-25 me-2">{{ form.step_sequence }}</div>
+        
+                        <div class="photo-input w-100">{{ form.photo }}</div>
+                    </div>
+                
+                    <div class="d-flex justify-content-between" style="width: 100%;">
+                        <div class="description-input w-100">{{ form.description }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-end">
+        <button type="button" class="btn-add-step btn btn-sm btn-success" onclick="this.style.display='none'" hx-get="{% if recipe.slug %}{% url 'edit_recipe_step_form' next_step recipe.slug %}{% else %}{% url 'create_recipe_step_form' next_step %}{% endif %}" hx-target="#steps-list" hx-swap="beforeend"><i class="fa-solid fa-plus"></i></button>
+    </div>
+{% endif %}
+
+{% endblock %}

@@ -3,11 +3,11 @@
         "model": "website.student",
         "pk": 1,
         "fields": {
-            "name": "Katherine Priscilla",
+            "name": "Katherine",
             "last_name": "Mora Cruz",
             "career": "Dise\u00f1o Gr\u00e1fico",
             "work": "Investigaci\u00f3n y propuesta de identidad visual",
-            "rank": 95
+            "factor": 95
         }
     },
     {
@@ -17,8 +17,8 @@
             "name": "Gabriel Alejandro",
             "last_name": "Quir\u00f3s Villalobos",
             "career": "Direcci\u00f3n de Empresas",
-            "work": "Coordinaci\u00f3n, investigaci\u00f3n, propuesta de identidad visual",
-            "rank": 95
+            "work": "Desarrollo y dise\u00f1o de la l\u00ednea gr\u00e1fica, coordinaci\u00f3n de la estrategia publicitaria, participaciones en sondeos e interpretaci\u00f3n de datos",
+            "factor": 95
         }
     },
     {
@@ -28,8 +28,8 @@
             "name": "Alexandra",
             "last_name": "Alfaro Rodr\u00edguez",
             "career": "Dise\u00f1o Gr\u00e1fico",
-            "work": "Dise\u00f1o de material gr\u00e1fico",
-            "rank": 95
+            "work": "Dise\u00f1o de la identidad visual, los iconos de los productos y ejemplo de la versi\u00f3n m\u00f3vil",
+            "factor": 95
         }
     },
     {
@@ -40,106 +40,106 @@
             "last_name": "P\u00e9rez Hern\u00e1ndez",
             "career": "Comunicaci\u00f3n Colectiva",
             "work": "Creaci\u00f3n de textos para productos, campa\u00f1a de redes sociales",
-            "rank": 94
+            "factor": 94
         }
     },
     {
         "model": "website.student",
         "pk": 5,
         "fields": {
-            "name": "Dereck Stif",
+            "name": "Dereck",
             "last_name": "Rodr\u00edguez Mu\u00f1oz",
             "career": "Comunicaci\u00f3n Colectiva",
             "work": "Coordinaci\u00f3n de campa\u00f1a de redes sociales, investigaci\u00f3n",
-            "rank": 93
+            "factor": 93
         }
     },
     {
         "model": "website.student",
         "pk": 6,
         "fields": {
-            "name": "Jos\u00e9 Manuel",
-            "last_name": "Boniche Morales",
-            "career": "Bibliotecolog\u00eda",
-            "work": null,
-            "rank": 90
+            "name": "Wilmer Jes\u00fas",
+            "last_name": "Araya Rivas",
+            "career": "Computaci\u00f3n e Inform\u00e1tica",
+            "work": "Desarrollo del sitio web",
+            "factor": 92
         }
     },
     {
         "model": "website.student",
         "pk": 7,
         "fields": {
-            "name": "Marlon",
-            "last_name": "D\u00edaz Berm\u00fadez",
-            "career": "Agronom\u00eda",
-            "work": "Investigaci\u00f3n sobre los productos de la feria, incluyendo su estacionalidad",
-            "rank": 90
+            "name": "Yasty",
+            "last_name": "S\u00e1nchez Piedrahita",
+            "career": "Computaci\u00f3n e Inform\u00e1tica",
+            "work": "Desarrollo del sitio web",
+            "factor": 92
         }
     },
     {
         "model": "website.student",
         "pk": 8,
         "fields": {
-            "name": "Andr\u00e9s",
-            "last_name": "Azofeifa Garc\u00eda",
-            "career": "Computaci\u00f3n e Inform\u00e1tica",
-            "work": "Desarrollo del sitio web",
-            "rank": 90
+            "name": "Jos\u00e9 Manuel",
+            "last_name": "Boniche Morales",
+            "career": "Bibliotecolog\u00eda",
+            "work": "Aplicaci\u00f3n de sondeo a las personas visitantes de la feria, gesti\u00f3n y auditor\u00eda de la informaci\u00f3n",
+            "factor": 90
         }
     },
     {
         "model": "website.student",
         "pk": 9,
         "fields": {
-            "name": "Sirlany Auxiliadora",
-            "last_name": "Mora Garc\u00eda",
-            "career": "Computaci\u00f3n e Inform\u00e1tica",
-            "work": "Desarrollo del sitio web",
-            "rank": 90
+            "name": "Marlon",
+            "last_name": "D\u00edaz Berm\u00fadez",
+            "career": "Agronom\u00eda",
+            "work": "Investigaci\u00f3n sobre los productos de la feria, incluyendo su estacionalidad",
+            "factor": 90
         }
     },
     {
         "model": "website.student",
         "pk": 10,
         "fields": {
-            "name": "Mike",
-            "last_name": "Mai Chen",
-            "career": "Ingenier\u00eda El\u00e9ctrica",
-            "work": "Desarrollo de esquema de base de datos para el sitio web",
-            "rank": 90
+            "name": "Andr\u00e9s",
+            "last_name": "Azofeifa Garc\u00eda",
+            "career": "Computaci\u00f3n e Inform\u00e1tica",
+            "work": "Desarrollo del sitio web",
+            "factor": 90
         }
     },
     {
         "model": "website.student",
         "pk": 11,
         "fields": {
-            "name": "Nathalia Auxiliadora",
-            "last_name": "Mena Mej\u00eda",
-            "career": "Nutrici\u00f3n",
-            "work": "Investigaci\u00f3n y desarrollo de textos y art\u00edculos en nutrici\u00f3n, m\u00e9todos de preparaci\u00f3n y almacenamiento",
-            "rank": 90
+            "name": "Sirlany",
+            "last_name": "Mora Garc\u00eda",
+            "career": "Computaci\u00f3n e Inform\u00e1tica",
+            "work": "Desarrollo del sitio web",
+            "factor": 90
         }
     },
     {
         "model": "website.student",
         "pk": 12,
         "fields": {
-            "name": "Wilmer Jes\u00fas",
-            "last_name": "Araya Rivas",
-            "career": "Computaci\u00f3n e Inform\u00e1tica",
-            "work": "Desarrollo del sitio web",
-            "rank": 90
+            "name": "Mike",
+            "last_name": "Mai Chen",
+            "career": "Ingenier\u00eda El\u00e9ctrica",
+            "work": "Desarrollo de esquema de base de datos para el sitio web",
+            "factor": 90
         }
     },
     {
         "model": "website.student",
         "pk": 13,
         "fields": {
-            "name": "Yasty",
-            "last_name": "S\u00e1nchez Piedrahita",
-            "career": "Computaci\u00f3n e Inform\u00e1tica",
-            "work": "Desarrollo del sitio web",
-            "rank": 90
+            "name": "Nathalia",
+            "last_name": "Mena Mej\u00eda",
+            "career": "Nutrici\u00f3n",
+            "work": "Investigaci\u00f3n y desarrollo de textos y art\u00edculos en nutrici\u00f3n, m\u00e9todos de preparaci\u00f3n y almacenamiento",
+            "factor": 90
         }
     },
     {
@@ -150,7 +150,7 @@
             "last_name": "Giusti Roa",
             "career": "Comunicaci\u00f3n Colectiva",
             "work": "Investigaci\u00f3n y desarrollo de materiales para redes sociales",
-            "rank": 90
+            "factor": 90
         }
     },
     {
@@ -160,8 +160,8 @@
             "name": "Andrea Paola",
             "last_name": "Moya Valverde",
             "career": "Filolog\u00eda Espa\u00f1ola",
-            "work": null,
-            "rank": 88
+            "work": "Investigaci\u00f3n bibliogr\u00e1fica, dise\u00f1o del proyecto",
+            "factor": 88
         }
     },
     {
@@ -172,7 +172,7 @@
             "last_name": "Bland\u00f3n Sabor\u00edo",
             "career": "Ingenier\u00eda El\u00e9ctrica",
             "work": "Revisi\u00f3n y creaci\u00f3n de datos para las ferias y los productos",
-            "rank": 85
+            "factor": 85
         }
     },
     {
@@ -183,7 +183,7 @@
             "last_name": "Camacho Rodr\u00edguez",
             "career": "Direcci\u00f3n de Empresas",
             "work": "Gesti\u00f3n de aplicaci\u00f3n de encuestas de satisfacci\u00f3n ",
-            "rank": 85
+            "factor": 85
         }
     },
     {
@@ -193,8 +193,8 @@
             "name": "Angie Monserrat",
             "last_name": "Rodr\u00edguez Chac\u00f3n",
             "career": "Filolog\u00eda Espa\u00f1ola",
-            "work": "Investigaci\u00f3n de ",
-            "rank": 85
+            "work": "Investigaci\u00f3n sobre etimolog\u00edas de los distintos nombres dados a frutas y verduras, revisi\u00f3n de las direcciones de las ferias",
+            "factor": 85
         }
     },
     {
@@ -205,7 +205,7 @@
             "last_name": "D\u00edaz Torres",
             "career": "Sociolog\u00eda",
             "work": "Desarrollo y aplicaci\u00f3n de herramienta de evaluaci\u00f3n para las ferias",
-            "rank": 85
+            "factor": 85
         }
     },
     {
@@ -215,8 +215,8 @@
             "name": "Andr\u00e9s",
             "last_name": "Mu\u00f1oz Castillo",
             "career": "Direcci\u00f3n de Empresas",
-            "work": null,
-            "rank": 83
+            "work": "Recopilaci\u00f3n de materiales de referencia sobre las ferias",
+            "factor": 83
         }
     },
     {
@@ -226,8 +226,8 @@
             "name": "Fabi\u00e1n Gerardo",
             "last_name": "Jerez Rodr\u00edguez",
             "career": "Direcci\u00f3n de Empresas",
-            "work": null,
-            "rank": 80
+            "work": "Dise\u00f1o de herramientas de evaluaci\u00f3n y sondeos",
+            "factor": 80
         }
     },
     {
@@ -238,7 +238,7 @@
             "last_name": "Fonseca Alvarado",
             "career": "Computaci\u00f3n e Inform\u00e1tica",
             "work": "Desarrollo del sitio web",
-            "rank": 80
+            "factor": 80
         }
     },
     {
@@ -249,18 +249,18 @@
             "last_name": "Andrade Gonz\u00e1lez",
             "career": "Ingenier\u00eda El\u00e9ctrica",
             "work": "Desarrollo del sitio web",
-            "rank": 80
+            "factor": 80
         }
     },
     {
         "model": "website.student",
         "pk": 24,
         "fields": {
-            "name": "Eddy Fernando",
+            "name": "Eddy",
             "last_name": "Ruiz Soto",
             "career": "Computaci\u00f3n e Inform\u00e1tica",
             "work": "Desarrollo del sitio web",
-            "rank": 75
+            "factor": 75
         }
     },
     {
@@ -271,7 +271,7 @@
             "last_name": "Valverde Uma\u00f1a",
             "career": "Antropolog\u00eda",
             "work": "Investigaci\u00f3n sobre centros de origen de los productos",
-            "rank": 70
+            "factor": 70
         }
     },
     {
@@ -281,8 +281,8 @@
             "name": "Luis Diego",
             "last_name": "Ocampo G\u00f3mez",
             "career": "Ingenier\u00eda El\u00e9ctrica",
-            "work": null,
-            "rank": 60
+            "work": "Aplicaci\u00f3n de sondeo a las personas visitantes de las ferias",
+            "factor": 60
         }
     },
     {
@@ -292,8 +292,52 @@
             "name": "Mar\u00eda de la Paz",
             "last_name": "Naranjo Bonilla",
             "career": "Nutrici\u00f3n",
-            "work": null,
-            "rank": 30
+            "work": "Asesor\u00eda en nutrici\u00f3n",
+            "factor": 30
+        }
+    },
+    {
+        "model": "website.student",
+        "pk": 28,
+        "fields": {
+            "name": "Luis Diego",
+            "last_name": "Madrigal Leiva",
+            "career": "Ingenier\u00eda El\u00e9ctrica",
+            "work": "Aplicaci\u00f3n de sondeo a las personas visitantes de las ferias",
+            "factor": 20
+        }
+    },
+    {
+        "model": "website.student",
+        "pk": 29,
+        "fields": {
+            "name": "Kevin",
+            "last_name": "Delgado Rojas",
+            "career": "Ingenier\u00eda El\u00e9ctrica",
+            "work": "Recolecci\u00f3n de material audiovisual y fotograf\u00edas de las ferias del occidente",
+            "factor": 20
+        }
+    },
+    {
+        "model": "website.student",
+        "pk": 30,
+        "fields": {
+            "name": "Kevin Antonio",
+            "last_name": "Villalobos Jim\u00e9nez",
+            "career": "Ingenier\u00eda El\u00e9ctrica",
+            "work": "Aplicaci\u00f3n de sondeo a las personas visitantes de la feria en varias ferias alrededor de San Jos\u00e9",
+            "factor": 20
+        }
+    },
+    {
+        "model": "website.student",
+        "pk": 31,
+        "fields": {
+            "name": "Manfred",
+            "last_name": "Soza Garc\u00eda ",
+            "career": "Ingenier\u00eda El\u00e9ctrica",
+            "work": "Aplicaci\u00f3n de sondeo a las personas visitantes de la feria en varias ferias alrededor de San Jos\u00e9",
+            "factor": 20
         }
     }
 ]

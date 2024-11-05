@@ -1,0 +1,59 @@
+{% block content %}
+
+{% if form %}
+    <div class="ingredient bg-white rounded p-2 mb-2" id="ingredient-form-{{ current_ingredient }}">
+        <div class="ingredient-row d-inline-flex justify-content-between" style="width: 100%;">
+            {% csrf_token %}
+
+            {{ management_form }}
+            {{ form.recipe_id }}
+            {{ form.id }}
+
+            <div class="d-inline-flex justify-content-between" style="width: 100%;">
+                <div style="width: 10%;">
+                    <div class="d-flex justify-content-start align-content-center h-100">
+                        <button type="button" class="btn-delete-ingredient text-danger bg-transparent border-0" onclick="this.style.display='none'" hx-get="{% if recipe.slug %}{% url 'delete_existing_recipe_ingredient_form' next_ingredient recipe.slug %}{% else %}{% url 'delete_recipe_ingredient_form' next_ingredient %}{% endif %}" hx-target="#ingredient-form-{{ current_ingredient }}" hx-swap="outerHTML"><i class="fa fa-trash"></i></button>
+                    </div>
+                </div>
+                <div class="ingredient-input me-2 w-100">
+                    {{ form.ingredient }}
+                    {% if form.ingredient.errors %}
+                        <div class="alert alert-danger m-2">
+                            {% for error in form.ingredient.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+    
+                <div class="unit-input me-2 w-50">
+                    {{ form.unit }}
+                    {% if form.unit.errors %}
+                        <div class="alert alert-danger m-2">
+                            {% for error in form.unit.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+    
+                <div class="quantity-input w-50">
+                    {{ form.quantity }}
+                    {% if form.quantity.errors %}
+                        <div class="alert alert-danger m-2">
+                            {% for error in form.quantity.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="d-flex justify-content-end">
+        <button type="button" class="btn-add-ingredient btn btn-sm btn-success" onclick="this.style.display='none'" hx-get="{% if recipe.slug %}{% url 'edit_recipe_ingredient_form' next_ingredient recipe.slug %}{% else %}{% url 'create_recipe_ingredient_form' next_ingredient %}{% endif %}" hx-target="#ingredients-list" hx-swap="beforeend"><i class="fa-solid fa-plus"></i></button>
+    </div>
+{% endif %}
+
+{% endblock %}
