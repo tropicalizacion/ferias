@@ -80,7 +80,7 @@ class Variety(models.Model):
         (3, "Temporada alta"),
     ]
 
-    variety_id = models.AutoField(primary_key=True)
+    variety_id = models.CharField(max_length=127, primary_key=True, unique=True)
     product_url = models.ForeignKey(
         "Product", on_delete=models.SET_NULL, null=True, related_name="varieties"
     )
@@ -119,15 +119,40 @@ class Price(models.Model):
     UNIT_CHOICES = [
         ("kg", "Kilogramo"),
         ("u", "Unidad"),
+        ("rollo", "Rollo"),
+        ("mata", "Mata"),
+    ]
+    QUALITY_CHOICES = [
+        ("1", "Primera calidad"),
+        ("2", "Segunda calidad"),
+        ("3", "Tercera calidad"),
+    ]
+    SIZE_CHOICES = [
+        ("P", "Pequeño"),
+        ("M", "Mediano"),
+        ("G", "Grande"),
+    ]
+    SALE_FORMAT_CHOICES = [
+        ("suelta", "Suelta"),
+        ("trenza", "Trenza"),
+        ("corriente", "Corriente"),
+        ("parafinada", "Parafinada"),
     ]
 
     price_id = models.AutoField(primary_key=True)
     variety = models.ForeignKey(Variety, on_delete=models.SET_NULL, null=True)
-    unit = models.CharField(choices=UNIT_CHOICES, max_length=3)
+    unit = models.CharField(choices=UNIT_CHOICES, max_length=12)
     price = models.IntegerField()
     publication_date = models.DateField()
     year = models.IntegerField(blank=True, null=True)
     week = models.IntegerField(blank=True, null=True)
+    quality = models.CharField(
+        max_length=63, choices=QUALITY_CHOICES, blank=True, null=True
+    )
+    size = models.CharField(max_length=63, choices=SIZE_CHOICES, blank=True, null=True)
+    sale_format = models.CharField(
+        max_length=63, choices=SALE_FORMAT_CHOICES, blank=True, null=True
+    )
 
     def save(self, *args, **kwargs):
         self.year = self.publication_date.isocalendar()[0]
