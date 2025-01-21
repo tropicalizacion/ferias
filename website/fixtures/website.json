@@ -236,7 +236,7 @@
         "fields": {
             "page": "/sobre",
             "section": "hero_desc",
-            "content": "¡Creemos que la feria es buena para la economía, para la salud y para la comunidad!"
+            "content": "¡Somos gente que cree que la feria es buena para la economía, para la salud y para la comunidad!"
         }
     },
     {
@@ -245,7 +245,7 @@
         "fields": {
             "page": "/datos",
             "section": "hero",
-            "content": "Nuestros datos son de puertas abiertas, como las ferias y mercados libres"
+            "content": "Nuestros datos están abiertos para usted, como las ferias y los mercados libres"
         }
     },
     {
@@ -261,7 +261,7 @@
         "model": "website.student",
         "pk": "1",
         "fields": {
-            "name": "Katherine Priscilla",
+            "name": "Katherine",
             "last_name": "Mora Cruz",
             "career": "Diseño Gráfico",
             "work": "Investigación y propuesta de identidad visual",
@@ -272,6 +272,28 @@
         "model": "website.student",
         "pk": "10",
         "fields": {
+            "name": "Andrés",
+            "last_name": "Azofeifa García",
+            "career": "Computación e Informática",
+            "work": "Desarrollo del sitio web",
+            "factor": 90
+        }
+    },
+    {
+        "model": "website.student",
+        "pk": "11",
+        "fields": {
+            "name": "Sirlany",
+            "last_name": "Mora García",
+            "career": "Computación e Informática",
+            "work": "Desarrollo del sitio web",
+            "factor": 90
+        }
+    },
+    {
+        "model": "website.student",
+        "pk": "12",
+        "fields": {
             "name": "Mike",
             "last_name": "Mai Chen",
             "career": "Ingeniería Eléctrica",
@@ -281,34 +303,12 @@
     },
     {
         "model": "website.student",
-        "pk": "11",
+        "pk": "13",
         "fields": {
-            "name": "Nathalia Auxiliadora",
+            "name": "Nathalia",
             "last_name": "Mena Mejía",
             "career": "Nutrición",
             "work": "Investigación y desarrollo de textos y artículos en nutrición, métodos de preparación y almacenamiento",
-            "factor": 90
-        }
-    },
-    {
-        "model": "website.student",
-        "pk": "12",
-        "fields": {
-            "name": "Wilmer Jesús",
-            "last_name": "Araya Rivas",
-            "career": "Computación e Informática",
-            "work": "Desarrollo del sitio web",
-            "factor": 90
-        }
-    },
-    {
-        "model": "website.student",
-        "pk": "13",
-        "fields": {
-            "name": "Yasty",
-            "last_name": "Sánchez Piedrahita",
-            "career": "Computación e Informática",
-            "work": "Desarrollo del sitio web",
             "factor": 90
         }
     },
@@ -330,7 +330,7 @@
             "name": "Andrea Paola",
             "last_name": "Moya Valverde",
             "career": "Filología Española",
-            "work": null,
+            "work": "Investigación bibliográfica, diseño del proyecto",
             "factor": 88
         }
     },
@@ -363,7 +363,7 @@
             "name": "Angie Monserrat",
             "last_name": "Rodríguez Chacón",
             "career": "Filología Española",
-            "work": "Investigación de ",
+            "work": "Investigación sobre etimologías de los distintos nombres dados a frutas y verduras, revisión de las direcciones de las ferias",
             "factor": 85
         }
     },
@@ -385,7 +385,7 @@
             "name": "Gabriel Alejandro",
             "last_name": "Quirós Villalobos",
             "career": "Dirección de Empresas",
-            "work": "Coordinación, investigación, propuesta de identidad visual",
+            "work": "Desarrollo y diseño de la línea gráfica, coordinación de la estrategia publicitaria, participaciones en sondeos e interpretación de datos",
             "factor": 95
         }
     },
@@ -396,7 +396,7 @@
             "name": "Andrés",
             "last_name": "Muñoz Castillo",
             "career": "Dirección de Empresas",
-            "work": null,
+            "work": "Recopilación de materiales de referencia sobre las ferias",
             "factor": 83
         }
     },
@@ -407,7 +407,7 @@
             "name": "Fabián Gerardo",
             "last_name": "Jerez Rodríguez",
             "career": "Dirección de Empresas",
-            "work": null,
+            "work": "Diseño de herramientas de evaluación y sondeos",
             "factor": 80
         }
     },
@@ -437,7 +437,7 @@
         "model": "website.student",
         "pk": "24",
         "fields": {
-            "name": "Eddy Fernando",
+            "name": "Eddy",
             "last_name": "Ruiz Soto",
             "career": "Computación e Informática",
             "work": "Desarrollo del sitio web",
@@ -462,7 +462,7 @@
             "name": "Luis Diego",
             "last_name": "Ocampo Gómez",
             "career": "Ingeniería Eléctrica",
-            "work": null,
+            "work": "Aplicación de sondeo a las personas visitantes de las ferias",
             "factor": 60
         }
     },
@@ -473,8 +473,30 @@
             "name": "María de la Paz",
             "last_name": "Naranjo Bonilla",
             "career": "Nutrición",
-            "work": null,
+            "work": "Asesoría en nutrición",
             "factor": 30
+        }
+    },
+    {
+        "model": "website.student",
+        "pk": "28",
+        "fields": {
+            "name": "Luis Diego",
+            "last_name": "Madrigal Leiva",
+            "career": "Ingeniería Eléctrica",
+            "work": "Aplicación de sondeo a las personas visitantes de las ferias",
+            "factor": 20
+        }
+    },
+    {
+        "model": "website.student",
+        "pk": "29",
+        "fields": {
+            "name": "Kevin",
+            "last_name": "Delgado Rojas",
+            "career": "Ingeniería Eléctrica",
+            "work": "Recolección de material audiovisual y fotografías de las ferias del occidente",
+            "factor": 20
         }
     },
     {
@@ -484,8 +506,30 @@
             "name": "Alexandra",
             "last_name": "Alfaro Rodríguez",
             "career": "Diseño Gráfico",
-            "work": "Diseño de material gráfico",
+            "work": "Diseño de la identidad visual, los iconos de los productos y ejemplo de la versión móvil",
             "factor": 95
+        }
+    },
+    {
+        "model": "website.student",
+        "pk": "30",
+        "fields": {
+            "name": "Kevin Antonio",
+            "last_name": "Villalobos Jiménez",
+            "career": "Ingeniería Eléctrica",
+            "work": "Aplicación de sondeo a las personas visitantes de la feria en varias ferias alrededor de San José",
+            "factor": 20
+        }
+    },
+    {
+        "model": "website.student",
+        "pk": "31",
+        "fields": {
+            "name": "Manfred",
+            "last_name": "Soza García ",
+            "career": "Ingeniería Eléctrica",
+            "work": "Aplicación de sondeo a las personas visitantes de la feria en varias ferias alrededor de San José",
+            "factor": 20
         }
     },
     {
@@ -503,7 +547,7 @@
         "model": "website.student",
         "pk": "5",
         "fields": {
-            "name": "Dereck Stif",
+            "name": "Dereck",
             "last_name": "Rodríguez Muñoz",
             "career": "Comunicación Colectiva",
             "work": "Coordinación de campaña de redes sociales, investigación",
@@ -514,32 +558,32 @@
         "model": "website.student",
         "pk": "6",
         "fields": {
-            "name": "José Manuel",
-            "last_name": "Boniche Morales",
-            "career": "Bibliotecología",
-            "work": null,
-            "factor": 90
+            "name": "Wilmer Jesús",
+            "last_name": "Araya Rivas",
+            "career": "Computación e Informática",
+            "work": "Desarrollo del sitio web",
+            "factor": 92
         }
     },
     {
         "model": "website.student",
         "pk": "7",
         "fields": {
-            "name": "Marlon",
-            "last_name": "Díaz Bermúdez",
-            "career": "Agronomía",
-            "work": "Investigación sobre los productos de la feria, incluyendo su estacionalidad",
-            "factor": 90
+            "name": "Yasty",
+            "last_name": "Sánchez Piedrahita",
+            "career": "Computación e Informática",
+            "work": "Desarrollo del sitio web",
+            "factor": 92
         }
     },
     {
         "model": "website.student",
         "pk": "8",
         "fields": {
-            "name": "Andrés",
-            "last_name": "Azofeifa García",
-            "career": "Computación e Informática",
-            "work": "Desarrollo del sitio web",
+            "name": "José Manuel",
+            "last_name": "Boniche Morales",
+            "career": "Bibliotecología",
+            "work": "Aplicación de sondeo a las personas visitantes de la feria, gestión y auditoría de la información",
             "factor": 90
         }
     },
@@ -547,10 +591,10 @@
         "model": "website.student",
         "pk": "9",
         "fields": {
-            "name": "Sirlany Auxiliadora",
-            "last_name": "Mora García",
-            "career": "Computación e Informática",
-            "work": "Desarrollo del sitio web",
+            "name": "Marlon",
+            "last_name": "Díaz Bermúdez",
+            "career": "Agronomía",
+            "work": "Investigación sobre los productos de la feria, incluyendo su estacionalidad",
             "factor": 90
         }
     }
