@@ -51,6 +51,10 @@ def product(request, product_url):
 
 
 def prices(request):
+    varieties = (
+        Variety.objects.filter(has_price=True).select_related("product_url").all()
+    )
+    print(varieties)
     prices = Price.objects.all()
     this_year = datetime.datetime.now().isocalendar()[0]
     this_week = datetime.datetime.now().isocalendar()[1]
@@ -59,5 +63,6 @@ def prices(request):
     context = {
         "prices": prices,
         "this_week_prices": this_week_prices,
+        "varieties": varieties,
     }
     return render(request, "prices.html", context)

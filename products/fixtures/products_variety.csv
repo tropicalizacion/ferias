@@ -1,169 +1,169 @@
-variety_id,product_url,scientific_name,scientific_name_variety,common_name_variety,common_name_variety_alternate,description,image,jan,feb,mar,apr,may,jun,jul,aug,sep,oct,nov,dec
-acelga,acelga,Beta vulgaris,cicla,,,,products/acelga.png,3,3,3,2,2,2,2,1,1,2,2,2
-aguacate_Hass,aguacate,Persea americana,Hass,Hass,,,products/aguacate_Hass.png,3,3,2,1,1,1,1,2,2,3,3,3
-aguacate_criollo,aguacate,Persea americana,drymifolia,criollo,,,products/aguacate_criollo.png,1,3,2,2,2,2,2,1,1,1,1,1
-ajo,ajo,Allium sativum,,,,,products/ajo.png,3,3,2,1,1,2,2,2,2,3,3,3
-albahaca,albahaca,Ocimum basilicum,,,,,products/albahaca.png,2,2,2,2,2,2,2,2,2,2,2,2
-alfalfa,alfalfa,Medicago sativa,,,,,products/alfalfa.png,3,3,2,1,1,1,1,3,3,2,1,3
-anona,anona,Annona squamosa,,,,,products/anona.png,1,3,3,3,3,2,2,1,1,1,1,1
-apazote,apazote,Dysphania ambrosioides,,,epazote o paico,,products/apazote.png,2,2,2,2,2,2,2,2,2,2,2,2
-apio_verde,apio,Apium graveolens,,verde,,,products/apio_verde.png,3,2,3,3,3,2,1,1,2,2,3,3
-arandano,arandano,Vaccinium corymbosum,,,,,products/arandano.png,1,3,3,3,3,2,2,1,1,1,1,1
-arracache,arracache,Arracacia xanthorrhiza,,,,,products/arracache.png,2,2,2,2,2,2,2,2,2,2,2,2
-arugula,arugula,Eruca vesicaria,,,rúgula o rúcula,,products/arugula.png,1,1,1,1,1,1,1,1,1,1,1,1
-guisante,guisante,Pisum sativum,,,petit pois o arveja,,products/guisante.png,1,1,1,1,1,1,1,1,1,1,1,1
-ayote_tierno,ayote,Cucurbita argyrosperma,,tierno,,,products/ayote_tierno.png,1,1,1,3,3,3,2,3,3,3,3,1
-ayote_sazon_mantequilla,ayote,Cucurbita argyrosperma,,sazón mantequilla,,,products/ayote_sazon_mantequilla.png,2,2,2,2,2,2,2,1,3,3,1,1
-ayote_sazon_seco,ayote,Cucurbita argyrosperma,,sazón seco,,,products/ayote_sazon_seco.png,2,2,2,2,2,2,2,1,3,3,1,1
-ayote_pipian_tierno,ayote,Cucurbita argyrosperma,,pipián tierno,,,products/ayote_pipian_tierno.png,2,1,1,1,1,1,1,3,3,3,3,2
-banano_datil,banano,Musa paradisiaca,,dátil,,,products/banano_datil.png,3,3,2,3,2,2,2,1,1,1,2,2
-banano_guineo_cuadrado,banano,Musa paradisiaca,,guineo cuadrado,guineo chino,,products/banano_guineo_cuadrado.png,3,3,3,3,3,3,2,1,1,1,1,1
-banano_guineo_negro,banano,Musa paradisiaca,,guineo negro,,,products/banano_guineo_negro.png,3,3,3,3,3,3,2,1,1,1,1,1
-banano_criollo,banano,Musa paradisiaca,,criollo,,,products/banano_criollo.png,3,3,3,3,3,3,2,1,1,1,1,1
-banano_maduro,banano,Musa paradisiaca,,maduro,,,products/banano_maduro.png,3,3,2,3,2,2,2,1,1,1,2,2
-banano_pinton,banano,Musa paradisiaca,,pintón,,,products/banano_pinton.png,3,3,2,3,2,2,2,1,1,1,2,2
-banano_verde,banano,Musa paradisiaca,,verde,,,products/banano_verde.png,3,3,2,3,2,2,2,1,1,1,2,2
-berenjena,berenjena,Solanum melongena,,,,,products/berenjena.png,1,1,1,2,2,2,3,3,3,3,3,1
-berro_chino,berro,Ipomoea aquatica,,chino,,,products/berro_chino.png,2,1,1,2,2,2,3,3,3,3,3,1
-berro_nacional,berro,Nasturtium officinale,,nacional,,,products/berro_nacional.png,1,1,1,2,2,2,3,3,3,3,3,1
-bokchoy,bokchoy,Brassica rapa,chinensis,,pak choi,,products/bokchoy.png,1,1,1,2,2,2,3,3,3,3,3,1
-brocoli,brocoli,Brassica oleracea,italica,,,,products/brocoli.png,1,1,2,3,3,2,1,3,3,1,2,1
-camote,camote,Ipomoea batatas,,,,,products/camote.png,1,2,2,3,3,3,3,2,2,2,1,1
-carambola,carambola,Averrhoa carambola,,,,,products/carambola.png,3,3,1,1,1,2,3,3,3,2,2,2
-cas,cas,Psidium friedrichsthalianum,,,,,products/cas.png,2,1,1,1,1,2,3,3,3,3,2,2
-cebolla_blanca,cebolla,Allium cepa,,blanca,,,products/cebolla_blanca.png,1,1,3,3,3,1,1,1,3,3,3,1
-cebolla_morada,cebolla,Allium cepa,,morada,,,products/cebolla_morada.png,1,1,2,3,3,3,2,1,1,3,3,1
-cebollino_fino,cebollino,Allium fistulosum,,fino,,,products/cebollino_fino.png,1,2,2,3,3,3,3,3,3,2,2,1
-cebollino_grande,cebollino,Allium schoenoprasum,,grande,,,products/cebollino_grande.png,1,2,2,3,3,3,3,3,3,2,2,1
-chan,chan,Hyptis suaveolens,,,,,products/chan.png,2,2,2,2,2,2,2,2,2,2,2,2
-chayote_cocoro,chayote,Sechium edule,,cocoro,,,products/chayote_cocoro.png,3,1,1,2,2,2,2,1,1,2,3,3
-chayote_tierno,chayote,Sechium edule,,tierno,chayote quelite,,products/chayote_tierno.png,3,1,1,2,2,2,2,2,2,3,3,3
-chayote_tierno,chayote,Sechium edule ,,tierno,,,products/chayote_tierno.png,3,1,1,2,2,2,2,1,1,2,3,3
-chayote_sazon,chayote,Sechium edule ,,sazón,,,products/chayote_sazon.png,3,1,1,2,2,2,2,1,1,2,3,3
-chiledulce_color_mundial,chiledulce,Capsicum annuum,,color mundial,,,products/chiledulce_color_mundial.png,1,2,2,2,3,3,2,2,3,2,1,1
-chiledulce,chiledulce,Capsicum annuum,,,,,products/chiledulce.png,1,2,2,2,3,3,2,2,3,2,1,1
-chilepicante_jalapeno,chilepicante,Capsicum annuum,,jalapeño,,,products/chilepicante_jalapeno.png,1,2,2,2,3,3,2,2,3,2,1,1
-chilepicante_aji_peruano,chilepicante,Capsicum baccatum,,ají peruano,,,products/chilepicante_aji_peruano.png,1,2,2,2,3,3,2,2,3,2,1,1
-chilepicante_panameno,chilepicante,Capsicum chinense,,panameño,,,products/chilepicante_panameno.png,1,2,2,2,3,3,2,2,3,2,1,1
-chilepicante_cayena,chilepicante,Capsicum frutescens,,cayena,,,products/chilepicante_cayena.png,1,2,2,2,3,3,2,2,3,2,1,1
-chilepicante_rocoto,chilepicante,Capsicum pubescens,,rocoto,,,products/chilepicante_rocoto.png,1,2,2,2,3,3,2,2,3,2,1,1
-chilepicante_fantasma,chilepicante,Naga jolokia,,fantasma,,,products/chilepicante_fantasma.png,1,2,2,2,3,3,2,2,3,2,1,1
-chilote,chilote,Stigma maydis,,,,,products/chilote.png,1,2,2,2,3,3,2,2,3,2,1,1
-ciruela_americana,ciruela,Prunus domestica,americana,americana,,,products/ciruela_americana.png,2,3,2,2,3,3,3,3,3,3,1,1
-ciruela,ciruela,Prunus domestica,,,,,products/ciruela.png,2,3,2,2,3,3,3,3,3,3,1,1
-coco,coco,Cocos nucifera,,,pipa,,products/coco.png,2,2,2,2,2,2,2,2,2,2,2,2
-coldebruselas,coldebruselas,Brassica oleracea,gemmifera,,,,products/coldebruselas.png,2,2,2,2,2,1,1,2,2,3,3,3
-coladecaballo,coladecaballo,Equisetum arvense,,,,,products/coladecaballo.png,2,2,2,2,2,2,2,2,2,2,2,2
-coliflor,coliflor,Brassica oleracea,botrytis,,,,products/coliflor.png,2,2,2,2,2,1,1,2,2,3,3,3
-cubaces_secos,cubaces,Phaseolus coccineus,,secos,,,products/cubaces_secos.png,1,3,2,1,1,3,3,2,2,3,3,1
-cubaces_tiernos,cubaces,Phaseolus coccineus,,tiernos,,,products/cubaces_tiernos.png,1,3,2,1,1,3,3,2,2,3,3,1
-culantro_castilla,culantro,Coriandrum sativum,,castilla,cilantro,,products/culantro_castilla.png,3,3,2,3,1,1,3,3,2,1,2,2
-culantrocoyote,culantrocoyote,Eryngium foetidum,,,,,products/culantrocoyote.png,3,3,3,3,3,3,3,1,1,1,1,1
-curcuma,curcuma,Curcuma longa,,,,,products/curcuma.png,2,2,2,2,2,2,2,2,2,2,2,2
-eneldo,eneldo,Anethum graveolens,,,abesón,,products/eneldo.png,2,2,2,2,2,2,2,2,2,2,2,2
-esparrago,esparrago,Asparagus officinalis,,,,,products/esparrago.png,2,2,3,3,3,3,2,2,2,3,3,3
-espinaca,espinaca,Spinacia oleracea,,,,,products/espinaca.png,1,1,2,3,3,3,2,3,3,1,1,1
-estragon,estragon,Artemisia dracunculus,,,,,products/estragon.png,2,2,3,3,3,3,2,2,2,3,3,3
-fresa,fresa,Fragaria × ananassa,,,,,products/fresa.png,1,2,3,3,3,3,2,3,2,1,1,1
-frijol_blanco,frijol,Phaseolus vulgaris,,blanco,,,products/frijol_blanco.png,1,3,2,1,1,3,3,2,2,3,3,1
-frijol_calima,frijol,Phaseolus vulgaris,,calima,,,products/frijol_calima.png,1,3,2,1,1,3,3,2,2,3,3,1
-frijol_negro,frijol,Phaseolus vulgaris,,negro,,,products/frijol_negro.png,1,3,2,1,1,3,3,2,2,3,3,1
-frijol_rojo,frijol,Phaseolus vulgaris,,rojo,,,products/frijol_rojo.png,1,3,2,1,1,3,3,2,2,3,3,1
-garbanzo,garbanzo,Cicer arietinum,,,,,products/garbanzo.png,1,3,2,1,1,3,3,2,2,3,3,1
-granadilla,granadilla,Passiflora ligularis,,,,,products/granadilla.png,3,3,3,3,3,2,1,1,1,2,2,2
-guanabana,guanabana,Annona muricata,,,,,products/guanabana.png,3,3,3,2,3,3,2,1,1,1,1,1
-guayaba,guayaba,Psidium guajava,,,,,products/guayaba.png,3,3,2,2,2,2,2,3,3,3,1,1
-hierbabuena,hierbabuena,Mentha spicata,,,yerbabuena o menta de jardín,,products/hierbabuena.png,2,2,2,2,2,2,2,2,2,2,2,2
-hinojo,hinojo,Foeniculum vulgare,,,,,products/hinojo.png,0,0,0,1,2,3,3,3,3,3,3,3
-hongo_crimini,hongo,Agaricus bisporus,,crimini,,,products/hongo_crimini.png,2,2,2,2,2,2,2,2,2,2,2,2
-hongo_portobello,hongo,Agaricus bisporus,,portobello,,,products/hongo_portobello.png,2,2,2,2,2,2,2,2,2,2,2,2
-hongo_blanco_champinon,hongo,Boletus edulis,,blanco champiñon,,,products/hongo_blanco_champinon.png,2,2,2,2,2,2,2,2,2,2,2,2
-hongo_ostra,hongo,Pleurotus ostreatus,,ostra,,,products/hongo_ostra.png,2,2,2,2,2,2,2,2,2,2,2,2
-jengibre,jengibre,Zingiber officinale,,,,,products/jengibre.png,3,3,3,2,2,1,1,1,2,3,3,3
-jocote_tronador,jocote,Spondias purpurea,,tronador,jocote tronador,,products/jocote_tronador.png,0,0,0,0,0,2,3,3,2,0,0,0
-kale_verde,kale,Brassica oleracea,sabellica,verde,col rizada o  brócoli chino,,products/kale_verde.png,2,2,2,3,3,3,3,3,2,1,2,2
-kiwi,kiwi,Actinidia deliciosa,,,,,products/kiwi.png,3,3,3,3,3,3,2,2,2,3,3,3
-lechuga_escarola,lechuga,Cichorium endivia,,escarola,,,products/lechuga_escarola.png,2,3,3,3,3,2,2,1,1,3,3,3
-lechuga_lollo_rosa,lechuga,Lactuca sativa,acephala,lollo rosa,,,products/lechuga_lollo_rosa.png,2,3,3,3,3,2,2,1,1,3,3,3
-lechuga_romana,lechuga,Lactuca sativa,longifolia,romana,,,products/lechuga_romana.png,2,3,3,3,3,2,2,1,1,3,3,3
-lechuga_veronica,lechuga,Lactuca sativa,,verónica,,,products/lechuga_veronica.png,2,3,3,3,3,2,2,1,1,3,3,3
-lechuga_americana_arrepollada,lechuga,Lactuca sativa ,,americana arrepollada,,,products/lechuga_americana_arrepollada.png,2,3,3,3,3,2,2,1,1,3,3,3
-lechuga_BG_crepa,lechuga,Lactuca sativa ,,BG crepa,,,products/lechuga_BG_crepa.png,2,3,3,3,3,2,2,1,1,3,3,3
-lechuga_blanca_criolla,lechuga,Lactuca sativa ,,blanca criolla,,,products/lechuga_blanca_criolla.png,2,3,3,3,3,2,2,1,1,3,3,3
-lenteja,lenteja,Lens culinaris,,,,,products/lenteja.png,1,3,2,1,1,3,3,2,2,3,3,1
-limon_criollo,limon,Citrus × aurantifolia,,criollo,,,products/limon_criollo.png,3,2,1,1,1,1,2,3,3,3,3,3
-limon_mandarino,limon,Citrus × limonia,,mandarino,,,products/limon_mandarino.png,3,2,1,1,1,1,2,3,3,3,3,3
-limon_mecino,limon,Citrus aurantifolia,,mecino,,,products/limon_mecino.png,1,1,1,1,2,3,3,3,3,3,3,2
-limon_dulce,limon,Citrus limetta,,dulce,,,products/limon_dulce.png,1,1,1,1,1,1,1,3,3,3,3,2
-linaza,linaza,Linum usitatissimum,,,,,products/linaza.png,2,2,2,2,2,2,2,2,2,2,2,2
-maiz_elote_dulce_amarillo,maiz,Zea mays,,elote dulce amarillo,,,products/maiz_elote_dulce_amarillo.png,1,2,1,2,3,3,3,3,3,3,3,2
-maiz_elote_tierno,maiz,Zea mays,,elote tierno,,,products/maiz_elote_tierno.png,1,2,1,2,3,3,3,3,3,3,3,2
-maiz_cascado,maiz,Zea mays,,cascado,,,products/maiz_cascado.png,1,2,1,2,3,3,3,3,3,3,3,2
-malanga,malanga,Colocasia esculenta,,,big taro,,products/malanga.png,1,2,2,3,3,3,3,2,2,2,1,1
-mandarina,mandarina,Citrus reticulata,,,,,products/mandarina.png,3,3,3,2,0,0,0,0,1,1,1,1
-mandarina_nacional,mandarina,Citrus reticulata,,nacional,,,products/mandarina_nacional.png,3,3,3,2,0,0,0,0,1,1,1,1
-mango,mango,Mangifera indica,,,,,products/mango.png,2,2,3,3,3,3,3,3,1,1,1,1
-manzana_gala,manzana,Malus domestica,gala,gala,,,products/manzana_gala.png,3,2,1,2,3,3,3,3,2,2,1,1
-manzana_granny,manzana,Malus domestica,× M. sylvestris,granny,,,products/manzana_granny.png,3,2,1,2,3,3,3,3,2,2,1,1
-manzana_washinton,manzana,Malus domestica ,,washinton,,,products/manzana_washinton.png,3,2,1,2,3,3,3,3,2,2,1,1
-manzanadeagua,manzanadeagua,Syzygium malaccense,,,,,products/manzanadeagua.png,3,2,1,2,3,3,3,3,2,2,1,1
-manzanilla,manzanilla,Chamaemelum nobile,,,,,products/manzanilla.png,2,2,2,2,2,2,2,2,2,2,2,2
-maracuya,maracuya,Passiflora edulis,,,,,products/maracuya.png,3,1,1,3,3,2,2,2,2,2,3,3
-melocoton,melocoton,Prunus persica,,,,,products/melocoton.png,1,1,1,1,1,2,3,3,3,2,1,1
-melon,melon,Cucumis melo,,,,,products/melon.png,3,3,3,3,3,2,1,1,1,1,1,1
-menta,menta,Mentha × piperita,,,,,products/menta.png,2,2,2,2,2,2,2,2,2,2,2,2
-mora,mora,Rubus ulmifolius,,,,,products/mora.png,3,3,3,2,1,1,1,1,1,1,1,3
-mostazachina,mostazachina,Brassica juncea,,,,,products/mostazachina.png,2,2,2,2,2,2,2,2,2,2,2,2
-mozote,mozote,Bidens pilosa,,,,,products/mozote.png,2,2,2,2,2,2,2,2,2,2,2,2
-name,name,Dioscorea alata,,,,,products/name.png,3,3,3,2,1,1,1,1,2,3,3,3
-nampi,nampi,Dioscorea trifida,,,,,products/nampi.png,3,3,3,2,1,1,1,1,2,3,3,3
-naranja_agria,naranja,Citrus × aurantium,,agria,,,products/naranja_agria.png,3,2,2,2,2,3,3,2,2,2,2,2
-naranja,naranja,Citrus × sinensis,,,,,products/naranja.png,3,3,3,2,2,2,2,2,2,2,2,3
-naranja_washinton,naranja,Citrus × sinensis,washinton navel,washinton,,,products/naranja_washinton.png,3,3,3,2,2,2,2,2,2,2,2,3
-oregano,oregano,Origanum vulgare,,,,,products/oregano.png,2,2,2,2,2,2,2,2,2,2,2,2
-palmito_tierno,palmito,Chamaerops humilis,,tierno,,,products/palmito_tierno.png,2,2,3,3,3,2,1,1,1,1,2,3
-papa_amarilla,papa,Solanum tuberosum,,amarilla,,,products/papa_amarilla.png,2,2,2,2,2,2,1,3,3,3,2,2
-papa_blanca,papa,Solanum tuberosum,kennebec,blanca,,,products/papa_blanca.png,1,1,2,2,2,2,1,3,3,3,2,2
-papa_burra,papa,Solanum tuberosum,,burra,,,products/papa_burra.png,2,2,2,2,2,2,1,3,3,3,2,2
-papa_mini,papa,Solanum tuberosum,,mini,,,products/papa_mini.png,2,2,2,2,2,2,1,3,3,3,2,2
-papaya,papaya,Carica papaya,,,,,products/papaya.png,1,3,3,3,3,2,3,1,1,2,2,1
-pejibaye,pejibaye,Bactris gasipaes,,,,,products/pejibaye.png,2,2,3,3,3,2,1,1,1,1,2,3
-pepino,pepino,Cucumis sativus,,,,,products/pepino.png,1,1,1,3,3,3,3,3,3,2,1,1
-pera,pera,Pyrus communis,,,,,products/pera.png,2,2,2,2,2,2,2,3,3,3,2,2
-perejil_italiano,perejil,Petroselinum crispum,neapolitanum,italiano,,,products/perejil_italiano.png,2,2,2,2,2,2,2,2,2,2,2,2
-perejil,perejil,Petroselinum crispum,,,,,products/perejil.png,2,2,2,2,2,2,2,2,2,2,2,2
-pina,pina,Ananas comosus,,,,,products/pina.png,2,2,2,3,3,3,1,1,1,2,2,1
-pitahaya,pitahaya,Selenicereus undatus,,,,,products/pitahaya.png,0,0,0,0,2,3,3,3,3,2,1,0
-platano_maduro,platano,Musa balbisiana,,maduro,,,products/platano_maduro.png,1,1,2,3,3,3,3,2,2,2,1,1
-platano_verde,platano,Musa balbisiana,,verde,,,products/platano_verde.png,1,1,2,3,3,3,2,2,2,2,1,1
-puerro,puerro,Allium ampeloprasum,porrum,,,,products/puerro.png,2,2,2,2,3,3,2,2,2,3,3,2
-rabano_rabanito,rabano,Raphanus sativus,,rabanito,,,products/rabano_rabanito.png,2,2,3,3,3,3,2,2,3,3,3,2
-rabano_blanco,rabano,Raphanus sativus,,blanco,,,products/rabano_blanco.png,2,2,3,3,3,3,2,2,3,3,3,2
-remolacha,remolacha,Beta vulgari,,,,,products/remolacha.png,1,1,2,3,3,3,3,2,2,2,1,1
-repollo_morado,repollo,Brassica oleracea,capita f. rubra,morado,,,products/repollo_morado.png,1,1,1,2,3,3,3,2,2,3,2,2
-repollo_verde,repollo,Brassica oleracea,capita,verde,,,products/repollo_verde.png,1,1,1,2,3,3,3,2,2,3,2,2
-romero,romero,Salvia rosmarinus,,,,,products/romero.png,2,2,2,2,2,2,2,2,2,2,2,2
-ruda,ruda,Ruda graveolens,,,,,products/ruda.png,2,2,2,2,2,2,2,2,2,2,2,2
-sabila,sabila,Aloe vera,,,,,products/sabila.png,2,2,2,2,2,2,2,2,2,2,2,2
-salvia,salvia,Salvia officinalis,,,,,products/salvia.png,2,2,2,2,2,2,2,2,2,2,2,2
-sandia,sandia,Citrullus lanatus,,,,,products/sandia.png,2,3,3,3,3,2,2,2,2,2,1,1
-tacaco,tacaco,Sechium tacaco,,,,,products/tacaco.png,2,2,2,1,1,1,1,3,3,3,3,3
-tamarindo,tamarindo,Tamarindus indica,,,,,products/tamarindo.png,2,3,3,2,2,2,2,2,2,1,1,1
-tiquisque,tiquisque,Xanthosoma sagittifolium,Schott,,,,products/tiquisque.png,2,3,3,3,3,3,2,1,1,1,1,2
-tomate_pera,tomate,Lycopersicon esculentum,,pera,,,products/tomate_pera.png,1,2,3,3,3,3,1,1,3,3,1,1
-tomate_verde_mexicano,tomate,Physalis ixocarpa,,verde mexicano,,,products/tomate_verde_mexicano.png,1,2,3,3,3,3,1,1,3,3,1,1
-tomate_cherry,tomate,Solanum lycopersicum,cerasiforme,cherry,,,products/tomate_cherry.png,1,2,3,3,3,3,1,1,3,3,1,1
-tomate_mesa,tomate,Solanum lycopersicum,,mesa,,,products/tomate_mesa.png,1,2,3,3,3,3,1,1,3,3,1,1
-tomillo,tomillo,Thymus vulgaris,,,,,products/tomillo.png,2,2,2,2,2,2,2,2,2,2,2,2
-toronja,toronja,Citrus × paradisi,,,grape fruit toronja,,products/toronja.png,1,2,3,3,3,3,2,1,1,1,1,1
-uchuva,uchuva,Physalis peruviana,,,,,products/uchuva.png,1,3,3,3,2,1,1,3,3,3,3,2
-uva_roja,uva,Vitis vinifera ,,roja,,,products/uva_roja.png,1,3,3,3,2,1,1,3,3,3,3,2
-uva_verde,uva,Vitis vinifera ,,verde,,,products/uva_verde.png,1,3,3,3,2,1,1,3,3,3,3,2
-vainica_tierna,vainica,Phaseolus vulgaris,in situ,tierna,,,products/vainica_tierna.png,1,1,2,3,2,2,3,2,2,2,2,2
-yuca,yuca,Manihot esculenta,,,,,products/yuca.png,1,3,3,3,2,2,1,1,2,3,3,2
-zacatelimon,zacatelimon,Cymbopogon citratus,,,,,products/zacatelimon.png,2,2,2,2,2,2,2,2,2,2,2,2
-zanahoria,zanahoria,Daucus carota,,,,,products/zanahoria.png,2,3,2,2,3,2,1,1,2,3,3,3
-zapallo_esmeralda,zapallo,Cucurbita moschata,,esmeralda,,,products/zapallo_esmeralda.png,1,1,1,3,3,2,3,3,3,3,2,1
-zapallo,zapallo,Cucurbita moschata,,,,,products/zapallo.png,1,1,1,3,3,2,3,3,3,3,2,1
-zucchini_escalopin_colores,zucchini,Cucurbita pepo,sunburst,escalopín colores,,,products/zucchini_escalopin_colores.png,,,,,,,,,,,,
-zucchini,zucchini,Cucurbita pepo,,,calabacín,,products/zucchini.png,1,1,1,3,3,2,3,3,3,3,2,1
+variety_id,product_url,scientific_name,scientific_name_variety,common_name_variety,common_name_variety_alternate,description,has_price,image,jan,feb,mar,apr,may,jun,jul,aug,sep,oct,nov,dec
+acelga,acelga,Beta vulgaris,cicla,,,Hojas verdes comestibles ricas en vitaminas y minerales,false,products/acelga.png,3,3,3,2,2,2,2,1,1,2,2,2
+aguacate_criollo,aguacate,Persea americana,drymifolia,criollo,,,true,products/aguacate_criollo.png,1,3,2,2,2,2,2,1,1,1,1,1
+aguacate_hass,aguacate,Persea americana,Hass,Hass,,,true,products/aguacate_Hass.png,3,3,2,1,1,1,1,2,2,3,3,3
+ajo,ajo,Allium sativum,,,,,false,products/ajo.png,3,3,2,1,1,2,2,2,2,3,3,3
+albahaca,albahaca,Ocimum basilicum,,,,,false,products/albahaca.png,2,2,2,2,2,2,2,2,2,2,2,2
+alfalfa,alfalfa,Medicago sativa,,,,,false,products/alfalfa.png,3,3,2,1,1,1,1,3,3,2,1,3
+anona,anona,Annona squamosa,,,,,false,products/anona.png,1,3,3,3,3,2,2,1,1,1,1,1
+apazote,apazote,Dysphania ambrosioides,,,epazote o paico,,false,products/apazote.png,2,2,2,2,2,2,2,2,2,2,2,2
+apio_verde,apio,Apium graveolens,,verde,,,true,products/apio_verde.png,3,2,3,3,3,2,1,1,2,2,3,3
+arandano,arandano,Vaccinium corymbosum,,,,,false,products/arandano.png,1,3,3,3,3,2,2,1,1,1,1,1
+arracache,arracache,Arracacia xanthorrhiza,,,,,false,products/arracache.png,2,2,2,2,2,2,2,2,2,2,2,2
+arugula,arugula,Eruca vesicaria,,,rúgula o rúcula,,false,products/arugula.png,1,1,1,1,1,1,1,1,1,1,1,1
+ayote_pipian_tierno,ayote,Cucurbita argyrosperma,,pipián tierno,,,false,products/ayote_pipian_tierno.png,2,1,1,1,1,1,1,3,3,3,3,2
+ayote_sazon,ayote,Cucurbita argyrosperma,,sazón,,Variedad tropical de ayote cultivado para cosechas tardías,true,products/ayote_sazon_mantequilla.png,2,2,2,2,2,2,2,1,3,3,1,1
+ayote_tierno,ayote,Cucurbita argyrosperma,,tierno,,,true,products/ayote_tierno.png,1,1,1,3,3,3,2,3,3,3,3,1
+banano_criollo,banano,Musa paradisiaca,,criollo,,,true,products/banano_criollo.png,3,3,3,3,3,3,2,1,1,1,1,1
+banano_datil,banano,Musa paradisiaca,,dátil,,,false,products/banano_datil.png,3,3,2,3,2,2,2,1,1,1,2,2
+banano_guineo_cuadrado,banano,Musa paradisiaca,,guineo cuadrado,guineo chino,,false,products/banano_guineo_cuadrado.png,3,3,3,3,3,3,2,1,1,1,1,1
+banano_guineo_negro,banano,Musa paradisiaca,,guineo negro,,,false,products/banano_guineo_negro.png,3,3,3,3,3,3,2,1,1,1,1,1
+banano_maduro,banano,Musa paradisiaca,,maduro,,,false,products/banano_maduro.png,3,3,2,3,2,2,2,1,1,1,2,2
+banano_pinton,banano,Musa paradisiaca,,pintón,,,false,products/banano_pinton.png,3,3,2,3,2,2,2,1,1,1,2,2
+banano_verde,banano,Musa paradisiaca,,verde,,,false,products/banano_verde.png,3,3,2,3,2,2,2,1,1,1,2,2
+berenjena,berenjena,Solanum melongena,,,,,false,products/berenjena.png,1,1,1,2,2,2,3,3,3,3,3,1
+berro_chino,berro,Ipomoea aquatica,,chino,,,false,products/berro_chino.png,2,1,1,2,2,2,3,3,3,3,3,1
+berro_nacional,berro,Nasturtium officinale,,nacional,,,false,products/berro_nacional.png,1,1,1,2,2,2,3,3,3,3,3,1
+bokchoy,bokchoy,Brassica rapa,chinensis,,pak choi,,false,products/bokchoy.png,1,1,1,2,2,2,3,3,3,3,3,1
+brocoli,brocoli,Brassica oleracea,italica,,,,true,products/brocoli.png,1,1,2,3,3,2,1,3,3,1,2,1
+camote,camote,Ipomoea batatas,,,,,true,products/camote.png,1,2,2,3,3,3,3,2,2,2,1,1
+carambola,carambola,Averrhoa carambola,,,,,false,products/carambola.png,3,3,1,1,1,2,3,3,3,2,2,2
+cas,cas,Psidium friedrichsthalianum,,,,,false,products/cas.png,2,1,1,1,1,2,3,3,3,3,2,2
+cebolla_blanca,cebolla,Allium cepa,,blanca,,,true,products/cebolla_blanca.png,1,1,3,3,3,1,1,1,3,3,3,1
+cebolla_morada,cebolla,Allium cepa,,morada,,,false,products/cebolla_morada.png,1,1,2,3,3,3,2,1,1,3,3,1
+cebollino_fino,cebollino,Allium fistulosum,,fino,,,false,products/cebollino_fino.png,1,2,2,3,3,3,3,3,3,2,2,1
+cebollino_grande,cebollino,Allium schoenoprasum,,grande,,,false,products/cebollino_grande.png,1,2,2,3,3,3,3,3,3,2,2,1
+chan,chan,Hyptis suaveolens,,,,,false,products/chan.png,2,2,2,2,2,2,2,2,2,2,2,2
+chayote_cocoro,chayote,Sechium edule,,cocoro,,,false,products/chayote_cocoro.png,3,1,1,2,2,2,2,1,1,2,3,3
+chayote_sazon_blanco,chayote,Sechium edule ,,sazón blanco,,,true,products/chayote_sazon.png,3,1,1,2,2,2,2,1,1,2,3,3
+chayote_tierno_criollo,chayote,Sechium edule,,tierno criollo,negro,Variedad local de chayote consumido joven,true,products/chayote_tierno.png,3,1,1,2,2,2,2,2,2,3,3,3
+chayote_tierno_quelite,chayote,Sechium edule ,,tierno quelite,,Variedad de chayote consumido principalmente en hojas,true,products/chayote_tierno.png,3,1,1,2,2,2,2,1,1,2,3,3
+chiledulce,chiledulce,Capsicum annuum,,,,Pimiento dulce utilizado en cocina costarricense,true,products/chiledulce.png,1,2,2,2,3,3,2,2,3,2,1,1
+chiledulce_color_mundial,chiledulce,Capsicum annuum,,color mundial,,,false,products/chiledulce_color_mundial.png,1,2,2,2,3,3,2,2,3,2,1,1
+chilepicante_aji_peruano,chilepicante,Capsicum baccatum,,ají peruano,,,false,products/chilepicante_aji_peruano.png,1,2,2,2,3,3,2,2,3,2,1,1
+chilepicante_cayena,chilepicante,Capsicum frutescens,,cayena,,,false,products/chilepicante_cayena.png,1,2,2,2,3,3,2,2,3,2,1,1
+chilepicante_fantasma,chilepicante,Naga jolokia,,fantasma,,,false,products/chilepicante_fantasma.png,1,2,2,2,3,3,2,2,3,2,1,1
+chilepicante_jalapeno,chilepicante,Capsicum annuum,,jalapeño,,,false,products/chilepicante_jalapeno.png,1,2,2,2,3,3,2,2,3,2,1,1
+chilepicante_panameno,chilepicante,Capsicum chinense,,panameño,,,false,products/chilepicante_panameno.png,1,2,2,2,3,3,2,2,3,2,1,1
+chilepicante_rocoto,chilepicante,Capsicum pubescens,,rocoto,,,false,products/chilepicante_rocoto.png,1,2,2,2,3,3,2,2,3,2,1,1
+chilote,chilote,Stigma maydis,,,,,false,products/chilote.png,1,2,2,2,3,3,2,2,3,2,1,1
+ciruela,ciruela,Prunus domestica,,,,,false,products/ciruela.png,2,3,2,2,3,3,3,3,3,3,1,1
+ciruela_americana,ciruela,Prunus domestica,americana,americana,,,false,products/ciruela_americana.png,2,3,2,2,3,3,3,3,3,3,1,1
+coco,coco,Cocos nucifera,,,pipa,,true,products/coco.png,2,2,2,2,2,2,2,2,2,2,2,2
+coladecaballo,coladecaballo,Equisetum arvense,,,,,false,products/coladecaballo.png,2,2,2,2,2,2,2,2,2,2,2,2
+coldebruselas,coldebruselas,Brassica oleracea,gemmifera,,,,false,products/coldebruselas.png,2,2,2,2,2,1,1,2,2,3,3,3
+coliflor,coliflor,Brassica oleracea,botrytis,,,,true,products/coliflor.png,2,2,2,2,2,1,1,2,2,3,3,3
+cubaces_secos,cubaces,Phaseolus coccineus,,secos,,,false,products/cubaces_secos.png,1,3,2,1,1,3,3,2,2,3,3,1
+cubaces_tiernos,cubaces,Phaseolus coccineus,,tiernos,,,false,products/cubaces_tiernos.png,1,3,2,1,1,3,3,2,2,3,3,1
+culantro_castilla,culantro,Coriandrum sativum,,castilla,cilantro,,true,products/culantro_castilla.png,3,3,2,3,1,1,3,3,2,1,2,2
+culantrocoyote,culantrocoyote,Eryngium foetidum,,,,,false,products/culantrocoyote.png,3,3,3,3,3,3,3,1,1,1,1,1
+curcuma,curcuma,Curcuma longa,,,,,false,products/curcuma.png,2,2,2,2,2,2,2,2,2,2,2,2
+eneldo,eneldo,Anethum graveolens,,,abesón,,false,products/eneldo.png,2,2,2,2,2,2,2,2,2,2,2,2
+esparrago,esparrago,Asparagus officinalis,,,,,false,products/esparrago.png,2,2,3,3,3,3,2,2,2,3,3,3
+espinaca,espinaca,Spinacia oleracea,,,,,false,products/espinaca.png,1,1,2,3,3,3,2,3,3,1,1,1
+estragon,estragon,Artemisia dracunculus,,,,,false,products/estragon.png,2,2,3,3,3,3,2,2,2,3,3,3
+fresa,fresa,Fragaria × ananassa,,,,,true,products/fresa.png,1,2,3,3,3,3,2,3,2,1,1,1
+frijol_blanco,frijol,Phaseolus vulgaris,,blanco,,,false,products/frijol_blanco.png,1,3,2,1,1,3,3,2,2,3,3,1
+frijol_calima,frijol,Phaseolus vulgaris,,calima,,,false,products/frijol_calima.png,1,3,2,1,1,3,3,2,2,3,3,1
+frijol_negro,frijol,Phaseolus vulgaris,,negro,,,true,products/frijol_negro.png,1,3,2,1,1,3,3,2,2,3,3,1
+frijol_rojo,frijol,Phaseolus vulgaris,,rojo,,,false,products/frijol_rojo.png,1,3,2,1,1,3,3,2,2,3,3,1
+frijol_tierno,frijol,Phaseolus vulgaris,,tierno,,Frijol inmaduro cosechado para sopas y guisos,true,products/frijol_tierno.png,3,3,3,2,2,2,2,2,2,3,3,3
+garbanzo,garbanzo,Cicer arietinum,,,,,false,products/garbanzo.png,1,3,2,1,1,3,3,2,2,3,3,1
+granadilla,granadilla,Passiflora ligularis,,,,,false,products/granadilla.png,3,3,3,3,3,2,1,1,1,2,2,2
+guanabana,guanabana,Annona muricata,,,,,false,products/guanabana.png,3,3,3,2,3,3,2,1,1,1,1,1
+guayaba,guayaba,Psidium guajava,,,,,false,products/guayaba.png,3,3,2,2,2,2,2,3,3,3,1,1
+guisante,guisante,Pisum sativum,,,petit pois o arveja,,false,products/guisante.png,1,1,1,1,1,1,1,1,1,1,1,1
+hierbabuena,hierbabuena,Mentha spicata,,,yerbabuena o menta de jardín,,false,products/hierbabuena.png,2,2,2,2,2,2,2,2,2,2,2,2
+hinojo,hinojo,Foeniculum vulgare,,,,,false,products/hinojo.png,0,0,0,1,2,3,3,3,3,3,3,3
+hongo_blanco_champinon,hongo,Boletus edulis,,blanco champiñón,,,true,products/hongo_blanco_champinon.png,2,2,2,2,2,2,2,2,2,2,2,2
+hongo_crimini,hongo,Agaricus bisporus,,crimini,,,false,products/hongo_crimini.png,2,2,2,2,2,2,2,2,2,2,2,2
+hongo_ostra,hongo,Pleurotus ostreatus,,ostra,,,false,products/hongo_ostra.png,2,2,2,2,2,2,2,2,2,2,2,2
+hongo_portobello,hongo,Agaricus bisporus,,portobello,,,false,products/hongo_portobello.png,2,2,2,2,2,2,2,2,2,2,2,2
+jengibre,jengibre,Zingiber officinale,,,,,false,products/jengibre.png,3,3,3,2,2,1,1,1,2,3,3,3
+jocote_tronador,jocote,Spondias purpurea,,tronador,jocote tronador,,true,products/jocote_tronador.png,0,0,0,0,0,2,3,3,2,0,0,0
+kale_verde,kale,Brassica oleracea,sabellica,verde,col rizada o  brócoli chino,,false,products/kale_verde.png,2,2,2,3,3,3,3,3,2,1,2,2
+kiwi,kiwi,Actinidia deliciosa,,,,,false,products/kiwi.png,3,3,3,3,3,3,2,2,2,3,3,3
+lechuga_americana,lechuga,Lactuca sativa ,,americana,,Lechuga de hojas crujientes y textura suave,true,products/lechuga_americana_arrepollada.png,2,3,3,3,3,2,2,1,1,3,3,3
+lechuga_blanca_criolla,lechuga,Lactuca sativa ,,blanca criolla,,,false,products/lechuga_blanca_criolla.png,2,3,3,3,3,2,2,1,1,3,3,3
+lechuga_escarola,lechuga,Cichorium endivia,,escarola,,,false,products/lechuga_escarola.png,2,3,3,3,3,2,2,1,1,3,3,3
+lechuga_lollo_rosa,lechuga,Lactuca sativa,acephala,lollo rosa,,,false,products/lechuga_lollo_rosa.png,2,3,3,3,3,2,2,1,1,3,3,3
+lechuga_romana,lechuga,Lactuca sativa,longifolia,romana,,,false,products/lechuga_romana.png,2,3,3,3,3,2,2,1,1,3,3,3
+lechuga_veronica,lechuga,Lactuca sativa,,verónica,,,false,products/lechuga_veronica.png,2,3,3,3,3,2,2,1,1,3,3,3
+lenteja,lenteja,Lens culinaris,,,,,false,products/lenteja.png,1,3,2,1,1,3,3,2,2,3,3,1
+limon_criollo,limon,Citrus × aurantifolia,,criollo,,,false,products/limon_criollo.png,3,2,1,1,1,1,2,3,3,3,3,3
+limon_dulce,limon,Citrus limetta,,dulce,,,false,products/limon_dulce.png,1,1,1,1,1,1,1,3,3,3,3,2
+limon_mandarino,limon,Citrus × limonia,,mandarino,,,true,products/limon_mandarino.png,3,2,1,1,1,1,2,3,3,3,3,3
+limon_mesino,limon,Citrus aurantifolia,,mesino,,Limón pequeño y ácido utilizado en bebidas y cocina,true,products/limon_mesino.png,1,1,1,1,2,3,3,3,3,3,3,2
+linaza,linaza,Linum usitatissimum,,,,,false,products/linaza.png,2,2,2,2,2,2,2,2,2,2,2,2
+maiz_cascado,maiz,Zea mays,,cascado,,,false,products/maiz_cascado.png,1,2,1,2,3,3,3,3,3,3,3,2
+maiz_elote_dulce_amarillo,maiz,Zea mays,,elote dulce amarillo,,,false,products/maiz_elote_dulce_amarillo.png,1,2,1,2,3,3,3,3,3,3,3,2
+maiz_elote_tierno,maiz,Zea mays,,elote tierno,,Mazorca joven de maíz,true,products/maiz_elote_tierno.png,1,2,1,2,3,3,3,3,3,3,3,2
+malanga,malanga,Colocasia esculenta,,,big taro,,false,products/malanga.png,1,2,2,3,3,3,3,2,2,2,1,1
+mandarina,mandarina,Citrus reticulata,,,,,false,products/mandarina.png,3,3,3,2,0,0,0,0,1,1,1,1
+mandarina_nacional,mandarina,Citrus reticulata,,nacional,,,false,products/mandarina_nacional.png,3,3,3,2,0,0,0,0,1,1,1,1
+manga,manga,Mangifera indica,,,,Fruta tropical dulce más grande que el mango,true,products/manga.png,2,2,3,3,3,3,3,3,1,1,1,1
+manzana_gala,manzana,Malus domestica,gala,gala,,,false,products/manzana_gala.png,3,2,1,2,3,3,3,3,2,2,1,1
+manzana_granny,manzana,Malus domestica,× M. sylvestris,granny,,,false,products/manzana_granny.png,3,2,1,2,3,3,3,3,2,2,1,1
+manzana_Washington,manzana,Malus domestica ,,Washington,,,false,products/manzana_washington.png,3,2,1,2,3,3,3,3,2,2,1,1
+manzanadeagua,manzanadeagua,Syzygium malaccense,,,,,false,products/manzanadeagua.png,3,2,1,2,3,3,3,3,2,2,1,1
+manzanilla,manzanilla,Chamaemelum nobile,,,,,false,products/manzanilla.png,2,2,2,2,2,2,2,2,2,2,2,2
+maracuya,maracuya,Passiflora edulis,,,,,true,products/maracuya.png,3,1,1,3,3,2,2,2,2,2,3,3
+melocoton,melocoton,Prunus persica,,,,,false,products/melocoton.png,1,1,1,1,1,2,3,3,3,2,1,1
+melon_cantalupo,melon,Cucumis melo,,cantalupo,,Melón dulce con aroma distintivo y piel rugosa,true,products/melon.png,3,3,3,3,3,2,1,1,1,1,1,1
+menta,menta,Mentha × piperita,,,,,false,products/menta.png,2,2,2,2,2,2,2,2,2,2,2,2
+mora,mora,Rubus ulmifolius,,,,,true,products/mora.png,3,3,3,2,1,1,1,1,1,1,1,3
+mostazachina,mostazachina,Brassica juncea,,,,,false,products/mostazachina.png,2,2,2,2,2,2,2,2,2,2,2,2
+mozote,mozote,Bidens pilosa,,,,,false,products/mozote.png,2,2,2,2,2,2,2,2,2,2,2,2
+name,name,Dioscorea alata,,,,,false,products/name.png,3,3,3,2,1,1,1,1,2,3,3,3
+nampi,nampi,Dioscorea trifida,,,,,true,products/nampi.png,3,3,3,2,1,1,1,1,2,3,3,3
+naranja,naranja,Citrus × sinensis,,,,,true,products/naranja.png,3,3,3,2,2,2,2,2,2,2,2,3
+naranja_agria,naranja,Citrus × aurantium,,agria,,,false,products/naranja_agria.png,3,2,2,2,2,3,3,2,2,2,2,2
+naranja_washington,naranja,Citrus × sinensis,Washington navel,Washington,,,false,products/naranja_washinton.png,3,3,3,2,2,2,2,2,2,2,2,3
+oregano,oregano,Origanum vulgare,,,,,false,products/oregano.png,2,2,2,2,2,2,2,2,2,2,2,2
+palmito_tierno,palmito,Chamaerops humilis,,tierno,,,false,products/palmito_tierno.png,2,2,3,3,3,2,1,1,1,1,2,3
+papa_amarilla,papa,Solanum tuberosum,,amarilla,,,true,products/papa_amarilla.png,2,2,2,2,2,2,1,3,3,3,2,2
+papa_blanca,papa,Solanum tuberosum,kennebec,blanca,,,true,products/papa_blanca.png,1,1,2,2,2,2,1,3,3,3,2,2
+papa_burra,papa,Solanum tuberosum,,burra,,,false,products/papa_burra.png,2,2,2,2,2,2,1,3,3,3,2,2
+papa_mini,papa,Solanum tuberosum,,mini,,,false,products/papa_mini.png,2,2,2,2,2,2,1,3,3,3,2,2
+papaya,papaya,Carica papaya,,,,,true,products/papaya.png,1,3,3,3,3,2,3,1,1,2,2,1
+pejibaye,pejibaye,Bactris gasipaes,,,,,false,products/pejibaye.png,2,2,3,3,3,2,1,1,1,1,2,3
+pepino,pepino,Cucumis sativus,,,,,true,products/pepino.png,1,1,1,3,3,3,3,3,3,2,1,1
+pera,pera,Pyrus communis,,,,,false,products/pera.png,2,2,2,2,2,2,2,3,3,3,2,2
+perejil,perejil,Petroselinum crispum,,,,,false,products/perejil.png,2,2,2,2,2,2,2,2,2,2,2,2
+perejil_italiano,perejil,Petroselinum crispum,neapolitanum,italiano,,,false,products/perejil_italiano.png,2,2,2,2,2,2,2,2,2,2,2,2
+pina,pina,Ananas comosus,,,,,true,products/pina.png,2,2,2,3,3,3,1,1,1,2,2,1
+pitahaya,pitahaya,Selenicereus undatus,,,,,false,products/pitahaya.png,0,0,0,0,2,3,3,3,3,2,1,0
+platano_maduro,platano,Musa balbisiana,,maduro,,Plátano versátil consumido maduro o verde,false,products/platano_maduro.png,1,1,2,3,3,3,3,2,2,2,1,1
+platano_verde,platano,Musa balbisiana,,verde,,,true,products/platano_verde.png,1,1,2,3,3,3,2,2,2,2,1,1
+puerro,puerro,Allium ampeloprasum,porrum,,,,false,products/puerro.png,2,2,2,2,3,3,2,2,2,3,3,2
+rabano_blanco,rabano,Raphanus sativus,,blanco,,,false,products/rabano_blanco.png,2,2,3,3,3,3,2,2,3,3,3,2
+rabano_rabanito,rabano,Raphanus sativus,,rabanito,,,false,products/rabano_rabanito.png,2,2,3,3,3,3,2,2,3,3,3,2
+remolacha,remolacha,Beta vulgari,,,,,true,products/remolacha.png,1,1,2,3,3,3,3,2,2,2,1,1
+repollo_morado,repollo,Brassica oleracea,capita f. rubra,morado,,,false,products/repollo_morado.png,1,1,1,2,3,3,3,2,2,3,2,2
+repollo_verde,repollo,Brassica oleracea,capita,verde,,,true,products/repollo_verde.png,1,1,1,2,3,3,3,2,2,3,2,2
+romero,romero,Salvia rosmarinus,,,,,false,products/romero.png,2,2,2,2,2,2,2,2,2,2,2,2
+ruda,ruda,Ruda graveolens,,,,,false,products/ruda.png,2,2,2,2,2,2,2,2,2,2,2,2
+sabila,sabila,Aloe vera,,,,,false,products/sabila.png,2,2,2,2,2,2,2,2,2,2,2,2
+salvia,salvia,Salvia officinalis,,,,,false,products/salvia.png,2,2,2,2,2,2,2,2,2,2,2,2
+sandia,sandia,Citrullus lanatus,,,,,true,products/sandia.png,2,3,3,3,3,2,2,2,2,2,1,1
+tacaco,tacaco,Sechium tacaco,,,,,false,products/tacaco.png,2,2,2,1,1,1,1,3,3,3,3,3
+tamarindo,tamarindo,Tamarindus indica,,,,,false,products/tamarindo.png,2,3,3,2,2,2,2,2,2,1,1,1
+tiquisque,tiquisque,Xanthosoma sagittifolium,Schott,blanco,,,true,products/tiquisque.png,2,3,3,3,3,3,2,1,1,1,1,2
+tiquisque_lila,tiquisque,Xanthosoma sagittifolium,Schott,lila,,,true,products/tiquisque.png,2,3,3,3,3,3,2,1,1,1,1,2
+tomate,tomate,Solanum lycopersicum,,,,Fruto usado como base en salsas y ensaladas,true,products/tomate.png,1,2,3,3,3,3,1,1,3,3,1,1
+tomate_cherry,tomate,Solanum lycopersicum,cerasiforme,cherry,,,false,products/tomate_cherry.png,1,2,3,3,3,3,1,1,3,3,1,1
+tomate_pera,tomate,Lycopersicon esculentum,,pera,,,false,products/tomate_pera.png,1,2,3,3,3,3,1,1,3,3,1,1
+tomate_verde_mexicano,tomate,Physalis ixocarpa,,verde mexicano,,,false,products/tomate_verde_mexicano.png,1,2,3,3,3,3,1,1,3,3,1,1
+tomillo,tomillo,Thymus vulgaris,,,,,false,products/tomillo.png,2,2,2,2,2,2,2,2,2,2,2,2
+toronja,toronja,Citrus × paradisi,,,grape fruit toronja,,false,products/toronja.png,1,2,3,3,3,3,2,1,1,1,1,1
+uchuva,uchuva,Physalis peruviana,,,,,false,products/uchuva.png,1,3,3,3,2,1,1,3,3,3,3,2
+uva_roja,uva,Vitis vinifera ,,roja,,,false,products/uva_roja.png,1,3,3,3,2,1,1,3,3,3,3,2
+uva_verde,uva,Vitis vinifera ,,verde,,,false,products/uva_verde.png,1,3,3,3,2,1,1,3,3,3,3,2
+vainica,vainica,Phaseolus vulgaris,in situ,tierna,,Vainas verdes tiernas utilizadas en guarniciones,true,products/vainica.png,1,1,2,3,2,2,3,2,2,2,2,2
+yuca,yuca,Manihot esculenta,,,,,true,products/yuca.png,1,3,3,3,2,2,1,1,2,3,3,2
+zacatelimon,zacatelimon,Cymbopogon citratus,,,,,false,products/zacatelimon.png,2,2,2,2,2,2,2,2,2,2,2,2
+zanahoria,zanahoria,Daucus carota,,,,,true,products/zanahoria.png,2,3,2,2,3,2,1,1,2,3,3,3
+zapallo,zapallo,Cucurbita moschata,,,,,true,products/zapallo.png,1,1,1,3,3,2,3,3,3,3,2,1
+zapallo_esmeralda,zapallo,Cucurbita moschata,,esmeralda,,,false,products/zapallo_esmeralda.png,1,1,1,3,3,2,3,3,3,3,2,1
+zucchini,zucchini,Cucurbita pepo,,,calabacín,,true,products/zucchini.png,1,1,1,3,3,2,3,3,3,3,2,1
+zucchini_escalopin_colores,zucchini,Cucurbita pepo,sunburst,escalopín de colores,,,false,products/zucchini_escalopin_colores.png,1,1,1,3,3,2,3,3,3,3,2,1

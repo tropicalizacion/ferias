@@ -1,17 +1,73 @@
-<h1>Precios de los productos según recomendación del CNP</h1>
+{% extends 'base.html' %}
 
-<h2>Precios recomendados de la semana</h2>
+{% load static %}
 
-<ul>
-    {% for product in this_week_prices %}
-        <li>{{ product.variety|capfirst }}: {{ product.price }} CRC / {{ product.unit }}</li>
-    {% endfor %}
-</ul>
+{% block page_title %} Precios de referencia de productos de la feria del agricultor {% endblock %}
 
-<h2>Datos históricos</h2>
+{% block bg-navbar %} background-rojo {% endblock %}
 
-Elegir producto(s): (menú)
+{% block main %}
 
-Gráfica de precios de los productos seleccionados semanalmente en los últimos años.
+<!-- Hero -->
+<div class="px-4 pt-3 pb-5 text-center background-rojo">
+    <div class="card col-lg-8 mx-auto bg-transparent border-0">
+        <h1 class="display-3 my-5 text-white hero-deferia">Precios de referencia de las ferias del agricultor</h1>
+        <h3 class="title-deferia text-white">Este es un registro histórico de los precios de referencia publicados por el Consejo Nacional de Producción de forma semanal desde el año 2021.</h3>
+    </div>
+</div>
+
+<!-- Lista de los productos -->
+<div class="container mt-5">
+    <div class="d-flex justify-content-center">
+        <div class="col-lg-6 text-center">
+            <h1 class="display-3 hero-deferia verde">Gráfica de precios</h1>
+            <p class="lead"></p>
+            <p>Cada semana, el Consejo Nacional de Producción (CNP) publica una lista de precios recomendados para una selección de productos en las ferias del agricultor. Tenemos datos desde el 2021, y aquí puede consultar su evolución histórica.</p>
+        </div>
+    </div>
+
+</div>
+
+<div class="container">
+
+    <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+        Seleccionar productos
+    </a>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Seleccionar productos</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div>
+                Seleccione los productos para comparar sus precios.
+            </div>
+
+            <br>
+            <!-- TODO: casilla para seleccionar todos (¿queremos hacer eso?), es más importante de-seleccionar. -->
+            <br>
+
+            {% for variety in varieties %}
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="{{ variety.variety_id }}" id="{{ variety.variety_id }}">
+                <label class="form-check-label" for="{{ variety.variety_id }}">
+                    {{ variety.product_url.common_name|capfirst }}
+                    {% if variety.common_name_variety %}
+                    {{ variety.common_name_variety }}
+                    {% endif %}
+                </label>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+
+<!-- Tabla de precios -->
 
 
+
+<!-- Opciones de descarga de datos -->
+
+
+{% endblock %}

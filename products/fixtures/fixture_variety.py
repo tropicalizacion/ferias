@@ -8,16 +8,17 @@ import pandas
 
 # leer csv y quitar todas las filas que no tenga un variety_id
 table = pandas.read_csv("products_variety.csv")
-table = table[table["variety_id"].notnull()]
+table.rename(columns={"variety_id":"pk"}, inplace=True)
+table = table[table["pk"].notnull()]
 
 # dividir el dataframe en dos, uno para los fields del JSON...
-table_fields = table.drop(columns=["variety_id"])
+table_fields = table.drop(columns=["pk"])
 table_fields = table_fields.transpose()
 
 # ... y otro que contiene solo el model y el variety_id.
 # insertar "model":"products.variety" para cada producto
 table.insert(0, "model", ["products.variety" for x in range(table.shape[0])], True)
-table = table[["model", "variety_id"]]
+table = table[["model", "pk"]]
 
 # unir ambos dataframe para crear uno con tres columnas: model, variety_id y fields
 table["fields"] = [table_fields[i].to_dict() for i in range(table.shape[0])]

@@ -139,7 +139,7 @@ class Price(models.Model):
         ("parafinada", "Parafinada"),
     ]
 
-    price_id = models.AutoField(primary_key=True)
+    price_id = models.CharField(max_length=127, primary_key=True)
     variety = models.ForeignKey(Variety, on_delete=models.SET_NULL, null=True)
     unit = models.CharField(choices=UNIT_CHOICES, max_length=12)
     price = models.IntegerField()
@@ -157,6 +157,10 @@ class Price(models.Model):
     def save(self, *args, **kwargs):
         self.year = self.publication_date.isocalendar()[0]
         self.week = self.publication_date.isocalendar()[1]
+        variety = Price.objects.filter(variety=self.variety)
+        if variety.has_price is False:
+            variety.has_price = True
+            variety.save()
         super().save(*args, **kwargs)
 
     def __str__(self):
