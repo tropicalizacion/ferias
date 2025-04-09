@@ -109,24 +109,7 @@
         <span class="small"><a href="mailto:fabian.abarca@ucr.ac.cr" target="_blank">fabian.abarca@ucr.ac.cr</a></span>
     </p>
 
-    <h4><i class="fa-solid fa-star text-warning"></i> Estudiantes de TCU</h4>
-
-    <dl>
-        {% for student in students %}
-        <dt><strong>{{ student.name }} {{ student.last_name }}</strong> <br> <em>{{ student.career }}</em></dt>
-        <dd>{{ student.work }}</dd>
-        {% endfor %}
-    </dl>
-
-    <h4>Por la Escuela de Ingeniería Eléctrica</h4>
-
-    <ul>
-        <li><strong>José David Rojas</strong>, director Escuela de Ingeniería Eléctrica</li>
-        <li><strong>Helber Meneses</strong>, coordinador TC-691 "Tropicalización de la tecnología"</li>
-    </ul>
-
-
-    <h4>Por FAO Costa Rica</h4>
+    <h4>Por la Organización de las Naciones Unidas para la Alimentación y la Agricultura (FAO Costa Rica / Chile)</h4>
 
     <ul>
         <li><strong>João Intini</strong>, Oficial de Políticas y Sistemas Alimentarios de la FAO para América Latina y el Caribe</li>
@@ -148,10 +131,18 @@
         <li><strong>Melissa Jensen</strong>, profesora</li>
     </ul>
 
+    <h4><i class="fa-solid fa-star text-warning"></i> Estudiantes de TCU</h4>
+
+    <dl>
+        {% for student in students %}
+        <dt><strong>{{ student.name }} {{ student.last_name }}</strong> <br> <em>{{ student.career }}</em></dt>
+        <dd>{{ student.work }}</dd>
+        {% endfor %}
+    </dl>
 
     <h4>Amigas y amigos del TCU</h4>
 
-    <p>¡Gracias a las siguientes personas que nos ayudaron a financiar el sitio web al principio!</p>
+    <p>¡Gracias a las siguientes personas que nos ayudaron a financiar el sitio web en sus inicios y nos apoyaron de varias formas!</p>
 
     <ul>
         <li>Tamires Santana y Gustavo Núñez</li>
