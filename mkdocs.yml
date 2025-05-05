@@ -3,7 +3,7 @@ site_name: Proyecto deferia.cr
 nav:
     - Inicio: index.md
     - Identidad visual: identidad.md
-    - Sobre: sobre.md
+    - Sobre el proyecto: sobre.md
 
 extra_css:
   - stylesheets/extra.css
@@ -13,6 +13,8 @@ theme:
   language: es
   palette:
     scheme: feria
+  font:
+    text: Nunito Sans
   logo: assets/logos/logo_blanco.svg
   favicon: assets/logos/logo_rojo.svg
   features:

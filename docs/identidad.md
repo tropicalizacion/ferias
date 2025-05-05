@@ -1,18 +1,28 @@
-# Diseño de la identidad visual
+# Identidad visual
+
+La identidad de De Feria está definida por varios elementos:
+
+- El nombre
+- El logo
+- La tipografía
+- La paleta de colores
+- Íconos de los productos
 
 ## Nombre
 
-"De feria" es una alusión a frases comunes, como:
+"De feria" es una alusión a frases comunes como:
 
-- "¡Vamos de feria!"
-- "Frescura, variedad y precios de feria"
-- "De feria": de gratis, extra
-- "Tras de feria": adicionalmente, para rematar, tras de todo
+- "¡Vamos *de feria*!"
+- "Frescura, variedad y precios *de feria*"
+- "Este jocote es d*e feria*": de gratis, extra
+- "Y tras *de feria*": adicionalmente, para rematar, tras de todo
 
-Los nombres utilizados en el proyecto son:
+La estilización de los nombres utilizados en el proyecto son, según el medio donde son usados:
 
-- de feria / deferia / De Feria / DeFeria 
-- deferia.cr (URL del sitio web)
+- de feria / deferia / **De Feria** / DeFeria 
+- **deferia.cr** (URL del sitio web, usuario de Instagram y TikTok)
+
+(Los preferidos están en negrita).
 
 ## Logo
 
@@ -25,12 +35,19 @@ Variedades de color
 <img src="../assets/logos/logo_amarillo.svg" width="70px">&nbsp;&nbsp;
 <img src="../assets/logos/logo_negro.svg" width="70px">&nbsp;&nbsp;
 
+[:material-download: Descargar logos (.zip)](../assets/logos/logos_deferia.zip){ .md-button .md-button--primary }
+
 ## Tipografía
 
 La identidad visual, incluyendo el sitio web, utiliza dos fuentes tipográficas:
 
-- Nunito Sans (disponible en [Google Fonts](https://fonts.google.com/specimen/Nunito+Sans)): sans serif (palo seco) para textos y el logo.
-- Petrona (disponible en [Google Fonts](https://fonts.google.com/specimen/Petrona)): serifa para títulos.
+- **Nunito Sans** ([Google Fonts](https://fonts.google.com/specimen/Nunito+Sans)): sans serif (palo seco) para textos y el logo.
+
+> **Un jugoso zumo de piña y kiwi bien frío es exquisito y no lleva alcohol**
+
+- **Petrona** ([Google Fonts](https://fonts.google.com/specimen/Petrona)): serifa para títulos.
+
+> <span class="petrona">Un jugoso zumo de piña y kiwi bien frío es exquisito y no lleva alcohol</span>
 
 ## Paleta de colores
 
@@ -47,9 +64,11 @@ Paleta seleccionada para reflejar la riqueza visual de las ferias, con colores e
 | Rosado   | F29196 | 242, 145, 150 | :material-circle:{ .rosado }   |
 | Negro    | 000000 | 0, 0, 0       | :material-circle:{ .negro }    |
 
-## Elementos gráficos
+## Íconos
 
-Para complementar la identidad visual, fueron diseñados una inmensa cantidad de íconos para representar los productos de la feria en nuestra base de datos.
+Para complementar la identidad visual, fueron diseñados una gran cantidad de íconos para representar los productos de la feria en nuestra base de datos.
+
+[:material-download: Descargar íconos (.zip)](../assets/icons/iconos_deferia.zip){ .md-button .md-button--primary }
 
 <img src="../assets/icons/acelga.svg" width="60px" alt="Acelga">&nbsp;&nbsp;
 <img src="../assets/icons/aguacate.svg" width="60px" alt="Aguacate">&nbsp;&nbsp;
