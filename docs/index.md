@@ -1,7 +1,5 @@
 # La feria es el lugar de la variedad, la frescura y los buenos precios
 
-<img src="../assets/logos/logo_rojo.svg" width="300px">
-
 Un proyecto de promoción de las ferias del agricultor de Costa Rica.
 
 - :material-web: Sitio web | [deferia.cr](https://deferia.cr/)
