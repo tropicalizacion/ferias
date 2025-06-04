@@ -1,7 +1,7 @@
 # Mapa del sitio
 
 ```mermaid
-graph TD;
+flowchart TD
     inicio(Inicio)
     sobre(Sobre el proyecto)
     sobre_ferias(Sobre las ferias)
@@ -20,7 +20,7 @@ graph TD;
     revisiones_feria(Cada feria)
     revisiones_productos(Todos los productos)
     revisiones_producto(Cada producto)
-    
+
     inicio --> sobre
     inicio --> ferias
     inicio --> productos
@@ -179,7 +179,6 @@ Formulario para ingreso a la cuenta.
 app: `website`
 
 Salir del sitio (lleva al formulario de ingreso con un mensaje).
-
 
 ## Primer lanzamiento
 
