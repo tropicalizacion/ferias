@@ -12,12 +12,13 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 from decouple import config, Csv
+import sys
 import os
 import platform
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -30,23 +31,22 @@ DEBUG = config("DEBUG", cast=bool)
 
 ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv())
 
-
 # Application definition
 
 INSTALLED_APPS = [
-    "marketplaces.apps.MarketplacesConfig",
-    "products.apps.ProductsConfig",
-    "content.apps.ContentConfig",
-    "crowdsourcing.apps.CrowdsourcingConfig",
-    "api.apps.ApiConfig",
-    "website.apps.WebsiteConfig",
-    "users.apps.UsersConfig",
-    "blog.apps.BlogConfig",
-    "feed.apps.FeedConfig",
+    "apps.marketplaces.apps.MarketplacesConfig",
+    "apps.products.apps.ProductsConfig",
+    "apps.content.apps.ContentConfig",
+    "apps.crowdsourcing.apps.CrowdsourcingConfig",
+    "apps.api.apps.ApiConfig",
+    "apps.website.apps.WebsiteConfig",
+    "apps.users.apps.UsersConfig",
+    "apps.blog.apps.BlogConfig",
+    "apps.feed.apps.FeedConfig",
+    "apps.recipes.apps.RecipesConfig",
     "rest_framework",
     'rest_framework_gis',
     "drf_spectacular",
-    "recipes.apps.RecipesConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
