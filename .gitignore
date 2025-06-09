@@ -13,16 +13,7 @@ __pycache__/
 local_settings.py
 db.sqlite3-journal
 db.sqlite3
-marketplaces/migrations/
-products/migrations/
-users/migrations/
-crowdsourcing/migrations/
-website/migrations/
-blog/migrations/
-content/migrations/
-api/migrations/
-feed/migrations/
-recipes/migrations/
+migrations/
 __init__.py
 staticfiles/
 
