@@ -34,6 +34,19 @@ ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv())
 # Application definition
 
 INSTALLED_APPS = [
+    'wagtail.contrib.forms',
+    'wagtail.contrib.redirects',
+    'wagtail.embeds',
+    'wagtail.sites',
+    'wagtail.users',
+    'wagtail.snippets',
+    'wagtail.documents',
+    'wagtail.images',
+    'wagtail.search',
+    'wagtail.admin',
+    'wagtail',
+    'modelcluster',
+    'taggit',
     "apps.marketplaces.apps.MarketplacesConfig",
     "apps.products.apps.ProductsConfig",
     "apps.content.apps.ContentConfig",
@@ -69,6 +82,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django_htmx.middleware.HtmxMiddleware",
+    'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
 
 ROOT_URLCONF = "ferias.urls"
@@ -95,12 +109,16 @@ WSGI_APPLICATION = "ferias.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# Esto puede ser diferente para el resto pero no me funciona con la anterior version
 DATABASES = {
-    "default": {
-        "ENGINE": "django.contrib.gis.db.backends.postgis",
-        "NAME": config("DB_NAME"),
-        "USER": config("DB_USER"),
-    },
+    'default': {
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': config("DB_NAME"),
+        'USER': config("DB_USER"),
+        'PASSWORD': config("DB_PASSWORD"),
+        'HOST': config("DB_HOST", default='127.0.0.1'),
+        'PORT': config("DB_PORT", default='5432'),
+    }
 }
 
 if not (platform.platform() == "Linux" or platform.machine() == "x86_64"):
