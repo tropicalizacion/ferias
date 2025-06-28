@@ -12,7 +12,8 @@
 <div class="px-4 pt-3 pb-5 text-center background-rojo">
     <div class="card col-lg-8 mx-auto bg-transparent border-0">
         <h1 class="display-3 my-5 text-white hero-deferia">Precios de referencia de las ferias del agricultor</h1>
-        <h3 class="title-deferia text-white">Este es un registro histórico de los precios de referencia publicados por el Consejo Nacional de Producción de forma semanal desde el año 2021.</h3>
+        <h3 class="title-deferia text-white">Este es un registro histórico de los precios de referencia publicados por
+            el Consejo Nacional de Producción de forma semanal desde el año 2021.</h3>
     </div>
 </div>
 
@@ -22,15 +23,32 @@
         <div class="col-lg-6 text-center">
             <h1 class="display-3 hero-deferia verde">Gráfica de precios</h1>
             <p class="lead"></p>
-            <p>Cada semana, el Consejo Nacional de Producción (CNP) publica una lista de precios recomendados para una selección de productos en las ferias del agricultor. Tenemos datos desde el 2021, y aquí puede consultar su evolución histórica.</p>
+            <p>Cada semana, el Consejo Nacional de Producción (CNP) publica una lista de precios recomendados para una
+                selección de productos en las ferias del agricultor. Tenemos datos desde el 2021, y aquí puede consultar
+                su evolución histórica.</p>
         </div>
     </div>
 
 </div>
 
+<div class="container mt-4 text-center">
+    <div class="btn-group" role="group" aria-label="Filtro de tiempo">
+        <button type="button" class="btn btn-outline-secondary active" data-range="all">Todos los tiempos</button>
+        <button type="button" class="btn btn-outline-secondary" data-range="year">Último año</button>
+        <button type="button" class="btn btn-outline-secondary" data-range="3months">Últimos 3 meses</button>
+        <button type="button" class="btn btn-outline-secondary" data-range="current">Mes actual</button>
+    </div>
+</div>
+
+<div class="container my-4">
+    <canvas id="priceChart" width="800" height="400" style="display:block; border:1px solid #ccc"></canvas>
+</div>
+
+
 <div class="container">
 
-    <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+    <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+        aria-controls="offcanvasExample">
         Seleccionar productos
     </a>
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
@@ -49,7 +67,8 @@
 
             {% for variety in varieties %}
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="{{ variety.variety_id }}" id="{{ variety.variety_id }}">
+                <input class="form-check-input" type="checkbox" value="{{ variety.variety_id }}"
+                    id="{{ variety.variety_id }}">
                 <label class="form-check-label" for="{{ variety.variety_id }}">
                     {{ variety.product_url.common_name|capfirst }}
                     {% if variety.common_name_variety %}
@@ -64,10 +83,133 @@
 </div>
 
 <!-- Tabla de precios -->
-
-
+<div class="container my-4">
+    <canvas id="priceChart" height="100"></canvas>
+</div>
 
 <!-- Opciones de descarga de datos -->
+ <div class="container mt-4 text-center">
+  <div class="btn-group" role="group" aria-label="Filtro de tiempo">
+    <!-- tus botones de rango… -->
+  </div>
+  <!-- Botón de descarga -->
+  <a id="downloadChart" class="btn btn-outline-primary ms-2"
+     href="" download="grafico_precios.png">
+    Descargar gráfico
+  </a>
+</div>
 
+{% block extra_js %}
+<!-- 1) Chart.js + adaptador -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/date-fns@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3"></script>
+
+<!-- 2) Código de la gráfica y descarga -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // —————————————————————————————
+  // 1) Estado global
+  let currentRange = 'all';
+  let rawSeries = [];
+
+  // 2) Inicializar Chart.js
+  const ctx = document.getElementById('priceChart').getContext('2d');
+  const priceChart = new Chart(ctx, {
+    type: 'line',
+    data: { datasets: [] },
+    options: {
+      scales: {
+        x: { 
+          type: 'time', 
+          time: { unit: 'week' }, 
+          title: { display: true, text: 'Fecha' } 
+        },
+        y: { title: { display: true, text: 'Precio (₡)' } }
+      },
+      plugins: { legend: { display: true, position: 'bottom' } }
+    }
+  });
+
+  // 3) Cálculo de fecha de inicio según rango
+  function getStartDate() {
+    const now = new Date();
+    switch (currentRange) {
+      case 'year':    return new Date(now.getFullYear()-1, now.getMonth(), now.getDate());
+      case '3months': return new Date(now.getFullYear(), now.getMonth()-3, now.getDate());
+      case 'current': return new Date(now.getFullYear(), now.getMonth(), 1);
+      default:        return null;
+    }
+  }
+
+  // 4) Función que pide datos y dibuja
+  async function updateChart() {
+    const ids = Array.from(
+      document.querySelectorAll('.offcanvas .form-check-input:checked'),
+      ch => ch.value
+    );
+
+    if (!ids.length) {
+      priceChart.data.datasets = [];
+      priceChart.update();
+      return;
+    }
+
+    // 4.1) Fetch de tus datos
+    const resp = await fetch(`{% url 'prices_data' %}?ids=${ids.join(',')}`);
+    const { series } = await resp.json();
+    rawSeries = series;
+
+    // 4.2) Filtrar según rango y montar datasets
+    const start = getStartDate();
+    priceChart.data.datasets = rawSeries.map((serie,i) => ({
+      label: serie.label,
+      data: start
+        ? serie.data.filter(pt => new Date(pt.x) >= start)
+        : serie.data,
+      fill: false,
+      borderWidth: 2,
+      borderColor: `hsl(${(i*60)%360},70%,50%)`
+    }));
+
+    priceChart.update();
+  }
+
+  // 5) Bind de eventos
+  // — Offcanvas checkboxes
+  document.querySelectorAll('.offcanvas .form-check-input')
+    .forEach(ch => ch.addEventListener('change', updateChart));
+
+  // — Botones de rango
+  document.querySelectorAll('.btn-group [data-range]')
+    .forEach(btn => btn.addEventListener('click', () => {
+      document.querySelectorAll('.btn-group button')
+        .forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentRange = btn.dataset.range;
+      updateChart();
+    }));
+
+  // 6) Descarga “en el momento”
+  document.getElementById('downloadChart')
+    .addEventListener('click', () => {
+      // Genera la imagen exacta que ves
+      const url = priceChart.toBase64Image();
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'grafico_precios.png';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    });
+
+  // 7) Primera carga
+  updateChart();
+});
+</script>
+
+
+
+{% endblock %}
 
 {% endblock %}

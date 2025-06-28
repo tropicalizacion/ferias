@@ -2,7 +2,9 @@ from django.shortcuts import render, get_object_or_404
 from .models import Product, Variety, Price
 from website.models import Text
 import datetime
-
+from .models import Price, Variety
+from django.views.decorators.http import require_GET
+from django.http import JsonResponse
 # Create your views here.
 
 
@@ -66,3 +68,32 @@ def prices(request):
         "varieties": varieties,
     }
     return render(request, "prices.html", context)
+
+@require_GET
+def prices_data(request):
+    ids = request.GET.get('ids', '')
+    # ids esperados: "var1,var2,var3"
+    variety_ids = [i for i in ids.split(',') if i]
+    qs = (
+        Price.objects
+        .filter(variety__variety_id__in=variety_ids)
+        .order_by('publication_date')
+        .select_related('variety__product_url')
+    )
+
+    # Construir estructura { var_id: { label, data:[ {x:fecha, y:precio}, … ] } }
+    data = {}
+    for p in qs:
+        vid = p.variety.variety_id
+        label = p.variety.product_url.common_name
+        if p.variety.common_name_variety:
+            label += f' {p.variety.common_name_variety}'
+        if vid not in data:
+            data[vid] = {'label': label, 'data': []}
+        data[vid]['data'].append({
+            'x': p.publication_date.isoformat(),
+            'y': p.price
+        })
+    # Convertir a lista
+    series = list(data.values())
+    return JsonResponse({'series': series})
