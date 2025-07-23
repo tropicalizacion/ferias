@@ -1,0 +1,34 @@
+services:
+
+  web:
+    build: .
+    container_name: ferias_django_app
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    depends_on:
+      - db: 
+        condition: service_healthy
+        restart: true
+    env_file:
+      - .env
+
+  # Debido al funcionamiento de POSTGRES, es necesario tener una contraseña.
+  # https://hub.docker.com/_/postgres
+
+  db:
+    image: postgis/postgis:17-3.4
+    container_name: postgres_db
+    volumes:
+      - postgres_db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}" ]
+      interval: 10s
+      retries: 5
+      start_period: 30s
+      timeout: 10s
