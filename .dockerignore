@@ -1,0 +1,8 @@
+.git
+.gitignore
+.github
+Dockerfile
+.dockerignore
+__pycache__
+.env
+feriasenv
