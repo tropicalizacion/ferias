@@ -1,5 +1,4 @@
 services:
-
   web:
     build: .
     container_name: ferias_django_app
@@ -8,7 +7,7 @@ services:
     volumes:
       - .:/app
     depends_on:
-      - db: 
+      db:
         condition: service_healthy
         restart: true
     env_file:
@@ -25,10 +24,15 @@ services:
     environment:
       POSTGRES_USER: ${DB_USER}
       POSTGRES_DB: ${DB_NAME}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+
     healthcheck:
       test: [ "CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}" ]
       interval: 10s
       retries: 5
       start_period: 30s
       timeout: 10s
+
+volumes:
+  postgres_db:
