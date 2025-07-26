@@ -5,6 +5,7 @@ import datetime
 from .models import Price, Variety
 from django.views.decorators.http import require_GET
 from django.http import JsonResponse
+from datetime import timedelta
 # Create your views here.
 
 
@@ -51,16 +52,18 @@ def product(request, product_url):
 
     return render(request, "product.html", context)
 
-
 def prices(request):
     varieties = (
-        Variety.objects.filter(has_price=True).select_related("product_url").all()
+        Variety.objects.filter(has_price=True)
+        .select_related("product_url")
+        .all()
     )
-    print(varieties)
     prices = Price.objects.all()
-    this_year = datetime.datetime.now().isocalendar()[0]
-    this_week = datetime.datetime.now().isocalendar()[1]
-    this_week_prices = prices.filter(year=this_year, week=this_week)
+
+    today = datetime.date.today()
+    one_year_ago = today - timedelta(days=365)
+    
+    this_week_prices = prices.filter(publication_date__gte=one_year_ago)
 
     context = {
         "prices": prices,
@@ -72,7 +75,8 @@ def prices(request):
 @require_GET
 def prices_data(request):
     ids = request.GET.get('ids', '')
-    # ids esperados: "var1,var2,var3"
+    range_type = request.GET.get('range', '')  # nuevo parámetro, e.g. 'last_year'
+
     variety_ids = [i for i in ids.split(',') if i]
     qs = (
         Price.objects
@@ -81,7 +85,10 @@ def prices_data(request):
         .select_related('variety__product_url')
     )
 
-    # Construir estructura { var_id: { label, data:[ {x:fecha, y:precio}, … ] } }
+    if range_type == 'last_year':
+        one_year_ago = datetime.date.today() - timedelta(days=365)
+        qs = qs.filter(publication_date__gte=one_year_ago)
+
     data = {}
     for p in qs:
         vid = p.variety.variety_id
@@ -94,6 +101,6 @@ def prices_data(request):
             'x': p.publication_date.isoformat(),
             'y': p.price
         })
-    # Convertir a lista
+
     series = list(data.values())
     return JsonResponse({'series': series})
