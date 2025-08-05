@@ -43,16 +43,18 @@ Para iniciar el contenedor de desarrollo:
 docker-compose up --build
 ```
 
-Este comando compilará la imagen (si es necesario) y levantará los servicios definidos en el `docker-compose.yml`.
+Este comando compilará la imagen (si es necesario) y levantará los servicios definidos en el `docker-compose.yml`. Este comando puede tardar más de 2 minutos en ejecutarse.
 
 ## Migraciones de la Base de Datos
 
-Una vez que el contenedor esté corriendo correctamente, en una terminal, ejecuta el script necesario para las migraciones:
+Una vez que el contenedor esté corriendo correctamente, en una terminal nueva, ejecutar el script necesario para las migraciones de la base de datos:
 
 ```bash
 ./scripts/dmigrations.sh
 ```
 
+
+Disclaimer: En primeras versiones se pueden mostrar
 ## Acceso a la Aplicación
 
 Una vez que todo esté en funcionamiento, accede al navegador con la siguiente dirección, que por defecto es el puerto 8000:
