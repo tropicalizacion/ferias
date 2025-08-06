@@ -23,7 +23,8 @@ RUN apt-get update && \
   && apt-get clean && \
   rm -rf /var/lib/apt/lists/*
 
-COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+# Install uv using pip instead of copying from ghcr.io
+RUN pip install uv
 
 COPY ./requirements.txt .
 RUN uv pip install -r ./requirements.txt --system

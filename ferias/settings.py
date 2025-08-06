@@ -18,7 +18,7 @@ import platform
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
+sys.path.insert(0, os.path.join(BASE_DIR, "apps"))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     "apps.feed.apps.FeedConfig",
     "apps.recipes.apps.RecipesConfig",
     "rest_framework",
-    'rest_framework_gis',
+    "rest_framework_gis",
     "drf_spectacular",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -106,7 +106,7 @@ DATABASES = {
     },
 }
 
-if not (platform.platform() == "Linux" or platform.machine() == "x86_64"):
+if platform.system() == "Darwin":
     GDAL_LIBRARY_PATH = config("GDAL_LIBRARY_PATH")
     GEOS_LIBRARY_PATH = config("GEOS_LIBRARY_PATH")
 

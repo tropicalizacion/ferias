@@ -14,7 +14,7 @@ docker exec ferias_django_app python manage.py migrate
 docker exec ferias_django_app python manage.py loaddata marketplaces
 docker exec ferias_django_app python manage.py loaddata products
 docker exec ferias_django_app python manage.py loaddata website
-docker exec ferias_django_app python manage.py loaddata crowdsourcing
-docker exec ferias_django_app python manage.py loaddata users
-docker exec ferias_django_app python manage.py loaddata feed
-docker exec ferias_django_app python manage.py loaddata content
+# docker exec ferias_django_app python manage.py loaddata crowdsourcing
+# docker exec ferias_django_app python manage.py loaddata users
+# docker exec ferias_django_app python manage.py loaddata feed
+# docker exec ferias_django_app python manage.py loaddata content
