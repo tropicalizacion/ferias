@@ -1,9 +1,9 @@
 # Habilitar un ambiente de desarrollo con Docker
 
-Este documento describe cómo configurar y ejecutar un entorno de desarrollo para deferia.cr con Django utilizando Docker.
+Este documento describe cómo configurar y ejecutar un entorno de desarrollo para `deferia.cr` utilizando Docker.
 
-- Usuario: `camote`
-- Contraseña: `zanahoria`
+> [!WARNING]
+> Es ideal no saltarse pasos de esta guía, y de ser necesario, solicitar ayuda.
 
 ## Requisitos previos
 
@@ -11,12 +11,14 @@ Es necesario tener instalados los siguientes componentes:
 
 - [Python 3](https://www.python.org/)
 - [Docker](https://www.docker.com/)
+- [Docker compose](https://docs.docker.com/compose/install/)
 
-**Opcional pero útil**
 
-- [Docker Desktop](https://docs.docker.com/desktop/)
+> [!TIP]
+> Instalar [Docker Desktop](https://docs.docker.com/desktop/), incluye el engine de Docker y Docker Compose. 
 
-## Configuración inicial
+
+## Pasos a seguir previo a iniciar el contenedor
 
 ### 1. Clonar el repositorio
 
@@ -32,7 +34,7 @@ Antes de iniciar el entorno, es necesario crear un archivo `.env` en la raíz de
 > El archivo `.env` **no debe subirse** al repositorio. Solicite el contenido a otro colaborador del proyecto.
 
 > [!NOTE]
-> El archivo `.env.example` tiene los campos que deben ser llenados.
+> El archivo [`.env.example`](.env.example) tiene los campos que deben ser llenados.
 
 ### 3. Dar permisos a los _scripts_
 
@@ -42,17 +44,15 @@ Asegurarse que los _scripts_ sean ejecutables:
 chmod +x ./scripts/*.sh
 ```
 
-## Levantar el entorno de desarrollo
+## Levantar el contenedor con el entorno de desarrollo
 
-Instalar `docker-compose`.
-
-Para iniciar el contenedor de desarrollo:
+Desde una terminal en la raíz del proyecto, levante el contenedor con el siguiente comando:
 
 ```bash
 docker-compose up --build
 ```
 
-Este comando compilará la imagen (si es necesario) y levantará los servicios definidos en el `docker-compose.yml`. Este comando puede tardar varios minutos en ejecutarse.
+Este comando compilará la imagen (si es necesario) y levantará los servicios definidos en el `docker-compose.yml`. Esto puede tardar varios minutos en ejecutarse.
 
 ## Migraciones de la base de datos
 
@@ -62,7 +62,8 @@ Una vez que el contenedor esté corriendo correctamente, en una terminal nueva, 
 ./scripts/dmigrations.sh
 ```
 
-Disclaimer: En primeras versiones se pueden mostrar
+> [!NOTE]
+> Es normal que se muestren varias advertencias durante este proceso
 
 ## Acceso a la aplicación
 
@@ -71,22 +72,6 @@ Una vez que todo esté en funcionamiento, acceda al navegador con la siguiente d
 ```
 http://localhost:8000/
 ```
-
-## Sobre el archivo `.env`
-
-Crear un nuevo archivo `.env` y agregar los siguientes campos siguiendo el formato de `.env.example`:
-
-- `SECRET_KEY`:
-- `DEBUG`:
-- `DB_NAME`:
-- `DB_USER`:
-- `POSTGRES_PASSWORD`:
-- `ALLOWED_HOSTS`:
-- `DB_HOST`:
-- `DB_PORT`:
-- `GDAL_LIBRARY_PATH`:
-- `GEOS_LIBRARY_PATH`:
-- `GOOGLE_MAPS_API_KEY`:
 
 ## Problemas comunes
 
