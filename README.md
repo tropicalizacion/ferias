@@ -32,5 +32,5 @@ Ferias es una plataforma integral que permite gestionar información detallada s
 
 Para quienes desean colaborar en el proyecto, es necesario primero recibir aprobación de [Fabián Abarca](https://github.com/fabianabarca). Una vez conseguida la aprobación, porfavor revisar los siguientes archivos para habilitar un ambiente de desarrollo:
 
-- [Habilitar un ambiente de desarrollo con Docker (recomendado)](HOWTO.md)
+- [Habilitar un ambiente de desarrollo con Docker (recomendado)](docs/HOWTO.md)
 - [Habilitar un ambiente de desarrollo de forma manual](docs/Manual_env.md)
