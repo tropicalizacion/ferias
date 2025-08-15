@@ -1,0 +1,36 @@
+name: deferia
+services:
+  web:
+    build: .
+    container_name: ferias_django_app
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    depends_on:
+      db:
+        condition: service_healthy
+        restart: true
+    env_file:
+      - .env
+
+  db:
+    image: postgis/postgis:17-3.4
+    container_name: postgres_db
+    volumes:
+      - postgres_db:/var/lib/postgresql/data
+      - ./scripts/extensions.sql:/docker-entrypoint-initdb.d/extensions.sql # Initialize extensions, this is run only once, the container has to put down and up again if needed to change
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}" ]
+      interval: 10s
+      retries: 5
+      start_period: 30s
+      timeout: 10s
+ 
+volumes:
+  postgres_db:

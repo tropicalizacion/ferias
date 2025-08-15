@@ -116,10 +116,13 @@ DATABASES = {
         "ENGINE": "django.contrib.gis.db.backends.postgis",
         "NAME": config("DB_NAME"),
         "USER": config("DB_USER"),
-    }
+        "PASSWORD": config("POSTGRES_PASSWORD"),
+        "HOST": config("DB_HOST"),
+        "PORT": config("DB_PORT"),
+    },
 }
 
-if not (platform.platform() == "Linux" or platform.machine() == "x86_64"):
+if platform.system() == "Darwin":
     GDAL_LIBRARY_PATH = config("GDAL_LIBRARY_PATH")
     GEOS_LIBRARY_PATH = config("GEOS_LIBRARY_PATH")
 

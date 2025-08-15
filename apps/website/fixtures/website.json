@@ -1,601 +1,586 @@
 [
-    {
-        "model": "website.announcement",
-        "pk": 1,
-        "fields": {
-            "title": "Ya comienza la página",
-            "content": "Estamos a pocos días de lanzar la página web con la información de más de 80 ferias del agricultor del país.",
-            "created": "2023-08-05T06:42:37.764Z",
-            "publish": "2023-08-05",
-            "until": "2023-08-09",
-            "marketplace": "zapote",
-            "author": 1,
-            "publisher": "Tropicalización de la tecnología",
-            "slug": "comienza-pagina-web"
-        }
-    },
-    {
-        "model": "website.text",
-        "pk": 2,
-        "fields": {
-            "page": "/",
-            "section": "hero",
-            "content": "La feria es el lugar de la variedad, la frescura y los buenos precios"
-        }
-    },
-    {
-        "model": "website.text",
-        "pk": 3,
-        "fields": {
-            "page": "/",
-            "section": "features_saludable",
-            "content": "La alimentación basada en productos frescos es la mejor dieta para nuestra salud y la feria es el mejor lugar para conseguir todo."
-        }
-    },
-    {
-        "model": "website.text",
-        "pk": 4,
-        "fields": {
-            "page": "/",
-            "section": "features_barato",
-            "content": "Estudio tras estudio demuestra lo que ya sabíamos: cuando compramos en la feria, compramos más barato."
-        }
-    },
-    {
-        "model": "website.text",
-        "pk": 5,
-        "fields": {
-            "page": "/",
-            "section": "features_nuestro",
-            "content": "La feria es de la comunidad y para la comunidad. Aquí encontramos a la gente que conocemos, vendiendo la cosecha de su trabajo."
-        }
-    },
-    {
-        "model": "website.text",
-        "pk": 6,
-        "fields": {
-            "page": "/",
-            "section": "buscador",
-            "content": "Aquí le ayudamos a buscar su feria entre las más de 90 que hay en el país."
-        }
-    },
-    {
-        "model": "website.text",
-        "pk": 7,
-        "fields": {
-            "page": "/ferias",
-            "section": "hero",
-            "content": "¡Hay más de 90 ferias en Costa Rica para visitar!"
-        }
-    },
-    {
-        "model": "website.text",
-        "pk": 8,
-        "fields": {
-            "page": "/ferias",
-            "section": "ubicacion",
-            "content": "Las ferias están en las siete provincias del país."
-        }
-    },
-    {
-        "model": "website.text",
-        "pk": 9,
-        "fields": {
-            "page": "/ferias",
-            "section": "numeros",
-            "content": "Un vistazo a las ferias: ubicación, días de operación, amenidades e infraestructura."
-        }
-    },
-    {
-        "model": "website.text",
-        "pk": 10,
-        "fields": {
-            "page": "/ferias",
-            "section": "buscador",
-            "content": "Aquí le ayudamos a buscar su feria entre las más de 90 que hay en el país."
-        }
-    },
-    {
-        "model": "website.text",
-        "pk": 11,
-        "fields": {
-            "page": "/ferias",
-            "section": "lista",
-            "content": "Todas las ferias registradas en el proyecto deferia.cr en orden alfabético."
-        }
-    },
-    {
-        "model": "website.text",
-        "pk": 12,
-        "fields": {
-            "page": "/ferias/feria",
-            "section": "servicios_titulo",
-            "content": "¡Aquí hay más para aprovechar la feria!"
-        }
-    },
-    {
-        "model": "website.text",
-        "pk": 13,
-        "fields": {
-            "page": "/ferias/feria",
-            "section": "servicios_descripcion",
-            "content": "Ya están las frutas y verduras que necesita, ¡pero hay más! Es mejor llevar más bolsas (reutilizables) para poder traer todo."
-        }
-    },
-    {
-        "model": "website.text",
-        "pk": 14,
-        "fields": {
-            "page": "/productos",
-            "section": "hero",
-            "content": "Tenemos una diversidad privilegiada de productos frescos para disfrutar"
-        }
-    },
-    {
-        "model": "website.text",
-        "pk": 15,
-        "fields": {
-            "page": "/productos",
-            "section": "hero_parentesis",
-            "content": "(Y la feria es el lugar para aprovecharlos)"
-        }
-    },
-    {
-        "model": "website.text",
-        "pk": 16,
-        "fields": {
-            "page": "/productos",
-            "section": "lista",
-            "content": "Hemos registrado más de 100 productos, clasificados en frutas, verduras, tubérculos y raíces, legumbres, y hierbas."
-        }
-    },
-    {
-        "model": "website.text",
-        "pk": 17,
-        "fields": {
-            "page": "/productos",
-            "section": "lista_descripcion",
-            "content": "En estas tablas puede ver la disponibilidad mes a mes y la recomendación de canasta básica mejorada. Dé click y encuentre más información de cada uno, ¡y también colabórenos con sus secretos de preparación y almacenamiento!"
-        }
-    },
-    {
-        "model": "website.text",
-        "pk": 18,
-        "fields": {
-            "page": "/sobre",
-            "section": "hero",
-            "content": "Quiénes somos"
-        }
-    },
-    {
-        "model": "website.text",
-        "pk": 19,
-        "fields": {
-            "page": "/sobre/ferias",
-            "section": "hero",
-            "content": "Las ferias del agricultor y los mercados libres: una alternativa para el desarrollo sostenible"
-        }
-    },
-    {
-        "model": "website.text",
-        "pk": 20,
-        "fields": {
-            "page": "/sobre/ferias",
-            "section": "consignas",
-            "content": "Las ferias están en las siete provincias del país."
-        }
-    },
-    {
-        "model": "website.text",
-        "pk": 21,
-        "fields": {
-            "page": "/sugerencias",
-            "section": "hero",
-            "content": "Usted puede ayudarnos a actualizar nuestros datos"
-        }
-    },
-    {
-        "model": "website.text",
-        "pk": 22,
-        "fields": {
-            "page": "/sugerencias",
-            "section": "hero_subtitulo",
-            "content": "Aquí puede aportar su información sobre ferias y productos para mantener el sitio actualizado. ¡Gracias por su colaboración!"
-        }
-    },
-    {
-        "model": "website.text",
-        "pk": 23,
-        "fields": {
-            "page": "/sugerencias",
-            "section": "sugerencias_ferias",
-            "content": "Para cada feria usted nos puede sugerir datos generales, corregir alguna información o darnos cualquier dato que guste compartir. ¡Elija una aquí!"
-        }
-    },
-    {
-        "model": "website.text",
-        "pk": 24,
-        "fields": {
-            "page": "/sugerencias",
-            "section": "sugerencias_productos",
-            "content": "Para cada producto usted nos puede sugerir nuevas variedades, métodos de preparación, métodos de almacenamiento, recetas, corregir alguna información o darnos cualquier dato que guste compartir. ¡Elija uno aquí!"
-        }
-    },
-    {
-        "model": "website.text",
-        "pk": 25,
-        "fields": {
-            "page": "/",
-            "section": "hero_desc",
-            "content": "¡Descubra aquí las ferias del agricultor de Costa Rica y sus productos!"
-        }
-    },
-    {
-        "model": "website.text",
-        "pk": 26,
-        "fields": {
-            "page": "/sobre",
-            "section": "hero_desc",
-            "content": "¡Somos gente que cree que la feria es buena para la economía, para la salud y para la comunidad!"
-        }
-    },
-    {
-        "model": "website.text",
-        "pk": 27,
-        "fields": {
-            "page": "/datos",
-            "section": "hero",
-            "content": "Nuestros datos están abiertos para usted, como las ferias y los mercados libres"
-        }
-    },
-    {
-        "model": "website.text",
-        "pk": 28,
-        "fields": {
-            "page": "/datos",
-            "section": "hero_desc",
-            "content": "Aquí puede encontrarlos"
-        }
-    },
-    {
-        "model": "website.student",
-        "pk": "1",
-        "fields": {
-            "name": "Katherine",
-            "last_name": "Mora Cruz",
-            "career": "Diseño Gráfico",
-            "work": "Investigación y propuesta de identidad visual",
-            "factor": 95
-        }
-    },
-    {
-        "model": "website.student",
-        "pk": "10",
-        "fields": {
-            "name": "Andrés",
-            "last_name": "Azofeifa García",
-            "career": "Computación e Informática",
-            "work": "Desarrollo del sitio web",
-            "factor": 90
-        }
-    },
-    {
-        "model": "website.student",
-        "pk": "11",
-        "fields": {
-            "name": "Sirlany",
-            "last_name": "Mora García",
-            "career": "Computación e Informática",
-            "work": "Desarrollo del sitio web",
-            "factor": 90
-        }
-    },
-    {
-        "model": "website.student",
-        "pk": "12",
-        "fields": {
-            "name": "Mike",
-            "last_name": "Mai Chen",
-            "career": "Ingeniería Eléctrica",
-            "work": "Desarrollo de esquema de base de datos para el sitio web",
-            "factor": 90
-        }
-    },
-    {
-        "model": "website.student",
-        "pk": "13",
-        "fields": {
-            "name": "Nathalia",
-            "last_name": "Mena Mejía",
-            "career": "Nutrición",
-            "work": "Investigación y desarrollo de textos y artículos en nutrición, métodos de preparación y almacenamiento",
-            "factor": 90
-        }
-    },
-    {
-        "model": "website.student",
-        "pk": "14",
-        "fields": {
-            "name": "María Gabriela",
-            "last_name": "Giusti Roa",
-            "career": "Comunicación Colectiva",
-            "work": "Investigación y desarrollo de materiales para redes sociales",
-            "factor": 90
-        }
-    },
-    {
-        "model": "website.student",
-        "pk": "15",
-        "fields": {
-            "name": "Andrea Paola",
-            "last_name": "Moya Valverde",
-            "career": "Filología Española",
-            "work": "Investigación bibliográfica, diseño del proyecto",
-            "factor": 88
-        }
-    },
-    {
-        "model": "website.student",
-        "pk": "16",
-        "fields": {
-            "name": "Noel Alberto",
-            "last_name": "Blandón Saborío",
-            "career": "Ingeniería Eléctrica",
-            "work": "Revisión y creación de datos para las ferias y los productos",
-            "factor": 85
-        }
-    },
-    {
-        "model": "website.student",
-        "pk": "17",
-        "fields": {
-            "name": "Brittanny",
-            "last_name": "Camacho Rodríguez",
-            "career": "Dirección de Empresas",
-            "work": "Gestión de aplicación de encuestas de satisfacción ",
-            "factor": 85
-        }
-    },
-    {
-        "model": "website.student",
-        "pk": "18",
-        "fields": {
-            "name": "Angie Monserrat",
-            "last_name": "Rodríguez Chacón",
-            "career": "Filología Española",
-            "work": "Investigación sobre etimologías de los distintos nombres dados a frutas y verduras, revisión de las direcciones de las ferias",
-            "factor": 85
-        }
-    },
-    {
-        "model": "website.student",
-        "pk": "19",
-        "fields": {
-            "name": "Balkis Coraima",
-            "last_name": "Díaz Torres",
-            "career": "Sociología",
-            "work": "Desarrollo y aplicación de herramienta de evaluación para las ferias",
-            "factor": 85
-        }
-    },
-    {
-        "model": "website.student",
-        "pk": "2",
-        "fields": {
-            "name": "Gabriel Alejandro",
-            "last_name": "Quirós Villalobos",
-            "career": "Dirección de Empresas",
-            "work": "Desarrollo y diseño de la línea gráfica, coordinación de la estrategia publicitaria, participaciones en sondeos e interpretación de datos",
-            "factor": 95
-        }
-    },
-    {
-        "model": "website.student",
-        "pk": "20",
-        "fields": {
-            "name": "Andrés",
-            "last_name": "Muñoz Castillo",
-            "career": "Dirección de Empresas",
-            "work": "Recopilación de materiales de referencia sobre las ferias",
-            "factor": 83
-        }
-    },
-    {
-        "model": "website.student",
-        "pk": "21",
-        "fields": {
-            "name": "Fabián Gerardo",
-            "last_name": "Jerez Rodríguez",
-            "career": "Dirección de Empresas",
-            "work": "Diseño de herramientas de evaluación y sondeos",
-            "factor": 80
-        }
-    },
-    {
-        "model": "website.student",
-        "pk": "22",
-        "fields": {
-            "name": "Tyron",
-            "last_name": "Fonseca Alvarado",
-            "career": "Computación e Informática",
-            "work": "Desarrollo del sitio web",
-            "factor": 80
-        }
-    },
-    {
-        "model": "website.student",
-        "pk": "23",
-        "fields": {
-            "name": "Juan Pablo",
-            "last_name": "Andrade González",
-            "career": "Ingeniería Eléctrica",
-            "work": "Desarrollo del sitio web",
-            "factor": 80
-        }
-    },
-    {
-        "model": "website.student",
-        "pk": "24",
-        "fields": {
-            "name": "Eddy",
-            "last_name": "Ruiz Soto",
-            "career": "Computación e Informática",
-            "work": "Desarrollo del sitio web",
-            "factor": 75
-        }
-    },
-    {
-        "model": "website.student",
-        "pk": "25",
-        "fields": {
-            "name": "Claudia Rebeca",
-            "last_name": "Valverde Umaña",
-            "career": "Antropología",
-            "work": "Investigación sobre centros de origen de los productos",
-            "factor": 70
-        }
-    },
-    {
-        "model": "website.student",
-        "pk": "26",
-        "fields": {
-            "name": "Luis Diego",
-            "last_name": "Ocampo Gómez",
-            "career": "Ingeniería Eléctrica",
-            "work": "Aplicación de sondeo a las personas visitantes de las ferias",
-            "factor": 60
-        }
-    },
-    {
-        "model": "website.student",
-        "pk": "27",
-        "fields": {
-            "name": "María de la Paz",
-            "last_name": "Naranjo Bonilla",
-            "career": "Nutrición",
-            "work": "Asesoría en nutrición",
-            "factor": 30
-        }
-    },
-    {
-        "model": "website.student",
-        "pk": "28",
-        "fields": {
-            "name": "Luis Diego",
-            "last_name": "Madrigal Leiva",
-            "career": "Ingeniería Eléctrica",
-            "work": "Aplicación de sondeo a las personas visitantes de las ferias",
-            "factor": 20
-        }
-    },
-    {
-        "model": "website.student",
-        "pk": "29",
-        "fields": {
-            "name": "Kevin",
-            "last_name": "Delgado Rojas",
-            "career": "Ingeniería Eléctrica",
-            "work": "Recolección de material audiovisual y fotografías de las ferias del occidente",
-            "factor": 20
-        }
-    },
-    {
-        "model": "website.student",
-        "pk": "3",
-        "fields": {
-            "name": "Alexandra",
-            "last_name": "Alfaro Rodríguez",
-            "career": "Diseño Gráfico",
-            "work": "Diseño de la identidad visual, los iconos de los productos y ejemplo de la versión móvil",
-            "factor": 95
-        }
-    },
-    {
-        "model": "website.student",
-        "pk": "30",
-        "fields": {
-            "name": "Kevin Antonio",
-            "last_name": "Villalobos Jiménez",
-            "career": "Ingeniería Eléctrica",
-            "work": "Aplicación de sondeo a las personas visitantes de la feria en varias ferias alrededor de San José",
-            "factor": 20
-        }
-    },
-    {
-        "model": "website.student",
-        "pk": "31",
-        "fields": {
-            "name": "Manfred",
-            "last_name": "Soza García ",
-            "career": "Ingeniería Eléctrica",
-            "work": "Aplicación de sondeo a las personas visitantes de la feria en varias ferias alrededor de San José",
-            "factor": 20
-        }
-    },
-    {
-        "model": "website.student",
-        "pk": "4",
-        "fields": {
-            "name": "Lorena",
-            "last_name": "Pérez Hernández",
-            "career": "Comunicación Colectiva",
-            "work": "Creación de textos para productos, campaña de redes sociales",
-            "factor": 94
-        }
-    },
-    {
-        "model": "website.student",
-        "pk": "5",
-        "fields": {
-            "name": "Dereck",
-            "last_name": "Rodríguez Muñoz",
-            "career": "Comunicación Colectiva",
-            "work": "Coordinación de campaña de redes sociales, investigación",
-            "factor": 93
-        }
-    },
-    {
-        "model": "website.student",
-        "pk": "6",
-        "fields": {
-            "name": "Wilmer Jesús",
-            "last_name": "Araya Rivas",
-            "career": "Computación e Informática",
-            "work": "Desarrollo del sitio web",
-            "factor": 92
-        }
-    },
-    {
-        "model": "website.student",
-        "pk": "7",
-        "fields": {
-            "name": "Yasty",
-            "last_name": "Sánchez Piedrahita",
-            "career": "Computación e Informática",
-            "work": "Desarrollo del sitio web",
-            "factor": 92
-        }
-    },
-    {
-        "model": "website.student",
-        "pk": "8",
-        "fields": {
-            "name": "José Manuel",
-            "last_name": "Boniche Morales",
-            "career": "Bibliotecología",
-            "work": "Aplicación de sondeo a las personas visitantes de la feria, gestión y auditoría de la información",
-            "factor": 90
-        }
-    },
-    {
-        "model": "website.student",
-        "pk": "9",
-        "fields": {
-            "name": "Marlon",
-            "last_name": "Díaz Bermúdez",
-            "career": "Agronomía",
-            "work": "Investigación sobre los productos de la feria, incluyendo su estacionalidad",
-            "factor": 90
-        }
+  {
+    "model": "website.text",
+    "pk": 2,
+    "fields": {
+      "page": "/",
+      "section": "hero",
+      "content": "La feria es el lugar de la variedad, la frescura y los buenos precios"
     }
+  },
+  {
+    "model": "website.text",
+    "pk": 3,
+    "fields": {
+      "page": "/",
+      "section": "features_saludable",
+      "content": "La alimentación basada en productos frescos es la mejor dieta para nuestra salud y la feria es el mejor lugar para conseguir todo."
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 4,
+    "fields": {
+      "page": "/",
+      "section": "features_barato",
+      "content": "Estudio tras estudio demuestra lo que ya sabíamos: cuando compramos en la feria, compramos más barato."
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 5,
+    "fields": {
+      "page": "/",
+      "section": "features_nuestro",
+      "content": "La feria es de la comunidad y para la comunidad. Aquí encontramos a la gente que conocemos, vendiendo la cosecha de su trabajo."
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 6,
+    "fields": {
+      "page": "/",
+      "section": "buscador",
+      "content": "Aquí le ayudamos a buscar su feria entre las más de 90 que hay en el país."
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 7,
+    "fields": {
+      "page": "/ferias",
+      "section": "hero",
+      "content": "¡Hay más de 90 ferias en Costa Rica para visitar!"
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 8,
+    "fields": {
+      "page": "/ferias",
+      "section": "ubicacion",
+      "content": "Las ferias están en las siete provincias del país."
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 9,
+    "fields": {
+      "page": "/ferias",
+      "section": "numeros",
+      "content": "Un vistazo a las ferias: ubicación, días de operación, amenidades e infraestructura."
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 10,
+    "fields": {
+      "page": "/ferias",
+      "section": "buscador",
+      "content": "Aquí le ayudamos a buscar su feria entre las más de 90 que hay en el país."
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 11,
+    "fields": {
+      "page": "/ferias",
+      "section": "lista",
+      "content": "Todas las ferias registradas en el proyecto deferia.cr en orden alfabético."
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 12,
+    "fields": {
+      "page": "/ferias/feria",
+      "section": "servicios_titulo",
+      "content": "¡Aquí hay más para aprovechar la feria!"
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 13,
+    "fields": {
+      "page": "/ferias/feria",
+      "section": "servicios_descripcion",
+      "content": "Ya están las frutas y verduras que necesita, ¡pero hay más! Es mejor llevar más bolsas (reutilizables) para poder traer todo."
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 14,
+    "fields": {
+      "page": "/productos",
+      "section": "hero",
+      "content": "Tenemos una diversidad privilegiada de productos frescos para disfrutar"
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 15,
+    "fields": {
+      "page": "/productos",
+      "section": "hero_parentesis",
+      "content": "(Y la feria es el lugar para aprovecharlos)"
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 16,
+    "fields": {
+      "page": "/productos",
+      "section": "lista",
+      "content": "Hemos registrado más de 100 productos, clasificados en frutas, verduras, tubérculos y raíces, legumbres, y hierbas."
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 17,
+    "fields": {
+      "page": "/productos",
+      "section": "lista_descripcion",
+      "content": "En estas tablas puede ver la disponibilidad mes a mes y la recomendación de canasta básica mejorada. Dé click y encuentre más información de cada uno, ¡y también colabórenos con sus secretos de preparación y almacenamiento!"
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 18,
+    "fields": {
+      "page": "/sobre",
+      "section": "hero",
+      "content": "Quiénes somos"
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 19,
+    "fields": {
+      "page": "/sobre/ferias",
+      "section": "hero",
+      "content": "Las ferias del agricultor y los mercados libres: una alternativa para el desarrollo sostenible"
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 20,
+    "fields": {
+      "page": "/sobre/ferias",
+      "section": "consignas",
+      "content": "Las ferias están en las siete provincias del país."
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 21,
+    "fields": {
+      "page": "/sugerencias",
+      "section": "hero",
+      "content": "Usted puede ayudarnos a actualizar nuestros datos"
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 22,
+    "fields": {
+      "page": "/sugerencias",
+      "section": "hero_subtitulo",
+      "content": "Aquí puede aportar su información sobre ferias y productos para mantener el sitio actualizado. ¡Gracias por su colaboración!"
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 23,
+    "fields": {
+      "page": "/sugerencias",
+      "section": "sugerencias_ferias",
+      "content": "Para cada feria usted nos puede sugerir datos generales, corregir alguna información o darnos cualquier dato que guste compartir. ¡Elija una aquí!"
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 24,
+    "fields": {
+      "page": "/sugerencias",
+      "section": "sugerencias_productos",
+      "content": "Para cada producto usted nos puede sugerir nuevas variedades, métodos de preparación, métodos de almacenamiento, recetas, corregir alguna información o darnos cualquier dato que guste compartir. ¡Elija uno aquí!"
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 25,
+    "fields": {
+      "page": "/",
+      "section": "hero_desc",
+      "content": "¡Descubra aquí las ferias del agricultor de Costa Rica y sus productos!"
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 26,
+    "fields": {
+      "page": "/sobre",
+      "section": "hero_desc",
+      "content": "¡Somos gente que cree que la feria es buena para la economía, para la salud y para la comunidad!"
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 27,
+    "fields": {
+      "page": "/datos",
+      "section": "hero",
+      "content": "Nuestros datos están abiertos para usted, como las ferias y los mercados libres"
+    }
+  },
+  {
+    "model": "website.text",
+    "pk": 28,
+    "fields": {
+      "page": "/datos",
+      "section": "hero_desc",
+      "content": "Aquí puede encontrarlos"
+    }
+  },
+  {
+    "model": "website.student",
+    "pk": "1",
+    "fields": {
+      "name": "Katherine",
+      "last_name": "Mora Cruz",
+      "career": "Diseño Gráfico",
+      "work": "Investigación y propuesta de identidad visual",
+      "factor": 95
+    }
+  },
+  {
+    "model": "website.student",
+    "pk": "10",
+    "fields": {
+      "name": "Andrés",
+      "last_name": "Azofeifa García",
+      "career": "Computación e Informática",
+      "work": "Desarrollo del sitio web",
+      "factor": 90
+    }
+  },
+  {
+    "model": "website.student",
+    "pk": "11",
+    "fields": {
+      "name": "Sirlany",
+      "last_name": "Mora García",
+      "career": "Computación e Informática",
+      "work": "Desarrollo del sitio web",
+      "factor": 90
+    }
+  },
+  {
+    "model": "website.student",
+    "pk": "12",
+    "fields": {
+      "name": "Mike",
+      "last_name": "Mai Chen",
+      "career": "Ingeniería Eléctrica",
+      "work": "Desarrollo de esquema de base de datos para el sitio web",
+      "factor": 90
+    }
+  },
+  {
+    "model": "website.student",
+    "pk": "13",
+    "fields": {
+      "name": "Nathalia",
+      "last_name": "Mena Mejía",
+      "career": "Nutrición",
+      "work": "Investigación y desarrollo de textos y artículos en nutrición, métodos de preparación y almacenamiento",
+      "factor": 90
+    }
+  },
+  {
+    "model": "website.student",
+    "pk": "14",
+    "fields": {
+      "name": "María Gabriela",
+      "last_name": "Giusti Roa",
+      "career": "Comunicación Colectiva",
+      "work": "Investigación y desarrollo de materiales para redes sociales",
+      "factor": 90
+    }
+  },
+  {
+    "model": "website.student",
+    "pk": "15",
+    "fields": {
+      "name": "Andrea Paola",
+      "last_name": "Moya Valverde",
+      "career": "Filología Española",
+      "work": "Investigación bibliográfica, diseño del proyecto",
+      "factor": 88
+    }
+  },
+  {
+    "model": "website.student",
+    "pk": "16",
+    "fields": {
+      "name": "Noel Alberto",
+      "last_name": "Blandón Saborío",
+      "career": "Ingeniería Eléctrica",
+      "work": "Revisión y creación de datos para las ferias y los productos",
+      "factor": 85
+    }
+  },
+  {
+    "model": "website.student",
+    "pk": "17",
+    "fields": {
+      "name": "Brittanny",
+      "last_name": "Camacho Rodríguez",
+      "career": "Dirección de Empresas",
+      "work": "Gestión de aplicación de encuestas de satisfacción ",
+      "factor": 85
+    }
+  },
+  {
+    "model": "website.student",
+    "pk": "18",
+    "fields": {
+      "name": "Angie Monserrat",
+      "last_name": "Rodríguez Chacón",
+      "career": "Filología Española",
+      "work": "Investigación sobre etimologías de los distintos nombres dados a frutas y verduras, revisión de las direcciones de las ferias",
+      "factor": 85
+    }
+  },
+  {
+    "model": "website.student",
+    "pk": "19",
+    "fields": {
+      "name": "Balkis Coraima",
+      "last_name": "Díaz Torres",
+      "career": "Sociología",
+      "work": "Desarrollo y aplicación de herramienta de evaluación para las ferias",
+      "factor": 85
+    }
+  },
+  {
+    "model": "website.student",
+    "pk": "2",
+    "fields": {
+      "name": "Gabriel Alejandro",
+      "last_name": "Quirós Villalobos",
+      "career": "Dirección de Empresas",
+      "work": "Desarrollo y diseño de la línea gráfica, coordinación de la estrategia publicitaria, participaciones en sondeos e interpretación de datos",
+      "factor": 95
+    }
+  },
+  {
+    "model": "website.student",
+    "pk": "20",
+    "fields": {
+      "name": "Andrés",
+      "last_name": "Muñoz Castillo",
+      "career": "Dirección de Empresas",
+      "work": "Recopilación de materiales de referencia sobre las ferias",
+      "factor": 83
+    }
+  },
+  {
+    "model": "website.student",
+    "pk": "21",
+    "fields": {
+      "name": "Fabián Gerardo",
+      "last_name": "Jerez Rodríguez",
+      "career": "Dirección de Empresas",
+      "work": "Diseño de herramientas de evaluación y sondeos",
+      "factor": 80
+    }
+  },
+  {
+    "model": "website.student",
+    "pk": "22",
+    "fields": {
+      "name": "Tyron",
+      "last_name": "Fonseca Alvarado",
+      "career": "Computación e Informática",
+      "work": "Desarrollo del sitio web",
+      "factor": 80
+    }
+  },
+  {
+    "model": "website.student",
+    "pk": "23",
+    "fields": {
+      "name": "Juan Pablo",
+      "last_name": "Andrade González",
+      "career": "Ingeniería Eléctrica",
+      "work": "Desarrollo del sitio web",
+      "factor": 80
+    }
+  },
+  {
+    "model": "website.student",
+    "pk": "24",
+    "fields": {
+      "name": "Eddy",
+      "last_name": "Ruiz Soto",
+      "career": "Computación e Informática",
+      "work": "Desarrollo del sitio web",
+      "factor": 75
+    }
+  },
+  {
+    "model": "website.student",
+    "pk": "25",
+    "fields": {
+      "name": "Claudia Rebeca",
+      "last_name": "Valverde Umaña",
+      "career": "Antropología",
+      "work": "Investigación sobre centros de origen de los productos",
+      "factor": 70
+    }
+  },
+  {
+    "model": "website.student",
+    "pk": "26",
+    "fields": {
+      "name": "Luis Diego",
+      "last_name": "Ocampo Gómez",
+      "career": "Ingeniería Eléctrica",
+      "work": "Aplicación de sondeo a las personas visitantes de las ferias",
+      "factor": 60
+    }
+  },
+  {
+    "model": "website.student",
+    "pk": "27",
+    "fields": {
+      "name": "María de la Paz",
+      "last_name": "Naranjo Bonilla",
+      "career": "Nutrición",
+      "work": "Asesoría en nutrición",
+      "factor": 30
+    }
+  },
+  {
+    "model": "website.student",
+    "pk": "28",
+    "fields": {
+      "name": "Luis Diego",
+      "last_name": "Madrigal Leiva",
+      "career": "Ingeniería Eléctrica",
+      "work": "Aplicación de sondeo a las personas visitantes de las ferias",
+      "factor": 20
+    }
+  },
+  {
+    "model": "website.student",
+    "pk": "29",
+    "fields": {
+      "name": "Kevin",
+      "last_name": "Delgado Rojas",
+      "career": "Ingeniería Eléctrica",
+      "work": "Recolección de material audiovisual y fotografías de las ferias del occidente",
+      "factor": 20
+    }
+  },
+  {
+    "model": "website.student",
+    "pk": "3",
+    "fields": {
+      "name": "Alexandra",
+      "last_name": "Alfaro Rodríguez",
+      "career": "Diseño Gráfico",
+      "work": "Diseño de la identidad visual, los iconos de los productos y ejemplo de la versión móvil",
+      "factor": 95
+    }
+  },
+  {
+    "model": "website.student",
+    "pk": "30",
+    "fields": {
+      "name": "Kevin Antonio",
+      "last_name": "Villalobos Jiménez",
+      "career": "Ingeniería Eléctrica",
+      "work": "Aplicación de sondeo a las personas visitantes de la feria en varias ferias alrededor de San José",
+      "factor": 20
+    }
+  },
+  {
+    "model": "website.student",
+    "pk": "31",
+    "fields": {
+      "name": "Manfred",
+      "last_name": "Soza García ",
+      "career": "Ingeniería Eléctrica",
+      "work": "Aplicación de sondeo a las personas visitantes de la feria en varias ferias alrededor de San José",
+      "factor": 20
+    }
+  },
+  {
+    "model": "website.student",
+    "pk": "4",
+    "fields": {
+      "name": "Lorena",
+      "last_name": "Pérez Hernández",
+      "career": "Comunicación Colectiva",
+      "work": "Creación de textos para productos, campaña de redes sociales",
+      "factor": 94
+    }
+  },
+  {
+    "model": "website.student",
+    "pk": "5",
+    "fields": {
+      "name": "Dereck",
+      "last_name": "Rodríguez Muñoz",
+      "career": "Comunicación Colectiva",
+      "work": "Coordinación de campaña de redes sociales, investigación",
+      "factor": 93
+    }
+  },
+  {
+    "model": "website.student",
+    "pk": "6",
+    "fields": {
+      "name": "Wilmer Jesús",
+      "last_name": "Araya Rivas",
+      "career": "Computación e Informática",
+      "work": "Desarrollo del sitio web",
+      "factor": 92
+    }
+  },
+  {
+    "model": "website.student",
+    "pk": "7",
+    "fields": {
+      "name": "Yasty",
+      "last_name": "Sánchez Piedrahita",
+      "career": "Computación e Informática",
+      "work": "Desarrollo del sitio web",
+      "factor": 92
+    }
+  },
+  {
+    "model": "website.student",
+    "pk": "8",
+    "fields": {
+      "name": "José Manuel",
+      "last_name": "Boniche Morales",
+      "career": "Bibliotecología",
+      "work": "Aplicación de sondeo a las personas visitantes de la feria, gestión y auditoría de la información",
+      "factor": 90
+    }
+  },
+  {
+    "model": "website.student",
+    "pk": "9",
+    "fields": {
+      "name": "Marlon",
+      "last_name": "Díaz Bermúdez",
+      "career": "Agronomía",
+      "work": "Investigación sobre los productos de la feria, incluyendo su estacionalidad",
+      "factor": 90
+    }
+  }
 ]
