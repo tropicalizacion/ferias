@@ -1,6 +1,21 @@
 # Ferias
 
-> Sitio web con información de las ferias del agricultor en Costa Rica, en desarrollo por el trabajo comunal universitario TC-691 "Tropicalización de la Tecnología" de la Universidad de Costa Rica.
+Sitio web con información de las ferias del agricultor en Costa Rica, en desarrollo por el trabajo comunal universitario TC-691 "Tropicalización de la Tecnología" de la Universidad de Costa Rica.
+
+## Descripción
+
+Ferias es una plataforma integral que permite gestionar información detallada sobre ferias, productos y ubicaciones geográficas. El proyecto está diseñado para facilitar la colaboración colectiva (_crowdsourcing_) en la recopilación y mantenimiento de datos, ofreciendo una interfaz web intuitiva y un API público para desarrolladores.
+
+## Características Principales
+
+- Gestión Geoespacial: Integración con PostgreSQL + PostGIS para manejo de datos geográficos
+- Base de Datos de Ferias: Catálogo completo de ferias con ubicaciones y detalles
+- Catálogo de Productos: Sistema de gestión de productos ofrecidos en las ferias
+- Crowdsourcing: Plataforma colaborativa para actualización de datos
+- API Pública: Acceso programático a todos los datos del proyecto
+- _Responsive_: Interfaz adaptable a diferentes dispositivos
+- Búsqueda Avanzada: Búsquedas geoespaciales, por similitud y sin acentos
+- Arquitectura del Sistema: El proyecto está estructurado en múltiples aplicaciones Django para una organización modular
 
 ## Apps de Django
 
@@ -13,29 +28,9 @@
 - `api`: API
 - `users`: Manejo de usuarios
 
-### Principios para la clasificación en la base de datos
+## Desarrollo
 
-- Datos de las ferias: etiquetas de OpenStreetMaps
-- Nombres científicos de los productos: APG IV
-- Centros de origen de los productos: Vavilov
-- Campos de los productos: etiquetas inventadas pero en el formato de OpenStreetMaps
+Para quienes desean colaborar en el proyecto, es necesario primero recibir aprobación de [Fabián Abarca](https://github.com/fabianabarca). Una vez conseguida la aprobación, porfavor revisar los siguientes archivos para habilitar un ambiente de desarrollo:
 
-## Cosas
-
-- Que al construir una búsqueda con distintos criterios, se vaya formando una frase, tipo:
-
-> Quiero una feria **cerca de mí** que esté **abierta el viernes en la tarde**, que sea **mediana** y con **parqueo para bicicletas**
-
-| **Buscar** |
-
-donde las **palabras en negrita** son los criterios de búsqueda. ¿Por qué esta frase? No deja dudas sobre lo que está buscando. (Algún día puede ser un dictado del usuario + NLP).
-
-Los criterios de búsqueda se pueden clasificar en cuatro: por **ubicación** ("cerca de mí", "cerca de X"), por **horario** ("abierto lunes en la mañana", "abierto viernes en la tarde"), por **características** ("que sea mediana", "que esté bajo techo"), y por **amenidades** ("con parqueo", "con comidas").
-
-- La búsqueda debe resolver resultados aproximados y/o recomendados, es decir, que cumplan con la mayoría de características
-
-- Que una frase al pie de página y de la campaña sea 
-
-> Dulce abrigo y sustento nos da
-
-:cry:
+- [Habilitar un ambiente de desarrollo con Docker (recomendado)](docs/HOWTO.md)
+- [Habilitar un ambiente de desarrollo de forma manual](docs/Manual_env.md)
