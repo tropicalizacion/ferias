@@ -1,4 +1,6 @@
 #!/bin/bash
+
+docker-compose run --rm web python3 manage.py migrate
 docker exec ferias_django_app python manage.py migrate
 docker exec ferias_django_app python manage.py makemigrations marketplaces
 docker exec ferias_django_app python manage.py makemigrations products
@@ -18,3 +20,5 @@ docker exec ferias_django_app python manage.py loaddata website
 # docker exec ferias_django_app python manage.py loaddata users
 # docker exec ferias_django_app python manage.py loaddata feed
 # docker exec ferias_django_app python manage.py loaddata content
+docker-compose run --rm web python3 manage.py setup_wagtail_site
+docker-compose run --rm web python3 manage.py makemigrations cms
