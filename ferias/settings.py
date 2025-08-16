@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     "apps.blog.apps.BlogConfig",
     "apps.feed.apps.FeedConfig",
     "apps.recipes.apps.RecipesConfig",
+    "apps.cms.apps.CmsConfig",
     "rest_framework",
     "rest_framework_gis",
     "drf_spectacular",
