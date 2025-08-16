@@ -19,7 +19,7 @@ services:
     container_name: postgres_db
     volumes:
       - postgres_db:/var/lib/postgresql/data
-      - ./scripts/extensions.sql:/docker-entrypoint-initdb.d/extensions.sql # Initialize extensions, this is run only once, the container has to put down and up again if needed to change
+      - ./scripts/extensions.sql:/docker-entrypoint-initdb.d/extensions.sql # Initialize extensions, this is run only once; the container needs to be restarted if changes are needed
     environment:
       POSTGRES_USER: ${DB_USER}
       POSTGRES_DB: ${DB_NAME}
