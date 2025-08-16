@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-contentpage{% endblock %}
+
+{% block content %}
+    <article class="content-page">
+        <header class="page-header">
+            <h1>{{ page.title }}</h1>
+            
+            {% if page.featured_image %}
+                {% image page.featured_image width-1200 as featured_img %}
+                <div class="featured-image">
+                    <img src="{{ featured_img.url }}" alt="{{ page.title }}">
+                </div>
+            {% endif %}
+            
+            {% if page.intro %}
+                <div class="page-intro">
+                    {{ page.intro|richtext }}
+                </div>
+            {% endif %}
+        </header>
+
+        {% if page.body %}
+            <div class="page-body">
+                {% for block in page.body %}
+                    <div class="block block-{{ block.block_type }}">
+                        {% if block.block_type == 'heading' %}
+                            <h2>{{ block.value }}</h2>
+                        {% elif block.block_type == 'paragraph' %}
+                            {{ block.value|richtext }}
+                        {% elif block.block_type == 'image' %}
+                            {% image block.value width-800 %}
+                        {% elif block.block_type == 'quote' %}
+                            <blockquote>{{ block.value }}</blockquote>
+                        {% elif block.block_type == 'embed' %}
+                            {{ block.value|safe }}
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </article>
+{% endblock %}

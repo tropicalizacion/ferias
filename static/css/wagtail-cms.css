@@ -1,0 +1,263 @@
+/* Wagtail CMS Styles */
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.hero-image img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* Content Sections */
+.content-sections {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.section h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.section img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.marketplace-showcase {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+}
+
+.marketplace-showcase h3 {
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+.featured-marketplaces {
+    margin-top: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+}
+
+/* Content Page Styles */
+.content-page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.featured-image {
+    margin: 30px 0;
+}
+
+.featured-image img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.page-intro {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.page-body {
+    margin-top: 40px;
+}
+
+.block {
+    margin-bottom: 30px;
+}
+
+.block h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.block blockquote {
+    border-left: 4px solid #667eea;
+    padding-left: 20px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #666;
+}
+
+/* Blog Styles */
+.blog-post {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.post-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.post-header h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.post-meta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.post-tags {
+    display: flex;
+    gap: 10px;
+}
+
+.tag {
+    background: #667eea;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.post-intro {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.post-body {
+    margin-top: 40px;
+    line-height: 1.7;
+}
+
+/* Blog Index Styles */
+.blog-index {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.blog-posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.blog-post-preview {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.blog-post-preview:hover {
+    transform: translateY(-5px);
+}
+
+.blog-post-preview h2 {
+    padding: 20px 20px 10px;
+    margin: 0;
+}
+
+.blog-post-preview h2 a {
+    color: #333;
+    text-decoration: none;
+}
+
+.blog-post-preview h2 a:hover {
+    color: #667eea;
+}
+
+.post-preview-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.post-preview-text {
+    padding: 0 20px;
+}
+
+.read-more {
+    display: inline-block;
+    margin: 15px 20px 20px;
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .post-meta {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .blog-posts {
+        grid-template-columns: 1fr;
+    }
+}
