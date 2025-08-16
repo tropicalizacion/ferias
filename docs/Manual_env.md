@@ -2,17 +2,25 @@
 
 Estos son algunos consejos e instrucciones para usar el proyecto localmente o en el servidor.
 
+> [!TIP]
+> Se recomienda hacer uso del contenedor de Docker para el desarrollo de la aplicación, ya que este manual podría no ser tan detallado o no estar actualizado.
+
+> [!WARNING]
+> Es ideal no saltarse pasos de esta guía, y de ser necesario, solicitar ayuda.
+
 ## Clave secreta de Django
 
 La clave secreta de Django y otras configuraciones están en un archivo `.env` y es manipulado por el paquete `python-decouple` ([documentación](https://pypi.org/project/python-decouple/)).
 
-(Opcional) Crear un ambiente virtual para correr el proyecto (recomendado).
+## Ambiente virtual
+
+Para desarrollar el proyecto de forma local se recomienda crear un ambiente virtual de python. Esto se puede realizar con los siguientes comandos:
 
 ```bash
 ferias: $ python -m venv feriasenv
 ```
 
-y activarlo con:
+Activarlo con:
 
 ```bash
 source feriasenv/bin/activate
@@ -36,25 +44,11 @@ Se agrega el archivo `.env` al directorio raíz. Nota: (en caso de ser necesario
 
 > El equipo de desarrolladores compartirá el documento `.env`.
 
-Luego, se deben instalar los siguientes paquetes:
-
-```bash
-pip install django
-```
-
-En el archivo `requirements.txt` está el resto de paquetes de Python necesarios para la ejecución. Para esto, hacer:
+Luego, se deben instalar los paquetes necesarios para el proyecto. Para hacer esto, en una terminal desde la raíz del proyecto, ejecute el siguiente comando:
 
 ```bash
 pip install -r requirements.txt
 ```
-
-Por último, Para ejecutar el proyecto se utiliza el comando:
-
-```bash
-python manage.py runserver
-```
-
-Para acceder al sitio en desarrollo se realiza mediante `localhost` en el puerto seleccionado, típicamente `http://127.0.0.1:8000/`.
 
 ## Crear base de datos y migrar a GeoDjango
 
@@ -64,40 +58,18 @@ El proyecto utiliza [PostgreSQL](https://www.postgresql.org/). Una vez instalado
 
 Los pasos de creación de la base de datos son:
 
-- Instalar PostgreSQL en la máquina según el OS.
-- Instalar PostGIS en la máquina [según el OS](https://postgis.net/documentation/getting_started/#installing-postgis).
-- Crear base de datos `ferias` con `$ createdb ferias`.
-- Ingresar a la base de datos con `$ psql ferias`.
-- [Habilitar PostGIS](https://docs.djangoproject.com/en/4.2/ref/contrib/gis/install/postgis/) para la base de datos `ferias` en `psql` con `# CREATE EXTENSION postgis;`.
-- Habilitar la búsqueda por [_trigram similarity_](https://docs.djangoproject.com/en/4.2/ref/contrib/postgres/lookups/#trigram-similarity) en `psql ferias` con `CREATE EXTENSION IF NOT EXISTS pg_trgm;`
-- Habilitar la búsqueda [_sin acentos_](https://www.postgresql.org/docs/current/unaccent.html) en `psql ferias` con `CREATE EXTENSION IF NOT EXISTS unaccent;`
-- En `settings.py` está (asumiendo que la DB no tiene password):
+1. Instalar PostgreSQL en la máquina según el OS.
+2. Instalar PostGIS en la máquina [según el OS](https://postgis.net/documentation/getting_started/#installing-postgis).
+3. Crear base de datos `ferias` con `$ createdb ferias`.
+4. Ingresar a la base de datos con `$ psql ferias`.
+5. [Habilitar PostGIS](https://docs.djangoproject.com/en/4.2/ref/contrib/gis/install/postgis/) para la base de datos `ferias` en `psql` con `# CREATE EXTENSION postgis;`.
+6. Habilitar la búsqueda por [_trigram similarity_](https://docs.djangoproject.com/en/4.2/ref/contrib/postgres/lookups/#trigram-similarity) en `psql ferias` con `CREATE EXTENSION IF NOT EXISTS pg_trgm;`
+7. Habilitar la búsqueda [_sin acentos_](https://www.postgresql.org/docs/current/unaccent.html) en `psql ferias` con `CREATE EXTENSION IF NOT EXISTS unaccent;`
+8. En algunos sistemas operativos (Windows y macOS Apple Silicon sí, Linux y macOS Intel no), es necesario adjuntar a `settings.py` las ubicaciones de GDAL y GEOS (esto se hace automáticamente), y también en el archivo `.env` tal y como se puede apreciar en el [archivo de ejemplo](../.env.example).
+
+En `settings.py` se encuentra configurado lo necesario para la base de datos, no es necesario modificarlo ya que toma los valores del archivo `.env`:
+
 ```python
-DATABASES = {
-    "default": {
-        "ENGINE": "django.contrib.gis.db.backends.postgis",
-        "NAME": config('DB_NAME'),
-        "USER": config('DB_USER'),
-    },
-}
-```
-y además:
-```python
-INSTALLED_APPS = [
-    (...)
-    "django.contrib.postgres",
-    "django.contrib.gis",
-]
-```
-- Modificar `.env` (asumiendo que el usuario de PostgreSQL es `postgres`, y si no lo sabe puede hacer en psql: `# SELECT current_user;`):
-```
-DB_NAME=ferias
-DB_USER=postgres
-```
-- (Opcional) En algunos sistemas operativos (Windows y macOS Apple Silicon sí, Linux y macOS Intel no), es necesario adjuntar a `settings.py` las ubicaciones de GDAL y GEOS (esto se hace automáticamente):
-```python
-import platform
-(...)
 DATABASES = {
     "default": {
         "ENGINE": "django.contrib.gis.db.backends.postgis",
@@ -106,16 +78,15 @@ DATABASES = {
     },
 }
 
-if not (platform.platform() == "Linux" or platform.machine() == "x86_64"):
-    GDAL_LIBRARY_PATH = config('GDAL_LIBRARY_PATH')
-    GEOS_LIBRARY_PATH = config('GEOS_LIBRARY_PATH')
+INSTALLED_APPS = [
+    (...)
+    "django.contrib.postgres",
+    "django.contrib.gis",
+]
 ```
-y en `.env`:
-```
-GDAL_LIBRARY_PATH=/opt/homebrew/opt/gdal/lib/libgdal.dylib
-GEOS_LIBRARY_PATH=/opt/homebrew/opt/geos/lib/libgeos_c.dylib
-```
-o lo que corresponda según el sistema operativo.
+
+### Migraciones
+
 - Hacer todas las migraciones con `$ python manage.py makemigrations marketplaces` y así para cada app (products, crowdsourcing, website, etc.)
 - Migrar con `$ python manage.py migrate` para crear las tablas.
 - Hacer `$ python manage.py loaddata auth` para cargar los datos de usuarios de prueba del fixture (peligroso).
@@ -125,6 +96,9 @@ o lo que corresponda según el sistema operativo.
 
 Con esto debería funcionar la aplicación con PostgreSQL y PostGIS activado para usar GeoDjango, que permite guardar ubicaciones y regiones en el mapa y hacer búsquedas geoespaciales.
 
+> [!NOTE]
+> Dentro de la carpeta _scripts_ hay archivos que permiten automatizar las migraciones previamente mencionadas.
+
 ### Destruir la base de datos
 
 En caso de pruebas y de ser necesario:
@@ -133,6 +107,16 @@ En caso de pruebas y de ser necesario:
 - `# DROP DATABASE ferias;`
 - :grimacing:
 - Borrar todos los archivos de migraciones de todas las apps antes de intentar hacer las migraciones de nuevo
+
+## Ejecutar el proyecto de forma local
+
+Para ejecutar el proyecto se utiliza el comando:
+
+```bash
+python manage.py runserver
+```
+
+Para acceder al sitio en desarrollo se realiza mediante `localhost` en el puerto seleccionado, típicamente `http://127.0.0.1:8000/`.
 
 ## Cómo actualizar el servidor
 
@@ -293,9 +277,9 @@ stateDiagram-v2
     men --> edi
 ```
 
-# Anexos
+## Anexos
 
-## Cómo instalar PostgreSQL en macOS
+### Cómo instalar PostgreSQL en macOS
 
 Nota: en Ubuntu viene instalado por defecto.
 

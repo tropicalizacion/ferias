@@ -7,15 +7,27 @@ Este documento describe cómo configurar y ejecutar un entorno de desarrollo par
 
 ## Requisitos previos
 
+### Windows
+
 Es necesario tener instalados los siguientes componentes:
+
+- [Windows Subsystem Linux](https://learn.microsoft.com/en-us/windows/wsl/setup/environment)
+- [Docker Desktop](https://docs.docker.com/desktop/setup/install/windows-install/)
+- [Git](https://git-scm.com/downloads)
+
+
+### Sistemas operativos basados en UNIX (MacOS, y cualquier distribución de Linux)
+
+Es necesario tener instalados los siguientes componentes (se recomienda revisar la documentación específica del sistema operativo):
 
 - [Python 3](https://www.python.org/)
 - [Docker](https://www.docker.com/)
 - [Docker compose](https://docs.docker.com/compose/install/)
+- [Git](https://git-scm.com/downloads)
 
 
 > [!TIP]
-> Instalar [Docker Desktop](https://docs.docker.com/desktop/), incluye el engine de Docker y Docker Compose. 
+> Instalar [Docker Desktop](https://docs.docker.com/desktop/), incluye el engine de Docker y Docker Compose. Facilita visualizar los contenedores y brinda múltiples herramientas que pueden ser de utilidad.  
 
 
 ## Pasos a seguir previo a iniciar el contenedor
@@ -65,6 +77,14 @@ Una vez que el contenedor esté corriendo correctamente, en una terminal nueva, 
 > [!NOTE]
 > Es normal que se muestren varias advertencias durante este proceso
 
+## Creacion de un usuario administrador
+
+En caso de ser necesario, con el siguiente comando se puede llamar al script que es capaz de crear un usuario administrador para el entorno local:
+
+```bash
+./scripts/superuser.sh
+```
+
 ## Acceso a la aplicación
 
 Una vez que todo esté en funcionamiento, acceda al navegador con la siguiente dirección, que por defecto es el puerto 8000:
@@ -72,6 +92,25 @@ Una vez que todo esté en funcionamiento, acceda al navegador con la siguiente d
 ```
 http://localhost:8000/
 ```
+
+## Ejecución de comandos 
+
+Como el proyecto se ejecuta por medio de Docker, en vez de usar un ambiente virtual de python, es necesario realizar los comandos por medio del `docker-compose`.
+
+Ejemplo:
+
+Para crear un usuario administrador, en un ambiente virtual de python se usa el comando:
+
+```bash
+python manage.py createsuperuser
+```
+
+Mientras que en Docker, se usa el comando:
+
+```bash
+docker-compose exec web python manage.py createsuperuser
+```
+
 
 ## Problemas comunes
 
