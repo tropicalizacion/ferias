@@ -95,7 +95,7 @@ http://localhost:8000/
 
 ## Ejecución de comandos 
 
-Como el proyecto se ejecuta por medio de Docker, en vez de usar un ambiente virtual de python, es necesario realizar los comandos por medio del `docker-compose`.
+Como el proyecto se ejecuta por medio de Docker, en vez de usar un ambiente virtual de python, es necesario realizar los comandos dentro del contenedor.
 
 Ejemplo:
 
@@ -108,7 +108,7 @@ python manage.py createsuperuser
 Mientras que en Docker, se usa el comando:
 
 ```bash
-docker-compose exec web python manage.py createsuperuser
+docker exec ferias_django_app python manage.py makemigrations
 ```
 
 
