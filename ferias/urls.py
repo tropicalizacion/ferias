@@ -33,9 +33,9 @@ urlpatterns = [
     path('datos/', include('api.urls'), name='api'),
     path('usuarios/', include('users.urls'), name='usuarios'),
     path('recetas/', include('recipes.urls'), name='recetas'),
-    path('cms/', include(wagtailadmin_urls)),     # Panel de administración de Wagtail, aun tira una advertencia en la terminal
-    path('documents/', include(wagtaildocs_urls)),  # Descarga de documentos -> Tira un 404
-    path('', include(wagtail_urls)),  # Rutas públicas manejadas por Wagtail
+    path('cms/', include(wagtailadmin_urls)),     # Panel de administración de Wagtail
+    path('documents/', include(wagtaildocs_urls)),  # Descarga de documentos
+    path('paginas/', include(wagtail_urls)),  # Rutas públicas manejadas por Wagtail
 
 ]
 

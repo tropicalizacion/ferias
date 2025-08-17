@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "wagtail",
     "modelcluster",
     "taggit",
+    "apps.cms_pages.apps.CmsPagesConfig",
     "apps.marketplaces.apps.MarketplacesConfig",
     "apps.products.apps.ProductsConfig",
     "apps.content.apps.ContentConfig",

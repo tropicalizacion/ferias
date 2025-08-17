@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags %}
+
+{% block page_title %}{{ page.seo_title|default:page.title }}{% endblock %}
+
+{% block main %}
+<div class="container py-5">
+  <h1 class="display-5">{{ page.title }}</h1>
+  {% if page.intro %}<p class="lead">{{ page.intro }}</p>{% endif %}
+  <div class="content">{{ page.body|richtext }}</div>
+</div>
+{% endblock %}
