@@ -6,6 +6,7 @@ python manage.py makemigrations marketplaces
 python manage.py makemigrations products
 python manage.py makemigrations crowdsourcing
 python manage.py makemigrations website
+python manage.py makemigrations cms_pages
 python manage.py makemigrations users
 python manage.py makemigrations feed
 python manage.py makemigrations blog

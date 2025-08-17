@@ -5,6 +5,7 @@ docker exec ferias_django_app python manage.py makemigrations marketplaces
 docker exec ferias_django_app python manage.py makemigrations products
 docker exec ferias_django_app python manage.py makemigrations crowdsourcing
 docker exec ferias_django_app python manage.py makemigrations website
+docker exec ferias_django_app python manage.py makemigrations cms_pages
 docker exec ferias_django_app python manage.py makemigrations users
 docker exec ferias_django_app python manage.py makemigrations feed
 docker exec ferias_django_app python manage.py makemigrations blog
