@@ -13,6 +13,9 @@ docker exec ferias_django_app python manage.py makemigrations blog
 docker exec ferias_django_app python manage.py makemigrations recipes
 docker exec ferias_django_app python manage.py migrate
 
+# Initialize Wagtail default pages (home/blog) after migrating
+docker exec ferias_django_app python manage.py init_wagtail
+
 docker exec ferias_django_app python manage.py loaddata marketplaces
 docker exec ferias_django_app python manage.py loaddata products
 docker exec ferias_django_app python manage.py loaddata website
