@@ -2,7 +2,7 @@ from django.core.management.base import BaseCommand
 from django.contrib.auth import get_user_model
 from wagtail.models import Page, Site
 
-from apps.cms_pages.models import HomePage
+from apps.cms_pages.models import HomePage, BlogIndexPage
 
 
 class Command(BaseCommand):
@@ -19,6 +19,17 @@ class Command(BaseCommand):
         else:
             home = HomePage.objects.live().first()
             self.stdout.write("HomePage already exists: %s" % home)
+
+        # Create blog index if missing under homepage
+        if not BlogIndexPage.objects.child_of(home).exists():
+            blog_index = BlogIndexPage(title="Blog")
+            home.add_child(instance=blog_index)
+            blog_index.slug = "blog"
+            blog_index.save()
+            blog_index.save_revision().publish()
+            self.stdout.write(self.style.SUCCESS("Created BlogIndexPage and published it."))
+        else:
+            self.stdout.write("BlogIndexPage already exists under HomePage.")
 
         # Ensure default Site points to our homepage
         site, created = Site.objects.get_or_create(

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block page_title %}{{ page.seo_title|default:page.title }}{% endblock %}
+
+{% block main %}
+<div class="container py-5">
+  <article class="blog-post">
+    <header class="mb-4">
+      <h1 class="display-5">{{ page.title }}</h1>
+      <p class="text-muted">
+        {{ page.date }} • {% if page.author %}{{ page.author }} • {% endif %}{{ page.read_time }} min
+      </p>
+      {% if page.main_image %}
+        <div class="mb-3">
+          {% image page.main_image fill-1000x600 class="img-fluid rounded" alt=page.title %}
+        </div>
+      {% endif %}
+    </header>
+
+    {% if page.intro %}
+      <p class="lead">{{ page.intro }}</p>
+    {% endif %}
+
+    <div class="content">{{ page.body|richtext }}</div>
+
+    {% if page.tags.all %}
+    <div class="mt-4">
+      <strong>Etiquetas:</strong>
+      {% for tag in page.tags.all %}
+        <span class="badge text-bg-light">#{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </article>
+</div>
+{% endblock %}

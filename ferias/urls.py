@@ -20,6 +20,7 @@ from django.conf import settings
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.documents import urls as wagtaildocs_urls
 from wagtail import urls as wagtail_urls
+from django.views.generic import RedirectView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -28,7 +29,8 @@ urlpatterns = [
     path('productos/', include('products.urls'), name='productos'),
     path('consejos/', include('content.urls'), name='consejos'),
     path('avisos/', include('feed.urls'), name='avisos'),
-    path('blog/', include('blog.urls'), name='blog'),
+    # Redirect legacy blog route to Wagtail blog index
+    path('blog/', RedirectView.as_view(url='/paginas/blog/', permanent=False), name='blog'),
     path('sugerencias/', include('crowdsourcing.urls'), name='sugerencias'),
     path('datos/', include('api.urls'), name='api'),
     path('usuarios/', include('users.urls'), name='usuarios'),

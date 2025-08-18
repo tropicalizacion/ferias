@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block page_title %}{{ page.seo_title|default:page.title }}{% endblock %}
+
+{% block main %}
+<div class="container py-5">
+  <h1 class="display-5">{{ page.title }}</h1>
+  {% if page.intro %}<p class="lead">{{ page.intro }}</p>{% endif %}
+
+  <div class="row g-4 mt-3">
+    {% for post in page.get_children.live %}
+      {% with post=post.specific %}
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100">
+          {% if post.main_image %}
+            {% image post.main_image fill-600x350 class="card-img-top" alt=post.title %}
+          {% endif %}
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title"><a href="{{ post.url }}">{{ post.title }}</a></h5>
+            <p class="card-text small text-muted mb-2">
+              {{ post.date }}
+              {% if post.author %} • {{ post.author }}{% endif %}
+              • {{ post.read_time }} min
+            </p>
+            {% if post.intro %}
+              <p class="card-text">{{ post.intro|truncatechars:140 }}</p>
+            {% endif %}
+            <div class="mt-auto">
+              <a class="btn btn-sm btn-primary" href="{{ post.url }}">Leer más</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endwith %}
+    {% empty %}
+      <p>No hay publicaciones todavía.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
