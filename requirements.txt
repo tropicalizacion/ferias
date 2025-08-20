@@ -5,6 +5,8 @@ djangorestframework
 djangorestframework-gis
 drf-spectacular
 psycopg2-binary
+psycopg[binary]
+gdal==3.6.2
 geopy
 pandas
 geopandas
