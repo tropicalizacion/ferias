@@ -1,0 +1,654 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/logos/logo_rojo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.17">
+    
+    
+      
+        <title>Habilitar un ambiente de desarrollo con Docker - Proyecto deferia.cr</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Nunito Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="feria" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#habilitar-un-ambiente-de-desarrollo-con-docker" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Proyecto deferia.cr" class="md-header__button md-logo" aria-label="Proyecto deferia.cr" data-md-component="logo">
+      
+  <img src="../assets/logos/logo_blanco.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Proyecto deferia.cr
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Habilitar un ambiente de desarrollo con Docker
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/fabianabarca/ferias" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    fabianabarca/ferias
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../identidad/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Identidad visual
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../sobre/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Sobre el proyecto
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../howto.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Desarrollo
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../models.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Modelos
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../sitemap.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Mapa del sitio
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Proyecto deferia.cr" class="md-nav__button md-logo" aria-label="Proyecto deferia.cr" data-md-component="logo">
+      
+  <img src="../assets/logos/logo_blanco.svg" alt="logo">
+
+    </a>
+    Proyecto deferia.cr
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/fabianabarca/ferias" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    fabianabarca/ferias
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../identidad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Identidad visual
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sobre/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sobre el proyecto
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../howto.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Desarrollo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modelos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sitemap.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mapa del sitio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="habilitar-un-ambiente-de-desarrollo-con-docker">Habilitar un ambiente de desarrollo con Docker</h1>
+<p>Este documento describe cómo configurar y ejecutar un entorno de desarrollo para <code>deferia.cr</code> utilizando Docker.</p>
+<blockquote>
+<p>[!WARNING]
+Es ideal no saltarse pasos de esta guía, y de ser necesario, solicitar ayuda.</p>
+</blockquote>
+<h2 id="requisitos-previos">Requisitos previos</h2>
+<h3 id="windows">Windows</h3>
+<p>Es necesario tener instalados los siguientes componentes:</p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/windows/wsl/setup/environment">Windows Subsystem Linux</a></li>
+<li><a href="https://docs.docker.com/desktop/setup/install/windows-install/">Docker Desktop</a></li>
+<li><a href="https://git-scm.com/downloads">Git</a></li>
+</ul>
+<h3 id="sistemas-operativos-basados-en-unix-macos-y-distribuciones-de-linux">Sistemas operativos basados en UNIX (MacOS, y distribuciones de Linux)</h3>
+<p>Es necesario tener instalados los siguientes componentes (se recomienda revisar la documentación específica del sistema operativo):</p>
+<ul>
+<li><a href="https://www.python.org/">Python 3</a></li>
+<li><a href="https://www.docker.com/">Docker</a></li>
+<li><a href="https://docs.docker.com/compose/install/">Docker compose</a></li>
+<li><a href="https://git-scm.com/downloads">Git</a></li>
+</ul>
+<blockquote>
+<p>[!TIP]
+Instalar <a href="https://docs.docker.com/desktop/">Docker Desktop</a>, incluye el engine de Docker y Docker Compose. Facilita visualizar los contenedores y brinda múltiples herramientas que pueden ser de utilidad.  </p>
+</blockquote>
+<h2 id="pasos-a-seguir-previo-a-iniciar-el-contenedor">Pasos a seguir previo a iniciar el contenedor</h2>
+<h3 id="1-clonar-el-repositorio">1. Clonar el repositorio</h3>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/tropicalizacion/ferias.git
+</code></pre></div>
+<h3 id="2-crear-archivo-de-variables-de-entorno">2. Crear archivo de variables de entorno</h3>
+<p>Antes de iniciar el entorno, es necesario crear un archivo <code>.env</code> en la raíz del proyecto. Este archivo contiene variables sensibles como claves secretas y credenciales de base de datos.</p>
+<blockquote>
+<p>[!IMPORTANT]
+El archivo <code>.env</code> <strong>no debe subirse</strong> al repositorio. Solicite el contenido a otro colaborador del proyecto.</p>
+<p>[!NOTE]
+El archivo <a href=".env.example"><code>.env.example</code></a> tiene los campos que deben ser llenados.</p>
+</blockquote>
+<h3 id="3-dar-permisos-a-los-scripts">3. Dar permisos a los <em>scripts</em></h3>
+<p>Asegurarse que los <em>scripts</em> sean ejecutables:</p>
+<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span>+x<span class="w"> </span>./scripts/*.sh
+</code></pre></div>
+<h2 id="levantar-el-contenedor-con-el-entorno-de-desarrollo">Levantar el contenedor con el entorno de desarrollo</h2>
+<p>Según el sistema operativo, hay una distinción muy pequeña en el comando que se usa.</p>
+<h3 id="windows_1">Windows</h3>
+<p>Desde una terminal en la raíz del proyecto, levante el contenedor con el siguiente comando:</p>
+<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>up<span class="w"> </span>--build
+</code></pre></div>
+<h3 id="sistemas-operativos-basados-en-unix-macos-y-distribuciones-de-linux_1">Sistemas operativos basados en UNIX (MacOS, y distribuciones de Linux)</h3>
+<p>Desde una terminal en la raíz del proyecto, levante el contenedor con el siguiente comando:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>--build
+</code></pre></div>
+<p>Este comando compilará la imagen (si es necesario) y levantará los servicios definidos en el <code>docker-compose.yml</code>. Esto puede tardar varios minutos en ejecutarse.</p>
+<h2 id="migraciones-de-la-base-de-datos">Migraciones de la base de datos</h2>
+<p>Una vez que el contenedor esté corriendo correctamente, en una terminal nueva, ejecutar el <em>script</em> necesario para las migraciones de la base de datos:</p>
+<div class="highlight"><pre><span></span><code>./scripts/dmigrations.sh
+</code></pre></div>
+<blockquote>
+<p>[!NOTE]
+Es normal que se muestren varias advertencias durante este proceso</p>
+</blockquote>
+<h2 id="creacion-de-un-usuario-administrador">Creacion de un usuario administrador</h2>
+<p>En caso de ser necesario, con el siguiente comando se puede llamar al script que es capaz de crear un usuario administrador para el entorno local:</p>
+<div class="highlight"><pre><span></span><code>./scripts/superuser.sh
+</code></pre></div>
+<h2 id="acceso-a-la-aplicacion">Acceso a la aplicación</h2>
+<p>Una vez que todo esté en funcionamiento, acceda al navegador con la siguiente dirección, que por defecto es el puerto 8000:</p>
+<div class="highlight"><pre><span></span><code>http://localhost:8000/
+</code></pre></div>
+<h2 id="ejecucion-de-comandos">Ejecución de comandos</h2>
+<p>Como el proyecto se ejecuta por medio de Docker, en vez de usar un ambiente virtual de Python, es necesario realizar los comandos dentro del contenedor.</p>
+<p>Ejemplo:</p>
+<p>Para crear un usuario administrador, en un ambiente virtual de Python se usa el comando:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>manage.py<span class="w"> </span>createsuperuser
+</code></pre></div>
+<p>Mientras que en Docker, se usa el comando:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ferias_django_app<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>makemigrations
+</code></pre></div>
+<h2 id="problemas-comunes">Problemas comunes</h2>
+<h3 id="el-contenedor-no-inicia-o-falla-en-la-instalacion">El contenedor no inicia o falla en la instalación</h3>
+<ul>
+<li>Verificar que Docker esté corriendo correctamente.</li>
+<li>Asegurarse de que el archivo <code>.env</code> esté presente y correctamente configurado.</li>
+<li>Si se hacen cambios en el <code>Dockerfile</code> o en dependencias, ejecutar:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>down
+docker-compose<span class="w"> </span>up<span class="w"> </span>--build
+</code></pre></div>
+<h3 id="el-script-dmigrationssh-no-funciona">El <em>script</em> <code>dmigrations.sh</code> no funciona</h3>
+<ul>
+<li>Asegurarse de haberle dado permisos de ejecución:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span>+x<span class="w"> </span>./scripts/dmigrations.sh
+</code></pre></div>
+<ul>
+<li>Verificar que el contenedor esté activo antes de ejecutarlo.</li>
+</ul>
+<h2 id="otros-comandos-utiles">Otros comandos útiles</h2>
+<h3 id="detener-el-entorno">Detener el entorno</h3>
+<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>down
+</code></pre></div>
+<h3 id="ver-logs-en-tiempo-real">Ver logs en tiempo real</h3>
+<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>logs<span class="w"> </span>-f
+</code></pre></div>
+<h3 id="abrir-terminal-postgress">Abrir terminal Postgress</h3>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-ti<span class="w"> </span>postgres_db<span class="w"> </span>psql<span class="w"> </span>-U<span class="w"> </span><span class="o">[</span>USUARIO<span class="o">]</span><span class="w"> </span>-d<span class="w"> </span>ferias
+</code></pre></div>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.tabs", "navigation.footer", "toc.integrate"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>
