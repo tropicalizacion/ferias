@@ -16,7 +16,7 @@ Es necesario tener instalados los siguientes componentes:
 - [Git](https://git-scm.com/downloads)
 
 
-### Sistemas operativos basados en UNIX (MacOS, y cualquier distribución de Linux)
+### Sistemas operativos basados en UNIX (MacOS, y distribuciones de Linux)
 
 Es necesario tener instalados los siguientes componentes (se recomienda revisar la documentación específica del sistema operativo):
 
@@ -58,10 +58,22 @@ chmod +x ./scripts/*.sh
 
 ## Levantar el contenedor con el entorno de desarrollo
 
+Según el sistema operativo, hay una distinción muy pequeña en el comando que se usa.
+
+### Windows
+
 Desde una terminal en la raíz del proyecto, levante el contenedor con el siguiente comando:
 
 ```bash
 docker-compose up --build
+```
+
+### Sistemas operativos basados en UNIX (MacOS, y distribuciones de Linux)
+
+Desde una terminal en la raíz del proyecto, levante el contenedor con el siguiente comando:
+
+```bash
+docker compose up --build
 ```
 
 Este comando compilará la imagen (si es necesario) y levantará los servicios definidos en el `docker-compose.yml`. Esto puede tardar varios minutos en ejecutarse.
@@ -95,11 +107,11 @@ http://localhost:8000/
 
 ## Ejecución de comandos 
 
-Como el proyecto se ejecuta por medio de Docker, en vez de usar un ambiente virtual de python, es necesario realizar los comandos por medio del `docker-compose`.
+Como el proyecto se ejecuta por medio de Docker, en vez de usar un ambiente virtual de Python, es necesario realizar los comandos dentro del contenedor.
 
 Ejemplo:
 
-Para crear un usuario administrador, en un ambiente virtual de python se usa el comando:
+Para crear un usuario administrador, en un ambiente virtual de Python se usa el comando:
 
 ```bash
 python manage.py createsuperuser
@@ -108,7 +120,7 @@ python manage.py createsuperuser
 Mientras que en Docker, se usa el comando:
 
 ```bash
-docker-compose exec web python manage.py createsuperuser
+docker exec ferias_django_app python manage.py makemigrations
 ```
 
 
