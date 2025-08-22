@@ -1,4 +1,5 @@
 django
+wagtail
 django_htmx
 python-decouple
 djangorestframework
