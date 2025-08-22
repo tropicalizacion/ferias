@@ -3,10 +3,23 @@
 
 {% block page_title %}{{ page.seo_title|default:page.title }}{% endblock %}
 
+{% block bg-navbar %} background-cafe {% endblock %}
+
 {% block main %}
+<!-- Hero -->
+<div class="px-4 pt-3 pb-5 text-center background-cafe">
+    <div class="card col-lg-6 mx-auto bg-transparent border-0">
+        <h1 class="display-3 my-5 text-white title-deferia">
+            {{ page.title }}
+        </h1>
+        {% if page.intro %}
+        <p class="lead text-white">{{ page.intro }}</p>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Content -->
 <div class="container py-5">
-  <h1 class="display-5">{{ page.title }}</h1>
-  {% if page.intro %}<p class="lead">{{ page.intro }}</p>{% endif %}
   <div class="content">{{ page.body|richtext }}</div>
 </div>
 {% endblock %}
