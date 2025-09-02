@@ -5,6 +5,9 @@ Este documento describe cómo configurar y ejecutar un entorno de desarrollo par
 > [!WARNING]
 > Es ideal no saltarse pasos de esta guía, y de ser necesario, solicitar ayuda.
 
+> [!TIP]
+> Tras completar este manual, se recomienda dar un vistazo a los documentos dentro de la carpeta `docs` para familiarizarse con el proyecto y sus componentes.
+
 ## Requisitos previos
 
 ### Windows

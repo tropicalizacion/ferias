@@ -17,6 +17,10 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
+from wagtail.admin import urls as wagtailadmin_urls
+from wagtail.documents import urls as wagtaildocs_urls
+from wagtail import urls as wagtail_urls
+from django.views.generic import RedirectView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -25,11 +29,16 @@ urlpatterns = [
     path('productos/', include('products.urls'), name='productos'),
     path('consejos/', include('content.urls'), name='consejos'),
     path('avisos/', include('feed.urls'), name='avisos'),
-    path('blog/', include('blog.urls'), name='blog'),
+    # Redirect legacy blog route to Wagtail blog index
+    path('blog/', RedirectView.as_view(url='/paginas/blog/', permanent=False), name='blog'),
     path('sugerencias/', include('crowdsourcing.urls'), name='sugerencias'),
     path('datos/', include('api.urls'), name='api'),
     path('usuarios/', include('users.urls'), name='usuarios'),
     path('recetas/', include('recipes.urls'), name='recetas'),
+    path('cms/', include(wagtailadmin_urls)),     # Panel de administración de Wagtail
+    path('documents/', include(wagtaildocs_urls)),  # Descarga de documentos
+    path('paginas/', include(wagtail_urls)),  # Rutas públicas manejadas por Wagtail
+
 ]
 
 if settings.DEBUG:

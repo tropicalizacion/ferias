@@ -2,8 +2,8 @@
 # This script sets up the PostgreSQL database, only needed if not using Docker
 # It creates a database, user, and enables necessary extensions
 DB_NAME="ferias"
-DB_USER="" # Set your desired database user
-DB_PASSWORD="" # Set your desired database password 
+DB_USER="TestUser" # Set your desired database user
+DB_PASSWORD="TestPassword" # Set your desired database password
 
 echo "Dropping database if it exists..."
 sudo -u postgres psql -c "DROP DATABASE IF EXISTS ${DB_NAME};"
