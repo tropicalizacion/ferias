@@ -18,7 +18,6 @@ Es necesario tener instalados los siguientes componentes:
 - [Docker Desktop](https://docs.docker.com/desktop/setup/install/windows-install/)
 - [Git](https://git-scm.com/downloads)
 
-
 ### Sistemas operativos basados en UNIX (MacOS, y distribuciones de Linux)
 
 Es necesario tener instalados los siguientes componentes (se recomienda revisar la documentación específica del sistema operativo):
@@ -31,7 +30,6 @@ Es necesario tener instalados los siguientes componentes (se recomienda revisar 
 
 > [!TIP]
 > Instalar [Docker Desktop](https://docs.docker.com/desktop/), incluye el engine de Docker y Docker Compose. Facilita visualizar los contenedores y brinda múltiples herramientas que pueden ser de utilidad.  
-
 
 ## Pasos a seguir previo a iniciar el contenedor
 
