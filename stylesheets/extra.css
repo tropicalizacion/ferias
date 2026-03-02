@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Petrona:wght@400;700&display=swap');
+
+.petrona {
+    font-family: "Petrona", serif;
+    font-weight: 700;
+}
+
+[data-md-color-scheme="feria"] {
+    --md-primary-fg-color: #E64128;
+    --md-primary-fg-color--light: #EBB615;
+    --md-primary-fg-color--dark: #008D4A;
+}
+
+.amarillo {
+    color: #EBB615;
+}
+
+.verde {
+    color: #008D4A;
+}
+
+.azul {
+    color: #3879B5;
+}
+
+.gris {
+    color: #D1C5BA;
+}
+
+.rojo {
+    color: #E64128;
+}
+
+.cafe {
+    color: #CD7535;
+}
+
+.rosado {
+    color: #F29196;
+}
+
+.negro {
+    color: #000000;
+}
