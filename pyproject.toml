@@ -1,0 +1,27 @@
+[project]
+name = "ferias"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "django>=6.0.2",
+    "django-htmx>=1.27.0",
+    "django-json-ld>=0.0.5",
+    "django-tinymce>=5.0.0",
+    "djangorestframework>=3.16.1",
+    "djangorestframework-gis>=1.2.0",
+    "drf-spectacular>=0.29.0",
+    "geopandas>=1.1.2",
+    "geopy>=2.4.1",
+    "gunicorn>=25.1.0",
+    "jsonpickle>=4.1.1",
+    "openpyxl>=3.1.5",
+    "osm-humanized-opening-hours>=0.6.2",
+    "osm-opening-hours-humanized>=1.0.0b7",
+    "pandas>=3.0.1",
+    "pillow>=12.1.1",
+    "psycopg2-binary>=2.9.11",
+    "python-decouple>=3.8",
+    "wagtail>=7.3",
+]

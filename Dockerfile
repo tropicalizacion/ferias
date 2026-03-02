@@ -1,36 +1,62 @@
-FROM python:3.12-slim-bookworm
+# Multi-stage build for Django app with uv
+FROM python:3.14-slim AS base
 
-ENV PYTHONDONTWRITEBYTECODE 1 \
-  PYTHONUNBUFFERED 1 \
-  GDAL_LIBRARY_PATH=/usr/lib/libgdal.so \
-  GEOS_LIBRARY_PATH=/usr/lib/libgeos_c.so
-
-WORKDIR /app
-
-RUN apt-get update && \
-  apt-get install -y \
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
   build-essential \
   curl \
-  gcc \
-  g++ \
-  libgdal-dev \
-  gdal-bin \
-  libgeos-dev \
-  libproj-dev \
   libpq-dev \
-  libspatialindex-dev \
-  python3-dev \
-  && apt-get clean && \
-  rm -rf /var/lib/apt/lists/*
+  gdal-bin \
+  libgdal-dev \
+  && rm -rf /var/lib/apt/lists/*
 
-# Install uv using pip instead of copying from ghcr.io
-RUN pip install uv
+# Install uv
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
 
-COPY ./requirements.txt .
-RUN uv pip install -r ./requirements.txt --system
+# Set environment variables
+ENV ENTRYPOINT_PATH="/app/docker-entrypoint.sh" \
+  PYTHONUNBUFFERED=1 \
+  PYTHONDONTWRITEBYTECODE=1 \
+  UV_COMPILE_BYTECODE=1 \
+  UV_LINK_MODE=copy
 
-COPY . . 
+# Create app user
+RUN groupadd --gid 1000 app && \
+  useradd --uid 1000 --gid app --shell /bin/bash --create-home app
 
+# Set work directory
+WORKDIR /app
+
+# Change ownership of /app directory to app user
+RUN chown -R app:app /app
+
+# Copy dependency files
+COPY --chown=app:app pyproject.toml uv.lock ./
+
+# Dependencies will be installed at runtime to avoid permission issues
+
+# Copy source code
+COPY --chown=app:app . .
+
+# Ensure entrypoint script is executable
+RUN chmod +x $ENTRYPOINT_PATH
+
+# Switch to app user before installing dependencies to avoid permission issues
+USER app
+
+# Expose port for Django development server
 EXPOSE 8000
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# ---- Development stage
+# FROM base AS dev
+# ----------------------
+
+# CMD ["uv", "run", "python", "manage.py", "runserver", "0.0.0.0:8000"]
+
+# ---- Production stage
+FROM base AS prod
+# ---------------------
+
+# Install dependencies in production mode
+RUN uv sync --frozen --no-dev
+CMD ["uv", "run", "daphne", "-b", "0.0.0.0", "-p", "8000", "realtime.asgi:application"]
