@@ -2,9 +2,12 @@ FROM postgres:18.3
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
+    postgresql-contrib-18 \
     postgresql-18-postgis-3 \
     postgresql-18-postgis-3-scripts \
     && rm -rf /var/lib/apt/lists/*
+
+COPY extensions.sql /docker-entrypoint-initdb.d/extensions.sql
 
 COPY docker-entrypoint.sh /usr/local/bin/custom-database-entrypoint.sh
 

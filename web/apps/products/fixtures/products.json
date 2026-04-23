@@ -5,7 +5,8 @@
     "fields": {
       "name": "Asia Oriental",
       "description": "",
-      "region": null
+      "region": null,
+      "mapamundi": "maps/I.png"
     }
   },
   {
@@ -14,16 +15,8 @@
     "fields": {
       "name": "Subcontinente indio",
       "description": "",
-      "region": null
-    }
-  },
-  {
-    "model": "products.origin",
-    "pk": "III",
-    "fields": {
-      "name": "Asia Central",
-      "description": "",
-      "region": null
+      "region": null,
+      "mapamundi": "maps/II.png"
     }
   },
   {
@@ -32,7 +25,18 @@
     "fields": {
       "name": "Archipiélago indo-malayo",
       "description": "",
-      "region": null
+      "region": null,
+      "mapamundi": "maps/IIa.png"
+    }
+  },
+  {
+    "model": "products.origin",
+    "pk": "III",
+    "fields": {
+      "name": "Asia Central",
+      "description": "",
+      "region": null,
+      "mapamundi": "maps/III.png"
     }
   },
   {
@@ -41,7 +45,8 @@
     "fields": {
       "name": "Asia Menor y Creciente Fértil",
       "description": "",
-      "region": null
+      "region": null,
+      "mapamundi": "maps/IV.png"
     }
   },
   {
@@ -50,7 +55,8 @@
     "fields": {
       "name": "Mediterráneo",
       "description": "",
-      "region": null
+      "region": null,
+      "mapamundi": "maps/V.png"
     }
   },
   {
@@ -59,7 +65,8 @@
     "fields": {
       "name": "Abisinia (actual Etiopía)",
       "description": "",
-      "region": null
+      "region": null,
+      "mapamundi": "maps/VI.png"
     }
   },
   {
@@ -68,7 +75,8 @@
     "fields": {
       "name": "Mesoamérica",
       "description": "",
-      "region": null
+      "region": null,
+      "mapamundi": "maps/VII.png"
     }
   },
   {
@@ -77,7 +85,8 @@
     "fields": {
       "name": "Región andina tropical",
       "description": "",
-      "region": null
+      "region": null,
+      "mapamundi": "maps/VIII.png"
     }
   },
   {
@@ -86,7 +95,8 @@
     "fields": {
       "name": "Región chilena",
       "description": "",
-      "region": null
+      "region": null,
+      "mapamundi": "maps/VIIIa.png"
     }
   },
   {
@@ -95,7 +105,8 @@
     "fields": {
       "name": "Región brasileña-paraguaya",
       "description": "",
-      "region": null
+      "region": null,
+      "mapamundi": "maps/VIIIb.png"
     }
   },
   {

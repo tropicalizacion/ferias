@@ -49,13 +49,28 @@ done
 
 log "Database is ready!"
 
+# Run database migrations (initial)
+log "Running database migrations (initial)..."
+uv run python manage.py migrate --noinput
+
 # Make migrations
-APPS_TO_MIGRATE=("gtfs" "feed")
-log "RUN_MAKEMIGRATIONS enabled. Creating migrations for: ${APPS_TO_MIGRATE[*]}"
+APPS_TO_MIGRATE=(
+    "marketplaces"
+    "products"
+    "crowdsourcing"
+    "website"
+    "cms_pages"
+    "users"
+    "feed"
+    "blog"
+    "content"
+    "recipes"
+)
+log "Creating migrations for: ${APPS_TO_MIGRATE[*]}"
 uv run python manage.py makemigrations "${APPS_TO_MIGRATE[@]}" || warn "No changes detected for migrations"
 
-# Run database migrations
-log "Running database migrations..."
+# Run database migrations (after makemigrations)
+log "Running database migrations (final)..."
 uv run python manage.py migrate --noinput
 
 # Create superuser if it doesn't exist using defaults in development mode
@@ -77,17 +92,28 @@ else
     log "Skipping auto superuser creation (CREATE_SUPERUSER=${CREATE_SUPERUSER:-0} DEBUG=${DEBUG:-})"
 fi
 
+# Initialize Wagtail default pages (home/blog)
+log "Initializing Wagtail default pages..."
+uv run python manage.py init_wagtail || warn "Wagtail init skipped or already initialized"
+
 # Collect static files
 log "Collecting static files..."
 uv run python manage.py collectstatic --noinput || warn "Static files collection skipped"
 
-# Load initial data (if needed) 
-if [ -f gtfs/fixtures/gtfs.json ]; then
-    log "Loading initial data fixture gtfs.json"
-    uv run python manage.py loaddata gtfs.json || warn "Initial data load failed"
-else
-    log "No optional initial data fixture gtfs.json present"
-fi
+# Load initial data
+INITIAL_FIXTURES=(
+    "marketplaces"
+    "products"
+    "website"
+    "crowdsourcing"
+    "users"
+    "feed"
+    "content"
+)
+for fixture in "${INITIAL_FIXTURES[@]}"; do
+    log "Loading fixture: ${fixture}"
+    uv run python manage.py loaddata "${fixture}" || warn "Fixture load failed for ${fixture}"
+done
 
 log "Django application setup complete!"
 

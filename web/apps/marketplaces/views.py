@@ -19,7 +19,7 @@ from decouple import config
 
 def ferias(request):
     """View function for all ferias page of site."""
-    
+
     marketplaces = Marketplace.objects.all().order_by("name")
     texts = Text.objects.filter(page="/ferias")
 
@@ -31,7 +31,15 @@ def ferias(request):
     n_guanacaste = marketplaces.filter(province="Guanacaste").count()
     n_puntarenas = marketplaces.filter(province="Puntarenas").count()
     n_limon = marketplaces.filter(province="Limón").count()
-    n_provinces = [n_sanjose, n_alajuela, n_cartago, n_heredia, n_guanacaste, n_puntarenas, n_limon]
+    n_provinces = [
+        n_sanjose,
+        n_alajuela,
+        n_cartago,
+        n_heredia,
+        n_guanacaste,
+        n_puntarenas,
+        n_limon,
+    ]
     n_monday = marketplaces.filter(opening_hours__contains="Mo").count()
     n_tuesday = marketplaces.filter(opening_hours__contains="Tu").count()
     n_wednesday = marketplaces.filter(opening_hours__contains="We").count()
@@ -39,23 +47,46 @@ def ferias(request):
     n_friday = marketplaces.filter(opening_hours__contains="Fr").count()
     n_saturday = marketplaces.filter(opening_hours__contains="Sa").count()
     n_sunday = marketplaces.filter(opening_hours__contains="Su").count()
-    n_days = [n_monday, n_tuesday, n_wednesday, n_thursday, n_friday, n_saturday, n_sunday]
-    n_fairground = marketplaces.filter(fairground=True).count() / total_marketplaces * 100
-    n_indoor = marketplaces.filter(indoor=True).count() / total_marketplaces * 100
-    n_parking = marketplaces.filter(parking="surface").count() / total_marketplaces * 100
+    n_days = [
+        n_monday,
+        n_tuesday,
+        n_wednesday,
+        n_thursday,
+        n_friday,
+        n_saturday,
+        n_sunday,
+    ]
+
+    def percent_of_total(count):
+        if total_marketplaces == 0:
+            return 0
+        return count / total_marketplaces * 100
+
+    n_fairground = percent_of_total(marketplaces.filter(fairground=True).count())
+    n_indoor = percent_of_total(marketplaces.filter(indoor=True).count())
+    n_parking = percent_of_total(marketplaces.filter(parking="surface").count())
     n_infrastructure = [n_fairground, n_indoor, n_parking]
     n_infrastructure = [math.ceil(i) for i in n_infrastructure]
-    n_food = marketplaces.filter(food=True).count() / total_marketplaces * 100
-    n_drinks = marketplaces.filter(drinks=True).count() / total_marketplaces * 100
-    n_handicrafts = marketplaces.filter(handicrafts=True).count() / total_marketplaces * 100
-    n_butcher = marketplaces.filter(butcher=True).count() / total_marketplaces * 100
-    n_dairy = marketplaces.filter(dairy=True).count() / total_marketplaces * 100
-    n_seafood = marketplaces.filter(seafood=True).count() / total_marketplaces * 100
-    n_garden_centre = marketplaces.filter(garden_centre=True).count() / total_marketplaces * 100
-    n_florist = marketplaces.filter(florist=True).count() / total_marketplaces * 100
-    n_amenities = [n_food, n_drinks, n_handicrafts, n_butcher, n_dairy, n_seafood, n_garden_centre, n_florist]
+    n_food = percent_of_total(marketplaces.filter(food=True).count())
+    n_drinks = percent_of_total(marketplaces.filter(drinks=True).count())
+    n_handicrafts = percent_of_total(marketplaces.filter(handicrafts=True).count())
+    n_butcher = percent_of_total(marketplaces.filter(butcher=True).count())
+    n_dairy = percent_of_total(marketplaces.filter(dairy=True).count())
+    n_seafood = percent_of_total(marketplaces.filter(seafood=True).count())
+    n_garden_centre = percent_of_total(marketplaces.filter(garden_centre=True).count())
+    n_florist = percent_of_total(marketplaces.filter(florist=True).count())
+    n_amenities = [
+        n_food,
+        n_drinks,
+        n_handicrafts,
+        n_butcher,
+        n_dairy,
+        n_seafood,
+        n_garden_centre,
+        n_florist,
+    ]
     n_amenities = [math.ceil(i) for i in n_amenities]
-    
+
     text = Text.objects.filter(page="/ferias")
     texts = {}
     texts["hero"] = text.filter(section="hero").first()
@@ -74,9 +105,9 @@ def ferias(request):
             marketplace_dict["longitude"] = marketplace.location.x
             marketplaces_map.append(marketplace_dict)
         except:
-            pass  
+            pass
     marketplaces_map = json.dumps(marketplaces_map)
-    
+
     context = {
         "texts": texts,
         "google_maps_api_key": config("GOOGLE_MAPS_API_KEY"),
@@ -90,7 +121,14 @@ def ferias(request):
     }
 
     if request.method == "POST" and request.htmx:
-        marketplaces_match, marketplaces_others, marketplaces_keyword, keyword, query_text, by_location = search_marketplaces(request.POST)
+        (
+            marketplaces_match,
+            marketplaces_others,
+            marketplaces_keyword,
+            keyword,
+            query_text,
+            by_location,
+        ) = search_marketplaces(request.POST)
         context["show_results"] = True
         context["query_text"] = query_text
         context["by_location"] = by_location
@@ -110,19 +148,18 @@ def feria(request, marketplace_url):
     today = datetime.today()
 
     marketplace = get_object_or_404(Marketplace, pk=marketplace_url)
-    
+
     is_marketplace_admin = False
     user = request.user
-    
+
     if user.is_authenticated:
         try:
             marketplace_admin = MarketplaceAdmin.objects.get(user=request.user)
             is_marketplace_admin = marketplace_admin.marketplace == marketplace
-            
+
         except MarketplaceAdmin.DoesNotExist:
             is_marketplace_admin = False
-    
-    
+
     closest_marketplaces = (
         Marketplace.objects.annotate(
             distance=Distance("location", marketplace.location)
@@ -144,16 +181,45 @@ def feria(request, marketplace_url):
             is_open = oh.is_open()
             if is_open:
                 closes_in = oh.render().time_before_next_change(word=False)
-                closes_in = closes_in.replace("days", "días").replace("day", "día").replace("hours", "horas").replace("hour", "hora").replace("minutes", "minutos").replace("minute", "minuto").replace("seconds", "segundos").replace("second", "segundo")
+                closes_in = (
+                    closes_in.replace("days", "días")
+                    .replace("day", "día")
+                    .replace("hours", "horas")
+                    .replace("hour", "hora")
+                    .replace("minutes", "minutos")
+                    .replace("minute", "minuto")
+                    .replace("seconds", "segundos")
+                    .replace("second", "segundo")
+                )
             else:
                 opens_in = oh.render().time_before_next_change(word=False)
-                opens_in = opens_in.replace("days", "días").replace("day", "día").replace("hours", "horas").replace("hour", "hora").replace("minutes", "minutos").replace("minute", "minuto").replace("seconds", "segundos").replace("second", "segundo")
+                opens_in = (
+                    opens_in.replace("days", "días")
+                    .replace("day", "día")
+                    .replace("hours", "horas")
+                    .replace("hour", "hora")
+                    .replace("minutes", "minutos")
+                    .replace("minute", "minuto")
+                    .replace("seconds", "segundos")
+                    .replace("second", "segundo")
+                )
             description = oh.render().full_description()
             for i, _ in enumerate(description):
-                description[i] = description[i].replace("Monday", "Lunes").replace("Tuesday", "Martes").replace("Wednesday", "Miércoles").replace("Thursday", "Jueves").replace("Friday", "Viernes").replace("Saturday", "Sábado").replace("Sunday", "Domingo").replace(": ", ", de ").replace("to", "a")
+                description[i] = (
+                    description[i]
+                    .replace("Monday", "Lunes")
+                    .replace("Tuesday", "Martes")
+                    .replace("Wednesday", "Miércoles")
+                    .replace("Thursday", "Jueves")
+                    .replace("Friday", "Viernes")
+                    .replace("Saturday", "Sábado")
+                    .replace("Sunday", "Domingo")
+                    .replace(": ", ", de ")
+                    .replace("to", "a")
+                )
         except:
             pass
-    
+
     infrastructure = {
         "campo ferial": marketplace.fairground,
         "espacio bajo techo": marketplace.indoor,
@@ -177,13 +243,17 @@ def feria(request, marketplace_url):
     events = Event.objects.filter(marketplace=marketplace_url).order_by("-start_date")
     print(f"Evento: {events}")
 
-    announcements = Announcement.objects.filter(marketplace=marketplace_url).order_by("-created")
-    
+    announcements = Announcement.objects.filter(marketplace=marketplace_url).order_by(
+        "-created"
+    )
+
     text = Text.objects.filter(page="/ferias/feria")
     texts = {}
     texts["servicios_titulo"] = text.filter(section="servicios_titulo").first()
-    texts["servicios_descripcion"] = text.filter(section="servicios_descripcion").first()
-    
+    texts["servicios_descripcion"] = text.filter(
+        section="servicios_descripcion"
+    ).first()
+
     context = {
         "marketplace": marketplace,
         "is_open": is_open,
@@ -196,7 +266,7 @@ def feria(request, marketplace_url):
         "announcements": announcements,
         "events": events,
         "texts": texts,
-        "is_marketplace_admin": is_marketplace_admin
+        "is_marketplace_admin": is_marketplace_admin,
     }
 
     return render(request, "feria.html", context)
@@ -208,19 +278,26 @@ def edit(request, marketplace_url):
 
 def results(request):
     marketplaces = Marketplace.objects.all().order_by("name")
-    if request.method == "POST" and request.htmx:            
-            marketplaces_match, marketplaces_others, marketplaces_keyword, keyword, query_text, by_location = search_marketplaces(request.POST)   
-            context = {
-                "show_results": True,
-                "marketplaces": marketplaces,
-                "marketplaces_match": marketplaces_match,
-                "marketplaces_others": marketplaces_others,
-                "marketplaces_keyword": marketplaces_keyword,
-                "query_text": query_text,
-                "keyword": keyword,
-                "by_location": by_location,
-            }
-            return render(request, "partials/result.html", context)
+    if request.method == "POST" and request.htmx:
+        (
+            marketplaces_match,
+            marketplaces_others,
+            marketplaces_keyword,
+            keyword,
+            query_text,
+            by_location,
+        ) = search_marketplaces(request.POST)
+        context = {
+            "show_results": True,
+            "marketplaces": marketplaces,
+            "marketplaces_match": marketplaces_match,
+            "marketplaces_others": marketplaces_others,
+            "marketplaces_keyword": marketplaces_keyword,
+            "query_text": query_text,
+            "keyword": keyword,
+            "by_location": by_location,
+        }
+        return render(request, "partials/result.html", context)
     else:
         return render(request, "results.html")
 
@@ -253,6 +330,7 @@ def search_marketplaces(submission):
     if day != "any_day":
         if day == "today":
             import datetime
+
             today = datetime.datetime.today().weekday()
             day = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"][today]
             marketplaces = marketplaces.filter(opening_hours__contains=day)
@@ -315,12 +393,12 @@ def search_marketplaces(submission):
         try:
             marketplaces_keyword = marketplaces
             marketplaces_keyword = marketplaces_keyword.filter(
-                Q(name__unaccent__trigram_similar=keyword) | 
-                Q(description__unaccent__trigram_similar=keyword)
+                Q(name__unaccent__trigram_similar=keyword)
+                | Q(description__unaccent__trigram_similar=keyword)
             )
         except:
             pass
-    
+
     # Get other marketplaces
 
     marketplaces_others = marketplaces.difference(marketplaces_match)
@@ -337,4 +415,11 @@ def search_marketplaces(submission):
 
     query_text = submission.get("query_text")
 
-    return marketplaces_match, marketplaces_others, marketplaces_keyword, keyword, query_text, by_location
+    return (
+        marketplaces_match,
+        marketplaces_others,
+        marketplaces_keyword,
+        keyword,
+        query_text,
+        by_location,
+    )

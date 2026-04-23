@@ -47,8 +47,11 @@ USER app
 # Expose port for Django development server
 EXPOSE 8000
 
+# Set entrypoint
+ENTRYPOINT ["/app/docker-entrypoint.sh"]
+
 # ---- Development stage
-# FROM base AS dev
+FROM base AS dev
 # ----------------------
 
 CMD ["uv", "run", "python", "manage.py", "runserver", "0.0.0.0:8000"]
@@ -59,4 +62,4 @@ FROM base AS prod
 
 # Install dependencies in production mode
 RUN uv sync --frozen --no-dev
-CMD ["uv", "run", "daphne", "-b", "0.0.0.0", "-p", "8000", "realtime.asgi:application"]
+CMD ["uv", "run", "daphne", "-b", "0.0.0.0", "-p", "8000", "ferias.asgi:application"]

@@ -1,21 +1,27 @@
 name: ferias
+
 services:
   web:
-    build: ./backend
+    build: 
+      context: ./web
+      target: dev
     ports:
       - "8000:8000"
+    env_file:
+      - .env
+      - .env.dev
     volumes:
-      - .:/app
+      - ./web:/app
     depends_on:
       database:
         condition: service_healthy
         restart: true
-    env_file:
-      - .env
 
   database:
     build:
       context: ./database
+    env_file:
+      - .env
     environment:
       - POSTGRES_DB=${DB_NAME:-ferias}
       - POSTGRES_USER=${DB_USER:-postgres}
@@ -29,4 +35,4 @@ services:
       retries: 5
  
 volumes:
-  postgres_db:
+  database_data:
