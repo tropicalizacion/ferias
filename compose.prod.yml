@@ -17,9 +17,20 @@ services:
       - RUN_MAKEMIGRATIONS=False
       - INIT_WAGTAIL=False
       - LOAD_INITIAL_FIXTURES=False
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=traefik_proxy
+      - traefik.http.routers.ferias.rule=Host(`${SITE_DOMAIN:?SITE_DOMAIN is required}`) || Host(`${SITE_DOMAIN_WWW:?SITE_DOMAIN_WWW is required}`)
+      - traefik.http.routers.ferias.entrypoints=websecure
+      - traefik.http.routers.ferias.tls=true
+      - traefik.http.routers.ferias.tls.certresolver=letsencrypt
+      - traefik.http.services.ferias.loadbalancer.server.port=8000
     depends_on:
       database:
         condition: service_healthy
+    networks:
+      - default
+      - traefik_proxy
     restart: unless-stopped
 
   database:
@@ -38,7 +49,13 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    networks:
+      - default
     restart: unless-stopped
  
 volumes:
   database_data:
+
+networks:
+  traefik_proxy:
+    external: true
