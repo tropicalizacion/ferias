@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-MODE_NAME="Development"
-COMPOSE_FILE="compose.dev.yml"
-ENV_OVERLAY_FILE=".env.dev"
+MODE_NAME="Production"
+COMPOSE_FILE="compose.prod.yml"
+ENV_OVERLAY_FILE=".env.prod"
 
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/compose-runner.sh"

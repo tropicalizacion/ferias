@@ -1,0 +1,44 @@
+name: ferias-prod
+
+services:
+  web:
+    build: 
+      context: ./web
+      target: prod
+    ports:
+      - "${WEB_PORT:-8000}:8000"
+    env_file:
+      - .env
+      - .env.prod
+    environment:
+      - DB_HOST=database
+      - DB_PORT=5432
+      - CREATE_SUPERUSER=False
+      - RUN_MAKEMIGRATIONS=False
+      - INIT_WAGTAIL=False
+      - LOAD_INITIAL_FIXTURES=False
+    depends_on:
+      database:
+        condition: service_healthy
+    restart: unless-stopped
+
+  database:
+    build:
+      context: ./database
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_DB=${DB_NAME:?DB_NAME is required for production}
+      - POSTGRES_USER=${DB_USER:?DB_USER is required for production}
+      - POSTGRES_PASSWORD=${DB_PASSWORD:?DB_PASSWORD is required for production}
+    volumes:
+      - database_data:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "${DB_USER}", "-d", "${DB_NAME}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+ 
+volumes:
+  database_data:

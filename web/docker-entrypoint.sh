@@ -16,6 +16,17 @@ log(){ echo -e "${GREEN}[entrypoint]${NC} $*"; }
 warn(){ echo -e "${YELLOW}[entrypoint][warn]${NC} $*"; }
 err(){ echo -e "${RED}[entrypoint][error]${NC} $*"; }
 
+is_truthy() {
+    case "${1:-}" in
+        1|true|TRUE|True|yes|YES|on|ON)
+            return 0
+            ;;
+        *)
+            return 1
+            ;;
+    esac
+}
+
 # Build DATABASE_URL if missing (fallback)
 if [ -z "${DATABASE_URL:-}" ]; then
     if [[ -n "${DB_USER:-}" && -n "${DB_HOST:-}" && -n "${DB_NAME:-}" ]]; then
@@ -53,28 +64,31 @@ log "Database is ready!"
 log "Running database migrations (initial)..."
 uv run python manage.py migrate --noinput
 
-# Make migrations
-APPS_TO_MIGRATE=(
-    "marketplaces"
-    "products"
-    "crowdsourcing"
-    "website"
-    "cms_pages"
-    "users"
-    "feed"
-    "blog"
-    "content"
-    "recipes"
-)
-log "Creating migrations for: ${APPS_TO_MIGRATE[*]}"
-uv run python manage.py makemigrations "${APPS_TO_MIGRATE[@]}" || warn "No changes detected for migrations"
+if is_truthy "${RUN_MAKEMIGRATIONS:-True}"; then
+    APPS_TO_MIGRATE=(
+        "marketplaces"
+        "products"
+        "crowdsourcing"
+        "website"
+        "cms_pages"
+        "users"
+        "feed"
+        "blog"
+        "content"
+        "recipes"
+    )
+    log "Creating migrations for: ${APPS_TO_MIGRATE[*]}"
+    uv run python manage.py makemigrations "${APPS_TO_MIGRATE[@]}" || warn "No changes detected for migrations"
 
-# Run database migrations (after makemigrations)
-log "Running database migrations (final)..."
-uv run python manage.py migrate --noinput
+    # Run database migrations (after makemigrations)
+    log "Running database migrations (final)..."
+    uv run python manage.py migrate --noinput
+else
+    log "Skipping makemigrations (RUN_MAKEMIGRATIONS=${RUN_MAKEMIGRATIONS:-False})"
+fi
 
 # Create superuser if it doesn't exist using defaults in development mode
-if [[ "${CREATE_SUPERUSER:-True}" == "True" && ( "${DEBUG:-}" == "True" || "${DEBUG:-}" == "1" ) ]]; then
+if is_truthy "${CREATE_SUPERUSER:-True}" && is_truthy "${DEBUG:-False}"; then
     export DJANGO_SUPERUSER_USERNAME="${DJANGO_SUPERUSER_USERNAME:-admin}"
     export DJANGO_SUPERUSER_PASSWORD="${DJANGO_SUPERUSER_PASSWORD:-admin}"
     export DJANGO_SUPERUSER_EMAIL="${DJANGO_SUPERUSER_EMAIL:-admin@example.com}"
@@ -92,28 +106,34 @@ else
     log "Skipping auto superuser creation (CREATE_SUPERUSER=${CREATE_SUPERUSER:-0} DEBUG=${DEBUG:-})"
 fi
 
-# Initialize Wagtail default pages (home/blog)
-log "Initializing Wagtail default pages..."
-uv run python manage.py init_wagtail || warn "Wagtail init skipped or already initialized"
+if is_truthy "${INIT_WAGTAIL:-True}"; then
+    log "Initializing Wagtail default pages..."
+    uv run python manage.py init_wagtail || warn "Wagtail init skipped or already initialized"
+else
+    log "Skipping Wagtail init (INIT_WAGTAIL=${INIT_WAGTAIL:-False})"
+fi
 
 # Collect static files
 log "Collecting static files..."
 uv run python manage.py collectstatic --noinput || warn "Static files collection skipped"
 
-# Load initial data
-INITIAL_FIXTURES=(
-    "marketplaces"
-    "products"
-    "website"
-    "crowdsourcing"
-    "users"
-    "feed"
-    "content"
-)
-for fixture in "${INITIAL_FIXTURES[@]}"; do
-    log "Loading fixture: ${fixture}"
-    uv run python manage.py loaddata "${fixture}" || warn "Fixture load failed for ${fixture}"
-done
+if is_truthy "${LOAD_INITIAL_FIXTURES:-True}"; then
+    INITIAL_FIXTURES=(
+        "marketplaces"
+        "products"
+        "website"
+        "crowdsourcing"
+        "users"
+        "feed"
+        "content"
+    )
+    for fixture in "${INITIAL_FIXTURES[@]}"; do
+        log "Loading fixture: ${fixture}"
+        uv run python manage.py loaddata "${fixture}" || warn "Fixture load failed for ${fixture}"
+    done
+else
+    log "Skipping fixture load (LOAD_INITIAL_FIXTURES=${LOAD_INITIAL_FIXTURES:-False})"
+fi
 
 log "Django application setup complete!"
 

@@ -62,4 +62,4 @@ FROM base AS prod
 
 # Install dependencies in production mode
 RUN uv sync --frozen --no-dev
-CMD ["uv", "run", "daphne", "-b", "0.0.0.0", "-p", "8000", "ferias.asgi:application"]
+CMD ["uv", "run", "gunicorn", "--bind", "0.0.0.0:8000", "ferias.wsgi:application"]

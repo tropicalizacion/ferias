@@ -1,4 +1,4 @@
-name: ferias
+name: ferias-dev
 
 services:
   web:
@@ -6,10 +6,17 @@ services:
       context: ./web
       target: dev
     ports:
-      - "8000:8000"
+      - "${WEB_PORT:-8000}:8000"
     env_file:
       - .env
       - .env.dev
+    environment:
+      - DB_HOST=database
+      - DB_PORT=5432
+      - RUN_MAKEMIGRATIONS=True
+      - INIT_WAGTAIL=True
+      - LOAD_INITIAL_FIXTURES=True
+      - CREATE_SUPERUSER=True
     volumes:
       - ./web:/app
     depends_on:
@@ -27,7 +34,7 @@ services:
       - POSTGRES_USER=${DB_USER:-postgres}
       - POSTGRES_HOST_AUTH_METHOD=trust
     volumes:
-      - database_data:/var/lib/postgresql    
+      - database_data:/var/lib/postgresql
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "${DB_USER:-postgres}", "-d", "${DB_NAME:-ferias}"]
       interval: 10s
