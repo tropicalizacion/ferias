@@ -2,11 +2,12 @@ name: ferias-prod
 
 services:
   web:
-    build: 
+    build:
       context: ./web
       target: prod
-    ports:
-      - "${WEB_PORT:-8000}:8000"
+    # No public port mapping: Traefik reaches the container via the
+    # internal traefik_proxy network. Uncomment only for local debugging,
+    # and bind to loopback: "127.0.0.1:${WEB_PORT:-8000}:8000".
     env_file:
       - .env
       - .env.prod
@@ -20,11 +21,29 @@ services:
     labels:
       - traefik.enable=true
       - traefik.docker.network=traefik_proxy
+      # Single router serving both the apex and the www host; the
+      # redirect middleware below sends www traffic to the apex.
       - traefik.http.routers.ferias.rule=Host(`${SITE_DOMAIN:?SITE_DOMAIN is required}`) || Host(`${SITE_DOMAIN_WWW:?SITE_DOMAIN_WWW is required}`)
       - traefik.http.routers.ferias.entrypoints=websecure
       - traefik.http.routers.ferias.tls=true
       - traefik.http.routers.ferias.tls.certresolver=letsencrypt
+      - traefik.http.routers.ferias.middlewares=ferias-www-to-apex,security-headers@file,compression@file
       - traefik.http.services.ferias.loadbalancer.server.port=8000
+      # www → apex canonical redirect (www.ferias.cr → ferias.cr).
+      # The double $$ escapes the $ for docker-compose; Traefik then sees
+      # the literal ${1} capture-group reference.
+      - traefik.http.middlewares.ferias-www-to-apex.redirectregex.regex=^https?://${SITE_DOMAIN_WWW}/(.*)
+      - traefik.http.middlewares.ferias-www-to-apex.redirectregex.replacement=https://${SITE_DOMAIN}/$${1}
+      - traefik.http.middlewares.ferias-www-to-apex.redirectregex.permanent=true
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:8000/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 60s
+    volumes:
+      # Persist user uploads across container recreations.
+      - media_data:/app/media
     depends_on:
       database:
         condition: service_healthy
@@ -55,6 +74,7 @@ services:
  
 volumes:
   database_data:
+  media_data:
 
 networks:
   traefik_proxy:
