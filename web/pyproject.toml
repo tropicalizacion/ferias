@@ -24,4 +24,5 @@ dependencies = [
     "psycopg2-binary>=2.9.11",
     "python-decouple>=3.8",
     "wagtail>=7.3",
+    "whitenoise>=6.12.0",
 ]

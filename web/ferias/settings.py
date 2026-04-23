@@ -31,8 +31,27 @@ DEBUG = config("DEBUG", cast=bool)
 
 ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv())
 
+# Reverse proxy / HTTPS hardening (Traefik)
+# ----------------------------------------------------------------------
 # Trust HTTPS forwarding headers from reverse proxies (e.g., Traefik).
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+# Use the Host header forwarded by the proxy for request.get_host().
+USE_X_FORWARDED_HOST = True
+
+# Trusted origins for CSRF — required for Django 4+ when requests arrive
+# via HTTPS through a reverse proxy. Derived from ALLOWED_HOSTS so the
+# configuration lives in a single place (.env / .env.prod).
+CSRF_TRUSTED_ORIGINS = [
+    f"https://{host.strip()}"
+    for host in ALLOWED_HOSTS
+    if host.strip() and "." in host and not host.strip().startswith("127.")
+    and host.strip() not in {"localhost", "0.0.0.0"}
+]
+
+# Cookies: only transmit over HTTPS when running in non-debug mode.
+if not DEBUG:
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
 
 # Application definition
 
@@ -79,6 +98,9 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    # WhiteNoise must come right after SecurityMiddleware so it can
+    # serve static files with correct security headers.
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -183,6 +205,17 @@ USE_TZ = True
 STATIC_URL = "archivos/"
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+
+# Use WhiteNoise's compressed + manifest storage in production for
+# far-future caching of hashed filenames.
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 
 MEDIA_URL = "media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
