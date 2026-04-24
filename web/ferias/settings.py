@@ -217,6 +217,11 @@ STORAGES = {
     },
 }
 
+# Don't fail collectstatic when CSS references files that are missing
+# on disk (cosmetic assets). Broken URLs still 404 at runtime, but the
+# deploy itself is not blocked.
+WHITENOISE_MANIFEST_STRICT = False
+
 MEDIA_URL = "media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
