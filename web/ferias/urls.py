@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
@@ -24,21 +25,24 @@ from django.views.generic import RedirectView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('', include('website.urls'), name='sitio'),
-    path('ferias/', include('marketplaces.urls'), name='ferias'),
-    path('productos/', include('products.urls'), name='productos'),
-    path('consejos/', include('content.urls'), name='consejos'),
-    path('avisos/', include('feed.urls'), name='avisos'),
+    path("", include("website.urls"), name="sitio"),
+    path("ferias/", include("marketplaces.urls"), name="ferias"),
+    path("productos/", include("products.urls"), name="productos"),
+    path("consejos/", include("content.urls"), name="consejos"),
+    path("avisos/", include("feed.urls"), name="avisos"),
     # Redirect legacy blog route to Wagtail blog index
-    path('blog/', RedirectView.as_view(url='/paginas/blog/', permanent=False), name='blog'),
-    path('sugerencias/', include('crowdsourcing.urls'), name='sugerencias'),
-    path('datos/', include('api.urls'), name='api'),
-    path('usuarios/', include('users.urls'), name='usuarios'),
-    path('recetas/', include('recipes.urls'), name='recetas'),
-    path('cms/', include(wagtailadmin_urls)),     # Panel de administración de Wagtail
-    path('documents/', include(wagtaildocs_urls)),  # Descarga de documentos
-    path('paginas/', include(wagtail_urls)),  # Rutas públicas manejadas por Wagtail
-
+    path(
+        "blog/",
+        RedirectView.as_view(url="/paginas/blog/", permanent=False),
+        name="blog",
+    ),
+    path("sugerencias/", include("crowdsourcing.urls"), name="sugerencias"),
+    path("datos/", include("api.urls"), name="api"),
+    path("usuarios/", include("users.urls"), name="usuarios"),
+    path("recetas/", include("recipes.urls"), name="recetas"),
+    path("cms/", include(wagtailadmin_urls)),  # Panel de administración de Wagtail
+    path("documents/", include(wagtaildocs_urls)),  # Descarga de documentos
+    path("paginas/", include(wagtail_urls)),  # Rutas públicas manejadas por Wagtail
 ]
 
 if settings.DEBUG:

@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block page_title %} Recetario {% endblock %}
+
+{% block bg-navbar %} background-verde {% endblock %}
+
+{% block main %}
+
+<!-- Hero -->
+<div class="px-4 pt-3 pb-5 text-center background-verde">
+    <div class="card col-lg-8 mx-auto bg-transparent border-0">
+        <h1 class="display-1 mt-5 text-white hero-deferia">Recetario</h1>
+        <div class="card col-lg-6 mx-auto bg-transparent border-0 mt-5">
+            <h2 class="text-center title-deferia text-white">Y de feria... tengo que cocinar.</h2>
+        </div>
+    </div>
+</div>
+
+<!-- Presentación -->
+<div class="container mt-5">
+    <h2 class="text-center title-deferia">Recetas sencillas, con productos de nuestra feria.</h2>
+     
+    <div class="text-center">
+        <a href="{% static 'recetario.pdf' %}" class="badge rounded-pill text-bg-danger my-2" download><i class="fa-solid fa-file-pdf"></i> Descargar PDF</a>
+    </div>
+
+    <p>Una guía para saborear guacamole con cebolla morada, pan integral de banano, ensalada de fresa, crema de pejibaye con pollo, canelones con queso y espinaca, yogurt natural con coco, salsa de chile picante casera, crema de ayote, macarrones con queso y brócoli, y tortillas de pejibaye.</p>
+
+    <div id="pdf-viewer" class="my-5" style="height: 600px"></div>
+   
+    <p>
+        Este recetario es un proyecto de la Organización de las Naciones Unidas para la Alimentación y la Agricultura (FAO) en conjunto con la Agencia Brasileña de Cooperación (ABC), el Ministerio Desarrollo y Asistencia Social, Familia y Combate al Hambre y el Ministerio de Relaciones Exteriores del Gobierno Federal de Brasil, con el apoyo del trabajo comunal universitario "Tropicalización de la tecnología" de la Universidad de Costa Rica, la Junta Nacional de Ferias del Agricultor (JNFA), El Surá Centro Gastronómico Municipal y la Municipalidad de Curridabat.
+    </p>
+
+</div>
+
+<script async type="module">
+  import EmbedPDF from 'https://cdn.jsdelivr.net/npm/@embedpdf/snippet@2/dist/embedpdf.js';
+
+  const viewer = EmbedPDF.init({
+    type: 'container',
+    target: document.getElementById('pdf-viewer'),
+    src: '{% static "recetario.pdf" %}',
+    i18n: {
+        defaultLocale: 'es',
+        fallbackLocale: 'en',
+    }
+  }) 
+</script>
+
+{% endblock %}

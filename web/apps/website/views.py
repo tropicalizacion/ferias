@@ -9,8 +9,13 @@ from marketplaces.views import search_marketplaces
 from django.contrib.auth import login, authenticate, logout
 from decouple import config
 
+
 def cover(request):
     return render(request, "cover.html")
+
+
+def recetario(request):
+    return render(request, "recetario.html")
 
 
 def index(request):
