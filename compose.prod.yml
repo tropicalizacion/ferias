@@ -27,7 +27,7 @@ services:
       - traefik.http.routers.ferias.entrypoints=websecure
       - traefik.http.routers.ferias.tls=true
       - traefik.http.routers.ferias.tls.certresolver=letsencrypt
-      - traefik.http.routers.ferias.middlewares=ferias-www-to-apex,security-headers@file,compression@file
+      - traefik.http.routers.ferias.middlewares=ferias-www-to-apex,ferias-security-headers,compression@file
       - traefik.http.services.ferias.loadbalancer.server.port=8000
       # www → apex canonical redirect (www.ferias.cr → ferias.cr).
       # The double $$ escapes the $ for docker-compose; Traefik then sees
@@ -35,6 +35,21 @@ services:
       - traefik.http.middlewares.ferias-www-to-apex.redirectregex.regex=^https?://${SITE_DOMAIN_WWW}/(.*)
       - traefik.http.middlewares.ferias-www-to-apex.redirectregex.replacement=https://${SITE_DOMAIN}/$${1}
       - traefik.http.middlewares.ferias-www-to-apex.redirectregex.permanent=true
+      # Security headers + Content-Security-Policy (ferias-specific).
+      # Mirrors the shared `security-headers@file` middleware but widens the
+      # CSP allow-lists to the third-party CDNs this Django/Wagtail site loads
+      # (Bootstrap, jQuery, Leaflet, Font Awesome, TinyMCE). The shared file
+      # middleware stays strict for the Nuxt/VitePress sites that don't need them.
+      - traefik.http.middlewares.ferias-security-headers.headers.contentTypeNosniff=true
+      - traefik.http.middlewares.ferias-security-headers.headers.customFrameOptionsValue=SAMEORIGIN
+      - traefik.http.middlewares.ferias-security-headers.headers.referrerPolicy=strict-origin-when-cross-origin
+      - traefik.http.middlewares.ferias-security-headers.headers.forceSTSHeader=true
+      - traefik.http.middlewares.ferias-security-headers.headers.stsIncludeSubdomains=true
+      - traefik.http.middlewares.ferias-security-headers.headers.stsPreload=false
+      - traefik.http.middlewares.ferias-security-headers.headers.stsSeconds=31536000
+      - traefik.http.middlewares.ferias-security-headers.headers.customResponseHeaders.X-Robots-Tag=none,noarchive,nosnippet,notranslate,noimageindex
+      - traefik.http.middlewares.ferias-security-headers.headers.customResponseHeaders.Server=
+      - "traefik.http.middlewares.ferias-security-headers.headers.customResponseHeaders.Content-Security-Policy=default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com https://ka-f.fontawesome.com https://cdn.tiny.cloud; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://unpkg.com https://cdn.tiny.cloud; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://cdn.jsdelivr.net https://unpkg.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.tiny.cloud; connect-src 'self' https://ka-f.fontawesome.com https://cdn.tiny.cloud; worker-src 'self' blob:; form-action 'self'"
     healthcheck:
       test: ["CMD", "curl", "-sf", "http://localhost:8000/"]
       interval: 30s

@@ -213,13 +213,16 @@ STORAGES = {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
     },
     "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",
     },
 }
 
 # Don't fail collectstatic when CSS references files that are missing
 # on disk (cosmetic assets). Broken URLs still 404 at runtime, but the
 # deploy itself is not blocked.
+# WHITENOISE_MANIFEST_STRICT is only relevant to the Manifest storage.
+# We use CompressedStaticFilesStorage above so this has no effect now;
+# left here in case we switch back once missing CSS refs are fixed.
 WHITENOISE_MANIFEST_STRICT = False
 
 MEDIA_URL = "media/"
